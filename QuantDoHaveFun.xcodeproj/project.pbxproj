@@ -15,6 +15,7 @@
 		93399CCC2267124500FB9F0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CCB2267124500FB9F0E /* main.m */; };
 		93399CD62267124500FB9F0E /* QuantDoHaveFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CD52267124500FB9F0E /* QuantDoHaveFunTests.m */; };
 		93399CE12267124500FB9F0E /* QuantDoHaveFunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */; };
+		93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CF4226714EF00FB9F0E /* QDBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		93399CDC2267124500FB9F0E /* QuantDoHaveFunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuantDoHaveFunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuantDoHaveFunUITests.m; sourceTree = "<group>"; };
 		93399CE22267124500FB9F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93399CF3226714EF00FB9F0E /* QDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBaseViewController.h; sourceTree = "<group>"; };
+		93399CF4226714EF00FB9F0E /* QDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,11 @@
 		93399CBB2267124000FB9F0E /* QuantDoHaveFun */ = {
 			isa = PBXGroup;
 			children = (
+				93399CF2226714DA00FB9F0E /* Base */,
+				93399CEE2267149B00FB9F0E /* Home */,
+				93399CEF2267149B00FB9F0E /* Mine */,
+				93399CF02267149B00FB9F0E /* Playing */,
+				93399CF12267149B00FB9F0E /* Trading */,
 				93399CBC2267124000FB9F0E /* AppDelegate.h */,
 				93399CBD2267124000FB9F0E /* AppDelegate.m */,
 				93399CBF2267124000FB9F0E /* ViewController.h */,
@@ -130,6 +138,43 @@
 				93399CE22267124500FB9F0E /* Info.plist */,
 			);
 			path = QuantDoHaveFunUITests;
+			sourceTree = "<group>";
+		};
+		93399CEE2267149B00FB9F0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		93399CEF2267149B00FB9F0E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		93399CF02267149B00FB9F0E /* Playing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Playing;
+			sourceTree = "<group>";
+		};
+		93399CF12267149B00FB9F0E /* Trading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trading;
+			sourceTree = "<group>";
+		};
+		93399CF2226714DA00FB9F0E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				93399CF3226714EF00FB9F0E /* QDBaseViewController.h */,
+				93399CF4226714EF00FB9F0E /* QDBaseViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */,
 				93399CC12267124000FB9F0E /* ViewController.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
