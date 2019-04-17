@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
+		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
+		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
+		93399CC62267124500FB9F0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC52267124500FB9F0E /* Assets.xcassets */; };
+		93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC72267124500FB9F0E /* LaunchScreen.storyboard */; };
+		93399CCC2267124500FB9F0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CCB2267124500FB9F0E /* main.m */; };
+		93399CD62267124500FB9F0E /* QuantDoHaveFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CD52267124500FB9F0E /* QuantDoHaveFunTests.m */; };
+		93399CE12267124500FB9F0E /* QuantDoHaveFunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93399CD22267124500FB9F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93399CB12267124000FB9F0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93399CB82267124000FB9F0E;
+			remoteInfo = QuantDoHaveFun;
+		};
+		93399CDD2267124500FB9F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93399CB12267124000FB9F0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93399CB82267124000FB9F0E;
+			remoteInfo = QuantDoHaveFun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93399CBC2267124000FB9F0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		93399CBD2267124000FB9F0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		93399CBF2267124000FB9F0E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		93399CC02267124000FB9F0E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		93399CC32267124000FB9F0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93399CC52267124500FB9F0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93399CC82267124500FB9F0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93399CCA2267124500FB9F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93399CCB2267124500FB9F0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93399CD12267124500FB9F0E /* QuantDoHaveFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuantDoHaveFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93399CD52267124500FB9F0E /* QuantDoHaveFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuantDoHaveFunTests.m; sourceTree = "<group>"; };
+		93399CD72267124500FB9F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93399CDC2267124500FB9F0E /* QuantDoHaveFunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuantDoHaveFunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuantDoHaveFunUITests.m; sourceTree = "<group>"; };
+		93399CE22267124500FB9F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93399CB62267124000FB9F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CCE2267124500FB9F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CD92267124500FB9F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93399CB02267124000FB9F0E = {
+			isa = PBXGroup;
+			children = (
+				93399CBB2267124000FB9F0E /* QuantDoHaveFun */,
+				93399CD42267124500FB9F0E /* QuantDoHaveFunTests */,
+				93399CDF2267124500FB9F0E /* QuantDoHaveFunUITests */,
+				93399CBA2267124000FB9F0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93399CBA2267124000FB9F0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93399CB92267124000FB9F0E /* QuantDoHaveFun.app */,
+				93399CD12267124500FB9F0E /* QuantDoHaveFunTests.xctest */,
+				93399CDC2267124500FB9F0E /* QuantDoHaveFunUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93399CBB2267124000FB9F0E /* QuantDoHaveFun */ = {
+			isa = PBXGroup;
+			children = (
+				93399CBC2267124000FB9F0E /* AppDelegate.h */,
+				93399CBD2267124000FB9F0E /* AppDelegate.m */,
+				93399CBF2267124000FB9F0E /* ViewController.h */,
+				93399CC02267124000FB9F0E /* ViewController.m */,
+				93399CC22267124000FB9F0E /* Main.storyboard */,
+				93399CC52267124500FB9F0E /* Assets.xcassets */,
+				93399CC72267124500FB9F0E /* LaunchScreen.storyboard */,
+				93399CCA2267124500FB9F0E /* Info.plist */,
+				93399CCB2267124500FB9F0E /* main.m */,
+			);
+			path = QuantDoHaveFun;
+			sourceTree = "<group>";
+		};
+		93399CD42267124500FB9F0E /* QuantDoHaveFunTests */ = {
+			isa = PBXGroup;
+			children = (
+				93399CD52267124500FB9F0E /* QuantDoHaveFunTests.m */,
+				93399CD72267124500FB9F0E /* Info.plist */,
+			);
+			path = QuantDoHaveFunTests;
+			sourceTree = "<group>";
+		};
+		93399CDF2267124500FB9F0E /* QuantDoHaveFunUITests */ = {
+			isa = PBXGroup;
+			children = (
+				93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */,
+				93399CE22267124500FB9F0E /* Info.plist */,
+			);
+			path = QuantDoHaveFunUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93399CB82267124000FB9F0E /* QuantDoHaveFun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93399CE52267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFun" */;
+			buildPhases = (
+				93399CB52267124000FB9F0E /* Sources */,
+				93399CB62267124000FB9F0E /* Frameworks */,
+				93399CB72267124000FB9F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuantDoHaveFun;
+			productName = QuantDoHaveFun;
+			productReference = 93399CB92267124000FB9F0E /* QuantDoHaveFun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93399CD02267124500FB9F0E /* QuantDoHaveFunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93399CE82267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFunTests" */;
+			buildPhases = (
+				93399CCD2267124500FB9F0E /* Sources */,
+				93399CCE2267124500FB9F0E /* Frameworks */,
+				93399CCF2267124500FB9F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93399CD32267124500FB9F0E /* PBXTargetDependency */,
+			);
+			name = QuantDoHaveFunTests;
+			productName = QuantDoHaveFunTests;
+			productReference = 93399CD12267124500FB9F0E /* QuantDoHaveFunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93399CDB2267124500FB9F0E /* QuantDoHaveFunUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93399CEB2267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFunUITests" */;
+			buildPhases = (
+				93399CD82267124500FB9F0E /* Sources */,
+				93399CD92267124500FB9F0E /* Frameworks */,
+				93399CDA2267124500FB9F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93399CDE2267124500FB9F0E /* PBXTargetDependency */,
+			);
+			name = QuantDoHaveFunUITests;
+			productName = QuantDoHaveFunUITests;
+			productReference = 93399CDC2267124500FB9F0E /* QuantDoHaveFunUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93399CB12267124000FB9F0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Chalres Ran";
+				TargetAttributes = {
+					93399CB82267124000FB9F0E = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					93399CD02267124500FB9F0E = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 93399CB82267124000FB9F0E;
+					};
+					93399CDB2267124500FB9F0E = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 93399CB82267124000FB9F0E;
+					};
+				};
+			};
+			buildConfigurationList = 93399CB42267124000FB9F0E /* Build configuration list for PBXProject "QuantDoHaveFun" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93399CB02267124000FB9F0E;
+			productRefGroup = 93399CBA2267124000FB9F0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93399CB82267124000FB9F0E /* QuantDoHaveFun */,
+				93399CD02267124500FB9F0E /* QuantDoHaveFunTests */,
+				93399CDB2267124500FB9F0E /* QuantDoHaveFunUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93399CB72267124000FB9F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
+				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
+				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CCF2267124500FB9F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CDA2267124500FB9F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93399CB52267124000FB9F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93399CC12267124000FB9F0E /* ViewController.m in Sources */,
+				93399CCC2267124500FB9F0E /* main.m in Sources */,
+				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CCD2267124500FB9F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93399CD62267124500FB9F0E /* QuantDoHaveFunTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93399CD82267124500FB9F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93399CE12267124500FB9F0E /* QuantDoHaveFunUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93399CD32267124500FB9F0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93399CB82267124000FB9F0E /* QuantDoHaveFun */;
+			targetProxy = 93399CD22267124500FB9F0E /* PBXContainerItemProxy */;
+		};
+		93399CDE2267124500FB9F0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93399CB82267124000FB9F0E /* QuantDoHaveFun */;
+			targetProxy = 93399CDD2267124500FB9F0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93399CC22267124000FB9F0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93399CC32267124000FB9F0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		93399CC72267124500FB9F0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93399CC82267124500FB9F0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93399CE32267124500FB9F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		93399CE42267124500FB9F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93399CE62267124500FB9F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93399CE72267124500FB9F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93399CE92267124500FB9F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuantDoHaveFun.app/QuantDoHaveFun";
+			};
+			name = Debug;
+		};
+		93399CEA2267124500FB9F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuantDoHaveFun.app/QuantDoHaveFun";
+			};
+			name = Release;
+		};
+		93399CEC2267124500FB9F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFunUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuantDoHaveFun;
+			};
+			name = Debug;
+		};
+		93399CED2267124500FB9F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JNMW98VLVV;
+				INFOPLIST_FILE = QuantDoHaveFunUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuantDoHaveFun;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93399CB42267124000FB9F0E /* Build configuration list for PBXProject "QuantDoHaveFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93399CE32267124500FB9F0E /* Debug */,
+				93399CE42267124500FB9F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93399CE52267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93399CE62267124500FB9F0E /* Debug */,
+				93399CE72267124500FB9F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93399CE82267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93399CE92267124500FB9F0E /* Debug */,
+				93399CEA2267124500FB9F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93399CEB2267124500FB9F0E /* Build configuration list for PBXNativeTarget "QuantDoHaveFunUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93399CEC2267124500FB9F0E /* Debug */,
+				93399CED2267124500FB9F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93399CB12267124000FB9F0E /* Project object */;
+}
