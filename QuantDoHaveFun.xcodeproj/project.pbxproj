@@ -16,6 +16,15 @@
 		93399CD62267124500FB9F0E /* QuantDoHaveFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CD52267124500FB9F0E /* QuantDoHaveFunTests.m */; };
 		93399CE12267124500FB9F0E /* QuantDoHaveFunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CE02267124500FB9F0E /* QuantDoHaveFunUITests.m */; };
 		93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CF4226714EF00FB9F0E /* QDBaseViewController.m */; };
+		93399D0B22671FCA00FB9F0E /* QDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D0A22671FCA00FB9F0E /* QDHomeViewController.m */; };
+		93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D0D22671FD600FB9F0E /* QDPlayingViewController.m */; };
+		93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1022671FE000FB9F0E /* QDTradingViewController.m */; };
+		93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1322671FEA00FB9F0E /* QDMineViewController.m */; };
+		93399D192267219900FB9F0E /* QDTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D182267219900FB9F0E /* QDTabBar.m */; };
+		93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1B226721BA00FB9F0E /* QDTabBarItem.m */; };
+		93399D2322672EE700FB9F0E /* QDGlobalFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D2122672EE700FB9F0E /* QDGlobalFunc.m */; };
+		93399D272267319E00FB9F0E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93399D262267319E00FB9F0E /* QuartzCore.framework */; };
+		93399D29226731A900FB9F0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93399D28226731A900FB9F0E /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +63,24 @@
 		93399CE22267124500FB9F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93399CF3226714EF00FB9F0E /* QDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBaseViewController.h; sourceTree = "<group>"; };
 		93399CF4226714EF00FB9F0E /* QDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBaseViewController.m; sourceTree = "<group>"; };
+		93399D0922671FCA00FB9F0E /* QDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDHomeViewController.h; sourceTree = "<group>"; };
+		93399D0A22671FCA00FB9F0E /* QDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDHomeViewController.m; sourceTree = "<group>"; };
+		93399D0C22671FD600FB9F0E /* QDPlayingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDPlayingViewController.h; sourceTree = "<group>"; };
+		93399D0D22671FD600FB9F0E /* QDPlayingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDPlayingViewController.m; sourceTree = "<group>"; };
+		93399D0F22671FE000FB9F0E /* QDTradingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTradingViewController.h; sourceTree = "<group>"; };
+		93399D1022671FE000FB9F0E /* QDTradingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTradingViewController.m; sourceTree = "<group>"; };
+		93399D1222671FEA00FB9F0E /* QDMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDMineViewController.h; sourceTree = "<group>"; };
+		93399D1322671FEA00FB9F0E /* QDMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDMineViewController.m; sourceTree = "<group>"; };
+		93399D172267219900FB9F0E /* QDTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTabBar.h; sourceTree = "<group>"; };
+		93399D182267219900FB9F0E /* QDTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTabBar.m; sourceTree = "<group>"; };
+		93399D1A226721BA00FB9F0E /* QDTabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTabBarItem.h; sourceTree = "<group>"; };
+		93399D1B226721BA00FB9F0E /* QDTabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTabBarItem.m; sourceTree = "<group>"; };
+		93399D2122672EE700FB9F0E /* QDGlobalFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDGlobalFunc.m; sourceTree = "<group>"; };
+		93399D2222672EE700FB9F0E /* QDGlobalFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDGlobalFunc.h; sourceTree = "<group>"; };
+		93399D2422672EEE00FB9F0E /* QDMarcoDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDMarcoDefinition.h; sourceTree = "<group>"; };
+		93399D262267319E00FB9F0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		93399D28226731A900FB9F0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		93399D2A2268027500FB9F0E /* QDHaveFun.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDHaveFun.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93399D29226731A900FB9F0E /* CoreGraphics.framework in Frameworks */,
+				93399D272267319E00FB9F0E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +117,7 @@
 				93399CD42267124500FB9F0E /* QuantDoHaveFunTests */,
 				93399CDF2267124500FB9F0E /* QuantDoHaveFunUITests */,
 				93399CBA2267124000FB9F0E /* Products */,
+				93399D252267319D00FB9F0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,11 +134,12 @@
 		93399CBB2267124000FB9F0E /* QuantDoHaveFun */ = {
 			isa = PBXGroup;
 			children = (
+				93399D2022672EDD00FB9F0E /* Marcos */,
+				93399D152267211300FB9F0E /* QDCustomView */,
+				93399D0422671FA100FB9F0E /* Models */,
+				93399CFF22671FA100FB9F0E /* ViewControllers */,
+				93399CFA22671FA100FB9F0E /* Views */,
 				93399CF2226714DA00FB9F0E /* Base */,
-				93399CEE2267149B00FB9F0E /* Home */,
-				93399CEF2267149B00FB9F0E /* Mine */,
-				93399CF02267149B00FB9F0E /* Playing */,
-				93399CF12267149B00FB9F0E /* Trading */,
 				93399CBC2267124000FB9F0E /* AppDelegate.h */,
 				93399CBD2267124000FB9F0E /* AppDelegate.m */,
 				93399CBF2267124000FB9F0E /* ViewController.h */,
@@ -118,6 +149,7 @@
 				93399CC72267124500FB9F0E /* LaunchScreen.storyboard */,
 				93399CCA2267124500FB9F0E /* Info.plist */,
 				93399CCB2267124500FB9F0E /* main.m */,
+				93399D2A2268027500FB9F0E /* QDHaveFun.pch */,
 			);
 			path = QuantDoHaveFun;
 			sourceTree = "<group>";
@@ -140,34 +172,6 @@
 			path = QuantDoHaveFunUITests;
 			sourceTree = "<group>";
 		};
-		93399CEE2267149B00FB9F0E /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		93399CEF2267149B00FB9F0E /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
-		93399CF02267149B00FB9F0E /* Playing */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Playing;
-			sourceTree = "<group>";
-		};
-		93399CF12267149B00FB9F0E /* Trading */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Trading;
-			sourceTree = "<group>";
-		};
 		93399CF2226714DA00FB9F0E /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +179,169 @@
 				93399CF4226714EF00FB9F0E /* QDBaseViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		93399CFA22671FA100FB9F0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93399CFB22671FA100FB9F0E /* Home */,
+				93399CFC22671FA100FB9F0E /* Playing */,
+				93399CFD22671FA100FB9F0E /* Mine */,
+				93399CFE22671FA100FB9F0E /* Trading */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		93399CFB22671FA100FB9F0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		93399CFC22671FA100FB9F0E /* Playing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Playing;
+			sourceTree = "<group>";
+		};
+		93399CFD22671FA100FB9F0E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		93399CFE22671FA100FB9F0E /* Trading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trading;
+			sourceTree = "<group>";
+		};
+		93399CFF22671FA100FB9F0E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				93399D0022671FA100FB9F0E /* Home */,
+				93399D0122671FA100FB9F0E /* Playing */,
+				93399D0222671FA100FB9F0E /* Mine */,
+				93399D0322671FA100FB9F0E /* Trading */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		93399D0022671FA100FB9F0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				93399D0922671FCA00FB9F0E /* QDHomeViewController.h */,
+				93399D0A22671FCA00FB9F0E /* QDHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		93399D0122671FA100FB9F0E /* Playing */ = {
+			isa = PBXGroup;
+			children = (
+				93399D0C22671FD600FB9F0E /* QDPlayingViewController.h */,
+				93399D0D22671FD600FB9F0E /* QDPlayingViewController.m */,
+			);
+			path = Playing;
+			sourceTree = "<group>";
+		};
+		93399D0222671FA100FB9F0E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				93399D1222671FEA00FB9F0E /* QDMineViewController.h */,
+				93399D1322671FEA00FB9F0E /* QDMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		93399D0322671FA100FB9F0E /* Trading */ = {
+			isa = PBXGroup;
+			children = (
+				93399D0F22671FE000FB9F0E /* QDTradingViewController.h */,
+				93399D1022671FE000FB9F0E /* QDTradingViewController.m */,
+			);
+			path = Trading;
+			sourceTree = "<group>";
+		};
+		93399D0422671FA100FB9F0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93399D0522671FA100FB9F0E /* Home */,
+				93399D0622671FA100FB9F0E /* Playing */,
+				93399D0722671FA100FB9F0E /* Mine */,
+				93399D0822671FA100FB9F0E /* Trading */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		93399D0522671FA100FB9F0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		93399D0622671FA100FB9F0E /* Playing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Playing;
+			sourceTree = "<group>";
+		};
+		93399D0722671FA100FB9F0E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		93399D0822671FA100FB9F0E /* Trading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trading;
+			sourceTree = "<group>";
+		};
+		93399D152267211300FB9F0E /* QDCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				93399D162267211300FB9F0E /* QDTabBar */,
+			);
+			path = QDCustomView;
+			sourceTree = "<group>";
+		};
+		93399D162267211300FB9F0E /* QDTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				93399D172267219900FB9F0E /* QDTabBar.h */,
+				93399D182267219900FB9F0E /* QDTabBar.m */,
+				93399D1A226721BA00FB9F0E /* QDTabBarItem.h */,
+				93399D1B226721BA00FB9F0E /* QDTabBarItem.m */,
+			);
+			path = QDTabBar;
+			sourceTree = "<group>";
+		};
+		93399D2022672EDD00FB9F0E /* Marcos */ = {
+			isa = PBXGroup;
+			children = (
+				93399D2222672EE700FB9F0E /* QDGlobalFunc.h */,
+				93399D2122672EE700FB9F0E /* QDGlobalFunc.m */,
+				93399D2422672EEE00FB9F0E /* QDMarcoDefinition.h */,
+			);
+			path = Marcos;
+			sourceTree = "<group>";
+		};
+		93399D252267319D00FB9F0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93399D28226731A900FB9F0E /* CoreGraphics.framework */,
+				93399D262267319E00FB9F0E /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,10 +474,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */,
+				93399D192267219900FB9F0E /* QDTabBar.m in Sources */,
+				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */,
 				93399CC12267124000FB9F0E /* ViewController.m in Sources */,
+				93399D2322672EE700FB9F0E /* QDGlobalFunc.m in Sources */,
+				93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
+				93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */,
+				93399D0B22671FCA00FB9F0E /* QDHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,14 +657,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -500,14 +678,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
