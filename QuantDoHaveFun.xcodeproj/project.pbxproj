@@ -84,6 +84,38 @@
 		93399DEF226823AF00FB9F0E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DDA226823AF00FB9F0E /* UIView+WebCacheOperation.m */; };
 		93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DDB226823AF00FB9F0E /* UIView+WebCache.m */; };
 		93399DF1226823AF00FB9F0E /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DDF226823AF00FB9F0E /* UIButton+WebCache.m */; };
+		93399E102268487300FB9F0E /* UIView+TABControlAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF32268487300FB9F0E /* UIView+TABControlAnimation.m */; };
+		93399E112268487300FB9F0E /* TABAnimationMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF42268487300FB9F0E /* TABAnimationMethod.m */; };
+		93399E122268487300FB9F0E /* UITableView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF62268487300FB9F0E /* UITableView+Animated.m */; };
+		93399E132268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF72268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m */; };
+		93399E142268487300FB9F0E /* TABAnimatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF82268487300FB9F0E /* TABAnimatedObject.m */; };
+		93399E152268487300FB9F0E /* TABViewAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DF92268487300FB9F0E /* TABViewAnimated.m */; };
+		93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DFA2268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m */; };
+		93399E172268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DFC2268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m */; };
+		93399E182268487300FB9F0E /* UIView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DFD2268487300FB9F0E /* UIView+Animated.m */; };
+		93399E192268487300FB9F0E /* UICollectionView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399DFF2268487300FB9F0E /* UICollectionView+Animated.m */; };
+		93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E012268487300FB9F0E /* TABManagerMethod.m */; };
+		93399E1B2268487300FB9F0E /* TABBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E072268487300FB9F0E /* TABBaseCollectionViewCell.m */; };
+		93399E1C2268487300FB9F0E /* UIView+TABLayoutSubviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E0D2268487300FB9F0E /* UIView+TABLayoutSubviews.m */; };
+		93399E1D2268487300FB9F0E /* TABBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E0E2268487300FB9F0E /* TABBaseTableViewCell.m */; };
+		93399E20226848C100FB9F0E /* QDOrderField.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E1F226848C100FB9F0E /* QDOrderField.m */; };
+		93399E2322684C0500FB9F0E /* RankFirstViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E2222684C0500FB9F0E /* RankFirstViewCell.m */; };
+		93399E322268546F00FB9F0E /* UIView+HQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E2D2268546E00FB9F0E /* UIView+HQExtension.m */; };
+		93399E332268546F00FB9F0E /* UIColor+HQColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */; };
+		93399E342268546F00FB9F0E /* UIImage+HQImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E312268546F00FB9F0E /* UIImage+HQImage.m */; };
+		93399E372268548300FB9F0E /* HQTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E352268548200FB9F0E /* HQTabbar.m */; };
+		93399E3A2268548900FB9F0E /* HQMainTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E382268548900FB9F0E /* HQMainTabbarVC.m */; };
+		93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */; };
+		93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E592268663600FB9F0E /* LeftTableViewCell.m */; };
+		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
+		93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5F2268663600FB9F0E /* CategoryModel.m */; };
+		93399E6D2268663700FB9F0E /* QDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E612268663600FB9F0E /* QDTableViewController.m */; };
+		93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E622268663600FB9F0E /* TableViewHeaderView.m */; };
+		93399E6F2268663700FB9F0E /* UIViewController+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E662268663700FB9F0E /* UIViewController+Dealloc.m */; };
+		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
+		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
+		93399E742268672300FB9F0E /* liwushuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E722268672200FB9F0E /* liwushuo.json */; };
+		93399E752268672300FB9F0E /* meituan.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E732268672200FB9F0E /* meituan.json */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +291,69 @@
 		93399DDE226823AF00FB9F0E /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		93399DDF226823AF00FB9F0E /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		93399DE0226823AF00FB9F0E /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		93399DF32268487300FB9F0E /* UIView+TABControlAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TABControlAnimation.m"; sourceTree = "<group>"; };
+		93399DF42268487300FB9F0E /* TABAnimationMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABAnimationMethod.m; sourceTree = "<group>"; };
+		93399DF52268487300FB9F0E /* TABManagerMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABManagerMethod.h; sourceTree = "<group>"; };
+		93399DF62268487300FB9F0E /* UITableView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Animated.m"; sourceTree = "<group>"; };
+		93399DF72268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+TABLayoutSubviews.m"; sourceTree = "<group>"; };
+		93399DF82268487300FB9F0E /* TABAnimatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABAnimatedObject.m; sourceTree = "<group>"; };
+		93399DF92268487300FB9F0E /* TABViewAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABViewAnimated.m; sourceTree = "<group>"; };
+		93399DFA2268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TABLayoutSubviews.m"; sourceTree = "<group>"; };
+		93399DFB2268487300FB9F0E /* UIView+TABLayoutSubviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TABLayoutSubviews.h"; sourceTree = "<group>"; };
+		93399DFC2268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TABManagerMethod+ManagerCALayer.m"; sourceTree = "<group>"; };
+		93399DFD2268487300FB9F0E /* UIView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animated.m"; sourceTree = "<group>"; };
+		93399DFE2268487300FB9F0E /* TABBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		93399DFF2268487300FB9F0E /* UICollectionView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Animated.m"; sourceTree = "<group>"; };
+		93399E002268487300FB9F0E /* TABBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABBaseTableViewCell.h; sourceTree = "<group>"; };
+		93399E012268487300FB9F0E /* TABManagerMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABManagerMethod.m; sourceTree = "<group>"; };
+		93399E022268487300FB9F0E /* TABAnimationMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABAnimationMethod.h; sourceTree = "<group>"; };
+		93399E032268487300FB9F0E /* UIView+TABControlAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TABControlAnimation.h"; sourceTree = "<group>"; };
+		93399E042268487300FB9F0E /* TABAnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABAnimatedObject.h; sourceTree = "<group>"; };
+		93399E052268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+TABLayoutSubviews.h"; sourceTree = "<group>"; };
+		93399E062268487300FB9F0E /* UITableView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Animated.h"; sourceTree = "<group>"; };
+		93399E072268487300FB9F0E /* TABBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		93399E082268487300FB9F0E /* TABAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABAnimated.h; sourceTree = "<group>"; };
+		93399E092268487300FB9F0E /* UIView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animated.h"; sourceTree = "<group>"; };
+		93399E0A2268487300FB9F0E /* TABManagerMethod+ManagerCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TABManagerMethod+ManagerCALayer.h"; sourceTree = "<group>"; };
+		93399E0B2268487300FB9F0E /* TABViewAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABViewAnimated.h; sourceTree = "<group>"; };
+		93399E0C2268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TABLayoutSubviews.h"; sourceTree = "<group>"; };
+		93399E0D2268487300FB9F0E /* UIView+TABLayoutSubviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TABLayoutSubviews.m"; sourceTree = "<group>"; };
+		93399E0E2268487300FB9F0E /* TABBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABBaseTableViewCell.m; sourceTree = "<group>"; };
+		93399E0F2268487300FB9F0E /* UICollectionView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Animated.h"; sourceTree = "<group>"; };
+		93399E1E226848C100FB9F0E /* QDOrderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDOrderField.h; sourceTree = "<group>"; };
+		93399E1F226848C100FB9F0E /* QDOrderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDOrderField.m; sourceTree = "<group>"; };
+		93399E2122684C0500FB9F0E /* RankFirstViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankFirstViewCell.h; sourceTree = "<group>"; };
+		93399E2222684C0500FB9F0E /* RankFirstViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankFirstViewCell.m; sourceTree = "<group>"; };
+		93399E2C2268546E00FB9F0E /* UIView+HQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HQExtension.h"; sourceTree = "<group>"; };
+		93399E2D2268546E00FB9F0E /* UIView+HQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HQExtension.m"; sourceTree = "<group>"; };
+		93399E2E2268546F00FB9F0E /* UIImage+HQImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HQImage.h"; sourceTree = "<group>"; };
+		93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HQColor.m"; sourceTree = "<group>"; };
+		93399E302268546F00FB9F0E /* UIColor+HQColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HQColor.h"; sourceTree = "<group>"; };
+		93399E312268546F00FB9F0E /* UIImage+HQImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HQImage.m"; sourceTree = "<group>"; };
+		93399E352268548200FB9F0E /* HQTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTabbar.m; sourceTree = "<group>"; };
+		93399E362268548300FB9F0E /* HQTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTabbar.h; sourceTree = "<group>"; };
+		93399E382268548900FB9F0E /* HQMainTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQMainTabbarVC.m; sourceTree = "<group>"; };
+		93399E392268548900FB9F0E /* HQMainTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQMainTabbarVC.h; sourceTree = "<group>"; };
+		93399E3B22685CD100FB9F0E /* RankFirstHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankFirstHeadView.h; sourceTree = "<group>"; };
+		93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankFirstHeadView.m; sourceTree = "<group>"; };
+		93399E592268663600FB9F0E /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
+		93399E5A2268663600FB9F0E /* QDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTableViewController.h; sourceTree = "<group>"; };
+		93399E5B2268663600FB9F0E /* RightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightTableViewCell.m; sourceTree = "<group>"; };
+		93399E5C2268663600FB9F0E /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		93399E5D2268663600FB9F0E /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
+		93399E5E2268663600FB9F0E /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
+		93399E5F2268663600FB9F0E /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		93399E602268663600FB9F0E /* RightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightTableViewCell.h; sourceTree = "<group>"; };
+		93399E612268663600FB9F0E /* QDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTableViewController.m; sourceTree = "<group>"; };
+		93399E622268663600FB9F0E /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
+		93399E642268663700FB9F0E /* LJCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
+		93399E662268663700FB9F0E /* UIViewController+Dealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Dealloc.m"; sourceTree = "<group>"; };
+		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
+		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		93399E692268663700FB9F0E /* UIViewController+Dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dealloc.h"; sourceTree = "<group>"; };
+		93399E722268672200FB9F0E /* liwushuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = liwushuo.json; sourceTree = "<group>"; };
+		93399E732268672200FB9F0E /* meituan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meituan.json; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,6 +424,9 @@
 		93399CBB2267124000FB9F0E /* QuantDoHaveFun */ = {
 			isa = PBXGroup;
 			children = (
+				93399E722268672200FB9F0E /* liwushuo.json */,
+				93399E732268672200FB9F0E /* meituan.json */,
+				93399E2B2268546200FB9F0E /* Category */,
 				93399D6822681A0900FB9F0E /* Network */,
 				93399D562268195700FB9F0E /* Utils */,
 				93399D34226815A300FB9F0E /* Config */,
@@ -394,6 +492,12 @@
 		93399CFB22671FA100FB9F0E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93399E582268663600FB9F0E /* TableView */,
+				93399E632268663700FB9F0E /* Tools */,
+				93399E2122684C0500FB9F0E /* RankFirstViewCell.h */,
+				93399E2222684C0500FB9F0E /* RankFirstViewCell.m */,
+				93399E3B22685CD100FB9F0E /* RankFirstHeadView.h */,
+				93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -553,6 +657,10 @@
 				93399D182267219900FB9F0E /* QDTabBar.m */,
 				93399D1A226721BA00FB9F0E /* QDTabBarItem.h */,
 				93399D1B226721BA00FB9F0E /* QDTabBarItem.m */,
+				93399E362268548300FB9F0E /* HQTabbar.h */,
+				93399E352268548200FB9F0E /* HQTabbar.m */,
+				93399E392268548900FB9F0E /* HQMainTabbarVC.h */,
+				93399E382268548900FB9F0E /* HQMainTabbarVC.m */,
 			);
 			path = QDTabBar;
 			sourceTree = "<group>";
@@ -560,6 +668,8 @@
 		93399D2022672EDD00FB9F0E /* Marcos */ = {
 			isa = PBXGroup;
 			children = (
+				93399E1E226848C100FB9F0E /* QDOrderField.h */,
+				93399E1F226848C100FB9F0E /* QDOrderField.m */,
 				93399D2222672EE700FB9F0E /* QDGlobalFunc.h */,
 				93399D2122672EE700FB9F0E /* QDGlobalFunc.m */,
 				93399D2422672EEE00FB9F0E /* QDMarcoDefinition.h */,
@@ -597,6 +707,7 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				93399DF22268487300FB9F0E /* TABAnimated */,
 				93399DBD226823AE00FB9F0E /* SDWebImage */,
 				93399DAF2268231200FB9F0E /* QDRefreshView */,
 				93399DA12268224400FB9F0E /* GradientProgress */,
@@ -768,6 +879,85 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		93399DF22268487300FB9F0E /* TABAnimated */ = {
+			isa = PBXGroup;
+			children = (
+				93399DF32268487300FB9F0E /* UIView+TABControlAnimation.m */,
+				93399DF42268487300FB9F0E /* TABAnimationMethod.m */,
+				93399DF52268487300FB9F0E /* TABManagerMethod.h */,
+				93399DF62268487300FB9F0E /* UITableView+Animated.m */,
+				93399DF72268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m */,
+				93399DF82268487300FB9F0E /* TABAnimatedObject.m */,
+				93399DF92268487300FB9F0E /* TABViewAnimated.m */,
+				93399DFA2268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m */,
+				93399DFB2268487300FB9F0E /* UIView+TABLayoutSubviews.h */,
+				93399DFC2268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m */,
+				93399DFD2268487300FB9F0E /* UIView+Animated.m */,
+				93399DFE2268487300FB9F0E /* TABBaseCollectionViewCell.h */,
+				93399DFF2268487300FB9F0E /* UICollectionView+Animated.m */,
+				93399E002268487300FB9F0E /* TABBaseTableViewCell.h */,
+				93399E012268487300FB9F0E /* TABManagerMethod.m */,
+				93399E022268487300FB9F0E /* TABAnimationMethod.h */,
+				93399E032268487300FB9F0E /* UIView+TABControlAnimation.h */,
+				93399E042268487300FB9F0E /* TABAnimatedObject.h */,
+				93399E052268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.h */,
+				93399E062268487300FB9F0E /* UITableView+Animated.h */,
+				93399E072268487300FB9F0E /* TABBaseCollectionViewCell.m */,
+				93399E082268487300FB9F0E /* TABAnimated.h */,
+				93399E092268487300FB9F0E /* UIView+Animated.h */,
+				93399E0A2268487300FB9F0E /* TABManagerMethod+ManagerCALayer.h */,
+				93399E0B2268487300FB9F0E /* TABViewAnimated.h */,
+				93399E0C2268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.h */,
+				93399E0D2268487300FB9F0E /* UIView+TABLayoutSubviews.m */,
+				93399E0E2268487300FB9F0E /* TABBaseTableViewCell.m */,
+				93399E0F2268487300FB9F0E /* UICollectionView+Animated.h */,
+			);
+			path = TABAnimated;
+			sourceTree = "<group>";
+		};
+		93399E2B2268546200FB9F0E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				93399E302268546F00FB9F0E /* UIColor+HQColor.h */,
+				93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */,
+				93399E2E2268546F00FB9F0E /* UIImage+HQImage.h */,
+				93399E312268546F00FB9F0E /* UIImage+HQImage.m */,
+				93399E2C2268546E00FB9F0E /* UIView+HQExtension.h */,
+				93399E2D2268546E00FB9F0E /* UIView+HQExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		93399E582268663600FB9F0E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				93399E5E2268663600FB9F0E /* LeftTableViewCell.h */,
+				93399E592268663600FB9F0E /* LeftTableViewCell.m */,
+				93399E5A2268663600FB9F0E /* QDTableViewController.h */,
+				93399E612268663600FB9F0E /* QDTableViewController.m */,
+				93399E602268663600FB9F0E /* RightTableViewCell.h */,
+				93399E5B2268663600FB9F0E /* RightTableViewCell.m */,
+				93399E5C2268663600FB9F0E /* CategoryModel.h */,
+				93399E5F2268663600FB9F0E /* CategoryModel.m */,
+				93399E5D2268663600FB9F0E /* TableViewHeaderView.h */,
+				93399E622268663600FB9F0E /* TableViewHeaderView.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		93399E632268663700FB9F0E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				93399E642268663700FB9F0E /* LJCollectionViewFlowLayout.h */,
+				93399E652268663700FB9F0E /* NSObject+Property.h */,
+				93399E662268663700FB9F0E /* UIViewController+Dealloc.m */,
+				93399E672268663700FB9F0E /* NSObject+Property.m */,
+				93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */,
+				93399E692268663700FB9F0E /* UIViewController+Dealloc.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -874,8 +1064,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
+				93399E742268672300FB9F0E /* liwushuo.json in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
+				93399E752268672300FB9F0E /* meituan.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,29 +1142,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				93399DE3226823AF00FB9F0E /* UIImageView+HighlightedWebCache.m in Sources */,
+				93399E102268487300FB9F0E /* UIView+TABControlAnimation.m in Sources */,
 				93399DE8226823AF00FB9F0E /* SDWebImagePrefetcher.m in Sources */,
+				93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */,
+				93399E6F2268663700FB9F0E /* UIViewController+Dealloc.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
 				93399DEC226823AF00FB9F0E /* UIImageView+WebCache.m in Sources */,
+				93399E142268487300FB9F0E /* TABAnimatedObject.m in Sources */,
 				93399D8022681A3B00FB9F0E /* QDResponseObject.m in Sources */,
 				93399D33226814FC00FB9F0E /* RankThirdViewController.m in Sources */,
 				93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */,
 				93399D192267219900FB9F0E /* QDTabBar.m in Sources */,
 				93399DEE226823AF00FB9F0E /* SDImageCacheConfig.m in Sources */,
+				93399E6D2268663700FB9F0E /* QDTableViewController.m in Sources */,
 				93399D7B22681A0900FB9F0E /* QDUploadImageManager.m in Sources */,
 				93399D8822681C4900FB9F0E /* QDUserDefaults.m in Sources */,
+				93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */,
+				93399E182268487300FB9F0E /* UIView+Animated.m in Sources */,
 				93399D9D2268222500FB9F0E /* STConst.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
+				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
 				93399D3A226815A300FB9F0E /* Macro.m in Sources */,
 				93399D2D226814EA00FB9F0E /* RankFirstViewController.m in Sources */,
 				93399D512268191E00FB9F0E /* QDMineInfoTableViewCell.m in Sources */,
 				93399DEB226823AF00FB9F0E /* NSData+ImageContentType.m in Sources */,
 				93399D30226814F300FB9F0E /* RankSecondViewController.m in Sources */,
+				93399E1D2268487300FB9F0E /* TABBaseTableViewCell.m in Sources */,
 				93399DE2226823AF00FB9F0E /* SDWebImageDecoder.m in Sources */,
+				93399E342268546F00FB9F0E /* UIImage+HQImage.m in Sources */,
+				93399E1B2268487300FB9F0E /* TABBaseCollectionViewCell.m in Sources */,
+				93399E702268663700FB9F0E /* NSObject+Property.m in Sources */,
 				93399D7C22681A0900FB9F0E /* QDUploadUtils.m in Sources */,
 				93399DA02268222500FB9F0E /* UIView+ST.m in Sources */,
+				93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */,
 				93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */,
 				93399DF1226823AF00FB9F0E /* UIButton+WebCache.m in Sources */,
+				93399E2322684C0500FB9F0E /* RankFirstViewCell.m in Sources */,
 				93399DBC2268232A00FB9F0E /* WXProgressHUD.m in Sources */,
+				93399E20226848C100FB9F0E /* QDOrderField.m in Sources */,
+				93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
 				93399D5D2268196300FB9F0E /* STPhotoKitController.m in Sources */,
 				93399DE4226823AF00FB9F0E /* SDWebImageDownloader.m in Sources */,
@@ -983,15 +1191,19 @@
 				93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */,
 				93399D39226815A300FB9F0E /* UIColor+Extention.m in Sources */,
 				93399DA72268228900FB9F0E /* QDSettingViewController.m in Sources */,
+				93399E3A2268548900FB9F0E /* HQMainTabbarVC.m in Sources */,
 				93399D502268191E00FB9F0E /* QDBackgroundView.m in Sources */,
+				93399E132268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m in Sources */,
 				93399D7822681A0900FB9F0E /* QDServiceClient.m in Sources */,
 				93399DA42268224400FB9F0E /* MQGradientProgressView.m in Sources */,
 				93399DED226823AF00FB9F0E /* NSImage+WebCache.m in Sources */,
+				93399E152268487300FB9F0E /* TABViewAnimated.m in Sources */,
 				93399D4D2268191E00FB9F0E /* QDMineTableHeaderView.m in Sources */,
 				93399DB62268231200FB9F0E /* QDRefreshFooter.m in Sources */,
 				93399DE1226823AF00FB9F0E /* SDWebImageManager.m in Sources */,
 				93399D542268191E00FB9F0E /* QDLogonWithNoFinancialAccountView.m in Sources */,
 				93399DE6226823AF00FB9F0E /* UIImage+MultiFormat.m in Sources */,
+				93399E332268546F00FB9F0E /* UIColor+HQColor.m in Sources */,
 				93399DE5226823AF00FB9F0E /* UIImage+GIF.m in Sources */,
 				93399D7722681A0900FB9F0E /* QDNetworkCache.m in Sources */,
 				93399D64226819C800FB9F0E /* UserMoneyDTO.m in Sources */,
@@ -1003,17 +1215,27 @@
 				93399D9F2268222500FB9F0E /* UIImage+ST.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
 				93399D7922681A0900FB9F0E /* QDServiceErrorHandler.m in Sources */,
+				93399E172268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m in Sources */,
+				93399E192268487300FB9F0E /* UICollectionView+Animated.m in Sources */,
+				93399E322268546F00FB9F0E /* UIView+HQExtension.m in Sources */,
 				93399DEF226823AF00FB9F0E /* UIView+WebCacheOperation.m in Sources */,
+				93399E122268487300FB9F0E /* UITableView+Animated.m in Sources */,
+				93399E1C2268487300FB9F0E /* UIView+TABLayoutSubviews.m in Sources */,
 				93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */,
 				93399D8422681AE700FB9F0E /* SPButton.m in Sources */,
+				93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */,
 				93399D66226819C800FB9F0E /* UserCreditDTO.m in Sources */,
 				93399D522268191E00FB9F0E /* QDMineHeaderFinancialAccountView.m in Sources */,
 				93399DE9226823AF00FB9F0E /* SDImageCache.m in Sources */,
 				93399D0B22671FCA00FB9F0E /* QDHomeViewController.m in Sources */,
 				93399DEA226823AF00FB9F0E /* SDWebImageDownloaderOperation.m in Sources */,
+				93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */,
+				93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */,
 				93399D4F2268191E00FB9F0E /* QDMineSectionHeaderView.m in Sources */,
 				93399DB82268231200FB9F0E /* QDGifRefreshHeader.m in Sources */,
+				93399E112268487300FB9F0E /* TABAnimationMethod.m in Sources */,
 				93399D532268191E00FB9F0E /* QDMineHeaderWithdrawView.m in Sources */,
+				93399E372268548300FB9F0E /* HQTabbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1407,7 @@
 			baseConfigurationReference = 07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1208,6 +1431,7 @@
 			baseConfigurationReference = F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

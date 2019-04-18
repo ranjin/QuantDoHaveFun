@@ -20,6 +20,10 @@
     self.view.backgroundColor = APP_WHITECOLOR;
     self.progressViewIsNaughty = YES;
     self.progressWidth = 10;
+    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(65, SafeAreaTopHeight-18, 35, 35)];
+//    img.backgroundColor = APP_BLUECOLOR;
+    img.image = [UIImage imageNamed:@"icon_map"];
+    [self.view addSubview:img];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,11 +47,11 @@
 }
 
 - (CGFloat)titleSizeNormal{
-    return 15;
+    return 14;
 }
 
 - (CGFloat)titleSizeSelected{
-    return 16;
+    return 18;
 }
 
 - (WMMenuViewStyle)menuViewStyle{
@@ -91,14 +95,13 @@
 
 - (CGFloat)menuView:(WMMenuView *)menu widthForItemAtIndex:(NSInteger)index {
     CGFloat width = [super menuView:menu widthForItemAtIndex:index];
-    return width + 20;
+    return width + 10;
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     menuView.style = WMMenuViewStyleFloodHollow;
     self.menuView.style = WMMenuViewStyleLine;
-    CGFloat leftMargin = self.showOnNavigationBar ? 50 : 0;
-    return CGRectMake(leftMargin, SafeAreaTopHeight-40, self.view.frame.size.width - 2*leftMargin, 44);
+    return CGRectMake(95, SafeAreaTopHeight-24, SCREEN_WIDTH-95-60, 44);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {

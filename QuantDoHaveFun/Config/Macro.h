@@ -93,7 +93,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),blo
 #define APP_CLEARCOLOR        [UIColor clearColor]
 #define APP_LABELCOLOR        RGB_COLOR_String(@"F75D21")
 #define APP_LABELBGCOLOR        RGB_COLOR_String(@"FFE1D5")
-#define APP_BLUECOLOR        RGB_COLOR_String(@"#02AAB0")
+#define APP_BLUECOLOR        RGB_COLOR_String(@"#00C1B1")
 
 
 #define APP_GRAYTEXTCOLOR        RGB_COLOR_String(@"#62656E")   //灰色字体

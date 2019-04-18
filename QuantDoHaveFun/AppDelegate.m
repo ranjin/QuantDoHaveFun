@@ -7,13 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "QDTabBar.h"
+#import "HQMainTabbarVC.h"
 #import "QDHomeViewController.h"
 #import "QDPlayingViewController.h"
 #import "QDTradingViewController.h"
 #import "QDMineViewController.h"
-@interface AppDelegate ()<QDTabBarDelegate, UIActionSheetDelegate>
-
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
@@ -23,54 +22,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    HQMainTabbarVC *tabVC = [[HQMainTabbarVC alloc]init];
+    self.window.rootViewController = tabVC;
     
-    [self setRootVC];
-    return YES;
-}
-
-- (void)setRootVC{
-    QDHomeViewController *homeVC = [[QDHomeViewController alloc] init];
-    QDPlayingViewController *playVC = [[QDPlayingViewController alloc] init];
-    
-    QDTradingViewController *tradeVC = [[QDTradingViewController alloc] init];
-    
-    QDMineViewController *mineVC = [[QDMineViewController alloc] init];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[homeVC, playVC, tradeVC, mineVC];
-    
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    QDTabBar *tabBar = [[QDTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
-    
-    tabBar.tabBarItemAttributes = @[@{QDTabBarItemAttributeTitle : @"首页", QDTabBarItemAttributeNormalImageName : @"home_normal", QDTabBarItemAttributeSelectedImageName : @"home_highlight", QDTabBarItemAttributeType : @(QDTabBarItemNormal)},
-                                    @{QDTabBarItemAttributeTitle : @"去玩", QDTabBarItemAttributeNormalImageName : @"mycity_normal", QDTabBarItemAttributeSelectedImageName : @"mycity_highlight", QDTabBarItemAttributeType : @(QDTabBarItemNormal)},
-                                    @{QDTabBarItemAttributeTitle : @"", QDTabBarItemAttributeNormalImageName : @"post_normal", QDTabBarItemAttributeSelectedImageName : @"post_normal", QDTabBarItemAttributeType : @(QDTabBarItemRise)},
-                                    @{QDTabBarItemAttributeTitle : @"玩贝", QDTabBarItemAttributeNormalImageName : @"message_normal", QDTabBarItemAttributeSelectedImageName : @"message_highlight", QDTabBarItemAttributeType : @(QDTabBarItemNormal)},
-                                    @{QDTabBarItemAttributeTitle : @"我的", QDTabBarItemAttributeNormalImageName : @"account_normal", QDTabBarItemAttributeSelectedImageName : @"account_highlight", QDTabBarItemAttributeType : @(QDTabBarItemNormal)}];
-    tabBar.delegate = self;
-    [tabBarController.tabBar addSubview:tabBar];
-    self.window.rootViewController = tabBarController;
-}
-
-#pragma mark - QDTabBarDelegate
-- (void)tabBarDidSelectedRiseButton{
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UIViewController *viewController = tabBarController.selectedViewController;
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
-    [actionSheet showInView:viewController.view];
-}
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSLog(@"buttonIndex = %ld", buttonIndex);
+    [self.window makeKeyAndVisible];    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
