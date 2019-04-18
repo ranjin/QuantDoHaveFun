@@ -6,11 +6,11 @@
 //  Copyright © 2019 Chalres Ran. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WMPageController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QDHomeViewController : UIViewController
+@interface QDHomeViewController : WMPageController
 
 @end
 

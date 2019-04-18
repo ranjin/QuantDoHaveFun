@@ -9,7 +9,16 @@
 #ifndef QDHaveFun_pch
 #define QDHaveFun_pch
 #import "QDMarcoDefinition.h"
-
+#import "UIColor+Extention.h"
+#import "Macro.h"
+#import "QDUserDefaults.h"
+#import <Masonry.h>
+#import <YYModel/YYModel.h>
+#import "QDServiceClient.h"
+#import "QDResponseObject.h"
+#import <Toast/Toast.h>
+#import "WXApi.h"
+#import "WXProgressHUD.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

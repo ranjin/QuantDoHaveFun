@@ -201,8 +201,9 @@ item.alpha = 0.0; \
 
 
 //字体
-#define QDFont(size)                    [UIFont systemFontOfSize:FontSize(size)]
-#define QDBoldFont(size)                [UIFont boldSystemFontOfSize:FontSize(size)]
+#define QDFont(size)    [UIFont systemFontOfSize:size]
+
+#define QDBoldFont(size)    [UIFont boldSystemFontOfSize:size]
 
 /**
  *  字体适配 我在PCH文件定义了一个方法
