@@ -74,7 +74,7 @@
     }];
     
     [_thePic mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.top.and.width.equalTo(_backView);
+        make.top.and.width.equalTo(_backView);
         make.height.mas_equalTo(203);
     }];
 
@@ -89,9 +89,9 @@
         make.top.equalTo(self.titleLab);
         make.width.and.height.mas_equalTo(15);
     }];
-    
+
     [_saveLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_save);
+        make.centerX.equalTo(_save);
         make.top.equalTo(_save.mas_bottom).offset(8);
     }];
 }

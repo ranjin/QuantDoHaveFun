@@ -12,7 +12,7 @@
 #import "CategoryModel.h"
 #import "RankSecondViewController.h"
 
-static float kLeftTableViewWidth = 80.f;
+static float kLeftTableViewWidth = 92.f;
 
 @interface RankSecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -96,11 +96,11 @@ static float kLeftTableViewWidth = 80.f;
         _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftTableViewWidth, SCREEN_HEIGHT)];
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
-        _leftTableView.rowHeight = 55;
-        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        _leftTableView.rowHeight = 44;
+//        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _leftTableView.tableFooterView = [UIView new];
         _leftTableView.showsVerticalScrollIndicator = NO;
-        _leftTableView.separatorColor = [UIColor clearColor];
+        _leftTableView.separatorColor = [UIColor colorWithHexString:@"#F3F7F9"];
         [_leftTableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Left];
     }
     return _leftTableView;
@@ -110,12 +110,14 @@ static float kLeftTableViewWidth = 80.f;
 {
     if (!_rightTableView)
     {
-        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(kLeftTableViewWidth, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(kLeftTableViewWidth, 0, SCREEN_WIDTH-kLeftTableViewWidth, SCREEN_HEIGHT)];
         _rightTableView.delegate = self;
         _rightTableView.dataSource = self;
-        _rightTableView.rowHeight = 80;
+        _rightTableView.rowHeight = 125;
+        _rightTableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
         _rightTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _rightTableView.showsVerticalScrollIndicator = NO;
+        _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_rightTableView registerClass:[RightTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Right];
     }
     return _rightTableView;
@@ -152,6 +154,7 @@ static float kLeftTableViewWidth = 80.f;
     if (_leftTableView == tableView)
     {
         LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Left forIndexPath:indexPath];
+        cell.backgroundColor = APP_WHITECOLOR;
         FoodModel *model = self.categoryData[indexPath.row];
         cell.name.text = model.name;
         return cell;
@@ -160,6 +163,7 @@ static float kLeftTableViewWidth = 80.f;
     {
         RightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Right forIndexPath:indexPath];
         FoodModel *model = self.foodData[indexPath.section][indexPath.row];
+        cell.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
         cell.model = model;
         return cell;
     }

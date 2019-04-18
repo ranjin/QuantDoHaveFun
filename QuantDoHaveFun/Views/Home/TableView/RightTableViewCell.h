@@ -14,6 +14,11 @@
 
 @interface RightTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UIImageView *imageV; 
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *priceLabel;
+
 @property (nonatomic, strong) FoodModel *model;
 
 @end

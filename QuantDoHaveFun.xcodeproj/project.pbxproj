@@ -114,8 +114,8 @@
 		93399E6F2268663700FB9F0E /* UIViewController+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E662268663700FB9F0E /* UIViewController+Dealloc.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
-		93399E742268672300FB9F0E /* liwushuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E722268672200FB9F0E /* liwushuo.json */; };
 		93399E752268672300FB9F0E /* meituan.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E732268672200FB9F0E /* meituan.json */; };
+		93399E782268767900FB9F0E /* QDCustomTourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E772268767900FB9F0E /* QDCustomTourCell.m */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -352,8 +352,9 @@
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		93399E692268663700FB9F0E /* UIViewController+Dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dealloc.h"; sourceTree = "<group>"; };
-		93399E722268672200FB9F0E /* liwushuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = liwushuo.json; sourceTree = "<group>"; };
 		93399E732268672200FB9F0E /* meituan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meituan.json; sourceTree = "<group>"; };
+		93399E762268767900FB9F0E /* QDCustomTourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCustomTourCell.h; sourceTree = "<group>"; };
+		93399E772268767900FB9F0E /* QDCustomTourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCustomTourCell.m; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -424,7 +425,6 @@
 		93399CBB2267124000FB9F0E /* QuantDoHaveFun */ = {
 			isa = PBXGroup;
 			children = (
-				93399E722268672200FB9F0E /* liwushuo.json */,
 				93399E732268672200FB9F0E /* meituan.json */,
 				93399E2B2268546200FB9F0E /* Category */,
 				93399D6822681A0900FB9F0E /* Network */,
@@ -492,6 +492,8 @@
 		93399CFB22671FA100FB9F0E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93399E762268767900FB9F0E /* QDCustomTourCell.h */,
+				93399E772268767900FB9F0E /* QDCustomTourCell.m */,
 				93399E582268663600FB9F0E /* TableView */,
 				93399E632268663700FB9F0E /* Tools */,
 				93399E2122684C0500FB9F0E /* RankFirstViewCell.h */,
@@ -1064,7 +1066,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
-				93399E742268672300FB9F0E /* liwushuo.json in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
 				93399E752268672300FB9F0E /* meituan.json in Resources */,
@@ -1180,6 +1181,7 @@
 				93399E2322684C0500FB9F0E /* RankFirstViewCell.m in Sources */,
 				93399DBC2268232A00FB9F0E /* WXProgressHUD.m in Sources */,
 				93399E20226848C100FB9F0E /* QDOrderField.m in Sources */,
+				93399E782268767900FB9F0E /* QDCustomTourCell.m in Sources */,
 				93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
 				93399D5D2268196300FB9F0E /* STPhotoKitController.m in Sources */,

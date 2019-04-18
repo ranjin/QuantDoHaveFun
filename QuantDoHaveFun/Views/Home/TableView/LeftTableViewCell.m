@@ -24,16 +24,20 @@
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.name = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 60, 40)];
-        self.name.numberOfLines = 0;
-        self.name.font = [UIFont systemFontOfSize:15];
-        self.name.textColor = APP_ORANGECOLOR;
-        self.name.highlightedTextColor = APP_WHITECOLOR;
-        [self.contentView addSubview:self.name];
-
-        self.yellowView = [[UIView alloc] initWithFrame:CGRectMake(0, 5, 5, 45)];
-        self.yellowView.backgroundColor = APP_WHITECOLOR;
+        self.yellowView = [[UIView alloc] initWithFrame:CGRectMake(5, 15, 3, 15)];
+        self.yellowView.backgroundColor = APP_BLUECOLOR;
         [self.contentView addSubview:self.yellowView];
+        
+        self.name = [[UILabel alloc] init];
+        self.name.font = [UIFont systemFontOfSize:15];
+        self.name.textColor = APP_GRAYCOLOR;
+        self.name.highlightedTextColor = APP_BLUECOLOR;
+        [self.contentView addSubview:self.name];
+        [self.name mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.yellowView);
+            make.left.equalTo(self.yellowView.mas_right).offset(9);
+        }];
+       
     }
     return self;
 }
@@ -43,7 +47,7 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 
-    self.contentView.backgroundColor = selected ? [UIColor whiteColor] : [UIColor colorWithWhite:0 alpha:0.1];
+    self.contentView.backgroundColor = selected ? [UIColor colorWithHexString:@"#F3F7F9"] : [UIColor whiteColor];
     self.highlighted = selected;
     self.name.highlighted = selected;
     self.yellowView.hidden = !selected;
