@@ -1,0 +1,82 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
+  - FSCalendar (2.8.0)
+  - HMSegmentedControl (1.5.5)
+  - IQKeyboardManager (6.2.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.7)
+  - Toast (4.0.0)
+  - TYAlertView (0.1.1)
+  - WMPageController (2.5.2)
+  - YYCache (1.0.4)
+  - YYModel (1.0.4)
+  - zhPopupController (1.0.3)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DZNEmptyDataSet
+  - FSCalendar
+  - HMSegmentedControl
+  - IQKeyboardManager
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - Toast
+  - TYAlertView
+  - WMPageController
+  - YYCache
+  - YYModel
+  - zhPopupController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FSCalendar
+    - HMSegmentedControl
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - Toast
+    - TYAlertView
+    - WMPageController
+    - YYCache
+    - YYModel
+    - zhPopupController
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TYAlertView: 5dd26bb314f65b87fe15ab2d9b06276d42587fd7
+  WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  zhPopupController: 4e6bd734062cb9c7ebe8113568550bade168bed7
+
+PODFILE CHECKSUM: 7466ea01c25532af21bce71322cd350d5639e15d
+
+COCOAPODS: 1.6.1
