@@ -14,6 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AMap2DMap (5.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.5.6)
+  - AMapLocation (2.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (6.6.0):
+    - AMapFoundation (~> 1.4)
   - DZNEmptyDataSet (1.8.1)
   - FSCalendar (2.8.0)
   - HMSegmentedControl (1.5.5)
@@ -30,6 +37,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AMap2DMap
+  - AMapLocation
+  - AMapSearch
   - DZNEmptyDataSet
   - FSCalendar
   - HMSegmentedControl
@@ -47,6 +57,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
     - DZNEmptyDataSet
     - FSCalendar
     - HMSegmentedControl
@@ -63,6 +77,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
+  AMapFoundation: 20fce2a12cd152e1092afdd04379cdac21932185
+  AMapLocation: cf024b53dc03663efb4ea4bcce27d4cce58bb97a
+  AMapSearch: def5983c8ca1a6d7430970046dc814f6e337621d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
@@ -77,6 +95,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   zhPopupController: 4e6bd734062cb9c7ebe8113568550bade168bed7
 
-PODFILE CHECKSUM: 7466ea01c25532af21bce71322cd350d5639e15d
+PODFILE CHECKSUM: 3565189f92fc2b30b455033fd785527eba20a709
 
 COCOAPODS: 1.6.1

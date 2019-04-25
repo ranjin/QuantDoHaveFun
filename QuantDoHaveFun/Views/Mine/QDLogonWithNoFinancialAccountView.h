@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *settingBtn;
 @property (nonatomic, strong) UIButton *voiceBtn;
 
-@property (nonatomic, strong) UIImageView *picView;
+@property (nonatomic, strong) UIButton *picView;    //换成button
 @property (nonatomic, strong) UILabel *userNameLab;
 @property (nonatomic, strong) UILabel *userIdLab;
 @property (nonatomic, strong) UIImageView *levelPic;

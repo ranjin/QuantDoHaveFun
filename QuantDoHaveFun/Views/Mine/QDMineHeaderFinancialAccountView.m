@@ -16,15 +16,16 @@
         [_settingBtn setImage:[UIImage imageNamed:@"icon_setting"] forState:UIControlStateNormal];
         [self addSubview:_settingBtn];
         
-//        _voiceBtn = [[UIButton alloc] init];
-//        [_voiceBtn setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
-//        [self addSubview:_voiceBtn];
+        //        _voiceBtn = [[UIButton alloc] init];
+        //        [_voiceBtn setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
+        //        [self addSubview:_voiceBtn];
         
-        _picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+        _picView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+        
         _picView.layer.cornerRadius = SCREEN_WIDTH*0.06;
         _picView.layer.masksToBounds = YES;
         _picView.userInteractionEnabled = YES;
-        [_picView setImage:[UIImage imageNamed:@"icon_headerPic"]];
+        [_picView setImage:[UIImage imageNamed:@"icon_headerPic"] forState:UIControlStateNormal];
         [self addSubview:_picView];
         
         _userNameLab = [[UILabel alloc] init];
@@ -173,11 +174,11 @@
         make.top.equalTo(_settingBtn.mas_bottom).offset(13);
         make.width.and.height.mas_equalTo(44);
     }];
-//    [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(self.settingBtn);
-//        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.05));
-//    }];
-//
+    //    [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.centerY.equalTo(self.settingBtn);
+    //        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.05));
+    //    }];
+    //
     
     [_userNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_settingBtn.mas_bottom).offset(9);
@@ -212,7 +213,7 @@
         make.width.mas_equalTo(359);
         make.height.mas_equalTo(202);
     }];
-
+    
     [_progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_info1Lab);
         make.top.equalTo(_info1Lab.mas_bottom).offset(7);

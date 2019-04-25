@@ -1,0 +1,13 @@
+//
+//  HotelCouponDetailDTO.m
+//  TravelPoints
+//
+//  Created by WJ-Shao on 2019/3/28.
+//  Copyright © 2019 Charles Ran. All rights reserved.
+//
+
+#import "HotelCouponDetailDTO.h"
+
+@implementation HotelCouponDetailDTO
+
+@end

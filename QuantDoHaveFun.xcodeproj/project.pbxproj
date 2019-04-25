@@ -112,7 +112,6 @@
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
 		93399E752268672300FB9F0E /* meituan.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E732268672200FB9F0E /* meituan.json */; };
-		93399E782268767900FB9F0E /* QDCustomTourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E772268767900FB9F0E /* QDCustomTourCell.m */; };
 		93E97FC62271442D00DDEB80 /* QDLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */; };
 		93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC92271446A00DDEB80 /* YYTextView.m */; };
 		93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FCD2271446B00DDEB80 /* YYTextMagnifier.m */; };
@@ -163,7 +162,6 @@
 		93E980652271472F00DDEB80 /* QDRoomTypeDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9805C2271472F00DDEB80 /* QDRoomTypeDTO.m */; };
 		93E980662271472F00DDEB80 /* QDHotelListInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980602271472F00DDEB80 /* QDHotelListInfoModel.m */; };
 		93E980672271472F00DDEB80 /* QDBankaccountDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980622271472F00DDEB80 /* QDBankaccountDTO.m */; };
-		93E9806C2271475C00DDEB80 /* ResturantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980682271475C00DDEB80 /* ResturantModel.m */; };
 		93E9806D2271475C00DDEB80 /* CustomTravelDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9806B2271475C00DDEB80 /* CustomTravelDTO.m */; };
 		93E980712271477400DDEB80 /* QDMallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9806F2271477400DDEB80 /* QDMallModel.m */; };
 		93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980732271479200DDEB80 /* WebViewJavascriptBridgeBase.m */; };
@@ -175,6 +173,146 @@
 		93E9808C227147C700DDEB80 /* QDCalendarCustomerTourVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98086227147C700DDEB80 /* QDCalendarCustomerTourVC.m */; };
 		93E9808D227147C700DDEB80 /* QDCitySelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98087227147C700DDEB80 /* QDCitySelectedViewController.m */; };
 		93E9808E227147C700DDEB80 /* QDRotePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9808A227147C700DDEB80 /* QDRotePlanViewController.m */; };
+		93E980A722714D1A00DDEB80 /* RangePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809422714D1900DDEB80 /* RangePickerCell.m */; };
+		93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809522714D1900DDEB80 /* QDCalendarCustomerTourTopView.m */; };
+		93E980A922714D1A00DDEB80 /* QDCalendarTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809622714D1900DDEB80 /* QDCalendarTopView.m */; };
+		93E980AA22714D1A00DDEB80 /* QDLocationTopSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809822714D1900DDEB80 /* QDLocationTopSelectView.m */; };
+		93E980AB22714D1A00DDEB80 /* SYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809A22714D1900DDEB80 /* SYHeaderView.m */; };
+		93E980AC22714D1A00DDEB80 /* SYCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809C22714D1900DDEB80 /* SYCollectionCell.m */; };
+		93E980AD22714D1A00DDEB80 /* SYHotCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9809D22714D1900DDEB80 /* SYHotCityHeaderView.m */; };
+		93E980AE22714D1A00DDEB80 /* QDCurrentLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980A022714D1900DDEB80 /* QDCurrentLocationView.m */; };
+		93E980AF22714D1A00DDEB80 /* SYSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980A222714D1900DDEB80 /* SYSearchController.m */; };
+		93E980B022714D1A00DDEB80 /* SYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980A422714D1A00DDEB80 /* SYTableViewCell.m */; };
+		93E980B122714D1A00DDEB80 /* SYCitysCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980A522714D1A00DDEB80 /* SYCitysCell.m */; };
+		93E980B522714D7500DDEB80 /* QDDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980B422714D7500DDEB80 /* QDDateUtils.m */; };
+		93E980D422714DC500DDEB80 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980B622714DC200DDEB80 /* NSDictionary+Helper.m */; };
+		93E980D522714DC500DDEB80 /* NSString+QDDecimalNumberHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980C522714DC200DDEB80 /* NSString+QDDecimalNumberHandler.m */; };
+		93E980D622714DC500DDEB80 /* UIControl+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980C722714DC300DDEB80 /* UIControl+Blocks.m */; };
+		93E980D722714DC500DDEB80 /* DIYCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980C822714DC300DDEB80 /* DIYCalendarCell.m */; };
+		93E980D822714DC500DDEB80 /* UIColor+QDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980C922714DC300DDEB80 /* UIColor+QDColor.m */; };
+		93E980D922714DC500DDEB80 /* UIView+ML_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980CC22714DC300DDEB80 /* UIView+ML_Extension.m */; };
+		93E980DA22714DC500DDEB80 /* UIButton+ImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980CE22714DC400DDEB80 /* UIButton+ImageTitleStyle.m */; };
+		93E980DB22714DC500DDEB80 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980D322714DC500DDEB80 /* UIImage+Image.m */; };
+		93E980DF22714DEE00DDEB80 /* QDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980DD22714DEE00DDEB80 /* QDShareView.m */; };
+		93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980E122714E3700DDEB80 /* SnailQuickMaskPopups.m */; };
+		93E980F222714E6700DDEB80 /* OpenShare+Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980E522714E6700DDEB80 /* OpenShare+Weibo.m */; };
+		93E980F322714E6700DDEB80 /* OpenShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980E622714E6700DDEB80 /* OpenShare.m */; };
+		93E980F422714E6700DDEB80 /* OpenShare+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980E822714E6700DDEB80 /* OpenShare+QQ.m */; };
+		93E980F522714E6700DDEB80 /* OpenShare+Alipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980E922714E6700DDEB80 /* OpenShare+Alipay.m */; };
+		93E980F622714E6700DDEB80 /* OpenShare+Weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980EA22714E6700DDEB80 /* OpenShare+Weixin.m */; };
+		93E980F722714E6700DDEB80 /* OpenShare+Renren.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980ED22714E6700DDEB80 /* OpenShare+Renren.m */; };
+		93E9810A22714E9300DDEB80 /* QDCustomTourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980F922714E9000DDEB80 /* QDCustomTourCell.m */; };
+		93E9810B22714E9300DDEB80 /* QDPriceRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980FA22714E9000DDEB80 /* QDPriceRangeView.m */; };
+		93E9810C22714E9300DDEB80 /* QDCustomTourSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980FC22714E9100DDEB80 /* QDCustomTourSectionHeaderView.m */; };
+		93E9810D22714E9300DDEB80 /* QDHotelReserveTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E980FE22714E9100DDEB80 /* QDHotelReserveTableHeaderView.m */; };
+		93E9810E22714E9300DDEB80 /* QYBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9810022714E9100DDEB80 /* QYBaseView.m */; };
+		93E9810F22714E9300DDEB80 /* QDResutrantViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9810222714E9100DDEB80 /* QDResutrantViewCell.m */; };
+		93E9811022714E9300DDEB80 /* QDMallTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9810422714E9200DDEB80 /* QDMallTableHeaderView.m */; };
+		93E9811122714E9300DDEB80 /* QDKeyWordsSearchViewT.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9810622714E9200DDEB80 /* QDKeyWordsSearchViewT.m */; };
+		93E9811222714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9810822714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m */; };
+		93E9811822714EFE00DDEB80 /* SFDualWayIndicateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811622714EFE00DDEB80 /* SFDualWayIndicateView.m */; };
+		93E9811922714EFE00DDEB80 /* SFDualWaySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811722714EFE00DDEB80 /* SFDualWaySlider.m */; };
+		93E9812A22714F4900DDEB80 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811C22714F4800DDEB80 /* LineDashPolyline.m */; };
+		93E9812B22714F4900DDEB80 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811D22714F4800DDEB80 /* MANaviRoute.m */; };
+		93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811E22714F4800DDEB80 /* QDNavigationService.m */; };
+		93E9812D22714F4900DDEB80 /* MANaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9811F22714F4800DDEB80 /* MANaviPolyline.m */; };
+		93E9812E22714F4900DDEB80 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9812122714F4800DDEB80 /* MANaviAnnotation.m */; };
+		93E9812F22714F4900DDEB80 /* VipCardDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9812722714F4900DDEB80 /* VipCardDTO.m */; };
+		93E9813022714F4900DDEB80 /* QDSalesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9812822714F4900DDEB80 /* QDSalesInfo.m */; };
+		93E9813522714F5300DDEB80 /* QDMyPickOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9813222714F5300DDEB80 /* QDMyPickOrderModel.m */; };
+		93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9813322714F5300DDEB80 /* BiddingPostersDTO.m */; };
+		93E9813A22714F7000DDEB80 /* SYChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9813822714F7000DDEB80 /* SYChineseToPinyin.m */; };
+		93E9813F22714F7D00DDEB80 /* RanklistDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9813B22714F7D00DDEB80 /* RanklistDTO.m */; };
+		93E9814022714F7D00DDEB80 /* ImageDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9813C22714F7D00DDEB80 /* ImageDTO.m */; };
+		93E9814622714F8700DDEB80 /* ResturantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9814222714F8700DDEB80 /* ResturantModel.m */; };
+		93E9814A22714F9700DDEB80 /* HotelCouponDetailDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9814922714F9700DDEB80 /* HotelCouponDetailDTO.m */; };
+		93E9815022714FD000DDEB80 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9814D22714FD000DDEB80 /* CommonUtility.m */; };
+		93E9815122714FD000DDEB80 /* ErrorInfoUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9814E22714FD000DDEB80 /* ErrorInfoUtility.m */; };
+		93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981532271500700DDEB80 /* QDHomeZDYListVC.m */; };
+		93E981602271500700DDEB80 /* QDHomeHotelListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981552271500700DDEB80 /* QDHomeHotelListVC.m */; };
+		93E981612271500700DDEB80 /* QDHomeSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981562271500700DDEB80 /* QDHomeSearchVC.m */; };
+		93E981622271500700DDEB80 /* QDSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981572271500700DDEB80 /* QDSearchResultViewController.m */; };
+		93E981632271500700DDEB80 /* QDHomeRankListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981582271500700DDEB80 /* QDHomeRankListVC.m */; };
+		93E981642271500700DDEB80 /* QDHomeMallListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9815E2271500700DDEB80 /* QDHomeMallListVC.m */; };
+		93E981672271500F00DDEB80 /* QDHotelsInAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981662271500F00DDEB80 /* QDHotelsInAreaViewController.m */; };
+		93E9816B2271501800DDEB80 /* QDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981682271501800DDEB80 /* QDSearchViewController.m */; };
+		93E9817C2271504700DDEB80 /* QDHotelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9816F2271504700DDEB80 /* QDHotelHeaderView.m */; };
+		93E9817D2271504700DDEB80 /* QDHotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981712271504700DDEB80 /* QDHotelTableViewCell.m */; };
+		93E9817E2271504700DDEB80 /* QDHotelTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981722271504700DDEB80 /* QDHotelTypeCell.m */; };
+		93E9817F2271504700DDEB80 /* QDHotelTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981732271504700DDEB80 /* QDHotelTypeView.m */; };
+		93E981802271504700DDEB80 /* QDHotelSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981742271504700DDEB80 /* QDHotelSearchView.m */; };
+		93E981812271504700DDEB80 /* QDHotelTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981762271504700DDEB80 /* QDHotelTableFooterView.m */; };
+		93E981822271504700DDEB80 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981772271504700DDEB80 /* NavigationView.m */; };
+		93E981892271511700DDEB80 /* QDSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981872271511700DDEB80 /* QDSegmentControl.m */; };
+		93E9819C2271524B00DDEB80 /* QDShowMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9818A2271524800DDEB80 /* QDShowMenuView.m */; };
+		93E9819D2271524B00DDEB80 /* QDHomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9818F2271524900DDEB80 /* QDHomeTopView.m */; };
+		93E9819E2271524B00DDEB80 /* QDHomePageTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981902271524A00DDEB80 /* QDHomePageTopView.m */; };
+		93E9819F2271524B00DDEB80 /* QDHotelsInAreaViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981922271524A00DDEB80 /* QDHotelsInAreaViewTableViewCell.m */; };
+		93E981A02271524B00DDEB80 /* QDHomePageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981932271524A00DDEB80 /* QDHomePageViewCell.m */; };
+		93E981A12271524B00DDEB80 /* QDHotelsInAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981942271524A00DDEB80 /* QDHotelsInAreaView.m */; };
+		93E981A22271524B00DDEB80 /* QDHomeTopCancelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981972271524B00DDEB80 /* QDHomeTopCancelView.m */; };
+		93E981A32271524B00DDEB80 /* QDStrategyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9819A2271524B00DDEB80 /* QDStrategyTableViewCell.m */; };
+		93E981A42271524B00DDEB80 /* QDHotelAndStrategyFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9819B2271524B00DDEB80 /* QDHotelAndStrategyFilterView.m */; };
+		93E981A72271528F00DDEB80 /* QDHomgePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981A62271528F00DDEB80 /* QDHomgePageVC.m */; };
+		93E981B2227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981A9227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m */; };
+		93E981B3227152BD00DDEB80 /* ZLFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981AF227152BD00DDEB80 /* ZLFlowLayout.m */; };
+		93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B0227152BD00DDEB80 /* ZLCollectionView.m */; };
+		93E981B5227152BD00DDEB80 /* HYBCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B1227152BD00DDEB80 /* HYBCardCollectionViewCell.m */; };
+		93E981BB2271532100DDEB80 /* QDVipPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */; };
+		93E981BC2271532100DDEB80 /* QDReadyToCreateOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */; };
+		93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */; };
+		93E981C52271534100DDEB80 /* QDVipPurchaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981C22271534000DDEB80 /* QDVipPurchaseView.m */; };
+		93E981C62271534100DDEB80 /* QDReadyToPayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981C32271534000DDEB80 /* QDReadyToPayViewCell.m */; };
+		93E981CC2271535100DDEB80 /* CWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981C92271535000DDEB80 /* CWActionSheet.m */; };
+		93E981CD2271535100DDEB80 /* CWActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981CA2271535000DDEB80 /* CWActionSheetTableViewCell.m */; };
+		93E981D12271537300DDEB80 /* LQPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981D02271537300DDEB80 /* LQPopUpView.m */; };
+		93E981DE227153B800DDEB80 /* QDKeyWordsSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981D4227153B600DDEB80 /* QDKeyWordsSearchVC.m */; };
+		93E981DF227153B800DDEB80 /* QDHotelReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981D5227153B600DDEB80 /* QDHotelReserveVC.m */; };
+		93E981E0227153B800DDEB80 /* QDKeyWordsHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981D8227153B700DDEB80 /* QDKeyWordsHomePageVC.m */; };
+		93E981E1227153B800DDEB80 /* QDMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981D9227153B700DDEB80 /* QDMallViewController.m */; };
+		93E981E2227153B800DDEB80 /* QDResturantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981DA227153B700DDEB80 /* QDResturantVC.m */; };
+		93E981E3227153B800DDEB80 /* QDDZYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981DB227153B700DDEB80 /* QDDZYViewController.m */; };
+		93E981EE2271542F00DDEB80 /* TFDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981E62271542E00DDEB80 /* TFDropDownMenuView.m */; };
+		93E981EF2271542F00DDEB80 /* TFIndexPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981E82271542E00DDEB80 /* TFIndexPatch.m */; };
+		93E981F02271542F00DDEB80 /* TFDropDownMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981EC2271542E00DDEB80 /* TFDropDownMenuCollectionViewCell.m */; };
+		93E982002271546C00DDEB80 /* QDMallTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981FC2271546C00DDEB80 /* QDMallTopView.m */; };
+		93E982012271546C00DDEB80 /* QDMallTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981FF2271546C00DDEB80 /* QDMallTableCell.m */; };
+		93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98202227154AA00DDEB80 /* QDPickOrderView.m */; };
+		93E98221227154B000DDEB80 /* QDPickUpOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98205227154AB00DDEB80 /* QDPickUpOrderCell.m */; };
+		93E98222227154B000DDEB80 /* QDTradeShellsSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98206227154AB00DDEB80 /* QDTradeShellsSectionHeaderView.m */; };
+		93E98223227154B000DDEB80 /* QDFilterTypeOneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98208227154AB00DDEB80 /* QDFilterTypeOneView.m */; };
+		93E98224227154B000DDEB80 /* QDMyBiddingOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9820E227154AD00DDEB80 /* QDMyBiddingOrderView.m */; };
+		93E98225227154B000DDEB80 /* RootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9820F227154AD00DDEB80 /* RootCollectionCell.m */; };
+		93E98226227154B000DDEB80 /* QDMySaleOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98210227154AD00DDEB80 /* QDMySaleOrderCell.m */; };
+		93E98227227154B000DDEB80 /* QDOrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98211227154AE00DDEB80 /* QDOrderDetailView.m */; };
+		93E98228227154B000DDEB80 /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98216227154AE00DDEB80 /* MyTableCell.m */; };
+		93E98229227154B000DDEB80 /* RootTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98218227154AF00DDEB80 /* RootTableCell.m */; };
+		93E9822A227154B000DDEB80 /* RootFirstCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9821A227154AF00DDEB80 /* RootFirstCollectionCell.m */; };
+		93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9821B227154AF00DDEB80 /* QDFilterTypeThreeView.m */; };
+		93E9822C227154B000DDEB80 /* QDMallTableSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9821C227154AF00DDEB80 /* QDMallTableSectionHeaderView.m */; };
+		93E9822D227154B000DDEB80 /* QDFilterTypeTwoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9821D227154AF00DDEB80 /* QDFilterTypeTwoView.m */; };
+		93E9822E227154B000DDEB80 /* QDMyPurchaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9821E227154B000DDEB80 /* QDMyPurchaseCell.m */; };
+		93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98232227154E000DDEB80 /* QDPopMenuCell.m */; };
+		93E98235227154E100DDEB80 /* QDPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98233227154E000DDEB80 /* QDPopMenu.m */; };
+		93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982382271551100DDEB80 /* RadialCircleAnnotationView.m */; };
+		93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */; };
+		93E982452271557B00DDEB80 /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */; };
+		93E982462271557B00DDEB80 /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982402271557B00DDEB80 /* NewPagedFlowView.m */; };
+		93E982472271557B00DDEB80 /* PGCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982412271557B00DDEB80 /* PGCustomBannerView.m */; };
+		93E9825E227155A100DDEB80 /* QDOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982482271559E00DDEB80 /* QDOrderDetailVC.m */; };
+		93E9825F227155A100DDEB80 /* QDFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9824B2271559F00DDEB80 /* QDFourViewController.m */; };
+		93E98260227155A100DDEB80 /* QDShellRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */; };
+		93E98262227155A100DDEB80 /* QDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98252227155A000DDEB80 /* QDSecondViewController.m */; };
+		93E98263227155A100DDEB80 /* QDTradingShellsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98253227155A000DDEB80 /* QDTradingShellsVC.m */; };
+		93E98264227155A100DDEB80 /* QDFindSatifiedDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98254227155A000DDEB80 /* QDFindSatifiedDataVC.m */; };
+		93E98265227155A100DDEB80 /* QDRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98255227155A000DDEB80 /* QDRecommendViewController.m */; };
+		93E98266227155A100DDEB80 /* QDBuyOrSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98256227155A000DDEB80 /* QDBuyOrSellViewController.m */; };
+		93E98267227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98259227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m */; };
+		93E98268227155A100DDEB80 /* QDFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9825B227155A100DDEB80 /* QDFirstViewController.m */; };
+		93E9826C227155C100DDEB80 /* YUTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9826B227155C100DDEB80 /* YUTimer.m */; };
+		93E98270227155EE00DDEB80 /* WaterLayou.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9826F227155EE00DDEB80 /* WaterLayou.m */; };
+		93E982742271560B00DDEB80 /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982732271560B00DDEB80 /* PPNumberButton.m */; };
+		93E982772271565F00DDEB80 /* QDThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982752271565F00DDEB80 /* QDThirdViewController.m */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -405,8 +543,6 @@
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		93399E692268663700FB9F0E /* UIViewController+Dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dealloc.h"; sourceTree = "<group>"; };
 		93399E732268672200FB9F0E /* meituan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meituan.json; sourceTree = "<group>"; };
-		93399E762268767900FB9F0E /* QDCustomTourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCustomTourCell.h; sourceTree = "<group>"; };
-		93399E772268767900FB9F0E /* QDCustomTourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCustomTourCell.m; sourceTree = "<group>"; };
 		93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginAndRegisterVC.m; sourceTree = "<group>"; };
 		93E97FC52271442D00DDEB80 /* QDLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLoginAndRegisterVC.h; sourceTree = "<group>"; };
 		93E97FC82271446A00DDEB80 /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
@@ -509,8 +645,6 @@
 		93E980602271472F00DDEB80 /* QDHotelListInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelListInfoModel.m; sourceTree = "<group>"; };
 		93E980612271472F00DDEB80 /* QDHotelFacilityDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelFacilityDTO.h; sourceTree = "<group>"; };
 		93E980622271472F00DDEB80 /* QDBankaccountDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBankaccountDTO.m; sourceTree = "<group>"; };
-		93E980682271475C00DDEB80 /* ResturantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResturantModel.m; sourceTree = "<group>"; };
-		93E980692271475C00DDEB80 /* ResturantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResturantModel.h; sourceTree = "<group>"; };
 		93E9806A2271475C00DDEB80 /* CustomTravelDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTravelDTO.h; sourceTree = "<group>"; };
 		93E9806B2271475C00DDEB80 /* CustomTravelDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTravelDTO.m; sourceTree = "<group>"; };
 		93E9806F2271477400DDEB80 /* QDMallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallModel.m; sourceTree = "<group>"; };
@@ -532,6 +666,304 @@
 		93E98088227147C700DDEB80 /* QDRotePlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRotePlanViewController.h; sourceTree = "<group>"; };
 		93E98089227147C700DDEB80 /* QDCitySelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCitySelectedViewController.h; sourceTree = "<group>"; };
 		93E9808A227147C700DDEB80 /* QDRotePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRotePlanViewController.m; sourceTree = "<group>"; };
+		93E9809022714D1900DDEB80 /* SYSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSearchController.h; sourceTree = "<group>"; };
+		93E9809222714D1900DDEB80 /* QDCalendarCustomerTourTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCalendarCustomerTourTopView.h; sourceTree = "<group>"; };
+		93E9809322714D1900DDEB80 /* QDCalendarTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCalendarTopView.h; sourceTree = "<group>"; };
+		93E9809422714D1900DDEB80 /* RangePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangePickerCell.m; sourceTree = "<group>"; };
+		93E9809522714D1900DDEB80 /* QDCalendarCustomerTourTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCalendarCustomerTourTopView.m; sourceTree = "<group>"; };
+		93E9809622714D1900DDEB80 /* QDCalendarTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCalendarTopView.m; sourceTree = "<group>"; };
+		93E9809722714D1900DDEB80 /* RangePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangePickerCell.h; sourceTree = "<group>"; };
+		93E9809822714D1900DDEB80 /* QDLocationTopSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLocationTopSelectView.m; sourceTree = "<group>"; };
+		93E9809922714D1900DDEB80 /* QDCurrentLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCurrentLocationView.h; sourceTree = "<group>"; };
+		93E9809A22714D1900DDEB80 /* SYHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHeaderView.m; sourceTree = "<group>"; };
+		93E9809B22714D1900DDEB80 /* SYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTableViewCell.h; sourceTree = "<group>"; };
+		93E9809C22714D1900DDEB80 /* SYCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCollectionCell.m; sourceTree = "<group>"; };
+		93E9809D22714D1900DDEB80 /* SYHotCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHotCityHeaderView.m; sourceTree = "<group>"; };
+		93E9809E22714D1900DDEB80 /* SYCitysCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCitysCell.h; sourceTree = "<group>"; };
+		93E9809F22714D1900DDEB80 /* SYHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHeaderView.h; sourceTree = "<group>"; };
+		93E980A022714D1900DDEB80 /* QDCurrentLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCurrentLocationView.m; sourceTree = "<group>"; };
+		93E980A122714D1900DDEB80 /* QDLocationTopSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLocationTopSelectView.h; sourceTree = "<group>"; };
+		93E980A222714D1900DDEB80 /* SYSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSearchController.m; sourceTree = "<group>"; };
+		93E980A322714D1A00DDEB80 /* SYCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCollectionCell.h; sourceTree = "<group>"; };
+		93E980A422714D1A00DDEB80 /* SYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTableViewCell.m; sourceTree = "<group>"; };
+		93E980A522714D1A00DDEB80 /* SYCitysCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCitysCell.m; sourceTree = "<group>"; };
+		93E980A622714D1A00DDEB80 /* SYHotCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHotCityHeaderView.h; sourceTree = "<group>"; };
+		93E980B322714D7500DDEB80 /* QDDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDDateUtils.h; sourceTree = "<group>"; };
+		93E980B422714D7500DDEB80 /* QDDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDDateUtils.m; sourceTree = "<group>"; };
+		93E980B622714DC200DDEB80 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Helper.m"; sourceTree = "<group>"; };
+		93E980B822714DC200DDEB80 /* UIImage+TABCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TABCategory.h"; sourceTree = "<group>"; };
+		93E980B922714DC200DDEB80 /* UIView+TABFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TABFrame.h"; sourceTree = "<group>"; };
+		93E980BA22714DC200DDEB80 /* TABSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABSafe.h; sourceTree = "<group>"; };
+		93E980BB22714DC200DDEB80 /* TABLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABLabel.h; sourceTree = "<group>"; };
+		93E980BC22714DC200DDEB80 /* TABKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABKit.h; sourceTree = "<group>"; };
+		93E980BD22714DC200DDEB80 /* UITableView+TABEndEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TABEndEdit.h"; sourceTree = "<group>"; };
+		93E980BE22714DC200DDEB80 /* TABTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABTextView.h; sourceTree = "<group>"; };
+		93E980BF22714DC200DDEB80 /* NSString+TABCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TABCategory.h"; sourceTree = "<group>"; };
+		93E980C022714DC200DDEB80 /* UIScrollView+TABCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TABCategory.h"; sourceTree = "<group>"; };
+		93E980C122714DC200DDEB80 /* TABDocumentMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABDocumentMethod.h; sourceTree = "<group>"; };
+		93E980C222714DC200DDEB80 /* TABCommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABCommonMethod.h; sourceTree = "<group>"; };
+		93E980C322714DC200DDEB80 /* UICollectionView+TABEndEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+TABEndEdit.h"; sourceTree = "<group>"; };
+		93E980C422714DC200DDEB80 /* TABDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABDefine.h; sourceTree = "<group>"; };
+		93E980C522714DC200DDEB80 /* NSString+QDDecimalNumberHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QDDecimalNumberHandler.m"; sourceTree = "<group>"; };
+		93E980C622714DC300DDEB80 /* UIControl+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Blocks.h"; sourceTree = "<group>"; };
+		93E980C722714DC300DDEB80 /* UIControl+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Blocks.m"; sourceTree = "<group>"; };
+		93E980C822714DC300DDEB80 /* DIYCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYCalendarCell.m; sourceTree = "<group>"; };
+		93E980C922714DC300DDEB80 /* UIColor+QDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QDColor.m"; sourceTree = "<group>"; };
+		93E980CA22714DC300DDEB80 /* UIButton+ImageTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleStyle.h"; sourceTree = "<group>"; };
+		93E980CB22714DC300DDEB80 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		93E980CC22714DC300DDEB80 /* UIView+ML_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ML_Extension.m"; sourceTree = "<group>"; };
+		93E980CD22714DC300DDEB80 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Helper.h"; sourceTree = "<group>"; };
+		93E980CE22714DC400DDEB80 /* UIButton+ImageTitleStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleStyle.m"; sourceTree = "<group>"; };
+		93E980CF22714DC400DDEB80 /* UIColor+QDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+QDColor.h"; sourceTree = "<group>"; };
+		93E980D022714DC400DDEB80 /* DIYCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYCalendarCell.h; sourceTree = "<group>"; };
+		93E980D122714DC500DDEB80 /* NSString+QDDecimalNumberHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QDDecimalNumberHandler.h"; sourceTree = "<group>"; };
+		93E980D222714DC500DDEB80 /* UIView+ML_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ML_Extension.h"; sourceTree = "<group>"; };
+		93E980D322714DC500DDEB80 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		93E980DD22714DEE00DDEB80 /* QDShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDShareView.m; sourceTree = "<group>"; };
+		93E980DE22714DEE00DDEB80 /* QDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDShareView.h; sourceTree = "<group>"; };
+		93E980E122714E3700DDEB80 /* SnailQuickMaskPopups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnailQuickMaskPopups.m; sourceTree = "<group>"; };
+		93E980E222714E3700DDEB80 /* SnailQuickMaskPopups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnailQuickMaskPopups.h; sourceTree = "<group>"; };
+		93E980E522714E6700DDEB80 /* OpenShare+Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Weibo.m"; sourceTree = "<group>"; };
+		93E980E622714E6700DDEB80 /* OpenShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenShare.m; sourceTree = "<group>"; };
+		93E980E722714E6700DDEB80 /* OpenShare+Renren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Renren.h"; sourceTree = "<group>"; };
+		93E980E822714E6700DDEB80 /* OpenShare+QQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+QQ.m"; sourceTree = "<group>"; };
+		93E980E922714E6700DDEB80 /* OpenShare+Alipay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Alipay.m"; sourceTree = "<group>"; };
+		93E980EA22714E6700DDEB80 /* OpenShare+Weixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Weixin.m"; sourceTree = "<group>"; };
+		93E980EB22714E6700DDEB80 /* OpenShareHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenShareHeader.h; sourceTree = "<group>"; };
+		93E980EC22714E6700DDEB80 /* OpenShare+Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Weibo.h"; sourceTree = "<group>"; };
+		93E980ED22714E6700DDEB80 /* OpenShare+Renren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Renren.m"; sourceTree = "<group>"; };
+		93E980EE22714E6700DDEB80 /* OpenShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenShare.h; sourceTree = "<group>"; };
+		93E980EF22714E6700DDEB80 /* OpenShare+QQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+QQ.h"; sourceTree = "<group>"; };
+		93E980F022714E6700DDEB80 /* OpenShare+Weixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Weixin.h"; sourceTree = "<group>"; };
+		93E980F122714E6700DDEB80 /* OpenShare+Alipay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Alipay.h"; sourceTree = "<group>"; };
+		93E980F822714E9000DDEB80 /* QDCustomTourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCustomTourCell.h; sourceTree = "<group>"; };
+		93E980F922714E9000DDEB80 /* QDCustomTourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCustomTourCell.m; sourceTree = "<group>"; };
+		93E980FA22714E9000DDEB80 /* QDPriceRangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPriceRangeView.m; sourceTree = "<group>"; };
+		93E980FB22714E9100DDEB80 /* QDHotelReserveTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelReserveTableHeaderView.h; sourceTree = "<group>"; };
+		93E980FC22714E9100DDEB80 /* QDCustomTourSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCustomTourSectionHeaderView.m; sourceTree = "<group>"; };
+		93E980FD22714E9100DDEB80 /* QDMallTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMallTableHeaderView.h; sourceTree = "<group>"; };
+		93E980FE22714E9100DDEB80 /* QDHotelReserveTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelReserveTableHeaderView.m; sourceTree = "<group>"; };
+		93E980FF22714E9100DDEB80 /* QDKeyWordsSearchViewT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDKeyWordsSearchViewT.h; sourceTree = "<group>"; };
+		93E9810022714E9100DDEB80 /* QYBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBaseView.m; sourceTree = "<group>"; };
+		93E9810122714E9100DDEB80 /* QDResutrantViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDResutrantViewCell.h; sourceTree = "<group>"; };
+		93E9810222714E9100DDEB80 /* QDResutrantViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDResutrantViewCell.m; sourceTree = "<group>"; };
+		93E9810322714E9200DDEB80 /* QDCustomTourSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCustomTourSectionHeaderView.h; sourceTree = "<group>"; };
+		93E9810422714E9200DDEB80 /* QDMallTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallTableHeaderView.m; sourceTree = "<group>"; };
+		93E9810522714E9200DDEB80 /* QYBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBaseView.h; sourceTree = "<group>"; };
+		93E9810622714E9200DDEB80 /* QDKeyWordsSearchViewT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDKeyWordsSearchViewT.m; sourceTree = "<group>"; };
+		93E9810722714E9300DDEB80 /* QDPriceRangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPriceRangeView.h; sourceTree = "<group>"; };
+		93E9810822714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDKeyWordsSearchHeaderView.m; sourceTree = "<group>"; };
+		93E9810922714E9300DDEB80 /* QDKeyWordsSearchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDKeyWordsSearchHeaderView.h; sourceTree = "<group>"; };
+		93E9811422714EFE00DDEB80 /* SFDualWayIndicateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDualWayIndicateView.h; sourceTree = "<group>"; };
+		93E9811522714EFE00DDEB80 /* SFDualWaySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDualWaySlider.h; sourceTree = "<group>"; };
+		93E9811622714EFE00DDEB80 /* SFDualWayIndicateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDualWayIndicateView.m; sourceTree = "<group>"; };
+		93E9811722714EFE00DDEB80 /* SFDualWaySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDualWaySlider.m; sourceTree = "<group>"; };
+		93E9811B22714F4800DDEB80 /* MANaviAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotation.h; sourceTree = "<group>"; };
+		93E9811C22714F4800DDEB80 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
+		93E9811D22714F4800DDEB80 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
+		93E9811E22714F4800DDEB80 /* QDNavigationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationService.m; sourceTree = "<group>"; };
+		93E9811F22714F4800DDEB80 /* MANaviPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviPolyline.m; sourceTree = "<group>"; };
+		93E9812022714F4800DDEB80 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
+		93E9812122714F4800DDEB80 /* MANaviAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotation.m; sourceTree = "<group>"; };
+		93E9812222714F4800DDEB80 /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
+		93E9812322714F4800DDEB80 /* QDNavigationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationService.h; sourceTree = "<group>"; };
+		93E9812422714F4800DDEB80 /* MANaviPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviPolyline.h; sourceTree = "<group>"; };
+		93E9812622714F4900DDEB80 /* QDSalesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSalesInfo.h; sourceTree = "<group>"; };
+		93E9812722714F4900DDEB80 /* VipCardDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipCardDTO.m; sourceTree = "<group>"; };
+		93E9812822714F4900DDEB80 /* QDSalesInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSalesInfo.m; sourceTree = "<group>"; };
+		93E9812922714F4900DDEB80 /* VipCardDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipCardDTO.h; sourceTree = "<group>"; };
+		93E9813122714F5300DDEB80 /* QDMyPickOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyPickOrderModel.h; sourceTree = "<group>"; };
+		93E9813222714F5300DDEB80 /* QDMyPickOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyPickOrderModel.m; sourceTree = "<group>"; };
+		93E9813322714F5300DDEB80 /* BiddingPostersDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiddingPostersDTO.m; sourceTree = "<group>"; };
+		93E9813422714F5300DDEB80 /* BiddingPostersDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiddingPostersDTO.h; sourceTree = "<group>"; };
+		93E9813822714F7000DDEB80 /* SYChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYChineseToPinyin.m; sourceTree = "<group>"; };
+		93E9813922714F7000DDEB80 /* SYChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYChineseToPinyin.h; sourceTree = "<group>"; };
+		93E9813B22714F7D00DDEB80 /* RanklistDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RanklistDTO.m; sourceTree = "<group>"; };
+		93E9813C22714F7D00DDEB80 /* ImageDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDTO.m; sourceTree = "<group>"; };
+		93E9813D22714F7D00DDEB80 /* ImageDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDTO.h; sourceTree = "<group>"; };
+		93E9813E22714F7D00DDEB80 /* RanklistDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RanklistDTO.h; sourceTree = "<group>"; };
+		93E9814222714F8700DDEB80 /* ResturantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResturantModel.m; sourceTree = "<group>"; };
+		93E9814522714F8700DDEB80 /* ResturantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResturantModel.h; sourceTree = "<group>"; };
+		93E9814822714F9700DDEB80 /* HotelCouponDetailDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelCouponDetailDTO.h; sourceTree = "<group>"; };
+		93E9814922714F9700DDEB80 /* HotelCouponDetailDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCouponDetailDTO.m; sourceTree = "<group>"; };
+		93E9814C22714FD000DDEB80 /* ErrorInfoUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorInfoUtility.h; sourceTree = "<group>"; };
+		93E9814D22714FD000DDEB80 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		93E9814E22714FD000DDEB80 /* ErrorInfoUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorInfoUtility.m; sourceTree = "<group>"; };
+		93E9814F22714FD000DDEB80 /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		93E981532271500700DDEB80 /* QDHomeZDYListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeZDYListVC.m; sourceTree = "<group>"; };
+		93E981542271500700DDEB80 /* QDHomeMallListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeMallListVC.h; sourceTree = "<group>"; };
+		93E981552271500700DDEB80 /* QDHomeHotelListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeHotelListVC.m; sourceTree = "<group>"; };
+		93E981562271500700DDEB80 /* QDHomeSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeSearchVC.m; sourceTree = "<group>"; };
+		93E981572271500700DDEB80 /* QDSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSearchResultViewController.m; sourceTree = "<group>"; };
+		93E981582271500700DDEB80 /* QDHomeRankListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeRankListVC.m; sourceTree = "<group>"; };
+		93E981592271500700DDEB80 /* QDHomeZDYListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeZDYListVC.h; sourceTree = "<group>"; };
+		93E9815A2271500700DDEB80 /* QDHomeRankListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeRankListVC.h; sourceTree = "<group>"; };
+		93E9815B2271500700DDEB80 /* QDSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSearchResultViewController.h; sourceTree = "<group>"; };
+		93E9815C2271500700DDEB80 /* QDHomeSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeSearchVC.h; sourceTree = "<group>"; };
+		93E9815D2271500700DDEB80 /* QDHomeHotelListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeHotelListVC.h; sourceTree = "<group>"; };
+		93E9815E2271500700DDEB80 /* QDHomeMallListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeMallListVC.m; sourceTree = "<group>"; };
+		93E981652271500F00DDEB80 /* QDHotelsInAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelsInAreaViewController.h; sourceTree = "<group>"; };
+		93E981662271500F00DDEB80 /* QDHotelsInAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelsInAreaViewController.m; sourceTree = "<group>"; };
+		93E981682271501800DDEB80 /* QDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSearchViewController.m; sourceTree = "<group>"; };
+		93E981692271501800DDEB80 /* QDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSearchViewController.h; sourceTree = "<group>"; };
+		93E9816E2271504700DDEB80 /* QDHotelTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelTableFooterView.h; sourceTree = "<group>"; };
+		93E9816F2271504700DDEB80 /* QDHotelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelHeaderView.m; sourceTree = "<group>"; };
+		93E981702271504700DDEB80 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
+		93E981712271504700DDEB80 /* QDHotelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelTableViewCell.m; sourceTree = "<group>"; };
+		93E981722271504700DDEB80 /* QDHotelTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelTypeCell.m; sourceTree = "<group>"; };
+		93E981732271504700DDEB80 /* QDHotelTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelTypeView.m; sourceTree = "<group>"; };
+		93E981742271504700DDEB80 /* QDHotelSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelSearchView.m; sourceTree = "<group>"; };
+		93E981752271504700DDEB80 /* QDHotelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelHeaderView.h; sourceTree = "<group>"; };
+		93E981762271504700DDEB80 /* QDHotelTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelTableFooterView.m; sourceTree = "<group>"; };
+		93E981772271504700DDEB80 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
+		93E981782271504700DDEB80 /* QDHotelTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelTypeCell.h; sourceTree = "<group>"; };
+		93E981792271504700DDEB80 /* QDHotelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelTableViewCell.h; sourceTree = "<group>"; };
+		93E9817A2271504700DDEB80 /* QDHotelSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelSearchView.h; sourceTree = "<group>"; };
+		93E9817B2271504700DDEB80 /* QDHotelTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelTypeView.h; sourceTree = "<group>"; };
+		93E981872271511700DDEB80 /* QDSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSegmentControl.m; sourceTree = "<group>"; };
+		93E981882271511700DDEB80 /* QDSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSegmentControl.h; sourceTree = "<group>"; };
+		93E9818A2271524800DDEB80 /* QDShowMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDShowMenuView.m; sourceTree = "<group>"; };
+		93E9818B2271524800DDEB80 /* QDHomePageTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomePageTopView.h; sourceTree = "<group>"; };
+		93E9818C2271524800DDEB80 /* QDHotelsInAreaViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelsInAreaViewTableViewCell.h; sourceTree = "<group>"; };
+		93E9818D2271524900DDEB80 /* QDShowMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDShowMenuView.h; sourceTree = "<group>"; };
+		93E9818E2271524900DDEB80 /* QDHotelsInAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDHotelsInAreaView.h; path = ../../../../TravelPoints/TravelPoints/Views/Home/QDHotelsInAreaView.h; sourceTree = "<group>"; };
+		93E9818F2271524900DDEB80 /* QDHomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeTopView.m; sourceTree = "<group>"; };
+		93E981902271524A00DDEB80 /* QDHomePageTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomePageTopView.m; sourceTree = "<group>"; };
+		93E981912271524A00DDEB80 /* QDHomePageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomePageViewCell.h; sourceTree = "<group>"; };
+		93E981922271524A00DDEB80 /* QDHotelsInAreaViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelsInAreaViewTableViewCell.m; sourceTree = "<group>"; };
+		93E981932271524A00DDEB80 /* QDHomePageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomePageViewCell.m; sourceTree = "<group>"; };
+		93E981942271524A00DDEB80 /* QDHotelsInAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QDHotelsInAreaView.m; path = ../../../../TravelPoints/TravelPoints/Views/Home/QDHotelsInAreaView.m; sourceTree = "<group>"; };
+		93E981952271524A00DDEB80 /* QDHomeTopCancelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeTopCancelView.h; sourceTree = "<group>"; };
+		93E981962271524B00DDEB80 /* QDHomeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeTopView.h; sourceTree = "<group>"; };
+		93E981972271524B00DDEB80 /* QDHomeTopCancelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeTopCancelView.m; sourceTree = "<group>"; };
+		93E981982271524B00DDEB80 /* QDStrategyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDStrategyTableViewCell.h; sourceTree = "<group>"; };
+		93E981992271524B00DDEB80 /* QDHotelAndStrategyFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelAndStrategyFilterView.h; sourceTree = "<group>"; };
+		93E9819A2271524B00DDEB80 /* QDStrategyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDStrategyTableViewCell.m; sourceTree = "<group>"; };
+		93E9819B2271524B00DDEB80 /* QDHotelAndStrategyFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelAndStrategyFilterView.m; sourceTree = "<group>"; };
+		93E981A52271528F00DDEB80 /* QDHomgePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomgePageVC.h; sourceTree = "<group>"; };
+		93E981A62271528F00DDEB80 /* QDHomgePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomgePageVC.m; sourceTree = "<group>"; };
+		93E981A9227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseFlowLayout.m; sourceTree = "<group>"; };
+		93E981AA227152BD00DDEB80 /* HYBCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBCardCollectionViewCell.h; sourceTree = "<group>"; };
+		93E981AB227152BD00DDEB80 /* ZLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionView.h; sourceTree = "<group>"; };
+		93E981AC227152BD00DDEB80 /* ZLFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFlowLayout.h; sourceTree = "<group>"; };
+		93E981AD227152BD00DDEB80 /* QDVipPurchaseFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseFlowLayout.h; sourceTree = "<group>"; };
+		93E981AE227152BD00DDEB80 /* ZLFlowLayoutConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFlowLayoutConstants.h; sourceTree = "<group>"; };
+		93E981AF227152BD00DDEB80 /* ZLFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFlowLayout.m; sourceTree = "<group>"; };
+		93E981B0227152BD00DDEB80 /* ZLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionView.m; sourceTree = "<group>"; };
+		93E981B1227152BD00DDEB80 /* HYBCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBCardCollectionViewCell.m; sourceTree = "<group>"; };
+		93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDReadyToCreateOrderVC.h; sourceTree = "<group>"; };
+		93E981B82271532100DDEB80 /* QDVipPurchaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseVC.h; sourceTree = "<group>"; };
+		93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseVC.m; sourceTree = "<group>"; };
+		93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDReadyToCreateOrderVC.m; sourceTree = "<group>"; };
+		93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseTableHeader.m; sourceTree = "<group>"; };
+		93E981BF2271534000DDEB80 /* QDReadyToPayViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDReadyToPayViewCell.h; sourceTree = "<group>"; };
+		93E981C02271534000DDEB80 /* QDVipPurchaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseView.h; sourceTree = "<group>"; };
+		93E981C12271534000DDEB80 /* QDVipPurchaseTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseTableHeader.h; sourceTree = "<group>"; };
+		93E981C22271534000DDEB80 /* QDVipPurchaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseView.m; sourceTree = "<group>"; };
+		93E981C32271534000DDEB80 /* QDReadyToPayViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDReadyToPayViewCell.m; sourceTree = "<group>"; };
+		93E981C82271535000DDEB80 /* CWActionSheetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWActionSheetTableViewCell.h; sourceTree = "<group>"; };
+		93E981C92271535000DDEB80 /* CWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWActionSheet.m; sourceTree = "<group>"; };
+		93E981CA2271535000DDEB80 /* CWActionSheetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWActionSheetTableViewCell.m; sourceTree = "<group>"; };
+		93E981CB2271535000DDEB80 /* CWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWActionSheet.h; sourceTree = "<group>"; };
+		93E981CF2271537300DDEB80 /* LQPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQPopUpView.h; sourceTree = "<group>"; };
+		93E981D02271537300DDEB80 /* LQPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQPopUpView.m; sourceTree = "<group>"; };
+		93E981D2227153B600DDEB80 /* QDMallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMallViewController.h; sourceTree = "<group>"; };
+		93E981D3227153B600DDEB80 /* QDHotelReserveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelReserveVC.h; sourceTree = "<group>"; };
+		93E981D4227153B600DDEB80 /* QDKeyWordsSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDKeyWordsSearchVC.m; sourceTree = "<group>"; };
+		93E981D5227153B600DDEB80 /* QDHotelReserveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelReserveVC.m; sourceTree = "<group>"; };
+		93E981D6227153B700DDEB80 /* QDKeyWordsHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDKeyWordsHomePageVC.h; sourceTree = "<group>"; };
+		93E981D7227153B700DDEB80 /* QDKeyWordsSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDKeyWordsSearchVC.h; sourceTree = "<group>"; };
+		93E981D8227153B700DDEB80 /* QDKeyWordsHomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDKeyWordsHomePageVC.m; sourceTree = "<group>"; };
+		93E981D9227153B700DDEB80 /* QDMallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallViewController.m; sourceTree = "<group>"; };
+		93E981DA227153B700DDEB80 /* QDResturantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDResturantVC.m; sourceTree = "<group>"; };
+		93E981DB227153B700DDEB80 /* QDDZYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDDZYViewController.m; sourceTree = "<group>"; };
+		93E981DC227153B700DDEB80 /* QDDZYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDDZYViewController.h; sourceTree = "<group>"; };
+		93E981DD227153B800DDEB80 /* QDResturantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDResturantVC.h; sourceTree = "<group>"; };
+		93E981E52271542E00DDEB80 /* TFDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDropDownMenu.h; sourceTree = "<group>"; };
+		93E981E62271542E00DDEB80 /* TFDropDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDropDownMenuView.m; sourceTree = "<group>"; };
+		93E981E82271542E00DDEB80 /* TFIndexPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFIndexPatch.m; sourceTree = "<group>"; };
+		93E981E92271542E00DDEB80 /* TFDropDownMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDropDownMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		93E981EA2271542E00DDEB80 /* TFMenuDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMenuDefinition.h; sourceTree = "<group>"; };
+		93E981EB2271542E00DDEB80 /* TFIndexPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFIndexPatch.h; sourceTree = "<group>"; };
+		93E981EC2271542E00DDEB80 /* TFDropDownMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDropDownMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		93E981ED2271542E00DDEB80 /* TFDropDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDropDownMenuView.h; sourceTree = "<group>"; };
+		93E981FC2271546C00DDEB80 /* QDMallTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallTopView.m; sourceTree = "<group>"; };
+		93E981FD2271546C00DDEB80 /* QDMallTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMallTableCell.h; sourceTree = "<group>"; };
+		93E981FE2271546C00DDEB80 /* QDMallTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMallTopView.h; sourceTree = "<group>"; };
+		93E981FF2271546C00DDEB80 /* QDMallTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallTableCell.m; sourceTree = "<group>"; };
+		93E98202227154AA00DDEB80 /* QDPickOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPickOrderView.m; sourceTree = "<group>"; };
+		93E98203227154AA00DDEB80 /* QDMallTableSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMallTableSectionHeaderView.h; sourceTree = "<group>"; };
+		93E98204227154AA00DDEB80 /* RootFirstCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootFirstCollectionCell.h; sourceTree = "<group>"; };
+		93E98205227154AB00DDEB80 /* QDPickUpOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPickUpOrderCell.m; sourceTree = "<group>"; };
+		93E98206227154AB00DDEB80 /* QDTradeShellsSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTradeShellsSectionHeaderView.m; sourceTree = "<group>"; };
+		93E98207227154AB00DDEB80 /* QDFilterTypeTwoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFilterTypeTwoView.h; sourceTree = "<group>"; };
+		93E98208227154AB00DDEB80 /* QDFilterTypeOneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFilterTypeOneView.m; sourceTree = "<group>"; };
+		93E98209227154AC00DDEB80 /* QDMyBiddingOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyBiddingOrderView.h; sourceTree = "<group>"; };
+		93E9820A227154AC00DDEB80 /* QDFilterTypeThreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFilterTypeThreeView.h; sourceTree = "<group>"; };
+		93E9820B227154AC00DDEB80 /* QDPickOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPickOrderView.h; sourceTree = "<group>"; };
+		93E9820C227154AC00DDEB80 /* QDFilterTypeOneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFilterTypeOneView.h; sourceTree = "<group>"; };
+		93E9820D227154AD00DDEB80 /* QDMySaleOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMySaleOrderCell.h; sourceTree = "<group>"; };
+		93E9820E227154AD00DDEB80 /* QDMyBiddingOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyBiddingOrderView.m; sourceTree = "<group>"; };
+		93E9820F227154AD00DDEB80 /* RootCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCollectionCell.m; sourceTree = "<group>"; };
+		93E98210227154AD00DDEB80 /* QDMySaleOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMySaleOrderCell.m; sourceTree = "<group>"; };
+		93E98211227154AE00DDEB80 /* QDOrderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDOrderDetailView.m; sourceTree = "<group>"; };
+		93E98212227154AE00DDEB80 /* QDOrderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDOrderDetailView.h; sourceTree = "<group>"; };
+		93E98213227154AE00DDEB80 /* QDPickUpOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPickUpOrderCell.h; sourceTree = "<group>"; };
+		93E98214227154AE00DDEB80 /* QDMyPurchaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyPurchaseCell.h; sourceTree = "<group>"; };
+		93E98215227154AE00DDEB80 /* RootTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableCell.h; sourceTree = "<group>"; };
+		93E98216227154AE00DDEB80 /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableCell.m; sourceTree = "<group>"; };
+		93E98217227154AE00DDEB80 /* QDTradeShellsSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTradeShellsSectionHeaderView.h; sourceTree = "<group>"; };
+		93E98218227154AF00DDEB80 /* RootTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableCell.m; sourceTree = "<group>"; };
+		93E98219227154AF00DDEB80 /* RootCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCollectionCell.h; sourceTree = "<group>"; };
+		93E9821A227154AF00DDEB80 /* RootFirstCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFirstCollectionCell.m; sourceTree = "<group>"; };
+		93E9821B227154AF00DDEB80 /* QDFilterTypeThreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFilterTypeThreeView.m; sourceTree = "<group>"; };
+		93E9821C227154AF00DDEB80 /* QDMallTableSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMallTableSectionHeaderView.m; sourceTree = "<group>"; };
+		93E9821D227154AF00DDEB80 /* QDFilterTypeTwoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFilterTypeTwoView.m; sourceTree = "<group>"; };
+		93E9821E227154B000DDEB80 /* QDMyPurchaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyPurchaseCell.m; sourceTree = "<group>"; };
+		93E9821F227154B000DDEB80 /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableCell.h; sourceTree = "<group>"; };
+		93E98230227154E000DDEB80 /* QDPopMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPopMenuCell.h; sourceTree = "<group>"; };
+		93E98231227154E000DDEB80 /* QDPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPopMenu.h; sourceTree = "<group>"; };
+		93E98232227154E000DDEB80 /* QDPopMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPopMenuCell.m; sourceTree = "<group>"; };
+		93E98233227154E000DDEB80 /* QDPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPopMenu.m; sourceTree = "<group>"; };
+		93E982372271551100DDEB80 /* RadialCircleAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialCircleAnnotationView.h; sourceTree = "<group>"; };
+		93E982382271551100DDEB80 /* RadialCircleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialCircleAnnotationView.m; sourceTree = "<group>"; };
+		93E9823B2271554900DDEB80 /* QDRoutePlanHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRoutePlanHeaderView.h; sourceTree = "<group>"; };
+		93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRoutePlanHeaderView.m; sourceTree = "<group>"; };
+		93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
+		93E982402271557B00DDEB80 /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
+		93E982412271557B00DDEB80 /* PGCustomBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGCustomBannerView.m; sourceTree = "<group>"; };
+		93E982422271557B00DDEB80 /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
+		93E982432271557B00DDEB80 /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
+		93E982442271557B00DDEB80 /* PGCustomBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGCustomBannerView.h; sourceTree = "<group>"; };
+		93E982482271559E00DDEB80 /* QDOrderDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDOrderDetailVC.m; sourceTree = "<group>"; };
+		93E9824A2271559F00DDEB80 /* QDFindSatifiedDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFindSatifiedDataVC.h; sourceTree = "<group>"; };
+		93E9824B2271559F00DDEB80 /* QDFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFourViewController.m; sourceTree = "<group>"; };
+		93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDShellRecommendVC.m; sourceTree = "<group>"; };
+		93E9824D2271559F00DDEB80 /* QDTradingShellsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTradingShellsVC.h; sourceTree = "<group>"; };
+		93E9824F2271559F00DDEB80 /* QDBuyOrSellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBuyOrSellViewController.h; sourceTree = "<group>"; };
+		93E982502271559F00DDEB80 /* QDRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRecommendViewController.h; sourceTree = "<group>"; };
+		93E982512271559F00DDEB80 /* QDOrderDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDOrderDetailVC.h; sourceTree = "<group>"; };
+		93E98252227155A000DDEB80 /* QDSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSecondViewController.m; sourceTree = "<group>"; };
+		93E98253227155A000DDEB80 /* QDTradingShellsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTradingShellsVC.m; sourceTree = "<group>"; };
+		93E98254227155A000DDEB80 /* QDFindSatifiedDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFindSatifiedDataVC.m; sourceTree = "<group>"; };
+		93E98255227155A000DDEB80 /* QDRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRecommendViewController.m; sourceTree = "<group>"; };
+		93E98256227155A000DDEB80 /* QDBuyOrSellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBuyOrSellViewController.m; sourceTree = "<group>"; };
+		93E98257227155A000DDEB80 /* QDFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFourViewController.h; sourceTree = "<group>"; };
+		93E98258227155A100DDEB80 /* QDShellRecommendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDShellRecommendVC.h; sourceTree = "<group>"; };
+		93E98259227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyBiddingOrderDetailVC.m; sourceTree = "<group>"; };
+		93E9825A227155A100DDEB80 /* QDFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFirstViewController.h; sourceTree = "<group>"; };
+		93E9825B227155A100DDEB80 /* QDFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFirstViewController.m; sourceTree = "<group>"; };
+		93E9825C227155A100DDEB80 /* QDMyBiddingOrderDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyBiddingOrderDetailVC.h; sourceTree = "<group>"; };
+		93E9825D227155A100DDEB80 /* QDSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSecondViewController.h; sourceTree = "<group>"; };
+		93E9826A227155C100DDEB80 /* YUTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUTimer.h; sourceTree = "<group>"; };
+		93E9826B227155C100DDEB80 /* YUTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUTimer.m; sourceTree = "<group>"; };
+		93E9826D227155ED00DDEB80 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		93E9826E227155EE00DDEB80 /* WaterLayou.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterLayou.h; sourceTree = "<group>"; };
+		93E9826F227155EE00DDEB80 /* WaterLayou.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterLayou.m; sourceTree = "<group>"; };
+		93E982722271560B00DDEB80 /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
+		93E982732271560B00DDEB80 /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		93E982752271565F00DDEB80 /* QDThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThirdViewController.m; sourceTree = "<group>"; };
+		93E982762271565F00DDEB80 /* QDThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThirdViewController.h; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -657,11 +1089,18 @@
 		93399CFA22671FA100FB9F0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93E9823A2271554900DDEB80 /* RotePlanHeaderView */,
+				93E982362271551100DDEB80 /* CustomMapView */,
+				93E981BD2271534000DDEB80 /* VipPurchase */,
+				93E9816D2271504700DDEB80 /* Hotel */,
+				93E980DC22714DEE00DDEB80 /* Share */,
+				93E9808F22714D1900DDEB80 /* Settings */,
 				93E98014227144B100DDEB80 /* LoginAndRegister */,
 				93399DB92268232A00FB9F0E /* WXProgressHUD */,
 				93399CFB22671FA100FB9F0E /* Home */,
 				93399CFC22671FA100FB9F0E /* Playing */,
 				93399CFD22671FA100FB9F0E /* Mine */,
+				93E981FB2271546C00DDEB80 /* Mall */,
 				93399CFE22671FA100FB9F0E /* Trading */,
 			);
 			path = Views;
@@ -670,8 +1109,24 @@
 		93399CFB22671FA100FB9F0E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				93399E762268767900FB9F0E /* QDCustomTourCell.h */,
-				93399E772268767900FB9F0E /* QDCustomTourCell.m */,
+				93E981962271524B00DDEB80 /* QDHomeTopView.h */,
+				93E9818F2271524900DDEB80 /* QDHomeTopView.m */,
+				93E9818E2271524900DDEB80 /* QDHotelsInAreaView.h */,
+				93E981942271524A00DDEB80 /* QDHotelsInAreaView.m */,
+				93E9818C2271524800DDEB80 /* QDHotelsInAreaViewTableViewCell.h */,
+				93E981922271524A00DDEB80 /* QDHotelsInAreaViewTableViewCell.m */,
+				93E981982271524B00DDEB80 /* QDStrategyTableViewCell.h */,
+				93E9819A2271524B00DDEB80 /* QDStrategyTableViewCell.m */,
+				93E981992271524B00DDEB80 /* QDHotelAndStrategyFilterView.h */,
+				93E9819B2271524B00DDEB80 /* QDHotelAndStrategyFilterView.m */,
+				93E9818D2271524900DDEB80 /* QDShowMenuView.h */,
+				93E9818A2271524800DDEB80 /* QDShowMenuView.m */,
+				93E9818B2271524800DDEB80 /* QDHomePageTopView.h */,
+				93E981902271524A00DDEB80 /* QDHomePageTopView.m */,
+				93E981912271524A00DDEB80 /* QDHomePageViewCell.h */,
+				93E981932271524A00DDEB80 /* QDHomePageViewCell.m */,
+				93E981952271524A00DDEB80 /* QDHomeTopCancelView.h */,
+				93E981972271524B00DDEB80 /* QDHomeTopCancelView.m */,
 				93399E582268663600FB9F0E /* TableView */,
 				93399E632268663700FB9F0E /* Tools */,
 				93399E2122684C0500FB9F0E /* RankFirstViewCell.h */,
@@ -685,6 +1140,24 @@
 		93399CFC22671FA100FB9F0E /* Playing */ = {
 			isa = PBXGroup;
 			children = (
+				93E980FB22714E9100DDEB80 /* QDHotelReserveTableHeaderView.h */,
+				93E980FE22714E9100DDEB80 /* QDHotelReserveTableHeaderView.m */,
+				93E9810322714E9200DDEB80 /* QDCustomTourSectionHeaderView.h */,
+				93E980FC22714E9100DDEB80 /* QDCustomTourSectionHeaderView.m */,
+				93E980F822714E9000DDEB80 /* QDCustomTourCell.h */,
+				93E980F922714E9000DDEB80 /* QDCustomTourCell.m */,
+				93E980FD22714E9100DDEB80 /* QDMallTableHeaderView.h */,
+				93E9810422714E9200DDEB80 /* QDMallTableHeaderView.m */,
+				93E9810922714E9300DDEB80 /* QDKeyWordsSearchHeaderView.h */,
+				93E9810822714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m */,
+				93E980FF22714E9100DDEB80 /* QDKeyWordsSearchViewT.h */,
+				93E9810622714E9200DDEB80 /* QDKeyWordsSearchViewT.m */,
+				93E9810722714E9300DDEB80 /* QDPriceRangeView.h */,
+				93E980FA22714E9000DDEB80 /* QDPriceRangeView.m */,
+				93E9810522714E9200DDEB80 /* QYBaseView.h */,
+				93E9810022714E9100DDEB80 /* QYBaseView.m */,
+				93E9810122714E9100DDEB80 /* QDResutrantViewCell.h */,
+				93E9810222714E9100DDEB80 /* QDResutrantViewCell.m */,
 			);
 			path = Playing;
 			sourceTree = "<group>";
@@ -717,6 +1190,36 @@
 		93399CFE22671FA100FB9F0E /* Trading */ = {
 			isa = PBXGroup;
 			children = (
+				93E9821F227154B000DDEB80 /* MyTableCell.h */,
+				93E98216227154AE00DDEB80 /* MyTableCell.m */,
+				93E9820C227154AC00DDEB80 /* QDFilterTypeOneView.h */,
+				93E98208227154AB00DDEB80 /* QDFilterTypeOneView.m */,
+				93E9820A227154AC00DDEB80 /* QDFilterTypeThreeView.h */,
+				93E9821B227154AF00DDEB80 /* QDFilterTypeThreeView.m */,
+				93E98207227154AB00DDEB80 /* QDFilterTypeTwoView.h */,
+				93E9821D227154AF00DDEB80 /* QDFilterTypeTwoView.m */,
+				93E98203227154AA00DDEB80 /* QDMallTableSectionHeaderView.h */,
+				93E9821C227154AF00DDEB80 /* QDMallTableSectionHeaderView.m */,
+				93E98209227154AC00DDEB80 /* QDMyBiddingOrderView.h */,
+				93E9820E227154AD00DDEB80 /* QDMyBiddingOrderView.m */,
+				93E98214227154AE00DDEB80 /* QDMyPurchaseCell.h */,
+				93E9821E227154B000DDEB80 /* QDMyPurchaseCell.m */,
+				93E9820D227154AD00DDEB80 /* QDMySaleOrderCell.h */,
+				93E98210227154AD00DDEB80 /* QDMySaleOrderCell.m */,
+				93E98212227154AE00DDEB80 /* QDOrderDetailView.h */,
+				93E98211227154AE00DDEB80 /* QDOrderDetailView.m */,
+				93E9820B227154AC00DDEB80 /* QDPickOrderView.h */,
+				93E98202227154AA00DDEB80 /* QDPickOrderView.m */,
+				93E98213227154AE00DDEB80 /* QDPickUpOrderCell.h */,
+				93E98205227154AB00DDEB80 /* QDPickUpOrderCell.m */,
+				93E98217227154AE00DDEB80 /* QDTradeShellsSectionHeaderView.h */,
+				93E98206227154AB00DDEB80 /* QDTradeShellsSectionHeaderView.m */,
+				93E98219227154AF00DDEB80 /* RootCollectionCell.h */,
+				93E9820F227154AD00DDEB80 /* RootCollectionCell.m */,
+				93E98204227154AA00DDEB80 /* RootFirstCollectionCell.h */,
+				93E9821A227154AF00DDEB80 /* RootFirstCollectionCell.m */,
+				93E98215227154AE00DDEB80 /* RootTableCell.h */,
+				93E98218227154AF00DDEB80 /* RootTableCell.m */,
 			);
 			path = Trading;
 			sourceTree = "<group>";
@@ -724,6 +1227,7 @@
 		93399CFF22671FA100FB9F0E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93E981B62271532100DDEB80 /* VipPurchase */,
 				93E98081227147C700DDEB80 /* Settings */,
 				93E97FC32271442600DDEB80 /* LoginAndRegister */,
 				93399DA8226822B100FB9F0E /* QDBridgeVC */,
@@ -738,14 +1242,19 @@
 		93399D0022671FA100FB9F0E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93E981522271500700DDEB80 /* HomeSearchViewControllers */,
 				93399D0922671FCA00FB9F0E /* QDHomeViewController.h */,
 				93399D0A22671FCA00FB9F0E /* QDHomeViewController.m */,
+				93E981652271500F00DDEB80 /* QDHotelsInAreaViewController.h */,
+				93E981662271500F00DDEB80 /* QDHotelsInAreaViewController.m */,
 				93399D2B226814EA00FB9F0E /* RankFirstViewController.h */,
 				93399D2C226814EA00FB9F0E /* RankFirstViewController.m */,
 				93399D2E226814F300FB9F0E /* RankSecondViewController.h */,
 				93399D2F226814F300FB9F0E /* RankSecondViewController.m */,
 				93399D31226814FC00FB9F0E /* RankThirdViewController.h */,
 				93399D32226814FC00FB9F0E /* RankThirdViewController.m */,
+				93E981A52271528F00DDEB80 /* QDHomgePageVC.h */,
+				93E981A62271528F00DDEB80 /* QDHomgePageVC.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -753,6 +1262,18 @@
 		93399D0122671FA100FB9F0E /* Playing */ = {
 			isa = PBXGroup;
 			children = (
+				93E981D7227153B700DDEB80 /* QDKeyWordsSearchVC.h */,
+				93E981D4227153B600DDEB80 /* QDKeyWordsSearchVC.m */,
+				93E981D6227153B700DDEB80 /* QDKeyWordsHomePageVC.h */,
+				93E981D8227153B700DDEB80 /* QDKeyWordsHomePageVC.m */,
+				93E981D3227153B600DDEB80 /* QDHotelReserveVC.h */,
+				93E981D5227153B600DDEB80 /* QDHotelReserveVC.m */,
+				93E981DC227153B700DDEB80 /* QDDZYViewController.h */,
+				93E981DB227153B700DDEB80 /* QDDZYViewController.m */,
+				93E981D2227153B600DDEB80 /* QDMallViewController.h */,
+				93E981D9227153B700DDEB80 /* QDMallViewController.m */,
+				93E981DD227153B800DDEB80 /* QDResturantVC.h */,
+				93E981DA227153B700DDEB80 /* QDResturantVC.m */,
 				93399D0C22671FD600FB9F0E /* QDPlayingViewController.h */,
 				93399D0D22671FD600FB9F0E /* QDPlayingViewController.m */,
 			);
@@ -779,6 +1300,28 @@
 		93399D0322671FA100FB9F0E /* Trading */ = {
 			isa = PBXGroup;
 			children = (
+				93E982762271565F00DDEB80 /* QDThirdViewController.h */,
+				93E982752271565F00DDEB80 /* QDThirdViewController.m */,
+				93E9824D2271559F00DDEB80 /* QDTradingShellsVC.h */,
+				93E98253227155A000DDEB80 /* QDTradingShellsVC.m */,
+				93E98258227155A100DDEB80 /* QDShellRecommendVC.h */,
+				93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */,
+				93E982512271559F00DDEB80 /* QDOrderDetailVC.h */,
+				93E982482271559E00DDEB80 /* QDOrderDetailVC.m */,
+				93E9824F2271559F00DDEB80 /* QDBuyOrSellViewController.h */,
+				93E98256227155A000DDEB80 /* QDBuyOrSellViewController.m */,
+				93E9825A227155A100DDEB80 /* QDFirstViewController.h */,
+				93E9825B227155A100DDEB80 /* QDFirstViewController.m */,
+				93E9825D227155A100DDEB80 /* QDSecondViewController.h */,
+				93E98252227155A000DDEB80 /* QDSecondViewController.m */,
+				93E98257227155A000DDEB80 /* QDFourViewController.h */,
+				93E9824B2271559F00DDEB80 /* QDFourViewController.m */,
+				93E9824A2271559F00DDEB80 /* QDFindSatifiedDataVC.h */,
+				93E98254227155A000DDEB80 /* QDFindSatifiedDataVC.m */,
+				93E9825C227155A100DDEB80 /* QDMyBiddingOrderDetailVC.h */,
+				93E98259227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m */,
+				93E982502271559F00DDEB80 /* QDRecommendViewController.h */,
+				93E98255227155A000DDEB80 /* QDRecommendViewController.m */,
 				93399D0F22671FE000FB9F0E /* QDTradingViewController.h */,
 				93399D1022671FE000FB9F0E /* QDTradingViewController.m */,
 			);
@@ -788,6 +1331,10 @@
 		93399D0422671FA100FB9F0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93E9814122714F8700DDEB80 /* Restaurant */,
+				93E9813722714F7000DDEB80 /* Settings */,
+				93E9811A22714F4800DDEB80 /* RoutePlan */,
+				93E9812522714F4900DDEB80 /* VipPurchase */,
 				93E9806E2271477400DDEB80 /* Mall */,
 				93E980582271472F00DDEB80 /* Hotel */,
 				93399D0522671FA100FB9F0E /* Home */,
@@ -801,6 +1348,10 @@
 		93399D0522671FA100FB9F0E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93E9813E22714F7D00DDEB80 /* RanklistDTO.h */,
+				93E9813B22714F7D00DDEB80 /* RanklistDTO.m */,
+				93E9813D22714F7D00DDEB80 /* ImageDTO.h */,
+				93E9813C22714F7D00DDEB80 /* ImageDTO.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -810,8 +1361,6 @@
 			children = (
 				93E9806A2271475C00DDEB80 /* CustomTravelDTO.h */,
 				93E9806B2271475C00DDEB80 /* CustomTravelDTO.m */,
-				93E980692271475C00DDEB80 /* ResturantModel.h */,
-				93E980682271475C00DDEB80 /* ResturantModel.m */,
 			);
 			path = Playing;
 			sourceTree = "<group>";
@@ -819,6 +1368,8 @@
 		93399D0722671FA100FB9F0E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				93E9814822714F9700DDEB80 /* HotelCouponDetailDTO.h */,
+				93E9814922714F9700DDEB80 /* HotelCouponDetailDTO.m */,
 				93399D62226819C800FB9F0E /* QDMemberDTO.h */,
 				93399D5F226819C800FB9F0E /* QDMemberDTO.m */,
 				93399D61226819C800FB9F0E /* UserCreditDTO.h */,
@@ -832,6 +1383,10 @@
 		93399D0822671FA100FB9F0E /* Trading */ = {
 			isa = PBXGroup;
 			children = (
+				93E9813422714F5300DDEB80 /* BiddingPostersDTO.h */,
+				93E9813322714F5300DDEB80 /* BiddingPostersDTO.m */,
+				93E9813122714F5300DDEB80 /* QDMyPickOrderModel.h */,
+				93E9813222714F5300DDEB80 /* QDMyPickOrderModel.m */,
 			);
 			path = Trading;
 			sourceTree = "<group>";
@@ -889,6 +1444,20 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				93E982712271560B00DDEB80 /* PPNumberButton */,
+				93E98269227155C100DDEB80 /* QDGCDTimer */,
+				93E9823E2271557B00DDEB80 /* NewPagedFlowView */,
+				93E9822F227154E000DDEB80 /* QDPopMenu */,
+				93E981E42271542E00DDEB80 /* TFDropDownMenuDemo */,
+				93E981CE2271536E00DDEB80 /* LQPopUpView */,
+				93E981C72271535000DDEB80 /* CWActionSheet */,
+				93E981A8227152BD00DDEB80 /* ZLCollectionView */,
+				93E981862271510B00DDEB80 /* QDSegmentControl */,
+				93E9814B22714FD000DDEB80 /* AMapUtility */,
+				93E9811322714EFE00DDEB80 /* SFDualWaySlide */,
+				93E980E422714E6700DDEB80 /* OpenShare */,
+				93E980E022714E3700DDEB80 /* SnailQuickMaskPopups */,
+				93E980B222714D6B00DDEB80 /* QDDateUtils */,
 				93E980482271467F00DDEB80 /* VertificationCodeInput */,
 				93E9803C2271458200DDEB80 /* Marcos */,
 				93E980382271452700DDEB80 /* QDButton */,
@@ -921,6 +1490,9 @@
 		93399D6822681A0900FB9F0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				93E9826E227155EE00DDEB80 /* WaterLayou.h */,
+				93E9826F227155EE00DDEB80 /* WaterLayou.m */,
+				93E9826D227155ED00DDEB80 /* WXApi.h */,
 				93399D6922681A0900FB9F0E /* QDServiceClient.h */,
 				93399D6E22681A0900FB9F0E /* QDServiceClient.m */,
 				93399D6A22681A0900FB9F0E /* QDNetworkCache.m */,
@@ -1096,6 +1668,23 @@
 		93399E2B2268546200FB9F0E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				93E980D022714DC400DDEB80 /* DIYCalendarCell.h */,
+				93E980C822714DC300DDEB80 /* DIYCalendarCell.m */,
+				93E980CD22714DC300DDEB80 /* NSDictionary+Helper.h */,
+				93E980B622714DC200DDEB80 /* NSDictionary+Helper.m */,
+				93E980D122714DC500DDEB80 /* NSString+QDDecimalNumberHandler.h */,
+				93E980C522714DC200DDEB80 /* NSString+QDDecimalNumberHandler.m */,
+				93E980B722714DC200DDEB80 /* TABAnimation */,
+				93E980CA22714DC300DDEB80 /* UIButton+ImageTitleStyle.h */,
+				93E980CE22714DC400DDEB80 /* UIButton+ImageTitleStyle.m */,
+				93E980CF22714DC400DDEB80 /* UIColor+QDColor.h */,
+				93E980C922714DC300DDEB80 /* UIColor+QDColor.m */,
+				93E980C622714DC300DDEB80 /* UIControl+Blocks.h */,
+				93E980C722714DC300DDEB80 /* UIControl+Blocks.m */,
+				93E980CB22714DC300DDEB80 /* UIImage+Image.h */,
+				93E980D322714DC500DDEB80 /* UIImage+Image.m */,
+				93E980D222714DC500DDEB80 /* UIView+ML_Extension.h */,
+				93E980CC22714DC300DDEB80 /* UIView+ML_Extension.m */,
 				93399E302268546F00FB9F0E /* UIColor+HQColor.h */,
 				93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */,
 				93399E2E2268546F00FB9F0E /* UIImage+HQImage.h */,
@@ -1375,6 +1964,386 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		93E9808F22714D1900DDEB80 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				93E9809022714D1900DDEB80 /* SYSearchController.h */,
+				93E9809122714D1900DDEB80 /* Calendar */,
+				93E9809822714D1900DDEB80 /* QDLocationTopSelectView.m */,
+				93E9809922714D1900DDEB80 /* QDCurrentLocationView.h */,
+				93E9809A22714D1900DDEB80 /* SYHeaderView.m */,
+				93E9809B22714D1900DDEB80 /* SYTableViewCell.h */,
+				93E9809C22714D1900DDEB80 /* SYCollectionCell.m */,
+				93E9809D22714D1900DDEB80 /* SYHotCityHeaderView.m */,
+				93E9809E22714D1900DDEB80 /* SYCitysCell.h */,
+				93E9809F22714D1900DDEB80 /* SYHeaderView.h */,
+				93E980A022714D1900DDEB80 /* QDCurrentLocationView.m */,
+				93E980A122714D1900DDEB80 /* QDLocationTopSelectView.h */,
+				93E980A222714D1900DDEB80 /* SYSearchController.m */,
+				93E980A322714D1A00DDEB80 /* SYCollectionCell.h */,
+				93E980A422714D1A00DDEB80 /* SYTableViewCell.m */,
+				93E980A522714D1A00DDEB80 /* SYCitysCell.m */,
+				93E980A622714D1A00DDEB80 /* SYHotCityHeaderView.h */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		93E9809122714D1900DDEB80 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				93E9809222714D1900DDEB80 /* QDCalendarCustomerTourTopView.h */,
+				93E9809322714D1900DDEB80 /* QDCalendarTopView.h */,
+				93E9809422714D1900DDEB80 /* RangePickerCell.m */,
+				93E9809522714D1900DDEB80 /* QDCalendarCustomerTourTopView.m */,
+				93E9809622714D1900DDEB80 /* QDCalendarTopView.m */,
+				93E9809722714D1900DDEB80 /* RangePickerCell.h */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		93E980B222714D6B00DDEB80 /* QDDateUtils */ = {
+			isa = PBXGroup;
+			children = (
+				93E980B322714D7500DDEB80 /* QDDateUtils.h */,
+				93E980B422714D7500DDEB80 /* QDDateUtils.m */,
+			);
+			path = QDDateUtils;
+			sourceTree = "<group>";
+		};
+		93E980B722714DC200DDEB80 /* TABAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				93E980B822714DC200DDEB80 /* UIImage+TABCategory.h */,
+				93E980B922714DC200DDEB80 /* UIView+TABFrame.h */,
+				93E980BA22714DC200DDEB80 /* TABSafe.h */,
+				93E980BB22714DC200DDEB80 /* TABLabel.h */,
+				93E980BC22714DC200DDEB80 /* TABKit.h */,
+				93E980BD22714DC200DDEB80 /* UITableView+TABEndEdit.h */,
+				93E980BE22714DC200DDEB80 /* TABTextView.h */,
+				93E980BF22714DC200DDEB80 /* NSString+TABCategory.h */,
+				93E980C022714DC200DDEB80 /* UIScrollView+TABCategory.h */,
+				93E980C122714DC200DDEB80 /* TABDocumentMethod.h */,
+				93E980C222714DC200DDEB80 /* TABCommonMethod.h */,
+				93E980C322714DC200DDEB80 /* UICollectionView+TABEndEdit.h */,
+				93E980C422714DC200DDEB80 /* TABDefine.h */,
+			);
+			path = TABAnimation;
+			sourceTree = "<group>";
+		};
+		93E980DC22714DEE00DDEB80 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				93E980DD22714DEE00DDEB80 /* QDShareView.m */,
+				93E980DE22714DEE00DDEB80 /* QDShareView.h */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		93E980E022714E3700DDEB80 /* SnailQuickMaskPopups */ = {
+			isa = PBXGroup;
+			children = (
+				93E980E122714E3700DDEB80 /* SnailQuickMaskPopups.m */,
+				93E980E222714E3700DDEB80 /* SnailQuickMaskPopups.h */,
+			);
+			path = SnailQuickMaskPopups;
+			sourceTree = "<group>";
+		};
+		93E980E422714E6700DDEB80 /* OpenShare */ = {
+			isa = PBXGroup;
+			children = (
+				93E980E522714E6700DDEB80 /* OpenShare+Weibo.m */,
+				93E980E622714E6700DDEB80 /* OpenShare.m */,
+				93E980E722714E6700DDEB80 /* OpenShare+Renren.h */,
+				93E980E822714E6700DDEB80 /* OpenShare+QQ.m */,
+				93E980E922714E6700DDEB80 /* OpenShare+Alipay.m */,
+				93E980EA22714E6700DDEB80 /* OpenShare+Weixin.m */,
+				93E980EB22714E6700DDEB80 /* OpenShareHeader.h */,
+				93E980EC22714E6700DDEB80 /* OpenShare+Weibo.h */,
+				93E980ED22714E6700DDEB80 /* OpenShare+Renren.m */,
+				93E980EE22714E6700DDEB80 /* OpenShare.h */,
+				93E980EF22714E6700DDEB80 /* OpenShare+QQ.h */,
+				93E980F022714E6700DDEB80 /* OpenShare+Weixin.h */,
+				93E980F122714E6700DDEB80 /* OpenShare+Alipay.h */,
+			);
+			path = OpenShare;
+			sourceTree = "<group>";
+		};
+		93E9811322714EFE00DDEB80 /* SFDualWaySlide */ = {
+			isa = PBXGroup;
+			children = (
+				93E9811422714EFE00DDEB80 /* SFDualWayIndicateView.h */,
+				93E9811522714EFE00DDEB80 /* SFDualWaySlider.h */,
+				93E9811622714EFE00DDEB80 /* SFDualWayIndicateView.m */,
+				93E9811722714EFE00DDEB80 /* SFDualWaySlider.m */,
+			);
+			path = SFDualWaySlide;
+			sourceTree = "<group>";
+		};
+		93E9811A22714F4800DDEB80 /* RoutePlan */ = {
+			isa = PBXGroup;
+			children = (
+				93E9811B22714F4800DDEB80 /* MANaviAnnotation.h */,
+				93E9811C22714F4800DDEB80 /* LineDashPolyline.m */,
+				93E9811D22714F4800DDEB80 /* MANaviRoute.m */,
+				93E9811E22714F4800DDEB80 /* QDNavigationService.m */,
+				93E9811F22714F4800DDEB80 /* MANaviPolyline.m */,
+				93E9812022714F4800DDEB80 /* MANaviRoute.h */,
+				93E9812122714F4800DDEB80 /* MANaviAnnotation.m */,
+				93E9812222714F4800DDEB80 /* LineDashPolyline.h */,
+				93E9812322714F4800DDEB80 /* QDNavigationService.h */,
+				93E9812422714F4800DDEB80 /* MANaviPolyline.h */,
+			);
+			path = RoutePlan;
+			sourceTree = "<group>";
+		};
+		93E9812522714F4900DDEB80 /* VipPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				93E9812622714F4900DDEB80 /* QDSalesInfo.h */,
+				93E9812722714F4900DDEB80 /* VipCardDTO.m */,
+				93E9812822714F4900DDEB80 /* QDSalesInfo.m */,
+				93E9812922714F4900DDEB80 /* VipCardDTO.h */,
+			);
+			path = VipPurchase;
+			sourceTree = "<group>";
+		};
+		93E9813722714F7000DDEB80 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				93E9813822714F7000DDEB80 /* SYChineseToPinyin.m */,
+				93E9813922714F7000DDEB80 /* SYChineseToPinyin.h */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		93E9814122714F8700DDEB80 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				93E9814222714F8700DDEB80 /* ResturantModel.m */,
+				93E9814522714F8700DDEB80 /* ResturantModel.h */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		93E9814B22714FD000DDEB80 /* AMapUtility */ = {
+			isa = PBXGroup;
+			children = (
+				93E9814C22714FD000DDEB80 /* ErrorInfoUtility.h */,
+				93E9814D22714FD000DDEB80 /* CommonUtility.m */,
+				93E9814E22714FD000DDEB80 /* ErrorInfoUtility.m */,
+				93E9814F22714FD000DDEB80 /* CommonUtility.h */,
+			);
+			path = AMapUtility;
+			sourceTree = "<group>";
+		};
+		93E981522271500700DDEB80 /* HomeSearchViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				93E981692271501800DDEB80 /* QDSearchViewController.h */,
+				93E981682271501800DDEB80 /* QDSearchViewController.m */,
+				93E981532271500700DDEB80 /* QDHomeZDYListVC.m */,
+				93E981542271500700DDEB80 /* QDHomeMallListVC.h */,
+				93E981552271500700DDEB80 /* QDHomeHotelListVC.m */,
+				93E981562271500700DDEB80 /* QDHomeSearchVC.m */,
+				93E981572271500700DDEB80 /* QDSearchResultViewController.m */,
+				93E981582271500700DDEB80 /* QDHomeRankListVC.m */,
+				93E981592271500700DDEB80 /* QDHomeZDYListVC.h */,
+				93E9815A2271500700DDEB80 /* QDHomeRankListVC.h */,
+				93E9815B2271500700DDEB80 /* QDSearchResultViewController.h */,
+				93E9815C2271500700DDEB80 /* QDHomeSearchVC.h */,
+				93E9815D2271500700DDEB80 /* QDHomeHotelListVC.h */,
+				93E9815E2271500700DDEB80 /* QDHomeMallListVC.m */,
+			);
+			path = HomeSearchViewControllers;
+			sourceTree = "<group>";
+		};
+		93E9816D2271504700DDEB80 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				93E9816E2271504700DDEB80 /* QDHotelTableFooterView.h */,
+				93E9816F2271504700DDEB80 /* QDHotelHeaderView.m */,
+				93E981702271504700DDEB80 /* NavigationView.h */,
+				93E981712271504700DDEB80 /* QDHotelTableViewCell.m */,
+				93E981722271504700DDEB80 /* QDHotelTypeCell.m */,
+				93E981732271504700DDEB80 /* QDHotelTypeView.m */,
+				93E981742271504700DDEB80 /* QDHotelSearchView.m */,
+				93E981752271504700DDEB80 /* QDHotelHeaderView.h */,
+				93E981762271504700DDEB80 /* QDHotelTableFooterView.m */,
+				93E981772271504700DDEB80 /* NavigationView.m */,
+				93E981782271504700DDEB80 /* QDHotelTypeCell.h */,
+				93E981792271504700DDEB80 /* QDHotelTableViewCell.h */,
+				93E9817A2271504700DDEB80 /* QDHotelSearchView.h */,
+				93E9817B2271504700DDEB80 /* QDHotelTypeView.h */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		93E981862271510B00DDEB80 /* QDSegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				93E981882271511700DDEB80 /* QDSegmentControl.h */,
+				93E981872271511700DDEB80 /* QDSegmentControl.m */,
+			);
+			path = QDSegmentControl;
+			sourceTree = "<group>";
+		};
+		93E981A8227152BD00DDEB80 /* ZLCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				93E981A9227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m */,
+				93E981AA227152BD00DDEB80 /* HYBCardCollectionViewCell.h */,
+				93E981AB227152BD00DDEB80 /* ZLCollectionView.h */,
+				93E981AC227152BD00DDEB80 /* ZLFlowLayout.h */,
+				93E981AD227152BD00DDEB80 /* QDVipPurchaseFlowLayout.h */,
+				93E981AE227152BD00DDEB80 /* ZLFlowLayoutConstants.h */,
+				93E981AF227152BD00DDEB80 /* ZLFlowLayout.m */,
+				93E981B0227152BD00DDEB80 /* ZLCollectionView.m */,
+				93E981B1227152BD00DDEB80 /* HYBCardCollectionViewCell.m */,
+			);
+			name = ZLCollectionView;
+			path = ../../../TravelPoints/TravelPoints/Utils/ZLCollectionView;
+			sourceTree = "<group>";
+		};
+		93E981B62271532100DDEB80 /* VipPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */,
+				93E981B82271532100DDEB80 /* QDVipPurchaseVC.h */,
+				93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */,
+				93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */,
+			);
+			name = VipPurchase;
+			path = ../../../TravelPoints/TravelPoints/ViewControllers/VipPurchase;
+			sourceTree = "<group>";
+		};
+		93E981BD2271534000DDEB80 /* VipPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */,
+				93E981BF2271534000DDEB80 /* QDReadyToPayViewCell.h */,
+				93E981C02271534000DDEB80 /* QDVipPurchaseView.h */,
+				93E981C12271534000DDEB80 /* QDVipPurchaseTableHeader.h */,
+				93E981C22271534000DDEB80 /* QDVipPurchaseView.m */,
+				93E981C32271534000DDEB80 /* QDReadyToPayViewCell.m */,
+			);
+			path = VipPurchase;
+			sourceTree = "<group>";
+		};
+		93E981C72271535000DDEB80 /* CWActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				93E981C82271535000DDEB80 /* CWActionSheetTableViewCell.h */,
+				93E981C92271535000DDEB80 /* CWActionSheet.m */,
+				93E981CA2271535000DDEB80 /* CWActionSheetTableViewCell.m */,
+				93E981CB2271535000DDEB80 /* CWActionSheet.h */,
+			);
+			path = CWActionSheet;
+			sourceTree = "<group>";
+		};
+		93E981CE2271536E00DDEB80 /* LQPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				93E981CF2271537300DDEB80 /* LQPopUpView.h */,
+				93E981D02271537300DDEB80 /* LQPopUpView.m */,
+			);
+			path = LQPopUpView;
+			sourceTree = "<group>";
+		};
+		93E981E42271542E00DDEB80 /* TFDropDownMenuDemo */ = {
+			isa = PBXGroup;
+			children = (
+				93E981E52271542E00DDEB80 /* TFDropDownMenu.h */,
+				93E981E62271542E00DDEB80 /* TFDropDownMenuView.m */,
+				93E981E72271542E00DDEB80 /* Custom */,
+				93E981ED2271542E00DDEB80 /* TFDropDownMenuView.h */,
+			);
+			path = TFDropDownMenuDemo;
+			sourceTree = "<group>";
+		};
+		93E981E72271542E00DDEB80 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				93E981E82271542E00DDEB80 /* TFIndexPatch.m */,
+				93E981E92271542E00DDEB80 /* TFDropDownMenuCollectionViewCell.h */,
+				93E981EA2271542E00DDEB80 /* TFMenuDefinition.h */,
+				93E981EB2271542E00DDEB80 /* TFIndexPatch.h */,
+				93E981EC2271542E00DDEB80 /* TFDropDownMenuCollectionViewCell.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		93E981FB2271546C00DDEB80 /* Mall */ = {
+			isa = PBXGroup;
+			children = (
+				93E981FC2271546C00DDEB80 /* QDMallTopView.m */,
+				93E981FD2271546C00DDEB80 /* QDMallTableCell.h */,
+				93E981FE2271546C00DDEB80 /* QDMallTopView.h */,
+				93E981FF2271546C00DDEB80 /* QDMallTableCell.m */,
+			);
+			path = Mall;
+			sourceTree = "<group>";
+		};
+		93E9822F227154E000DDEB80 /* QDPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				93E98230227154E000DDEB80 /* QDPopMenuCell.h */,
+				93E98231227154E000DDEB80 /* QDPopMenu.h */,
+				93E98232227154E000DDEB80 /* QDPopMenuCell.m */,
+				93E98233227154E000DDEB80 /* QDPopMenu.m */,
+			);
+			path = QDPopMenu;
+			sourceTree = "<group>";
+		};
+		93E982362271551100DDEB80 /* CustomMapView */ = {
+			isa = PBXGroup;
+			children = (
+				93E982372271551100DDEB80 /* RadialCircleAnnotationView.h */,
+				93E982382271551100DDEB80 /* RadialCircleAnnotationView.m */,
+			);
+			path = CustomMapView;
+			sourceTree = "<group>";
+		};
+		93E9823A2271554900DDEB80 /* RotePlanHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				93E9823B2271554900DDEB80 /* QDRoutePlanHeaderView.h */,
+				93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */,
+			);
+			name = RotePlanHeaderView;
+			path = ../../../TravelPoints/TravelPoints/Views/RotePlanHeaderView;
+			sourceTree = "<group>";
+		};
+		93E9823E2271557B00DDEB80 /* NewPagedFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */,
+				93E982402271557B00DDEB80 /* NewPagedFlowView.m */,
+				93E982412271557B00DDEB80 /* PGCustomBannerView.m */,
+				93E982422271557B00DDEB80 /* PGIndexBannerSubiew.h */,
+				93E982432271557B00DDEB80 /* NewPagedFlowView.h */,
+				93E982442271557B00DDEB80 /* PGCustomBannerView.h */,
+			);
+			path = NewPagedFlowView;
+			sourceTree = "<group>";
+		};
+		93E98269227155C100DDEB80 /* QDGCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				93E9826A227155C100DDEB80 /* YUTimer.h */,
+				93E9826B227155C100DDEB80 /* YUTimer.m */,
+			);
+			path = QDGCDTimer;
+			sourceTree = "<group>";
+		};
+		93E982712271560B00DDEB80 /* PPNumberButton */ = {
+			isa = PBXGroup;
+			children = (
+				93E982722271560B00DDEB80 /* PPNumberButton.h */,
+				93E982732271560B00DDEB80 /* PPNumberButton.m */,
+			);
+			path = PPNumberButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1514,6 +2483,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun-resources.sh",
+				"${PODS_ROOT}/AMap2DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
@@ -1521,6 +2491,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
@@ -1559,118 +2530,240 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E98029227144B100DDEB80 /* IdentifyView.m in Sources */,
+				93E9813022714F4900DDEB80 /* QDSalesInfo.m in Sources */,
+				93E980DA22714DC500DDEB80 /* UIButton+ImageTitleStyle.m in Sources */,
+				93E9822E227154B000DDEB80 /* QDMyPurchaseCell.m in Sources */,
 				93399DE3226823AF00FB9F0E /* UIImageView+HighlightedWebCache.m in Sources */,
+				93E980D422714DC500DDEB80 /* NSDictionary+Helper.m in Sources */,
 				93399E102268487300FB9F0E /* UIView+TABControlAnimation.m in Sources */,
 				93399DE8226823AF00FB9F0E /* SDWebImagePrefetcher.m in Sources */,
+				93E982472271557B00DDEB80 /* PGCustomBannerView.m in Sources */,
+				93E981F02271542F00DDEB80 /* TFDropDownMenuCollectionViewCell.m in Sources */,
 				93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */,
 				93399E6F2268663700FB9F0E /* UIViewController+Dealloc.m in Sources */,
+				93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
+				93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */,
+				93E981CC2271535100DDEB80 /* CWActionSheet.m in Sources */,
 				93E98023227144B100DDEB80 /* QDMsgVerifyView.m in Sources */,
 				93399DEC226823AF00FB9F0E /* UIImageView+WebCache.m in Sources */,
 				93E980462271458300DDEB80 /* QDResponseObject.m in Sources */,
 				93399E142268487300FB9F0E /* TABAnimatedObject.m in Sources */,
 				93E980042271446B00DDEB80 /* YYTextKeyboardManager.m in Sources */,
+				93E980F722714E6700DDEB80 /* OpenShare+Renren.m in Sources */,
+				93E981C62271534100DDEB80 /* QDReadyToPayViewCell.m in Sources */,
 				93399D33226814FC00FB9F0E /* RankThirdViewController.m in Sources */,
 				93E9807D2271479300DDEB80 /* WKWebViewJavascriptBridge.m in Sources */,
+				93E980AD22714D1A00DDEB80 /* SYHotCityHeaderView.m in Sources */,
 				93E980472271458300DDEB80 /* QDOrderField.m in Sources */,
+				93E981B3227152BD00DDEB80 /* ZLFlowLayout.m in Sources */,
 				93E980102271446B00DDEB80 /* YYTextTransaction.m in Sources */,
+				93E980DF22714DEE00DDEB80 /* QDShareView.m in Sources */,
 				93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */,
 				93E9800D2271446B00DDEB80 /* NSParagraphStyle+YYText.m in Sources */,
 				93399D192267219900FB9F0E /* QDTabBar.m in Sources */,
+				93E9822D227154B000DDEB80 /* QDFilterTypeTwoView.m in Sources */,
+				93E981622271500700DDEB80 /* QDSearchResultViewController.m in Sources */,
+				93E98262227155A100DDEB80 /* QDSecondViewController.m in Sources */,
+				93E980D622714DC500DDEB80 /* UIControl+Blocks.m in Sources */,
 				93399DEE226823AF00FB9F0E /* SDImageCacheConfig.m in Sources */,
+				93E981B5227152BD00DDEB80 /* HYBCardCollectionViewCell.m in Sources */,
 				93399E6D2268663700FB9F0E /* QDTableViewController.m in Sources */,
 				93399D7B22681A0900FB9F0E /* QDUploadImageManager.m in Sources */,
+				93E9810C22714E9300DDEB80 /* QDCustomTourSectionHeaderView.m in Sources */,
+				93E9810B22714E9300DDEB80 /* QDPriceRangeView.m in Sources */,
+				93E98224227154B000DDEB80 /* QDMyBiddingOrderView.m in Sources */,
 				93E980052271446B00DDEB80 /* YYTextDebugOption.m in Sources */,
 				93399D8822681C4900FB9F0E /* QDUserDefaults.m in Sources */,
 				93E980132271446B00DDEB80 /* YYTextWeakProxy.m in Sources */,
 				93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */,
+				93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */,
+				93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */,
+				93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */,
 				93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */,
+				93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */,
+				93E981672271500F00DDEB80 /* QDHotelsInAreaViewController.m in Sources */,
+				93E9812B22714F4900DDEB80 /* MANaviRoute.m in Sources */,
 				93399E182268487300FB9F0E /* UIView+Animated.m in Sources */,
+				93E981A12271524B00DDEB80 /* QDHotelsInAreaView.m in Sources */,
 				93E98024227144B100DDEB80 /* QDForgetPwdView.m in Sources */,
+				93E980AE22714D1A00DDEB80 /* QDCurrentLocationView.m in Sources */,
 				93399D9D2268222500FB9F0E /* STConst.m in Sources */,
+				93E980A722714D1A00DDEB80 /* RangePickerCell.m in Sources */,
 				93E980712271477400DDEB80 /* QDMallModel.m in Sources */,
 				93E9800F2271446B00DDEB80 /* UIPasteboard+YYText.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
+				93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */,
+				93E9825E227155A100DDEB80 /* QDOrderDetailVC.m in Sources */,
 				93399D3A226815A300FB9F0E /* Macro.m in Sources */,
 				93E9806D2271475C00DDEB80 /* CustomTravelDTO.m in Sources */,
 				93E980032271446B00DDEB80 /* YYTextSelectionView.m in Sources */,
+				93E981DF227153B800DDEB80 /* QDHotelReserveVC.m in Sources */,
+				93E9819D2271524B00DDEB80 /* QDHomeTopView.m in Sources */,
 				93399D2D226814EA00FB9F0E /* RankFirstViewController.m in Sources */,
 				93E980652271472F00DDEB80 /* QDRoomTypeDTO.m in Sources */,
+				93E981B2227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m in Sources */,
+				93E9812A22714F4900DDEB80 /* LineDashPolyline.m in Sources */,
 				93399D512268191E00FB9F0E /* QDMineInfoTableViewCell.m in Sources */,
 				93399DEB226823AF00FB9F0E /* NSData+ImageContentType.m in Sources */,
+				93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */,
+				93E9812D22714F4900DDEB80 /* MANaviPolyline.m in Sources */,
+				93E981BC2271532100DDEB80 /* QDReadyToCreateOrderVC.m in Sources */,
 				93E980642271472F00DDEB80 /* QDHotelFacilityDTO.m in Sources */,
+				93E981EE2271542F00DDEB80 /* TFDropDownMenuView.m in Sources */,
+				93E980D722714DC500DDEB80 /* DIYCalendarCell.m in Sources */,
+				93E981632271500700DDEB80 /* QDHomeRankListVC.m in Sources */,
+				93E98263227155A100DDEB80 /* QDTradingShellsVC.m in Sources */,
 				93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */,
+				93E98260227155A100DDEB80 /* QDShellRecommendVC.m in Sources */,
+				93E981EF2271542F00DDEB80 /* TFIndexPatch.m in Sources */,
+				93E9811122714E9300DDEB80 /* QDKeyWordsSearchViewT.m in Sources */,
 				93399D30226814F300FB9F0E /* RankSecondViewController.m in Sources */,
+				93E9815122714FD000DDEB80 /* ErrorInfoUtility.m in Sources */,
+				93E98270227155EE00DDEB80 /* WaterLayou.m in Sources */,
+				93E981E2227153B800DDEB80 /* QDResturantVC.m in Sources */,
 				93399E1D2268487300FB9F0E /* TABBaseTableViewCell.m in Sources */,
+				93E981A42271524B00DDEB80 /* QDHotelAndStrategyFilterView.m in Sources */,
 				93E9804E2271467F00DDEB80 /* VertificationCodeInputLabel.m in Sources */,
+				93E9813522714F5300DDEB80 /* QDMyPickOrderModel.m in Sources */,
 				93399DE2226823AF00FB9F0E /* SDWebImageDecoder.m in Sources */,
 				93399E342268546F00FB9F0E /* UIImage+HQImage.m in Sources */,
 				93399E1B2268487300FB9F0E /* TABBaseCollectionViewCell.m in Sources */,
 				93399E702268663700FB9F0E /* NSObject+Property.m in Sources */,
+				93E980AB22714D1A00DDEB80 /* SYHeaderView.m in Sources */,
+				93E980F322714E6700DDEB80 /* OpenShare.m in Sources */,
+				93E980B022714D1A00DDEB80 /* SYTableViewCell.m in Sources */,
+				93E982452271557B00DDEB80 /* PGIndexBannerSubiew.m in Sources */,
 				93E980092271446B00DDEB80 /* YYTextAttribute.m in Sources */,
 				93399D7C22681A0900FB9F0E /* QDUploadUtils.m in Sources */,
 				93E980632271472F00DDEB80 /* QDStrategyDTO.m in Sources */,
 				93399DA02268222500FB9F0E /* UIView+ST.m in Sources */,
 				93E9800A2271446B00DDEB80 /* YYTextArchiver.m in Sources */,
+				93E98264227155A100DDEB80 /* QDFindSatifiedDataVC.m in Sources */,
 				93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */,
 				93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */,
+				93E9814022714F7D00DDEB80 /* ImageDTO.m in Sources */,
+				93E981C52271534100DDEB80 /* QDVipPurchaseView.m in Sources */,
 				93399DF1226823AF00FB9F0E /* UIButton+WebCache.m in Sources */,
 				93399E2322684C0500FB9F0E /* RankFirstViewCell.m in Sources */,
 				93399DBC2268232A00FB9F0E /* WXProgressHUD.m in Sources */,
+				93E98227227154B000DDEB80 /* QDOrderDetailView.m in Sources */,
+				93E980AF22714D1A00DDEB80 /* SYSearchController.m in Sources */,
 				93E980362271450000DDEB80 /* GBverifyButton.m in Sources */,
-				93399E782268767900FB9F0E /* QDCustomTourCell.m in Sources */,
+				93E98267227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m in Sources */,
+				93E9817C2271504700DDEB80 /* QDHotelHeaderView.m in Sources */,
 				93E98026227144B100DDEB80 /* QDRegisterView.m in Sources */,
 				93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */,
+				93E98265227155A100DDEB80 /* QDRecommendViewController.m in Sources */,
+				93E9817E2271504700DDEB80 /* QDHotelTypeCell.m in Sources */,
+				93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */,
+				93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */,
 				93E980082271446B00DDEB80 /* YYTextParser.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
+				93E980AC22714D1A00DDEB80 /* SYCollectionCell.m in Sources */,
+				93E9813F22714F7D00DDEB80 /* RanklistDTO.m in Sources */,
 				93E9804D2271467F00DDEB80 /* VertificationCodeInputView.m in Sources */,
 				93E980002271446B00DDEB80 /* YYTextInput.m in Sources */,
+				93E9811022714E9300DDEB80 /* QDMallTableHeaderView.m in Sources */,
 				93E9808B227147C700DDEB80 /* QDCalendarViewController.m in Sources */,
 				93399D5D2268196300FB9F0E /* STPhotoKitController.m in Sources */,
+				93E9814622714F8700DDEB80 /* ResturantModel.m in Sources */,
+				93E980D922714DC500DDEB80 /* UIView+ML_Extension.m in Sources */,
 				93399DE4226823AF00FB9F0E /* SDWebImageDownloader.m in Sources */,
+				93E9811922714EFE00DDEB80 /* SFDualWaySlider.m in Sources */,
 				93E980122271446B00DDEB80 /* YYTextAsyncLayer.m in Sources */,
+				93E98226227154B000DDEB80 /* QDMySaleOrderCell.m in Sources */,
 				93E9803B2271452E00DDEB80 /* QDButton.m in Sources */,
-				93E9806C2271475C00DDEB80 /* ResturantModel.m in Sources */,
+				93E981802271504700DDEB80 /* QDHotelSearchView.m in Sources */,
+				93E9819C2271524B00DDEB80 /* QDShowMenuView.m in Sources */,
+				93E980F222714E6700DDEB80 /* OpenShare+Weibo.m in Sources */,
+				93E980D822714DC500DDEB80 /* UIColor+QDColor.m in Sources */,
+				93E9812F22714F4900DDEB80 /* VipCardDTO.m in Sources */,
+				93E9826C227155C100DDEB80 /* YUTimer.m in Sources */,
+				93E98222227154B000DDEB80 /* QDTradeShellsSectionHeaderView.m in Sources */,
+				93E980F622714E6700DDEB80 /* OpenShare+Weixin.m in Sources */,
 				93399CC12267124000FB9F0E /* ViewController.m in Sources */,
+				93E98266227155A100DDEB80 /* QDBuyOrSellViewController.m in Sources */,
 				93E980062271446B00DDEB80 /* YYLabel.m in Sources */,
+				93E980AA22714D1A00DDEB80 /* QDLocationTopSelectView.m in Sources */,
+				93E9816B2271501800DDEB80 /* QDSearchViewController.m in Sources */,
+				93E982462271557B00DDEB80 /* NewPagedFlowView.m in Sources */,
+				93E981892271511700DDEB80 /* QDSegmentControl.m in Sources */,
+				93E981A72271528F00DDEB80 /* QDHomgePageVC.m in Sources */,
 				93399DE7226823AF00FB9F0E /* SDWebImageCompat.m in Sources */,
+				93E981A32271524B00DDEB80 /* QDStrategyTableViewCell.m in Sources */,
 				93399D5C2268196300FB9F0E /* UIImagePickerController+ST.m in Sources */,
+				93E9810A22714E9300DDEB80 /* QDCustomTourCell.m in Sources */,
+				93E980B122714D1A00DDEB80 /* SYCitysCell.m in Sources */,
 				93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */,
+				93E9819F2271524B00DDEB80 /* QDHotelsInAreaViewTableViewCell.m in Sources */,
+				93E98235227154E100DDEB80 /* QDPopMenu.m in Sources */,
 				93399D39226815A300FB9F0E /* UIColor+Extention.m in Sources */,
+				93E9817D2271504700DDEB80 /* QDHotelTableViewCell.m in Sources */,
+				93E980F422714E6700DDEB80 /* OpenShare+QQ.m in Sources */,
+				93E98228227154B000DDEB80 /* MyTableCell.m in Sources */,
 				93399DA72268228900FB9F0E /* QDSettingViewController.m in Sources */,
 				93E98027227144B100DDEB80 /* QDSetLoginPwdView.m in Sources */,
+				93E9825F227155A100DDEB80 /* QDFourViewController.m in Sources */,
 				93E98051227146AF00DDEB80 /* QDProtocolVC.m in Sources */,
+				93E9813A22714F7000DDEB80 /* SYChineseToPinyin.m in Sources */,
+				93E9814A22714F9700DDEB80 /* HotelCouponDetailDTO.m in Sources */,
+				93E98223227154B000DDEB80 /* QDFilterTypeOneView.m in Sources */,
 				93E98057227146BC00DDEB80 /* QDBridgeViewController.m in Sources */,
+				93E981A02271524B00DDEB80 /* QDHomePageViewCell.m in Sources */,
+				93E980B522714D7500DDEB80 /* QDDateUtils.m in Sources */,
+				93E980A922714D1A00DDEB80 /* QDCalendarTopView.m in Sources */,
+				93E981CD2271535100DDEB80 /* CWActionSheetTableViewCell.m in Sources */,
+				93E98221227154B000DDEB80 /* QDPickUpOrderCell.m in Sources */,
 				93399E3A2268548900FB9F0E /* HQMainTabbarVC.m in Sources */,
 				93E980022271446B00DDEB80 /* YYTextLine.m in Sources */,
+				93E981612271500700DDEB80 /* QDHomeSearchVC.m in Sources */,
+				93E982742271560B00DDEB80 /* PPNumberButton.m in Sources */,
 				93399D502268191E00FB9F0E /* QDBackgroundView.m in Sources */,
 				93399E132268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m in Sources */,
 				93399D7822681A0900FB9F0E /* QDServiceClient.m in Sources */,
 				93399DA42268224400FB9F0E /* MQGradientProgressView.m in Sources */,
 				93399DED226823AF00FB9F0E /* NSImage+WebCache.m in Sources */,
 				93399E152268487300FB9F0E /* TABViewAnimated.m in Sources */,
+				93E9812E22714F4900DDEB80 /* MANaviAnnotation.m in Sources */,
 				93E9802D227144D900DDEB80 /* PooCodeView.m in Sources */,
+				93E982772271565F00DDEB80 /* QDThirdViewController.m in Sources */,
 				93E980112271446B00DDEB80 /* UIView+YYText.m in Sources */,
 				93399D4D2268191E00FB9F0E /* QDMineTableHeaderView.m in Sources */,
+				93E981602271500700DDEB80 /* QDHomeHotelListVC.m in Sources */,
 				93399DB62268231200FB9F0E /* QDRefreshFooter.m in Sources */,
+				93E9810F22714E9300DDEB80 /* QDResutrantViewCell.m in Sources */,
 				93E98028227144B100DDEB80 /* QDLoginView.m in Sources */,
+				93E9822A227154B000DDEB80 /* RootFirstCollectionCell.m in Sources */,
+				93E980D522714DC500DDEB80 /* NSString+QDDecimalNumberHandler.m in Sources */,
 				93E980072271446B00DDEB80 /* YYTextRunDelegate.m in Sources */,
 				93E9808D227147C700DDEB80 /* QDCitySelectedViewController.m in Sources */,
 				93399DE1226823AF00FB9F0E /* SDWebImageManager.m in Sources */,
+				93E981DE227153B800DDEB80 /* QDKeyWordsSearchVC.m in Sources */,
+				93E9822C227154B000DDEB80 /* QDMallTableSectionHeaderView.m in Sources */,
+				93E9819E2271524B00DDEB80 /* QDHomePageTopView.m in Sources */,
 				93399D542268191E00FB9F0E /* QDLogonWithNoFinancialAccountView.m in Sources */,
 				93399DE6226823AF00FB9F0E /* UIImage+MultiFormat.m in Sources */,
 				93399E332268546F00FB9F0E /* UIColor+HQColor.m in Sources */,
 				93399DE5226823AF00FB9F0E /* UIImage+GIF.m in Sources */,
 				93399D7722681A0900FB9F0E /* QDNetworkCache.m in Sources */,
+				93E9817F2271504700DDEB80 /* QDHotelTypeView.m in Sources */,
 				93E980672271472F00DDEB80 /* QDBankaccountDTO.m in Sources */,
 				93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */,
 				93399D64226819C800FB9F0E /* UserMoneyDTO.m in Sources */,
+				93E98268227155A100DDEB80 /* QDFirstViewController.m in Sources */,
 				93399DB72268231200FB9F0E /* QDRefreshHeader.m in Sources */,
+				93E981E1227153B800DDEB80 /* QDMallViewController.m in Sources */,
 				93399D552268191E00FB9F0E /* QDMineHeaderNotLoginView.m in Sources */,
+				93E9810D22714E9300DDEB80 /* QDHotelReserveTableHeaderView.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
 				93399D65226819C800FB9F0E /* QDMemberDTO.m in Sources */,
 				93399D9E2268222500FB9F0E /* STUI.m in Sources */,
+				93E980F522714E6700DDEB80 /* OpenShare+Alipay.m in Sources */,
+				93E982012271546C00DDEB80 /* QDMallTableCell.m in Sources */,
+				93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */,
+				93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */,
 				93E980012271446B00DDEB80 /* YYTextLayout.m in Sources */,
 				93399D9F2268222500FB9F0E /* UIImage+ST.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
@@ -1684,13 +2777,18 @@
 				93E9808C227147C700DDEB80 /* QDCalendarCustomerTourVC.m in Sources */,
 				93399DEF226823AF00FB9F0E /* UIView+WebCacheOperation.m in Sources */,
 				93399E122268487300FB9F0E /* UITableView+Animated.m in Sources */,
+				93E981642271500700DDEB80 /* QDHomeMallListVC.m in Sources */,
 				93E980372271450000DDEB80 /* UIColor+CustomFunctions.m in Sources */,
 				93399E1C2268487300FB9F0E /* UIView+TABLayoutSubviews.m in Sources */,
 				93E98025227144B100DDEB80 /* QDResetLoginPwdView.m in Sources */,
 				93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */,
+				93E981A22271524B00DDEB80 /* QDHomeTopCancelView.m in Sources */,
 				93399D8422681AE700FB9F0E /* SPButton.m in Sources */,
 				93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */,
 				93399D66226819C800FB9F0E /* UserCreditDTO.m in Sources */,
+				93E982002271546C00DDEB80 /* QDMallTopView.m in Sources */,
+				93E981D12271537300DDEB80 /* LQPopUpView.m in Sources */,
+				93E9815022714FD000DDEB80 /* CommonUtility.m in Sources */,
 				93E98056227146BC00DDEB80 /* QDBridgeTViewController.m in Sources */,
 				93399D522268191E00FB9F0E /* QDMineHeaderFinancialAccountView.m in Sources */,
 				93E9800C2271446B00DDEB80 /* YYTextUtilities.m in Sources */,
@@ -1706,11 +2804,22 @@
 				93E9800B2271446B00DDEB80 /* YYTextRubyAnnotation.m in Sources */,
 				93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */,
 				93399D4F2268191E00FB9F0E /* QDMineSectionHeaderView.m in Sources */,
+				93E981822271504700DDEB80 /* NavigationView.m in Sources */,
+				93E9811222714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m in Sources */,
 				93399DB82268231200FB9F0E /* QDGifRefreshHeader.m in Sources */,
+				93E981E0227153B800DDEB80 /* QDKeyWordsHomePageVC.m in Sources */,
 				93399E112268487300FB9F0E /* TABAnimationMethod.m in Sources */,
+				93E9810E22714E9300DDEB80 /* QYBaseView.m in Sources */,
 				93E980452271458300DDEB80 /* QDGlobalFunc.m in Sources */,
+				93E98225227154B000DDEB80 /* RootCollectionCell.m in Sources */,
+				93E981BB2271532100DDEB80 /* QDVipPurchaseVC.m in Sources */,
 				93399D532268191E00FB9F0E /* QDMineHeaderWithdrawView.m in Sources */,
+				93E980DB22714DC500DDEB80 /* UIImage+Image.m in Sources */,
+				93E981E3227153B800DDEB80 /* QDDZYViewController.m in Sources */,
+				93E98229227154B000DDEB80 /* RootTableCell.m in Sources */,
 				93E9807E2271479300DDEB80 /* WebViewJavascriptBridge.m in Sources */,
+				93E981812271504700DDEB80 /* QDHotelTableFooterView.m in Sources */,
+				93E9811822714EFE00DDEB80 /* SFDualWayIndicateView.m in Sources */,
 				93399E372268548300FB9F0E /* HQTabbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

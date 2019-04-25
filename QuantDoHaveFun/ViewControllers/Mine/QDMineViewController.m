@@ -13,11 +13,12 @@
 #import "QDMineInfoTableViewCell.h"
 #import "QDLogonWithNoFinancialAccountView.h"
 #import "QDMineHeaderFinancialAccountView.h"
+#import "QDBridgeViewController.h"
 #import "QDMemberDTO.h"
 #import "QDRefreshHeader.h"
 #import "QDMineSectionHeaderView.h"
-//#import "QDBuyOrSellViewController.h"
-//#import "QDBridgeViewController.h"
+#import "QDBuyOrSellViewController.h"
+#import "QDBridgeViewController.h"
 //#import "QDHouseCouponVC.h"
 //#import "AllHouseCouponVC.h"
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -28,6 +29,7 @@
 #import "QDUploadUtils.h"
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 
 
 typedef NS_ENUM(NSInteger, PhotoType)
@@ -58,7 +60,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLoginView) name:@"reloadLoginView" object:nil];
-//    [self isLogin];
+    [self isLogin];
 }
 
 - (void)reloadLoginView{
@@ -89,7 +91,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cellTitleArr = @[@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址" ,@"安全中心"];
+    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址",@"安全中心", nil];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -122,11 +124,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
                     _currentQDMemberTDO = [QDMemberDTO yy_modelWithDictionary:responseObject.result];
                     if ([_currentQDMemberTDO.isYepay isEqualToString:@"0"] || _currentQDMemberTDO.isYepay == nil) {
                         [QDUserDefaults setObject:@"1" forKey:@"loginType"];
-                        [_noFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] placeholderImage:[UIImage imageNamed:@"icon_headerPic"] options:SDWebImageLowPriority];
+                        [_noFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
                         [_noFinancialView loadViewWithModel:_currentQDMemberTDO];
                     }else{
                         [QDUserDefaults setObject:@"2" forKey:@"loginType"];
-                        [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] placeholderImage:[UIImage imageNamed:@"icon_headerPic"] options:SDWebImageLowPriority];
+                        [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
                         [_haveFinancialView loadFinancialViewWithModel:_currentQDMemberTDO];
                     }
                 }
@@ -212,9 +214,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [separateLineBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(cell.contentView);
         make.centerX.equalTo(cell.contentView);
-        make.width.mas_equalTo(355);
+        make.width.mas_equalTo(335);
         make.height.mas_equalTo(0.5);
     }];
+    
 }
 
 - (void)initTableView{
@@ -224,36 +227,38 @@ typedef NS_ENUM(NSInteger, PhotoType)
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    _tableView.backgroundColor = APP_WHITECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, -SafeAreaTopHeight, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
+    _tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_tableView];
     
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changePic:)];
-    
     //未登录
-    _notLoginHeaderView = [[QDMineHeaderNotLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 118+SafeAreaTopHeight-64)];
+    _notLoginHeaderView = [[QDMineHeaderNotLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 118)];
     _notLoginHeaderView.backgroundColor = APP_WHITECOLOR;
+//    [_notLoginHeaderView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_notLoginHeaderView.loginBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //未开通资金帐户
-    _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 340+SafeAreaTopHeight)];
+    _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc]
+                        initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 340+SafeAreaTopHeight)];
     _noFinancialView.backgroundColor = APP_WHITECOLOR;
     [_noFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];
-    [_noFinancialView.picView addGestureRecognizer:tapGes];
+//    [_noFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
+    _noFinancialView.superview.userInteractionEnabled = YES;
     [_noFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.openFinancialBtn addTarget:self action:@selector(openFinancialAction:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
     //已经开通资金账户的
     _haveFinancialView = [[QDMineHeaderFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 350+SafeAreaTopHeight)];
     _haveFinancialView.backgroundColor = APP_WHITECOLOR;
-    [_haveFinancialView.picView addGestureRecognizer:tapGes];
+//    [_haveFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     [_haveFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
@@ -273,31 +278,31 @@ typedef NS_ENUM(NSInteger, PhotoType)
 - (void)lookAccountInfo:(UIButton *)sender{
     QDLog(@"lookAccountInfo");
     
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_INTEGRAL];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_INTEGRAL];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     _sectionHeaderView = [[QDMineSectionHeaderView alloc] init];
     [_sectionHeaderView.btn1 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
     [_sectionHeaderView.btn2 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
     [_sectionHeaderView.btn3 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
     [_sectionHeaderView.btn4 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
     return _sectionHeaderView;
 }
 
 - (void)notices:(UIButton *)sender{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_NOTICE];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_NOTICE];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 #pragma mark - 用户登录注册
 - (void)userLogin:(UIButton *)sender{
+    QDLog(@"userLogin");
     QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
 }
@@ -310,10 +315,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 开通资金账户
 - (void)openFinancialAction:(UIButton *)sender{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_OPENACCOUNT];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_OPENACCOUNT];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 - (void)myOrders:(UIButton *)sender{
     QDLog(@"123");
@@ -321,34 +326,31 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 充值
 - (void)rechargeAction:(UIButton *)sender{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_TESTJSURL, JS_RECHARGE];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_TESTJSURL, JS_RECHARGE];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 
 #pragma mark - 提现
 - (void)withdrawAction:(UIButton *)sender{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_TESTJSURL, JS_WITHDRAW];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_TESTJSURL, JS_WITHDRAW];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 #pragma mark -- tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    
+    return _cellTitleArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 85;
+    return SCREEN_HEIGHT*0.12;
 }
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return SCREEN_HEIGHT*0.075;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -357,11 +359,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
     if (cell == nil) {
         cell = [[QDMineInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.accessoryType = UITableViewCellAccessoryNone;
     [self customSeparateLineToCell:cell];
+    cell.textLabel.text = _cellTitleArr[indexPath.row];
     cell.textLabel.textColor = APP_BLACKCOLOR;
     cell.textLabel.font = QDFont(16);
-    cell.textLabel.text = _cellTitleArr[indexPath.row];
     return cell;
 }
 
@@ -399,9 +400,9 @@ typedef NS_ENUM(NSInteger, PhotoType)
 - (void)gotoLoginWithAction:(NSString *)jsStr{
     NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
     if ([str isEqualToString:@"0"] || str == nil) { //未登录
-//        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-//        loginVC.pushVCTag = @"0";
-//        [self presentViewController:loginVC animated:YES completion:nil];
+        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+        loginVC.pushVCTag = @"0";
+        [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         [self pushBridgeVCWithStr:[QD_JSURL stringByAppendingString:jsStr]];
     }
@@ -410,9 +411,9 @@ typedef NS_ENUM(NSInteger, PhotoType)
 #pragma mark - 邀请好友
 - (void)inviteFriends{
     if ([[QDUserDefaults getObjectForKey:@"loginType"] isEqualToString:@"0"]) {
-//        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-//        loginVC.pushVCTag = @"0";
-//        [self presentViewController:loginVC animated:YES completion:nil];
+        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+        loginVC.pushVCTag = @"0";
+        [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         [self pushBridgeVCWithStr:[QD_TESTJSURL stringByAppendingString:JS_INVITEFRIENDS]];
     }
@@ -426,8 +427,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
 - (void)ordersAction:(UIButton *)sender{
     if ([[QDUserDefaults getObjectForKey:@"loginType"] isEqualToString:@"0"]) {
         [WXProgressHUD showErrorWithTittle:@"未登录"];
-//        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-//        [self presentViewController:loginVC animated:YES completion:nil];
+        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+        [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         //        NSString *urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_ORDERS];
         NSString *urlStr = [NSString stringWithFormat:@"%@%@?index=%ld", QD_JSURL, JS_ORDERS, (long)sender.tag];
@@ -456,10 +457,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 
 - (void)pushBridgeVCWithStr:(NSString *)urlStr{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = urlStr;
-//    self.navigationController.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = urlStr;
+    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 
 - (void)endRefreshing
@@ -469,7 +470,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     }
 }
 
-- (void)changePic:(UIGestureRecognizer *)ges{
+- (void)changePic{
     self.type = PhotoTypeIcon;
     [self editImageSelected];
 }
@@ -481,7 +482,6 @@ typedef NS_ENUM(NSInteger, PhotoType)
     
     UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImagePickerController *controller = [UIImagePickerController imagePickerControllerWithSourceType:UIImagePickerControllerSourceTypeCamera];
-        
         if ([controller isAvailableCamera] && [controller isSupportTakingPhotos]) {
             [controller setDelegate:self];
             [self presentViewController:controller animated:YES completion:nil];
@@ -571,9 +571,9 @@ typedef NS_ENUM(NSInteger, PhotoType)
             QDLog(@"dic = %@", dic);
             NSString *imgUrl = [dic objectForKey:@"imageFullUrl"];
             if ([str isEqualToString:@"1"]) {
-                [_noFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"icon_headerPic"] options:SDWebImageLowPriority];
+                [_noFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:imgUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
             }else{
-                [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"icon_headerPic"] options:SDWebImageLowPriority];
+                [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
             }
             [self changeIcon:imgUrl];
         }
@@ -600,9 +600,9 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 会员权益
 - (void)vipRights:(UIButton *)sender{
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 @end

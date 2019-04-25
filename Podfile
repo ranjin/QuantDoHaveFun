@@ -19,5 +19,8 @@ target 'QuantDoHaveFun' do
   pod 'DZNEmptyDataSet'
   pod 'zhPopupController'
   pod 'WMPageController'
+  pod 'AMap2DMap'
+  pod 'AMapSearch'
+  pod 'AMapLocation'
 end
 

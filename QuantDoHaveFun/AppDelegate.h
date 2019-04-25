@@ -11,6 +11,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, assign) double basePirceRate;
+
+@property (nonatomic, strong) NSMutableArray *hotelLevel;
+@property (nonatomic, strong) NSMutableArray *hotelTypeId;
+@property (nonatomic, strong) NSMutableArray *level;
 
 
 @end
