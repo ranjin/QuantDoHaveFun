@@ -23,17 +23,15 @@
         [_whiteBackView.layer addSublayer:gradientLayer];
         [self addSubview:_whiteBackView];
         
-        _picBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 55+SafeAreaTopHeight-64, 38, 38)];
+        _picBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT*0.07+SafeAreaTopHeight-64, 38, 38)];
         [_picBtn setImage:[UIImage imageNamed:@"icon_headerPic"] forState:UIControlStateNormal];
         _picBtn.layer.masksToBounds =YES;
-        _picBtn.backgroundColor = APP_BLUECOLOR;
-        _picBtn.layer.cornerRadius = 19;
         [_whiteBackView addSubview:_picBtn];
         
         _infoLab = [[UILabel alloc] init];
         _infoLab.text = @"登录获取更多信息";
         _infoLab.textColor = APP_BLACKCOLOR;
-        _infoLab.font = QDBoldFont(16);
+        _infoLab.font = QDFont(16);
         [self addSubview:_infoLab];
         [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_picBtn);
@@ -42,17 +40,18 @@
         
         _loginBtn = [[UIButton alloc] init];
         [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-        _loginBtn.backgroundColor = APP_BLUECOLOR;
+//        _loginBtn.backgroundColor = APP_BLUECOLOR;
         [_loginBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
-        CAGradientLayer *btnLayer =  [CAGradientLayer layer];
-        btnLayer.frame = CGRectMake(0, 0, 65, 30);
-        btnLayer.startPoint = CGPointMake(0, 0);
-        btnLayer.endPoint = CGPointMake(1, 1);
-        btnLayer.locations = @[@(0.0),@(1.0)];//渐变点
-        [btnLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
-        [_loginBtn.layer addSublayer:btnLayer];
-        _loginBtn.layer.cornerRadius = 14;
-        _loginBtn.layer .masksToBounds = YES;
+        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"notLogin_login"] forState:UIControlStateNormal];
+//        CAGradientLayer *btnLayer =  [CAGradientLayer layer];
+//        btnLayer.frame = CGRectMake(0, 0, 65, 30);
+//        btnLayer.startPoint = CGPointMake(0, 0);
+//        btnLayer.endPoint = CGPointMake(1, 1);
+//        btnLayer.locations = @[@(0.0),@(1.0)];//渐变点
+//        [btnLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
+//        [_loginBtn.layer addSublayer:btnLayer];
+//        _loginBtn.layer.cornerRadius = 14;
+//        _loginBtn.layer .masksToBounds = YES;
         _loginBtn.titleLabel.font = QDFont(14);
         [_whiteBackView addSubview:_loginBtn];
         [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {

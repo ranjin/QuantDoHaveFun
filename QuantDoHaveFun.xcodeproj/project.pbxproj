@@ -313,6 +313,12 @@
 		93E98270227155EE00DDEB80 /* WaterLayou.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9826F227155EE00DDEB80 /* WaterLayou.m */; };
 		93E982742271560B00DDEB80 /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982732271560B00DDEB80 /* PPNumberButton.m */; };
 		93E982772271565F00DDEB80 /* QDThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982752271565F00DDEB80 /* QDThirdViewController.m */; };
+		93E9827A227195DE00DDEB80 /* BulgeCircularTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98279227195DE00DDEB80 /* BulgeCircularTabBarVC.m */; };
+		93E98283227198BB00DDEB80 /* AxcAE_TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9827C227198BA00DDEB80 /* AxcAE_TabBarBadge.m */; };
+		93E98284227198BB00DDEB80 /* AxcAE_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9827E227198BA00DDEB80 /* AxcAE_TabBar.m */; };
+		93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98281227198BA00DDEB80 /* AxcAE_TabBarItem.m */; };
+		93E982882271991400DDEB80 /* BaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982862271991400DDEB80 /* BaseTabBar.m */; };
+		93E9828B2271997D00DDEB80 /* TestTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982892271997C00DDEB80 /* TestTabBar.m */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -964,6 +970,19 @@
 		93E982732271560B00DDEB80 /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
 		93E982752271565F00DDEB80 /* QDThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThirdViewController.m; sourceTree = "<group>"; };
 		93E982762271565F00DDEB80 /* QDThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThirdViewController.h; sourceTree = "<group>"; };
+		93E98278227195DE00DDEB80 /* BulgeCircularTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulgeCircularTabBarVC.h; sourceTree = "<group>"; };
+		93E98279227195DE00DDEB80 /* BulgeCircularTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulgeCircularTabBarVC.m; sourceTree = "<group>"; };
+		93E9827C227198BA00DDEB80 /* AxcAE_TabBarBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcAE_TabBarBadge.m; sourceTree = "<group>"; };
+		93E9827D227198BA00DDEB80 /* AxcAE_TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcAE_TabBarItem.h; sourceTree = "<group>"; };
+		93E9827E227198BA00DDEB80 /* AxcAE_TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcAE_TabBar.m; sourceTree = "<group>"; };
+		93E9827F227198BA00DDEB80 /* AxcAE_TabBarDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcAE_TabBarDefine.h; sourceTree = "<group>"; };
+		93E98280227198BA00DDEB80 /* AxcAE_TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcAE_TabBar.h; sourceTree = "<group>"; };
+		93E98281227198BA00DDEB80 /* AxcAE_TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcAE_TabBarItem.m; sourceTree = "<group>"; };
+		93E98282227198BA00DDEB80 /* AxcAE_TabBarBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcAE_TabBarBadge.h; sourceTree = "<group>"; };
+		93E982862271991400DDEB80 /* BaseTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBar.m; sourceTree = "<group>"; };
+		93E982872271991400DDEB80 /* BaseTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBar.h; sourceTree = "<group>"; };
+		93E982892271997C00DDEB80 /* TestTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTabBar.m; sourceTree = "<group>"; };
+		93E9828A2271997C00DDEB80 /* TestTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTabBar.h; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1080,6 +1099,8 @@
 		93399CF2226714DA00FB9F0E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				93E98278227195DE00DDEB80 /* BulgeCircularTabBarVC.h */,
+				93E98279227195DE00DDEB80 /* BulgeCircularTabBarVC.m */,
 				93399CF3226714EF00FB9F0E /* QDBaseViewController.h */,
 				93399CF4226714EF00FB9F0E /* QDBaseViewController.m */,
 			);
@@ -1444,6 +1465,7 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				93E9827B227198BA00DDEB80 /* AxcAE_TabBar */,
 				93E982712271560B00DDEB80 /* PPNumberButton */,
 				93E98269227155C100DDEB80 /* QDGCDTimer */,
 				93E9823E2271557B00DDEB80 /* NewPagedFlowView */,
@@ -1817,20 +1839,20 @@
 		93E98014227144B100DDEB80 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
-				93E98015227144B100DDEB80 /* QDMsgVerifyView.m */,
 				93E98016227144B100DDEB80 /* QDRegisterView.h */,
-				93E98017227144B100DDEB80 /* QDForgetPwdView.m */,
-				93E98018227144B100DDEB80 /* QDResetLoginPwdView.m */,
-				93E98019227144B100DDEB80 /* QDSetLoginPwdView.h */,
-				93E9801A227144B100DDEB80 /* IdentifyView.h */,
-				93E9801B227144B100DDEB80 /* QDLoginView.h */,
 				93E9801C227144B100DDEB80 /* QDRegisterView.m */,
 				93E9801D227144B100DDEB80 /* QDMsgVerifyView.h */,
-				93E9801E227144B100DDEB80 /* QDResetLoginPwdView.h */,
+				93E98015227144B100DDEB80 /* QDMsgVerifyView.m */,
 				93E9801F227144B100DDEB80 /* QDForgetPwdView.h */,
+				93E98017227144B100DDEB80 /* QDForgetPwdView.m */,
+				93E9801E227144B100DDEB80 /* QDResetLoginPwdView.h */,
+				93E98018227144B100DDEB80 /* QDResetLoginPwdView.m */,
+				93E98019227144B100DDEB80 /* QDSetLoginPwdView.h */,
 				93E98020227144B100DDEB80 /* QDSetLoginPwdView.m */,
-				93E98021227144B100DDEB80 /* QDLoginView.m */,
+				93E9801A227144B100DDEB80 /* IdentifyView.h */,
 				93E98022227144B100DDEB80 /* IdentifyView.m */,
+				93E9801B227144B100DDEB80 /* QDLoginView.h */,
+				93E98021227144B100DDEB80 /* QDLoginView.m */,
 			);
 			path = LoginAndRegister;
 			sourceTree = "<group>";
@@ -2344,6 +2366,24 @@
 			path = PPNumberButton;
 			sourceTree = "<group>";
 		};
+		93E9827B227198BA00DDEB80 /* AxcAE_TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				93E9828A2271997C00DDEB80 /* TestTabBar.h */,
+				93E982892271997C00DDEB80 /* TestTabBar.m */,
+				93E982872271991400DDEB80 /* BaseTabBar.h */,
+				93E982862271991400DDEB80 /* BaseTabBar.m */,
+				93E9827C227198BA00DDEB80 /* AxcAE_TabBarBadge.m */,
+				93E9827D227198BA00DDEB80 /* AxcAE_TabBarItem.h */,
+				93E9827E227198BA00DDEB80 /* AxcAE_TabBar.m */,
+				93E9827F227198BA00DDEB80 /* AxcAE_TabBarDefine.h */,
+				93E98280227198BA00DDEB80 /* AxcAE_TabBar.h */,
+				93E98281227198BA00DDEB80 /* AxcAE_TabBarItem.m */,
+				93E98282227198BA00DDEB80 /* AxcAE_TabBarBadge.h */,
+			);
+			path = AxcAE_TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2544,6 +2584,7 @@
 				93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
 				93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */,
+				93E9828B2271997D00DDEB80 /* TestTabBar.m in Sources */,
 				93E981CC2271535100DDEB80 /* CWActionSheet.m in Sources */,
 				93E98023227144B100DDEB80 /* QDMsgVerifyView.m in Sources */,
 				93399DEC226823AF00FB9F0E /* UIImageView+WebCache.m in Sources */,
@@ -2578,6 +2619,7 @@
 				93E980132271446B00DDEB80 /* YYTextWeakProxy.m in Sources */,
 				93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */,
 				93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */,
+				93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */,
 				93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */,
 				93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */,
 				93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */,
@@ -2657,6 +2699,7 @@
 				93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */,
 				93E98265227155A100DDEB80 /* QDRecommendViewController.m in Sources */,
 				93E9817E2271504700DDEB80 /* QDHotelTypeCell.m in Sources */,
+				93E982882271991400DDEB80 /* BaseTabBar.m in Sources */,
 				93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */,
 				93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */,
 				93E980082271446B00DDEB80 /* YYTextParser.m in Sources */,
@@ -2755,6 +2798,7 @@
 				93E98268227155A100DDEB80 /* QDFirstViewController.m in Sources */,
 				93399DB72268231200FB9F0E /* QDRefreshHeader.m in Sources */,
 				93E981E1227153B800DDEB80 /* QDMallViewController.m in Sources */,
+				93E98283227198BB00DDEB80 /* AxcAE_TabBarBadge.m in Sources */,
 				93399D552268191E00FB9F0E /* QDMineHeaderNotLoginView.m in Sources */,
 				93E9810D22714E9300DDEB80 /* QDHotelReserveTableHeaderView.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
@@ -2764,6 +2808,7 @@
 				93E982012271546C00DDEB80 /* QDMallTableCell.m in Sources */,
 				93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */,
 				93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */,
+				93E9827A227195DE00DDEB80 /* BulgeCircularTabBarVC.m in Sources */,
 				93E980012271446B00DDEB80 /* YYTextLayout.m in Sources */,
 				93399D9F2268222500FB9F0E /* UIImage+ST.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
@@ -2772,6 +2817,7 @@
 				93399D7922681A0900FB9F0E /* QDServiceErrorHandler.m in Sources */,
 				93399E172268487300FB9F0E /* TABManagerMethod+ManagerCALayer.m in Sources */,
 				93E9808E227147C700DDEB80 /* QDRotePlanViewController.m in Sources */,
+				93E98284227198BB00DDEB80 /* AxcAE_TabBar.m in Sources */,
 				93399E192268487300FB9F0E /* UICollectionView+Animated.m in Sources */,
 				93399E322268546F00FB9F0E /* UIView+HQExtension.m in Sources */,
 				93E9808C227147C700DDEB80 /* QDCalendarCustomerTourVC.m in Sources */,

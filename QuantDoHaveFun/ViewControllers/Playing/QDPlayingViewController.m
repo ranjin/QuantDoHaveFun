@@ -31,7 +31,7 @@
     }
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;

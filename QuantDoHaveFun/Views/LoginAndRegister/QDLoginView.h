@@ -12,11 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QDLoginView : UIView<UITextFieldDelegate>
 
-//@property (nonatomic, strong) UIButton *cancelBtn;
-//@property (nonatomic, strong) UIButton *registerBtn;
-
-@property (nonatomic, strong) UILabel *loginLab;
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UILabel *hiLab;
+@property (nonatomic, strong) UILabel *infoLab;
 
 @property (nonatomic, strong) UIView *phoneLine;
 @property (nonatomic, strong) UIButton *areaBtn;

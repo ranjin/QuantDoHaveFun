@@ -67,8 +67,8 @@
     //调整发布按钮的中线点Y值
 //    self.plusBtn.centerY = self.height * 0.5 - 2*LBMagin ;
 //    self.plusBtn.size = CGSizeMake(self.plusBtn.currentBackgroundImage.size.width, self.plusBtn.currentBackgroundImage.size.height);
-    self.plusBtn.centerY = self.height * 0.5 - 2*LBMagin ;
-    self.plusBtn.size = CGSizeMake(54, 54);
+    self.plusBtn.centerY = self.height * 0.5 - 2*TabbarButtonCenterY;
+    self.plusBtn.size = CGSizeMake(58, 58);
     
 //    [self addSubview:self.label];
 //    self.label.centerX = self.plusBtn.centerX;
@@ -89,32 +89,28 @@
             if (btnIndex == 2) {
                 btnIndex++;
             }
-            
         }
     }
-    
     [self bringSubviewToFront:self.plusBtn];
-    
-    
 }
 
 
 - (void)tabBarButtonClick:(UIControl *)tarBarBtn
 {
-    for (UIView * img in tarBarBtn.subviews) {
-        
-        if ([img isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
-            
-            //实现帧动画
-            CAKeyframeAnimation * animation =[CAKeyframeAnimation animation];
-            animation.keyPath =@"transform.scale";
-            animation.values = @[@1.0,@1.3,@0.9,@1.15,@0.95,@1.02,@1.0];
-            animation.duration = 1;
-            animation.calculationMode = kCAAnimationCubic;
-            //把动画添加上去
-            [img.layer addAnimation:animation forKey:nil];
-        }
-    }
+//    for (UIView * img in tarBarBtn.subviews) {
+//
+//        if ([img isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+//
+//            //实现帧动画
+//            CAKeyframeAnimation * animation =[CAKeyframeAnimation animation];
+//            animation.keyPath =@"transform.scale";
+//            animation.values = @[@1.0,@1.3,@0.9,@1.15,@0.95,@1.02,@1.0];
+//            animation.duration = 1;
+//            animation.calculationMode = kCAAnimationCubic;
+//            //把动画添加上去
+//            [img.layer addAnimation:animation forKey:nil];
+//        }
+//    }
 }
 
 

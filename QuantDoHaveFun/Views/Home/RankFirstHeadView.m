@@ -13,7 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
         _thePic = [[UIImageView alloc] init];
-        _thePic.image = [UIImage imageNamed:@"icon_checkSelected"];
+        _thePic.image = [UIImage imageNamed:@"home_star"];
         [self addSubview:_thePic];
         
         _title = [[UILabel alloc] init];

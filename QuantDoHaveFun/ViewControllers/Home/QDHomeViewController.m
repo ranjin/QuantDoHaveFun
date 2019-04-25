@@ -19,11 +19,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = APP_WHITECOLOR;
     self.progressViewIsNaughty = YES;
-    self.progressWidth = 10;
-    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(65, SafeAreaTopHeight-18, 35, 35)];
-//    img.backgroundColor = APP_BLUECOLOR;
+    self.progressWidth = 14;
+    self.progressHeight = 3;
+//    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(50, SafeAreaTopHeight-64+55, 25, 28)];
+    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 28)];
     img.image = [UIImage imageNamed:@"icon_map"];
     [self.view addSubview:img];
+    [img mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.menuView);
+        make.right.equalTo(self.menuView.mas_left);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,6 +48,10 @@
 }
 
 - (UIColor *)titleColorSelected{
+    return APP_BLUECOLOR;
+}
+
+- (UIColor *)titleColorNormal{
     return APP_BLACKCOLOR;
 }
 
@@ -56,15 +65,6 @@
 
 - (WMMenuViewStyle)menuViewStyle{
     return WMMenuViewStyleLine;
-}
-
-- (UIColor *)titleColorNormal{
-    return APP_GRAYTEXTCOLOR;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
@@ -101,7 +101,7 @@
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     menuView.style = WMMenuViewStyleFloodHollow;
     self.menuView.style = WMMenuViewStyleLine;
-    return CGRectMake(95, SafeAreaTopHeight-24, SCREEN_WIDTH-95-60, 44);
+    return CGRectMake(85, SafeAreaTopHeight-64+SCREEN_HEIGHT*0.05, 280, 50);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
@@ -122,5 +122,10 @@
 
 - (void)pageController:(WMPageController *)pageController willCachedViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
     QDLog(@"willEnterViewController");
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

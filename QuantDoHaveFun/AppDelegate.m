@@ -12,6 +12,7 @@
 #import "QDPlayingViewController.h"
 #import "QDTradingViewController.h"
 #import "QDMineViewController.h"
+#import "BulgeCircularTabBarVC.h"
 @interface AppDelegate ()
 @end
 
@@ -22,7 +23,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    HQMainTabbarVC *tabVC = [[HQMainTabbarVC alloc]init];
+//    HQMainTabbarVC *tabVC = [[HQMainTabbarVC alloc]init];
+//    self.window.rootViewController = tabVC;
+    
+    BulgeCircularTabBarVC *tabVC = [[BulgeCircularTabBarVC alloc]init];
     self.window.rootViewController = tabVC;
     [self findAllMapDict];
     [self getBasicPrice];

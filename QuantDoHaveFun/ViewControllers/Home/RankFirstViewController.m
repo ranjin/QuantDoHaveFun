@@ -62,7 +62,7 @@
     _keywords = @"";
     _categoryArr = [[NSMutableArray alloc] init];
     _categoryIDArr = [[NSMutableArray alloc] init];
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _mallInfoArr = [[NSMutableArray alloc] init];
     [self initTableView];
 }
@@ -91,7 +91,7 @@
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
-    _tableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
@@ -154,7 +154,7 @@
         cell = [[RankFirstViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+    cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     return cell;
 }
 

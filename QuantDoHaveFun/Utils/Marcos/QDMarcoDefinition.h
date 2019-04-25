@@ -23,6 +23,7 @@
 
 #define TabbarSafeBottomMargin  (IS_IPHONE_X ? 34.f : 0.f)
 #define TabbarSafeBottomMarginT (IS_IPHONE_X ? 83.f : 49.f)
+#define TabbarButtonCenterY (IS_IPHONE_X ? 10.f : 6.f)
 
 #define SafeAreaTopHeight (SCREEN_HEIGHT == 812.0 ?88: 64)
 //需要横屏或者竖屏，获取屏幕宽度与高度

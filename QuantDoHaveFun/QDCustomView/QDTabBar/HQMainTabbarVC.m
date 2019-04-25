@@ -54,36 +54,36 @@
     [self setupNavigationView];
 }
 #pragma CATransition动画实现
-- (void) transitionWithType:(NSString *) type WithSubtype:(NSString *) subtype ForView : (UIView *) view
-{
-    //创建CATransition对象
-    CATransition *animation = [CATransition animation];
-    
-    //设置运动时间
-    animation.duration = 0.7f;
-    
-    //设置运动type
-    animation.type = type;
-    if (subtype != nil) {
-        
-        //设置子类
-        animation.subtype = subtype;
-    }
-    
-    //设置运动速度
-    animation.timingFunction = UIViewAnimationOptionCurveEaseInOut;
-    
-    [[UIApplication sharedApplication].keyWindow.layer addAnimation:animation forKey:@"animation"];
-}
+//- (void) transitionWithType:(NSString *) type WithSubtype:(NSString *) subtype ForView : (UIView *) view
+//{
+//    //创建CATransition对象
+//    CATransition *animation = [CATransition animation];
+//
+//    //设置运动时间
+//    animation.duration = 0.7f;
+//
+//    //设置运动type
+//    animation.type = type;
+//    if (subtype != nil) {
+//
+//        //设置子类
+//        animation.subtype = subtype;
+//    }
+//
+//    //设置运动速度
+//    animation.timingFunction = UIViewAnimationOptionCurveEaseInOut;
+//
+//    [[UIApplication sharedApplication].keyWindow.layer addAnimation:animation forKey:@"animation"];
+//}
 
 #pragma UIView实现动画
-- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition
-{
-    [UIView animateWithDuration:0.7f animations:^{
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationTransition:transition forView:view cache:YES];
-    }];
-}
+//- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition
+//{
+//    [UIView animateWithDuration:0.7f animations:^{
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//        [UIView setAnimationTransition:transition forView:view cache:YES];
+//    }];
+//}
 
 - (void)setupNavigationView {
     UIBarButtonItem *itemBack = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -104,19 +104,19 @@
     
     // 首页
     QDHomeViewController *homeVC = [[QDHomeViewController alloc]init];
-    [self addOneChildViewController:homeVC title:@"首页" normalImage:[UIImage originalImageNamed:@"icon_home_"] pressedImage:[UIImage originalImageNamed:@"icon_home_sign"] navigationBarTitle:@""];
+    [self addOneChildViewController:homeVC title:@"首页" normalImage:[UIImage originalImageNamed:@"home_normal"] pressedImage:[UIImage originalImageNamed:@"home_selected"] navigationBarTitle:@"首页"];
     
     // 分类
     QDPlayingViewController *categoryVC = [[QDPlayingViewController alloc] init];
-    [self addOneChildViewController:categoryVC title:@"去玩" normalImage:[UIImage originalImageNamed:@"icon_classification_"] pressedImage:[UIImage originalImageNamed:@"icon_classification_sign"] navigationBarTitle:@"分类"];
+    [self addOneChildViewController:categoryVC title:@"去玩" normalImage:[UIImage originalImageNamed:@"playing_normal"] pressedImage:[UIImage originalImageNamed:@"playing_selected"] navigationBarTitle:@"去玩"];
     
     // 购物车
     QDTradingViewController *cartVC = [[QDTradingViewController alloc] init];
-    [self addOneChildViewController:cartVC title:@"玩贝" normalImage:[UIImage originalImageNamed:@"icon_cart"] pressedImage:[UIImage originalImageNamed:@"icon_car_sign"] navigationBarTitle:@"购物车"];
+    [self addOneChildViewController:cartVC title:@"玩贝" normalImage:[UIImage originalImageNamed:@"trading_normal"] pressedImage:[UIImage originalImageNamed:@"trading_selected"] navigationBarTitle:@"玩贝"];
     
     // 我的
     QDMineViewController *MyVC = [[QDMineViewController alloc] init];
-    [self addOneChildViewController:MyVC title:@"我的" normalImage:[UIImage originalImageNamed:@"icon_presonal"] pressedImage:[UIImage originalImageNamed:@"icon_presonal_sign"] navigationBarTitle:@""];
+    [self addOneChildViewController:MyVC title:@"我的" normalImage:[UIImage originalImageNamed:@"mine_normal"] pressedImage:[UIImage originalImageNamed:@"mine_selected"] navigationBarTitle:@"我的"];
 }
 
 #pragma mark - 添加1个子控制器
@@ -181,6 +181,8 @@
 //点击中间按钮的代理方法
 - (void)tabBarPlusBtnClick:(HQTabbar *)tabBar
 {
+    QDHomeViewController *homeVC = [[QDHomeViewController alloc] init];
+    [self.navigationController presentViewController:homeVC animated:YES completion:nil];
     NSLog(@"凸出中间");
     QDToast(@"凸出中间");
 }

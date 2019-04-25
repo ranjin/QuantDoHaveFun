@@ -33,6 +33,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     //登录页面
     _loginView = [[QDLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+//    _loginView.gotologinBtn.enabled = NO;
+//    [_loginView.gotologinBtn setEnabled:YES];
     [_loginView.gotologinBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //保留用户名
     if ([QDUserDefaults getObjectForKey:@"userID"] != nil) {

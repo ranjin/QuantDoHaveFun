@@ -47,7 +47,7 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 
-    self.contentView.backgroundColor = selected ? [UIColor colorWithHexString:@"#F3F7F9"] : [UIColor whiteColor];
+    self.contentView.backgroundColor = selected ? APP_LIGTHGRAYLINECOLOR : [UIColor whiteColor];
     self.highlighted = selected;
     self.name.highlighted = selected;
     self.yellowView.hidden = !selected;

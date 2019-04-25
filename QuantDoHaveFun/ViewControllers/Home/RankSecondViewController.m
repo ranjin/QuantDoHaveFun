@@ -100,7 +100,7 @@ static float kLeftTableViewWidth = 92.f;
 //        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _leftTableView.tableFooterView = [UIView new];
         _leftTableView.showsVerticalScrollIndicator = NO;
-        _leftTableView.separatorColor = [UIColor colorWithHexString:@"#F3F7F9"];
+        _leftTableView.separatorColor = APP_LIGTHGRAYLINECOLOR;
         [_leftTableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Left];
     }
     return _leftTableView;
@@ -114,7 +114,7 @@ static float kLeftTableViewWidth = 92.f;
         _rightTableView.delegate = self;
         _rightTableView.dataSource = self;
         _rightTableView.rowHeight = 125;
-        _rightTableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+        _rightTableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         _rightTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _rightTableView.showsVerticalScrollIndicator = NO;
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -163,7 +163,7 @@ static float kLeftTableViewWidth = 92.f;
     {
         RightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Right forIndexPath:indexPath];
         FoodModel *model = self.foodData[indexPath.section][indexPath.row];
-        cell.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
+        cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         cell.model = model;
         return cell;
     }
