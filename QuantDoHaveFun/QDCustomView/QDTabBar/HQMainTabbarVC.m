@@ -108,11 +108,11 @@
     
     // 分类
     QDPlayingViewController *categoryVC = [[QDPlayingViewController alloc] init];
-    [self addOneChildViewController:categoryVC title:@"分类" normalImage:[UIImage originalImageNamed:@"icon_classification_"] pressedImage:[UIImage originalImageNamed:@"icon_classification_sign"] navigationBarTitle:@"分类"];
+    [self addOneChildViewController:categoryVC title:@"去玩" normalImage:[UIImage originalImageNamed:@"icon_classification_"] pressedImage:[UIImage originalImageNamed:@"icon_classification_sign"] navigationBarTitle:@"分类"];
     
     // 购物车
     QDTradingViewController *cartVC = [[QDTradingViewController alloc] init];
-    [self addOneChildViewController:cartVC title:@"购物车" normalImage:[UIImage originalImageNamed:@"icon_cart"] pressedImage:[UIImage originalImageNamed:@"icon_car_sign"] navigationBarTitle:@"购物车"];
+    [self addOneChildViewController:cartVC title:@"玩贝" normalImage:[UIImage originalImageNamed:@"icon_cart"] pressedImage:[UIImage originalImageNamed:@"icon_car_sign"] navigationBarTitle:@"购物车"];
     
     // 我的
     QDMineViewController *MyVC = [[QDMineViewController alloc] init];
@@ -160,6 +160,15 @@
     
     HQTabbar *tabBar = [[HQTabbar alloc] init];
     tabBar.myDelegate = self;
+    CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [tabBar setBackgroundImage:img];
+    [tabBar setShadowImage:img];
     [self setValue:tabBar forKey:@"tabBar"];
 }
 

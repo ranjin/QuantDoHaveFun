@@ -41,8 +41,8 @@
         _btn1.imageTitleSpace = 10;
         _btn1.tag = 0;
         [_btn1 setTitle:@"全部订单" forState:UIControlStateNormal];
-        _btn1.titleLabel.font = QDFont(12);
-        [_btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btn1.titleLabel.font = QDFont(14);
+        [_btn1 setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
         [_btn1 setImage:[UIImage imageNamed:@"icon_orders"] forState:UIControlStateNormal];
         [self addSubview:_btn1];
         
@@ -51,8 +51,8 @@
         _btn2.imageTitleSpace = 10;
         _btn2.tag = 1;
         [_btn2 setTitle:@"待出行" forState:UIControlStateNormal];
-        _btn2.titleLabel.font = QDFont(12);
-        [_btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btn2.titleLabel.font = QDFont(14);
+        [_btn2 setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
         [_btn2 setImage:[UIImage imageNamed:@"icon_dcx"] forState:UIControlStateNormal];
         [self addSubview:_btn2];
         
@@ -60,8 +60,8 @@
         _btn3.imageTitleSpace = 10;
         _btn3.tag = 2;
         [_btn3 setTitle:@"待支付" forState:UIControlStateNormal];
-        _btn3.titleLabel.font = QDFont(12);
-        [_btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btn3.titleLabel.font = QDFont(14);
+        [_btn3 setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
         [_btn3 setImage:[UIImage imageNamed:@"icon_dzf"] forState:UIControlStateNormal];
         
         [self addSubview:_btn3];
@@ -70,8 +70,8 @@
         _btn4.imageTitleSpace = 10;
         _btn4.tag = 3;
         [_btn4 setTitle:@"退款单" forState:UIControlStateNormal];
-        _btn4.titleLabel.font = QDFont(12);
-        [_btn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btn4.titleLabel.font = QDFont(14);
+        [_btn4 setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
         [_btn4 setImage:[UIImage imageNamed:@"icon_tkd"] forState:UIControlStateNormal];
         [self addSubview:_btn4];
     }

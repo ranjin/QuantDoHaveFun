@@ -7,17 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "QDMineSectionHeaderView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDMineHeaderNotLoginView : UIView
 @property (nonatomic, strong) UIView *whiteBackView;
-@property (nonatomic, strong) UIButton *settingBtn;
-@property (nonatomic, strong) UIButton *voiceBtn;
-
 @property (nonatomic, strong) UIButton *picBtn;
 @property (nonatomic, strong) UILabel *infoLab;
 @property (nonatomic, strong) UIButton *loginBtn;
+@property (nonatomic, strong) QDMineSectionHeaderView *headerView;
 
 @end
 

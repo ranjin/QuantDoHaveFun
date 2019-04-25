@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLoginView) name:@"reloadLoginView" object:nil];
-    [self isLogin];
+//    [self isLogin];
 }
 
 - (void)reloadLoginView{
@@ -89,7 +89,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址",@"安全中心", nil];
+    _cellTitleArr = @[@[@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址"], @[@"设置", @"帮助中心"]];
+    QDLog(@"12 = %@, 23 = %@", _cellTitleArr[0], _cellTitleArr[1]);
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -219,28 +220,27 @@ typedef NS_ENUM(NSInteger, PhotoType)
 }
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    _tableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    _tableView.backgroundColor = [UIColor colorWithHexString:@"#F3F7F9"];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
-    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, -SafeAreaTopHeight, 0);
     [self.view addSubview:_tableView];
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changePic:)];
     
     //未登录
-    _notLoginHeaderView = [[QDMineHeaderNotLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.2)];
-    _notLoginHeaderView.backgroundColor = APP_WHITECOLOR;
-    [_notLoginHeaderView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
+    _notLoginHeaderView = [[QDMineHeaderNotLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 213+SafeAreaTopHeight-64)];
+    _notLoginHeaderView.backgroundColor = APP_BLUECOLOR;
     [_notLoginHeaderView.loginBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //未开通资金帐户
     _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 340+SafeAreaTopHeight)];
@@ -256,7 +256,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     _haveFinancialView.backgroundColor = APP_WHITECOLOR;
     [_haveFinancialView.picView addGestureRecognizer:tapGes];
     [_haveFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
-    
+
     [_haveFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
@@ -281,16 +281,17 @@ typedef NS_ENUM(NSInteger, PhotoType)
 //    QDLog(@"urlStr = %@", bridgeVC.urlStr);
 //    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    _sectionHeaderView = [[QDMineSectionHeaderView alloc] init];
-    [_sectionHeaderView.btn1 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_sectionHeaderView.btn2 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_sectionHeaderView.btn3 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_sectionHeaderView.btn4 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
-    return _sectionHeaderView;
-}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    _sectionHeaderView = [[QDMineSectionHeaderView alloc] init];
+//    [_sectionHeaderView.btn1 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [_sectionHeaderView.btn2 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [_sectionHeaderView.btn3 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [_sectionHeaderView.btn4 addTarget:self action:@selector(ordersAction:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
+//    return _sectionHeaderView;
+//}
 
 - (void)notices:(UIButton *)sender{
 //    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
@@ -338,17 +339,23 @@ typedef NS_ENUM(NSInteger, PhotoType)
 //    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
 #pragma mark -- tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return _cellTitleArr.count;
+    if (section == 0) {
+        return 5;
+    }else{
+        return 2;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return SCREEN_HEIGHT*0.12;
+    return 7;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.075;
+    return 50;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -358,9 +365,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
         cell = [[QDMineInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [self customSeparateLineToCell:cell];
-    cell.textLabel.text = _cellTitleArr[indexPath.row];
     cell.textLabel.textColor = APP_BLACKCOLOR;
     cell.textLabel.font = QDFont(16);
+    NSArray *title = _cellTitleArr[indexPath.section];
+    cell.textLabel.text = title[indexPath.row];
     return cell;
 }
 
