@@ -23,11 +23,11 @@
         [_whiteBackView.layer addSublayer:gradientLayer];
         [self addSubview:_whiteBackView];
         
-        _picBtn = [[UIButton alloc] initWithFrame:CGRectMake(11, 51+SafeAreaTopHeight-64, 50, 50)];
+        _picBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 55+SafeAreaTopHeight-64, 38, 38)];
         [_picBtn setImage:[UIImage imageNamed:@"icon_headerPic"] forState:UIControlStateNormal];
         _picBtn.layer.masksToBounds =YES;
         _picBtn.backgroundColor = APP_BLUECOLOR;
-        _picBtn.layer.cornerRadius =SCREEN_WIDTH*0.06;
+        _picBtn.layer.cornerRadius = 19;
         [_whiteBackView addSubview:_picBtn];
         
         _infoLab = [[UILabel alloc] init];
@@ -37,7 +37,7 @@
         [self addSubview:_infoLab];
         [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_picBtn);
-            make.left.equalTo(_whiteBackView.mas_left).offset(65);
+            make.left.equalTo(_picBtn.mas_right).offset(15);
         }];
         
         _loginBtn = [[UIButton alloc] init];
@@ -45,11 +45,11 @@
         _loginBtn.backgroundColor = APP_BLUECOLOR;
         [_loginBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
         CAGradientLayer *btnLayer =  [CAGradientLayer layer];
-        btnLayer.frame = CGRectMake(0, 0, 63, 28);
+        btnLayer.frame = CGRectMake(0, 0, 65, 30);
         btnLayer.startPoint = CGPointMake(0, 0);
         btnLayer.endPoint = CGPointMake(1, 1);
-        btnLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [btnLayer setColors:@[(id)[[UIColor colorWithHexString:@"#00C0AC"] CGColor],(id)[[UIColor colorWithHexString:@"#00C9CB"] CGColor]]];//渐变数组
+        btnLayer.locations = @[@(0.0),@(1.0)];//渐变点
+        [btnLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
         [_loginBtn.layer addSublayer:btnLayer];
         _loginBtn.layer.cornerRadius = 14;
         _loginBtn.layer .masksToBounds = YES;
@@ -58,8 +58,8 @@
         [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_infoLab);
             make.right.equalTo(_whiteBackView.mas_right).offset(-22);
-            make.width.mas_equalTo(63);
-            make.height.mas_equalTo(28);
+            make.width.mas_equalTo(65);
+            make.height.mas_equalTo(30);
         }];
         
 //        _headerView = [[QDMineSectionHeaderView alloc] init];
