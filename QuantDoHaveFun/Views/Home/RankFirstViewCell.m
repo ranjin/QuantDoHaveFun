@@ -32,7 +32,6 @@
         [self.contentView addSubview:_backView];
         
         _thePic = [[UIImageView alloc] init];
-        _thePic.image = [UIImage imageNamed:@"test"];
         _thePic.layer.cornerRadius = 5;
         _thePic.layer.masksToBounds = YES;
         _thePic.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
@@ -48,19 +47,9 @@
         
         _titleLab = [[UILabel alloc] init];
         _titleLab.font = QDBoldFont(16);
-        _titleLab.text = @"这个娘子脾气古怪，不要买包包，只要 你一碗红糖就能养活";
         _titleLab.numberOfLines = 0;
         _titleLab.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
         [_backView addSubview:_titleLab];
-        
-        _save = [[UIImageView alloc] init];
-        _save.image = [UIImage imageNamed:@"icon_checkSelected"];
-        [_backView addSubview:_save];
-        
-        _saveLab = [[UILabel alloc] init];
-        _saveLab.font = QDBoldFont(9);
-        _saveLab.textColor = APP_GRAYCOLOR;
-        [_backView addSubview:_saveLab];
     }
     return self;
 }
@@ -83,17 +72,10 @@
         make.top.equalTo(self.thePic.mas_bottom).offset(19);
         make.width.mas_equalTo(238);
     }];
-
-    [_save mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_backView.mas_right).offset(-16);
-        make.top.equalTo(self.titleLab);
-        make.width.and.height.mas_equalTo(15);
-    }];
-
-    [_saveLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_save);
-        make.top.equalTo(_save.mas_bottom).offset(8);
-    }];
 }
 
+- (void)loadVideoDataWithArr:(RankFirstVideoModel *)model{
+    self.titleLab.text = model.videoTitle;
+    [self.thePic sd_setImageWithURL:[NSURL URLWithString:model.coverUrl] placeholderImage:[UIImage imageNamed:@"placeHolder"] options:SDWebImageLowPriority];
+}
 @end

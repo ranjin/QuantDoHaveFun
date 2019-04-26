@@ -92,19 +92,19 @@
     [_thePic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
         make.top.equalTo(self.contentView.mas_top).offset(SCREEN_HEIGHT*0.03);
-        make.width.mas_equalTo(335);
-        make.height.mas_equalTo(250);
+        make.width.mas_equalTo(361);
+        make.height.mas_equalTo(203);
     }];
     
     [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_thePic);
         make.top.equalTo(self.thePic.mas_bottom).offset(SCREEN_WIDTH*0.02);
-        make.width.mas_equalTo(315);
+        make.width.mas_equalTo(335);
     }];
     
     [_wanbei mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLab);
-        make.top.equalTo(self.titleLab.mas_bottom).offset(SCREEN_HEIGHT*0.015);
+        make.top.equalTo(self.titleLab.mas_bottom).offset(15);
     }];
     
     [_wanbeiLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,8 +113,8 @@
     }];
     
     [_yueLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.wanbei);
-        make.top.equalTo(_wanbei.mas_bottom).offset(3);
+        make.left.equalTo(self.wanbeiLab.mas_right).offset(6);
+        make.centerY.equalTo(_wanbeiLab);
     }];
 
     [_rmbLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -122,14 +122,15 @@
         make.left.equalTo(_yueLab.mas_right);
     }];
     [_info1Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_thePic.mas_left).offset(SCREEN_WIDTH*0.65);
-        make.top.equalTo(_wanbeiLab.mas_bottom);
+        make.left.equalTo(_thePic.mas_left).offset(285);
+        make.centerY.equalTo(_yueLab);
     }];
+
     [_info2Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_info1Lab.mas_right);
         make.centerY.equalTo(_info1Lab);
     }];
-    
+
     [_info3Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_info2Lab.mas_right);
         make.centerY.equalTo(_info1Lab);

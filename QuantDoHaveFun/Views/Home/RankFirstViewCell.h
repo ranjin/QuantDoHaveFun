@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RankFirstVideoModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RankFirstViewCell : UITableViewCell
@@ -15,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *thePic;
 @property (nonatomic, strong) UILabel *titleLab;
 
-@property (nonatomic, strong) UIImageView *save;
-@property (nonatomic, strong) UILabel *saveLab;
-
+- (void)loadVideoDataWithArr:(RankFirstVideoModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

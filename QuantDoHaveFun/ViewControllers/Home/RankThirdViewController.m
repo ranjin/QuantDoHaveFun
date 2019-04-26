@@ -44,13 +44,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_BLUECOLOR;
     _dzyListInfoArr = [[NSMutableArray alloc] init];
     _dzyImgArr = [[NSMutableArray alloc] init];
     _travelName = @"";
     //分段选择按钮
     [self initTableView];
-//    [self requestDZYList];
+    [self requestDZYList];
+}
+
+#pragma mark - 请求定制游列表信息
+- (void)requestDZYList{
+    self.loading = NO;
+    if (_dzyListInfoArr.count) {
+        [_dzyListInfoArr removeAllObjects];
+        [_dzyImgArr removeAllObjects];
+    }
+    NSDictionary * dic1 = @{@"travelName":_travelName,
+                            @"pageNum":@1,
+                            @"pageSize":@20
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetDZYList params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *dzyArr = [dic objectForKey:@"result"];
+            if (dzyArr.count) {
+                for (NSDictionary *dic in dzyArr) {
+                    CustomTravelDTO *infoModel = [CustomTravelDTO yy_modelWithDictionary:dic];
+                    [_dzyListInfoArr addObject:infoModel];
+                    NSDictionary *dic = [infoModel.imageList firstObject];
+                    [_dzyImgArr addObject:[dic objectForKey:@"url"]];
+                }
+                [_tableView reloadData];
+            }else{
+                _emptyType = QDNODataError;
+                [_tableView reloadData];
+                [_tableView reloadEmptyDataSet];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
+        }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
+    }];
 }
 
 - (void)initTableView{
@@ -95,7 +140,7 @@
 
 #pragma mark -- tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return _dzyListInfoArr.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -126,9 +171,9 @@
         cell = [[QDCustomTourCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    if (_dzyListInfoArr.count > 0) {
-//        [cell fillCustomTour:_dzyListInfoArr[indexPath.row] andImgURL:_dzyImgArr[indexPath.row]];
-//    }
+    if (_dzyListInfoArr.count > 0) {
+        [cell fillCustomTour:_dzyListInfoArr[indexPath.row] andImgURL:_dzyImgArr[indexPath.row]];
+    }
     return cell;
 }
 

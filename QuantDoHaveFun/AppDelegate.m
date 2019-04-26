@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HQMainTabbarVC.h"
 #import "QDHomeViewController.h"
 #import "QDPlayingViewController.h"
 #import "QDTradingViewController.h"
@@ -23,14 +22,17 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//    HQMainTabbarVC *tabVC = [[HQMainTabbarVC alloc]init];
-//    self.window.rootViewController = tabVC;
-    
-    BulgeCircularTabBarVC *tabVC = [[BulgeCircularTabBarVC alloc]init];
-    self.window.rootViewController = tabVC;
+    _hotelLevel = [[NSMutableArray alloc] init];    //酒店等级
+    _hotelTypeId = [[NSMutableArray alloc] init];   //酒店类型
+    _level = [[NSMutableArray alloc] init];         //会员等级
+
     [self findAllMapDict];
     [self getBasicPrice];
+    BulgeCircularTabBarVC *tabVC = [[BulgeCircularTabBarVC alloc]init];
+    self.window.rootViewController = tabVC;
     [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

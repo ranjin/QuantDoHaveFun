@@ -80,10 +80,6 @@
     return @"NONE";
 }
 
-//- (UIColor *)titleColorNormal{
-//    return APP_BLUECOLOR;
-//}
-
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index) {
         case 0: return [[RankFirstViewController alloc] init];
@@ -101,27 +97,12 @@
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     menuView.style = WMMenuViewStyleFloodHollow;
     self.menuView.style = WMMenuViewStyleLine;
-    return CGRectMake(85, SafeAreaTopHeight-64+SCREEN_HEIGHT*0.05, 280, 50);
+    return CGRectMake(85, SafeAreaTopHeight-64+10, 280, 50);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
     CGFloat originY = CGRectGetMaxY([self pageController:pageController preferredFrameForMenuView:self.menuView]);
-    //    if (self.menuViewStyle == WMMenuViewStyleTriangle) {
-    //        originY += self.redView.frame.size.height;
-    //    }
     return CGRectMake(0, originY, self.view.frame.size.width, self.view.frame.size.height - originY);
-}
-
-- (void)pageController:(WMPageController *)pageController didEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
-    QDLog(@"didEnterViewController");
-}
-
--(void)pageController:(WMPageController *)pageController willEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
-    QDLog(@"willEnterViewController");
-}
-
-- (void)pageController:(WMPageController *)pageController willCachedViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
-    QDLog(@"willEnterViewController");
 }
 
 - (void)didReceiveMemoryWarning {

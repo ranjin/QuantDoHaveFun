@@ -20,8 +20,6 @@
 		93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D0D22671FD600FB9F0E /* QDPlayingViewController.m */; };
 		93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1022671FE000FB9F0E /* QDTradingViewController.m */; };
 		93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1322671FEA00FB9F0E /* QDMineViewController.m */; };
-		93399D192267219900FB9F0E /* QDTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D182267219900FB9F0E /* QDTabBar.m */; };
-		93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D1B226721BA00FB9F0E /* QDTabBarItem.m */; };
 		93399D272267319E00FB9F0E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93399D262267319E00FB9F0E /* QuartzCore.framework */; };
 		93399D29226731A900FB9F0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93399D28226731A900FB9F0E /* CoreGraphics.framework */; };
 		93399D2D226814EA00FB9F0E /* RankFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399D2C226814EA00FB9F0E /* RankFirstViewController.m */; };
@@ -100,8 +98,6 @@
 		93399E322268546F00FB9F0E /* UIView+HQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E2D2268546E00FB9F0E /* UIView+HQExtension.m */; };
 		93399E332268546F00FB9F0E /* UIColor+HQColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */; };
 		93399E342268546F00FB9F0E /* UIImage+HQImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E312268546F00FB9F0E /* UIImage+HQImage.m */; };
-		93399E372268548300FB9F0E /* HQTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E352268548200FB9F0E /* HQTabbar.m */; };
-		93399E3A2268548900FB9F0E /* HQMainTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E382268548900FB9F0E /* HQMainTabbarVC.m */; };
 		93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */; };
 		93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E592268663600FB9F0E /* LeftTableViewCell.m */; };
 		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
@@ -319,6 +315,10 @@
 		93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98281227198BA00DDEB80 /* AxcAE_TabBarItem.m */; };
 		93E982882271991400DDEB80 /* BaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982862271991400DDEB80 /* BaseTabBar.m */; };
 		93E9828B2271997D00DDEB80 /* TestTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982892271997C00DDEB80 /* TestTabBar.m */; };
+		93E9828E2271A1C800DDEB80 /* RankFirstVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9828D2271A1C800DDEB80 /* RankFirstVideoModel.m */; };
+		93E982912271B11800DDEB80 /* VIPRightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982902271B11800DDEB80 /* VIPRightsViewController.m */; };
+		93E982942271B38D00DDEB80 /* VIPRightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982932271B38D00DDEB80 /* VIPRightsView.m */; };
+		93E982962271DAC500DDEB80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E982952271DAC500DDEB80 /* Images.xcassets */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -368,10 +368,6 @@
 		93399D1022671FE000FB9F0E /* QDTradingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTradingViewController.m; sourceTree = "<group>"; };
 		93399D1222671FEA00FB9F0E /* QDMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDMineViewController.h; sourceTree = "<group>"; };
 		93399D1322671FEA00FB9F0E /* QDMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDMineViewController.m; sourceTree = "<group>"; };
-		93399D172267219900FB9F0E /* QDTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTabBar.h; sourceTree = "<group>"; };
-		93399D182267219900FB9F0E /* QDTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTabBar.m; sourceTree = "<group>"; };
-		93399D1A226721BA00FB9F0E /* QDTabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTabBarItem.h; sourceTree = "<group>"; };
-		93399D1B226721BA00FB9F0E /* QDTabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTabBarItem.m; sourceTree = "<group>"; };
 		93399D262267319E00FB9F0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93399D28226731A900FB9F0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		93399D2A2268027500FB9F0E /* QDHaveFun.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDHaveFun.pch; sourceTree = "<group>"; };
@@ -526,10 +522,6 @@
 		93399E2F2268546F00FB9F0E /* UIColor+HQColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HQColor.m"; sourceTree = "<group>"; };
 		93399E302268546F00FB9F0E /* UIColor+HQColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HQColor.h"; sourceTree = "<group>"; };
 		93399E312268546F00FB9F0E /* UIImage+HQImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HQImage.m"; sourceTree = "<group>"; };
-		93399E352268548200FB9F0E /* HQTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTabbar.m; sourceTree = "<group>"; };
-		93399E362268548300FB9F0E /* HQTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTabbar.h; sourceTree = "<group>"; };
-		93399E382268548900FB9F0E /* HQMainTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQMainTabbarVC.m; sourceTree = "<group>"; };
-		93399E392268548900FB9F0E /* HQMainTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQMainTabbarVC.h; sourceTree = "<group>"; };
 		93399E3B22685CD100FB9F0E /* RankFirstHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankFirstHeadView.h; sourceTree = "<group>"; };
 		93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankFirstHeadView.m; sourceTree = "<group>"; };
 		93399E592268663600FB9F0E /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
@@ -983,6 +975,13 @@
 		93E982872271991400DDEB80 /* BaseTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBar.h; sourceTree = "<group>"; };
 		93E982892271997C00DDEB80 /* TestTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTabBar.m; sourceTree = "<group>"; };
 		93E9828A2271997C00DDEB80 /* TestTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTabBar.h; sourceTree = "<group>"; };
+		93E9828C2271A1C800DDEB80 /* RankFirstVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankFirstVideoModel.h; sourceTree = "<group>"; };
+		93E9828D2271A1C800DDEB80 /* RankFirstVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankFirstVideoModel.m; sourceTree = "<group>"; };
+		93E9828F2271B11800DDEB80 /* VIPRightsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIPRightsViewController.h; sourceTree = "<group>"; };
+		93E982902271B11800DDEB80 /* VIPRightsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPRightsViewController.m; sourceTree = "<group>"; };
+		93E982922271B38D00DDEB80 /* VIPRightsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIPRightsView.h; sourceTree = "<group>"; };
+		93E982932271B38D00DDEB80 /* VIPRightsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPRightsView.m; sourceTree = "<group>"; };
+		93E982952271DAC500DDEB80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1074,6 +1073,7 @@
 				93399CCA2267124500FB9F0E /* Info.plist */,
 				93399CCB2267124500FB9F0E /* main.m */,
 				93399D2A2268027500FB9F0E /* QDHaveFun.pch */,
+				93E982952271DAC500DDEB80 /* Images.xcassets */,
 			);
 			path = QuantDoHaveFun;
 			sourceTree = "<group>";
@@ -1276,6 +1276,8 @@
 				93399D32226814FC00FB9F0E /* RankThirdViewController.m */,
 				93E981A52271528F00DDEB80 /* QDHomgePageVC.h */,
 				93E981A62271528F00DDEB80 /* QDHomgePageVC.m */,
+				93E9828F2271B11800DDEB80 /* VIPRightsViewController.h */,
+				93E982902271B11800DDEB80 /* VIPRightsViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1373,6 +1375,8 @@
 				93E9813B22714F7D00DDEB80 /* RanklistDTO.m */,
 				93E9813D22714F7D00DDEB80 /* ImageDTO.h */,
 				93E9813C22714F7D00DDEB80 /* ImageDTO.m */,
+				93E9828C2271A1C800DDEB80 /* RankFirstVideoModel.h */,
+				93E9828D2271A1C800DDEB80 /* RankFirstVideoModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1415,24 +1419,8 @@
 		93399D152267211300FB9F0E /* QDCustomView */ = {
 			isa = PBXGroup;
 			children = (
-				93399D162267211300FB9F0E /* QDTabBar */,
 			);
 			path = QDCustomView;
-			sourceTree = "<group>";
-		};
-		93399D162267211300FB9F0E /* QDTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				93399D172267219900FB9F0E /* QDTabBar.h */,
-				93399D182267219900FB9F0E /* QDTabBar.m */,
-				93399D1A226721BA00FB9F0E /* QDTabBarItem.h */,
-				93399D1B226721BA00FB9F0E /* QDTabBarItem.m */,
-				93399E362268548300FB9F0E /* HQTabbar.h */,
-				93399E352268548200FB9F0E /* HQTabbar.m */,
-				93399E392268548900FB9F0E /* HQMainTabbarVC.h */,
-				93399E382268548900FB9F0E /* HQMainTabbarVC.m */,
-			);
-			path = QDTabBar;
 			sourceTree = "<group>";
 		};
 		93399D252267319D00FB9F0E /* Frameworks */ = {
@@ -2229,9 +2217,9 @@
 		93E981B62271532100DDEB80 /* VipPurchase */ = {
 			isa = PBXGroup;
 			children = (
-				93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */,
 				93E981B82271532100DDEB80 /* QDVipPurchaseVC.h */,
 				93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */,
+				93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */,
 				93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */,
 			);
 			name = VipPurchase;
@@ -2241,12 +2229,14 @@
 		93E981BD2271534000DDEB80 /* VipPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				93E981C12271534000DDEB80 /* QDVipPurchaseTableHeader.h */,
 				93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */,
 				93E981BF2271534000DDEB80 /* QDReadyToPayViewCell.h */,
-				93E981C02271534000DDEB80 /* QDVipPurchaseView.h */,
-				93E981C12271534000DDEB80 /* QDVipPurchaseTableHeader.h */,
-				93E981C22271534000DDEB80 /* QDVipPurchaseView.m */,
 				93E981C32271534000DDEB80 /* QDReadyToPayViewCell.m */,
+				93E981C02271534000DDEB80 /* QDVipPurchaseView.h */,
+				93E981C22271534000DDEB80 /* QDVipPurchaseView.m */,
+				93E982922271B38D00DDEB80 /* VIPRightsView.h */,
+				93E982932271B38D00DDEB80 /* VIPRightsView.m */,
 			);
 			path = VipPurchase;
 			sourceTree = "<group>";
@@ -2338,12 +2328,12 @@
 		93E9823E2271557B00DDEB80 /* NewPagedFlowView */ = {
 			isa = PBXGroup;
 			children = (
-				93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */,
+				93E982432271557B00DDEB80 /* NewPagedFlowView.h */,
 				93E982402271557B00DDEB80 /* NewPagedFlowView.m */,
+				93E982442271557B00DDEB80 /* PGCustomBannerView.h */,
 				93E982412271557B00DDEB80 /* PGCustomBannerView.m */,
 				93E982422271557B00DDEB80 /* PGIndexBannerSubiew.h */,
-				93E982432271557B00DDEB80 /* NewPagedFlowView.h */,
-				93E982442271557B00DDEB80 /* PGCustomBannerView.h */,
+				93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */,
 			);
 			path = NewPagedFlowView;
 			sourceTree = "<group>";
@@ -2492,6 +2482,7 @@
 				93E9807F2271479300DDEB80 /* ExampleApp.html in Resources */,
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
+				93E982962271DAC500DDEB80 /* Images.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
 				93399E752268672300FB9F0E /* meituan.json in Resources */,
 			);
@@ -2599,10 +2590,10 @@
 				93E980472271458300DDEB80 /* QDOrderField.m in Sources */,
 				93E981B3227152BD00DDEB80 /* ZLFlowLayout.m in Sources */,
 				93E980102271446B00DDEB80 /* YYTextTransaction.m in Sources */,
+				93E9828E2271A1C800DDEB80 /* RankFirstVideoModel.m in Sources */,
 				93E980DF22714DEE00DDEB80 /* QDShareView.m in Sources */,
 				93399D1122671FE000FB9F0E /* QDTradingViewController.m in Sources */,
 				93E9800D2271446B00DDEB80 /* NSParagraphStyle+YYText.m in Sources */,
-				93399D192267219900FB9F0E /* QDTabBar.m in Sources */,
 				93E9822D227154B000DDEB80 /* QDFilterTypeTwoView.m in Sources */,
 				93E981622271500700DDEB80 /* QDSearchResultViewController.m in Sources */,
 				93E98262227155A100DDEB80 /* QDSecondViewController.m in Sources */,
@@ -2614,6 +2605,7 @@
 				93E9810C22714E9300DDEB80 /* QDCustomTourSectionHeaderView.m in Sources */,
 				93E9810B22714E9300DDEB80 /* QDPriceRangeView.m in Sources */,
 				93E98224227154B000DDEB80 /* QDMyBiddingOrderView.m in Sources */,
+				93E982942271B38D00DDEB80 /* VIPRightsView.m in Sources */,
 				93E980052271446B00DDEB80 /* YYTextDebugOption.m in Sources */,
 				93399D8822681C4900FB9F0E /* QDUserDefaults.m in Sources */,
 				93E980132271446B00DDEB80 /* YYTextWeakProxy.m in Sources */,
@@ -2739,7 +2731,6 @@
 				93399D5C2268196300FB9F0E /* UIImagePickerController+ST.m in Sources */,
 				93E9810A22714E9300DDEB80 /* QDCustomTourCell.m in Sources */,
 				93E980B122714D1A00DDEB80 /* SYCitysCell.m in Sources */,
-				93399D1C226721BA00FB9F0E /* QDTabBarItem.m in Sources */,
 				93E9819F2271524B00DDEB80 /* QDHotelsInAreaViewTableViewCell.m in Sources */,
 				93E98235227154E100DDEB80 /* QDPopMenu.m in Sources */,
 				93399D39226815A300FB9F0E /* UIColor+Extention.m in Sources */,
@@ -2759,7 +2750,6 @@
 				93E980A922714D1A00DDEB80 /* QDCalendarTopView.m in Sources */,
 				93E981CD2271535100DDEB80 /* CWActionSheetTableViewCell.m in Sources */,
 				93E98221227154B000DDEB80 /* QDPickUpOrderCell.m in Sources */,
-				93399E3A2268548900FB9F0E /* HQMainTabbarVC.m in Sources */,
 				93E980022271446B00DDEB80 /* YYTextLine.m in Sources */,
 				93E981612271500700DDEB80 /* QDHomeSearchVC.m in Sources */,
 				93E982742271560B00DDEB80 /* PPNumberButton.m in Sources */,
@@ -2846,6 +2836,7 @@
 				93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */,
 				93E980352271450000DDEB80 /* XBGradientColorView.m in Sources */,
 				93E97FFE2271446B00DDEB80 /* YYTextContainerView.m in Sources */,
+				93E982912271B11800DDEB80 /* VIPRightsViewController.m in Sources */,
 				93E97FFF2271446B00DDEB80 /* YYTextEffectWindow.m in Sources */,
 				93E9800B2271446B00DDEB80 /* YYTextRubyAnnotation.m in Sources */,
 				93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */,
@@ -2866,7 +2857,6 @@
 				93E9807E2271479300DDEB80 /* WebViewJavascriptBridge.m in Sources */,
 				93E981812271504700DDEB80 /* QDHotelTableFooterView.m in Sources */,
 				93E9811822714EFE00DDEB80 /* SFDualWayIndicateView.m in Sources */,
-				93399E372268548300FB9F0E /* HQTabbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3038,6 +3028,7 @@
 			baseConfigurationReference = 07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;
@@ -3062,6 +3053,7 @@
 			baseConfigurationReference = F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNMW98VLVV;

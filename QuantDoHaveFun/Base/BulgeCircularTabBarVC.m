@@ -11,6 +11,7 @@
 #import "QDPlayingViewController.h"
 #import "QDTradingViewController.h"
 #import "QDMineViewController.h"
+#import "VIPRightsViewController.h"
 @interface BulgeCircularTabBarVC ()<AxcAE_TabBarDelegate>
 
 @end
@@ -27,7 +28,7 @@
     NSArray <NSDictionary *>*VCArray =
     @[@{@"vc":[QDHomeViewController new],@"normalImg":@"home_normal",@"selectImg":@"home_selected",@"itemTitle":@"首页"},
       @{@"vc":[QDPlayingViewController new],@"normalImg":@"playing_normal",@"selectImg":@"playing_selected",@"itemTitle":@"去玩"},
-      @{@"vc":[QDPlayingViewController new],@"normalImg":@"post_animate_add",@"selectImg":@"post_animate_add",@"itemTitle":@"AE_LineUI"},
+      @{@"vc":[VIPRightsViewController new],@"normalImg":@"post_animate_add",@"selectImg":@"post_animate_add",@"itemTitle":@"AE_LineUI"},
       @{@"vc":[QDHomeViewController new],@"normalImg":@"trading_normal",@"selectImg":@"trading_selected",@"itemTitle":@"玩贝"},
       @{@"vc":[QDMineViewController new],@"normalImg":@"mine_normal",@"selectImg":@"mine_selected",@"itemTitle":@"我的"}];
     // 1.遍历这个集合

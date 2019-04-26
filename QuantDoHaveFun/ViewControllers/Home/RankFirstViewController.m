@@ -17,17 +17,15 @@
 #import "QDOrderField.h"
 #import "RankFirstViewCell.h"
 #import "RankFirstHeadView.h"
-//预定酒店 定制游 商城
+#import "RankFirstVideoModel.h"
+
 @interface RankFirstViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, UITextFieldDelegate>{
     UITableView *_tableView;
-    NSMutableArray *_mallInfoArr;
+    NSMutableArray *_videoList;
     QDEmptyType _emptyType;
     RankFirstHeadView *_headView;
 }
 @property (nonatomic, getter=isLoading) BOOL loading;
-@property (nonatomic, strong) NSMutableArray *categoryArr;
-@property (nonatomic, strong) NSMutableArray *categoryIDArr;
-
 @property (nonatomic, assign) NSInteger menuSelectIndex;   //选中的一栏
 
 @property (nonatomic, strong) NSString *catId;  //商品分类
@@ -60,29 +58,36 @@
     _sortType = @"";
     _baoyou = @"";
     _keywords = @"";
-    _categoryArr = [[NSMutableArray alloc] init];
-    _categoryIDArr = [[NSMutableArray alloc] init];
+    _videoList = [[NSMutableArray alloc] init];
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
-    _mallInfoArr = [[NSMutableArray alloc] init];
+    _videoList = [[NSMutableArray alloc] init];
     [self initTableView];
+    [self getVideoList];
 }
 
 #pragma mark - 查询商品分类
-- (void)finGoodsCategory{
-    if (_categoryArr.count) {
-        [_categoryArr removeAllObjects];
-        [_categoryIDArr removeAllObjects];
+- (void)getVideoList{
+    if (_videoList.count) {
+        [_videoList removeAllObjects];
     }
-    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_findCategory params:nil successBlock:^(QDResponseObject *responseObject) {
+    NSDictionary * dic = @{@"top":@"0",
+                            @"pageNum":@1,
+                            @"pageSize":@10
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getVideoList params:dic successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
-            NSArray *arr = responseObject.result;
-            for (NSDictionary *dic in arr) {
-                [_categoryArr addObject:[dic objectForKey:@"catName"]];
-                NSString *str =  [NSString stringWithFormat:@"%d", [[dic objectForKey:@"id"] intValue]];
-                [_categoryIDArr addObject:str];
+            NSDictionary *dic = responseObject.result;
+            NSArray *arr = [dic objectForKey:@"result"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    RankFirstVideoModel *model = [RankFirstVideoModel yy_modelWithDictionary:dic];
+                    [_videoList addObject:model];
+                }
+                QDLog(@"_videoList = %@", _videoList);
+                [_tableView reloadData];
+            }else{
+                QDLog(@"数据为空");
             }
-            [_categoryArr insertObject:@"全部" atIndex:0];
-            [_categoryIDArr insertObject:@"0" atIndex:0];
         }
     } failureBlock:^(NSError *error) {
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
@@ -101,9 +106,10 @@
     _tableView.emptyDataSetSource = self;
     _headView = [[RankFirstHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
     _tableView.tableHeaderView = _headView;
-//    [_tableView tab_startAnimation];
+    [_tableView tab_startAnimation];
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+        [self endRefreshing];
     }];
     
     //手动刷新请求最新数据
@@ -128,7 +134,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return _videoList.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -152,6 +158,9 @@
     RankFirstViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[RankFirstViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    if (_videoList.count) {
+        [cell loadVideoDataWithArr:_videoList[indexPath.row]];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
