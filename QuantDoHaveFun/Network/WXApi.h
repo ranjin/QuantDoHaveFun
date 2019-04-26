@@ -152,6 +152,9 @@ static NSString * const api_changeIcon = @"/lyjfapp/api/v1/user/changeIcon";    
 
 static NSString * const api_getVideoList = @"/lyjfapp/api/v1/video/list";            //首页这好玩视频封面
 
+static NSString * const api_findAllDestinationList = @"/lyjfapp/api/v1/ranklist/findAllDestinationList";            //榜单目的地列表
+
+
 
 /**
  JAVAScriptBridgeWebView

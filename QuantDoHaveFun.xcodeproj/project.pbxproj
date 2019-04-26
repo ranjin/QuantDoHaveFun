@@ -106,7 +106,7 @@
 		93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E622268663600FB9F0E /* TableViewHeaderView.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
-		93399E752268672300FB9F0E /* meituan.json in Resources */ = {isa = PBXBuildFile; fileRef = 93399E732268672200FB9F0E /* meituan.json */; };
+		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
 		93E97FC62271442D00DDEB80 /* QDLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */; };
 		93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC92271446A00DDEB80 /* YYTextView.m */; };
 		93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FCD2271446B00DDEB80 /* YYTextMagnifier.m */; };
@@ -536,7 +536,8 @@
 		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		93399E732268672200FB9F0E /* meituan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meituan.json; sourceTree = "<group>"; };
+		938C3C452272F96C0087724E /* TheCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheCityModel.h; sourceTree = "<group>"; };
+		938C3C462272F96C0087724E /* TheCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheCityModel.m; sourceTree = "<group>"; };
 		93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginAndRegisterVC.m; sourceTree = "<group>"; };
 		93E97FC52271442D00DDEB80 /* QDLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLoginAndRegisterVC.h; sourceTree = "<group>"; };
 		93E97FC82271446A00DDEB80 /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
@@ -1047,7 +1048,6 @@
 			isa = PBXGroup;
 			children = (
 				93E980722271479200DDEB80 /* WebViewJavascriptBridge */,
-				93399E732268672200FB9F0E /* meituan.json */,
 				93399E2B2268546200FB9F0E /* Category */,
 				93399D6822681A0900FB9F0E /* Network */,
 				93399D562268195700FB9F0E /* Utils */,
@@ -1369,6 +1369,8 @@
 				93E9813C22714F7D00DDEB80 /* ImageDTO.m */,
 				93E9828C2271A1C800DDEB80 /* RankFirstVideoModel.h */,
 				93E9828D2271A1C800DDEB80 /* RankFirstVideoModel.m */,
+				938C3C452272F96C0087724E /* TheCityModel.h */,
+				938C3C462272F96C0087724E /* TheCityModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2474,7 +2476,6 @@
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93E982962271DAC500DDEB80 /* Images.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
-				93399E752268672300FB9F0E /* meituan.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2778,6 +2779,7 @@
 				93E981E1227153B800DDEB80 /* QDMallViewController.m in Sources */,
 				93E98283227198BB00DDEB80 /* AxcAE_TabBarBadge.m in Sources */,
 				93399D552268191E00FB9F0E /* QDMineHeaderNotLoginView.m in Sources */,
+				938C3C472272F96C0087724E /* TheCityModel.m in Sources */,
 				93E9810D22714E9300DDEB80 /* QDHotelReserveTableHeaderView.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
 				93399D65226819C800FB9F0E /* QDMemberDTO.m in Sources */,

@@ -36,7 +36,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-                  timestampString = "577958790.463995"
+                  timestampString = "577963676.385496"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -51,7 +51,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-                  timestampString = "577958790.467995"
+                  timestampString = "577963676.387471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
@@ -132,7 +132,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "577958790.496029"
+                  timestampString = "577963676.40643"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -147,7 +147,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "577958790.498492"
+                  timestampString = "577963676.408569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -162,7 +162,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "577958790.501949"
+                  timestampString = "577963676.4114881"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -249,6 +249,118 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+            timestampString = "577963675.7366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-findFirstDetailList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+            timestampString = "577963675.737078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-findFirstDetailList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+            timestampString = "577963675.73734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-findAllDestinationList"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RankSecondViewController findAllDestinationList]"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+                  timestampString = "577963676.449491"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50-[RankSecondViewController findAllDestinationList]_block_invoke"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+                  timestampString = "577963676.451929"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+            timestampString = "577963675.737558"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-findAllDestinationList"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
+            timestampString = "577963675.7378269"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-findAllDestinationList"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,7 +7,7 @@
 //  代码下载地址https://github.com/leejayID/Linkage
 
 #import <UIKit/UIKit.h>
-
+#import "RanklistDTO.h"
 @class FoodModel;
 
 #define kCellIdentifier_Right @"RightTableViewCell"
@@ -21,4 +21,5 @@
 
 @property (nonatomic, strong) FoodModel *model;
 
+- (void)loadDataWithRankModel:(RanklistDTO *)rankModel;
 @end

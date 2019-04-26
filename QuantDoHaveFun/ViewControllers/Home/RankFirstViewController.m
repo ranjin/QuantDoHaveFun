@@ -75,6 +75,7 @@
                             @"pageSize":@10
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getVideoList params:dic successBlock:^(QDResponseObject *responseObject) {
+        [_tableView tab_endAnimation];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *arr = [dic objectForKey:@"result"];
@@ -90,6 +91,7 @@
             }
         }
     } failureBlock:^(NSError *error) {
+        [_tableView tab_endAnimation];
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }

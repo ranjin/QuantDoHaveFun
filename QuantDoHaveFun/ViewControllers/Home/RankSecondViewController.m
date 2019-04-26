@@ -11,10 +11,18 @@
 #import "RightTableViewCell.h"
 #import "CategoryModel.h"
 #import "RankSecondViewController.h"
-
+#import "TheCityModel.h"
+#import "RanklistDTO.h"
+#import "UITableView+Animated.h"
+#import "UIView+TABControlAnimation.h"
+#import "QDRefreshHeader.h"
+#import "QDRefreshFooter.h"
 static float kLeftTableViewWidth = 92.f;
 
-@interface RankSecondViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface RankSecondViewController () <UITableViewDelegate, UITableViewDataSource>{
+    NSMutableArray *_destinationArr;
+    NSMutableArray *_rankDTOList;
+}
 
 @property (nonatomic, strong) NSMutableArray *categoryData;
 @property (nonatomic, strong) NSMutableArray *foodData;
@@ -32,7 +40,8 @@ static float kLeftTableViewWidth = 92.f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _destinationArr = [[NSMutableArray alloc] init];
+    _rankDTOList = [[NSMutableArray alloc] init];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -43,32 +52,65 @@ static float kLeftTableViewWidth = 92.f;
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"meituan" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSArray *foods = dict[@"data"][@"food_spu_tags"];
-    
-    for (NSDictionary *dict in foods)
-    {
-        CategoryModel *model = [CategoryModel objectWithDictionary:dict];
-        [self.categoryData addObject:model];
-        
-        NSMutableArray *datas = [NSMutableArray array];
-        for (FoodModel *f_model in model.spus)
-        {
-            [datas addObject:f_model];
-        }
-        [self.foodData addObject:datas];
-    }
-    
     [self.view addSubview:self.leftTableView];
     [self.view addSubview:self.rightTableView];
     
     [self.leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                                     animated:YES
                               scrollPosition:UITableViewScrollPositionNone];
+    [self findAllDestinationList];
 }
 
+#pragma mark - 目的地列表查询
+- (void)findAllDestinationList{
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_findAllDestinationList params:nil successBlock:^(QDResponseObject *responseObject) {
+        [_leftTableView tab_endAnimation];
+        if (responseObject.code == 0) {
+            if (_destinationArr.count) {
+                [_destinationArr removeAllObjects];
+            }
+            NSArray *arr = responseObject.result;
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    TheCityModel *model = [TheCityModel yy_modelWithDictionary:dic];
+                    [_destinationArr addObject:model];
+                }
+            }
+            
+            [self findFirstDetailList:_destinationArr[0]];
+            [_leftTableView reloadData];
+            [_leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        }
+    } failureBlock:^(NSError *error) {
+        [_leftTableView tab_endAnimation];
+    }];
+}
+
+#pragma mark - 第一个目的地对应的榜单列表查询
+- (void)findFirstDetailList:(TheCityModel *)cityModel{
+    if (_rankDTOList.count) {
+        [_rankDTOList removeAllObjects];
+    }
+    NSDictionary *dic = @{
+                          @"listStatus":@"1",
+                          @"destinationId":cityModel.id
+                          };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_RankedSorting params:dic successBlock:^(QDResponseObject *responseObject) {
+        [_rightTableView tab_endAnimation];
+        if (responseObject.code == 0) {
+            NSArray *arr = [responseObject.result objectForKey:@"result"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    RanklistDTO *listDTO = [RanklistDTO yy_modelWithDictionary:dic];
+                    [_rankDTOList addObject:listDTO];
+                }
+                [_rightTableView reloadData];
+            }
+        }
+    } failureBlock:^(NSError *error) {
+        [_rightTableView tab_endAnimation];
+    }];
+}
 #pragma mark - Getters
 
 - (NSMutableArray *)categoryData
@@ -100,6 +142,7 @@ static float kLeftTableViewWidth = 92.f;
 //        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _leftTableView.tableFooterView = [UIView new];
         _leftTableView.showsVerticalScrollIndicator = NO;
+        [_leftTableView tab_startAnimation];
         _leftTableView.separatorColor = APP_LIGTHGRAYLINECOLOR;
         [_leftTableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Left];
     }
@@ -117,35 +160,44 @@ static float kLeftTableViewWidth = 92.f;
         _rightTableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         _rightTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _rightTableView.showsVerticalScrollIndicator = NO;
+        [_rightTableView tab_startAnimation];
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _rightTableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+            [self endRefreshing];
+        }];
+        
+        _rightTableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
+            [self endRefreshing];
+            [_rightTableView.mj_footer endRefreshingWithNoMoreData];
+        }];
         [_rightTableView registerClass:[RightTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Right];
     }
     return _rightTableView;
 }
 
+- (void)endRefreshing
+{
+    if (_rightTableView) {
+        [_rightTableView.mj_header endRefreshing];
+        [_rightTableView.mj_footer endRefreshing];
+    }
+}
 #pragma mark - TableView DataSource Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (_leftTableView == tableView)
-    {
-        return 1;
-    }
-    else
-    {
-        return self.categoryData.count;
-    }
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_leftTableView == tableView)
     {
-        return self.categoryData.count;
+        return _destinationArr.count;
     }
     else
     {
-        return [self.foodData[section] count];
+        return _rankDTOList.count;
     }
 }
 
@@ -155,38 +207,30 @@ static float kLeftTableViewWidth = 92.f;
     {
         LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Left forIndexPath:indexPath];
         cell.backgroundColor = APP_WHITECOLOR;
-        FoodModel *model = self.categoryData[indexPath.row];
-        cell.name.text = model.name;
+        if (_destinationArr.count) {
+            TheCityModel *model = _destinationArr[indexPath.row];
+            cell.name.text = model.destination;
+        }
         return cell;
     }
     else
     {
         RightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Right forIndexPath:indexPath];
-        FoodModel *model = self.foodData[indexPath.section][indexPath.row];
         cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
-        cell.model = model;
+        if (_rankDTOList.count) {
+            [cell loadDataWithRankModel:_rankDTOList[indexPath.row]];
+        }
         return cell;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (_rightTableView == tableView)
-    {
-        return 20;
-    }
-    return 0;
+    return 0.01;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (_rightTableView == tableView)
-    {
-        TableViewHeaderView *view = [[TableViewHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
-        FoodModel *model = self.categoryData[section];
-        view.name.text = model.name;
-        return view;
-    }
     return nil;
 }
 
@@ -219,10 +263,10 @@ static float kLeftTableViewWidth = 92.f;
     if (_leftTableView == tableView)
     {
         _selectIndex = indexPath.row;
-        [_rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_selectIndex] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         [_leftTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_selectIndex inSection:0]
                               atScrollPosition:UITableViewScrollPositionTop
                                       animated:YES];
+        [self findFirstDetailList:_destinationArr[_selectIndex]];
     }
 }
 

@@ -65,4 +65,9 @@
         make.width.mas_equalTo(126);
     }];
 }
+
+- (void)loadDataWithRankModel:(RanklistDTO *)rankModel{
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:rankModel.imageFullUrl] placeholderImage:[UIImage imageNamed:@"placeHolder"] options:SDWebImageLowPriority];
+    self.nameLabel.text = rankModel.topicDescribe;
+}
 @end
