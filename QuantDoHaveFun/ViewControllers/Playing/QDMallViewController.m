@@ -11,7 +11,6 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
-#import "QDMallTableHeaderView.h"
 #import "QDMallModel.h"
 #import "QDBridgeViewController.h"
 #import "QDKeyWordsSearchVC.h"
@@ -30,7 +29,6 @@
 @interface QDMallViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, QDPopMenuDelegate, UITextFieldDelegate>{
     QDPlayShellType _playShellType;
     UITableView *_tableView;
-    QDMallTableHeaderView *_mallHeaderView;
     NSMutableArray *_mallInfoArr;
     QDMallTableSectionHeaderView *_sectionHeaderView;
     QDEmptyType _emptyType;
@@ -222,12 +220,6 @@
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
     [_tableView tab_startAnimation];
-    _mallHeaderView = [[QDMallTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.08)];
-    _mallHeaderView.backgroundColor = APP_WHITECOLOR;
-    [_mallHeaderView.carBtn addTarget:self action:@selector(addToCar:) forControlEvents:UIControlEventTouchUpInside];
-    _mallHeaderView.inputTF.returnKeyType = UIReturnKeySearch;  //变为搜索按钮
-    _mallHeaderView.inputTF.delegate = self;
-    _tableView.tableHeaderView = _mallHeaderView;
     self.view = _tableView;
 //    [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -515,11 +507,4 @@
     QDLog(@"dismissPopMenu");
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    QDLog(@"搜索商品");
-    [_mallHeaderView.inputTF resignFirstResponder];
-    _keywords = _mallHeaderView.inputTF.text;
-    [self requestMallList];
-    return YES;
-}
 @end

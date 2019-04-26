@@ -28,7 +28,6 @@
 //预定酒店 定制游 商城
 @interface QDResturantVC ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, UITextFieldDelegate>{
     UITableView *_tableView;
-    QDCustomTourSectionHeaderView *_customTourHeaderView;
     NSMutableArray *_restaurantList;
     NSMutableArray *_restaurantImgArr;
     QDEmptyType _emptyType;
@@ -109,10 +108,10 @@
 }
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_WHITECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView tab_startAnimation];
@@ -120,20 +119,14 @@
     //    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
-    //    [self.view addSubview:_tableView];
-    _customTourHeaderView = [[QDCustomTourSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH*0.12)];
-    //    [_customTourHeaderView.searchBtn addTarget:self action:@selector(customerTourSearchAction:) forControlEvents:UIControlEventTouchUpInside];
-    _customTourHeaderView.inputTF.returnKeyType = UIReturnKeySearch;    //变为搜索按钮
-    _customTourHeaderView.inputTF.delegate = self;
-    _customTourHeaderView.backgroundColor = APP_WHITECOLOR;
-    _tableView.tableHeaderView = _customTourHeaderView;
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         //重新刷新 查询全部
-        if ([_customTourHeaderView.inputTF.text isEqualToString:@""]) {
-            _travelName = @"";
-        }
-        [self requestResturantList];
+//        if ([_customTourHeaderView.inputTF.text isEqualToString:@""]) {
+//            _travelName = @"";
+//        }
+//        [self requestResturantList];
+        [self endRefreshing];
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
@@ -320,19 +313,6 @@
     self.loading = YES;
     [self requestResturantList];
     
-}
-
-- (void)customerTourSearchAction:(UIButton *)sender{
-    QDSearchViewController *searchVC = [[QDSearchViewController alloc] init];
-    searchVC.playShellType = QDCustomTour;
-    [self.navigationController pushViewController:searchVC animated:YES];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [_customTourHeaderView.inputTF resignFirstResponder];
-    _travelName = _customTourHeaderView.inputTF.text;
-    [self requestResturantList];
-    return YES;
 }
 
 @end

@@ -299,7 +299,6 @@
 		93E9825F227155A100DDEB80 /* QDFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9824B2271559F00DDEB80 /* QDFourViewController.m */; };
 		93E98260227155A100DDEB80 /* QDShellRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */; };
 		93E98262227155A100DDEB80 /* QDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98252227155A000DDEB80 /* QDSecondViewController.m */; };
-		93E98263227155A100DDEB80 /* QDTradingShellsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98253227155A000DDEB80 /* QDTradingShellsVC.m */; };
 		93E98264227155A100DDEB80 /* QDFindSatifiedDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98254227155A000DDEB80 /* QDFindSatifiedDataVC.m */; };
 		93E98265227155A100DDEB80 /* QDRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98255227155A000DDEB80 /* QDRecommendViewController.m */; };
 		93E98266227155A100DDEB80 /* QDBuyOrSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98256227155A000DDEB80 /* QDBuyOrSellViewController.m */; };
@@ -937,12 +936,10 @@
 		93E9824A2271559F00DDEB80 /* QDFindSatifiedDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFindSatifiedDataVC.h; sourceTree = "<group>"; };
 		93E9824B2271559F00DDEB80 /* QDFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFourViewController.m; sourceTree = "<group>"; };
 		93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDShellRecommendVC.m; sourceTree = "<group>"; };
-		93E9824D2271559F00DDEB80 /* QDTradingShellsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTradingShellsVC.h; sourceTree = "<group>"; };
 		93E9824F2271559F00DDEB80 /* QDBuyOrSellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBuyOrSellViewController.h; sourceTree = "<group>"; };
 		93E982502271559F00DDEB80 /* QDRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRecommendViewController.h; sourceTree = "<group>"; };
 		93E982512271559F00DDEB80 /* QDOrderDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDOrderDetailVC.h; sourceTree = "<group>"; };
 		93E98252227155A000DDEB80 /* QDSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSecondViewController.m; sourceTree = "<group>"; };
-		93E98253227155A000DDEB80 /* QDTradingShellsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTradingShellsVC.m; sourceTree = "<group>"; };
 		93E98254227155A000DDEB80 /* QDFindSatifiedDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFindSatifiedDataVC.m; sourceTree = "<group>"; };
 		93E98255227155A000DDEB80 /* QDRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRecommendViewController.m; sourceTree = "<group>"; };
 		93E98256227155A000DDEB80 /* QDBuyOrSellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBuyOrSellViewController.m; sourceTree = "<group>"; };
@@ -1325,8 +1322,6 @@
 			children = (
 				93E982762271565F00DDEB80 /* QDThirdViewController.h */,
 				93E982752271565F00DDEB80 /* QDThirdViewController.m */,
-				93E9824D2271559F00DDEB80 /* QDTradingShellsVC.h */,
-				93E98253227155A000DDEB80 /* QDTradingShellsVC.m */,
 				93E98258227155A100DDEB80 /* QDShellRecommendVC.h */,
 				93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */,
 				93E982512271559F00DDEB80 /* QDOrderDetailVC.h */,
@@ -2648,7 +2643,6 @@
 				93E981EE2271542F00DDEB80 /* TFDropDownMenuView.m in Sources */,
 				93E980D722714DC500DDEB80 /* DIYCalendarCell.m in Sources */,
 				93E981632271500700DDEB80 /* QDHomeRankListVC.m in Sources */,
-				93E98263227155A100DDEB80 /* QDTradingShellsVC.m in Sources */,
 				93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */,
 				93E98260227155A100DDEB80 /* QDShellRecommendVC.m in Sources */,
 				93E981EF2271542F00DDEB80 /* TFIndexPatch.m in Sources */,

@@ -1,17 +1,11 @@
 //
-//  QDTradingViewController.h
-//  QuantDoHaveFun
+//  WMCustomizedPageController.h
+//  WMPageControllerExample
 //
-//  Created by WJ-Shao on 2019/4/17.
-//  Copyright © 2019 Chalres Ran. All rights reserved.
+//  Created by Mark on 2017/6/21.
+//  Copyright © 2017年 Mark. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface QDTradingViewController : UIViewController
-
+#import "WMPageController.h"
+@interface QDTradingViewController : WMPageController
 @end
-
-NS_ASSUME_NONNULL_END

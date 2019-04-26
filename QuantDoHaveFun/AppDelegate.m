@@ -22,11 +22,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    _hotelLevel = [[NSMutableArray alloc] init];    //酒店等级
-    _hotelTypeId = [[NSMutableArray alloc] init];   //酒店类型
-    _level = [[NSMutableArray alloc] init];         //会员等级
 
-    [self findAllMapDict];
     [self getBasicPrice];
     BulgeCircularTabBarVC *tabVC = [[BulgeCircularTabBarVC alloc]init];
     self.window.rootViewController = tabVC;
@@ -36,40 +32,6 @@
     return YES;
 }
 
-- (void)findAllMapDict{
-    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindAllMapDict params:nil successBlock:^(QDResponseObject *responseObject) {
-        if (responseObject.code == 0) {
-            NSDictionary *dic = responseObject.result;
-            if ([[dic allKeys] containsObject:@"hotelLevel"]) {
-                if (_hotelLevel.count) {
-                    [_hotelLevel removeAllObjects];
-                }
-                if (_hotelTypeId.count) {
-                    [_hotelTypeId removeAllObjects];
-                }
-                if (_level.count) {
-                    [_level removeAllObjects];
-                }
-                NSArray *aaa = [dic objectForKey:@"hotelLevel"];
-                for (NSDictionary *dd in aaa) {
-                    [_hotelLevel addObject:[dd objectForKey:@"dictName"]];
-                }
-                NSArray *bbb = [dic objectForKey:@"hotelTypeId"];
-                for (NSDictionary *dd in bbb) {
-                    [_hotelTypeId addObject:[dd objectForKey:@"dictName"]];
-                }
-                NSArray *ccc = [dic objectForKey:@"Level"];
-                for (NSDictionary *dd in ccc) {
-                    [_level addObject:[dd objectForKey:@"dictName"]];
-                }
-            }
-        }else{
-            [WXProgressHUD showInfoWithTittle:responseObject.message];
-        }
-    } failureBlock:^(NSError *error) {
-        [WXProgressHUD hideHUD];
-    }];
-}
 #pragma mark - 个人积分账户详情
 - (void)getBasicPrice{
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetBasicPrice params:nil successBlock:^(QDResponseObject *responseObject) {

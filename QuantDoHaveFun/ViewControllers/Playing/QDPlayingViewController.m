@@ -80,8 +80,8 @@
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index) {
         case 0: return [[QDHotelReserveVC alloc] init];
-        case 1: return [[QDMallViewController alloc] init];
-        case 2: return [[QDResturantVC alloc] init];
+        case 1: return [[QDResturantVC alloc] init];
+        case 2: return [[QDMallViewController alloc] init];
     }
     return [[UIViewController alloc] init];
 }

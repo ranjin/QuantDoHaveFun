@@ -25,9 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SPButton *vipRightsBtn;
 
 @property (nonatomic, strong) UIImageView *financialPic;
-@property (nonatomic, strong) UILabel *info1Lab;
-@property (nonatomic, strong) UILabel *info2Lab;
-@property (nonatomic, strong) UILabel *info3Lab;
+@property (nonatomic, strong) UILabel *infoLab;
+@property (nonatomic, strong) SPButton *groupUPDesc;
 
 @property (nonatomic, strong) MQGradientProgressView *progressView;
 @property (nonatomic, strong) UILabel *info4Lab;
@@ -40,10 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *info9Lab;
 @property (nonatomic, strong) UIButton *accountInfo;
 
-
+@property (nonatomic, strong) SPButton *balanceDetail;
 
 @property (nonatomic, strong) UILabel *balanceLab;
 @property (nonatomic, strong) UILabel *balance;
+
 
 @property (nonatomic, strong) UIButton *rechargeBtn;
 @property (nonatomic, strong) UIButton *withdrawBtn;

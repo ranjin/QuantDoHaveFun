@@ -29,7 +29,7 @@
     @[@{@"vc":[QDHomeViewController new],@"normalImg":@"home_normal",@"selectImg":@"home_selected",@"itemTitle":@"首页"},
       @{@"vc":[QDPlayingViewController new],@"normalImg":@"playing_normal",@"selectImg":@"playing_selected",@"itemTitle":@"去玩"},
       @{@"vc":[VIPRightsViewController new],@"normalImg":@"post_animate_add",@"selectImg":@"post_animate_add",@"itemTitle":@"AE_LineUI"},
-      @{@"vc":[QDHomeViewController new],@"normalImg":@"trading_normal",@"selectImg":@"trading_selected",@"itemTitle":@"玩贝"},
+      @{@"vc":[QDTradingViewController new],@"normalImg":@"trading_normal",@"selectImg":@"trading_selected",@"itemTitle":@"玩贝"},
       @{@"vc":[QDMineViewController new],@"normalImg":@"mine_normal",@"selectImg":@"mine_selected",@"itemTitle":@"我的"}];
     // 1.遍历这个集合
     // 1.1 设置一个保存构造器的数组

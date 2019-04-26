@@ -63,15 +63,14 @@
         [self addSubview:_forgetPWD];
         
         
-//        _gotologinBtn = [[QDButton alloc] init];
-//        [_gotologinBtn setBackgroundColor:[UIColor colorWithHexString:@"#6186C9"] forState:UIControlStateNormal];
-//        [_gotologinBtn setBackgroundColor:[UIColor colorWithHexString:@"#48689C"] forState:UIControlStateSelected];
-//        [_gotologinBtn setBackgroundColor:[UIColor colorWithHexString:@"#75849D"] forState:UIControlStateDisabled];
-//        [_gotologinBtn setTitle:@"登录" forState:UIControlStateNormal];
-//        _gotologinBtn.titleLabel.font = QDFont(12);
-//        _gotologinBtn.layer.cornerRadius = 4;
-//        _gotologinBtn.layer.masksToBounds = YES;
-//        [self addSubview:_gotologinBtn];
+        _gotologinBtn = [[QDButton alloc] init];
+        [_gotologinBtn setBackgroundImage:[UIImage imageNamed:@"login_nor"] forState:UIControlStateNormal];
+        [_gotologinBtn setBackgroundImage:[UIImage imageNamed:@"login_dis"] forState:UIControlStateDisabled];
+        [_gotologinBtn setTitle:@"登录" forState:UIControlStateNormal];
+        _gotologinBtn.titleLabel.font = QDFont(16);
+        [_gotologinBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
+        _gotologinBtn.enabled = NO;
+        [self addSubview:_gotologinBtn];
         
 //        _gotologinBtn = [[UIButton alloc] init];
 //        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
@@ -158,7 +157,7 @@
 #pragma mark - 监听键盘输入
 - (void)textFieldChanged:(UITextField *)textField{
     if (![_phoneTF.text isEqualToString:@""] && ![_userNameTF.text isEqualToString:@""]) {
-        [_gotologinBtn setSelected:YES];
+        _gotologinBtn.enabled = YES;
     }
 }
 @end

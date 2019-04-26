@@ -81,21 +81,21 @@
 //    _array1 = [[NSMutableArray alloc] initWithObjects:@"全部区域", nil];
     _array2 = [[NSMutableArray alloc] init];
     _array3 = [[NSMutableArray alloc] init];
-    AppDelegate *appD = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (_array2.count) {
-        [_array2 removeAllObjects];
-    }
-    _array2 = appD.hotelTypeId;
-    if (![_array2[0] isEqualToString:@"酒店类型"]) {
-        [_array2 insertObject:@"酒店类型" atIndex:0];
-    }
-    if (_array3.count) {
-        [_array3 removeAllObjects];
-    }
-    _array3 = appD.hotelLevel;
-    if (![_array3[0] isEqualToString:@"星级"]) {
-        [_array3 insertObject:@"星级" atIndex:0];
-    }
+//    AppDelegate *appD = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    if (_array2.count) {
+//        [_array2 removeAllObjects];
+//    }
+//    _array2 = appD.hotelTypeId;
+//    if (![_array2[0] isEqualToString:@"酒店类型"]) {
+//        [_array2 insertObject:@"酒店类型" atIndex:0];
+//    }
+//    if (_array3.count) {
+//        [_array3 removeAllObjects];
+//    }
+//    _array3 = appD.hotelLevel;
+//    if (![_array3[0] isEqualToString:@"星级"]) {
+//        [_array3 insertObject:@"星级" atIndex:0];
+//    }
     _headView = [[QDKeyWordsSearchHeaderView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT*0.1)];
     NSString *final = [NSString stringWithFormat:@"住%@\n离%@", _dateInStr, _dateOutStr];
     [_headView.selectDateBtn setTitle:final forState:UIControlStateNormal];

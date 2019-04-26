@@ -39,6 +39,9 @@
     NSMutableArray *_array1;
     NSMutableArray *_array2;
     NSMutableArray *_array3;
+    NSMutableArray *_hotelLevelArr;
+    NSMutableArray *_hotelTypeIdArr;
+    NSMutableArray *_levelArr;
 }
 
 @end
@@ -47,7 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _hotelListInfoArr = [[NSMutableArray alloc] init];
     _hotelImgArr = [[NSMutableArray alloc] init];
     _pageNum = 1;
@@ -61,46 +64,51 @@
     
     _array2 = [[NSMutableArray alloc] init];
     _array3 = [[NSMutableArray alloc] init];
-//    [self finAllMapDic];
-    [self setHotelDropMenu];
+    
+    _hotelLevelArr = [[NSMutableArray alloc] init];
+    _hotelTypeIdArr = [[NSMutableArray alloc] init];
+    _levelArr = [[NSMutableArray alloc] init];
+
+    [self finAllMapDic];
     [self initTableView];
     [self requestHotelData];
 }
 
-//- (void)finAllMapDic{
-//    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindAllMapDict params:nil successBlock:^(QDResponseObject *responseObject) {
-//        if (responseObject.code == 0) {
-//            NSDictionary *dic = responseObject.result;
-//            if ([[dic allKeys] containsObject:@"hotelLevel"]) {
-//                if (_hotelLevel.count) {
-//                    [_hotelLevel removeAllObjects];
-//                }
-//                if (_hotelTypeId.count) {
-//                    [_hotelTypeId removeAllObjects];
-//                }
-//                if (_level.count) {
-//                    [_level removeAllObjects];
-//                }
-//                NSArray *aaa = [dic objectForKey:@"hotelLevel"];
-//                for (NSDictionary *dd in aaa) {
-//                    [_hotelLevel addObject:[dd objectForKey:@"dictName"]];
-//                }
-//                NSArray *bbb = [dic objectForKey:@"hotelTypeId"];
-//                for (NSDictionary *dd in bbb) {
-//                    [_hotelTypeId addObject:[dd objectForKey:@"dictName"]];
-//                }
-//                NSArray *ccc = [dic objectForKey:@"Level"];
-//                for (NSDictionary *dd in ccc) {
-//                    [_level addObject:[dd objectForKey:@"dictName"]];
-//                }
-//            }
-//        }else{
-//            [WXProgressHUD showInfoWithTittle:responseObject.message];
-//        }
-//    } failureBlock:^(NSError *error) {
-//        [WXProgressHUD hideHUD];
-//    }];
-//}
+- (void)finAllMapDic{
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindAllMapDict params:nil successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            if ([[dic allKeys] containsObject:@"hotelLevel"]) {
+                if (_hotelLevelArr.count) {
+                    [_hotelLevelArr removeAllObjects];
+                }
+                if (_hotelTypeIdArr.count) {
+                    [_hotelTypeIdArr removeAllObjects];
+                }
+                if (_levelArr.count) {
+                    [_levelArr removeAllObjects];
+                }
+                NSArray *aaa = [dic objectForKey:@"hotelLevel"];
+                for (NSDictionary *dd in aaa) {
+                    [_hotelLevelArr addObject:[dd objectForKey:@"dictName"]];
+                }
+                NSArray *bbb = [dic objectForKey:@"hotelTypeId"];
+                for (NSDictionary *dd in bbb) {
+                    [_hotelTypeIdArr addObject:[dd objectForKey:@"dictName"]];
+                }
+                NSArray *ccc = [dic objectForKey:@"Level"];
+                for (NSDictionary *dd in ccc) {
+                    [_hotelLevelArr addObject:[dd objectForKey:@"dictName"]];
+                }
+//                [self setHotelDropMenu];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+        }
+    } failureBlock:^(NSError *error) {
+        [WXProgressHUD hideHUD];
+    }];
+}
 
 #pragma mark - 请求酒店信息
 - (void)requestHotelData{
@@ -151,30 +159,21 @@
     }];
 }
 
-- (void)setHotelDropMenu{
-    AppDelegate *appD = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (_array2.count) {
-        [_array2 removeAllObjects];
-    }
-    _array2 = appD.hotelTypeId;
-    if (_array2.count) {
-        if (![_array2[0] isEqualToString:@"酒店类型"]) {
-            [_array2 insertObject:@"酒店类型" atIndex:0];
+- (TFDropDownMenuView *)setHotelDropMenu{
+    if (_hotelTypeIdArr.count) {
+        if (![_hotelTypeIdArr[0] isEqualToString:@"酒店类型"]) {
+            [_hotelTypeIdArr insertObject:@"酒店类型" atIndex:0];
         }
     }
-    if (_array3.count) {
-        [_array3 removeAllObjects];
-    }
-    _array3 = appD.hotelLevel;
-    if (_array3.count) {
-        if (![_array3[0] isEqualToString:@"星级"]) {
-            [_array3 insertObject:@"星级" atIndex:0];
+    if (_hotelLevelArr.count) {
+        if (![_hotelLevelArr[0] isEqualToString:@"星级"]) {
+            [_hotelLevelArr insertObject:@"星级" atIndex:0];
         }
     }
-    NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_array2, @[@"价格"], _array3, nil];
+    NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_hotelTypeIdArr, @[@"价格"], _hotelLevelArr, nil];
     NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], @[], @[], nil];
     _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 47) firstArray:data1 secondArray:data2];
-    _menu.backgroundColor = [UIColor redColor];
+    _menu.backgroundColor = APP_WHITECOLOR;
     _menu.delegate = self;
     _menu.ratioLeftToScreen = 0.35;
     [self.view addSubview:_menu];
@@ -199,12 +198,12 @@
         NSLog(@"minValue = %.f, maxValue = %.f", minValue, maxValue);
     };
     _menu.customViews = [NSMutableArray arrayWithObjects:[NSNull null], _priceRangeView, [NSNull null], nil];
-    [self.view addSubview:_menu];
+    return _menu;
 }
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
-    _tableView.backgroundColor = APP_BLUECOLOR;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
@@ -258,7 +257,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return SCREEN_HEIGHT*0.075;
+    return 47;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -267,7 +266,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [[UIView alloc] initWithFrame:CGRectZero];
+    return [self setHotelDropMenu];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

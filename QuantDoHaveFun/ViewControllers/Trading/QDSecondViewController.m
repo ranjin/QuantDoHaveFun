@@ -134,7 +134,7 @@
     _pageSize = 30;
     _totalPage = 0; //总页数默认为1
     _ordersArr = [[NSMutableArray alloc] init];
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     
     [self setTopView];
     [self initTableView];
@@ -249,7 +249,7 @@
 }
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_WHITECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -272,7 +272,7 @@
     headerView.backgroundColor = [UIColor whiteColor];
     _tableView.tableHeaderView = headerView;
     
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_WIDTH*0.03, 346, 135)];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 120)];
     imgView.userInteractionEnabled = YES;
     imgView.image = [UIImage imageNamed:@"shellBanner"];
     [headerView addSubview:imgView];

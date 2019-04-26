@@ -23,7 +23,7 @@
         _titleLab = [[UILabel alloc] init];
         _titleLab.text = @"VIP权益";
         _titleLab.font = QDBoldFont(18);
-        _titleLab.textColor = [UIColor colorWithHexString:@"#009073"];
+        _titleLab.textColor = APP_BLUETEXTCOLOR;
         [self addSubview:_titleLab];
         
         _centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];

@@ -22,12 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *userIdLab;
 @property (nonatomic, strong) UIImageView *levelPic;
 @property (nonatomic, strong) UILabel *levelLab;
-@property (nonatomic, strong) UIButton *vipRightsBtn;
+@property (nonatomic, strong) SPButton *vipRightsBtn;
 
 @property (nonatomic, strong) UIImageView *financialPic;
-@property (nonatomic, strong) UILabel *info1Lab;
-@property (nonatomic, strong) UILabel *info2Lab;
-@property (nonatomic, strong) UILabel *info3Lab;
+@property (nonatomic, strong) UILabel *infoLab;
+@property (nonatomic, strong) SPButton *groupUPDesc;
+
+
 @property (nonatomic, strong) MQGradientProgressView *progressView;
 
 @property (nonatomic, strong) UILabel *info4Lab;
