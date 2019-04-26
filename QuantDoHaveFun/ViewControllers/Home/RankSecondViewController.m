@@ -6,10 +6,8 @@
 //  Copyright © 2016年 LeeJay. All rights reserved.
 //  代码下载地址https://github.com/leejayID/Linkage
 
-#import "TableViewHeaderView.h"
 #import "LeftTableViewCell.h"
 #import "RightTableViewCell.h"
-#import "CategoryModel.h"
 #import "RankSecondViewController.h"
 #import "TheCityModel.h"
 #import "RanklistDTO.h"

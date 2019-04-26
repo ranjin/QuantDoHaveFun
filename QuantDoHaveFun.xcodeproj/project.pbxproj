@@ -101,9 +101,6 @@
 		93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */; };
 		93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E592268663600FB9F0E /* LeftTableViewCell.m */; };
 		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
-		93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5F2268663600FB9F0E /* CategoryModel.m */; };
-		93399E6D2268663700FB9F0E /* QDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E612268663600FB9F0E /* QDTableViewController.m */; };
-		93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E622268663600FB9F0E /* TableViewHeaderView.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
 		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
@@ -523,15 +520,9 @@
 		93399E3B22685CD100FB9F0E /* RankFirstHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankFirstHeadView.h; sourceTree = "<group>"; };
 		93399E3C22685CD100FB9F0E /* RankFirstHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankFirstHeadView.m; sourceTree = "<group>"; };
 		93399E592268663600FB9F0E /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
-		93399E5A2268663600FB9F0E /* QDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTableViewController.h; sourceTree = "<group>"; };
 		93399E5B2268663600FB9F0E /* RightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightTableViewCell.m; sourceTree = "<group>"; };
-		93399E5C2268663600FB9F0E /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
-		93399E5D2268663600FB9F0E /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
 		93399E5E2268663600FB9F0E /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
-		93399E5F2268663600FB9F0E /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		93399E602268663600FB9F0E /* RightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightTableViewCell.h; sourceTree = "<group>"; };
-		93399E612268663600FB9F0E /* QDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTableViewController.m; sourceTree = "<group>"; };
-		93399E622268663600FB9F0E /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
 		93399E642268663700FB9F0E /* LJCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
@@ -1704,14 +1695,8 @@
 			children = (
 				93399E5E2268663600FB9F0E /* LeftTableViewCell.h */,
 				93399E592268663600FB9F0E /* LeftTableViewCell.m */,
-				93399E5A2268663600FB9F0E /* QDTableViewController.h */,
-				93399E612268663600FB9F0E /* QDTableViewController.m */,
 				93399E602268663600FB9F0E /* RightTableViewCell.h */,
 				93399E5B2268663600FB9F0E /* RightTableViewCell.m */,
-				93399E5C2268663600FB9F0E /* CategoryModel.h */,
-				93399E5F2268663600FB9F0E /* CategoryModel.m */,
-				93399E5D2268663600FB9F0E /* TableViewHeaderView.h */,
-				93399E622268663600FB9F0E /* TableViewHeaderView.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -2561,7 +2546,6 @@
 				93399DE8226823AF00FB9F0E /* SDWebImagePrefetcher.m in Sources */,
 				93E982472271557B00DDEB80 /* PGCustomBannerView.m in Sources */,
 				93E981F02271542F00DDEB80 /* TFDropDownMenuCollectionViewCell.m in Sources */,
-				93399E6E2268663700FB9F0E /* TableViewHeaderView.m in Sources */,
 				93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
 				93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */,
@@ -2590,7 +2574,6 @@
 				93E980D622714DC500DDEB80 /* UIControl+Blocks.m in Sources */,
 				93399DEE226823AF00FB9F0E /* SDImageCacheConfig.m in Sources */,
 				93E981B5227152BD00DDEB80 /* HYBCardCollectionViewCell.m in Sources */,
-				93399E6D2268663700FB9F0E /* QDTableViewController.m in Sources */,
 				93399D7B22681A0900FB9F0E /* QDUploadImageManager.m in Sources */,
 				93E9810C22714E9300DDEB80 /* QDCustomTourSectionHeaderView.m in Sources */,
 				93E9810B22714E9300DDEB80 /* QDPriceRangeView.m in Sources */,
@@ -2599,7 +2582,6 @@
 				93E980052271446B00DDEB80 /* YYTextDebugOption.m in Sources */,
 				93399D8822681C4900FB9F0E /* QDUserDefaults.m in Sources */,
 				93E980132271446B00DDEB80 /* YYTextWeakProxy.m in Sources */,
-				93399E6C2268663700FB9F0E /* CategoryModel.m in Sources */,
 				93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */,
 				93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */,
 				93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */,

@@ -20,7 +20,6 @@
         [self.contentView addSubview:self.backView];
         
         self.imageV = [[UIImageView alloc] init];
-        self.imageV.image = [UIImage imageNamed:@"test2"];
         [_backView addSubview:self.imageV];
 
         self.nameLabel = [[UILabel alloc] init];
