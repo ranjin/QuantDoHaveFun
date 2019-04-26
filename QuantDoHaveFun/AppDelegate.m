@@ -24,8 +24,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self getBasicPrice];
-    BulgeCircularTabBarVC *tabVC = [[BulgeCircularTabBarVC alloc]init];
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[BulgeCircularTabBarVC new]];
+
     [self.window makeKeyAndVisible];
     
     

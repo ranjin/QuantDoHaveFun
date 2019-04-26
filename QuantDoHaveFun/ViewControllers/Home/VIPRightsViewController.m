@@ -10,6 +10,7 @@
 #import "VIPRightsView.h"
 #import "NewPagedFlowView.h"
 #import "PGCustomBannerView.h"
+#import "QDLoginAndRegisterVC.h"
 @interface VIPRightsViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>{
     VIPRightsView *_rightsView;
 }
@@ -26,12 +27,18 @@
 
 @implementation VIPRightsViewController
 
+- (void)test:(UIButton *)sender{
+    QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = APP_WHITECOLOR;
     _imageArray = [[NSMutableArray alloc] init];
     _rightsView = [[VIPRightsView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _rightsView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    [_rightsView.payButton addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightsView];
     [self setupCardUI];
 }

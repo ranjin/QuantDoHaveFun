@@ -84,7 +84,7 @@
     if (self) {
         [self config];
         [self simulateViewDidLoad];
-        self.colorArr = @[(id)[UIColor colorWithHexString:@"#DCCDB4"].CGColor,(id)[UIColor colorWithHexString:@"#ECC472"].CGColor];
+        self.colorArr = @[(id)[UIColor colorWithHexString:@"#DBFFA8"].CGColor,(id)[UIColor colorWithHexString:@"#DBFFA8"].CGColor];
         self.progress = 0.65;
     }
     return self;
@@ -95,7 +95,7 @@
 }
 
 - (void)config {
-    self.bgProgressColor = APP_GRAYCOLOR;
+    self.bgProgressColor = [UIColor colorWithHexString:@"#39D4A2"];
 }
 
 - (void)addSubViewTree {

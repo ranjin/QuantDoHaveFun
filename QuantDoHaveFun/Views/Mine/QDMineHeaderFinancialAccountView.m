@@ -20,8 +20,8 @@
         [_voiceBtn setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
         [self addSubview:_voiceBtn];
         
-        _picView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        _picView.layer.cornerRadius = SCREEN_WIDTH*0.06;
+        _picView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 39, 39)];
+        _picView.layer.cornerRadius = 19.5;
         _picView.layer.masksToBounds = YES;
         _picView.userInteractionEnabled = YES;
         [_picView setImage:[UIImage imageNamed:@"icon_headerPic"] forState:UIControlStateNormal];
@@ -51,7 +51,6 @@
         
         _vipRightsBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
         _vipRightsBtn.imageTitleSpace = 7;
-        _vipRightsBtn.frame = CGRectMake(0, 0, 109, 30);
         [_vipRightsBtn setTitle:@"会员权益" forState:UIControlStateNormal];
         [_vipRightsBtn setImage:[UIImage imageNamed:@"rights_arrow"] forState:UIControlStateNormal];
         [_vipRightsBtn setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
@@ -71,12 +70,11 @@
         
         _groupUPDesc = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
         _groupUPDesc.imageTitleSpace = 9;
-        _groupUPDesc.frame = CGRectMake(0, 0, 109, 30);
         [_groupUPDesc setTitle:@"成长值说明" forState:UIControlStateNormal];
         [_groupUPDesc setImage:[UIImage imageNamed:@"rights_blueArrow"] forState:UIControlStateNormal];
         [_groupUPDesc setTitleColor:APP_BLUETEXTCOLOR forState:UIControlStateNormal];
         _groupUPDesc.titleLabel.font = QDFont(12);
-        [self addSubview:_groupUPDesc];
+        [_financialPic addSubview:_groupUPDesc];
         
         _progressView = [[MQGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, 315, 4)];
         [self addSubview:_progressView];
@@ -131,6 +129,14 @@
         _balance.font = QDBoldFont(18);
         [self addSubview:_balance];
         
+        _balanceDetail = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _balanceDetail.imageTitleSpace = 8;
+        [_balanceDetail setTitle:@"资金充值明细" forState:UIControlStateNormal];
+        [_balanceDetail setImage:[UIImage imageNamed:@"balance_detail"] forState:UIControlStateNormal];
+        [_balanceDetail setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
+        _balanceDetail.titleLabel.font = QDFont(12);
+        [self addSubview:_balanceDetail];
+        
         _rechargeBtn = [[UIButton alloc] init];
         _rechargeBtn.backgroundColor = APP_BLUECOLOR;
         _rechargeBtn.layer.cornerRadius = 14;
@@ -148,140 +154,133 @@
         [_withdrawBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
         _withdrawBtn.titleLabel.font = QDFont(15);
         [self addSubview:_withdrawBtn];
-        
-        _groupUPDesc = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
-        _groupUPDesc.imageTitleSpace = 9;
-        _groupUPDesc.frame = CGRectMake(0, 0, 109, 30);
-        [_groupUPDesc setTitle:@"成长值说明" forState:UIControlStateNormal];
-        [_groupUPDesc setImage:[UIImage imageNamed:@"rights_blueArrow"] forState:UIControlStateNormal];
-        [_groupUPDesc setTitleColor:APP_BLUETEXTCOLOR forState:UIControlStateNormal];
-        _groupUPDesc.titleLabel.font = QDFont(12);
-        [self addSubview:_groupUPDesc];
     }
     return self;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
     [_picView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(24);
-        make.top.equalTo(self.mas_top).offset(68+SafeAreaTopHeight-64);
-        make.width.and.height.mas_equalTo(44);
+        make.left.equalTo(self.mas_left).offset(12);
+        make.top.equalTo(self.mas_top).offset(SafeAreaTopHeight-64+40);
+        make.width.and.height.mas_equalTo(39);
     }];
     
     [_settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_top).offset(SafeAreaTopHeight-33);
         make.right.equalTo(self.mas_right).offset(-49);
-        make.width.and.height.mas_equalTo(24);
     }];
     
     [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_settingBtn);
-        make.left.equalTo(self.mas_right).offset(-12);
+        make.right.equalTo(self.mas_right).offset(-12);
     }];
     
     [_userNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_settingBtn.mas_bottom).offset(9);
-        make.left.equalTo(self.mas_left).offset(78);
+        make.top.equalTo(_picView);
+        make.left.equalTo(_picView.mas_right).offset(18);
     }];
     
     [_levelPic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_userNameLab);
         make.top.equalTo(_userNameLab.mas_bottom).offset(4);
     }];
-    
+
     [_levelLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(_levelPic);
     }];
-    
+
     [_userIdLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_levelPic.mas_bottom).offset(10);
         make.left.equalTo(_userNameLab);
     }];
-    
-    
+
+
     [_vipRightsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_levelPic);
         make.left.equalTo(_levelPic.mas_right).offset(20);
     }];
-    
+
     [_financialPic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_userIdLab.mas_bottom).offset(16);
         make.centerX.equalTo(self);
         make.width.mas_equalTo(SCREEN_WIDTH);
         make.height.mas_equalTo(174);
     }];
-    
+
     [_progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_financialPic);
         make.top.equalTo(_financialPic.mas_top).offset(50);
         make.width.mas_equalTo(315);
         make.height.mas_equalTo(4);
     }];
-    
+
     [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_financialPic.mas_left).offset(26);
         make.top.equalTo(_financialPic.mas_top).offset(24);
     }];
-    
+
     [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_infoLab);
         make.right.equalTo(_financialPic.mas_right).offset(-24);
     }];
-    
+
     [_info4Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_financialPic.mas_top).offset(65);
         make.left.equalTo(_infoLab);
     }];
-    
+
     [_info5Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info4Lab);
         make.left.equalTo(_info4Lab.mas_right);
     }];
-    
+
     [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info4Lab);
-        make.left.equalTo(self.mas_left).offset(312);
+        make.left.equalTo(self.mas_left).offset(306);
     }];
-    
+
     [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info6Lab);
         make.left.equalTo(_info6Lab.mas_right);
     }];
-    
+
     [_info8Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_infoLab);
         make.top.equalTo(self.info4Lab.mas_bottom).offset(21);
     }];
-    
+
     [_info9Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_info8Lab);
         make.top.equalTo(_info8Lab.mas_bottom).offset(8);
     }];
-    
+
     [_accountInfo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info9Lab);
         make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.34);
     }];
-    
+
     [_balanceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(16);
-        make.top.equalTo(_info8Lab.mas_bottom).offset(42);
+        make.top.equalTo(_info9Lab.mas_bottom).offset(42);
     }];
-    
+
     [_balance mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_balanceLab);
         make.top.equalTo(_balanceLab.mas_bottom).offset(SCREEN_HEIGHT*0.007);
     }];
-    
+
+    [_balanceDetail mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_balanceLab);
+        make.top.equalTo(_balance.mas_bottom).offset(12);
+    }];
     [_rechargeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_info8Lab.mas_bottom).offset(84);
         make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.54);
         make.height.mas_equalTo(28);
         make.width.mas_equalTo(67);
     }];
-    
+
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.width.and.height.equalTo(_rechargeBtn);
         make.left.equalTo(_rechargeBtn.mas_right).offset(SCREEN_WIDTH*0.03);
