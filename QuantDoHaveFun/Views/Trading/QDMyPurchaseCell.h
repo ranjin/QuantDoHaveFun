@@ -14,19 +14,24 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QDMyPurchaseCell : UITableViewCell
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIView *shadowView;
+@property (nonatomic, strong) UIImageView *operationImg;
+
 @property (nonatomic, strong) UILabel *operationTypeLab;
 
 //已成交 已冻结
 @property (nonatomic, strong) UILabel *dealLab;
 @property (nonatomic, strong) UILabel *deal;
+@property (nonatomic, strong) UILabel *dealTextLab;
+
 @property (nonatomic, strong) UILabel *frozenLab;
 @property (nonatomic, strong) UILabel *frozen;
-
-@property (nonatomic, strong) UIView *centerLine;
+@property (nonatomic, strong) UILabel *frozenTextLab;
 
 @property (nonatomic, strong) UILabel *priceTextLab;
 @property (nonatomic, strong) UILabel *priceLab;
 @property (nonatomic, strong) UILabel *price;
+@property (nonatomic, strong) UIImageView *statusImg;
+
 @property (nonatomic, strong) UILabel *status;
 
 @property (nonatomic, strong) UILabel *amountLab;

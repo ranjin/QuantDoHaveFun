@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QDPickUpOrderCell : UITableViewCell
 
-@property (nonatomic, strong) UIView *backView;
-@property (nonatomic, strong) UIView *shadowView;
+@property (nonatomic, strong) UIView *topBackView;
+@property (nonatomic, strong) UIView *bottomBackView;
+
+@property (nonatomic, strong) UIImageView *operationImg;
 @property (nonatomic, strong) UILabel *operationTypeLab;
 @property (nonatomic, strong) UILabel *totalPriceTextLab;
 @property (nonatomic, strong) UILabel *totalPriceLab;
@@ -27,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *transferLab;
 @property (nonatomic, strong) UILabel *transfer;
-@property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) UIView *centerLine;
 @property (nonatomic, strong) UILabel *statusLab;

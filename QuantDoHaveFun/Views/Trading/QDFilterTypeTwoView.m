@@ -12,42 +12,28 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
-//        _direction = [[UILabel alloc] init];
-//        _direction.text = @"买卖方向";
-//        _direction.font = QDFont(13);
-//        [self addSubview:_direction];
-        
-        _buyBtn = [[UIButton alloc] init];
-        _buyBtn.backgroundColor = [UIColor whiteColor];
+        _buyBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _buyBtn.imageTitleSpace = 11;
         [_buyBtn setTitle:@"买入" forState:UIControlStateNormal];
+        [_buyBtn setImage:[UIImage imageNamed:@"direction_normal"] forState:UIControlStateNormal];
+        [_buyBtn setImage:[UIImage imageNamed:@"direction_selected"] forState:UIControlStateSelected];
         [_buyBtn addTarget:self action:@selector(directionAction:) forControlEvents:UIControlEventTouchUpInside];
         _buyBtn.tag = 206;
-        _buyBtn.layer.cornerRadius = 2;
-        _buyBtn.layer.masksToBounds = YES;
-        _buyBtn.titleLabel.font = QDFont(13);
-        [_buyBtn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        _buyBtn.layer.borderWidth = 1;
-        _buyBtn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
+        _buyBtn.titleLabel.font = QDFont(14);
+        [_buyBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_buyBtn];
         
         
-        _sellBtn = [[UIButton alloc] init];
-        _sellBtn.backgroundColor = [UIColor whiteColor];
+        _sellBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _sellBtn.imageTitleSpace = 11;
+        [_sellBtn setImage:[UIImage imageNamed:@"direction_normal"] forState:UIControlStateNormal];
+        [_sellBtn setImage:[UIImage imageNamed:@"direction_selected"] forState:UIControlStateSelected];
         [_sellBtn setTitle:@"卖掉" forState:UIControlStateNormal];
         [_sellBtn addTarget:self action:@selector(directionAction:) forControlEvents:UIControlEventTouchUpInside];
         _sellBtn.tag = 207;
-        _sellBtn.titleLabel.font = QDFont(13);
-        [_sellBtn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        _sellBtn.layer.borderWidth = 1;
-        _sellBtn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        _sellBtn.layer.cornerRadius = 2;
-        _sellBtn.layer.masksToBounds = YES;
+        _sellBtn.titleLabel.font = QDFont(14);
+        [_sellBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_sellBtn];
-        
-        _orderStatusLab = [[UILabel alloc] init];
-        _orderStatusLab.text = @"报单状态";
-        _orderStatusLab.font = QDFont(14);
-        [self addSubview:_orderStatusLab];
         
         _wcjBtn = [[UIButton alloc] init];
         _wcjBtn.backgroundColor = [UIColor whiteColor];
@@ -125,20 +111,13 @@
         [_resetbtn addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
         [_resetbtn setTitle:@"重置" forState:UIControlStateNormal];
         [_resetbtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-        _resetbtn.titleLabel.font = QDFont(20);
+        _resetbtn.titleLabel.font = QDFont(16);
         [self addSubview:_resetbtn];
-        
+
         _confirmBtn = [[UIButton alloc] init];
         [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [_confirmBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, 58);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-        [_confirmBtn.layer addSublayer:gradientLayer];
-        _confirmBtn.titleLabel.font= QDFont(20);
+        [_confirmBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
+        _confirmBtn.titleLabel.font= QDFont(16);
         [self addSubview:_confirmBtn];
     }
     return self;
@@ -146,32 +125,19 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    [_direction mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.mas_left).offset(20);
-//        make.top.equalTo(self.mas_top).offset(36);
-//        make.width.mas_equalTo(62);
-//    }];
     
     [_buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(96);
-        make.top.equalTo(self.mas_top).offset(30);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(32);
+        make.left.equalTo(self.mas_left).offset(37);
+        make.top.equalTo(self.mas_top).offset(47);
     }];
 
     [_sellBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_buyBtn);
-        make.left.equalTo(_buyBtn.mas_right).offset(10);
-        make.width.and.height.equalTo(_buyBtn);
-    }];
-
-    [_orderStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(20);
-        make.top.equalTo(self.mas_top).offset(96);
+        make.left.equalTo(_buyBtn.mas_right).offset(19);
     }];
 
     [_wcjBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_orderStatusLab);
+        make.top.equalTo(_buyBtn.mas_bottom).offset(44);
         make.width.mas_equalTo(96);
         make.left.equalTo(_buyBtn);
     }];
@@ -236,10 +202,15 @@
 - (void)resetAction:(UIButton *)sender{
     for (int i = 201; i <= 207; i++) {
         UIButton *btn = [self viewWithTag:i];
-        btn.layer.borderWidth = 1;
-        btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        btn.selected = NO;
+        if (i == 206 || i == 207) {
+            btn.selected = NO;
+        }else{
+            btn.layer.borderWidth = 1;
+            btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
+            btn.backgroundColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
+            btn.selected = NO;
+        }
     }
 }
 
@@ -250,12 +221,15 @@
         if (btn.tag != sender.tag) {
             btn.layer.borderWidth = 1;
             btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-            [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
+            btn.backgroundColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
             btn.selected=NO;
         }else{
             btn.layer.borderWidth = 1;
             btn.layer.borderColor = APP_BLUECOLOR.CGColor;
-            [btn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
+            btn.backgroundColor = APP_BLUECOLOR;
+            btn.titleLabel.textColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
             btn.selected = YES;
         }
     }
@@ -299,14 +273,8 @@
     for (int i = 206; i <= 207; i++) {
         UIButton *btn = [self viewWithTag:i];
         if (btn.tag != sender.tag) {
-            btn.layer.borderWidth = 1;
-            btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-            [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
             btn.selected=NO;
         }else{
-            btn.layer.borderWidth = 1;
-            btn.layer.borderColor = APP_BLUECOLOR.CGColor;
-            [btn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
             btn.selected = YES;
         }
     }

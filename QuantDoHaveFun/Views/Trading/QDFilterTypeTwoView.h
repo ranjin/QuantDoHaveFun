@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SPButton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDFilterTypeTwoView : UIView
 
-//@property (nonatomic, strong) UILabel *direction;
-@property (nonatomic, strong) UIButton *buyBtn;
-@property (nonatomic, strong) UIButton *sellBtn;
+@property (nonatomic, strong) SPButton *buyBtn;
+@property (nonatomic, strong) SPButton *sellBtn;
 
-@property (nonatomic, strong) UILabel *orderStatusLab;
 @property (nonatomic, strong) UIButton *wcjBtn;
 @property (nonatomic, strong) UIButton *bfcjBtn;
 @property (nonatomic, strong) UIButton *qbcjBtn;

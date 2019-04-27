@@ -286,14 +286,14 @@ typedef enum : NSUInteger {
     _state = @"";
     _pageNum = 1;
     _totalPage = 0; //总页数默认
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [self initTableView];
     [self isLogin];
 }
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.emptyDataSetSource = self;
@@ -369,11 +369,11 @@ typedef enum : NSUInteger {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return SCREEN_HEIGHT*0.075;
+    return 35;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.31;
+    return 210;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -393,7 +393,7 @@ typedef enum : NSUInteger {
             [cell.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
             [cell loadPurchaseDataWithModel:_myOrdersArr[indexPath.row] withTag:indexPath.row];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.backgroundColor = APP_WHITECOLOR;
+            cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
             return cell;
         }else{
             static NSString *identifier = @"QDMySaleOrderCell";
@@ -405,7 +405,7 @@ typedef enum : NSUInteger {
             [cell.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
             [cell loadSaleOrderDataWithModel:_myOrdersArr[indexPath.row] withTag:indexPath.row];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.backgroundColor = APP_WHITECOLOR;
+            cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
             return cell;
         }
     }
@@ -414,12 +414,12 @@ typedef enum : NSUInteger {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.06)];
-    _vv.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 35)];
+    _vv.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_vv addSubview:self.filterBtn];
     [self.filterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.and.height.equalTo(_vv);
-        make.left.equalTo(_vv.mas_left).offset(20);
+        make.right.equalTo(_vv.mas_right).offset(-14);
     }];
     return _vv;
 }
@@ -471,7 +471,8 @@ typedef enum : NSUInteger {
     if (!_filterBtn) {
         _filterBtn = [[SPButton alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
         _filterBtn.imagePosition = SPButtonImagePositionRight;
-        [_filterBtn setImage:[UIImage imageNamed:@"icon_filter"] forState:UIControlStateNormal];
+        _filterBtn.imageTitleSpace = 8;
+        [_filterBtn setImage:[UIImage imageNamed:@"filter_btn"] forState:UIControlStateNormal];
         _filterBtn.titleLabel.font = QDFont(14);
         [_filterBtn addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
         [_filterBtn setTitle:@"筛选" forState:UIControlStateNormal];

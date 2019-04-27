@@ -70,7 +70,7 @@
     if (_videoList.count) {
         [_videoList removeAllObjects];
     }
-    NSDictionary * dic = @{@"top":@"0",
+    NSDictionary * dic = @{@"top":@"1",
                             @"pageNum":@1,
                             @"pageSize":@10
                             };
@@ -111,6 +111,7 @@
     [_tableView tab_startAnimation];
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+        [self getVideoList];
         [self endRefreshing];
     }];
     

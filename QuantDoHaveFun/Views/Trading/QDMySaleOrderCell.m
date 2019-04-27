@@ -24,52 +24,58 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _backView = [[UIView alloc] init];
         _backView.backgroundColor = [UIColor whiteColor];
-        _backView.layer.shadowColor = APP_GRAYLINECOLOR.CGColor;
-        // 阴影偏移，默认(0, -3)
-        _backView.layer.shadowOffset = CGSizeMake(2,3);
-        // 阴影透明度，默认0
-        _backView.layer.shadowOpacity = 3;
-        // 阴影半径，默认3
-        _backView.layer.shadowRadius = 2;
+        _backView.layer.cornerRadius = 2;
+        _backView.layer.masksToBounds = YES;
         [self.contentView addSubview:_backView];
         
         _shadowView = [[UIView alloc] init];
-        _shadowView.backgroundColor = [UIColor colorWithHexString:@"#EEEEEE"];
-        [self.contentView addSubview:_shadowView];
+        _shadowView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+        [_backView addSubview:_shadowView];
+        
+        _operationImg = [[UIImageView alloc] init];
+        _operationImg.image = [UIImage imageNamed:@"operateType"];
+        [_backView addSubview:_operationImg];
         
         _operationTypeLab = [[UILabel alloc] init];
         _operationTypeLab.text = @"卖掉";
         _operationTypeLab.font = QDFont(15);
-        [_shadowView addSubview:_operationTypeLab];
+        [_backView addSubview:_operationTypeLab];
         
         _dealLab = [[UILabel alloc] init];
         _dealLab.text = @"已成交";
-        _dealLab.textColor = APP_BLUECOLOR;
+        _dealLab.textColor = APP_GRAYCOLOR;
         _dealLab.font = QDFont(14);
-        [_shadowView addSubview:_dealLab];
+        [_backView addSubview:_dealLab];
         
         _deal = [[UILabel alloc] init];
         _deal.text = @"2700";
         _deal.textColor = APP_BLUECOLOR;
         _deal.font = QDBoldFont(14);
-        [_shadowView addSubview:_deal];
+        [_backView addSubview:_deal];
+        
+        _dealTextLab = [[UILabel alloc] init];
+        _dealTextLab.text = @"个";
+        _dealTextLab.font = QDFont(14);
+        _dealTextLab.textColor = APP_GRAYCOLOR;
+        [_backView addSubview:_dealTextLab];
         
         _frozenLab = [[UILabel alloc] init];
         _frozenLab.text = @"冻结";
-        _frozenLab.textColor = APP_BLUECOLOR;
+        _frozenLab.textColor = APP_GRAYCOLOR;
         _frozenLab.font = QDFont(14);
-        [_shadowView addSubview:_frozenLab];
+        [_backView addSubview:_frozenLab];
         
         _frozen = [[UILabel alloc] init];
         _frozen.text = @"300";
         _frozen.textColor = APP_BLUECOLOR;
         _frozen.font = QDBoldFont(14);
-        [_shadowView addSubview:_frozen];
+        [_backView addSubview:_frozen];
         
-        _centerLine = [[UIView alloc] init];
-        _centerLine.backgroundColor = APP_GRAYLINECOLOR;
-        _centerLine.alpha = 0.2;
-        [_backView addSubview:_centerLine];
+        _frozenTextLab = [[UILabel alloc] init];
+        _frozenTextLab.text = @"个";
+        _frozenTextLab.font = QDFont(14);
+        _frozenTextLab.textColor = APP_GRAYCOLOR;
+        [_backView addSubview:_frozenTextLab];
         
         _priceTextLab = [[UILabel alloc] init];
         _priceTextLab.text = @"单价";
@@ -90,7 +96,7 @@
         [_backView addSubview:_price];
         
         _statusImg = [[UIImageView alloc] init];
-        [_statusImg setImage:[UIImage imageNamed:@"icon_bfcj"]];
+        _statusImg.image = [UIImage imageNamed:@"status_img"];
         [_backView addSubview:_statusImg];
         
         _status = [[UILabel alloc] init];
@@ -138,7 +144,7 @@
         [_backView addSubview:_transfer];
         
         _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = APP_GRAYLINECOLOR;
+        _lineView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         _lineView.alpha = 0.2;
         [_backView addSubview:_lineView];
         
@@ -150,12 +156,10 @@
         [_backView addSubview:_orderStatusLab];
         
         _withdrawBtn = [[UIButton alloc] init];
-        _withdrawBtn.backgroundColor = APP_GRAYBUTTONCOLOR;
-        [_withdrawBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
-        [_withdrawBtn setTitle:@"撤单" forState:UIControlStateNormal];
-        _withdrawBtn.titleLabel.font = QDFont(16);
-        _withdrawBtn.layer.cornerRadius = 14;
-        _withdrawBtn.layer.masksToBounds = YES;
+        [_withdrawBtn setBackgroundImage:[UIImage imageNamed:@"withdraw_btn"] forState:UIControlStateNormal];
+        [_withdrawBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
+        [_withdrawBtn setTitle:@"我不卖了" forState:UIControlStateNormal];
+        _withdrawBtn.titleLabel.font = QDFont(14);
         [_backView addSubview:_withdrawBtn];
     }
     return self;
@@ -171,61 +175,67 @@
     }];
     
     [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.and.right.equalTo(_backView);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.06);
+        make.centerX.and.width.equalTo(_backView);
+        make.top.equalTo(_backView.mas_top).offset(42);
+        make.height.mas_equalTo(7);
+    }];
+    
+    [_operationImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_backView.mas_left).offset(18);
+        make.top.equalTo(_backView.mas_top).offset(12);
     }];
     
     [_operationTypeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_shadowView);
-        make.left.equalTo(_shadowView.mas_left).offset(SCREEN_WIDTH*0.04);
+        make.centerY.equalTo(_operationImg);
+        make.left.equalTo(_operationImg.mas_right).offset(8);
     }];
     
     [_dealLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_shadowView);
-        make.left.equalTo(_backView.mas_left).offset(SCREEN_WIDTH*0.5);
+        make.centerY.equalTo(_operationTypeLab);
+        make.left.equalTo(_backView.mas_left).offset(159);
     }];
-    
+
     [_deal mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_shadowView);
+        make.centerY.equalTo(_operationImg);
         make.left.equalTo(_dealLab.mas_right).offset(4);
     }];
-    
-    [_frozenLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_shadowView);
-        make.left.equalTo(_deal.mas_right).offset(10);
+
+    [_dealTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_deal);
+        make.left.equalTo(_deal.mas_right).offset(6);
     }];
-    
+
+    [_frozenLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationImg);
+        make.left.equalTo(_dealTextLab.mas_right).offset(10);
+    }];
+
     [_frozen mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_shadowView);
+        make.centerY.equalTo(_dealTextLab);
         make.left.equalTo(_frozenLab.mas_right).offset(4);
     }];
-    
+
+    [_frozenTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_frozenLab);
+        make.left.equalTo(_frozen.mas_right).offset(6);
+    }];
+
     [_priceTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_shadowView.mas_bottom).offset(15);
-        make.left.equalTo(_operationTypeLab);
+        make.top.equalTo(_shadowView.mas_bottom).offset(6);
+        make.left.equalTo(_backView.mas_left).offset(18);
     }];
-    
-    [_price mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_priceTextLab.mas_bottom).offset(2);
-        make.left.equalTo(_shadowView.mas_left).offset(30);
-    }];
-    
+
     [_priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_price);
-        make.right.equalTo(_price.mas_left).offset(-2);
-    }];
-    
-    [_statusImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_priceTextLab);
-        make.top.equalTo(_price.mas_bottom).offset(6);
+        make.top.equalTo(_priceTextLab.mas_bottom).offset(12);
+        make.left.equalTo(_backView.mas_left).offset(18);
     }];
 
-    [_status mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_statusImg);
-        make.left.equalTo(_statusImg.mas_right).offset(6);
+    [_price mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_priceLab.mas_right).offset(2);
+        make.bottom.equalTo(_priceLab);
     }];
 
-    //数量 金额 手续费
+
     [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceTextLab);
         make.left.equalTo(_backView.mas_left).offset(SCREEN_WIDTH*0.53);
@@ -247,7 +257,7 @@
     }];
 
     [_transferLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_status);
+        make.top.equalTo(_balanceLab.mas_bottom).offset(14);
         make.left.equalTo(_balanceLab);
     }];
 
@@ -255,31 +265,23 @@
         make.centerY.equalTo(_transferLab);
         make.left.equalTo(_transferLab.mas_right).offset(4);
     }];
-    
+
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_backView);
-        make.top.equalTo(_status.mas_bottom).offset(8);
-        make.height.mas_equalTo(1);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.81);
+        make.centerX.and.width.equalTo(_backView);
+        make.bottom.equalTo(_backView.mas_bottom).offset(-(41));
+        make.height.mas_equalTo(0.5);
     }];
 
-    [_centerLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_backView);
-        make.top.equalTo(_shadowView.mas_bottom).offset(SCREEN_HEIGHT*0.02);
-        make.bottom.equalTo(_lineView.mas_top).offset(-(SCREEN_HEIGHT*0.02));
-        make.width.mas_equalTo(1);
-    }];
-    
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_transferLab);
         make.top.equalTo(_lineView.mas_bottom).offset(6);
         make.width.mas_equalTo(SCREEN_WIDTH*0.17);
         make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
     }];
-    
+
     [_orderStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_withdrawBtn);
-        make.left.equalTo(_statusImg);
+        make.left.equalTo(_backView.mas_left).offset(18);
+        make.bottom.equalTo(_backView.mas_bottom).offset(-14);
     }];
 }
 
@@ -330,8 +332,8 @@
     }else{
         self.price.text= DTO.price;
     }
-    self.deal.text = [NSString stringWithFormat:@"%@个", DTO.tradedVolume];
-    self.frozen.text = [NSString stringWithFormat:@"%@个", DTO.frozenVolume];
+    self.deal.text = [NSString stringWithFormat:@"%@", DTO.tradedVolume];
+    self.frozen.text = [NSString stringWithFormat:@"%@", DTO.frozenVolume];
     if (DTO.surplusVolume == nil) {
         self.amount.text = @"--";
     }else{

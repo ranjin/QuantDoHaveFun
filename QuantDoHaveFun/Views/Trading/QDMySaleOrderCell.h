@@ -15,13 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIView *shadowView;
+
+@property (nonatomic, strong) UIImageView *operationImg;
+
 @property (nonatomic, strong) UILabel *operationTypeLab;
 
 @property (nonatomic, strong) UILabel *dealLab;
 @property (nonatomic, strong) UILabel *deal;
+@property (nonatomic, strong) UILabel *dealTextLab;
+
 @property (nonatomic, strong) UILabel *frozenLab;
 @property (nonatomic, strong) UILabel *frozen;
-@property (nonatomic, strong) UIView *centerLine;
+@property (nonatomic, strong) UILabel *frozenTextLab;
+
 
 @property (nonatomic, strong) UILabel *priceTextLab;
 @property (nonatomic, strong) UILabel *priceLab;

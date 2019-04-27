@@ -125,7 +125,7 @@
                             @"pageSize":@20
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetHotelCondition params:dic1 successBlock:^(QDResponseObject *responseObject) {
-//        [_tableView tab_endAnimation];
+        [_tableView tab_endAnimation];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *hotelArr = [dic objectForKey:@"result"];
@@ -209,12 +209,11 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-//    [_tableView tab_startAnimation];
+    [_tableView tab_startAnimation];
     _tableView.showsVerticalScrollIndicator = NO;
-//    _tableView.emptyDataSetDelegate = self;
-//    _tableView.emptyDataSetSource = self;
-//    self.view = _tableView;
-    [self.view addSubview:_tableView];
+    _tableView.emptyDataSetDelegate = self;
+    _tableView.emptyDataSetSource = self;
+    self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self requestHotelData];
         [self endRefreshing];
@@ -247,8 +246,7 @@
 
 #pragma mark -- tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return _hotelListInfoArr.count;
-    return 10;
+    return _hotelListInfoArr.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -273,23 +271,15 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *identifier = @"QDHotelTableViewCell";
-//    QDHotelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-//    if (cell == nil) {
-//        cell = [[QDHotelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//    }
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    if (_hotelListInfoArr.count) {
-//        [cell fillContentWithModel:_hotelListInfoArr[indexPath.row] andImgURLStr:_hotelImgArr[indexPath.row]];
-//    }
-    
-    static NSString *identifier = @"UITableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier = @"QDHotelTableViewCell";
+    QDHotelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[QDHotelTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = @"sdfsdfsdfsdf";
+    if (_hotelListInfoArr.count) {
+        [cell fillContentWithModel:_hotelListInfoArr[indexPath.row] andImgURLStr:_hotelImgArr[indexPath.row]];
+    }
     return cell;
 }
 

@@ -76,6 +76,6 @@
 
 - (void)loadVideoDataWithArr:(RankFirstVideoModel *)model{
     self.titleLab.text = model.videoTitle;
-    [self.thePic sd_setImageWithURL:[NSURL URLWithString:model.coverUrl] placeholderImage:[UIImage imageNamed:@"placeHolder"] options:SDWebImageLowPriority];
+    [self.thePic sd_setImageWithURL:[NSURL URLWithString:model.coverUrl] placeholderImage:[UIImage imageNamed:@"home_placeHolder"] options:SDWebImageLowPriority];
 }
 @end
