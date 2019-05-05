@@ -47,9 +47,16 @@
         [self addSubview:_hightAmount];
         
         _infoLab = [[UILabel alloc] init];
-        _infoLab.text = @"是否部分成交";
+        _infoLab.text = @"可零售";
         _infoLab.font = QDFont(13);
         [self addSubview:_infoLab];
+        
+        _switchBtn = [[UISwitch alloc] init];
+        _switchBtn.selected = YES;
+        _switchBtn.tintColor = [UIColor colorWithHexString:@"#EEEEEE"];
+        _switchBtn.onTintColor = APP_BLUECOLOR;
+//        _switchBtn.thumbTintColor = APP_WHITECOLOR;
+        [self addSubview:_switchBtn];
         
         _yesBtn = [[UIButton alloc] init];
         _yesBtn.backgroundColor = [UIColor whiteColor];
@@ -164,17 +171,24 @@
         make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.28);
     }];
     
-    [_yesBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lowPrice);
+    [_switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_infoLab);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.16);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+        make.left.equalTo(self.mas_left).offset(94);
+        make.width.mas_equalTo(52);
+        make.height.mas_equalTo(23);
     }];
     
-    [_noBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.57);
-        make.centerY.width.and.height.equalTo(_yesBtn);
-    }];
+//    [_yesBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_lowPrice);
+//        make.centerY.equalTo(_infoLab);
+//        make.width.mas_equalTo(SCREEN_WIDTH*0.16);
+//        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+//    }];
+//
+//    [_noBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.57);
+//        make.centerY.width.and.height.equalTo(_yesBtn);
+//    }];
     
     [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);

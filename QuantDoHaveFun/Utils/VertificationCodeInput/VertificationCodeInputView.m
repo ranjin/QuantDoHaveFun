@@ -69,33 +69,48 @@
     self.label.text = @"";
     _textField.text = @"";
 }
+
 #pragma mark ------ 时时监测输入框的内容
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     // 判断是不是“删除”字符
-    if (string.length !=0) {//不是“删除”字符
-        // 判断验证码/密码的位数是否达到预定的位数
-        if (textField.text.length <self.numberOfVertificationCode) {
-            self.label.text = [textField.text stringByAppendingString:string];
-            self.vertificationCode =self.label.text;
-
-            NSLog(@"%@", self.label.text);
-            if (self.label.text.length == _numberOfVertificationCode) {
-                /******* 通过协议将验证码返回当前页面  ******/
-                if ([_delegate respondsToSelector:@selector(returnTextFieldContent:)]){
-                    [_delegate returnTextFieldContent:_vertificationCode];
-                }
+    QDLog(@"string = %@, textField.text = %@", string, textField.text);
+    //特殊情况 直接填充验证码
+    if (string.length == 4 && (textField.text == nil || [textField.text isEqualToString:@""])) {
+        //说明是直接填充验证码操作
+        self.vertificationCode = string;
+        if (self.label.text.length == _numberOfVertificationCode) {
+            /******* 通过协议将验证码返回当前页面  ******/
+            if ([_delegate respondsToSelector:@selector(returnTextFieldContent:)]){
+                [_delegate returnTextFieldContent:_vertificationCode];
             }
-            return YES;
-        } else {
-            return NO;
-        }
-    } else {//是“删除”字符
-        NSLog(@"%@", self.label.text);
-        if (![self.label.text isEqualToString:@""] && self.label.text != nil) {
-            self.label.text = [textField.text substringToIndex:textField.text.length -1];
-            self.vertificationCode =self.label.text;
         }
         return YES;
+    }else{
+        if (string.length !=0) {//不是“删除”字符
+            // 判断验证码/密码的位数是否达到预定的位数
+            if (textField.text.length <self.numberOfVertificationCode) {
+                self.label.text = [textField.text stringByAppendingString:string];
+                self.vertificationCode =self.label.text;
+                
+                NSLog(@"%@", self.label.text);
+                if (self.label.text.length == _numberOfVertificationCode) {
+                    /******* 通过协议将验证码返回当前页面  ******/
+                    if ([_delegate respondsToSelector:@selector(returnTextFieldContent:)]){
+                        [_delegate returnTextFieldContent:_vertificationCode];
+                    }
+                }
+                return YES;
+            } else {
+                return NO;
+            }
+        } else {//是“删除”字符
+            NSLog(@"%@", self.label.text);
+            if (![self.label.text isEqualToString:@""] && self.label.text != nil) {
+                self.label.text = [textField.text substringToIndex:textField.text.length -1];
+                self.vertificationCode =self.label.text;
+            }
+            return YES;
+        }
     }
 }
 

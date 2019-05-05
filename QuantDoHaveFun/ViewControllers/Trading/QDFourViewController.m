@@ -278,14 +278,14 @@ QD_ManualCanceled = 4      //手工取消
     _pageSize = 10;
     _pageNum = 1;
     _totalPage = 0; //总页数默认
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [self initTableView];
     [self isLogin];
 }
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.emptyDataSetSource = self;
@@ -379,11 +379,11 @@ QD_ManualCanceled = 4      //手工取消
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return SCREEN_HEIGHT*0.075;
+    return 35;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.27;
+    return 210;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -391,34 +391,33 @@ QD_ManualCanceled = 4      //手工取消
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_myPickOrdersArr.count) {
-        static NSString *identifier = @"QDPickUpOrderCell";
-        QDPickUpOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if (cell == nil) {
-            cell = [[QDPickUpOrderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        }
-        cell.payBtn.tag = (long)_myPickOrdersArr[indexPath.row];
-        cell.withdrawBtn.tag = (long)_myPickOrdersArr[indexPath.row];
-        [cell.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
-        cell.payBtn.tag = indexPath.row;
-        cell.withdrawBtn.tag = indexPath.row;
-        [cell loadPickOrderWithModel:_myPickOrdersArr[indexPath.row]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.backgroundColor = APP_WHITECOLOR;
-        return cell;
+    static NSString *identifier = @"QDPickUpOrderCell";
+    QDPickUpOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[QDPickUpOrderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    return nil;
+    cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    cell.payBtn.tag = (long)_myPickOrdersArr[indexPath.row];
+    cell.withdrawBtn.tag = (long)_myPickOrdersArr[indexPath.row];
+    [cell.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
+    cell.payBtn.tag = indexPath.row;
+    cell.withdrawBtn.tag = indexPath.row;
+    if (_myPickOrdersArr.count) {
+        [cell loadPickOrderWithModel:_myPickOrdersArr[indexPath.row]];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.06)];
-    _vv.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+    _vv.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_vv addSubview:self.filterBtn];
     [self.filterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.and.height.equalTo(_vv);
-        make.left.equalTo(_vv.mas_left).offset(20);
+        make.centerY.equalTo(_vv);
+        make.right.equalTo(_vv.mas_right).offset(-14);
     }];
     return _vv;
 }

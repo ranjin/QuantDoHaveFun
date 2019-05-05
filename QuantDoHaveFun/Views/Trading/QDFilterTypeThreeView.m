@@ -12,36 +12,27 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
-//        _direction = [[UILabel alloc] init];
-//        _direction.text = @"买卖方向";
-//        _direction.font = QDFont(14);
-//        [self addSubview:_direction];
-        
-        _buyBtn = [[UIButton alloc] init];
-        _buyBtn.backgroundColor = [UIColor whiteColor];
+        _buyBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _buyBtn.imageTitleSpace = 11;
         [_buyBtn setTitle:@"买入" forState:UIControlStateNormal];
+        [_buyBtn setImage:[UIImage imageNamed:@"direction_normal"] forState:UIControlStateNormal];
+        [_buyBtn setImage:[UIImage imageNamed:@"direction_selected"] forState:UIControlStateSelected];
         [_buyBtn addTarget:self action:@selector(directionAction:) forControlEvents:UIControlEventTouchUpInside];
-        _buyBtn.titleLabel.font = QDFont(14);
         _buyBtn.tag = 204;
-        [_buyBtn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        _buyBtn.layer.borderWidth = 1;
-        _buyBtn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        _buyBtn.layer.cornerRadius = 2;
-        _buyBtn.layer.masksToBounds = YES;
+        _buyBtn.titleLabel.font = QDFont(14);
+        [_buyBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_buyBtn];
         
         
-        _sellBtn = [[UIButton alloc] init];
-        _sellBtn.backgroundColor = [UIColor whiteColor];
+        _sellBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _sellBtn.imageTitleSpace = 11;
+        [_sellBtn setImage:[UIImage imageNamed:@"direction_normal"] forState:UIControlStateNormal];
+        [_sellBtn setImage:[UIImage imageNamed:@"direction_selected"] forState:UIControlStateSelected];
         [_sellBtn setTitle:@"卖掉" forState:UIControlStateNormal];
         [_sellBtn addTarget:self action:@selector(directionAction:) forControlEvents:UIControlEventTouchUpInside];
         _sellBtn.tag = 205;
         _sellBtn.titleLabel.font = QDFont(14);
-        [_sellBtn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        _sellBtn.layer.borderWidth = 1;
-        _sellBtn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        _sellBtn.layer.cornerRadius = 2;
-        _sellBtn.layer.masksToBounds = YES;
+        [_sellBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_sellBtn];
         
         _orderStatusLab = [[UILabel alloc] init];
@@ -135,12 +126,15 @@
         if (btn.tag != sender.tag) {
             btn.layer.borderWidth = 1;
             btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-            [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
+            btn.backgroundColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
             btn.selected=NO;
         }else{
             btn.layer.borderWidth = 1;
             btn.layer.borderColor = APP_BLUECOLOR.CGColor;
-            [btn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
+            btn.backgroundColor = APP_BLUECOLOR;
+            btn.titleLabel.textColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
             btn.selected = YES;
         }
     }
@@ -163,14 +157,8 @@
     for (int i = 204; i <= 205; i++) {
         UIButton *btn = [self viewWithTag:i];
         if (btn.tag != sender.tag) {
-            btn.layer.borderWidth = 1;
-            btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-            [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
             btn.selected=NO;
         }else{
-            btn.layer.borderWidth = 1;
-            btn.layer.borderColor = APP_BLUECOLOR.CGColor;
-            [btn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
             btn.selected = YES;
         }
     }

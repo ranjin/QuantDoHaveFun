@@ -22,7 +22,6 @@
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
 #import "RootCollectionCell.h"
-#import "RootFirstCollectionCell.h"
 #import "WaterLayou.h"
 #import "QDBuyOrSellViewController.h"
 #import "QDFindSatifiedDataVC.h"
@@ -137,29 +136,29 @@ typedef enum : NSUInteger {
     _sortColumn = @"";
     _sortType = @"";
     _pageNum = 1;
-    _pageSize = 10;
+    _pageSize = 6;
     _totalPage = 0; //总页数默认为1
     _ordersArr = [[NSMutableArray alloc] init];
     [self initTableView];
-    _optionBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 140, 44)];
+    _optionBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 104, 34)];
     [_optionBtn addTarget:self action:@selector(operateAction:) forControlEvents:UIControlEventTouchUpInside];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 140, 44);
+    gradientLayer.frame = CGRectMake(0, 0, 104, 34);
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1, 0);
     gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [_optionBtn.layer addSublayer:gradientLayer];
     [_optionBtn setTitle:@"买买" forState:UIControlStateNormal];
-    _optionBtn.layer.cornerRadius = 22;
+    _optionBtn.layer.cornerRadius = 17;
     _optionBtn.layer.masksToBounds = YES;
-    _optionBtn.titleLabel.font = QDFont(18);
+    _optionBtn.titleLabel.font = QDFont(16);
     [self.view addSubview:_optionBtn];
     [_optionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-60);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(44);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight+500);
+        make.width.mas_equalTo(104);
+        make.height.mas_equalTo(34);
     }];
     [self requestYWBData];
 }
@@ -298,7 +297,7 @@ typedef enum : NSUInteger {
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.estimatedRowHeight = 0;
@@ -367,11 +366,7 @@ typedef enum : NSUInteger {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (_ordersArr.count % 2 == 0) {
-        return _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
-    }else{
-        return (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
-    }
+    return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -385,17 +380,16 @@ typedef enum : NSUInteger {
         //创建collectionView
         CGFloat y = 0;
         if (_ordersArr.count % 2 == 0) {
-            y = _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
+            y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
         }else{
-            y = (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
+            y = (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
         }
+        QDLog(@"123y= %lf", y);
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, y) collectionViewLayout:layou];
-        self.collectionView.backgroundColor = APP_WHITECOLOR;
+        self.collectionView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         self.collectionView.scrollEnabled = NO;
         //注册单元格
         [_collectionView registerClass:[RootCollectionCell class] forCellWithReuseIdentifier:@"cell"];
-        [_collectionView registerClass:[RootFirstCollectionCell class] forCellWithReuseIdentifier:@"RootFirstCollectionCell"];
-
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
     }
@@ -413,9 +407,9 @@ typedef enum : NSUInteger {
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     CGFloat y = 0;
     if (_ordersArr.count % 2 == 0) {
-        y = _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
+        y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
     }else{
-        y = (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
+        y = (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
     }
     self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, y);
     if (_ordersArr.count) {
@@ -516,21 +510,12 @@ typedef enum : NSUInteger {
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        RootFirstCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RootFirstCollectionCell" forIndexPath:indexPath];
-        BiddingPostersDTO *dto = _ordersArr[0];
-        [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
-        cell.sell.tag = indexPath.row;
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }else{
-        RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        BiddingPostersDTO *dto = _ordersArr[indexPath.row];
-        [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
-        cell.sell.tag = indexPath.row;
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }
+    RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    BiddingPostersDTO *dto = _ordersArr[indexPath.row];
+    [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
+    cell.sell.tag = indexPath.row;
+    [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

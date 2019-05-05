@@ -138,25 +138,25 @@
     
     [self setTopView];
     [self initTableView];
-    _optionBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 140, 44)];
+    _optionBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 104, 34)];
     [_optionBtn addTarget:self action:@selector(operateAction:) forControlEvents:UIControlEventTouchUpInside];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 140, 44);
+    gradientLayer.frame = CGRectMake(0, 0, 104, 34);
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1, 0);
     gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [_optionBtn.layer addSublayer:gradientLayer];
     [_optionBtn setTitle:@"卖卖" forState:UIControlStateNormal];
-    _optionBtn.layer.cornerRadius = 22;
+    _optionBtn.layer.cornerRadius = 17;
     _optionBtn.layer.masksToBounds = YES;
-    _optionBtn.titleLabel.font = QDFont(18);
+    _optionBtn.titleLabel.font = QDFont(16);
     [self.view addSubview:_optionBtn];
     [_optionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-60);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(44);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight+500);
+        make.width.mas_equalTo(104);
+        make.height.mas_equalTo(34);
     }];
     [self requestZWBData];
 }
@@ -250,13 +250,13 @@
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.emptyDataSetSource = self;
     _tableView.emptyDataSetDelegate = self;
     _tableView.estimatedRowHeight = 0;
-//    _tableView.estimatedSectionFooterHeight = 0;
+    _tableView.estimatedSectionFooterHeight = 0;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     if (@available(iOS 11.0, *)) {
@@ -265,7 +265,6 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
-//    self.view = _tableView;
     [self.view addSubview:_tableView];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 135)];
@@ -370,11 +369,8 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (_ordersArr.count % 2 == 0) {
-        return _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
-    }else{
-        return (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
-    }}
+    return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+}
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
@@ -383,12 +379,12 @@
         //创建collectionView
         CGFloat y = 0;
         if (_ordersArr.count % 2 == 0) {
-            y = _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
+            y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
         }else{
-            y = (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
+            y = (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
         }
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, y) collectionViewLayout:layou];
-        self.collectionView.backgroundColor = APP_WHITECOLOR;
+        self.collectionView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         self.collectionView.scrollEnabled = NO;
         //注册单元格
         [_collectionView registerClass:[RootCollectionCell class] forCellWithReuseIdentifier:@"cell"];
@@ -410,11 +406,7 @@
     cell.userInteractionEnabled = YES;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     CGFloat y = 0;
-    if (_ordersArr.count % 2 == 0) {
-        y = _ordersArr.count /2  * 220 + _ordersArr.count/2 * 10 + 10;
-    }else{
-        y = (_ordersArr.count /2 + 1) * 220 + (_ordersArr.count/2 + 1) * 10 + 10;
-    }
+    y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
     self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, y);
     if (_ordersArr.count) {
         [self.collectionView reloadData];
@@ -501,22 +493,6 @@
     [_popups presentInView:self.tableView animated:YES completion:NULL];
 }
 
-- (void)snailQuickMaskPopupsWillPresent:(SnailQuickMaskPopups *)popups{
-    QDLog(@"snailQuickMaskPopupsWillPresent");
-}
-
-- (void)snailQuickMaskPopupsWillDismiss:(SnailQuickMaskPopups *)popups{
-    QDLog(@"snailQuickMaskPopupsWillDismiss");
-}
-
-- (void)snailQuickMaskPopupsDidPresent:(SnailQuickMaskPopups *)popups{
-    QDLog(@"snailQuickMaskPopupsDidPresent");
-}
-
-- (void)snailQuickMaskPopupsDidDismiss:(SnailQuickMaskPopups *)popups{
-    QDLog(@"snailQuickMaskPopupsDidDismiss");
-}
-
 #pragma mark - DZNEmtpyDataSet Delegate
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
@@ -537,21 +513,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        RootFirstCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RootFirstCollectionCell" forIndexPath:indexPath];
-        BiddingPostersDTO *dto = _ordersArr[0];
-        [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
-        cell.sell.tag = indexPath.row;
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }else{
-        RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        BiddingPostersDTO *dto = _ordersArr[indexPath.row];
-        [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
-        cell.sell.tag = indexPath.row;
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }
+    RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    BiddingPostersDTO *dto = _ordersArr[indexPath.row];
+    [cell loadDataWithDataArr:dto andTypeStr:dto.postersType];
+    cell.sell.tag = indexPath.row;
+    [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -401,6 +401,7 @@ typedef enum : NSUInteger {
             if (cell == nil) {
                 cell = [[QDMySaleOrderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
             }
+            
             cell.userInteractionEnabled = YES;
             [cell.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
             [cell loadSaleOrderDataWithModel:_myOrdersArr[indexPath.row] withTag:indexPath.row];
@@ -414,11 +415,11 @@ typedef enum : NSUInteger {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 35)];
+    _vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
     _vv.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_vv addSubview:self.filterBtn];
     [self.filterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.and.height.equalTo(_vv);
+        make.centerY.equalTo(_vv);
         make.right.equalTo(_vv.mas_right).offset(-14);
     }];
     return _vv;

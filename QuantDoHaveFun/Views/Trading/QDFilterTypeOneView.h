@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UITextField *hightAmount;
 
 @property (nonatomic, strong) UILabel *infoLab;
+@property (nonatomic, strong) UISwitch *switchBtn;
 @property (nonatomic, strong) UIButton *yesBtn;
 @property (nonatomic, strong) UIButton *noBtn;
 @property (nonatomic, strong) UIView *bottomLine;

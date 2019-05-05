@@ -17,13 +17,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _backView = [[UIView alloc] init];
-        _backView.backgroundColor = [UIColor whiteColor];
+        _backView.backgroundColor = APP_WHITECOLOR;
         _backView.layer.cornerRadius = 2;
         _backView.layer.masksToBounds = YES;
         [self.contentView addSubview:_backView];
@@ -86,13 +85,13 @@
         
         _priceLab = [[UILabel alloc] init];
         _priceLab.text = @"¥";
-        _priceLab.font = QDBoldFont(20);
+        _priceLab.font = QDBoldFont(12);
         _priceLab.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_priceLab];
         
         _price = [[UILabel alloc] init];
         _price.text = @"30.00";
-        _price.font = QDBoldFont(24);
+        _price.font = QDBoldFont(14);
         _price.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_price];
         

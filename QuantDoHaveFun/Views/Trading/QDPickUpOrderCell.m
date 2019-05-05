@@ -24,14 +24,14 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _topBackView = [[UIView alloc] init];
-        _topBackView.backgroundColor = [UIColor whiteColor];
+        _topBackView.backgroundColor = APP_WHITECOLOR;
         _topBackView.layer.cornerRadius = 2;
         _topBackView.layer.masksToBounds = YES;
         [self.contentView addSubview:_topBackView];
         
-        _bottomBackView = [[UIView alloc] init];
-        _bottomBackView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
-        [_topBackView addSubview:_bottomBackView];
+        _shadowView = [[UIView alloc] init];
+        _shadowView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+        [_topBackView addSubview:_shadowView];
         
         _operationImg = [[UIImageView alloc] init];
         _operationImg.image = [UIImage imageNamed:@"operateType"];
@@ -39,13 +39,13 @@
         
         _operationTypeLab = [[UILabel alloc] init];
         _operationTypeLab.text = @"卖出";
-        _operationTypeLab.font = QDFont(13);
+        _operationTypeLab.font = QDFont(15);
         [_topBackView addSubview:_operationTypeLab];
         
         _totalPriceTextLab = [[UILabel alloc] init];
         _totalPriceTextLab.text = @"单价";
         _totalPriceTextLab.textColor = APP_GRAYTEXTCOLOR;
-        _totalPriceTextLab.font = QDFont(13);
+        _totalPriceTextLab.font = QDFont(14);
         [_topBackView addSubview:_totalPriceTextLab];
         
         _totalPriceLab = [[UILabel alloc] init];
@@ -129,13 +129,14 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_topBackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(SCREEN_HEIGHT*0.02);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-(SCREEN_HEIGHT*0.02));
-        make.centerX.equalTo(self.contentView);
+        make.top.equalTo(self.contentView.mas_top).offset(10);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+        make.left.equalTo(self.contentView.mas_left).offset(SCREEN_WIDTH*0.05);
+        make.right.equalTo(self.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
     }];
     
-    [_bottomBackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(_topBackView);
+    [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.and.width.equalTo(_topBackView);
         make.top.equalTo(_topBackView.mas_top).offset(42);
         make.height.mas_equalTo(7);
     }];
@@ -144,76 +145,76 @@
         make.top.equalTo(_topBackView.mas_top).offset(13);
         make.left.equalTo(_topBackView.mas_left).offset(18);
     }];
-    
+
     [_operationTypeLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_operationImg);
         make.left.equalTo(_operationImg.mas_right).offset(8);
     }];
-    
+
     [_totalPriceTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topBackView.mas_bottom).offset(SCREEN_HEIGHT*0.03);
-        make.left.equalTo(_operationTypeLab);
+        make.top.equalTo(_shadowView.mas_bottom).offset(6);
+        make.left.equalTo(_topBackView.mas_left).offset(18);
     }];
     
     [_totalPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_totalPriceTextLab.mas_bottom).offset(SCREEN_HEIGHT*0.015);
-        make.left.equalTo(_totalPriceTextLab);
+        make.top.equalTo(_totalPriceTextLab.mas_bottom).offset(12);
+        make.left.equalTo(_topBackView.mas_left).offset(18);
     }];
     
     [_totalPrice mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_totalPriceLab.mas_right).offset(1);
-        make.centerY.equalTo(_totalPriceLab);
+        make.left.equalTo(_totalPriceLab.mas_right).offset(2);
+        make.bottom.equalTo(_totalPriceLab);
     }];
     
     [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_totalPriceTextLab);
         make.left.equalTo(_topBackView.mas_left).offset(SCREEN_WIDTH*0.53);
     }];
-    
+
     [_amount mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_amountLab);
         make.left.equalTo(_amountLab.mas_right).offset(12);
     }];
-    
+
     [_balanceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_amount.mas_bottom).offset(4);
         make.left.equalTo(_amountLab);
     }];
-    
+
     [_balance mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_balanceLab);
         make.left.equalTo(_amount);
     }];
-    
+
     [_transferLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_balanceLab.mas_bottom).offset(4);
         make.left.equalTo(_balanceLab);
     }];
-    
+
     [_transfer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_transferLab);
         make.left.equalTo(_transferLab.mas_right).offset(4);
     }];
-    
+
     [_centerLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.and.height.equalTo(_topBackView);
-        make.bottom.equalTo(_topBackView.mas_bottom).offset(-(41));
+        make.centerX.and.width.equalTo(_topBackView);
+        make.bottom.equalTo(_topBackView.mas_bottom).offset(-42);
         make.height.mas_equalTo(1);
     }];
-    
+
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_centerLine.mas_top).offset(7);
-        make.left.equalTo(_topBackView.mas_left).offset(171);
+        make.top.equalTo(_centerLine.mas_bottom).offset(7);
+        make.left.equalTo(_topBackView.mas_left).offset(170);
         make.width.mas_equalTo(82);
-        make.height.mas_equalTo(27);
+        make.height.mas_equalTo(28);
     }];
-    
+
     [_payBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.and.height.equalTo(_withdrawBtn);
-        make.right.equalTo(_withdrawBtn.mas_right).offset(-17);
+        make.left.equalTo(_withdrawBtn.mas_right).offset(21);
         make.width.mas_equalTo(62);
     }];
-    
+
     [_statusLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_withdrawBtn);
         make.left.equalTo(_totalPriceTextLab);

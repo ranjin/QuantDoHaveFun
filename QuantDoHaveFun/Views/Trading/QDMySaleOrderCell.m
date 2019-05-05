@@ -23,7 +23,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _backView = [[UIView alloc] init];
-        _backView.backgroundColor = [UIColor whiteColor];
+        _backView.backgroundColor = APP_WHITECOLOR;
         _backView.layer.cornerRadius = 2;
         _backView.layer.masksToBounds = YES;
         [self.contentView addSubview:_backView];
@@ -156,7 +156,11 @@
         [_backView addSubview:_orderStatusLab];
         
         _withdrawBtn = [[UIButton alloc] init];
-        [_withdrawBtn setBackgroundImage:[UIImage imageNamed:@"withdraw_btn"] forState:UIControlStateNormal];
+        _withdrawBtn.backgroundColor = APP_WHITECOLOR;
+        _withdrawBtn.layer.borderColor = [UIColor colorWithHexString:@"#EEEEEE"].CGColor;
+        _withdrawBtn.layer.borderWidth = 0.6;
+        _withdrawBtn.layer.cornerRadius = 13;
+        _withdrawBtn.layer.masksToBounds = YES;
         [_withdrawBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [_withdrawBtn setTitle:@"我不卖了" forState:UIControlStateNormal];
         _withdrawBtn.titleLabel.font = QDFont(14);
@@ -167,9 +171,8 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(SCREEN_HEIGHT*0.02);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-(SCREEN_HEIGHT*0.02));
+    [_backView mas_makeConstraints:^(MASConstraintMaker *make) {        make.top.equalTo(self.contentView.mas_top).offset(10);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
         make.left.equalTo(self.contentView.mas_left).offset(SCREEN_WIDTH*0.05);
         make.right.equalTo(self.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
     }];
@@ -273,10 +276,10 @@
     }];
 
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_transferLab);
+        make.right.equalTo(_backView.mas_right).offset(-16);
         make.top.equalTo(_lineView.mas_bottom).offset(6);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.17);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+        make.width.mas_equalTo(82);
+        make.height.mas_equalTo(26);
     }];
 
     [_orderStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {

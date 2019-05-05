@@ -80,11 +80,7 @@ static const UIEdgeInsets edge = {10,10,10,10};
     CGFloat collectViewW = self.collectionView.frame.size.width;
     CGFloat w = (collectViewW - edge.left - edge.right - columnmagin * (count - 1)) / count;
     CGFloat h;
-    if (indexPath.row == 0) {
-        h = 190;
-    }else{
-        h = 220;
-    }
+    h = 185;
     
     // 假如最短的那列为第0列
     NSInteger minColumn = 0;
