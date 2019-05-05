@@ -25,27 +25,9 @@
     [[TABViewAnimated sharedAnimated] initWithDefaultAnimated];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-
-    [self getBasicPrice];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[BulgeCircularTabBarVC new]];
-
     [self.window makeKeyAndVisible];
-    
-    
     return YES;
-}
-
-#pragma mark - 个人积分账户详情
-- (void)getBasicPrice{
-    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetBasicPrice params:nil successBlock:^(QDResponseObject *responseObject) {
-        if (responseObject.code == 0) {
-            self.basePirceRate = [responseObject.result doubleValue];
-        }else{
-            [WXProgressHUD showInfoWithTittle:responseObject.message];
-        }
-    } failureBlock:^(NSError *error) {
-        [WXProgressHUD hideHUD];
-    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

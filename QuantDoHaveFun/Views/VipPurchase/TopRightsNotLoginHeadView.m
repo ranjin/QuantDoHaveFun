@@ -39,7 +39,7 @@
         
         _infoLab = [[UILabel alloc] init];
         _infoLab.text = @"登录获取更多信息";
-        _infoLab.textColor = APP_BLUECOLOR;
+        _infoLab.textColor = APP_BLUETEXTCOLOR;
         _infoLab.font = QDFont(16);
         [_topBlueView addSubview:_infoLab];
         [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -48,7 +48,20 @@
         }];
         
         _loginBtn = [[UIButton alloc] init];
-        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"notLogin_login"] forState:UIControlStateNormal];
+//        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"notLogin_login"] forState:UIControlStateNormal];
+        [_loginBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
+        [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+        CAGradientLayer *btnLayer =  [CAGradientLayer layer];
+        btnLayer.frame = CGRectMake(0, 0, 63, 28);
+        btnLayer.startPoint = CGPointMake(0, 0);
+        btnLayer.endPoint = CGPointMake(1, 0);
+        btnLayer.locations = @[@(0.0),@(1.0)];//渐变点
+        btnLayer.masksToBounds = YES;
+        btnLayer.cornerRadius = 14;
+        
+        [btnLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
+        [_loginBtn.layer addSublayer:btnLayer];
+        _loginBtn.titleLabel.font = QDFont(14);
         [_topBlueView addSubview:_loginBtn];
         [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_headPic);

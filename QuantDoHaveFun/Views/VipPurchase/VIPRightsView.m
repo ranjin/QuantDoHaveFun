@@ -26,12 +26,14 @@
         _titleLab.textColor = APP_BLUETEXTCOLOR;
         [self addSubview:_titleLab];
         
-        _loginHeadView = [[TopRightsLoginHeadView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
-        [self addSubview:_loginHeadView];
-        
+        //默认显示未登录状态
         _noLoginHeadView = [[TopRightsNotLoginHeadView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
         [self addSubview:_noLoginHeadView];
-        _noLoginHeadView.hidden = YES;
+        _noLoginHeadView.hidden = NO;
+
+        _loginHeadView = [[TopRightsLoginHeadView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
+        _loginHeadView.hidden = YES;
+        [self addSubview:_loginHeadView];
         
         _bottomWhiteView = [[UIView alloc] init];
         _bottomWhiteView.backgroundColor = APP_WHITECOLOR;
@@ -88,10 +90,24 @@
         [_bottomWhiteView addSubview:_bottomLab2];
         
         _payButton = [[UIButton alloc] init];
-        [_payButton setBackgroundImage:[UIImage imageNamed:@"vip_pay"] forState:UIControlStateNormal];
+//        [_payButton setBackgroundImage:[UIImage imageNamed:@"vip_pay"] forState:UIControlStateNormal];
+//        [_payButton setTitle:@"确认并支付" forState:UIControlStateNormal];
+//        [_payButton setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
+//        _payButton.titleLabel.font = QDFont(16);
+//        [_bottomWhiteView addSubview:_payButton];
+        
+        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
+        gradientLayer.frame = CGRectMake(0, 0, 316, 50);
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1, 0);
+        gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
+        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor],(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor]]];//渐变数组
+        [_payButton.layer addSublayer:gradientLayer];
         [_payButton setTitle:@"确认并支付" forState:UIControlStateNormal];
         [_payButton setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
         _payButton.titleLabel.font = QDFont(16);
+        _payButton.layer.cornerRadius = 25;
+        _payButton.layer.masksToBounds = YES;
         [_bottomWhiteView addSubview:_payButton];
     }
     return self;
@@ -104,7 +120,7 @@
         make.top.equalTo(self.mas_top).offset(20+SafeAreaTopHeight-64);
     }];
     
-    [_loginHeadView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_noLoginHeadView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_topBlueView);
         make.top.equalTo(_titleLab.mas_bottom).offset(18);
         make.width.mas_equalTo(360);
@@ -154,7 +170,7 @@
 
     [_priceTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceLab);
-        make.left.equalTo(self.mas_left).offset(35);
+        make.left.equalTo(_priceLab.mas_right).offset(5);
         make.width.mas_equalTo(320);
     }];
 
@@ -174,6 +190,39 @@
         make.width.mas_equalTo(316);
         make.height.mas_equalTo(50);
     }];
+}
+
+- (void)textFieldDidChange:(UITextField *)textField
+{
+    //判断第一位是否为数字
+    if ([textField.text isEqualToString: @"."]) {
+        textField.text = @"";
+    }
+    //判断是否有两个小数点
+    if (textField.text.length >= 2) {
+        NSString *str = [textField.text substringToIndex:textField.text.length-1];
+        NSString *strTwo = [textField.text substringFromIndex:textField.text.length-1];
+        NSRange range = [str rangeOfString:@"."];
+        if (range.location != NSNotFound && [strTwo isEqualToString:@"."]) {
+            textField.text = [textField.text substringToIndex:textField.text.length-1];
+        }
+    }
+    //小数点后面数字位数控制  （此时为小数点后一位，3改4就是两位    思路：取倒数第X个字符是否为小数点，是小数点的话，就不再允许输入）
+    if (textField.text.length > 4) {
+        NSString *myStr = [textField.text substringWithRange:NSMakeRange(textField.text.length-4 , 1)];
+        if ([myStr isEqualToString:@"."]) {
+            textField.text = [textField.text substringToIndex:textField.text.length-1];
+        }
+    }
+    //最大值控制
+    double doubleNum = [textField.text doubleValue];
+    NSUInteger myNub = doubleNum;
+    NSUInteger sum = 1000000;
+    if (myNub > sum) {
+        textField.text = [textField.text substringToIndex:textField.text.length-1];
+    }
+    double ss = floor([_priceTF.text doubleValue] / _basePrice);
+    _bottomLab2.text = [NSString stringWithFormat:@"%.lf", ss];
 }
 
 @end

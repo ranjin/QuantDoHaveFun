@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *bottomLab2;
 @property (nonatomic, strong) UIButton *payButton;
 
+@property (nonatomic, assign) double basePrice;
 @end
 
 NS_ASSUME_NONNULL_END

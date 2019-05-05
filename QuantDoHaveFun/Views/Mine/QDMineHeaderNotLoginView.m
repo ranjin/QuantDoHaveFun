@@ -13,14 +13,14 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
         _whiteBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 118+SafeAreaTopHeight-64)];
-        _whiteBackView.backgroundColor = [UIColor whiteColor];
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 118+SafeAreaTopHeight-64);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(0, 1);
-        gradientLayer.locations = @[@(0.2),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#DFE4EA"] CGColor],(id)[APP_WHITECOLOR CGColor]]];//渐变数组
-        [_whiteBackView.layer addSublayer:gradientLayer];
+        _whiteBackView.backgroundColor = APP_WHITECOLOR;
+//        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
+//        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 118+SafeAreaTopHeight-64);
+//        gradientLayer.startPoint = CGPointMake(0, 0);
+//        gradientLayer.endPoint = CGPointMake(0, 1);
+//        gradientLayer.locations = @[@(0.2),@(1.0)];//渐变点
+//        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#DFE4EA"] CGColor],(id)[APP_WHITECOLOR CGColor]]];//渐变数组
+//        [_whiteBackView.layer addSublayer:gradientLayer];
         [self addSubview:_whiteBackView];
         
         _picBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT*0.07+SafeAreaTopHeight-64, 38, 38)];

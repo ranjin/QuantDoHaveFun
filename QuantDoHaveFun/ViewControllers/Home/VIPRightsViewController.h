@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VIPRightsViewController : QDBaseViewController
 
+@property (nonatomic, assign) double basePirceRate;
+
 @end
 
 NS_ASSUME_NONNULL_END

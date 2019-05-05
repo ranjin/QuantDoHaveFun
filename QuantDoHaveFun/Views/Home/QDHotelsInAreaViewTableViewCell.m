@@ -157,7 +157,7 @@
     self.hotelName.text = infoModel.hotelName;
     self.startLab.text = [NSString stringWithFormat:@"%@人收藏",infoModel.collectCount];
     self.ftLab.text = [NSString stringWithFormat:@"%@FT 起", infoModel.collectCount];
-    double ss = [infoModel.price doubleValue] * delegate.basePirceRate;
+    double ss = [infoModel.price doubleValue] * 0.08;
     self.rmbLab.text = [NSString stringWithFormat:@"折合人民币%.f元", ss];
 //    self.recommendLab.text = infoModel.isRecommend
     self.addressLab.text = infoModel.address;

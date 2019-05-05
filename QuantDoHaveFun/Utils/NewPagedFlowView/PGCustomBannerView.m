@@ -42,7 +42,7 @@
     
     [self.cardMoney mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.bottom.equalTo(self.mas_bottom).offset(-(SCREEN_HEIGHT*0.1));
+        make.top.equalTo(_cardNameLab.mas_bottom).offset(17);
     }];
     
     [self.cardMoneyLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,7 +65,7 @@
     if (!_cardNameLab) {
         _cardNameLab = [[UILabel alloc] init];
         _cardNameLab.text = @"钻石玩卡";
-        _cardNameLab.font = QDFont(23);
+        _cardNameLab.font = QDBoldFont(16);
         _cardNameLab.textColor = APP_BLACKCOLOR;
     }
     return _cardNameLab;
@@ -75,8 +75,8 @@
     if (_cardMoney == nil) {
         _cardMoney = [[UILabel alloc] init];
         _cardMoney.text = @"";
-        _cardMoney.font = QDBoldFont(24);
-        _cardMoney.textColor = APP_BLACKCOLOR;
+        _cardMoney.font = QDFont(14);
+        _cardMoney.textColor = [UIColor colorWithHexString:@"#333333"];
     }
     return _cardMoney;
 }
@@ -85,8 +85,8 @@
     if (_cardMoneyLab == nil) {
         _cardMoneyLab = [[UILabel alloc] init];
         _cardMoneyLab.text = @"¥";
-        _cardMoneyLab.font = QDBoldFont(18);
-        _cardMoneyLab.textColor = APP_BLACKCOLOR;
+        _cardMoneyLab.font = QDFont(14);
+        _cardMoneyLab.textColor = [UIColor colorWithHexString:@"#333333"];
     }
     return _cardMoneyLab;
 }
@@ -95,11 +95,11 @@
     if ([cardModel.vipMoney doubleValue] == 0) {
         _cardMoneyLab.hidden = YES;
         _cardMoney.text = @"设置金额";
-        _cardMoney.font = QDFont(24);
+        _cardMoney.font = QDFont(14);
     }else{
         _cardMoneyLab.hidden = NO;
         _cardMoney.text = cardModel.vipMoney;
-        _cardMoney.font = QDBoldFont(24);
+        _cardMoney.font = QDFont(14);
     }
     _cardNameLab.text = cardModel.vipTypeName;
 }
