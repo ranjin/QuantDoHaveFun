@@ -35,8 +35,7 @@
         _lineView.alpha = 0.4;
         [self.contentView addSubview:_lineView];
         
-        _headPic = [[UIImageView alloc] init];
-        _headPic.image = [UIImage imageNamed:@"icon_headerPic"];
+        _headPic = [[UIButton alloc] init];
         _headPic.layer.cornerRadius = 9;
         _headPic.layer.masksToBounds = YES;
         [self.contentView addSubview:_headPic];

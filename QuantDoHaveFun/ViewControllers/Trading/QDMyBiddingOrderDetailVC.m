@@ -144,7 +144,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"发布详情";
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [self setLeftBtnItem];
     _biddingOrderView = [[QDMyBiddingOrderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _biddingOrderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;

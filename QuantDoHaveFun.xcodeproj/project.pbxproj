@@ -104,6 +104,9 @@
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
 		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
+		938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */; };
+		938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */; };
+		938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */; };
 		93E97FC62271442D00DDEB80 /* QDLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */; };
 		93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC92271446A00DDEB80 /* YYTextView.m */; };
 		93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FCD2271446B00DDEB80 /* YYTextMagnifier.m */; };
@@ -529,6 +532,11 @@
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		938C3C452272F96C0087724E /* TheCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheCityModel.h; sourceTree = "<group>"; };
 		938C3C462272F96C0087724E /* TheCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheCityModel.m; sourceTree = "<group>"; };
+		938C3C482275307F0087724E /* TopRightsNotLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsNotLoginHeadView.h; sourceTree = "<group>"; };
+		938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRightsNotLoginHeadView.m; sourceTree = "<group>"; };
+		938C3C4B2275329B0087724E /* TopRightsLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsLoginHeadView.h; sourceTree = "<group>"; };
+		938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRightsLoginHeadView.m; sourceTree = "<group>"; };
+		938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginAndRegisterVC.m; sourceTree = "<group>"; };
 		93E97FC52271442D00DDEB80 /* QDLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLoginAndRegisterVC.h; sourceTree = "<group>"; };
 		93E97FC82271446A00DDEB80 /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
@@ -1016,6 +1024,7 @@
 		93399CB02267124000FB9F0E = {
 			isa = PBXGroup;
 			children = (
+				938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */,
 				93399CBB2267124000FB9F0E /* QuantDoHaveFun */,
 				93399CD42267124500FB9F0E /* QuantDoHaveFunTests */,
 				93399CDF2267124500FB9F0E /* QuantDoHaveFunUITests */,
@@ -2214,6 +2223,10 @@
 				93E981C22271534000DDEB80 /* QDVipPurchaseView.m */,
 				93E982922271B38D00DDEB80 /* VIPRightsView.h */,
 				93E982932271B38D00DDEB80 /* VIPRightsView.m */,
+				938C3C482275307F0087724E /* TopRightsNotLoginHeadView.h */,
+				938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */,
+				938C3C4B2275329B0087724E /* TopRightsLoginHeadView.h */,
+				938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */,
 			);
 			path = VipPurchase;
 			sourceTree = "<group>";
@@ -2461,6 +2474,7 @@
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93E982962271DAC500DDEB80 /* Images.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
+				938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2549,6 +2563,7 @@
 				93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
 				93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */,
+				938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */,
 				93E9828B2271997D00DDEB80 /* TestTabBar.m in Sources */,
 				93E981CC2271535100DDEB80 /* CWActionSheet.m in Sources */,
 				93E98023227144B100DDEB80 /* QDMsgVerifyView.m in Sources */,
@@ -2796,6 +2811,7 @@
 				93399D66226819C800FB9F0E /* UserCreditDTO.m in Sources */,
 				93E982002271546C00DDEB80 /* QDMallTopView.m in Sources */,
 				93E981D12271537300DDEB80 /* LQPopUpView.m in Sources */,
+				938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */,
 				93E9815022714FD000DDEB80 /* CommonUtility.m in Sources */,
 				93E98056227146BC00DDEB80 /* QDBridgeTViewController.m in Sources */,
 				93399D522268191E00FB9F0E /* QDMineHeaderFinancialAccountView.m in Sources */,
@@ -3003,7 +3019,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNMW98VLVV;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
@@ -3028,7 +3044,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNMW98VLVV;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";

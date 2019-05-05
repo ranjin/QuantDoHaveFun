@@ -11,8 +11,12 @@
 #import "NewPagedFlowView.h"
 #import "PGCustomBannerView.h"
 #import "QDLoginAndRegisterVC.h"
+#import "QDMemberDTO.h"
 @interface VIPRightsViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>{
     VIPRightsView *_rightsView;
+    BOOL _selected;
+    VipCardDTO *_currentModel;
+    NSString *_isYePay;
 }
 
 @property (nonatomic, strong) NSMutableArray *imageArray;
@@ -40,15 +44,42 @@
     _rightsView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_rightsView.payButton addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightsView];
+    NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
+    if ([str isEqualToString:@"0"] || str == nil) { //未登录
+        _rightsView.loginHeadView.hidden = YES;
+        _rightsView.noLoginHeadView.hidden = NO;
+    }else{
+        [self requestUserStatus];
+        _rightsView.loginHeadView.hidden = NO;
+        _rightsView.noLoginHeadView.hidden = YES;
+    }
     [self setupCardUI];
 }
 
+#pragma mark - 请求用户信息
+- (void)requestUserStatus{
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetUserDetail params:nil successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            QDMemberDTO *currentQDMemberTDO = [QDMemberDTO yy_modelWithDictionary:responseObject.result];
+            _isYePay = currentQDMemberTDO.isYepay;
+            [_rightsView.loginHeadView loadVipViewWithModel:currentQDMemberTDO];
+        }else if (responseObject.code == 2){
+            [QDUserDefaults removeCookies];
+            [QDUserDefaults setObject:@"0" forKey:@"loginType"];
+        }else{
+            [WXProgressHUD showErrorWithTittle:responseObject.message];
+        }
+    } failureBlock:^(NSError *error) {
+        
+    }];
+}
 - (void)setupCardUI{
     for (int index = 1; index < 6; index++) {
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"img_card%d", index]];
         [_imageArray addObject:image];
     }
-    NewPagedFlowView *pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 206+SafeAreaTopHeight-64, SCREEN_WIDTH, 300)];
+    NewPagedFlowView *pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 206+SafeAreaTopHeight-64, SCREEN_WIDTH, 210)];
+    
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
     pageFlowView.minimumPageAlpha = 0.01;
@@ -65,7 +96,7 @@
 
 #pragma mark - NewPagedFlowView Delegate
 - (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView{
-    return CGSizeMake(236, 300);
+    return CGSizeMake(180, 230);
 }
 
 - (void)didSelectCell:(PGIndexBannerSubiew *)subView withSubViewIndex:(NSInteger)subIndex{

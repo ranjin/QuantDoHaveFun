@@ -26,22 +26,12 @@
         _titleLab.textColor = APP_BLUETEXTCOLOR;
         [self addSubview:_titleLab];
         
-        _centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
-        _centerView.backgroundColor = APP_BLUECOLOR;
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, 360, 119);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#B5FBDD"] CGColor],(id)[[UIColor colorWithHexString:@"#5EE8BC"] CGColor]]];//渐变数组
-        [_centerView.layer addSublayer:gradientLayer];
-        _centerView.layer.shadowColor = [UIColor colorWithRed:32/255.0 green:158/255.0 blue:115/255.0 alpha:0.3].CGColor;
-        _centerView.layer.shadowOffset = CGSizeMake(0,0);
-        _centerView.layer.shadowOpacity = 1;
-        _centerView.layer.shadowRadius = 10;
-        _centerView.layer.cornerRadius = 5;
-        _centerView.layer.masksToBounds = YES;
-        [self addSubview:_centerView];
+        _loginHeadView = [[TopRightsLoginHeadView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
+        [self addSubview:_loginHeadView];
+        
+        _noLoginHeadView = [[TopRightsNotLoginHeadView alloc] initWithFrame:CGRectMake(0, 0, 360, 119)];
+        [self addSubview:_noLoginHeadView];
+        _noLoginHeadView.hidden = YES;
         
         _bottomWhiteView = [[UIView alloc] init];
         _bottomWhiteView.backgroundColor = APP_WHITECOLOR;
@@ -111,10 +101,17 @@
     [super layoutSubviews];
     [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(40+SafeAreaTopHeight-64);
+        make.top.equalTo(self.mas_top).offset(20+SafeAreaTopHeight-64);
     }];
     
-    [_centerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_loginHeadView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_topBlueView);
+        make.top.equalTo(_titleLab.mas_bottom).offset(18);
+        make.width.mas_equalTo(360);
+        make.height.mas_equalTo(119);
+    }];
+    
+    [_loginHeadView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_topBlueView);
         make.top.equalTo(_titleLab.mas_bottom).offset(18);
         make.width.mas_equalTo(360);
@@ -178,4 +175,5 @@
         make.height.mas_equalTo(50);
     }];
 }
+
 @end

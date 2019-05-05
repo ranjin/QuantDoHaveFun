@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/Views/VipPurchase/QDVipPurchaseView.m"
-            timestampString = "577939469.354828"
+            timestampString = "578127692.351441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
@@ -68,7 +68,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "578042303.5143501"
+                  timestampString = "578127692.648419"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -83,7 +83,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "578042303.51649"
+                  timestampString = "578127692.65385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -98,7 +98,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDSettingViewController.m"
-                  timestampString = "578042303.519439"
+                  timestampString = "578127692.657902"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -195,7 +195,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578042303.291703"
+            timestampString = "578051859.728701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -211,7 +211,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578042303.291777"
+            timestampString = "578051859.728778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -227,7 +227,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578042303.291835"
+            timestampString = "578051859.728835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -243,7 +243,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-                  timestampString = "578042303.559247"
+                  timestampString = "578127692.710379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -258,7 +258,7 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-                  timestampString = "578042303.561776"
+                  timestampString = "578127692.713341"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -275,12 +275,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578042303.291881"
+            timestampString = "578051859.728883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
             landmarkName = "-findAllDestinationList"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/Views/VipPurchase/TopRightsLoginHeadView.m"
+            timestampString = "578302049.29399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-loadVipViewWithModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Home/VIPRightsViewController.m"
+            timestampString = "578302049.294313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-requestUserStatus"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

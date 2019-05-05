@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TopRightsNotLoginHeadView.h"
+#import "TopRightsLoginHeadView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VIPRightsView : UIView
@@ -15,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *whiteBackView;
 @property (nonatomic, strong) UIImageView *topBlueView;
 @property (nonatomic, strong) UILabel *titleLab;
-@property (nonatomic, strong) UIView *centerView;
+@property (nonatomic, strong) TopRightsLoginHeadView *loginHeadView;
+@property (nonatomic, strong) TopRightsNotLoginHeadView *noLoginHeadView;
+
 @property (nonatomic, strong) UIView *bottomWhiteView;
 @property (nonatomic, strong) UIImageView *balancePic;
 @property (nonatomic, strong) UILabel *priceTextLab;
@@ -29,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *bottomLab1;
 @property (nonatomic, strong) UILabel *bottomLab2;
 @property (nonatomic, strong) UIButton *payButton;
+
 @end
 
 NS_ASSUME_NONNULL_END

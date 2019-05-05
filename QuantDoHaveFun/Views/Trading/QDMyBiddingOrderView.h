@@ -15,15 +15,21 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QDMyBiddingOrderView : UIView
 
 @property (nonatomic, strong) UIView *topView;
+@property (nonatomic, strong) UIImageView *statusImg;
+
 @property (nonatomic, strong) UILabel *statusLab;
 @property (nonatomic, strong) UILabel *dealLab;
 @property (nonatomic, strong) UILabel *deal;
+@property (nonatomic, strong) UILabel *dealTextLab;
 @property (nonatomic, strong) UILabel *frozenLab;
 @property (nonatomic, strong) UILabel *frozen;
+@property (nonatomic, strong) UILabel *frozenTextLab;
 
 
 
 @property (nonatomic, strong) UIView *centerView;
+@property (nonatomic, strong) UIImageView *operationImg;
+
 @property (nonatomic, strong) UILabel *operationType;
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UILabel *lab1;
