@@ -71,29 +71,6 @@
         [_gotologinBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
         _gotologinBtn.enabled = NO;
         [self addSubview:_gotologinBtn];
-        
-//        _gotologinBtn = [[UIButton alloc] init];
-//        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-//        gradientLayer.frame = CGRectMake(0, 0, 316, 50);
-//        gradientLayer.startPoint = CGPointMake(0, 0);
-//        gradientLayer.endPoint = CGPointMake(1, 0);
-//        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-//        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-//        [_gotologinBtn.layer addSublayer:gradientLayer];
-//        [_gotologinBtn setTitle:@"登录" forState:UIControlStateNormal];
-//        [_gotologinBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
-//        _gotologinBtn.layer.cornerRadius = 4;
-//        _gotologinBtn.layer.masksToBounds = YES;
-//        _gotologinBtn.titleLabel.font = QDFont(17);
-//        [self addSubview:_gotologinBtn];
-//        UIImage *colorImg = [QDGlobalFunc imageWithColor:[UIColor colorWithHexString:@"#BDE5E5"]];
-//        [_gotologinBtn setBackgroundImage:colorImg forState:UIControlStateDisabled];
-//        [_gotologinBtn setBackgroundImage:[UIImage imageNamed:@"login_selected"] forState:UIControlStateSelected];
-//        [_gotologinBtn setBackgroundImage:[UIImage imageNamed:@"login_selected"] forState:UIControlStateHighlighted];
-//        [_gotologinBtn setBackgroundImage:[UIImage imageNamed:@"login_disabled"] forState:UIControlStateDisabled];
-//        _gotologinBtn.titleLabel.font = QDFont(21);
-//        [self addSubview:_gotologinBtn];
-        
     }
     return self;
 }
@@ -131,7 +108,7 @@
     
     [_userNameLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.and.left.equalTo(self.phoneLine);
-        make.top.equalTo(self.phoneLine.mas_bottom).offset(47);
+        make.top.equalTo(self.phoneLine.mas_bottom).offset(55);
     }];
     
     [_forgetPWD mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -11,30 +11,23 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
-//        _cancelBtn = [[UIButton alloc] init];
-//        [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-//        [_cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [self addSubview:_cancelBtn];
-//
-//        _loginBtn = [[UIButton alloc] init];
-//        [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-//        [_loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [self addSubview:_loginBtn];
+        _hiLab = [[UILabel alloc] init];
+        _hiLab.text = @"Hi,";
+        _hiLab.font = QDBoldFont(25);
+        [self addSubview:_hiLab];
         
-        _registerLab = [[UILabel alloc] init];
-        _registerLab.text = @"注册这好玩";
-        _registerLab.font = QDFont(32);
-        [self addSubview:_registerLab];
+        _welcomeLab = [[UILabel alloc] init];
+        _welcomeLab.text = @"欢迎注册这好玩";
+        _welcomeLab.font = QDBoldFont(25);
+        [self addSubview:_welcomeLab];
         
-        _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = APP_BLUECOLOR;
-        [self addSubview:_lineView];
-
         _phoneLine = [[UIView alloc] init];
-        _phoneLine.backgroundColor = [UIColor colorWithHexString:@"#DDDDDD"];
+        _phoneLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [self addSubview:_phoneLine];
 
-        _areaBtn = [[UIButton alloc] init];
+        _areaBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
+        _areaBtn.imageTitleSpace = 6;
+        [_areaBtn setImage:[UIImage imageNamed:@"select_down"] forState:UIControlStateNormal];
         [_areaBtn setTitle:@"+86" forState:UIControlStateNormal];
         [_areaBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:_areaBtn];
@@ -48,7 +41,7 @@
         [self addSubview:_phoneTF];
 
         _userNameLine = [[UIView alloc] init];
-        _userNameLine.backgroundColor = [UIColor colorWithHexString:@"#DDDDDD"];
+        _userNameLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [self addSubview:_userNameLine];
 
         _userNameTF = [[UITextField alloc] init];
@@ -64,29 +57,14 @@
         _infoLab.font = QDFont(13);
         [self addSubview:_infoLab];
         
-        _nextBtn = [[UIButton alloc] init];
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, 335, 50);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-        [_nextBtn.layer addSublayer:gradientLayer];
+        _nextBtn = [[QDButton alloc] init];
+        [_nextBtn setBackgroundImage:[UIImage imageNamed:@"login_nor"] forState:UIControlStateNormal];
+        [_nextBtn setBackgroundImage:[UIImage imageNamed:@"login_dis"] forState:UIControlStateDisabled];
         [_nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-        _nextBtn.layer.cornerRadius = 4;
-        _nextBtn.layer.masksToBounds = YES;
-        _nextBtn.titleLabel.font = QDFont(20);
+        _nextBtn.titleLabel.font = QDFont(16);
+        [_nextBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
+        _nextBtn.enabled = NO;
         [self addSubview:_nextBtn];
-        
-        
-//        _nextBtn = [[QDButton alloc] init];
-//        [_nextBtn setBackgroundColor:APP_LIGHTGRAYCOLOR forState:UIControlStateNormal];
-//        [_nextBtn setBackgroundColor:APP_BLUECOLOR forState:UIControlStateSelected];
-//        [_nextBtn setBackgroundColor:APP_BLUECOLOR forState:UIControlStateHighlighted];
-//        [_nextBtn setBackgroundColor:APP_LIGHTGRAYCOLOR forState:UIControlStateDisabled];
-//        [_nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-//        _nextBtn.titleLabel.font = QDFont(21);
-//        [self addSubview:_nextBtn];
         
         _imgView = [[UIImageView alloc] init];
         _imgView.backgroundColor = [UIColor redColor];
@@ -99,67 +77,57 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.054);
-//        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.056);
-//    }];
-//    
-//    [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(self.cancelBtn);
-//        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.056));
-//    }];
-//    
-    [_registerLab mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_hiLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.156);
+        make.left.equalTo(self.mas_left).offset(23);
+        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.15+SafeAreaTopHeight-64);
     }];
     
-    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.registerLab);
-        make.top.equalTo(self.registerLab.mas_bottom).offset(SCREEN_HEIGHT*0.012);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.097);
-        make.height.mas_equalTo(SCREEN_WIDTH*0.01);
+    [_welcomeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_hiLab);
+        make.top.equalTo(_hiLab.mas_bottom).offset(10);
     }];
     
     [_phoneLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.35);
+        make.top.equalTo(_welcomeLab.mas_bottom).offset(63);
         make.height.equalTo(@1);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
+        make.width.mas_equalTo(339);
     }];
 
     [_areaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.053);
-        make.bottom.equalTo(self.phoneLine.mas_top).offset(-(SCREEN_HEIGHT*0.01));
+        make.left.equalTo(_phoneLine);
+        make.bottom.equalTo(self.phoneLine.mas_top).offset(-(6));
     }];
 
     [_phoneTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(SCREEN_WIDTH*0.22);
+        make.left.equalTo(_areaBtn.mas_right).offset(19);
         make.centerY.equalTo(self.areaBtn);
         make.right.equalTo(self.phoneLine);
     }];
 
     [_userNameLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.and.left.equalTo(self.phoneLine);
-        make.top.equalTo(self.phoneLine.mas_bottom).offset(SCREEN_HEIGHT*0.1);
+        make.top.equalTo(self.phoneLine.mas_bottom).offset(55);
+    }];
+    
+
+    [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.userNameLine.mas_top).offset(-(6));
+        make.right.equalTo(self.userNameLine);
     }];
 
     [_userNameTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.phoneTF);
-        make.bottom.equalTo(self.userNameLine.mas_top).offset(-(SCREEN_HEIGHT*0.01));
-        make.right.equalTo(self.userNameLine);
+        make.left.equalTo(_areaBtn);
+        make.centerY.equalTo(_infoLab);
+        make.right.equalTo(_infoLab.mas_left);
     }];
-    
-    [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.userNameTF);
-        make.right.equalTo(self.userNameLine);
-    }];
-    
+
     [_nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(50);
-        make.width.mas_equalTo(335);
         make.centerX.equalTo(self);
-        make.top.equalTo(self.userNameLine.mas_bottom).offset(SCREEN_HEIGHT*0.12);
+        make.width.mas_equalTo(335);
+        make.height.mas_equalTo(50);
+        make.top.equalTo(self.userNameLine.mas_bottom).offset(90);
     }];
 }
 

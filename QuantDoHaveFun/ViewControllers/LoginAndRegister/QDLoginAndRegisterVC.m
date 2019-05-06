@@ -126,14 +126,14 @@
 
 - (void)setSideBtn{
     _cancelBtn = [[UIButton alloc] init];
-    [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [_cancelBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
     [_cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancelBtn];
     
     [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(SCREEN_HEIGHT*0.054);
-        make.left.equalTo(self.view.mas_left).offset(SCREEN_WIDTH*0.056);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-64+36);
+        make.left.equalTo(self.view.mas_left).offset(12);
     }];
     
     _loginBtn = [[UIButton alloc] init];

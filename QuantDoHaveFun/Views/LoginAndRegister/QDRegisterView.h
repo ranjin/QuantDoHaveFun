@@ -8,18 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "QDButton.h"
+#import "SPButton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDRegisterView : UIView
 
-//@property (nonatomic, strong) UIButton *cancelBtn;
-//@property (nonatomic, strong) UIButton *loginBtn;
-
-@property (nonatomic, strong) UILabel *registerLab;
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UILabel *hiLab;
+@property (nonatomic, strong) UILabel *welcomeLab;
 
 @property (nonatomic, strong) UIView *phoneLine;
-@property (nonatomic, strong) UIButton *areaBtn;
+@property (nonatomic, strong) SPButton *areaBtn;
 @property (nonatomic, strong) UITextField *phoneTF;
 @property (nonatomic, strong) UIView *userNameLine;
 @property (nonatomic, strong) UITextField *userNameTF;
