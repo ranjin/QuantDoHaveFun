@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            width: 160px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-40deg, rgba(0, 175, 173, 1), rgba(33, 198, 165, 1));
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            color: #FFFFFF;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="submit" onclick="goMain()">返回首页</button>
+    <script>
+        function goMain() {
+            window.location.href = "xl://quantdo:8888/Main"
+        }
+    </script>
+</body>
+
+</html>

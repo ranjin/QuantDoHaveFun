@@ -28,7 +28,6 @@
     int _pageNum;
     int _pageSize;
 }
-@property (nonatomic, getter=isLoading) BOOL loading;
 @property (nonatomic, assign) NSInteger menuSelectIndex;   //选中的一栏
 
 @property (nonatomic, strong) NSString *catId;  //商品分类
@@ -264,15 +263,10 @@
 
 #pragma mark - DZNEmtpyDataSet Delegate
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    if (self.isLoading) {
-        return [UIImage imageNamed:@"loading_imgBlue" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    }
-    else {
-        if (_emptyType == QDNODataError) {
-            return [UIImage imageNamed:@"icon_nodata"];
-        }else if(_emptyType == QDNetworkError){
-            return [UIImage imageNamed:@"icon_noConnect"];
-        }
+    if (_emptyType == QDNODataError) {
+        return [UIImage imageNamed:@"icon_nodata"];
+    }else if(_emptyType == QDNetworkError){
+        return [UIImage imageNamed:@"icon_noConnect"];
     }
     return nil;
 }
@@ -354,44 +348,12 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return YES;
-}
-
-- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
-{
-    return self.isLoading;
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
-{
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
-{
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
-}
-
-- (void)setLoading:(BOOL)loading
-{
-    if (self.isLoading == loading) {
-        return;
-    }
-    _loading = loading;
-    [_tableView reloadEmptyDataSet];
+    return NO;
 }
 
 @end

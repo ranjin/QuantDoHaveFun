@@ -107,6 +107,8 @@
 		938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */; };
 		938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */; };
 		938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */; };
+		938C3C55228034700087724E /* QDTestWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C542280346F0087724E /* QDTestWebViewVC.m */; };
+		938C3C57228035480087724E /* goMain.html in Resources */ = {isa = PBXBuildFile; fileRef = 938C3C56228035470087724E /* goMain.html */; };
 		93E97FC62271442D00DDEB80 /* QDLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */; };
 		93E97FFC2271446B00DDEB80 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FC92271446A00DDEB80 /* YYTextView.m */; };
 		93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97FCD2271446B00DDEB80 /* YYTextMagnifier.m */; };
@@ -406,7 +408,6 @@
 		93399D61226819C800FB9F0E /* UserCreditDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreditDTO.h; sourceTree = "<group>"; };
 		93399D62226819C800FB9F0E /* QDMemberDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMemberDTO.h; sourceTree = "<group>"; };
 		93399D63226819C800FB9F0E /* UserMoneyDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMoneyDTO.h; sourceTree = "<group>"; };
-		93399D67226819F300FB9F0E /* WXApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		93399D6922681A0900FB9F0E /* QDServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDServiceClient.h; sourceTree = "<group>"; };
 		93399D6A22681A0900FB9F0E /* QDNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNetworkCache.m; sourceTree = "<group>"; };
 		93399D6B22681A0900FB9F0E /* QDServiceErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDServiceErrorHandler.h; sourceTree = "<group>"; };
@@ -536,6 +537,9 @@
 		938C3C4B2275329B0087724E /* TopRightsLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsLoginHeadView.h; sourceTree = "<group>"; };
 		938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRightsLoginHeadView.m; sourceTree = "<group>"; };
 		938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		938C3C532280346F0087724E /* QDTestWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTestWebViewVC.h; sourceTree = "<group>"; };
+		938C3C542280346F0087724E /* QDTestWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTestWebViewVC.m; sourceTree = "<group>"; };
+		938C3C56228035470087724E /* goMain.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = goMain.html; sourceTree = "<group>"; };
 		93E97FC42271442D00DDEB80 /* QDLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginAndRegisterVC.m; sourceTree = "<group>"; };
 		93E97FC52271442D00DDEB80 /* QDLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLoginAndRegisterVC.h; sourceTree = "<group>"; };
 		93E97FC82271446A00DDEB80 /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
@@ -1022,6 +1026,7 @@
 		93399CB02267124000FB9F0E = {
 			isa = PBXGroup;
 			children = (
+				938C3C56228035470087724E /* goMain.html */,
 				938C3C4E22754EEF0087724E /* MBProgressHUD.bundle */,
 				93399CBB2267124000FB9F0E /* QuantDoHaveFun */,
 				93399CD42267124500FB9F0E /* QuantDoHaveFunTests */,
@@ -1297,6 +1302,8 @@
 		93399D0222671FA100FB9F0E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				938C3C532280346F0087724E /* QDTestWebViewVC.h */,
+				938C3C542280346F0087724E /* QDTestWebViewVC.m */,
 				93E98054227146BC00DDEB80 /* QDBridgeViewController.h */,
 				93E98055227146BC00DDEB80 /* QDBridgeViewController.m */,
 				93E98052227146BC00DDEB80 /* QDBridgeTViewController.h */,
@@ -1432,7 +1439,6 @@
 		93399D34226815A300FB9F0E /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				93399D67226819F300FB9F0E /* WXApi.h */,
 				93399D35226815A300FB9F0E /* UIColor+Extention.h */,
 				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93399D36226815A300FB9F0E /* Macro.h */,
@@ -2467,6 +2473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E9807F2271479300DDEB80 /* ExampleApp.html in Resources */,
+				938C3C57228035480087724E /* goMain.html in Resources */,
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
@@ -2837,6 +2844,7 @@
 				93399D532268191E00FB9F0E /* QDMineHeaderWithdrawView.m in Sources */,
 				93E980DB22714DC500DDEB80 /* UIImage+Image.m in Sources */,
 				93E981E3227153B800DDEB80 /* QDDZYViewController.m in Sources */,
+				938C3C55228034700087724E /* QDTestWebViewVC.m in Sources */,
 				93E98229227154B000DDEB80 /* RootTableCell.m in Sources */,
 				93E9807E2271479300DDEB80 /* WebViewJavascriptBridge.m in Sources */,
 				93E981812271504700DDEB80 /* QDHotelTableFooterView.m in Sources */,

@@ -30,7 +30,7 @@
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
-
+#import "QDTestWebViewVC.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -370,7 +370,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch (indexPath.row) {
         case 0: //邀请好友
-            [self inviteFriends];
+//            [self inviteFriends];
+        {
+            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 1: //收藏
             [self gotoLoginWithAction:JS_COLLECTION];

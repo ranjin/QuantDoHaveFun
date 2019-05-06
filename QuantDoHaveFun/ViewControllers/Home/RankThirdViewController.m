@@ -210,8 +210,8 @@
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        _pageNum++;
-        [self requestDZYList];
+        [self endRefreshing];
+        [_tableView.mj_footer endRefreshingWithNoMoreData];
     }];
 }
 
@@ -222,7 +222,6 @@
         [_tableView.mj_footer endRefreshing];
     }
 }
-
 - (void)setLoading:(BOOL)loading
 {
     if (self.isLoading == loading) {
@@ -374,15 +373,5 @@
     return self.isLoading;
 }
 
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
-{
-    self.loading = YES;
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
-{
-    self.loading = YES;
-    
-}
 
 @end

@@ -36,9 +36,6 @@
     int _totalPage;
     int _pageNum;
     int _pageSize;
-    NSMutableArray *_array1;
-    NSMutableArray *_array2;
-    NSMutableArray *_array3;
     NSMutableArray *_hotelLevelArr;
     NSMutableArray *_hotelTypeIdArr;
     NSMutableArray *_levelArr;
@@ -61,9 +58,6 @@
     _hotelLevel = @"";
     _minPrice = @"";
     _maxPrice = @"";
-    
-    _array2 = [[NSMutableArray alloc] init];
-    _array3 = [[NSMutableArray alloc] init];
     
     _hotelLevelArr = [[NSMutableArray alloc] init];
     _hotelTypeIdArr = [[NSMutableArray alloc] init];
@@ -96,11 +90,17 @@
                 for (NSDictionary *dd in bbb) {
                     [_hotelTypeIdArr addObject:[dd objectForKey:@"dictName"]];
                 }
-                NSArray *ccc = [dic objectForKey:@"Level"];
-                for (NSDictionary *dd in ccc) {
-                    [_hotelLevelArr addObject:[dd objectForKey:@"dictName"]];
+                if (_hotelTypeIdArr.count) {
+                    if (![_hotelTypeIdArr[0] isEqualToString:@"酒店类型"]) {
+                        [_hotelTypeIdArr insertObject:@"酒店类型" atIndex:0];
+                    }
                 }
-//                [self setHotelDropMenu];
+                if (_hotelLevelArr.count) {
+                    if (![_hotelLevelArr[0] isEqualToString:@"星级"]) {
+                        [_hotelLevelArr insertObject:@"星级" atIndex:0];
+                    }
+                }
+                [self setDropMenu];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
@@ -252,20 +252,28 @@
     }];
 }
 
-- (TFDropDownMenuView *)setHotelDropMenu{
-    if (_hotelTypeIdArr.count) {
-        if (![_hotelTypeIdArr[0] isEqualToString:@"酒店类型"]) {
-            [_hotelTypeIdArr insertObject:@"酒店类型" atIndex:0];
-        }
+- (void)priceRangeRest:(UIButton *)sender{
+    QDLog(@"reset");
+    _priceRangeView.slider.currentMinValue = 0;
+    _priceRangeView.slider.currentMaxValue = 900;
+    _maxPrice = @"";
+}
+
+- (void)confirmToSelectPrice:(UIButton *)sender{
+    [_menu animateForIndicator:_menu.currentIndicatorLayers[2] titlelayer: _menu.currentTitleLayers[2] show:NO complete:^{
+        _menu.isShow = false;
+    }];
+    if (_hotelListInfoArr.count) {
+        [_hotelListInfoArr removeAllObjects];
+        [_hotelImgArr removeAllObjects];
     }
-    if (_hotelLevelArr.count) {
-        if (![_hotelLevelArr[0] isEqualToString:@"星级"]) {
-            [_hotelLevelArr insertObject:@"星级" atIndex:0];
-        }
-    }
+    _pageNum = 1;
+    [self requestHotelData];
+}
+- (void)setDropMenu{
     NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_hotelTypeIdArr, @[@"价格"], _hotelLevelArr, nil];
     NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], @[], @[], nil];
-    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 47) firstArray:data1 secondArray:data2];
+    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50) firstArray:data1 secondArray:data2];
     _menu.backgroundColor = APP_WHITECOLOR;
     _menu.delegate = self;
     _menu.ratioLeftToScreen = 0.35;
@@ -291,30 +299,10 @@
         NSLog(@"minValue = %.f, maxValue = %.f", minValue, maxValue);
     };
     _menu.customViews = [NSMutableArray arrayWithObjects:[NSNull null], _priceRangeView, [NSNull null], nil];
-    return _menu;
+    [self.view addSubview:_menu];
 }
-
-- (void)priceRangeRest:(UIButton *)sender{
-    QDLog(@"reset");
-    _priceRangeView.slider.currentMinValue = 0;
-    _priceRangeView.slider.currentMaxValue = 900;
-    _maxPrice = @"";
-}
-
-- (void)confirmToSelectPrice:(UIButton *)sender{
-    [_menu animateForIndicator:_menu.currentIndicatorLayers[2] titlelayer: _menu.currentTitleLayers[2] show:NO complete:^{
-        _menu.isShow = false;
-    }];
-    if (_hotelListInfoArr.count) {
-        [_hotelListInfoArr removeAllObjects];
-        [_hotelImgArr removeAllObjects];
-    }
-    _pageNum = 1;
-    [self requestHotelData];
-}
-
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -322,9 +310,10 @@
     _tableView.dataSource = self;
     [_tableView tab_startAnimation];
     _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SCREEN_HEIGHT*0.2, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
-    self.view = _tableView;
+    [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self requestHotelHeaderData];
     }];
@@ -366,7 +355,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 47;
+    return 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -375,7 +364,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [self setHotelDropMenu];
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
