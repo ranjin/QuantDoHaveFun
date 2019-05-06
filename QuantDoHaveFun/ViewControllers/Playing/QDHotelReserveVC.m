@@ -110,53 +110,145 @@
     }];
 }
 
-#pragma mark - 请求酒店信息
-- (void)requestHotelData{
+#pragma mark - 请求酒店头部数据
+- (void)requestHotelHeaderData{
+    _pageNum = 1;
     if (_hotelListInfoArr.count) {
         [_hotelListInfoArr removeAllObjects];
         [_hotelImgArr removeAllObjects];
+    }
+    NSDictionary *dic1 = @{
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetHotelCondition params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *hotelArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
+            if (hotelArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in hotelArr) {
+                    QDHotelListInfoModel *infoModel = [QDHotelListInfoModel yy_modelWithDictionary:dic];
+                    [arr addObject:infoModel];
+                    
+                    NSDictionary *dic = [infoModel.imageList firstObject];
+                    NSString *urlStr = [dic objectForKey:@"imageFullUrl"];
+                    QDLog(@"urlStr = %@", urlStr);
+                    [imgarr addObject:urlStr];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_hotelListInfoArr addObjectsFromArray:arr];
+                        [_hotelImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        [_tableView reloadData];
+                    }else{
+                        [_hotelListInfoArr addObjectsFromArray:arr];
+                        [_hotelImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                    if ([_tableView.mj_header isRefreshing]) {
+                        [_tableView.mj_header endRefreshing];
+                    }
+                }else{
+                    [_tableView reloadData];
+                    [_tableView.mj_header endRefreshing];
+                }
+            }else{
+                _emptyType = QDNODataError;
+                [_tableView reloadData];
+                [_tableView reloadEmptyDataSet];
+                [_tableView.mj_header endRefreshing];
+            }
+        }else{
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
+            [self endRefreshing];
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+        }
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [self endRefreshing];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+    }];
+}
+
+#pragma mark - 请求酒店信息
+- (void)requestHotelData{
+    if (_totalPage != 0) {
+        if (_pageNum > _totalPage) {
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
     }
     NSDictionary * dic1 = @{
                             @"hotelTypeId":_hotelTypeId,    //酒店类型
                             @"hotelLevel":_hotelLevel,      //星级
                             @"minPrice":_minPrice,
                             @"maxPrice":_maxPrice,
-                            @"pageNum":@1,                  //
-                            @"pageSize":@20
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetHotelCondition params:dic1 successBlock:^(QDResponseObject *responseObject) {
         [_tableView tab_endAnimation];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *hotelArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (hotelArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
+
                 for (NSDictionary *dic in hotelArr) {
                     QDHotelListInfoModel *infoModel = [QDHotelListInfoModel yy_modelWithDictionary:dic];
-                    [_hotelListInfoArr addObject:infoModel];
+                    [arr addObject:infoModel];
                     
                     NSDictionary *dic = [infoModel.imageList firstObject];
                     NSString *urlStr = [dic objectForKey:@"imageFullUrl"];
                     QDLog(@"urlStr = %@", urlStr);
-                    [_hotelImgArr addObject:urlStr];
+                    [imgarr addObject:urlStr];
                 }
-                _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-                    QDLog(@"sss");
-                    [self endRefreshing];
-                    [_tableView.mj_footer endRefreshingWithNoMoreData];
-                }];
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_hotelListInfoArr addObjectsFromArray:arr];
+                        [_hotelImgArr addObjectsFromArray:imgarr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_hotelListInfoArr addObjectsFromArray:arr];
+                        [_hotelImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
                 [_tableView reloadData];
             }else{
+                _emptyType = QDNODataError;
                 [_tableView reloadData];
                 [_tableView reloadEmptyDataSet];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
         }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
     } failureBlock:^(NSError *error) {
-        [WXProgressHUD showErrorWithTittle:@"网络异常"];
-        [_menu setHidden:YES];
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
         [_tableView reloadData];
         [_tableView reloadEmptyDataSet];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
     }];
 }
 
@@ -202,6 +294,25 @@
     return _menu;
 }
 
+- (void)priceRangeRest:(UIButton *)sender{
+    QDLog(@"reset");
+    _priceRangeView.slider.currentMinValue = 0;
+    _priceRangeView.slider.currentMaxValue = 900;
+    _maxPrice = @"";
+}
+
+- (void)confirmToSelectPrice:(UIButton *)sender{
+    [_menu animateForIndicator:_menu.currentIndicatorLayers[2] titlelayer: _menu.currentTitleLayers[2] show:NO complete:^{
+        _menu.isShow = false;
+    }];
+    if (_hotelListInfoArr.count) {
+        [_hotelListInfoArr removeAllObjects];
+        [_hotelImgArr removeAllObjects];
+    }
+    _pageNum = 1;
+    [self requestHotelData];
+}
+
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
@@ -215,15 +326,12 @@
     _tableView.emptyDataSetSource = self;
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        [self requestHotelData];
-        [self endRefreshing];
+        [self requestHotelHeaderData];
     }];
     //手动刷新请求最新数据
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        QDLog(@"sss");
-        [self endRefreshing];
-        QDLog(@"上拉刷新");
         _pageNum++;
+        [self requestHotelData];
     }];
 }
 
@@ -387,6 +495,7 @@
 #pragma mark - TFDropDownMenuView Delegate
 - (void)menuView:(TFDropDownMenuView *)menu selectIndex:(TFIndexPatch *)index{
     QDLog(@"第%ld列 第%ld个", (long)index.column, (long)index.section);
+    _pageNum = 1;
     switch (index.column) {
         case 0:             //酒店类型
             QDLog(@"0");
@@ -403,6 +512,10 @@
             break;
         default:
             break;
+    }
+    if (_hotelListInfoArr.count) {
+        [_hotelListInfoArr removeAllObjects];
+        [_hotelImgArr removeAllObjects];
     }
     [self requestHotelData];
 }

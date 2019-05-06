@@ -74,8 +74,9 @@ static float kLeftTableViewWidth = 92.f;
                     [_destinationArr addObject:model];
                 }
             }
-            
-            [self findFirstDetailList:_destinationArr[0]];
+            if (_destinationArr.count) {
+                [self findFirstDetailList:_destinationArr[0]];
+            }
             [_leftTableView reloadData];
             [_leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         }

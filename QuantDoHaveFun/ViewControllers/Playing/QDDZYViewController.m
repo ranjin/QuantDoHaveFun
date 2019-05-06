@@ -31,7 +31,9 @@
     NSMutableArray *_dzyListInfoArr;
     NSMutableArray *_dzyImgArr;
     QDEmptyType _emptyType;
-    NSString *_travelName;
+    int _totalPage;
+    int _pageNum;
+    int _pageSize;
 }
 @property (nonatomic, getter=isLoading) BOOL loading;
 
@@ -54,7 +56,9 @@
     self.view.backgroundColor = APP_WHITECOLOR;
     _dzyListInfoArr = [[NSMutableArray alloc] init];
     _dzyImgArr = [[NSMutableArray alloc] init];
-    _travelName = @"";
+    _pageNum = 1;
+    _pageSize = 10;
+    _totalPage = 0; //总页数默认
     //分段选择按钮
     [self initTableView];
     [self requestDZYList];
@@ -63,24 +67,111 @@
 #pragma mark - 请求定制游列表信息
 - (void)requestDZYList{
     self.loading = NO;
+    if (_totalPage != 0) {
+        if (_pageNum > _totalPage) {
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
+    }
+    NSDictionary * dic1 = @{
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetDZYList params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        [self endRefreshing];
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *dzyArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
+            if (dzyArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in dzyArr) {
+                    CustomTravelDTO *infoModel = [CustomTravelDTO yy_modelWithDictionary:dic];
+                    [arr addObject:infoModel];
+                    NSDictionary *dic = [infoModel.imageList firstObject];
+                    [imgarr addObject:[dic objectForKey:@"url"]];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_dzyListInfoArr addObjectsFromArray:arr];
+                        [_dzyImgArr addObjectsFromArray:imgarr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_dzyListInfoArr addObjectsFromArray:arr];
+                        [_dzyImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
+                [_tableView reloadData];
+            }else{
+                _emptyType = QDNODataError;
+                [_tableView reloadData];
+                [_tableView reloadEmptyDataSet];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
+        }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
+    }];
+}
+
+#pragma mark - 请求定制游头部列表
+- (void)requestDZYHeadData{
+    _pageNum = 1;
     if (_dzyListInfoArr.count) {
         [_dzyListInfoArr removeAllObjects];
         [_dzyImgArr removeAllObjects];
     }
-    NSDictionary * dic1 = @{@"travelName":_travelName,
-                            @"pageNum":@1,
-                            @"pageSize":@20
+    NSDictionary * dic1 = @{
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetDZYList params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        [self endRefreshing];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *dzyArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (dzyArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
                 for (NSDictionary *dic in dzyArr) {
                     CustomTravelDTO *infoModel = [CustomTravelDTO yy_modelWithDictionary:dic];
-                    [_dzyListInfoArr addObject:infoModel];
+                    [arr addObject:infoModel];
                     NSDictionary *dic = [infoModel.imageList firstObject];
-                    [_dzyImgArr addObject:[dic objectForKey:@"url"]];
+                    [imgarr addObject:[dic objectForKey:@"url"]];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_dzyListInfoArr addObjectsFromArray:arr];
+                        [_dzyImgArr addObjectsFromArray:imgarr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_dzyListInfoArr addObjectsFromArray:arr];
+                        [_dzyImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
                 }
                 [_tableView reloadData];
             }else{
@@ -126,16 +217,12 @@
     _tableView.tableHeaderView = _customTourHeaderView;
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        //重新刷新 查询全部
-        if ([_customTourHeaderView.inputTF.text isEqualToString:@""]) {
-            _travelName = @"";
-        }
-        [self requestDZYList];
+        [self requestDZYHeadData];
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        [self endRefreshing];
-        [_tableView.mj_footer endRefreshingWithNoMoreData];
+        _pageNum++;
+        [self requestDZYList];
     }];
 }
 
@@ -324,12 +411,4 @@
     searchVC.playShellType = QDCustomTour;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [_customTourHeaderView.inputTF resignFirstResponder];
-    _travelName = _customTourHeaderView.inputTF.text;
-    [self requestDZYList];
-    return YES;
-}
-
 @end

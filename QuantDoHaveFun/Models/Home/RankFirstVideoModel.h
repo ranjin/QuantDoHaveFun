@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RankFirstVideoModel : NSObject
 
 @property (nonatomic, strong) NSString *cacheVideoId;
-@property (nonatomic, strong) NSString *coverUrl;
+@property (nonatomic, strong) NSString *homeImageUrl;
 @property (nonatomic, strong) NSString *sourceId;
 @property (nonatomic, strong) NSString *sourceType;
 

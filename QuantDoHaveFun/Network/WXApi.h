@@ -18,12 +18,12 @@ const static NSString *APP_ID = @"1456067852";
 
 //const static NSString *APIKey = @"0b39f0a341315a7f3574e309d8d24082";
 
-static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
+//static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
 
 //static NSString * const QD_Domain = @"https://app.wedotting.com";
 
 //测试环境
-//static NSString * const QD_Domain = @"http://203.110.179.27:60409";
+static NSString * const QD_Domain = @"http://203.110.179.27:60409";
 //static NSString * const QD_Domain = @"http://112.64.226.138:60409";
 //
 //static NSString * const QD_Domain = @"http://47.101.222.172:8080";
@@ -150,7 +150,7 @@ static NSString * const api_resturant = @"/lyjfapp/api/v1/restaurant/listRestaur
 static NSString * const api_getIsUpdate  = @"/lyjfapp/api/v1/version/getIsUpdate";       //强制更新
 static NSString * const api_changeIcon = @"/lyjfapp/api/v1/user/changeIcon";       //更换头像
 
-static NSString * const api_getVideoList = @"/lyjfapp/api/v1/video/list";            //首页这好玩视频封面
+static NSString * const api_getVideoList = @"/lyjfapp/api/v1/video/homeImage/list";            //首页这好玩视频封面
 
 static NSString * const api_findAllDestinationList = @"/lyjfapp/api/v1/ranklist/findAllDestinationList";            //榜单目的地列表
 

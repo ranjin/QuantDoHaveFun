@@ -24,6 +24,9 @@
     NSMutableArray *_videoList;
     QDEmptyType _emptyType;
     RankFirstHeadView *_headView;
+    int _totalPage;
+    int _pageNum;
+    int _pageSize;
 }
 @property (nonatomic, getter=isLoading) BOOL loading;
 @property (nonatomic, assign) NSInteger menuSelectIndex;   //选中的一栏
@@ -58,6 +61,9 @@
     _sortType = @"";
     _baoyou = @"";
     _keywords = @"";
+    _pageNum = 1;
+    _pageSize = 10;
+    _totalPage = 0; //总页数默认
     _videoList = [[NSMutableArray alloc] init];
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _videoList = [[NSMutableArray alloc] init];
@@ -70,29 +76,114 @@
     if (_videoList.count) {
         [_videoList removeAllObjects];
     }
-    NSDictionary * dic = @{@"top":@"1",
-                            @"pageNum":@1,
-                            @"pageSize":@10
+    if (_totalPage != 0) {
+        if (_pageNum > _totalPage) {
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
+    }
+    
+    NSDictionary * dic = @{
+                           @"pageNum":@1,
+                           @"pageSize":@10
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getVideoList params:dic successBlock:^(QDResponseObject *responseObject) {
         [_tableView tab_endAnimation];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
-            NSArray *arr = [dic objectForKey:@"result"];
-            if (arr.count) {
+            NSArray *videoArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
+            if (videoArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
                 for (NSDictionary *dic in arr) {
                     RankFirstVideoModel *model = [RankFirstVideoModel yy_modelWithDictionary:dic];
-                    [_videoList addObject:model];
+                    [arr addObject:model];
                 }
-                QDLog(@"_videoList = %@", _videoList);
-                [_tableView reloadData];
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_videoList addObjectsFromArray:arr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_videoList addObjectsFromArray:arr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
             }else{
                 QDLog(@"数据为空");
             }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
         }
-    } failureBlock:^(NSError *error) {
         [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
+    }];
+}
+
+#pragma mark - 查询商品头部列表
+- (void)getVideoHeadData{
+    _pageNum = 1;
+    if (_videoList.count) {
+        [_videoList removeAllObjects];
+    }
+    NSDictionary * dic = @{
+                           @"pageNum":[NSNumber numberWithInt:_pageNum],
+                           @"pageSize":[NSNumber numberWithInt:_pageSize]
+                           };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getVideoList params:dic successBlock:^(QDResponseObject *responseObject) {
+        [_tableView tab_endAnimation];
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *videoArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
+            if (videoArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in arr) {
+                    RankFirstVideoModel *model = [RankFirstVideoModel yy_modelWithDictionary:dic];
+                    [arr addObject:model];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_videoList addObjectsFromArray:arr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_videoList addObjectsFromArray:arr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
+        }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
     }];
 }
 
@@ -111,15 +202,13 @@
     [_tableView tab_startAnimation];
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        [self getVideoList];
-        [self endRefreshing];
+        [self getVideoHeadData];
     }];
     
     //手动刷新请求最新数据
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        //        [self requestMallList];
-        [self endRefreshing];
-        [_tableView.mj_footer endRefreshingWithNoMoreData];
+        _pageNum++;
+        [self getVideoList];
     }];
 }
 

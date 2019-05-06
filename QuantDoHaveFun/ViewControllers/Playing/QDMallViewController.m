@@ -32,6 +32,9 @@
     NSMutableArray *_mallInfoArr;
     QDMallTableSectionHeaderView *_sectionHeaderView;
     QDEmptyType _emptyType;
+    int _totalPage;
+    int _pageNum;
+    int _pageSize;
 }
 @property (nonatomic, getter=isLoading) BOOL loading;
 @property (nonatomic, strong) NSMutableArray *categoryArr;
@@ -117,6 +120,9 @@
     _sortType = @"";
     _baoyou = @"";
     _keywords = @"";
+    _pageNum = 1;
+    _pageSize = 10;
+    _totalPage = 0; //总页数默认
     _categoryArr = [[NSMutableArray alloc] init];
     _categoryIDArr = [[NSMutableArray alloc] init];
     self.view.backgroundColor = APP_WHITECOLOR;
@@ -165,27 +171,45 @@
 
 #pragma mark - 查询商城列表信息
 - (void)requestMallList{
-    if (_mallInfoArr.count) {
-        [_mallInfoArr removeAllObjects];
+    if (_totalPage != 0) {
+        if (_pageNum > _totalPage) {
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
     }
     NSDictionary * dic1 = @{
-                            @"pageNum":@1,
-                            @"pageSize":@20,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"catId":_catId,
                             @"sortColumn":_sortColumn,
                             @"sortType":_sortType,
-                            @"isShipping":_baoyou,
-                            @"goodsName":_keywords
+                            @"isShipping":_baoyou
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetMallList params:dic1 successBlock:^(QDResponseObject *responseObject) {
         [self endRefreshing];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *mallArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (mallArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
                 for (NSDictionary *dic in mallArr) {
                     QDMallModel *mallModel = [QDMallModel yy_modelWithDictionary:dic];
-                    [_mallInfoArr addObject:mallModel];
+                    [arr addObject:mallModel];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_mallInfoArr addObjectsFromArray:arr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_mallInfoArr addObjectsFromArray:arr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
                 }
                 QDLog(@"_mallInfoArr = %@", _mallInfoArr);
                 [_tableView reloadData];
@@ -208,6 +232,70 @@
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }
+
+#pragma mark - 查询商城头部列表信息
+- (void)requestMallHeadData{
+    _pageNum = 1;
+    if (_mallInfoArr.count) {
+        [_mallInfoArr removeAllObjects];
+    }
+    
+    NSDictionary * dic1 = @{
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize],
+                            @"catId":_catId,
+                            @"sortColumn":_sortColumn,
+                            @"sortType":_sortType,
+                            @"isShipping":_baoyou
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetMallList params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        [self endRefreshing];
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *mallArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
+            if (mallArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in mallArr) {
+                    QDMallModel *mallModel = [QDMallModel yy_modelWithDictionary:dic];
+                    [arr addObject:mallModel];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_mallInfoArr addObjectsFromArray:arr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_mallInfoArr addObjectsFromArray:arr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
+                QDLog(@"_mallInfoArr = %@", _mallInfoArr);
+                [_tableView reloadData];
+            }else{
+                _emptyType = QDNODataError;
+                [_tableView reloadData];
+                [_tableView reloadEmptyDataSet];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+        }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        [self endRefreshing];
+        _emptyType = QDNetworkError;
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [_tableView tab_endAnimation];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+    }];
+}
+
 - (void)initTableView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_WHITECOLOR;
@@ -221,26 +309,23 @@
     _tableView.emptyDataSetSource = self;
     [_tableView tab_startAnimation];
     self.view = _tableView;
-//    [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         //重置所有选项
         _catId = @"";
         _sortColumn = @"";
         _sortType = @"";
         _baoyou = @"";
-        _keywords = @"";
         [_sectionHeaderView.allBtn setTitle:_categoryArr[0] forState:UIControlStateNormal];
 
         [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
         [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouNormal"] forState:UIControlStateNormal];
-        [self requestMallList];
+        [self requestMallHeadData];
     }];
     
     //手动刷新请求最新数据
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-//        [self requestMallList];
-        [self endRefreshing];
-        [_tableView.mj_footer endRefreshingWithNoMoreData];
+        _pageNum++;
+        [self requestMallList];
     }];
 }
 

@@ -131,6 +131,7 @@
     [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-64+36);
         make.left.equalTo(self.view.mas_left).offset(12);
+        make.width.and.height.mas_equalTo(50);
     }];
     
     _loginBtn = [[UIButton alloc] init];
