@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QDSetLoginPwdView : UIView
 
 @property (nonatomic, strong) UILabel *identifyLab;
-@property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) UIView *lineViewTop;
 @property (nonatomic, strong) UIView *lineViewCenter;

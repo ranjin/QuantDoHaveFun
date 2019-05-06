@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QDMsgVerifyView : UIView
 @property (nonatomic, strong) UILabel *identifyLab;
-@property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, retain) GBverifyButton *sendBtn;
 
 @property (nonatomic, strong) NSString *legalPhone;

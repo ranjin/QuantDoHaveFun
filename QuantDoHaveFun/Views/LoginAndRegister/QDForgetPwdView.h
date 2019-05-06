@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "QDButton.h"
+#import "SPButton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDForgetPwdView : UIView
 
 @property (nonatomic, strong) UILabel *loginLab;
-@property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) UIView *phoneLine;
-@property (nonatomic, strong) UIButton *areaBtn;
+@property (nonatomic, strong) SPButton *areaBtn;
 @property (nonatomic, strong) UITextField *phoneTF;
 
 @property (nonatomic, strong) QDButton *nextStepBtn;

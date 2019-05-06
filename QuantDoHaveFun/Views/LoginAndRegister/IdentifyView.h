@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IdentifyView : UIView
 
 @property (nonatomic, strong) UILabel *identifyLab;
-@property (nonatomic, strong) UIView *lineView;
-//@property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) PooCodeView *pooCodeView;
 @property (nonatomic, strong) UIButton *refreshBtn;
 @property (assign,nonatomic)id <refreshCodeDelegate> delegate;

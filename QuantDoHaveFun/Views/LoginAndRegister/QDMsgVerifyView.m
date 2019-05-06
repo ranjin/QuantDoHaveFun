@@ -12,13 +12,9 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
         _identifyLab = [[UILabel alloc] init];
-        _identifyLab.text = @"请输入短信验证码";
-        _identifyLab.font = QDFont(22);
+        _identifyLab.text = @"输入验证码";
+        _identifyLab.font = QDFont(25);
         [self addSubview:_identifyLab];
-        
-        _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = APP_BLUECOLOR;
-        [self addSubview:_lineView];
 
         _sendBtn = [[GBverifyButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.053, SCREEN_HEIGHT*0.48, SCREEN_WIDTH*0.89, SCREEN_HEIGHT*0.075) delegate:self Target:self Action:@selector(sendPhoneMsg)];
         [_sendBtn addTarget:self action:@selector(sendPhoneMsg) forControlEvents:UIControlEventTouchUpInside];
@@ -33,15 +29,8 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_identifyLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.156);
-    }];
-    
-    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.identifyLab);
-        make.top.equalTo(self.identifyLab.mas_bottom).offset(SCREEN_HEIGHT*0.012);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.097);
-        make.height.mas_equalTo(SCREEN_WIDTH*0.01);
+        make.left.equalTo(self.mas_left).offset(19);
+        make.top.equalTo(self.mas_top).offset(106+SafeAreaTopHeight-64);
     }];
 }
 

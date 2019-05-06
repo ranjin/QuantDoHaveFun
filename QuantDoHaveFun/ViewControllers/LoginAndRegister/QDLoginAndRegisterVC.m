@@ -33,8 +33,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     //登录页面
     _loginView = [[QDLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//    _loginView.gotologinBtn.enabled = NO;
-//    [_loginView.gotologinBtn setEnabled:YES];
     [_loginView.gotologinBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //保留用户名
     if ([QDUserDefaults getObjectForKey:@"userID"] != nil) {
@@ -60,7 +58,6 @@
 
     //协议富文本
     _yyLabel = [[YYLabel alloc]init];
-//    _yyLabel = [[YYLabel alloc]initWithFrame:CGRectMake(21, 327+SafeAreaTopHeight, 300, 44)];
     _yyLabel.textVerticalAlignment = YYTextVerticalAlignmentCenter;
     _yyLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_yyLabel];
@@ -74,7 +71,7 @@
     [_yyLabel setHidden:YES];
     
     //_identifyInputView
-    _identifyInputView = [[VertificationCodeInputView alloc]initWithFrame:CGRectMake(50,SCREEN_HEIGHT*0.48,SCREEN_WIDTH - 100,55)];
+    _identifyInputView = [[VertificationCodeInputView alloc]initWithFrame:CGRectMake(21,258+SafeAreaTopHeight-64,SCREEN_WIDTH - 100,55)];
     _identifyInputView.delegate = self;
     _identifyInputView.numberOfVertificationCode = 4;
     _identifyInputView.secureTextEntry =NO;
@@ -82,7 +79,7 @@
     [_identifyInputView setHidden:YES];
     
     //_msgInputView
-    _msgInputView = [[VertificationCodeInputView alloc]initWithFrame:CGRectMake(50,SCREEN_HEIGHT*0.34,SCREEN_WIDTH - 100,55)];
+    _msgInputView = [[VertificationCodeInputView alloc]initWithFrame:CGRectMake(21,186+SafeAreaTopHeight-64,SCREEN_WIDTH - 100,55)];
     _msgInputView.delegate = self;
     /****** 设置验证码/密码的位数默认为四位 ******/
     _msgInputView.numberOfVertificationCode = 4;

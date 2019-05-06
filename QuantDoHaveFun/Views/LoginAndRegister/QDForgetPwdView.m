@@ -14,20 +14,20 @@
     if ([super initWithFrame:frame]) {
         _loginLab = [[UILabel alloc] init];
         _loginLab.text = @"找回密码";
-        _loginLab.font = QDFont(32);
+        _loginLab.textColor = APP_BLACKCOLOR;
+        _loginLab.font = QDFont(24);
         [self addSubview:_loginLab];
         
-        _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = APP_BLUECOLOR;
-        [self addSubview:_lineView];
-        
         _phoneLine = [[UIView alloc] init];
-        _phoneLine.backgroundColor = [UIColor colorWithHexString:@"#DDDDDD"];
+        _phoneLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [self addSubview:_phoneLine];
         
-        _areaBtn = [[UIButton alloc] init];
+        _areaBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
+        _areaBtn.imageTitleSpace = 6;
+        [_areaBtn setImage:[UIImage imageNamed:@"select_down"] forState:UIControlStateNormal];
         [_areaBtn setTitle:@"+86" forState:UIControlStateNormal];
         [_areaBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _areaBtn.titleLabel.font = QDFont(14);
         [self addSubview:_areaBtn];
         
         _phoneTF = [[UITextField alloc] init];
@@ -40,16 +40,12 @@
         [self addSubview:_phoneTF];
         
         _nextStepBtn = [[QDButton alloc] init];
-        [_nextStepBtn setBackgroundColor:[UIColor colorWithHexString:@"#DDDDDD"] forState:UIControlStateNormal];
+        [_nextStepBtn setBackgroundImage:[UIImage imageNamed:@"login_nor"] forState:UIControlStateNormal];
+        [_nextStepBtn setBackgroundImage:[UIImage imageNamed:@"login_dis"] forState:UIControlStateDisabled];
         [_nextStepBtn setTitle:@"下一步" forState:UIControlStateNormal];
-        _nextStepBtn.titleLabel.font = QDFont(21);
-//        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-//        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH*0.89, SCREEN_HEIGHT*0.08);
-//        gradientLayer.startPoint = CGPointMake(0, 0);
-//        gradientLayer.endPoint = CGPointMake(1, 0);
-//        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-//        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-//        [_nextStepBtn.layer addSublayer:gradientLayer];
+        _nextStepBtn.titleLabel.font = QDFont(16);
+        [_nextStepBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
+        _nextStepBtn.enabled = NO;
         [self addSubview:_nextStepBtn];
         
     }
@@ -58,48 +54,42 @@
 
 - (void)textValueChanged{
     if (_phoneTF.text.length != 0 && _phoneTF.text.length != 0) {
-        [_nextStepBtn setBackgroundColor:APP_BLUECOLOR forState:UIControlStateNormal];
+        _nextStepBtn.enabled = YES;
     }else{
-        [_nextStepBtn setBackgroundColor:[UIColor colorWithHexString:@"#DDDDDD"] forState:UIControlStateNormal];
+        _nextStepBtn.enabled = NO;
     }
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_loginLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.156);
-    }];
-    
-    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.loginLab);
-        make.top.equalTo(self.loginLab.mas_bottom).offset(SCREEN_HEIGHT*0.012);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.097);
-        make.height.mas_equalTo(SCREEN_WIDTH*0.01);
+        make.left.equalTo(self.mas_left).offset(21);
+        make.top.equalTo(self.mas_top).offset(97+SafeAreaTopHeight-64);
     }];
     
     [_phoneLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.35);
+        make.top.equalTo(self.mas_top).offset(194+SafeAreaTopHeight-64);
         make.height.equalTo(@1);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
+        make.width.mas_equalTo(339);
     }];
     
     [_areaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.053);
-        make.bottom.equalTo(self.phoneLine.mas_top).offset(-(SCREEN_HEIGHT*0.01));
+        make.left.equalTo(_loginLab);
+        make.top.equalTo(self.loginLab.mas_bottom).offset(37);
     }];
     
     [_phoneTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.24);
+        make.left.equalTo(self.mas_left).offset(76);
         make.centerY.and.height.equalTo(self.areaBtn);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.6);
+        make.width.mas_equalTo(SCREEN_WIDTH*0.75);
     }];
 
     [_nextStepBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.and.width.equalTo(self.phoneLine);
-        make.top.equalTo(self.phoneLine.mas_bottom).offset(SCREEN_HEIGHT*0.068);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.075);
+        make.centerX.equalTo(self.phoneLine);
+        make.top.equalTo(self.phoneLine.mas_bottom).offset(42);
+        make.width.mas_equalTo(339);
+        make.height.mas_equalTo(50);
     }];
 }
 @end

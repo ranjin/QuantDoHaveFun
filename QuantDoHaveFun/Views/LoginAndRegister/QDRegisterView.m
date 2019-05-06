@@ -30,6 +30,7 @@
         [_areaBtn setImage:[UIImage imageNamed:@"select_down"] forState:UIControlStateNormal];
         [_areaBtn setTitle:@"+86" forState:UIControlStateNormal];
         [_areaBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _areaBtn.titleLabel.font = QDFont(14);
         [self addSubview:_areaBtn];
 
         _phoneTF = [[UITextField alloc] init];
