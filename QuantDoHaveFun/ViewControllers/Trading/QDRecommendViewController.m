@@ -22,9 +22,10 @@
 @end
 
 @implementation QDRecommendViewController
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
@@ -34,12 +35,6 @@
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
 
-- (void)setLeftBtnItem{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
 - (void)leftBtn{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -49,7 +44,6 @@
     UIView *ss = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     ss.backgroundColor = APP_WHITECOLOR;
     [self.view addSubview:ss];
-    [self setLeftBtnItem];
     _recommendList = [[NSMutableArray alloc] init];
     if (_recommendModel == nil) {
         _recommendModel = [[BiddingPostersDTO alloc] init];
@@ -59,7 +53,29 @@
         _isPartialDeal = @"1";  //如果为空,默认选择不允许全部成交
     }
     //创建瀑布流布局
-    self.title = @"这好玩";
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SafeAreaTopHeight)];
+    backView.backgroundColor = APP_WHITECOLOR;
+    [self.view addSubview:backView];
+    
+    UIButton *returnBtn = [[UIButton alloc] init];
+    [returnBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:returnBtn];
+    [returnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-50);
+        make.width.and.height.mas_equalTo(45);
+    }];
+    
+    UILabel *titleLab = [[UILabel alloc] init];
+    titleLab.text = @"这好玩";
+    titleLab.textColor = APP_BLACKCOLOR;
+    titleLab.font = QDFont(17);
+    [backView addSubview:titleLab];
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(returnBtn);
+    }];
     WaterLayou *layou = [[WaterLayou alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT- SCREEN_HEIGHT*0.06-50) collectionViewLayout:layou];
     self.collectionView.backgroundColor = APP_WHITECOLOR;
@@ -82,20 +98,20 @@
     }
     [_recommendBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 335, 50);
+    gradientLayer.frame = CGRectMake(0, 0, 316, 50);
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [_recommendBtn.layer addSublayer:gradientLayer];
-    _recommendBtn.titleLabel.font = QDFont(19);
-    _recommendBtn.layer.cornerRadius = 4;
+    _recommendBtn.titleLabel.font = QDFont(16);
+    _recommendBtn.layer.cornerRadius = 25;
     _recommendBtn.layer.masksToBounds = YES;
     [ss addSubview:_recommendBtn];
     [_recommendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(SCREEN_HEIGHT*0.03);
-        make.width.mas_equalTo(335);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-25);
+        make.width.mas_equalTo(316);
         make.height.mas_equalTo(50);
     }];
 }
@@ -236,7 +252,7 @@
 #pragma mark - DZNEmtpyDataSet Delegate
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    return [UIImage imageNamed:@"emptySource"];
+    return [UIImage imageNamed:@"icon_nodata"];
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{

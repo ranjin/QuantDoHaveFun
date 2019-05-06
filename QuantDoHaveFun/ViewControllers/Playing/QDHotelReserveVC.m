@@ -274,6 +274,7 @@
     NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_hotelTypeIdArr, @[@"价格"], _hotelLevelArr, nil];
     NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], @[], @[], nil];
     _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 50) firstArray:data1 secondArray:data2];
+    _menu.bottomLineView.backgroundColor = APP_WHITECOLOR;
     _menu.backgroundColor = APP_WHITECOLOR;
     _menu.delegate = self;
     _menu.ratioLeftToScreen = 0.35;
