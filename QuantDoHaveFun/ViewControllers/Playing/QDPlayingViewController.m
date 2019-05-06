@@ -94,7 +94,7 @@
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     menuView.style = WMMenuViewStyleFloodHollow;
     self.menuView.style = WMMenuViewStyleLine;
-    return CGRectMake(0, SafeAreaTopHeight-64+10, SCREEN_WIDTH, 50);
+    return CGRectMake(0, SafeAreaTopHeight-64+20, SCREEN_WIDTH, 50);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {

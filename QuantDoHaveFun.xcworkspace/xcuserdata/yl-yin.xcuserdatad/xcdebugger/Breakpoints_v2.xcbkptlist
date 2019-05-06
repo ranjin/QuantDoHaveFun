@@ -20,87 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.539904"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "-requestHotelData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.540555"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "-requestHotelData"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[QDHotelReserveVC requestHotelData]"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-                  timestampString = "578826762.208266"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "197"
-                  endingLineNumber = "197"
-                  offsetFromSymbolStart = "668">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[QDHotelReserveVC requestHotelData]_block_invoke"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-                  timestampString = "578826762.209977"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "197"
-                  endingLineNumber = "197"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.5408961"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "-requestHotelData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.54114"
+            timestampString = "578837085.580941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -116,12 +36,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-                  timestampString = "578826762.217993"
+                  timestampString = "578837007.330193"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "124"
                   endingLineNumber = "124"
-                  offsetFromSymbolStart = "488">
+                  offsetFromSymbolStart = "394">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +51,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-                  timestampString = "578826762.219691"
+                  timestampString = "578837007.33254"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "125"
                   endingLineNumber = "125"
-                  offsetFromSymbolStart = "92">
+                  offsetFromSymbolStart = "79">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -148,23 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.541388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "-requestHotelData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "578830031.541629"
+            timestampString = "578837085.5810421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -180,45 +84,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578830031.541871"
+            timestampString = "578832413.365032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "-findAllDestinationList"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RankSecondViewController findAllDestinationList]"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-                  timestampString = "578826762.231109"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[RankSecondViewController findAllDestinationList]_block_invoke"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-                  timestampString = "578826762.232897"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankSecondViewController.m"
-            timestampString = "578830031.542063"
+            timestampString = "578832413.374298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -244,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-            timestampString = "578830031.542112"
+            timestampString = "578834121.96433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -260,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-            timestampString = "578830031.542281"
+            timestampString = "578834121.96451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -276,12 +148,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-                  timestampString = "578826762.245943"
+                  timestampString = "578837007.363101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
                   endingLineNumber = "75"
-                  offsetFromSymbolStart = "580">
+                  offsetFromSymbolStart = "471">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -291,12 +163,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-                  timestampString = "578826762.247982"
+                  timestampString = "578837007.365393"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
                   endingLineNumber = "75"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -308,12 +180,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankThirdViewController.m"
-            timestampString = "578830031.542327"
+            timestampString = "578834121.964554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
             landmarkName = "-requestDZYList"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDMallViewController.m"
+            timestampString = "578837085.581314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "-requestMallHeadData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[QDMallViewController requestMallHeadData]"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDMallViewController.m"
+                  timestampString = "578837007.376088"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "453">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[QDMallViewController requestMallHeadData]_block_invoke"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Playing/QDMallViewController.m"
+                  timestampString = "578837007.378108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDMallViewController.m"
+            timestampString = "578837085.581407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "-requestMallHeadData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Playing/QDMallViewController.m"
+            timestampString = "578837085.58148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-requestMallHeadData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -36,7 +36,6 @@
     int _pageNum;
     int _pageSize;
 }
-@property (nonatomic, getter=isLoading) BOOL loading;
 @property (nonatomic, strong) NSMutableArray *categoryArr;
 @property (nonatomic, strong) NSMutableArray *categoryIDArr;
 
@@ -46,10 +45,6 @@
 
 @property (nonatomic, strong) NSString *sortColumn;     //销量排序：volume，价格排序：price
 @property (nonatomic, strong) NSString *sortType;       //排序方式：desc降序，asc升序
-
-@property (nonatomic, strong) NSString *baoyou; //是否包邮
-
-@property (nonatomic, strong) NSString *keywords;   //搜索关键词
 @end
 
 @implementation QDMallViewController
@@ -78,8 +73,6 @@
     _sortType = @"asc";
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self requestMallList];
-//    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
-    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
 - (void)priceDown{
@@ -88,27 +81,31 @@
     _sortType = @"desc";
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self requestMallList];
-//    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
     [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
 - (void)amuntUp{
     _sortColumn = @"virtualSales";
     _sortType = @"asc";
+    _pageNum = 1;
+    if (_mallInfoArr.count) {
+        [_mallInfoArr removeAllObjects];
+    }
     [self requestMallList];
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
-//    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
 - (void)amountDown{
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     _sortColumn = @"virtualSales";
     _sortType = @"desc";
+    _pageNum = 1;
+    if (_mallInfoArr.count) {
+        [_mallInfoArr removeAllObjects];
+    }
     [self requestMallList];
     [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
-//    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
-    
 }
 
 
@@ -118,14 +115,12 @@
     _catId = @"";
     _sortColumn = @"";
     _sortType = @"";
-    _baoyou = @"";
-    _keywords = @"";
     _pageNum = 1;
     _pageSize = 10;
     _totalPage = 0; //总页数默认
     _categoryArr = [[NSMutableArray alloc] init];
     _categoryIDArr = [[NSMutableArray alloc] init];
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _mallInfoArr = [[NSMutableArray alloc] init];
     [self initTableView];
     [self requestMallList];
@@ -149,6 +144,7 @@
             }
             [_categoryArr insertObject:@"全部" atIndex:0];
             [_categoryIDArr insertObject:@"0" atIndex:0];
+            [self setHeadView];
         }
     } failureBlock:^(NSError *error) {
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
@@ -182,8 +178,7 @@
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"catId":_catId,
                             @"sortColumn":_sortColumn,
-                            @"sortType":_sortType,
-                            @"isShipping":_baoyou
+                            @"sortType":_sortType
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetMallList params:dic1 successBlock:^(QDResponseObject *responseObject) {
         [self endRefreshing];
@@ -245,8 +240,7 @@
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"catId":_catId,
                             @"sortColumn":_sortColumn,
-                            @"sortType":_sortType,
-                            @"isShipping":_baoyou
+                            @"sortType":_sortType
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetMallList params:dic1 successBlock:^(QDResponseObject *responseObject) {
         [self endRefreshing];
@@ -297,28 +291,25 @@
 }
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 57, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
-//    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
     [_tableView tab_startAnimation];
-    self.view = _tableView;
+    [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         //重置所有选项
         _catId = @"";
         _sortColumn = @"";
         _sortType = @"";
-        _baoyou = @"";
         [_sectionHeaderView.allBtn setTitle:_categoryArr[0] forState:UIControlStateNormal];
 
         [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
-        [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouNormal"] forState:UIControlStateNormal];
         [self requestMallHeadData];
     }];
     
@@ -368,18 +359,14 @@
     
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return self.sectionHeaderView;
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (QDMallTableSectionHeaderView *)sectionHeaderView{
-    if (!_sectionHeaderView) {
-        _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] init];
-        _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
-        [_sectionHeaderView.allBtn addTarget:self action:@selector(allAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_sectionHeaderView.baoyouBtn addTarget:self action:@selector(baoyouAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _sectionHeaderView;
+- (void)setHeadView{
+    _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 50)];
+    _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
+    [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_sectionHeaderView];
 }
 
 - (void)chooseCategory:(UIButton *)sender{
@@ -396,22 +383,8 @@
     }
 }
 
-- (void)baoyouAction:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        QDLog(@"选择包邮");
-        _baoyou = @"1";
-        [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouSelected"] forState:UIControlStateNormal];
-    }else{
-        QDLog(@"不包邮");
-        [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouNormal"] forState:UIControlStateNormal];
-        _baoyou = @"";
-    }
-    [self requestMallList];
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
+    return 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -445,15 +418,10 @@
 
 #pragma mark - DZNEmtpyDataSet Delegate
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    if (self.isLoading) {
-        return [UIImage imageNamed:@"loading_imgBlue" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    }
-    else {
-        if (_emptyType == QDNODataError) {
-            return [UIImage imageNamed:@"icon_nodata"];
-        }else if(_emptyType == QDNetworkError){
-            return [UIImage imageNamed:@"icon_noConnect"];
-        }
+    if (_emptyType == QDNODataError) {
+        return [UIImage imageNamed:@"icon_nodata"];
+    }else if(_emptyType == QDNetworkError){
+        return [UIImage imageNamed:@"icon_noConnect"];
     }
     return nil;
 }
@@ -481,22 +449,6 @@
                                  NSForegroundColorAttributeName: APP_BLUECOLOR};
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-
-//- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
-//    if (_emptyType == QDNODataError) {
-//        return nil;
-//    }else{
-//        NSString *text = @"重新加载";
-//        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-//        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-//        paragraphStyle.alignment = NSTextAlignmentCenter;
-//
-//        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18],
-//                                     NSForegroundColorAttributeName: APP_WHITECOLOR,
-//                                     NSParagraphStyleAttributeName: paragraphStyle};
-//        return [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
-//    }
-//}
 
 - (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
     NSString *imageName = @"button_background_kickstarter";
@@ -535,47 +487,19 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return YES;
-}
-
-- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
-{
-    return self.isLoading;
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
-{
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
-{
-    self.loading = YES;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.loading = NO;
-    });
-}
-
-- (void)setLoading:(BOOL)loading
-{
-    if (self.isLoading == loading) {
-        return;
-    }
-    _loading = loading;
-    [_tableView reloadEmptyDataSet];
+    return NO;
 }
 
 - (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
+    _pageNum = 1;
+    if (_mallInfoArr.count) {
+        [_mallInfoArr removeAllObjects];
+    }
     QDLog(@"index = %ld", (long)index);
     _menuSelectIndex = index;
     if (index == 0) {

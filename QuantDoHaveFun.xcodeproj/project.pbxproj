@@ -103,6 +103,8 @@
 		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
+		936DE1BC228050290010B350 /* KTDropdownMenuView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */; };
+		936DE1BD228050290010B350 /* KTDropdownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1BB228050290010B350 /* KTDropdownMenuView.m */; };
 		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
 		938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */; };
 		938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */; };
@@ -531,6 +533,9 @@
 		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KTDropdownMenuView.bundle; sourceTree = "<group>"; };
+		936DE1BA228050290010B350 /* KTDropdownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDropdownMenuView.h; sourceTree = "<group>"; };
+		936DE1BB228050290010B350 /* KTDropdownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDropdownMenuView.m; sourceTree = "<group>"; };
 		938C3C452272F96C0087724E /* TheCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheCityModel.h; sourceTree = "<group>"; };
 		938C3C462272F96C0087724E /* TheCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheCityModel.m; sourceTree = "<group>"; };
 		938C3C482275307F0087724E /* TopRightsNotLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsNotLoginHeadView.h; sourceTree = "<group>"; };
@@ -1453,6 +1458,7 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				936DE1B8228050290010B350 /* KTDropdownMenuView */,
 				93E9827B227198BA00DDEB80 /* AxcAE_TabBar */,
 				93E982712271560B00DDEB80 /* PPNumberButton */,
 				93E98269227155C100DDEB80 /* QDGCDTimer */,
@@ -1725,6 +1731,16 @@
 				93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		936DE1B8228050290010B350 /* KTDropdownMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */,
+				936DE1BA228050290010B350 /* KTDropdownMenuView.h */,
+				936DE1BB228050290010B350 /* KTDropdownMenuView.m */,
+			);
+			path = KTDropdownMenuView;
 			sourceTree = "<group>";
 		};
 		93E97FC32271442600DDEB80 /* LoginAndRegister */ = {
@@ -2480,6 +2496,7 @@
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93E982962271DAC500DDEB80 /* Images.xcassets in Resources */,
+				936DE1BC228050290010B350 /* KTDropdownMenuView.bundle in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
 				938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */,
 			);
@@ -2622,6 +2639,7 @@
 				93E9800F2271446B00DDEB80 /* UIPasteboard+YYText.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
+				936DE1BD228050290010B350 /* KTDropdownMenuView.m in Sources */,
 				93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */,
 				93E9825E227155A100DDEB80 /* QDOrderDetailVC.m in Sources */,
 				93399D3A226815A300FB9F0E /* Macro.m in Sources */,

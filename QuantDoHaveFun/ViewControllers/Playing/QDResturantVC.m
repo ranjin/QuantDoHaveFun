@@ -32,8 +32,10 @@
     NSMutableArray *_restaurantImgArr;
     QDEmptyType _emptyType;
     NSString *_travelName;
+    int _totalPage;
+    int _pageNum;
+    int _pageSize;
 }
-@property (nonatomic, getter=isLoading) BOOL loading;
 
 @end
 
@@ -51,10 +53,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _restaurantList = [[NSMutableArray alloc] init];
     _restaurantImgArr = [[NSMutableArray alloc] init];
     _travelName = @"";
+    _pageNum = 1;
+    _pageSize = 10;
+    _totalPage = 0; //总页数默认
     //分段选择按钮
     [self initTableView];
     [self requestResturantList];
@@ -62,7 +67,6 @@
 
 #pragma mark - 请求餐厅列表信息
 - (void)requestResturantList{
-    self.loading = NO;
     if (_restaurantList.count) {
         [_restaurantList removeAllObjects];
         [_restaurantImgArr removeAllObjects];
@@ -70,8 +74,8 @@
     NSDictionary * dic1 = @{@"province":@"",
                             @"district":@"",
                             @"restaurantName":_travelName,
-                            @"pageNum":@1,
-                            @"pageSize":@20
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_resturant params:dic1 successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
@@ -107,26 +111,88 @@
     }];
 }
 
+#pragma mark - 请求餐厅列表头部信息
+- (void)requestResturantHeadData{
+    _pageNum = 1;
+    if (_restaurantList.count) {
+        [_restaurantList removeAllObjects];
+        [_restaurantImgArr removeAllObjects];
+    }
+
+    NSDictionary * dic1 = @{@"province":@"",
+                            @"district":@"",
+                            @"restaurantName":_travelName,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
+                            @"pageSize":[NSNumber numberWithInt:_pageSize]
+                            };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_resturant params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSArray *dzyArr = [dic objectForKey:@"result"];
+            if (dzyArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in dzyArr) {
+                    ResturantModel *infoModel = [ResturantModel yy_modelWithDictionary:dic];
+                    [arr addObject:infoModel];
+                    NSDictionary *dic = [infoModel.restaurantImageList firstObject];
+                    [imgarr addObject:[dic objectForKey:@"imageFullUrl"]];
+                }
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_restaurantList addObjectsFromArray:arr];
+                        [_restaurantImgArr addObjectsFromArray:imgarr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_restaurantList addObjectsFromArray:arr];
+                        [_restaurantImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
+                [_tableView reloadData];
+            }else{
+                _emptyType = QDNODataError;
+                [_tableView reloadData];
+                [_tableView reloadEmptyDataSet];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+            [_tableView reloadData];
+            [_tableView reloadEmptyDataSet];
+        }
+        [_tableView tab_endAnimation];
+        [self endRefreshing];
+    } failureBlock:^(NSError *error) {
+        _emptyType = QDNetworkError;
+        [self endRefreshing];
+        [_tableView reloadData];
+        [_tableView reloadEmptyDataSet];
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+        [_tableView tab_endAnimation];
+    }];
+}
+
+
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = APP_WHITECOLOR;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView tab_startAnimation];
     _tableView.showsVerticalScrollIndicator = NO;
-    //    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
-    self.view = _tableView;
+    [self.view addSubview: _tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        //重新刷新 查询全部
-//        if ([_customTourHeaderView.inputTF.text isEqualToString:@""]) {
-//            _travelName = @"";
-//        }
-//        [self requestResturantList];
-        [self endRefreshing];
+        [self requestResturantList];
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
@@ -141,14 +207,6 @@
         [_tableView.mj_header endRefreshing];
         [_tableView.mj_footer endRefreshing];
     }
-}
-- (void)setLoading:(BOOL)loading
-{
-    if (self.isLoading == loading) {
-        return;
-    }
-    _loading = loading;
-    [_tableView reloadEmptyDataSet];
 }
 
 #pragma mark -- tableView delegate
@@ -205,15 +263,10 @@
 
 #pragma mark - DZNEmtpyDataSet Delegate
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    if (self.isLoading) {
-        return [UIImage imageNamed:@"loading_imgBlue" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    }
-    else {
-        if (_emptyType == QDNODataError) {
-            return [UIImage imageNamed:@"icon_nodata"];
-        }else if(_emptyType == QDNetworkError){
-            return [UIImage imageNamed:@"icon_noConnect"];
-        }
+    if (_emptyType == QDNODataError) {
+        return [UIImage imageNamed:@"icon_nodata"];
+    }else if(_emptyType == QDNetworkError){
+        return [UIImage imageNamed:@"icon_noConnect"];
     }
     return nil;
 }
@@ -241,18 +294,6 @@
                                  NSForegroundColorAttributeName: APP_BLUECOLOR};
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-
-//- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
-//    NSString *text = @"重新加载";
-//    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-//    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-//    paragraphStyle.alignment = NSTextAlignmentCenter;
-//
-//    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18],
-//                                 NSForegroundColorAttributeName: APP_WHITECOLOR,
-//                                 NSParagraphStyleAttributeName: paragraphStyle};
-//    return [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
-//}
 
 - (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
     NSString *imageName = @"button_background_kickstarter";
@@ -289,30 +330,12 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return YES;
-}
-
-- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
-{
-    return self.isLoading;
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
-{
-    self.loading = YES;
-    [self requestResturantList];
-}
-
-- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
-{
-    self.loading = YES;
-    [self requestResturantList];
-    
+    return NO;
 }
 
 @end
