@@ -49,7 +49,7 @@
         [_centerView addSubview:_operationType];
         
         _topLine = [[UIView alloc] init];
-        _topLine.backgroundColor = APP_LIGHTGRAYCOLOR;
+        _topLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [_centerView addSubview:_topLine];
         
         _lab1 = [[UILabel alloc] init];
@@ -104,7 +104,7 @@
         
         
         _bottomLine = [[UIView alloc] init];
-        _bottomLine.backgroundColor = APP_LIGHTGRAYCOLOR;
+        _bottomLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [_centerView addSubview:_bottomLine];
         
         _bdNumLab = [[UILabel alloc] init];
@@ -143,26 +143,28 @@
         _zdNum.font = QDFont(13);
         [_centerView addSubview:_zdNum];
  
-        _payBtn = [[UIButton alloc] initWithFrame:CGRectMake(21, 505, 155, 50)];
+        _payBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 160, 50)];
         [_payBtn setTitle:@"付款" forState:UIControlStateNormal];
         [_payBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
         CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, 155, 50);
+        gradientLayer.frame = CGRectMake(0, 0, 160, 50);
         gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+        gradientLayer.endPoint = CGPointMake(1, 1);
+        gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
+        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
         [_payBtn.layer addSublayer:gradientLayer];
-        _payBtn.titleLabel.font = QDFont(17);
+        _payBtn.titleLabel.font = QDFont(16);
+        _payBtn.layer.cornerRadius = 25;
+        _payBtn.layer.masksToBounds = YES;
         [self addSubview:_payBtn];
         
         _withdrawBtn = [[UIButton alloc] init];
-        [_withdrawBtn setTitle:@"撤单" forState:UIControlStateNormal];
-        [_withdrawBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
-        _withdrawBtn.layer.borderColor = APP_BLUECOLOR.CGColor;
-        _withdrawBtn.layer.borderWidth = 1;
+        [_withdrawBtn setTitle:@"不买了" forState:UIControlStateNormal];
+        [_withdrawBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         _withdrawBtn.backgroundColor = APP_WHITECOLOR;
-        _withdrawBtn.titleLabel.font = QDFont(17);
+        _withdrawBtn.titleLabel.font = QDFont(16);
+        _withdrawBtn.layer.cornerRadius = 25;
+        _withdrawBtn.layer.masksToBounds = YES;
         [self addSubview:_withdrawBtn];
     }
     return self;
@@ -297,15 +299,15 @@
     }];
     
     [_payBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_centerView.mas_bottom).offset(30);
-        make.left.equalTo(_centerView);
+        make.top.equalTo(_centerView.mas_bottom).offset(24);
+        make.right.equalTo(_centerView.mas_right).offset(-14);
         make.width.mas_equalTo(155);
         make.height.mas_equalTo(50);
     }];
     
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_centerView.mas_bottom).offset(30);
-        make.right.equalTo(_centerView);
+        make.centerY.width.and.height.equalTo(_payBtn);
+        make.left.equalTo(_payBtn.mas_left).offset(14);
         make.width.mas_equalTo(155);
         make.height.mas_equalTo(50);
     }];

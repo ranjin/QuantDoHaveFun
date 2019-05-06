@@ -29,14 +29,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
-//    [self requestBiddingOrderDetail];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    QDLog(@"viewWillDisappear");
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
@@ -123,7 +121,6 @@
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_CancelBiddingPosters params:dic successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
             [WXProgressHUD showSuccessWithTittle:@"订单超时取消"];
-//            [self requestOrderDetail];
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
@@ -131,21 +128,38 @@
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }
-- (void)setLeftBtnItem{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
+
 - (void)leftBtn{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"发布详情";
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
-    [self setLeftBtnItem];
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SafeAreaTopHeight)];
+    backView.backgroundColor = APP_WHITECOLOR;
+    [self.view addSubview:backView];
+    
+    UIButton *returnBtn = [[UIButton alloc] init];
+    [returnBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:returnBtn];
+    [returnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-50);
+        make.width.and.height.mas_equalTo(45);
+    }];
+    
+    UILabel *titleLab = [[UILabel alloc] init];
+    titleLab.text = @"发布详情";
+    titleLab.textColor = APP_BLACKCOLOR;
+    titleLab.font = QDFont(17);
+    [backView addSubview:titleLab];
+    
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(returnBtn);
+    }];
     _biddingOrderView = [[QDMyBiddingOrderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _biddingOrderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     [_biddingOrderView.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];

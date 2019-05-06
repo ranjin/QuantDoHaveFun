@@ -85,13 +85,13 @@
         
         _priceLab = [[UILabel alloc] init];
         _priceLab.text = @"¥";
-        _priceLab.font = QDBoldFont(12);
+        _priceLab.font = QDBoldFont(20);
         _priceLab.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_priceLab];
         
         _price = [[UILabel alloc] init];
         _price.text = @"30.00";
-        _price.font = QDBoldFont(14);
+        _price.font = QDBoldFont(24);
         _price.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_price];
         
