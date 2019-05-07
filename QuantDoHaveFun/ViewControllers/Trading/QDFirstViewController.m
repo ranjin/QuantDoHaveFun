@@ -308,7 +308,7 @@ typedef enum : NSUInteger {
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+//    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
 //    self.view = _tableView;
     [self.view addSubview:_tableView];
     
@@ -366,8 +366,11 @@ typedef enum : NSUInteger {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
-}
+    if (_ordersArr.count % 2 == 0) {
+        return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+    }else{
+        return (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
+    }}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.01;
