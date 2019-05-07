@@ -157,9 +157,9 @@
     if (self.sdDirectionBlock) {
         NSString *directionStr;
         QDLog(@"text = %@", sender.titleLabel.text);
-        if ([sender.titleLabel.text isEqualToString:@"买"]) {
+        if ([sender.titleLabel.text isEqualToString:@"买入"]) {
             directionStr = @"0";
-        }else if ([sender.titleLabel.text isEqualToString:@"卖"]){
+        }else if ([sender.titleLabel.text isEqualToString:@"卖掉"]){
             directionStr = @"1";
         }
         self.sdDirectionBlock(directionStr);
@@ -174,7 +174,7 @@
     
     [_sellBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_buyBtn);
-        make.left.equalTo(_buyBtn.mas_right).offset(10);
+        make.left.equalTo(_buyBtn.mas_right).offset(20);
     }];
 
     //待付款 已成交 已取消
