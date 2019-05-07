@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025FEDC9228059EE00CDAFC3 /* QDCreditOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */; };
+		025FEDCC22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */; };
+		025FEDD02281295200CDAFC3 /* QDCreditOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */; };
 		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
 		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
 		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
@@ -339,6 +342,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrder.h; sourceTree = "<group>"; };
+		025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrder.m; sourceTree = "<group>"; };
+		025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QDCreditOrderHistoryVC.h; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.h; sourceTree = SOURCE_ROOT; };
+		025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QDCreditOrderHistoryVC.m; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.m; sourceTree = SOURCE_ROOT; };
+		025FEDCD2281284700CDAFC3 /* LD_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Macros.h; sourceTree = "<group>"; };
+		025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrderTableViewCell.h; sourceTree = "<group>"; };
+		025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrderTableViewCell.m; sourceTree = "<group>"; };
 		07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.debug.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.debug.xcconfig"; sourceTree = "<group>"; };
 		874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuantDoHaveFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1200,6 +1210,8 @@
 				93399D3B2268191B00FB9F0E /* QDMineTableHeaderView.m */,
 				93399D432268191D00FB9F0E /* QDMineView.h */,
 				93399D3D2268191C00FB9F0E /* QDMineView.m */,
+				025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */,
+				025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1314,6 +1326,8 @@
 				93399D1322671FEA00FB9F0E /* QDMineViewController.m */,
 				93399DA52268228900FB9F0E /* QDSettingViewController.h */,
 				93399DA62268228900FB9F0E /* QDSettingViewController.m */,
+				025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */,
+				025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1399,6 +1413,8 @@
 				93399D60226819C800FB9F0E /* UserCreditDTO.m */,
 				93399D63226819C800FB9F0E /* UserMoneyDTO.h */,
 				93399D5E226819C800FB9F0E /* UserMoneyDTO.m */,
+				025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */,
+				025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1443,6 +1459,7 @@
 				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93399D36226815A300FB9F0E /* Macro.h */,
 				93399D38226815A300FB9F0E /* Macro.m */,
+				025FEDCD2281284700CDAFC3 /* LD_Macros.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -2603,6 +2620,7 @@
 				93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */,
 				93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */,
 				93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */,
+				025FEDCC22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m in Sources */,
 				93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */,
 				93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */,
 				93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */,
@@ -2656,6 +2674,7 @@
 				93399E702268663700FB9F0E /* NSObject+Property.m in Sources */,
 				93E980AB22714D1A00DDEB80 /* SYHeaderView.m in Sources */,
 				93E980F322714E6700DDEB80 /* OpenShare.m in Sources */,
+				025FEDC9228059EE00CDAFC3 /* QDCreditOrder.m in Sources */,
 				93E980B022714D1A00DDEB80 /* SYTableViewCell.m in Sources */,
 				93E982452271557B00DDEB80 /* PGIndexBannerSubiew.m in Sources */,
 				93E980092271446B00DDEB80 /* YYTextAttribute.m in Sources */,
@@ -2789,6 +2808,7 @@
 				93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */,
 				93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */,
 				93E9827A227195DE00DDEB80 /* BulgeCircularTabBarVC.m in Sources */,
+				025FEDD02281295200CDAFC3 /* QDCreditOrderTableViewCell.m in Sources */,
 				93E980012271446B00DDEB80 /* YYTextLayout.m in Sources */,
 				93399D9F2268222500FB9F0E /* UIImage+ST.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
