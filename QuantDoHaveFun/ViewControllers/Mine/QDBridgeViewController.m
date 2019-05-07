@@ -100,9 +100,14 @@
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:config];
+    CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    if (IS_NotchScreen) {
+            webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
+    }
+    _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.backgroundColor = APP_WHITECOLOR;
     _webView.navigationDelegate = self;
+
     if (@available(iOS 11.0, *)) {
         self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
@@ -265,7 +270,7 @@
         if ([change[NSKeyValueChangeNewKey] floatValue] == 1) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self.progressLayer.opacity = 0;
-                _webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//                _webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             });
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self.progressLayer.frame = CGRectMake(0, 0, 0, 3);
@@ -294,7 +299,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [_progressView setProgress:1.0 animated:YES];
     [_progressView setHidden:YES];
-    _webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//    _webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
 }
 
