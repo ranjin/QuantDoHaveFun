@@ -65,7 +65,7 @@
     if (!_cardNameLab) {
         _cardNameLab = [[UILabel alloc] init];
         _cardNameLab.text = @"钻石玩卡";
-        _cardNameLab.font = QDBoldFont(16);
+        _cardNameLab.font = QDBoldFont(20);
         _cardNameLab.textColor = APP_BLACKCOLOR;
     }
     return _cardNameLab;
@@ -75,7 +75,7 @@
     if (_cardMoney == nil) {
         _cardMoney = [[UILabel alloc] init];
         _cardMoney.text = @"";
-        _cardMoney.font = QDFont(14);
+        _cardMoney.font = QDFont(20);
         _cardMoney.textColor = [UIColor colorWithHexString:@"#333333"];
     }
     return _cardMoney;
@@ -85,7 +85,7 @@
     if (_cardMoneyLab == nil) {
         _cardMoneyLab = [[UILabel alloc] init];
         _cardMoneyLab.text = @"¥";
-        _cardMoneyLab.font = QDFont(14);
+        _cardMoneyLab.font = QDFont(18);
         _cardMoneyLab.textColor = [UIColor colorWithHexString:@"#333333"];
     }
     return _cardMoneyLab;
@@ -95,11 +95,11 @@
     if ([cardModel.vipMoney doubleValue] == 0) {
         _cardMoneyLab.hidden = YES;
         _cardMoney.text = @"设置金额";
-        _cardMoney.font = QDFont(14);
+        _cardMoney.font = QDFont(17);
     }else{
         _cardMoneyLab.hidden = NO;
         _cardMoney.text = cardModel.vipMoney;
-        _cardMoney.font = QDFont(14);
+        _cardMoney.font = QDFont(17);
     }
     _cardNameLab.text = cardModel.vipTypeName;
 }

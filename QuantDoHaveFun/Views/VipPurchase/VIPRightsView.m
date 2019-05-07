@@ -171,7 +171,8 @@
     [_priceTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceLab);
         make.left.equalTo(_priceLab.mas_right).offset(5);
-        make.width.mas_equalTo(320);
+//        make.width.mas_equalTo(310);
+        make.right.equalTo(_lineView);
     }];
 
     [_bottomLab1 mas_makeConstraints:^(MASConstraintMaker *make) {

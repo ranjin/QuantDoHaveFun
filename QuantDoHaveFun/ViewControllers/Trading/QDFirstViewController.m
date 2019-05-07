@@ -448,7 +448,7 @@ typedef enum : NSUInteger {
 
 - (QDFilterTypeOneView *)typeOneView{
     if (_typeOneView) {
-        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.57)];
+        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 282)];
         _typeOneView.backgroundColor = APP_WHITECOLOR;
         _typeOneView.sdIsPartialBlock = ^(NSString * _Nonnull directionID) {
             _isPartialDeal = directionID;
@@ -489,7 +489,7 @@ typedef enum : NSUInteger {
     QDLog(@"filter");
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     if (!_typeOneView) {
-        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.57)];
+        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 282)];
         [_typeOneView.confirmBtn addTarget:self action:@selector(confirmOptions:) forControlEvents:UIControlEventTouchUpInside];
         [_typeOneView.resetbtn addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
         _typeOneView.backgroundColor = APP_WHITECOLOR;

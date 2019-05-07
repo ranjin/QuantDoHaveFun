@@ -448,7 +448,7 @@ typedef enum : NSUInteger {
 - (void)filterAction:(UIButton *)sender{
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     if (!_typeTwoView) {
-        _typeTwoView = [[QDFilterTypeTwoView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.57)];
+        _typeTwoView = [[QDFilterTypeTwoView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 296)];
         [_typeTwoView.confirmBtn addTarget:self action:@selector(confirmOptions:) forControlEvents:UIControlEventTouchUpInside];
         [_typeTwoView.resetbtn addTarget:self action:@selector(resetOptions:) forControlEvents:UIControlEventTouchUpInside];
 

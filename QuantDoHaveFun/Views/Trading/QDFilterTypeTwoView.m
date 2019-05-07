@@ -106,6 +106,11 @@
         _bottomLine.alpha = 0.5;
         [self addSubview:_bottomLine];
         
+        _verticalLine = [[UIView alloc] init];
+        _verticalLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+        [self addSubview:_verticalLine];
+
+        
         _resetbtn = [[UIButton alloc] init];
         _resetbtn.backgroundColor = APP_WHITECOLOR;
         [_resetbtn addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -164,24 +169,30 @@
         make.left.equalTo(_bfcjBtn);
         make.right.equalTo(_qbcjBtn);
     }];
-
-    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self);
-        make.left.equalTo(self.mas_left);
-        make.width.mas_equalTo(SCREEN_WIDTH/2);
-        make.height.mas_equalTo(58);
-    }];
-
-    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_resetbtn);
-        make.right.equalTo(self);
-        make.width.and.height.equalTo(_resetbtn);
-    }];
-
+    
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_resetbtn.mas_top);
-        make.left.and.width.equalTo(self);
+        make.centerX.and.width.equalTo(self);
+        make.bottom.equalTo(self.mas_bottom).offset(-46);
         make.height.mas_equalTo(@1);
+    }];
+    
+    [_verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.and.bottom.equalTo(self);
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.width.mas_equalTo(1);
+    }];
+    
+    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(_verticalLine.mas_left);
+        make.bottom.equalTo(self);
+    }];
+    
+    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.and.bottom.equalTo(_resetbtn);
+        make.right.equalTo(self);
+        make.left.equalTo(_verticalLine.mas_right);
     }];
 }
 
@@ -281,9 +292,9 @@
     if (self.sdDirectionBlock) {
         NSString *directionStr;
         QDLog(@"text = %@", sender.titleLabel.text);
-        if ([sender.titleLabel.text isEqualToString:@"买"]) {
+        if ([sender.titleLabel.text isEqualToString:@"买入"]) {
             directionStr = @"0";
-        }else if ([sender.titleLabel.text isEqualToString:@"卖"]){
+        }else if ([sender.titleLabel.text isEqualToString:@"卖掉"]){
             directionStr = @"1";
         }
         self.sdDirectionBlock(directionStr);

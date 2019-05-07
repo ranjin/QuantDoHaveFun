@@ -44,7 +44,7 @@
         
         _totalPriceTextLab = [[UILabel alloc] init];
         _totalPriceTextLab.text = @"单价";
-        _totalPriceTextLab.textColor = APP_GRAYTEXTCOLOR;
+        _totalPriceTextLab.textColor = APP_GRAYCOLOR;
         _totalPriceTextLab.font = QDFont(14);
         [_topBackView addSubview:_totalPriceTextLab];
         
@@ -99,7 +99,7 @@
         [_topBackView addSubview:_transfer];
         
         _centerLine = [[UIView alloc] init];
-        _centerLine.backgroundColor = APP_GRAYLINECOLOR;
+        _centerLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         _centerLine.alpha = 0.2;
         [_topBackView addSubview:_centerLine];
         

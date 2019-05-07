@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *bcbcBtn;
 
 @property (nonatomic, strong) UIView *bottomLine;
+@property (nonatomic, strong) UIView *verticalLine;
+
 @property (nonatomic, strong) UIButton *resetbtn;
 @property (nonatomic, strong) UIButton *confirmBtn;
 

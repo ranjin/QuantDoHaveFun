@@ -14,12 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SPButton *buyBtn;
 @property (nonatomic, strong) SPButton *sellBtn;
 
-@property (nonatomic, strong) UILabel *orderStatusLab;
 @property (nonatomic, strong) UIButton *dfkBtn;
 @property (nonatomic, strong) UIButton *ycjBtn;
 @property (nonatomic, strong) UIButton *yqxBtn;
 
 @property (nonatomic, strong) UIView *bottomLine;
+@property (nonatomic, strong) UIView *verticalLine;
+
 @property (nonatomic, strong) UIButton *resetbtn;
 @property (nonatomic, strong) UIButton *confirmBtn;
 
