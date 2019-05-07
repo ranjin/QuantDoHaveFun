@@ -32,6 +32,7 @@
 #import "UIButton+WebCache.h"
 #import "QDTestWebViewVC.h"
 #import "QDCreditOrderHistoryVC.h"
+#import "VIPRightsViewController.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -92,7 +93,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址",@"安全中心", nil];
+    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址", @"常用旅客", @"安全中心", nil];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -255,7 +256,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_noFinancialView.openFinancialBtn addTarget:self action:@selector(openFinancialAction:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
     //已经开通资金账户的
-    _haveFinancialView = [[QDMineHeaderFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370+SafeAreaTopHeight-64)];
+    _haveFinancialView = [[QDMineHeaderFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 415+SafeAreaTopHeight-64)];
     _haveFinancialView.backgroundColor = APP_WHITECOLOR;
     [_haveFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
@@ -609,9 +610,12 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 会员权益
 - (void)vipRights:(UIButton *)sender{
-    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
-    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-    [self.navigationController pushViewController:bridgeVC animated:YES];
+    VIPRightsViewController *rightVC = [[VIPRightsViewController alloc] init];
+    rightVC.isPush = YES;
+    [self.navigationController pushViewController:rightVC animated:YES];
+//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
+//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+//    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 @end

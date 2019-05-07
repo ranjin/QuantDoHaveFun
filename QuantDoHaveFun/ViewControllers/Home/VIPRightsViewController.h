@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) double basePirceRate;
 
+@property (nonatomic,assign) BOOL isPush;
+
 @end
 
 NS_ASSUME_NONNULL_END

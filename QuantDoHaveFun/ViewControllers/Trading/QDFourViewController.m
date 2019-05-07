@@ -13,7 +13,6 @@
 #import "TFDropDownMenu.h"
 #import "SnailQuickMaskPopups.h"
 #import "QDFilterTypeThreeView.h"
-#import "QDShellRecommendVC.h"
 #import "QDMySaleOrderCell.h"
 #import "QDMyPurchaseCell.h"
 #import "QDPickUpOrderCell.h"
@@ -293,14 +292,13 @@ QD_ManualCanceled = 4      //手工取消
     _tableView.estimatedRowHeight = 0;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 120+SafeAreaTopHeight-64, 0);
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     [self.view addSubview:_tableView];
-//    self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self requestHeaderTopData];
     }];

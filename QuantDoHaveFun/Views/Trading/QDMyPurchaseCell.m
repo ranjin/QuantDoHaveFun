@@ -145,6 +145,8 @@
         [_withdrawBtn setBackgroundImage:[UIImage imageNamed:@"cancelOrder"] forState:UIControlStateNormal];
         [_withdrawBtn setTitle:@"我不买了" forState:UIControlStateNormal];
         _withdrawBtn.titleLabel.font = QDFont(14);
+        _withdrawBtn.layer.cornerRadius = 13.5;
+        _withdrawBtn.layer.masksToBounds = YES;
         _withdrawBtn.hidden = YES;
         [_backView addSubview:_withdrawBtn];
     }
@@ -257,10 +259,10 @@
     }];
 
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_balanceLab);
+        make.right.equalTo(_backView.mas_right).offset(-16);
         make.top.equalTo(_lineView.mas_bottom).offset(8);
-        make.width.mas_equalTo(70);
-        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(83);
+        make.height.mas_equalTo(27);
     }];
 
     [_orderStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {

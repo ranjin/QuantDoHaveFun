@@ -98,15 +98,19 @@
                 switch ([[orderDetail objectForKey:@"state"] integerValue]) {
                     case QD_HavePurchased:
                         _pickOrderView.statusLab.text = @"已付款";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"trade_dealed"]];
                         break;
                     case QD_HaveFinished:
                         _pickOrderView.statusLab.text = @"已完成";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"trade_dealed"]];
                         break;
                     case QD_OverTimeCanceled:
                         _pickOrderView.statusLab.text = @"已取消";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"orderStatus_withdraw"]];
                         break;
                     case QD_ManualCanceled:
                         _pickOrderView.statusLab.text = @"已取消";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"orderStatus_withdraw"]];
                         break;
                     default:
                         break;
@@ -193,7 +197,7 @@
 
 #pragma mark - 撤单操作
 - (void)withdrawAction:(UIButton *)sender{
-    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"撤销订单" message:@"您确定要撤销这笔订单吗?"];
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"" message:@"真的不买了吗?"];
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];

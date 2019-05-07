@@ -8,7 +8,6 @@
 
 #import "QDBuyOrSellViewController.h"
 #import "PPNumberButton.h"
-#import "QDShellRecommendVC.h"
 #import <TYAlertView.h>
 #import "QDBridgeViewController.h"
 #define AddBtnWidth SCREEN_WIDTH*0.075

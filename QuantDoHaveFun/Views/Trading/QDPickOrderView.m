@@ -18,8 +18,8 @@
         [self addSubview:_topView];
         
         _statusImg = [[UIImageView alloc] init];
-        _statusImg.image = [UIImage imageNamed:@"orderStatus_withdraw"];
-        [self addSubview:_statusImg];
+        _statusImg.image = [UIImage imageNamed:@"orderStatus_waitToPay"];
+        [_topView addSubview:_statusImg];
         
         _statusLab = [[UILabel alloc] init];
         _statusLab.font = QDFont(16);
@@ -199,7 +199,6 @@
     }];
     
     [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_statusLab);
         make.top.equalTo(_statusLab.mas_bottom).offset(13);
         make.left.equalTo(_statusLab);
     }];

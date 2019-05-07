@@ -44,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *balanceLab;
 @property (nonatomic, strong) UILabel *balance;
 
+@property (nonatomic, strong) SPButton *rechargeDetail;
+@property (nonatomic, strong) SPButton *accountDesc;
+
 
 @property (nonatomic, strong) UIButton *rechargeBtn;
 @property (nonatomic, strong) UIButton *withdrawBtn;

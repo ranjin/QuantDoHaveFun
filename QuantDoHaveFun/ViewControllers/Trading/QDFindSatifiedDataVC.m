@@ -8,7 +8,6 @@
 
 #import "QDFindSatifiedDataVC.h"
 #import "PPNumberButton.h"
-#import "QDShellRecommendVC.h"
 #import "QDRecommendViewController.h"
 #import "CWActionSheet.h"
 #define AddBtnWidth SCREEN_WIDTH*0.075

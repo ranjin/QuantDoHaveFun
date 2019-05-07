@@ -170,7 +170,11 @@
 }
 
 - (void)loadVipViewWithModel:(QDMemberDTO *)member{
-    [self.headPic sd_setImageWithURL:[NSURL URLWithString:member.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
+    if (member.iconUrl == nil) {
+        [self.headPic setImage:[UIImage imageNamed:@"icon_headerPic"] forState:UIControlStateNormal];
+    }else{
+        [self.headPic sd_setImageWithURL:[NSURL URLWithString:member.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
+    }
     //当前经验值 两个等级
     self.nameLab.text = member.userName;
     self.vipProgressLab.text = [NSString stringWithFormat:@"升级还需%d成长值", [member.maxLevelValue intValue] - [member.userLevelValue intValue]];
