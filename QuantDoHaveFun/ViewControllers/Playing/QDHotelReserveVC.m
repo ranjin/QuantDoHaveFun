@@ -273,7 +273,8 @@
 - (void)setDropMenu{
     NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_hotelTypeIdArr, @[@"价格"], _hotelLevelArr, nil];
     NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], @[], @[], nil];
-    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50) firstArray:data1 secondArray:data2];
+    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 50) firstArray:data1 secondArray:data2];
+    _menu.bottomLineView.backgroundColor = APP_WHITECOLOR;
     _menu.backgroundColor = APP_WHITECOLOR;
     _menu.delegate = self;
     _menu.ratioLeftToScreen = 0.35;
@@ -302,7 +303,7 @@
     [self.view addSubview:_menu];
 }
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 57, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -383,14 +384,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (_hotelListInfoArr.count) {
-//        QDHotelListInfoModel *model = _hotelListInfoArr[indexPath.row];
-//        //传递ID
-//        QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+        QDHotelListInfoModel *model = _hotelListInfoArr[indexPath.row];
+        //传递ID
+        QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
 //        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld&&startDate=%@&&endDate=%@", QD_JSURL, JS_HOTELDETAIL, (long)model.id, _dateInPassedVal, _dateOutPassedVal];
-//        QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//        bridgeVC.infoModel = model;
-//        self.tabBarController.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:bridgeVC animated:YES];
+        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld", QD_JSURL, JS_HOTELDETAIL, (long)model.id];
+
+        QDLog(@"urlStr = %@", bridgeVC.urlStr);
+        bridgeVC.infoModel = model;
+        self.tabBarController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:bridgeVC animated:YES];
     }
 }
 

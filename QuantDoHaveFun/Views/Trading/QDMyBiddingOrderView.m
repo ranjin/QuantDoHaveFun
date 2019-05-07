@@ -23,40 +23,45 @@
         _statusImg.image = [UIImage imageNamed:@"orderStatus_withdraw"];
         [_topView addSubview:_statusImg];
         
+        _statusLab = [[UILabel alloc] init];
+        _statusLab.font = QDFont(16);
+        _statusLab.textColor = APP_BLACKCOLOR;
+        [_topView addSubview:_statusLab];
+        
         _dealLab = [[UILabel alloc] init];
         _dealLab.text = @"已成交";
-        _dealLab.font = QDFont(12);
-        _dealLab.textColor = APP_GRAYCOLOR;
+        _dealLab.font = QDFont(13);
+        _dealLab.textColor = APP_GRAYTEXTCOLOR;
         [_topView addSubview:_dealLab];
         
         _deal = [[UILabel alloc] init];
         _deal.text = @"0";
-        _deal.font = QDFont(12);
+        _deal.font = QDFont(13);
         _deal.textColor = APP_BLUECOLOR;
         [_topView addSubview:_deal];
         
         _dealTextLab = [[UILabel alloc] init];
         _dealTextLab.text = @"个";
-        _dealTextLab.font = QDFont(12);
-        _dealTextLab.textColor = APP_GRAYCOLOR;
+        _dealTextLab.font = QDFont(13);
+        _dealTextLab.textColor = APP_GRAYTEXTCOLOR;
         [_topView addSubview:_dealTextLab];
         
         _frozenLab = [[UILabel alloc] init];
         _frozenLab.text = @"冻结";
-        _frozenLab.font = QDFont(14);
+        _frozenLab.font = QDFont(13);
         _frozenLab.textColor = APP_GRAYTEXTCOLOR;
         [_topView addSubview:_frozenLab];
         
         _frozen = [[UILabel alloc] init];
         _frozen.text = @"0";
-        _frozen.font = QDFont(14);
+        _frozen.font = QDFont(13);
         _frozen.textColor = APP_BLUECOLOR;
         [_topView addSubview:_frozen];
         
         _frozenTextLab = [[UILabel alloc] init];
         _frozenTextLab.text = @"个";
-        _frozenTextLab.font = QDFont(12);
-        _frozenTextLab.textColor = APP_GRAYCOLOR;
+        _frozenTextLab.font = QDFont(13);
+        _frozenTextLab.textColor = APP_GRAYTEXTCOLOR;
         [_topView addSubview:_frozenTextLab];
         
         _centerView = [[UIView alloc] init];
@@ -75,7 +80,7 @@
         [_centerView addSubview:_operationType];
         
         _topLine = [[UIView alloc] init];
-        _topLine.backgroundColor = APP_LIGHTGRAYCOLOR;
+        _topLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [_centerView addSubview:_topLine];
         
         _lab1 = [[UILabel alloc] init];
@@ -134,7 +139,7 @@
         
         
         _bottomLine = [[UIView alloc] init];
-        _bottomLine.backgroundColor = APP_LIGHTGRAYCOLOR;
+        _bottomLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [_centerView addSubview:_bottomLine];
         
         _bdNumLab = [[UILabel alloc] init];

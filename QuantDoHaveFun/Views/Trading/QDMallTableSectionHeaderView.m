@@ -27,6 +27,7 @@ static char *const btnKey = "btnKey";
         [_allBtn setTitle:@"全部" forState:UIControlStateNormal];
         [_allBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         _allBtn.titleLabel.font = QDFont(14);
+        _allBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_allBtn];
         
         _amountBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
@@ -38,23 +39,6 @@ static char *const btnKey = "btnKey";
         [_amountBtn addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_amountBtn];
         objc_setAssociatedObject(_amountBtn, btnKey, @"1", OBJC_ASSOCIATION_ASSIGN);
-        
-//        _priceBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
-//        [_priceBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
-//        [_priceBtn setTitle:@"价格" forState:UIControlStateNormal];
-//        [_priceBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-//        _priceBtn.titleLabel.font = QDFont(14);
-//        _priceBtn.tag = 102;
-//        [_priceBtn addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-//        [self addSubview:_priceBtn];
-//        objc_setAssociatedObject(_priceBtn, btnKey, @"2", OBJC_ASSOCIATION_ASSIGN);
-        
-        _baoyouBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
-        [_baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouNormal"] forState:UIControlStateNormal];
-        [_baoyouBtn setTitle:@"包邮" forState:UIControlStateNormal];
-        [_baoyouBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-        _baoyouBtn.titleLabel.font = QDFont(14);
-        [self addSubview:_baoyouBtn];
     }
     return self;
 }
@@ -100,40 +84,21 @@ static char *const btnKey = "btnKey";
             [[NSNotificationCenter defaultCenter] postNotificationName:Notification_PriceDown object:nil];
         }
     }else{
-//        //点击全部不复位价格
-//        if (btn.tag != 103) {
-//            UIButton *button = [self viewWithTag:102];
-//            [button setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
-//            objc_setAssociatedObject(button, btnKey, @"1", OBJC_ASSOCIATION_ASSIGN);
-//            type = MallBtnClickTypeNormal;
-//        }
     }
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_allBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(25);
+        make.left.equalTo(self.mas_left).offset(20);
         make.centerY.equalTo(self);
-        make.width.mas_equalTo(60);
+        make.width.mas_equalTo(120);
         make.height.mas_equalTo(40);
     }];
     
     [_amountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
-        make.left.equalTo(self.mas_left).offset(140);
-        make.width.and.height.equalTo(_allBtn);
-    }];
-    
-//    [_priceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(self);
-//        make.left.equalTo(self.mas_left).offset(180);
-//        make.width.and.height.equalTo(_allBtn);
-//    }];
-    
-    [_baoyouBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.right.equalTo(self.mas_right).offset(-50);
+        make.right.equalTo(self.mas_right).offset(-20);
         make.width.and.height.equalTo(_allBtn);
     }];
 }

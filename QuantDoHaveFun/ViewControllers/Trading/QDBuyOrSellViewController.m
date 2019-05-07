@@ -38,12 +38,6 @@
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
 
-- (void)setLeftBtnItem{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
 - (void)leftBtn{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -105,22 +99,22 @@
     [_operateBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
     [_operateBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 335, 50);
+    gradientLayer.frame = CGRectMake(0, 0, 316, 50);
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
     gradientLayer.masksToBounds = YES;
-    gradientLayer.cornerRadius = 4;
+    gradientLayer.cornerRadius = 25;
 
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [_operateBtn.layer addSublayer:gradientLayer];
-    _operateBtn.titleLabel.font = QDFont(20);
+    _operateBtn.titleLabel.font = QDFont(16);
     [_tableView addSubview:_operateBtn];
     [_operateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(SCREEN_HEIGHT*0.4);
+        make.top.equalTo(self.view.mas_top).offset(242+SafeAreaTopHeight-64);
         make.height.mas_equalTo(50);
-        make.width.mas_equalTo(335);
+        make.width.mas_equalTo(316);
     }];
 }
 
@@ -137,7 +131,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.08;
+    return 50;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -154,20 +148,20 @@
         if ([_operateModel.isPartialDeal isEqualToString:@"0"]) {
             //不可部分成交
             self.amountLab.text = _operateModel.surplusVolume;
+            self.amountLab.backgroundColor = APP_BLUECOLOR;
             [cell.contentView addSubview:self.amountLab];
             [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(cell.contentView);
-                make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.1));
+                make.right.equalTo(cell.contentView.mas_right).offset(-28);
             }];
             UILabel *lab = [[UILabel alloc] init];
             lab.text = @"个";
-            lab.textColor = APP_BLACKCOLOR;
+            lab.textColor = APP_GRAYCOLOR;
             lab.font = QDFont(15);
             [cell.contentView addSubview:lab];
             [lab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(cell.contentView);
-                make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
-                make.height.mas_equalTo(SCREEN_HEIGHT*0.06);
+                make.right.equalTo(cell.contentView.mas_right).offset(-20);
             }];
         }else{
             [cell.contentView addSubview:self.numberButton];
@@ -233,12 +227,14 @@
         [WXProgressHUD showInfoWithTittle:@"数量输入不合法,请重新输入"];
     }else{
         [WXProgressHUD showHUD];
+        NSString *balance = self.balanceLab.text;
+        NSString *balanceStr = [balance substringToIndex:[balance length] - 1];
         NSDictionary *paramsDic = @{
                                     @"userId":_operateModel.userId,
                                     @"creditCode":_operateModel.creditCode,
                                     @"price":[NSNumber numberWithDouble:[_operateModel.price doubleValue]],
                                     @"buyVolume":[NSNumber numberWithFloat:_numberButton.currentNumber],
-                                    @"balance":self.balanceLab.text,
+                                    @"balance":balanceStr,
                                     @"postersId":_operateModel.postersId,
                                     @"postersType":_operateModel.postersType,
                                     @"isPartialDeal":_operateModel.isPartialDeal    //是否允许部分成交
@@ -402,6 +398,7 @@
     if (!_amountLab) {
         _amountLab = [[UILabel alloc] init];
         _amountLab.textColor = APP_BLACKCOLOR;
+        _amountLab.backgroundColor = APP_BLUECOLOR;
         _amountLab.font = QDFont(16);
     }
     return _amountLab;

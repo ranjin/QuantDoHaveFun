@@ -117,21 +117,21 @@
     }
     [_operateBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 335, 50);
+    gradientLayer.frame = CGRectMake(0, 0, 316, 50);
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
     gradientLayer.masksToBounds = YES;
-    gradientLayer.cornerRadius = 4;
+    gradientLayer.cornerRadius = 25;
     
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [_operateBtn.layer addSublayer:gradientLayer];
-    _operateBtn.titleLabel.font = QDFont(19);
+    _operateBtn.titleLabel.font = QDFont(16);
     [_tableView addSubview:_operateBtn];
     [_operateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(354);
-        make.width.mas_equalTo(335);
+        make.top.equalTo(self.view.mas_top).offset(299+SafeAreaTopHeight-64);
+        make.width.mas_equalTo(316);
         make.height.mas_equalTo(50);
     }];
 }
@@ -300,6 +300,11 @@
     }
     if ([_priceTF.text isEqualToString:@""]) {
         [WXProgressHUD showInfoWithTittle:@"价格不能为空"];
+        return;
+    }
+    //总金额不能为0
+    if ([self.priceLab.text doubleValue] == 0) {
+        [WXProgressHUD showInfoWithTittle:@"金额不能为0"];
         return;
     }
     QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];

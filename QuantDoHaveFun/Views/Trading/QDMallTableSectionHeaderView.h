@@ -21,8 +21,6 @@ typedef NS_ENUM(NSInteger,MallBtnClickType){
 
 @property (nonatomic, strong) SPButton *allBtn;
 @property (nonatomic, strong) SPButton *amountBtn;
-//@property (nonatomic, strong) SPButton *priceBtn;
-@property (nonatomic, strong) SPButton *baoyouBtn;  //是否包邮
 //默认选中，默认是第一个
 @property (nonatomic, assign) int defaultSelectIndex;
 

@@ -312,7 +312,7 @@ typedef enum : NSUInteger {
 //    self.view = _tableView;
     [self.view addSubview:_tableView];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 135)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 120)];
     headerView.backgroundColor = [UIColor whiteColor];
     _tableView.tableHeaderView = headerView;
     

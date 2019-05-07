@@ -73,7 +73,7 @@
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self requestMallList];
 //    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
-    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
+//    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
 - (void)priceDown{
@@ -83,7 +83,7 @@
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [self requestMallList];
 //    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
-    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
+//    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
 - (void)amuntUp{
@@ -91,7 +91,7 @@
     _sortType = @"asc";
     [self requestMallList];
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
+//    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
 //    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
 }
 
@@ -100,7 +100,7 @@
     _sortColumn = @"virtualSales";
     _sortType = @"desc";
     [self requestMallList];
-    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
+//    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
 //    [_sectionHeaderView.priceBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
     
 }
@@ -274,8 +274,7 @@
         _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] init];
         _sectionHeaderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
         [_sectionHeaderView.allBtn addTarget:self action:@selector(allAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_sectionHeaderView.baoyouBtn addTarget:self action:@selector(baoyouAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
+//        [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sectionHeaderView;
 }
@@ -292,20 +291,6 @@
         menu.menuContentSize = CGSizeMake(SCREEN_WIDTH, _categoryArr.count * 38);
         [menu showMenuFromSourceView:sender sourceReact:sender.bounds viewController:self animated:YES];
     }
-}
-
-- (void)baoyouAction:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        QDLog(@"选择包邮");
-        _baoyou = @"1";
-        [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouSelected"] forState:UIControlStateNormal];
-    }else{
-        QDLog(@"不包邮");
-        [_sectionHeaderView.baoyouBtn setImage:[UIImage imageNamed:@"icon_baoyouNormal"] forState:UIControlStateNormal];
-        _baoyou = @"";
-    }
-    [self requestMallList];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

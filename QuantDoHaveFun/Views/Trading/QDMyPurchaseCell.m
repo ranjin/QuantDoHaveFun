@@ -85,13 +85,13 @@
         
         _priceLab = [[UILabel alloc] init];
         _priceLab.text = @"¥";
-        _priceLab.font = QDBoldFont(12);
+        _priceLab.font = QDBoldFont(20);
         _priceLab.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_priceLab];
         
         _price = [[UILabel alloc] init];
         _price.text = @"30.00";
-        _price.font = QDBoldFont(14);
+        _price.font = QDBoldFont(24);
         _price.textColor = APP_ORANGETEXTCOLOR;
         [_backView addSubview:_price];
         
@@ -153,10 +153,10 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.centerX.and.height.equalTo(self.contentView);
-        make.width.mas_equalTo(351);
+    [_backView mas_makeConstraints:^(MASConstraintMaker *make) {        make.top.equalTo(self.contentView.mas_top).offset(10);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+        make.left.equalTo(self.contentView.mas_left).offset(SCREEN_WIDTH*0.05);
+        make.right.equalTo(self.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
     }];
     
     [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
