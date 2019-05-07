@@ -333,7 +333,7 @@
     if (DTO.price == nil) {
         self.price.text = @"--";
     }else{
-        self.price.text= DTO.price;
+        self.price.text= [NSString stringWithFormat:@"%.2lf", [DTO.price doubleValue]];
     }
     self.deal.text = [NSString stringWithFormat:@"%@", DTO.tradedVolume];
     self.frozen.text = [NSString stringWithFormat:@"%@", DTO.frozenVolume];

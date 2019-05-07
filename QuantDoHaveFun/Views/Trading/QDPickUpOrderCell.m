@@ -231,14 +231,14 @@
     if (model.price == nil) {
         self.totalPrice.text = @"--";
     }else{
-        self.totalPrice.text= model.price;
+        self.totalPrice.text= [NSString stringWithFormat:@"%.2lf", [model.price doubleValue]];
     }
     if (model.number == nil) {
         self.amount.text = @"--";
     }else{
         self.amount.text= [NSString stringWithFormat:@"%@个",model.number];
     }
-    self.balance.text = [NSString stringWithFormat:@"¥%@",model.amount];
+    self.balance.text= [NSString stringWithFormat:@"%.2lf", [model.amount doubleValue]];
     //手续费
     self.transfer.text = [NSString stringWithFormat:@"¥%@", model.poundage];
     if ([model.state isEqualToString:@"0"]) {

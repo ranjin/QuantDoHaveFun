@@ -167,7 +167,7 @@
         make.centerY.equalTo(returnBtn);
     }];
     _pickOrderView = [[QDPickOrderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    _pickOrderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    _pickOrderView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_pickOrderView.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pickOrderView.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pickOrderView loadViewWithModel:_orderModel];

@@ -321,7 +321,7 @@ QD_ManualCanceled = 4      //手工取消
 
 #pragma mark - 撤单操作
 - (void)withdrawAction:(UIButton *)sender{
-    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"撤销订单" message:@"您确定要撤销这笔订单吗?"];
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"" message:@"真的不买了吗?"];
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];
