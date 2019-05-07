@@ -2,44 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要您的同意,才能访问相机,用于用户选择照片作为个人头像</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>需要您的同意,才能定位您的位置,用于城市定位和导航</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>需要您的同意,才能定位您的位置,用于城市定位和导航</string>
-	<key>NSCameraUsageDescription</key>
-	<string>需要您的同意,才能访问相机,用于用户拍摄修改个人头像</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>这好玩请求访问日历</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>baidumap</string>
-		<string>isoamap</string>
-		<string>comgooglemaps</string>
-		<string>qqmap</string>
-	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wx2f631a50a1c2b9c5</string>
-				<string>tencent101559247</string>
-				<string>tencent101559247.content</string>
-				<string>wb402180334</string>
-				<string>renrenshare228525</string>
-				<string>fb776442542471056</string>
-			</array>
-			<key>CFBundleURLName</key>
-			<string>这好玩</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -54,10 +16,48 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>这好玩</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx2f631a50a1c2b9c5</string>
+				<string>tencent101559247</string>
+				<string>tencent101559247.content</string>
+				<string>wb402180334</string>
+				<string>renrenshare228525</string>
+				<string>fb776442542471056</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>baidumap</string>
+		<string>isoamap</string>
+		<string>comgooglemaps</string>
+		<string>qqmap</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>这好玩请求访问日历</string>
+	<key>NSCameraUsageDescription</key>
+	<string>需要您的同意,才能访问相机,用于用户拍摄修改个人头像</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>需要您的同意,才能定位您的位置,用于城市定位和导航</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>需要您的同意,才能定位您的位置,用于城市定位和导航</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要您的同意,才能访问相机,用于用户选择照片作为个人头像</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

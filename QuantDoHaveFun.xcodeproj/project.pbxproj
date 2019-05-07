@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025FEDC9228059EE00CDAFC3 /* QDCreditOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */; };
+		025FEDCC22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */; };
+		025FEDD02281295200CDAFC3 /* QDCreditOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */; };
 		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
 		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
 		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
@@ -103,8 +106,6 @@
 		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
-		936DE1BC228050290010B350 /* KTDropdownMenuView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */; };
-		936DE1BD228050290010B350 /* KTDropdownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1BB228050290010B350 /* KTDropdownMenuView.m */; };
 		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
 		938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */; };
 		938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */; };
@@ -320,7 +321,6 @@
 		93E9828E2271A1C800DDEB80 /* RankFirstVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9828D2271A1C800DDEB80 /* RankFirstVideoModel.m */; };
 		93E982912271B11800DDEB80 /* VIPRightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982902271B11800DDEB80 /* VIPRightsViewController.m */; };
 		93E982942271B38D00DDEB80 /* VIPRightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982932271B38D00DDEB80 /* VIPRightsView.m */; };
-		93E982962271DAC500DDEB80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E982952271DAC500DDEB80 /* Images.xcassets */; };
 		9CB6ED8D5C21A74618AFEA8A /* libPods-QuantDoHaveFun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */; };
 /* End PBXBuildFile section */
 
@@ -342,6 +342,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrder.h; sourceTree = "<group>"; };
+		025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrder.m; sourceTree = "<group>"; };
+		025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QDCreditOrderHistoryVC.h; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.h; sourceTree = SOURCE_ROOT; };
+		025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QDCreditOrderHistoryVC.m; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.m; sourceTree = SOURCE_ROOT; };
+		025FEDCD2281284700CDAFC3 /* LD_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Macros.h; sourceTree = "<group>"; };
+		025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrderTableViewCell.h; sourceTree = "<group>"; };
+		025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrderTableViewCell.m; sourceTree = "<group>"; };
 		07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.debug.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.debug.xcconfig"; sourceTree = "<group>"; };
 		874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuantDoHaveFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -533,9 +540,6 @@
 		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KTDropdownMenuView.bundle; sourceTree = "<group>"; };
-		936DE1BA228050290010B350 /* KTDropdownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDropdownMenuView.h; sourceTree = "<group>"; };
-		936DE1BB228050290010B350 /* KTDropdownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDropdownMenuView.m; sourceTree = "<group>"; };
 		938C3C452272F96C0087724E /* TheCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheCityModel.h; sourceTree = "<group>"; };
 		938C3C462272F96C0087724E /* TheCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheCityModel.m; sourceTree = "<group>"; };
 		938C3C482275307F0087724E /* TopRightsNotLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsNotLoginHeadView.h; sourceTree = "<group>"; };
@@ -984,7 +988,6 @@
 		93E982902271B11800DDEB80 /* VIPRightsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPRightsViewController.m; sourceTree = "<group>"; };
 		93E982922271B38D00DDEB80 /* VIPRightsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIPRightsView.h; sourceTree = "<group>"; };
 		93E982932271B38D00DDEB80 /* VIPRightsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPRightsView.m; sourceTree = "<group>"; };
-		93E982952271DAC500DDEB80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.release.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1077,7 +1080,6 @@
 				93399CCA2267124500FB9F0E /* Info.plist */,
 				93399CCB2267124500FB9F0E /* main.m */,
 				93399D2A2268027500FB9F0E /* QDHaveFun.pch */,
-				93E982952271DAC500DDEB80 /* Images.xcassets */,
 			);
 			path = QuantDoHaveFun;
 			sourceTree = "<group>";
@@ -1208,6 +1210,8 @@
 				93399D3B2268191B00FB9F0E /* QDMineTableHeaderView.m */,
 				93399D432268191D00FB9F0E /* QDMineView.h */,
 				93399D3D2268191C00FB9F0E /* QDMineView.m */,
+				025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */,
+				025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1322,6 +1326,8 @@
 				93399D1322671FEA00FB9F0E /* QDMineViewController.m */,
 				93399DA52268228900FB9F0E /* QDSettingViewController.h */,
 				93399DA62268228900FB9F0E /* QDSettingViewController.m */,
+				025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */,
+				025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1329,6 +1335,8 @@
 		93399D0322671FA100FB9F0E /* Trading */ = {
 			isa = PBXGroup;
 			children = (
+				93E982762271565F00DDEB80 /* QDThirdViewController.h */,
+				93E982752271565F00DDEB80 /* QDThirdViewController.m */,
 				93E98258227155A100DDEB80 /* QDShellRecommendVC.h */,
 				93E9824C2271559F00DDEB80 /* QDShellRecommendVC.m */,
 				93E982512271559F00DDEB80 /* QDOrderDetailVC.h */,
@@ -1339,8 +1347,6 @@
 				93E9825B227155A100DDEB80 /* QDFirstViewController.m */,
 				93E9825D227155A100DDEB80 /* QDSecondViewController.h */,
 				93E98252227155A000DDEB80 /* QDSecondViewController.m */,
-				93E982762271565F00DDEB80 /* QDThirdViewController.h */,
-				93E982752271565F00DDEB80 /* QDThirdViewController.m */,
 				93E98257227155A000DDEB80 /* QDFourViewController.h */,
 				93E9824B2271559F00DDEB80 /* QDFourViewController.m */,
 				93E9824A2271559F00DDEB80 /* QDFindSatifiedDataVC.h */,
@@ -1407,6 +1413,8 @@
 				93399D60226819C800FB9F0E /* UserCreditDTO.m */,
 				93399D63226819C800FB9F0E /* UserMoneyDTO.h */,
 				93399D5E226819C800FB9F0E /* UserMoneyDTO.m */,
+				025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */,
+				025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1451,6 +1459,7 @@
 				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93399D36226815A300FB9F0E /* Macro.h */,
 				93399D38226815A300FB9F0E /* Macro.m */,
+				025FEDCD2281284700CDAFC3 /* LD_Macros.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1458,7 +1467,6 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				936DE1B8228050290010B350 /* KTDropdownMenuView */,
 				93E9827B227198BA00DDEB80 /* AxcAE_TabBar */,
 				93E982712271560B00DDEB80 /* PPNumberButton */,
 				93E98269227155C100DDEB80 /* QDGCDTimer */,
@@ -1731,16 +1739,6 @@
 				93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		936DE1B8228050290010B350 /* KTDropdownMenuView */ = {
-			isa = PBXGroup;
-			children = (
-				936DE1B9228050290010B350 /* KTDropdownMenuView.bundle */,
-				936DE1BA228050290010B350 /* KTDropdownMenuView.h */,
-				936DE1BB228050290010B350 /* KTDropdownMenuView.m */,
-			);
-			path = KTDropdownMenuView;
 			sourceTree = "<group>";
 		};
 		93E97FC32271442600DDEB80 /* LoginAndRegister */ = {
@@ -2495,8 +2493,6 @@
 				938C3C57228035480087724E /* goMain.html in Resources */,
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
-				93E982962271DAC500DDEB80 /* Images.xcassets in Resources */,
-				936DE1BC228050290010B350 /* KTDropdownMenuView.bundle in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
 				938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */,
 			);
@@ -2624,6 +2620,7 @@
 				93E9813622714F5300DDEB80 /* BiddingPostersDTO.m in Sources */,
 				93E98285227198BB00DDEB80 /* AxcAE_TabBarItem.m in Sources */,
 				93E9822B227154B000DDEB80 /* QDFilterTypeThreeView.m in Sources */,
+				025FEDCC22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m in Sources */,
 				93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */,
 				93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */,
 				93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */,
@@ -2639,7 +2636,6 @@
 				93E9800F2271446B00DDEB80 /* UIPasteboard+YYText.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
-				936DE1BD228050290010B350 /* KTDropdownMenuView.m in Sources */,
 				93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */,
 				93E9825E227155A100DDEB80 /* QDOrderDetailVC.m in Sources */,
 				93399D3A226815A300FB9F0E /* Macro.m in Sources */,
@@ -2678,6 +2674,7 @@
 				93399E702268663700FB9F0E /* NSObject+Property.m in Sources */,
 				93E980AB22714D1A00DDEB80 /* SYHeaderView.m in Sources */,
 				93E980F322714E6700DDEB80 /* OpenShare.m in Sources */,
+				025FEDC9228059EE00CDAFC3 /* QDCreditOrder.m in Sources */,
 				93E980B022714D1A00DDEB80 /* SYTableViewCell.m in Sources */,
 				93E982452271557B00DDEB80 /* PGIndexBannerSubiew.m in Sources */,
 				93E980092271446B00DDEB80 /* YYTextAttribute.m in Sources */,
@@ -2811,6 +2808,7 @@
 				93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */,
 				93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */,
 				93E9827A227195DE00DDEB80 /* BulgeCircularTabBarVC.m in Sources */,
+				025FEDD02281295200CDAFC3 /* QDCreditOrderTableViewCell.m in Sources */,
 				93E980012271446B00DDEB80 /* YYTextLayout.m in Sources */,
 				93399D9F2268222500FB9F0E /* UIImage+ST.m in Sources */,
 				93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */,
@@ -3044,11 +3042,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LYJ6X6X94;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 92SJJ5DAJ7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3057,6 +3055,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "XC-zhanmi-profile";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -3069,11 +3068,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LYJ6X6X94;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3082,6 +3081,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.QuantDoHaveFun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

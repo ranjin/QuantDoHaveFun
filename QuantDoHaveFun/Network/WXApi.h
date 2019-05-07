@@ -8,7 +8,7 @@
 
 #ifndef WXApi_h
 #define WXApi_h
-
+// 高德地图
 const static NSString *APIKey = @"4d9a3eeccc55429b57663893c21a7813";    //生产环境
 //const static NSString *APIKey = @"1572e2947f38693cadbb912c8afc5891";    //UAT环境
 
@@ -154,7 +154,7 @@ static NSString * const api_getVideoList = @"/lyjfapp/api/v1/video/homeImage/lis
 
 static NSString * const api_findAllDestinationList = @"/lyjfapp/api/v1/ranklist/findAllDestinationList";            //榜单目的地列表
 
-
+static NSString *const api_getCreditOrderList = @"/lyjfapp/api/v1/userorder/mycreditorder";   // 玩贝明细订单
 
 /**
  JAVAScriptBridgeWebView
