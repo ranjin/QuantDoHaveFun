@@ -20,12 +20,14 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:NO];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
+    self.navigationController.navigationBar.translucent = YES;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,17 +42,24 @@
 }
 - (void)setupViews {
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-20) style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[QDCreditOrderTableViewCell class] forCellReuseIdentifier:@"QDCreditOrderTableViewCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    if (@available(iOS 11.0, *)) {
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 - (void)getCreditOrderList:(NSInteger)pageNum {
     
     NSDictionary *dic = @{@"pageNum":[NSNumber numberWithInteger:pageNum],@"pageSize":@12};
     [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_getCreditOrderList params:dic successBlock:^(QDResponseObject *responseObject) {
-        QDLog(@"%@",responseObject);
+        QDLog(@"%@",responseObject.result);
         self.pageNum = pageNum;
     } failureBlock:^(NSError *error) {
         
@@ -60,6 +69,19 @@
     [self getCreditOrderList:self.pageNum+1];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QDCreditOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QDCreditOrderTableViewCell" forIndexPath:indexPath];
+    return cell;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 12;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 74;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 /*
 #pragma mark - Navigation
 

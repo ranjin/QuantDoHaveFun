@@ -19,6 +19,8 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         self.orderIcon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"creditOrder"]];
         [self.contentView addSubview: self.orderIcon];
         [self.orderIcon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,16 +51,48 @@
         self.timeLabel.font = [UIFont systemFontOfSize:12];
         self.timeLabel.textColor = LD_colorRGBValue(0x999999);
         
-//        UILabel *currencyNameLabel = [[UILabel alloc]init];
-//        [self.contentView addSubview:currencyNameLabel];
-//        [currencyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(self.mas_right).offset(12);
-//            make.top.equalTo(self.contentView.mas_top).offset(24);
-//            make.width.mas_equalTo();
-//        }];
+        UILabel *currencyNameLabel = [[UILabel alloc]init];
+        [self.contentView addSubview:currencyNameLabel];
+        [currencyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.mas_right).offset(-12);
+            make.top.equalTo(self.contentView.mas_top).offset(24);
+            make.width.mas_equalTo(26);
+            make.height.mas_equalTo(15);
+        }];
+        currencyNameLabel.font = QDFont(12);
+        currencyNameLabel.textColor = LD_colorRGBValue(0x999999);
+        
+        self.amountLabel = [[UILabel alloc]init];
+        [self.contentView addSubview:self.amountLabel];
+        [self.amountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(currencyNameLabel.mas_left).offset(-6);
+            make.centerY.mas_equalTo(currencyNameLabel.mas_centerY);
+            make.width.mas_equalTo(130);
+            make.height.mas_equalTo(18);
+        }];
+        self.amountLabel.font = [UIFont systemFontOfSize:16];
+        self.amountLabel.textColor = [UIColor blackColor];
+        self.amountLabel.textAlignment = NSTextAlignmentRight;
+        
+        UIView *line = [[UIView alloc]init];
+        [self.contentView addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.contentView.mas_left);
+            make.right.mas_equalTo(self.contentView.mas_right);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom);
+            make.height.mas_equalTo(1);
+        }];
+        line.backgroundColor = LD_colorRGBValue(0xF3F7F9);
+        
+        self.amountLabel.text = @"+5000";
+        currencyNameLabel.text = @"玩贝";
+        self.orderTypeLabel.text = @"积分兑换";
+        self.timeLabel.text = @"2018.12.08 12:09:38";
     }
     return self;
 }
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
