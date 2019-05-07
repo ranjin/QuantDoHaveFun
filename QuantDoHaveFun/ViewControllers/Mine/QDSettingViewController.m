@@ -24,7 +24,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
@@ -34,24 +34,41 @@
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
 
-- (void)setLeftBtnItem{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
 - (void)leftBtn{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
-    self.title = @"设置";
-    [self showBack:YES];
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 70+SafeAreaTopHeight-64)];
+    backView.backgroundColor = APP_WHITECOLOR;
+    [self.view addSubview:backView];
+    
+    UIButton *returnBtn = [[UIButton alloc] init];
+    [returnBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(popAction:) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:returnBtn];
+    [returnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-50);
+        make.width.and.height.mas_equalTo(45);
+    }];
+    UILabel *titleLab = [[UILabel alloc] init];
+    titleLab.text = @"设置";
+    titleLab.textColor = APP_BLACKCOLOR;
+    titleLab.font = QDFont(17);
+    [backView addSubview:titleLab];
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(returnBtn);
+    }];
     [self requestVersion];
 }
 
+- (void)popAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)requestVersion{
     NSString *URLString = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@", APP_ID];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -69,7 +86,6 @@
             if (infoArray && infoArray.count > 0) {
                 _version = [infoArray.firstObject objectForKey:@"version"];
                 [self initTableView];
-                [self setLeftBtnItem];
                 [self addLogoutBtn];
             }
         }
@@ -81,20 +97,20 @@
     [recommendBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
     [recommendBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, 335, 50);
+    gradientLayer.frame = CGRectMake(0, 0, 316, 50);
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [recommendBtn.layer addSublayer:gradientLayer];
-    recommendBtn.titleLabel.font = QDFont(19);
-    recommendBtn.layer.cornerRadius = 4;
+    recommendBtn.titleLabel.font = QDFont(16);
+    recommendBtn.layer.cornerRadius = 25;
     recommendBtn.layer.masksToBounds = YES;
     [_tableView addSubview:recommendBtn];
     [recommendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_tableView);
-        make.top.equalTo(self.view.mas_top).offset(210+30);
-        make.width.mas_equalTo(335);
+        make.top.equalTo(self.view.mas_top).offset(280+SafeAreaTopHeight-64);
+        make.width.mas_equalTo(316);
         make.height.mas_equalTo(50);
     }];
     NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
@@ -105,23 +121,39 @@
     }
 }
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight+20, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 72+SafeAreaTopHeight-64, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+    _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.scrollEnabled = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.scrollEnabled = NO;
+    _tableView.sectionHeaderHeight = 2;
+    _tableView.sectionFooterHeight = 1;
+    _tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     [self.view addSubview:_tableView];
 }
 
 #pragma mark -- tableView delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    if (section == 0) {
+        return 2;
+    }else{
+        return 1;
+    }
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -147,16 +179,19 @@
             _versionLab.textAlignment = NSTextAlignmentRight;
             _versionLab.font = QDFont(16);
             _versionLab.textColor = APP_GRAYLINECOLOR;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
+            cell.accessoryType = UITableViewCellAccessoryNone; //显示最右边的箭头
             [cell.contentView addSubview:_versionLab];
             [_versionLab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(cell.contentView);
                 make.right.equalTo(cell.contentView.mas_right).offset(-(30));
             }];
-        }else{
+        }else if (indexPath.row == 1){
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
             cell.textLabel.text = @"关于我们";
         }
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
+        cell.textLabel.text = @"帮助中心";
     }
     return cell;
 }

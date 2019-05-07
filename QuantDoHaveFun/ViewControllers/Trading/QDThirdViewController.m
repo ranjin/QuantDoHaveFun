@@ -472,8 +472,7 @@ typedef enum : NSUInteger {
     if (!_filterBtn) {
         _filterBtn = [[SPButton alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
         _filterBtn.imagePosition = SPButtonImagePositionRight;
-        _filterBtn.imageTitleSpace = 8;
-        [_filterBtn setImage:[UIImage imageNamed:@"filter_btn"] forState:UIControlStateNormal];
+        [_filterBtn setImage:[UIImage imageNamed:@"icon_filter"] forState:UIControlStateNormal];
         _filterBtn.titleLabel.font = QDFont(14);
         [_filterBtn addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
         [_filterBtn setTitle:@"筛选" forState:UIControlStateNormal];

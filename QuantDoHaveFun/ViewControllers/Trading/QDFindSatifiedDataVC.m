@@ -302,6 +302,11 @@
         [WXProgressHUD showInfoWithTittle:@"价格不能为空"];
         return;
     }
+    //总金额不能为0
+    if ([self.priceLab.text doubleValue] == 0) {
+        [WXProgressHUD showInfoWithTittle:@"金额不能为0"];
+        return;
+    }
     QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];
     recommendVC.price = self.priceTF.text;
     recommendVC.volume = self.amountTF.text;
