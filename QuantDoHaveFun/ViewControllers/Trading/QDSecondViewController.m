@@ -267,7 +267,7 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
     [self.view addSubview:_tableView];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 135)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 120)];
     headerView.backgroundColor = [UIColor whiteColor];
     _tableView.tableHeaderView = headerView;
     
@@ -477,7 +477,7 @@
     QDLog(@"filter");
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     if (!_typeOneView) {
-        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.57)];
+        _typeOneView = [[QDFilterTypeOneView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 282)];
         [_typeOneView.confirmBtn addTarget:self action:@selector(confirmOptions:) forControlEvents:UIControlEventTouchUpInside];
         _typeOneView.backgroundColor = APP_WHITECOLOR;
         [_typeOneView.resetbtn addTarget:self action:@selector(resetOptions:) forControlEvents:UIControlEventTouchUpInside];

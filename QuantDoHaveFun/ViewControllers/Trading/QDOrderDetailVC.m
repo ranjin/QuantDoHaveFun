@@ -29,14 +29,13 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
     [self requestOrderDetail];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    QDLog(@"viewWillDisappear");
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
@@ -71,10 +70,6 @@
                 NSString *ss = [NSString stringWithFormat:@"%d", [[orderDetail objectForKey:@"countDownSec"] intValue]];
                 _pickOrderView.remain.text = [QDDateUtils getMMSSFromSS:ss];
                 _currentEditStatusTime = [[orderDetail objectForKey:@"countDownSec"] integerValue];
-//                _currentEditStatusTime = 8;
-//                if (condition) {
-//                    <#statements#>
-//                }
                 __weak __typeof(self)weakSelf = self;
                 [self.timer startTimerWithSpace:1 block:^(BOOL result) {
                     if (result) {
@@ -140,21 +135,37 @@
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }
-- (void)setLeftBtnItem{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
 - (void)leftBtn{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"摘单详情";
-    self.view.backgroundColor = APP_WHITECOLOR;
-    [self setLeftBtnItem];
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SafeAreaTopHeight)];
+    backView.backgroundColor = APP_WHITECOLOR;
+    [self.view addSubview:backView];
+    
+    UIButton *returnBtn = [[UIButton alloc] init];
+    [returnBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:returnBtn];
+    [returnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight-50);
+        make.width.and.height.mas_equalTo(45);
+    }];
+    
+    UILabel *titleLab = [[UILabel alloc] init];
+    titleLab.text = @"摘单详情";
+    titleLab.textColor = APP_BLACKCOLOR;
+    titleLab.font = QDFont(17);
+    [backView addSubview:titleLab];
+    
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(returnBtn);
+    }];
     _pickOrderView = [[QDPickOrderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _pickOrderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     [_pickOrderView.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];

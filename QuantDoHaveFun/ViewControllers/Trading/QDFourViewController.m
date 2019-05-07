@@ -442,7 +442,7 @@ QD_ManualCanceled = 4      //手工取消
 - (void)filterAction:(UIButton *)sender{
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     if (!_typeThreeView) {
-        _typeThreeView = [[QDFilterTypeThreeView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.57)];
+        _typeThreeView = [[QDFilterTypeThreeView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 244)];
         [_typeThreeView.confirmBtn addTarget:self action:@selector(confirmOptions:) forControlEvents:UIControlEventTouchUpInside];
         [_typeThreeView.resetbtn addTarget:self action:@selector(resetOptions:) forControlEvents:UIControlEventTouchUpInside];
 

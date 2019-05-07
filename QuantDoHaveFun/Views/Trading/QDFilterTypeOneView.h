@@ -14,19 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *priceLab;
 @property (nonatomic, strong) UITextField *lowPrice;
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UILabel *lineView;
 @property (nonatomic, strong) UITextField *hightPrice;
 
 @property (nonatomic, strong) UILabel *amountLab;
 @property (nonatomic, strong) UITextField *lowAmount;
-@property (nonatomic, strong) UIView *lineViewT;
+@property (nonatomic, strong) UILabel *lineViewT;
 @property (nonatomic, strong) UITextField *hightAmount;
 
 @property (nonatomic, strong) UILabel *infoLab;
-@property (nonatomic, strong) UISwitch *switchBtn;
 @property (nonatomic, strong) UIButton *yesBtn;
 @property (nonatomic, strong) UIButton *noBtn;
 @property (nonatomic, strong) UIView *bottomLine;
+@property (nonatomic, strong) UIView *verticalLine;
 @property (nonatomic, strong) UIButton *resetbtn;
 @property (nonatomic, strong) UIButton *confirmBtn;
 @property (nonatomic, copy) void (^sdIsPartialBlock) (NSString *directionID);

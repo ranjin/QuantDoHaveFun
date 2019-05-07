@@ -14,15 +14,17 @@
     if ([super initWithFrame:frame]) {
         _priceLab = [[UILabel alloc] init];
         _priceLab.text = @"价格区间(元)";
-        _priceLab.font = QDFont(13);
+        _priceLab.font = QDFont(14);
         [self addSubview:_priceLab];
         
         _lowPrice = [[UITextField alloc] init];
         [self setUpTextFieldWithHolderStr:_lowPrice andHolderStr:@"最低价"];
         [self addSubview:_lowPrice];
         
-        _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = APP_BLACKCOLOR;
+        _lineView = [[UILabel alloc] init];
+        _lineView.text = @"到";
+        _lineView.textColor = APP_BLACKCOLOR;
+        _lineView.font = QDFont(14);
         [self addSubview:_lineView];
         
         _hightPrice = [[UITextField alloc] init];
@@ -31,32 +33,27 @@
         
         _amountLab = [[UILabel alloc] init];
         _amountLab.text = @"数量区间(个)";
-        _amountLab.font = QDFont(13);
+        _amountLab.font = QDFont(14);
         [self addSubview:_amountLab];
         
         _lowAmount = [[UITextField alloc] init];
         [self setUpTextFieldWithHolderStr:_lowAmount andHolderStr:@"最小量"];
         [self addSubview:_lowAmount];
         
-        _lineViewT = [[UIView alloc] init];
-        _lineViewT.backgroundColor = APP_BLACKCOLOR;
+        _lineViewT = [[UILabel alloc] init];
+        _lineViewT.text = @"到";
+        _lineViewT.textColor = APP_BLACKCOLOR;
+        _lineViewT.font = QDFont(14);
         [self addSubview:_lineViewT];
-        
+
         _hightAmount = [[UITextField alloc] init];
         [self setUpTextFieldWithHolderStr:_hightAmount andHolderStr:@"最大量"];
         [self addSubview:_hightAmount];
         
         _infoLab = [[UILabel alloc] init];
         _infoLab.text = @"可零售";
-        _infoLab.font = QDFont(13);
+        _infoLab.font = QDFont(14);
         [self addSubview:_infoLab];
-        
-        _switchBtn = [[UISwitch alloc] init];
-        _switchBtn.selected = YES;
-        _switchBtn.tintColor = [UIColor colorWithHexString:@"#EEEEEE"];
-        _switchBtn.onTintColor = APP_BLUECOLOR;
-//        _switchBtn.thumbTintColor = APP_WHITECOLOR;
-        [self addSubview:_switchBtn];
         
         _yesBtn = [[UIButton alloc] init];
         _yesBtn.backgroundColor = [UIColor whiteColor];
@@ -85,28 +82,26 @@
         [self addSubview:_noBtn];
         
         _bottomLine = [[UIView alloc] init];
-        _bottomLine.backgroundColor = APP_LIGHTGRAYCOLOR;
+        _bottomLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         [self addSubview:_bottomLine];
+        
+        _verticalLine = [[UIView alloc] init];
+        _verticalLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+        [self addSubview:_verticalLine];
         
         _resetbtn = [[UIButton alloc] init];
         _resetbtn.backgroundColor = APP_WHITECOLOR;
         [_resetbtn setTitle:@"重置" forState:UIControlStateNormal];
         [_resetbtn addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
         [_resetbtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-        _resetbtn.titleLabel.font = QDFont(19);
+        _resetbtn.titleLabel.font = QDFont(16);
         [self addSubview:_resetbtn];
         
         _confirmBtn = [[UIButton alloc] init];
         [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [_confirmBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, 58);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-        [_confirmBtn.layer addSublayer:gradientLayer];
-        _confirmBtn.titleLabel.font= QDFont(19);
+        [_confirmBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
+        _confirmBtn.backgroundColor = APP_WHITECOLOR;
+        _confirmBtn.titleLabel.font= QDFont(16);
         [self addSubview:_confirmBtn];
     }
     return self;
@@ -115,98 +110,87 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.05);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.05);
+        make.left.equalTo(self.mas_left).offset(17);
+        make.top.equalTo(self.mas_top).offset(58);
     }];
     
     [_lowPrice mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceLab);
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.33);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.26);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+        make.left.equalTo(self.mas_left).offset(133);
+        make.width.mas_equalTo(84);
+        make.height.mas_equalTo(31);
     }];
     
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_lowPrice);
-        make.left.equalTo(_lowPrice.mas_right).offset(SCREEN_WIDTH*0.027);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.04);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.003);
+        make.left.equalTo(_lowPrice.mas_right).offset(18);
     }];
     
     [_hightPrice mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_lowPrice);
-        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.06));
-        make.width.mas_equalTo(SCREEN_WIDTH*0.26);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
-    }];
-    
-    [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.05);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.17);
+        make.centerY.width.and.height.equalTo(_lowPrice);
+        make.right.equalTo(self.mas_right).offset(-25);
     }];
     
     [_lowAmount mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_amountLab);
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.33);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.26);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+        make.left.width.and.height.equalTo(_lowPrice);
+        make.top.equalTo(_lowPrice.mas_bottom).offset(28);
+    }];
+    
+    [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_lowAmount);
+        make.left.equalTo(_priceLab);
     }];
     
     [_lineViewT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_lowAmount);
-        make.left.equalTo(_lowAmount.mas_right).offset(SCREEN_WIDTH*0.027);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.04);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.003);
+        make.left.equalTo(_lineView);
     }];
     
     [_hightAmount mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_lowAmount);
-        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.06));
-        make.width.mas_equalTo(SCREEN_WIDTH*0.26);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
+        make.centerY.width.and.height.equalTo(_lowAmount);
+        make.right.equalTo(_hightPrice);
     }];
     
     [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_amountLab);
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.28);
+        make.top.equalTo(_amountLab.mas_bottom).offset(45);
     }];
     
-    [_switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_yesBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_lowPrice);
         make.centerY.equalTo(_infoLab);
-        make.left.equalTo(self.mas_left).offset(94);
-        make.width.mas_equalTo(52);
-        make.height.mas_equalTo(23);
+        make.width.mas_equalTo(45);
+        make.height.mas_equalTo(20);
     }];
-    
-//    [_yesBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(_lowPrice);
-//        make.centerY.equalTo(_infoLab);
-//        make.width.mas_equalTo(SCREEN_WIDTH*0.16);
-//        make.height.mas_equalTo(SCREEN_HEIGHT*0.05);
-//    }];
-//
-//    [_noBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.57);
-//        make.centerY.width.and.height.equalTo(_yesBtn);
-//    }];
-    
-    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self);
-        make.left.equalTo(self.mas_left);
-        make.width.mas_equalTo(SCREEN_WIDTH/2);
-        make.height.mas_equalTo(58);
-    }];
-    
-    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_resetbtn);
-        make.right.equalTo(self);
-        make.width.and.height.equalTo(_resetbtn);
+
+    [_noBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_yesBtn.mas_right).offset(15);
+        make.centerY.width.and.height.equalTo(_yesBtn);
     }];
     
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_resetbtn.mas_top);
-        make.left.and.width.equalTo(self);
+        make.centerX.and.width.equalTo(self);
+        make.bottom.equalTo(self.mas_bottom).offset(-46);
         make.height.mas_equalTo(@1);
+    }];
+    
+    [_verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.and.bottom.equalTo(self);
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.width.mas_equalTo(1);
+    }];
+    
+    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(_verticalLine.mas_left);
+        make.bottom.equalTo(self);
+    }];
+
+    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.and.bottom.equalTo(_resetbtn);
+        make.right.equalTo(self);
+        make.left.equalTo(_verticalLine.mas_right);
     }];
 }
 
@@ -222,9 +206,10 @@
     textField.attributedPlaceholder = attri;
     [textField setValue:[NSNumber numberWithInt:20] forKey:@"paddingLeft"];
 
-    textField.layer.borderColor = APP_BLUECOLOR.CGColor;
-    [textField setValue:QDFont(13) forKeyPath:@"_placeholderLabel.font"];
-    textField.backgroundColor = [UIColor colorWithHexString:@"#F5F5F5"];
+    textField.layer.borderColor = [UIColor colorWithHexString:@"#EEEEEE"].CGColor;
+    textField.layer.borderWidth = 1;
+    [textField setValue:QDFont(14) forKeyPath:@"_placeholderLabel.font"];
+    textField.backgroundColor = APP_WHITECOLOR;
 }
 #pragma mark - 选择方向
 - (void)isAllDealed:(UIButton *)sender{

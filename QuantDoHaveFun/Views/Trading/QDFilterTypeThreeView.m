@@ -23,7 +23,6 @@
         [_buyBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_buyBtn];
         
-        
         _sellBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
         _sellBtn.imageTitleSpace = 11;
         [_sellBtn setImage:[UIImage imageNamed:@"direction_normal"] forState:UIControlStateNormal];
@@ -34,11 +33,6 @@
         _sellBtn.titleLabel.font = QDFont(14);
         [_sellBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         [self addSubview:_sellBtn];
-        
-        _orderStatusLab = [[UILabel alloc] init];
-        _orderStatusLab.text = @"摘单状态";
-        _orderStatusLab.font = QDFont(14);
-        [self addSubview:_orderStatusLab];
         
         _dfkBtn = [[UIButton alloc] init];
         _dfkBtn.backgroundColor = [UIColor whiteColor];
@@ -84,25 +78,23 @@
         _bottomLine.alpha = 0.5;
         [self addSubview:_bottomLine];
         
+        _verticalLine = [[UIView alloc] init];
+        _verticalLine.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+        [self addSubview:_verticalLine];
+        
+        
         _resetbtn = [[UIButton alloc] init];
         _resetbtn.backgroundColor = APP_WHITECOLOR;
-        [_resetbtn setTitle:@"重置" forState:UIControlStateNormal];
         [_resetbtn addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_resetbtn setTitle:@"重置" forState:UIControlStateNormal];
         [_resetbtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-        _resetbtn.titleLabel.font = QDFont(19);
+        _resetbtn.titleLabel.font = QDFont(16);
         [self addSubview:_resetbtn];
         
         _confirmBtn = [[UIButton alloc] init];
         [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [_confirmBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
-        CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, 58);
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
-        [_confirmBtn.layer addSublayer:gradientLayer];
-        _confirmBtn.titleLabel.font= QDFont(19);
+        [_confirmBtn setTitleColor:APP_BLUECOLOR forState:UIControlStateNormal];
+        _confirmBtn.titleLabel.font= QDFont(16);
         [self addSubview:_confirmBtn];
     }
     return self;
@@ -175,65 +167,57 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    [_direction mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.mas_left).offset(20);
-//        make.top.equalTo(self.mas_top).offset(36);
-//    }];
-    
     [_buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(96);
-        make.top.equalTo(self.mas_top).offset(30);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(32);
+        make.left.equalTo(self.mas_left).offset(38);
+        make.top.equalTo(self.mas_top).offset(47);
     }];
     
     [_sellBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_buyBtn);
         make.left.equalTo(_buyBtn.mas_right).offset(10);
-        make.width.and.height.equalTo(_buyBtn);
-    }];
-
-    [_orderStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(20);
-        make.top.equalTo(self.mas_top).offset(108);
     }];
 
     //待付款 已成交 已取消
     [_dfkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_orderStatusLab);
-        make.width.mas_equalTo(80);
-        make.height.mas_equalTo(32);
-        make.left.equalTo(_orderStatusLab.mas_right).offset(20);
+        make.top.equalTo(self.mas_top).offset(108);
+        make.width.mas_equalTo(64);
+        make.height.mas_equalTo(28);
+        make.left.equalTo(self.mas_left).offset(27);
     }];
 
     [_ycjBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.width.and.height.equalTo(_dfkBtn);
-        make.left.equalTo(_dfkBtn.mas_right).offset(10);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.26);
+        make.left.equalTo(_dfkBtn.mas_right).offset(15);
     }];
 
     [_yqxBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.width.and.height.equalTo(_ycjBtn);
-        make.left.equalTo(_ycjBtn.mas_right).offset(10);
-    }];
-
-    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self);
-        make.left.equalTo(self.mas_left);
-        make.width.mas_equalTo(SCREEN_WIDTH/2);
-        make.height.mas_equalTo(58);
-    }];
-
-    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_resetbtn);
-        make.right.equalTo(self);
-        make.width.and.height.equalTo(_resetbtn);
+        make.left.equalTo(_ycjBtn.mas_right).offset(15);
     }];
 
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_resetbtn.mas_top);
-        make.left.and.width.equalTo(self);
+        make.centerX.and.width.equalTo(self);
+        make.bottom.equalTo(self.mas_bottom).offset(-46);
         make.height.mas_equalTo(@1);
+    }];
+    
+    [_verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.and.bottom.equalTo(self);
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.width.mas_equalTo(1);
+    }];
+    
+    [_resetbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_bottomLine.mas_bottom);
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(_verticalLine.mas_left);
+        make.bottom.equalTo(self);
+    }];
+    
+    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.and.bottom.equalTo(_resetbtn);
+        make.right.equalTo(self);
+        make.left.equalTo(_verticalLine.mas_right);
     }];
 }
 
