@@ -1956,9 +1956,9 @@
 			isa = PBXGroup;
 			children = (
 				93E98082227147C700DDEB80 /* Calendar */,
+				93E98089227147C700DDEB80 /* QDCitySelectedViewController.h */,
 				93E98087227147C700DDEB80 /* QDCitySelectedViewController.m */,
 				93E98088227147C700DDEB80 /* QDRotePlanViewController.h */,
-				93E98089227147C700DDEB80 /* QDCitySelectedViewController.h */,
 				93E9808A227147C700DDEB80 /* QDRotePlanViewController.m */,
 			);
 			path = Settings;

@@ -116,7 +116,7 @@
 - (void)chooseDate:(UIButton *)sender{
     QDLog(@"%@, %@", _dateInStr, _dateOutStr);
     if(self.date1 == nil || self.date2 == nil){
-        [WXProgressHUD showErrorWithTittle:@"请正确选择您的住离时间"];
+        [WXProgressHUD showInfoWithTittle:@"请正确选择您的住离时间"];
     }else{
         if (self.returnDateBlock != nil) {
             self.returnDateBlock(_dateInStr, _dateOutStr, _date1Str, _date2Str, _totalDays);
@@ -158,22 +158,22 @@
     confirmBtn.layer.cornerRadius = 5;
     confirmBtn.layer.masksToBounds = YES;
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH*0.89, SCREEN_HEIGHT*0.07);
+    gradientLayer.frame = CGRectMake(0, 0, 296, 50);
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1, 0);
-    gradientLayer.locations = @[@(0),@(1.0)];//渐变点
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
     gradientLayer.masksToBounds = YES;
-    gradientLayer.cornerRadius = 4;
-    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+    gradientLayer.cornerRadius = 25;
+    [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
     [confirmBtn.layer addSublayer:gradientLayer];
     [confirmBtn addTarget:self action:@selector(chooseDate:) forControlEvents:UIControlEventTouchUpInside];
-    confirmBtn.titleLabel.font = QDFont(17);
+    confirmBtn.titleLabel.font = QDFont(16);
     [self.view addSubview:confirmBtn];
     [confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view.mas_bottom).offset(-(SCREEN_HEIGHT*0.03));
-        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.075);
+        make.width.mas_equalTo(296);
+        make.height.mas_equalTo(50);
     }];
     [self loadCalendarEvents];
     
