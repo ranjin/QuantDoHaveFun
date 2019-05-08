@@ -15,13 +15,26 @@
 #import "TABAnimated.h"
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
+#import "HcdGuideView.h"
+#import "CCAppManager.h"
+#import "CCGotoUpDateViewController.h"
+#import "OpenShareHeader.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
 
 @interface AppDelegate ()
 @end
 
 @implementation AppDelegate
 
-
+- (void)configureAPIKey{
+    if ([APIKey length] == 0) {
+        NSString *reason = [NSString stringWithFormat:@"apiKey为空，请检查key是否正确设置。"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:reason delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    [AMapServices sharedServices].apiKey = (NSString *)APIKey;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[TABViewAnimated sharedAnimated] initWithDefaultAnimated];
@@ -36,6 +49,44 @@
     //启动更新检查SDK
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
     [[PgyUpdateManager sharedPgyManager] checkUpdate];
+    
+    //引导页
+    NSMutableArray *images = [NSMutableArray new];
+    
+    [images addObject:[UIImage imageNamed:@"ggps_1_bg"]];
+    [images addObject:[UIImage imageNamed:@"ggps_2_bg"]];
+    [images addObject:[UIImage imageNamed:@"ggps_3_bg"]];
+    
+    HcdGuideView *guideView = [HcdGuideView sharedInstance];
+    guideView.window = self.window;
+    [guideView showGuideViewWithImages:images
+                        andButtonTitle:@"立即体验"
+                   andButtonTitleColor:[UIColor whiteColor]
+                      andButtonBGColor:[UIColor clearColor]
+                  andButtonBorderColor:[UIColor whiteColor]];
+    
+    
+    [OpenShare connectQQWithAppId:@"101559247"];
+    [OpenShare connectWeiboWithAppKey:@"402180334"];
+    [OpenShare connectWeixinWithAppId:@"wx2f631a50a1c2b9c5" miniAppId:@"gh_d43f693ca31f"];
+    [QDServiceClient startMonitoringNetworking];
+    return YES;
+}
+
+- (void)shouldUpdateApp:(NSNotification *)notification {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        id userInfo = notification.object;
+        CCGotoUpDateViewController *updateVC = [[CCGotoUpDateViewController alloc] init];
+        updateVC.urlStr = [userInfo objectForKey:@"URI"];
+        [self.window setRootViewController:updateVC];
+    });
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    if ([OpenShare handleOpenURL:url]) {
+        return YES;
+    }
+    //这里可以写上其他OpenShare不支持的客户端的回掉,比如支付宝等
     return YES;
 }
 

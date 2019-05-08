@@ -106,6 +106,11 @@
 		93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E5B2268663600FB9F0E /* RightTableViewCell.m */; };
 		93399E702268663700FB9F0E /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E672268663700FB9F0E /* NSObject+Property.m */; };
 		93399E712268663700FB9F0E /* LJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */; };
+		936DE1C32282B1250010B350 /* HcdGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1C02282B1250010B350 /* HcdGuideView.m */; };
+		936DE1C42282B1250010B350 /* HcdGuideViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1C12282B1250010B350 /* HcdGuideViewCell.m */; };
+		936DE1CB2282B1650010B350 /* CCAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1C62282B1650010B350 /* CCAppManager.m */; };
+		936DE1CC2282B1650010B350 /* CCGotoUpDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936DE1C72282B1650010B350 /* CCGotoUpDateViewController.m */; };
+		936DE1CD2282B1650010B350 /* version.json in Resources */ = {isa = PBXBuildFile; fileRef = 936DE1C82282B1650010B350 /* version.json */; };
 		938C3C472272F96C0087724E /* TheCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C462272F96C0087724E /* TheCityModel.m */; };
 		938C3C4A2275307F0087724E /* TopRightsNotLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C492275307F0087724E /* TopRightsNotLoginHeadView.m */; };
 		938C3C4D2275329B0087724E /* TopRightsLoginHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C3C4C2275329B0087724E /* TopRightsLoginHeadView.m */; };
@@ -539,6 +544,15 @@
 		93399E652268663700FB9F0E /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		93399E672268663700FB9F0E /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		936DE1BF2282B1250010B350 /* HcdGuideViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdGuideViewCell.h; sourceTree = "<group>"; };
+		936DE1C02282B1250010B350 /* HcdGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdGuideView.m; sourceTree = "<group>"; };
+		936DE1C12282B1250010B350 /* HcdGuideViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdGuideViewCell.m; sourceTree = "<group>"; };
+		936DE1C22282B1250010B350 /* HcdGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdGuideView.h; sourceTree = "<group>"; };
+		936DE1C62282B1650010B350 /* CCAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppManager.m; sourceTree = "<group>"; };
+		936DE1C72282B1650010B350 /* CCGotoUpDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGotoUpDateViewController.m; sourceTree = "<group>"; };
+		936DE1C82282B1650010B350 /* version.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = version.json; sourceTree = "<group>"; };
+		936DE1C92282B1650010B350 /* CCGotoUpDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGotoUpDateViewController.h; sourceTree = "<group>"; };
+		936DE1CA2282B1650010B350 /* CCAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppManager.h; sourceTree = "<group>"; };
 		938C3C452272F96C0087724E /* TheCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheCityModel.h; sourceTree = "<group>"; };
 		938C3C462272F96C0087724E /* TheCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheCityModel.m; sourceTree = "<group>"; };
 		938C3C482275307F0087724E /* TopRightsNotLoginHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRightsNotLoginHeadView.h; sourceTree = "<group>"; };
@@ -1462,6 +1476,8 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				936DE1C52282B1650010B350 /* CCAppManager */,
+				936DE1BE2282B1250010B350 /* HcdGuideView */,
 				93E9827B227198BA00DDEB80 /* AxcAE_TabBar */,
 				93E982712271560B00DDEB80 /* PPNumberButton */,
 				93E98269227155C100DDEB80 /* QDGCDTimer */,
@@ -1734,6 +1750,29 @@
 				93399E682268663700FB9F0E /* LJCollectionViewFlowLayout.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		936DE1BE2282B1250010B350 /* HcdGuideView */ = {
+			isa = PBXGroup;
+			children = (
+				936DE1BF2282B1250010B350 /* HcdGuideViewCell.h */,
+				936DE1C02282B1250010B350 /* HcdGuideView.m */,
+				936DE1C12282B1250010B350 /* HcdGuideViewCell.m */,
+				936DE1C22282B1250010B350 /* HcdGuideView.h */,
+			);
+			path = HcdGuideView;
+			sourceTree = "<group>";
+		};
+		936DE1C52282B1650010B350 /* CCAppManager */ = {
+			isa = PBXGroup;
+			children = (
+				936DE1C62282B1650010B350 /* CCAppManager.m */,
+				936DE1C72282B1650010B350 /* CCGotoUpDateViewController.m */,
+				936DE1C82282B1650010B350 /* version.json */,
+				936DE1C92282B1650010B350 /* CCGotoUpDateViewController.h */,
+				936DE1CA2282B1650010B350 /* CCAppManager.h */,
+			);
+			path = CCAppManager;
 			sourceTree = "<group>";
 		};
 		93E97FC32271442600DDEB80 /* LoginAndRegister */ = {
@@ -2487,6 +2526,7 @@
 				93E9807F2271479300DDEB80 /* ExampleApp.html in Resources */,
 				938C3C57228035480087724E /* goMain.html in Resources */,
 				93399CC92267124500FB9F0E /* LaunchScreen.storyboard in Resources */,
+				936DE1CD2282B1650010B350 /* version.json in Resources */,
 				93399CC62267124500FB9F0E /* Assets.xcassets in Resources */,
 				93399CC42267124000FB9F0E /* Main.storyboard in Resources */,
 				938C3C4F22754EEF0087724E /* MBProgressHUD.bundle in Resources */,
@@ -2676,6 +2716,7 @@
 				93E980632271472F00DDEB80 /* QDStrategyDTO.m in Sources */,
 				93399DA02268222500FB9F0E /* UIView+ST.m in Sources */,
 				93E9800A2271446B00DDEB80 /* YYTextArchiver.m in Sources */,
+				936DE1C32282B1250010B350 /* HcdGuideView.m in Sources */,
 				93E98264227155A100DDEB80 /* QDFindSatifiedDataVC.m in Sources */,
 				93399E6A2268663700FB9F0E /* LeftTableViewCell.m in Sources */,
 				93399CF5226714F000FB9F0E /* QDBaseViewController.m in Sources */,
@@ -2742,6 +2783,7 @@
 				93399DA72268228900FB9F0E /* QDSettingViewController.m in Sources */,
 				93E98027227144B100DDEB80 /* QDSetLoginPwdView.m in Sources */,
 				93E9825F227155A100DDEB80 /* QDFourViewController.m in Sources */,
+				936DE1CC2282B1650010B350 /* CCGotoUpDateViewController.m in Sources */,
 				93E98051227146AF00DDEB80 /* QDProtocolVC.m in Sources */,
 				93E9813A22714F7000DDEB80 /* SYChineseToPinyin.m in Sources */,
 				93E9814A22714F9700DDEB80 /* HotelCouponDetailDTO.m in Sources */,
@@ -2815,6 +2857,7 @@
 				93399E192268487300FB9F0E /* UICollectionView+Animated.m in Sources */,
 				93399E322268546F00FB9F0E /* UIView+HQExtension.m in Sources */,
 				93E9808C227147C700DDEB80 /* QDCalendarCustomerTourVC.m in Sources */,
+				936DE1CB2282B1650010B350 /* CCAppManager.m in Sources */,
 				93399DEF226823AF00FB9F0E /* UIView+WebCacheOperation.m in Sources */,
 				93399E122268487300FB9F0E /* UITableView+Animated.m in Sources */,
 				93E981642271500700DDEB80 /* QDHomeMallListVC.m in Sources */,
@@ -2837,6 +2880,7 @@
 				93399D0B22671FCA00FB9F0E /* QDHomeViewController.m in Sources */,
 				93E980802271479300DDEB80 /* WebViewJavascriptBridge_JS.m in Sources */,
 				93399DEA226823AF00FB9F0E /* SDWebImageDownloaderOperation.m in Sources */,
+				936DE1C42282B1250010B350 /* HcdGuideViewCell.m in Sources */,
 				93E97FC62271442D00DDEB80 /* QDLoginAndRegisterVC.m in Sources */,
 				93399E6B2268663700FB9F0E /* RightTableViewCell.m in Sources */,
 				93E980352271450000DDEB80 /* XBGradientColorView.m in Sources */,
