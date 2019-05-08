@@ -48,7 +48,7 @@
     [[PgyManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
     //启动更新检查SDK
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
-    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
     
     //引导页
     NSMutableArray *images = [NSMutableArray new];

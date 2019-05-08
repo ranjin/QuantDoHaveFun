@@ -47,10 +47,18 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstLaunch:) name:@"FirstLaunch" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FirstLaunch" object:nil];
+}
+
+- (void)firstLaunch:(NSNotification *)noti{
+    if (!_videoList.count) {
+        [self getVideoHeadData];
+    }
 }
 
 - (void)viewDidLoad {
@@ -66,16 +74,12 @@
     _totalPage = 0; //总页数默认
     _videoList = [[NSMutableArray alloc] init];
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
-    _videoList = [[NSMutableArray alloc] init];
     [self initTableView];
     [self getVideoList];
 }
 
 #pragma mark - 查询商品分类
 - (void)getVideoList{
-    if (_videoList.count) {
-        [_videoList removeAllObjects];
-    }
     if (_totalPage != 0) {
         if (_pageNum > _totalPage) {
             [_tableView.mj_footer endRefreshingWithNoMoreData];
@@ -84,8 +88,8 @@
     }
     
     NSDictionary * dic = @{
-                           @"pageNum":@1,
-                           @"pageSize":@10
+                           @"pageNum":[NSNumber numberWithInt:_pageNum],
+                           @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getVideoList params:dic successBlock:^(QDResponseObject *responseObject) {
         [_tableView tab_endAnimation];
@@ -200,7 +204,8 @@
     _headView = [[RankFirstHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
     _tableView.tableHeaderView = _headView;
     [_tableView tab_startAnimation];
-    self.view = _tableView;
+//    self.view = _tableView;
+    [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self getVideoHeadData];
     }];
@@ -275,37 +280,39 @@
  PLATFORM(99,"平台");
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    RankFirstVideoModel *model = _videoList[indexPath.row];
-    switch ([model.sourceType integerValue]) {
-        case 5://酒店
-        {
-            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_HOTELDETAIL, model.sourceId];
-//            bridgeVC.infoModel = model;
-            self.tabBarController.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:bridgeVC animated:YES];
+    if (_videoList.count) {
+        RankFirstVideoModel *model = _videoList[indexPath.row];
+        switch ([model.sourceType integerValue]) {
+            case 5://酒店
+            {
+                QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+                bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_HOTELDETAIL, model.sourceId];
+                //            bridgeVC.infoModel = model;
+                self.tabBarController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:bridgeVC animated:YES];
+            }
+                break;
+            case 7://餐厅
+            {
+                //传递ID
+                QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+                bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_RESTAURANTDETAIL, model.sourceId];
+                QDLog(@"urlStr = %@", bridgeVC.urlStr);
+                [self.navigationController pushViewController:bridgeVC animated:YES];
+            }
+                break;
+            case 8://定制游
+            {
+                QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+                bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_CUSTOMERTRAVEL, model.sourceId];
+                QDLog(@"urlStr = %@", bridgeVC.urlStr);
+                //            bridgeVC.customTravelModel = model;
+                [self.navigationController pushViewController:bridgeVC animated:YES];
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        case 7://餐厅
-        {
-            //传递ID
-            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_RESTAURANTDETAIL, model.sourceId];
-            QDLog(@"urlStr = %@", bridgeVC.urlStr);
-            [self.navigationController pushViewController:bridgeVC animated:YES];
-        }
-            break;
-        case 8://定制游
-        {
-            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_CUSTOMERTRAVEL, model.sourceId];
-            QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//            bridgeVC.customTravelModel = model;
-            [self.navigationController pushViewController:bridgeVC animated:YES];
-        }
-            break;
-        default:
-            break;
     }
 }
 
@@ -376,7 +383,7 @@
     if (_emptyType == QDNODataError) {
         return nil;
     }else{
-        NSString *text = @"请检查您的手机网络后点击重试";
+        NSString *text = @"请检查您的手机网络后重试";
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
         paragraphStyle.alignment = NSTextAlignmentCenter;
@@ -396,12 +403,36 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return -100;
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+    NSString *text;
+    if (_emptyType == QDNetworkError) {
+        text = @"重新加载";
+    }else{
+        text = @"点击刷新";
+    }
+    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18],
+                                 NSForegroundColorAttributeName: APP_WHITECOLOR,
+                                 NSParagraphStyleAttributeName: paragraphStyle};
+    return [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button{
+    [self getVideoHeadData];
+}
 @end
