@@ -64,7 +64,6 @@
     _levelArr = [[NSMutableArray alloc] init];
 
     [self finAllMapDic];
-    [self initTableView];
     [self requestHotelData];
 }
 
@@ -100,6 +99,7 @@
                         [_hotelLevelArr insertObject:@"星级" atIndex:0];
                     }
                 }
+                [self initTableView];
                 [self setDropMenu];
             }
         }else{
