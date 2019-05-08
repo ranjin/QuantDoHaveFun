@@ -70,9 +70,9 @@
 
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
     switch (index) {
-        case 0: return @"预定酒店";
-        case 1: return @"餐厅";
-        case 2: return @"商城";
+        case 0: return @"好住";
+        case 1: return @"好吃";
+        case 2: return @"好物";
     }
     return @"NONE";
 }

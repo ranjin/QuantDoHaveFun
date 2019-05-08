@@ -14,9 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) UIView *centerView;
-@property (nonatomic, strong) UIView *bottomView;
-
-@property (nonatomic, strong) UILabel *locationLab;
 @property (nonatomic, strong) SPButton *locateBtn;
 @property (nonatomic, strong) UILabel *inLab;
 @property (nonatomic, strong) UILabel *outLab;

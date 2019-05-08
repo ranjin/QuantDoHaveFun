@@ -23,8 +23,12 @@
 #import <TYAlertView.h>
 #import "AppDelegate.h"
 #import "QDPriceRangeView.h"
+#import "QDCitySelectedViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "QDCalendarViewController.h"
+
 //预定酒店 定制游 商城
-@interface QDHotelReserveVC ()<UITableViewDelegate, UITableViewDataSource, TFDropDownMenuViewDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>{
+@interface QDHotelReserveVC ()<UITableViewDelegate, UITableViewDataSource, TFDropDownMenuViewDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, CLLocationManagerDelegate, SendDateStrDelegate, UITextFieldDelegate, getChoosedAreaDelegate>{
     UITableView *_tableView;
     TFDropDownMenuView *_menu;
     QDHotelReserveTableHeaderView *_headerView;    
@@ -39,6 +43,7 @@
     NSMutableArray *_hotelLevelArr;
     NSMutableArray *_hotelTypeIdArr;
     NSMutableArray *_levelArr;
+    NSString *_cityName;
 }
 
 @end
@@ -58,7 +63,7 @@
     _hotelLevel = @"";
     _minPrice = @"";
     _maxPrice = @"";
-    
+    _cityName = @"";
     _hotelLevelArr = [[NSMutableArray alloc] init];
     _hotelTypeIdArr = [[NSMutableArray alloc] init];
     _levelArr = [[NSMutableArray alloc] init];
@@ -99,8 +104,9 @@
                         [_hotelLevelArr insertObject:@"星级" atIndex:0];
                     }
                 }
-                [self initTableView];
                 [self setDropMenu];
+                [self setCenterView];
+                [self initTableView];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
@@ -108,6 +114,64 @@
     } failureBlock:^(NSError *error) {
         [WXProgressHUD hideHUD];
     }];
+}
+
+- (void)setCenterView{
+    _headerView = [[QDHotelReserveTableHeaderView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 200)];
+    _headerView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    [self.view addSubview:_headerView];
+    [_headerView.dateIn addTarget:self action:@selector(chooseRoomInOrOut:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.dateOut addTarget:self action:@selector(chooseRoomInOrOut:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.locateBtn addTarget:self action:@selector(myLocation:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.searchBtn addTarget:self action:@selector(startSearch:) forControlEvents:UIControlEventTouchUpInside];
+    _dateInPassedVal = _headerView.dateInPassVal;
+    _dateOutPassedVal = _headerView.dateOutPassVal;
+}
+
+- (void)startSearch:(UIButton *)sender{
+    [_headerView.locationTF resignFirstResponder];
+    _cityName = _headerView.locationTF.text;
+    [self requestHotelHeaderData];
+}
+#pragma mark - 选择入住时间(自定义日历)
+- (void)chooseRoomInOrOut:(UIButton *)sender{
+    QDCalendarViewController * calendar = [[QDCalendarViewController alloc] init];
+    calendar.delegate = self;
+    calendar.dateInStr = _headerView.dateInStr;
+    calendar.dateOutStr = _headerView.dateOutStr;
+    [calendar returnDate:^(NSString * _Nonnull startDate, NSString * _Nonnull endDate, NSString * _Nonnull dateInPassedVal, NSString * _Nonnull dateOutPassedVal, int totayDays) {
+        [self sendDateStr:startDate andDateOutStr:endDate andDateInPassedVal:dateInPassedVal andDateOutPassedVal:dateOutPassedVal andTotalDays:totayDays];
+    }];
+    [self presentViewController:calendar animated:YES completion:nil];
+}
+
+- (void)sendDateStr:(NSString *)dateInStr andDateOutStr:(NSString *)dateOutStr andDateInPassedVal:(NSString *)dateInPassedStr andDateOutPassedVal:(NSString *)dateOutPassedStr andTotalDays:(int)totalDays{
+    QDLog(@"dateInStr = %@", dateInStr);
+    [_headerView.dateIn setTitle:dateInStr forState:UIControlStateNormal];
+    [_headerView.dateOut setTitle:dateOutStr forState:UIControlStateNormal];
+    //
+    _dateInStr = dateInStr;
+    _dateOutStr = dateOutStr;
+    _dateInPassedVal = dateInPassedStr;
+    _dateOutPassedVal = dateOutPassedStr;
+    _headerView.dateInStr = dateInStr;
+    _headerView.dateOutStr = dateOutStr;
+    _headerView.totalDayLab.text = [NSString stringWithFormat:@"%d晚", totalDays];
+}
+
+#pragma mark - 定位:我的位置
+- (void)myLocation:(UIButton *)sender{
+    QDCitySelectedViewController *locationVC = [[QDCitySelectedViewController alloc] init];
+    locationVC.delegate = self;
+    locationVC.selectCity = ^(NSString * _Nonnull cityName) {
+        QDLog(@"cityName");
+        _headerView.locationTF.text = cityName;
+    };
+    [self presentViewController:locationVC animated:YES completion:nil];
+}
+
+- (void)getChoosedAreaName:(NSString *)areaStr{
+    _headerView.locationTF.text = areaStr;
 }
 
 #pragma mark - 请求酒店头部数据
@@ -118,6 +182,7 @@
         [_hotelImgArr removeAllObjects];
     }
     NSDictionary *dic1 = @{
+                           @"hotelName":_cityName,          //城市名称
                             @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
@@ -303,10 +368,11 @@
     [self.view addSubview:_menu];
 }
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 57, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight-64+260, SCREEN_WIDTH, SCREEN_HEIGHT-250) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.contentInset = UIEdgeInsetsMake(0, 0, -200, 0);
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView tab_startAnimation];
@@ -386,7 +452,7 @@
     if (_hotelListInfoArr.count) {
         QDHotelListInfoModel *model = _hotelListInfoArr[indexPath.row];
         QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld", QD_JSURL, JS_HOTELDETAIL, (long)model.id];
+        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld&&startDate=%@&&endDate=%@", QD_JSURL, JS_HOTELDETAIL, (long)model.id, _dateInPassedVal, _dateOutPassedVal];
         bridgeVC.infoModel = model;
         self.tabBarController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:bridgeVC animated:YES];
@@ -396,37 +462,21 @@
 #pragma mark - emptyDataSource
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-//    if (self.isLoading) {
-//        return [UIImage imageNamed:@"loading_imgBlue" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-//    }
-//    else {
-//        if (_emptyType == QDNODataError) {
-//            return [UIImage imageNamed:@"icon_nodata"];
-//        }else if(_emptyType == QDNetworkError){
-//            return [UIImage imageNamed:@"icon_noConnect"];
-//        }
-//    }
+    if (_emptyType == QDNODataError) {
+        return [UIImage imageNamed:@"icon_nodata"];
+    }else if(_emptyType == QDNetworkError){
+        return [UIImage imageNamed:@"icon_noConnect"];
+    }
     return nil;
 }
 
-- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
-    return 155;
-}
-
-- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
-{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
-    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-    animation.toValue = [NSValue valueWithCATransform3D: CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0) ];
-    animation.duration = 0.25;
-    animation.cumulative = YES;
-    animation.repeatCount = MAXFLOAT;
-    
-    return animation;
-}
-
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
-    NSString *text = @"页面加载失败";
+    NSString *text;
+    if (_emptyType == QDNODataError) {
+        text = @"暂无数据";
+    }else{
+        text = @"页面加载失败";
+    }
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:16.0f],
                                  NSForegroundColorAttributeName: APP_BLUECOLOR};
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
@@ -453,17 +503,17 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
 {
-    return YES;
+    return NO;
 }
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
@@ -515,5 +565,62 @@
     //    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     //    [_tableView scrollToRowAtIndexPath:scrollIndexPath
     //                      atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+#pragma mark - CLLocationManagerDelegate
+/**
+ *  只要定位到用户的位置，就会调用（调用频率特别高）
+ *  @param locations : 装着CLLocation对象
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    _locationStatus = QD_LOCATION_SUCCESS;
+    CLLocation *currentLocation = [locations lastObject];
+    //根据经纬度反向地理编译出地址信息
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *array, NSError *error) {
+        for (CLPlacemark * placemark in array) {
+            
+            NSDictionary *address = [placemark addressDictionary];
+            
+            //  Country(国家)  State(省)  City（市）
+            NSLog(@"#####%@",address);
+            
+            NSLog(@"%@", [address objectForKey:@"Country"]);
+            
+            NSLog(@"%@", [address objectForKey:@"State"]);
+            
+            NSLog(@"%@", [address objectForKey:@"City"]);
+            _headerView.locationTF.text = [address objectForKey:@"City"];
+            //发送通知
+        }
+    }];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    _locationStatus = QD_LOCATION_FAILED;
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"尚未打开定位" message:@"是否在设置中打开定位?"];
+    [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
+        [WXProgressHUD hideHUD];
+    }]];
+    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    }]];
+    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
+    [alertView show];
+    if ([error code] == kCLErrorDenied){
+        //访问被拒绝
+        [WXProgressHUD showErrorWithTittle:@"位置访问被拒绝"];
+        _headerView.locationTF.text = @"定位失败";
+    }
+    if ([error code] == kCLErrorLocationUnknown) {
+        //无法获取位置信息
+        [WXProgressHUD showErrorWithTittle:@"无法获取位置信息"];
+        _headerView.locationTF.text = @"定位失败";
+        QDLog(@"kCLErrorLocationUnknown");
+    }
+}
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return -100;
 }
 @end

@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *hotelLevel;     //酒店星级
 @property (nonatomic, strong) NSString *minPrice;       //最小价格
 @property (nonatomic, strong) NSString *maxPrice;       //最大价格
+
+@property (nonatomic, strong) NSString *dateInStr;
+@property (nonatomic, strong) NSString *dateOutStr;
+
+@property (nonatomic, strong) NSString *dateInPassedVal;
+@property (nonatomic, strong) NSString *dateOutPassedVal;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -288,7 +288,9 @@
             {
                 QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
                 bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_HOTELDETAIL, model.sourceId];
-                //            bridgeVC.infoModel = model;
+//                    bridgeVC.infoModel = model;
+                //model转换
+                
                 self.tabBarController.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:bridgeVC animated:YES];
             }
