@@ -1,12 +1,12 @@
 //
-//  QDCreditOrderHistoryVC.m
+//  QDTradingFlowVC.m
 //  QuantDoHaveFun
 //
-//  Created by lidi on 2019/5/7.
+//  Created by lidi on 2019/5/8.
 //  Copyright © 2019 Chalres Ran. All rights reserved.
 //
 
-#import "QDCreditOrderHistoryVC.h"
+#import "QDTradingFlowVC.h"
 #import "QDCreditOrderTableViewCell.h"
 #import "TFDropDownMenu.h"
 #import "QDFiltrateDropdownMenu.h"
@@ -15,7 +15,7 @@
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
 
-@interface QDCreditOrderHistoryVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate>
+@interface QDTradingFlowVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *orderArray;
 @property(nonatomic,assign)NSInteger pageNum;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation QDCreditOrderHistoryVC
+@implementation QDTradingFlowVC
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:NO];
@@ -42,13 +42,11 @@
     [super viewDidAppear:animated];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"kNotificationDropDownMenuDidLoaded" object:nil];
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
-    self.title = @"玩贝踪影";
-
+    self.title = @"资金明细";
     UIImage *backImage = [UIImage imageNamed:@"icon_return"];
     UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackAction)];
@@ -57,24 +55,22 @@
     [self setupViews];
     [self getCreditOrderList:1];
     
-    
 }
-
 - (void)navigationBackAction {
     [self.filtrateMenuView.dropDownView removeFromSuperview];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (QDFiltrateDropdownMenu *)filtrateMenuView {
     if (!_filtrateMenuView) {
-        self.seedTitleArray = @[@[@"全部",@"收入",@"支出"],CreditOrderTypeNames];
-        _filtrateMenuView = [QDFiltrateDropdownMenu menuWithLeftTitles:@[@"类型",@"踪影"] seedTitles:self.seedTitleArray canSelectDate:YES];
+        self.seedTitleArray = @[@[@"全部",@"收入",@"支出"],TradingOrderTypeNames];
+        _filtrateMenuView = [QDFiltrateDropdownMenu menuWithLeftTitles:@[@"类型",@"踪影"] seedTitles:self.seedTitleArray canSelectDate:NO];
         _filtrateMenuView.frame = CGRectMake(0, 10, LD_SCREENWIDTH, 35);
         _filtrateMenuView.delegate = self;
     }
     return _filtrateMenuView;
 }
 - (void)setupViews {
- 
+    
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 45, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-55) style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
@@ -96,18 +92,18 @@
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self getCreditOrderList:1];
     }];
-//
-//    _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-//        _pageNum++;
-//        [self getCreditOrderList:_pageNum];
-//    }];
+    //
+    //    _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
+    //        _pageNum++;
+    //        [self getCreditOrderList:_pageNum];
+    //    }];
 }
 - (void)getCreditOrderList:(NSInteger)pageNum {
     
     NSDictionary *dic = @{@"pageNum":[NSNumber numberWithInteger:pageNum],@"pageSize":@500};
-    [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_getCreditOrderList params:dic successBlock:^(QDResponseObject *responseObject) {
+    [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_findTradingFlowList params:dic successBlock:^(QDResponseObject *responseObject) {
         QDLog(@"%@",responseObject.result);
-//        NSInteger totalPage = [[responseObject.result valueForKey:@"totalPage"] integerValue];
+        //        NSInteger totalPage = [[responseObject.result valueForKey:@"totalPage"] integerValue];
         self.orderArray = [NSMutableArray arrayWithCapacity:10];
         NSArray *array = [responseObject.result valueForKey:@"result"];
         for (NSDictionary *dic in array) {
@@ -120,7 +116,7 @@
         [_tableView.mj_header endRefreshing];
     } failureBlock:^(NSError *error) {
         [_tableView.mj_header endRefreshing];
-
+        
     }];
 }
 - (void)getMoreCreditOrderList {
@@ -136,7 +132,7 @@
 - (void)getCreditOrderListWithTradingDirection:(NSInteger)tradingDirection tradingtype:(NSInteger)tradingtype tradingDate:(NSString *)tradingDate {
     // 参数null表示 全部
     NSDictionary *dic = @{@"tradingDirection":tradingDirection<0?[NSNull null]:[NSNumber numberWithInteger:tradingDirection],@"tradingtype":tradingtype<0?[NSNull null]:[NSNumber numberWithInteger:tradingtype],@"tradingDate":tradingDate?tradingDate:[NSNull null],@"pageNum":[NSNumber numberWithInteger:1],@"pageSize":@500};
-    [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_getCreditOrderList params:dic successBlock:^(QDResponseObject *responseObject) {
+    [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_findTradingFlowList params:dic successBlock:^(QDResponseObject *responseObject) {
         QDLog(@"%@",responseObject.result);
         self.orderArray = [NSMutableArray arrayWithCapacity:10];
         NSArray *array = [responseObject.result valueForKey:@"result"];
@@ -145,7 +141,7 @@
             [order setValuesForKeysWithDictionary:dic];
             [self.orderArray insertObject:order atIndex:0];
         }
-//        self.pageNum = pageNum;
+        //        self.pageNum = pageNum;
         [self.tableView reloadData];
         [_tableView.mj_header endRefreshing];
     } failureBlock:^(NSError *error) {
@@ -190,17 +186,8 @@
     }
     [self getCreditOrderListWithTradingDirection:tradingDirection tradingtype:tradingType tradingDate:nil];
 }
-- (void)didSelectedCalendarDate:(NSDate *)date {
-    [self getCreditOrderListWithTradingDirection:-1 tradingtype:-1 tradingDate:[QDDateUtils dateFormate:@"yyyy-MM-dd" WithDate:date]];
-}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (void)didSelectedCalendarDate:(NSDate *)date {
+//    [self getCreditOrderListWithTradingDirection:-1 tradingtype:-1 tradingDate:[QDDateUtils dateFormate:@"yyyy-MM-dd" WithDate:date]];
+//}
 
 @end

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "QDCreditOrder.h"
+#import "QDTradingOrder.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDCreditOrderTableViewCell : UITableViewCell
 @property(nonatomic,strong)QDCreditOrder *creditOrder;
+@property(nonatomic,strong)QDTradingOrder *tradingOrder;
 @end
 
 NS_ASSUME_NONNULL_END

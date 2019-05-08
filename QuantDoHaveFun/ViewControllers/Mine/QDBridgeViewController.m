@@ -23,6 +23,7 @@
 #import "OpenShare+Weibo.h"
 #import "OpenShare+Weixin.h"
 #import "QYBaseView.h"
+#import "QDCreditOrderHistoryVC.h"
 
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
@@ -368,6 +369,8 @@
 //            [tabVC setSelectedIndex:0];
 //            [_webView removeFromSuperview];
             [self.navigationController popToRootViewControllerAnimated:YES];
+        }else if ([URL.path isEqualToString:@"/creditOrder"]){
+            [self.navigationController pushViewController:[[QDCreditOrderHistoryVC alloc]init] animated:YES];
         }
         else{
             QDBridgeTViewController *bridgeVC = [[QDBridgeTViewController alloc] init];
