@@ -23,7 +23,12 @@
 #import "OpenShare+Weibo.h"
 #import "OpenShare+Weixin.h"
 #import "QYBaseView.h"
+<<<<<<< HEAD
+#import "QDCreditOrderHistoryVC.h"
+
+=======
 #import "QDTestWebViewVC.h"
+>>>>>>> 34b05b63a44d8f537a74c8e3aece8adb2739a856
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
 #define FT_WEIBO_CALLBACK_URL   @"http://sns.whalecloud.com/sina2/callback"
