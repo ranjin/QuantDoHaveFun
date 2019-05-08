@@ -43,8 +43,8 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     [_locationImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(SCREEN_HEIGHT*0.03);
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.053);
+        make.top.equalTo(self.mas_top).offset(25);
+        make.left.equalTo(self.mas_left).offset(15);
     }];
     
     [_myLocationLab mas_makeConstraints:^(MASConstraintMaker *make) {
