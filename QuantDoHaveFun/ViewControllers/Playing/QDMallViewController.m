@@ -27,7 +27,6 @@
 
 //预定酒店 定制游 商城
 @interface QDMallViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, QDPopMenuDelegate, UITextFieldDelegate>{
-    QDPlayShellType _playShellType;
     UITableView *_tableView;
     NSMutableArray *_mallInfoArr;
     QDMallTableSectionHeaderView *_sectionHeaderView;
@@ -338,20 +337,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (_playShellType) {
-        case QDHotelReserve:
-            return SCREEN_HEIGHT*0.21;
-            break;
-        case QDCustomTour:
-            return SCREEN_HEIGHT*0.57;
-            break;
-        case QDMall:
-            return SCREEN_HEIGHT*0.225;
-            break;
-        default:
-            break;
-    }
-    return 0.1;
+    return 110;
 }
 
 - (void)allAction:(UIButton *)sender{

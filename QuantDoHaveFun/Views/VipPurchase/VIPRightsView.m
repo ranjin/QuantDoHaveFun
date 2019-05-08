@@ -12,11 +12,11 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
-        _whiteBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.58)];
+        _whiteBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 421+SafeAreaTopHeight-64)];
         _whiteBackView.backgroundColor = APP_WHITECOLOR;
         [self addSubview:_whiteBackView];
         
-        _topBlueView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.14)];
+        _topBlueView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 120+SafeAreaTopHeight-64)];
         _topBlueView.image = [UIImage imageNamed:@"vipRights_top"];
         [self addSubview:_topBlueView];
         

@@ -8,7 +8,6 @@
 #import "QDRecommendViewController.h"
 #import "WaterLayou.h"
 #import "RootCollectionCell.h"
-#import "RootFirstCollectionCell.h"
 #import "QDBuyOrSellViewController.h"
 #import "BiddingPostersDTO.h"
 #import "QDBridgeViewController.h"
@@ -40,9 +39,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = APP_WHITECOLOR;
+    self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     UIView *ss = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    ss.backgroundColor = APP_WHITECOLOR;
+    ss.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [self.view addSubview:ss];
     _recommendList = [[NSMutableArray alloc] init];
     if (_recommendModel == nil) {
@@ -68,7 +67,11 @@
     }];
     
     UILabel *titleLab = [[UILabel alloc] init];
-    titleLab.text = @"这好玩";
+    if ([_postersType isEqualToString:@"0"]) {
+        titleLab.text = @"卖卖";
+    }else{
+        titleLab.text = @"买买";
+    }
     titleLab.textColor = APP_BLACKCOLOR;
     titleLab.font = QDFont(17);
     [backView addSubview:titleLab];
@@ -77,10 +80,9 @@
         make.centerY.equalTo(returnBtn);
     }];
     WaterLayou *layou = [[WaterLayou alloc] init];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT- SCREEN_HEIGHT*0.06-50) collectionViewLayout:layou];
-    self.collectionView.backgroundColor = APP_WHITECOLOR;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight+6, SCREEN_WIDTH, SCREEN_HEIGHT- SCREEN_HEIGHT*0.06-50) collectionViewLayout:layou];
+    self.collectionView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [self.collectionView registerClass:[RootCollectionCell class] forCellWithReuseIdentifier:@"cell"];
-    [self.collectionView registerClass:[RootFirstCollectionCell class] forCellWithReuseIdentifier:@"RootFirstCollectionCell"];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.emptyDataSetSource = self;
@@ -90,10 +92,10 @@
 
     _recommendBtn = [[UIButton alloc] init];
     if ([_postersType isEqualToString:@"1"]) {
-        [_recommendBtn setTitle:@"跳过推荐，直接购买" forState:UIControlStateNormal];
+        [_recommendBtn setTitle:@"跳过推荐，直接买入" forState:UIControlStateNormal];
         [_recommendBtn addTarget:self action:@selector(buyOrderAction:) forControlEvents:UIControlEventTouchUpInside];
     }else{
-        [_recommendBtn setTitle:@"跳过推荐，直接卖出" forState:UIControlStateNormal];
+        [_recommendBtn setTitle:@"跳过推荐，直接卖掉" forState:UIControlStateNormal];
         [_recommendBtn addTarget:self action:@selector(sellOrderAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     [_recommendBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
@@ -199,7 +201,7 @@
             NSDictionary *dic = responseObject.result;
             NSArray *arr = [dic objectForKey:@"commentList"];
             if (!arr.count) {
-                [WXProgressHUD showErrorWithTittle:@"无满足条件的挂单数据"];
+                [WXProgressHUD showInfoWithTittle:@"无满足条件的挂单数据"];
                 [_collectionView reloadData];
                 [_collectionView reloadEmptyDataSet];
             }else{
@@ -225,21 +227,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        RootFirstCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RootFirstCollectionCell" forIndexPath:indexPath];
-        [cell loadDataWithDataArr:_recommendList[0] andTypeStr:_postersType];
-        cell.sell.tag = indexPath.row;
-        QDLog(@"cell.sell.tag = %ld", (long)cell.tag);
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }else{
-        RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        [cell loadDataWithDataArr:_recommendList[indexPath.row] andTypeStr:_postersType];
-        cell.sell.tag = indexPath.row;
-        QDLog(@"cell.sell.tag = %ld", (long)cell.tag);
-        [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }
+    RootCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    [cell loadDataWithDataArr:_recommendList[indexPath.row] andTypeStr:_postersType];
+    cell.sell.tag = indexPath.row;
+    QDLog(@"cell.sell.tag = %ld", (long)cell.tag);
+    [cell.sell addTarget:self action:@selector(buyOrSellAction:) forControlEvents:UIControlEventTouchUpInside];
+    return cell;
 }
 
 - (void)buyOrSellAction:(UIButton *)sender{

@@ -17,35 +17,43 @@
         _topView.backgroundColor = APP_WHITECOLOR;
         [self addSubview:_topView];
         
+        _statusImg = [[UIImageView alloc] init];
+        _statusImg.image = [UIImage imageNamed:@"orderStatus_waitToPay"];
+        [_topView addSubview:_statusImg];
+        
         _statusLab = [[UILabel alloc] init];
-        _statusLab.font = QDFont(17);
+        _statusLab.font = QDFont(16);
+        _statusLab.textColor = APP_BLACKCOLOR;
         [_topView addSubview:_statusLab];
         
         _infoLab = [[UILabel alloc] init];
         _infoLab.text = @"超时将自动关闭订单";
-        _infoLab.textColor = APP_BLUECOLOR;
-        _infoLab.font = QDFont(13);
+        _infoLab.textColor = APP_GRAYCOLOR;
+        _infoLab.font = QDFont(12);
         [_topView addSubview:_infoLab];
         
         _remainLab = [[UILabel alloc] init];
         _remainLab.text = @"剩余";
-        _remainLab.textColor = APP_GRAYTEXTCOLOR;
-        _remainLab.font = QDFont(13);
+        _remainLab.textColor = APP_BLACKCOLOR;
+        _remainLab.font = QDFont(14);
         [_topView addSubview:_remainLab];
         
         _remain = [[UILabel alloc] init];
-        _remain.textColor = APP_GRAYTEXTCOLOR;
-        _remain.font = QDFont(12);
+        _remain.textColor = APP_BLUECOLOR;
+        _remain.font = QDBoldFont(14);
         [_topView addSubview:_remain];
         
         _centerView = [[UIView alloc] init];
         _centerView.backgroundColor = APP_WHITECOLOR;
         [self addSubview:_centerView];
 
+        _operationImg = [[UIImageView alloc] init];
+        _operationImg.image = [UIImage imageNamed:@"operateType"];
+        [_centerView addSubview:_operationImg];
         
         _operationType = [[UILabel alloc] init];
-        _operationType.font = QDBoldFont(14);
-        _operationType.textColor = APP_GRAYTEXTCOLOR;
+        _operationType.font = QDFont(16);
+        _operationType.textColor = APP_BLACKCOLOR;
         [_centerView addSubview:_operationType];
         
         _topLine = [[UIView alloc] init];
@@ -175,29 +183,34 @@
     
     [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_top).offset(20);
-        make.height.mas_equalTo(90);
-        make.width.mas_equalTo(335);
+        make.top.equalTo(self.mas_top).offset(10);
+        make.height.mas_equalTo(80);
+        make.width.mas_equalTo(356);
+    }];
+    
+    [_statusImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_topView.mas_left).offset(12);
+        make.top.equalTo(_topView.mas_top).offset(19);
     }];
     
     [_statusLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topView.mas_top).offset(20);
-        make.left.equalTo(_topView.mas_left).offset(15);
+        make.centerY.equalTo(_statusImg);
+        make.left.equalTo(_statusImg.mas_right).offset(8);
     }];
     
     [_infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_statusLab);
-        make.left.equalTo(_statusLab.mas_right).offset(10);
+        make.top.equalTo(_statusLab.mas_bottom).offset(13);
+        make.left.equalTo(_statusLab);
     }];
     
     [_remainLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_statusLab.mas_bottom).offset(2);
-        make.left.equalTo(_statusLab);
+        make.centerY.equalTo(_statusLab);
+        make.left.equalTo(_topView.mas_left).offset(242);
     }];
     
     [_remain mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_remainLab);
-        make.left.equalTo(_remainLab.mas_right);
+        make.left.equalTo(_remainLab.mas_right).offset(4);
     }];
     
     [_centerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -206,9 +219,14 @@
         make.height.mas_equalTo(260);
     }];
 
+    [_operationImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_centerView.mas_top).offset(19);
+        make.left.equalTo(_centerView.mas_left).offset(14);
+
+    }];
     [_operationType mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_centerView.mas_top).offset(13);
-        make.left.equalTo(_centerView.mas_left).offset(15);
+        make.centerY.equalTo(_operationImg);
+        make.left.equalTo(_operationImg.mas_right).offset(9);
     }];
 
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -239,7 +257,7 @@
     }];
 
     [_lab5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab4.mas_right);
+        make.left.equalTo(_lab4.mas_right).offset(6);
         make.centerY.equalTo(_lab4);
     }];
 
@@ -249,7 +267,7 @@
     }];
 
     [_lab7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab6.mas_right);
+        make.left.equalTo(_lab6.mas_right).offset(6);
         make.centerY.equalTo(_lab6);
     }];
     
@@ -259,7 +277,7 @@
     }];
     
     [_lab9 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab8.mas_right);
+        make.left.equalTo(_lab8.mas_right).offset(6);
         make.centerY.equalTo(_lab8);
     }];
     
@@ -301,14 +319,14 @@
     [_payBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_centerView.mas_bottom).offset(24);
         make.right.equalTo(_centerView.mas_right).offset(-14);
-        make.width.mas_equalTo(155);
+        make.width.mas_equalTo(160);
         make.height.mas_equalTo(50);
     }];
     
     [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.width.and.height.equalTo(_payBtn);
-        make.left.equalTo(_payBtn.mas_left).offset(14);
-        make.width.mas_equalTo(155);
+        make.left.equalTo(self.mas_left).offset(14);
+        make.width.mas_equalTo(160);
         make.height.mas_equalTo(50);
     }];
 }
@@ -335,7 +353,7 @@
         _remain.hidden = YES;
         switch ([model.state integerValue]) {
             case QD_HavePurchased:
-                self.statusLab.text = @"已付款";
+                self.statusLab.text = @"已成交";
                 break;
             case QD_HaveFinished:
                 self.statusLab.text = @"已完成";

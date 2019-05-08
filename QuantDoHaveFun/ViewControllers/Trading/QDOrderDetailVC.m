@@ -97,16 +97,20 @@
                 _pickOrderView.withdrawBtn.hidden = YES;
                 switch ([[orderDetail objectForKey:@"state"] integerValue]) {
                     case QD_HavePurchased:
-                        _pickOrderView.statusLab.text = @"已付款";
+                        _pickOrderView.statusLab.text = @"已成交";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"trade_dealed"]];
                         break;
                     case QD_HaveFinished:
                         _pickOrderView.statusLab.text = @"已完成";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"trade_dealed"]];
                         break;
                     case QD_OverTimeCanceled:
                         _pickOrderView.statusLab.text = @"已取消";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"orderStatus_withdraw"]];
                         break;
                     case QD_ManualCanceled:
                         _pickOrderView.statusLab.text = @"已取消";
+                        [_pickOrderView.statusImg setImage:[UIImage imageNamed:@"orderStatus_withdraw"]];
                         break;
                     default:
                         break;
@@ -167,7 +171,7 @@
         make.centerY.equalTo(returnBtn);
     }];
     _pickOrderView = [[QDPickOrderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    _pickOrderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    _pickOrderView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     [_pickOrderView.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pickOrderView.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
     [_pickOrderView loadViewWithModel:_orderModel];
@@ -180,12 +184,12 @@
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         QDLog(@"取消付款");
     }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
         bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?amount=%@&&id=%@", QD_JSURL, JS_PAYACTION, _balance, _orderID];
         [self.navigationController pushViewController:bridgeVC animated:YES];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];
@@ -193,11 +197,11 @@
 
 #pragma mark - 撤单操作
 - (void)withdrawAction:(UIButton *)sender{
-    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"撤销订单" message:@"您确定要撤销这笔订单吗?"];
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"" message:@"真的不买了吗?"];
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         NSDictionary *dic = @{@"orderId":_orderID};
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_CancelOrderForm params:dic successBlock:^(QDResponseObject *responseObject) {
             if (responseObject.code == 0) {
@@ -210,7 +214,7 @@
             [WXProgressHUD showErrorWithTittle:@"网络异常"];
         }];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];

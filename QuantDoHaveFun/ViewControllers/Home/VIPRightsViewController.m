@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSMutableArray *imageArray;
 @property (nonatomic, strong) NSMutableArray *cardArr;
+@property (nonatomic, strong) UIButton *rightBtn;
 
 /**
  轮播图
@@ -35,12 +36,49 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
+    if (_isPush) {
+        [self.view addSubview:self.rightBtn];
+        self.rightBtn.hidden = NO;
+    }else{
+        self.rightBtn.hidden = YES;
+    }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshVipInfo:) name:Notification_LoginSucceeded object:nil];
+    if ([str isEqualToString:@"0"] || str == nil) { //未登录
+        _rightsView.loginHeadView.hidden = YES;
+        _rightsView.noLoginHeadView.hidden = NO;
+        _rightsView.bottomWhiteView.hidden = YES;
+    }else{
+        //登录状态下的显示
+        [self requestUserStatus];
+        _rightsView.loginHeadView.hidden = NO;
+        _rightsView.noLoginHeadView.hidden = YES;
+        _rightsView.bottomWhiteView.hidden = NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_LoginSucceeded object:nil];
+}
+
+- (void)popVC:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIButton *)rightBtn{
+    if (!_rightBtn) {
+        _rightBtn = [[UIButton alloc] init];
+        [_rightBtn addTarget:self action:@selector(popVC:) forControlEvents:UIControlEventTouchUpInside];
+        [_rightBtn setImage:[UIImage imageNamed:@"leftBtn"] forState:UIControlStateNormal];
+        [self.view addSubview:_rightBtn];
+        [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left).offset(16);
+            make.top.equalTo(self.view.mas_top).offset(10+SafeAreaTopHeight-64);
+            make.width.and.height.mas_equalTo(50);
+        }];
+    }
+    return _rightBtn;
 }
 
 #pragma mark - 登录成功
@@ -58,18 +96,6 @@
     [_rightsView.noLoginHeadView.loginBtn addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
     [_rightsView.payButton addTarget:self action:@selector(confirmToBuy:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightsView];
-    NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
-    if ([str isEqualToString:@"0"] || str == nil) { //未登录
-        _rightsView.loginHeadView.hidden = YES;
-        _rightsView.noLoginHeadView.hidden = NO;
-        _rightsView.bottomWhiteView.hidden = YES;
-    }else{
-        //登录状态下的显示
-        [self requestUserStatus];
-        _rightsView.loginHeadView.hidden = NO;
-        _rightsView.noLoginHeadView.hidden = YES;
-        _rightsView.bottomWhiteView.hidden = NO;
-    }
     [self queryOrderPay];
     [self getBasicPrice];
     [self setupCardUI];

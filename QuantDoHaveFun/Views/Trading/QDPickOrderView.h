@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QDPickOrderView : UIView
 
 @property (nonatomic, strong) UIView *topView;
+@property (nonatomic, strong) UIImageView *statusImg;
+
 @property (nonatomic, strong) UILabel *statusLab;
 @property (nonatomic, strong) UILabel *infoLab;
 @property (nonatomic, strong) UILabel *remainLab;
@@ -21,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (nonatomic, strong) UIView *centerView;
+@property (nonatomic, strong) UIImageView *operationImg;
+
 @property (nonatomic, strong) UILabel *operationType;
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UILabel *lab1;

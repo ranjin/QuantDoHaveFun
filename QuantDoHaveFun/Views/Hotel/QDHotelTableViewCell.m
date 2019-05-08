@@ -51,6 +51,12 @@
         _wanbeiLab.textColor = APP_ORANGETEXTCOLOR;
         [self.contentView addSubview:_wanbeiLab];
         
+        _qiLab = [[UILabel alloc] init];
+        _qiLab.font = QDBoldFont(13);
+        _qiLab.text = @"起";
+        _qiLab.textColor = APP_GRAYTEXTCOLOR;
+        [self.contentView addSubview:_qiLab];
+        
         _yueLab = [[UILabel alloc] init];
         _yueLab.font = QDFont(13);
         _yueLab.textColor = APP_GRAYCOLOR;
@@ -107,6 +113,11 @@
     [_wanbeiLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_wanbei);
         make.left.equalTo(_wanbei.mas_right).offset(2);
+    }];
+    
+    [_qiLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_wanbeiLab);
+        make.left.equalTo(_wanbeiLab.mas_right);
     }];
     
     [_yueLab mas_makeConstraints:^(MASConstraintMaker *make) {

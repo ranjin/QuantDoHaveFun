@@ -276,7 +276,7 @@ static const NSInteger RoutePlanningPaddingEdge                    = 20;
     }];
     
     UILabel *titleLab = [[UILabel alloc] init];
-    titleLab.text = @"酒店位置";
+    titleLab.text = @"餐厅位置";
     titleLab.font = QDFont(17);
     titleLab.textColor = APP_BLACKCOLOR;
     [self.view addSubview:titleLab];

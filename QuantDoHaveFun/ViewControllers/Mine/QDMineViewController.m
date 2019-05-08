@@ -31,6 +31,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "QDTestWebViewVC.h"
+#import "VIPRightsViewController.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -91,7 +92,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址",@"安全中心", nil];
+    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址", @"安全中心", nil];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -209,13 +210,13 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 -(void)customSeparateLineToCell:(UITableViewCell *)cell{
     UIView *separateLineBottom = [[UIView alloc] init];
-    [separateLineBottom setBackgroundColor:[UIColor colorWithHexString:@"#DDDDDD"]];
+    [separateLineBottom setBackgroundColor:APP_LIGTHGRAYLINECOLOR];
     [cell.contentView addSubview:separateLineBottom];
     [separateLineBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(cell.contentView);
         make.centerX.equalTo(cell.contentView);
-        make.width.mas_equalTo(335);
-        make.height.mas_equalTo(0.5);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.mas_equalTo(1);
     }];
     
 }
@@ -254,7 +255,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_noFinancialView.openFinancialBtn addTarget:self action:@selector(openFinancialAction:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
     //已经开通资金账户的
-    _haveFinancialView = [[QDMineHeaderFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370+SafeAreaTopHeight-64)];
+    _haveFinancialView = [[QDMineHeaderFinancialAccountView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 415+SafeAreaTopHeight-64)];
     _haveFinancialView.backgroundColor = APP_WHITECOLOR;
     [_haveFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
@@ -370,11 +371,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch (indexPath.row) {
         case 0: //邀请好友
-//            [self inviteFriends];
-        {
-            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+            [self inviteFriends];
+//        {
+//            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
             break;
         case 1: //收藏
             [self gotoLoginWithAction:JS_COLLECTION];
@@ -604,9 +605,12 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 会员权益
 - (void)vipRights:(UIButton *)sender{
-    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
-    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-    [self.navigationController pushViewController:bridgeVC animated:YES];
+    VIPRightsViewController *rightVC = [[VIPRightsViewController alloc] init];
+    rightVC.isPush = YES;
+    [self.navigationController pushViewController:rightVC animated:YES];
+//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
+//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+//    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 @end

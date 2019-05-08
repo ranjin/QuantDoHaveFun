@@ -8,7 +8,6 @@
 
 #import "QDFindSatifiedDataVC.h"
 #import "PPNumberButton.h"
-#import "QDShellRecommendVC.h"
 #import "QDRecommendViewController.h"
 #import "CWActionSheet.h"
 #define AddBtnWidth SCREEN_WIDTH*0.075
@@ -324,7 +323,7 @@
         [_priceTF addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         _priceTF.textColor = APP_BLACKCOLOR;
         _priceTF.font = QDFont(16);
-        _priceTF.text = @"0.01";
+        _priceTF.text = @"0";
     }
     return _priceTF;
 }

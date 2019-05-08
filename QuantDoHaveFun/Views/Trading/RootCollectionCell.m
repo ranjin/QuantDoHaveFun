@@ -194,7 +194,7 @@
 
 - (void)loadDataWithDataArr:(BiddingPostersDTO *)infoModel andTypeStr:(NSString *)str{
     self.nameLab.text = infoModel.userId;
-    self.price.text = infoModel.price;
+    self.price.text = [NSString stringWithFormat:@"%.2lf", [infoModel.price doubleValue]];
     self.amount.text = infoModel.surplusVolume;
     if ([str isEqualToString:@"1"]) {
         [self.sell setTitle:@"我要了" forState:UIControlStateNormal];

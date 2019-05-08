@@ -13,7 +13,6 @@
 #import "TFDropDownMenu.h"
 #import "SnailQuickMaskPopups.h"
 #import "QDFilterTypeTwoView.h"
-#import "QDShellRecommendVC.h"
 #import "QDMySaleOrderCell.h"
 #import "QDMyPurchaseCell.h"
 #import "QDPickUpOrderCell.h"
@@ -301,7 +300,7 @@ typedef enum : NSUInteger {
     _tableView.estimatedRowHeight = 0;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 130+SafeAreaTopHeight-64, 0);
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
@@ -332,11 +331,18 @@ typedef enum : NSUInteger {
 - (void)withdrawAction:(UIButton *)sender{
     [WXProgressHUD showHUD];
     QDLog(@"sender.tag = %ld", (long)sender.tag);
-    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"撤销订单" message:@"您确定要撤销这笔订单吗?"];
+    BiddingPostersDTO *infoModel = _myOrdersArr[sender.tag];
+    NSString *ss;
+    if ([infoModel.postersType isEqualToString:@"0"]) {
+        ss = @"真的不买了么?";
+    }else{
+        ss = @"真的不卖了么?";
+    }
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"" message:ss];
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         BiddingPostersDTO *infoModel = _myOrdersArr[sender.tag];
         NSDictionary * paramsDic = @{@"postersId":infoModel.postersId};
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_CancelBiddingPosters params:paramsDic successBlock:^(QDResponseObject *responseObject) {
@@ -352,7 +358,7 @@ typedef enum : NSUInteger {
             [WXProgressHUD showErrorWithTittle:@"网络异常"];
         }];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];

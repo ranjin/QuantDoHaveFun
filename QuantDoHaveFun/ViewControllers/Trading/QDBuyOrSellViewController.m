@@ -8,7 +8,6 @@
 
 #import "QDBuyOrSellViewController.h"
 #import "PPNumberButton.h"
-#import "QDShellRecommendVC.h"
 #import <TYAlertView.h>
 #import "QDBridgeViewController.h"
 #define AddBtnWidth SCREEN_WIDTH*0.075
@@ -250,13 +249,13 @@
                 [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
                     [WXProgressHUD hideHUD];
                 }]];
-                [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+                [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
                     QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
                     NSString *balance = [NSString stringWithFormat:@"%.2f", [_balanceLab.text doubleValue]];
                     bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?amount=%@&id=%@", QD_JSURL, JS_PAYACTION, balance, str];
                     [self.navigationController pushViewController:bridgeVC animated:YES];
                 }]];
-                [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+                [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
                 [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
                 [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
                 [alertView show];
@@ -276,7 +275,7 @@
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         [WXProgressHUD showHUD];
         NSDictionary *paramsDic = @{
                                     @"userId":_operateModel.userId,
@@ -300,7 +299,7 @@
             [WXProgressHUD showErrorWithTittle:@"网络请求失败"];
         }];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];

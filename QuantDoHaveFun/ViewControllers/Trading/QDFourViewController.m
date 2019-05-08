@@ -13,7 +13,6 @@
 #import "TFDropDownMenu.h"
 #import "SnailQuickMaskPopups.h"
 #import "QDFilterTypeThreeView.h"
-#import "QDShellRecommendVC.h"
 #import "QDMySaleOrderCell.h"
 #import "QDMyPurchaseCell.h"
 #import "QDPickUpOrderCell.h"
@@ -293,14 +292,13 @@ QD_ManualCanceled = 4      //手工取消
     _tableView.estimatedRowHeight = 0;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 120+SafeAreaTopHeight-64, 0);
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     [self.view addSubview:_tableView];
-//    self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self requestHeaderTopData];
     }];
@@ -321,11 +319,11 @@ QD_ManualCanceled = 4      //手工取消
 
 #pragma mark - 撤单操作
 - (void)withdrawAction:(UIButton *)sender{
-    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"撤销订单" message:@"您确定要撤销这笔订单吗?"];
+    TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"" message:@"真的不买了吗?"];
     [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
         [WXProgressHUD hideHUD];
     }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+    [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         QDMyPickOrderModel *model = _myPickOrdersArr[sender.tag];
         NSDictionary *dic = @{@"orderId":model.orderId};
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_CancelOrderForm params:dic successBlock:^(QDResponseObject *responseObject) {
@@ -341,7 +339,7 @@ QD_ManualCanceled = 4      //手工取消
             [WXProgressHUD showErrorWithTittle:@"网络异常"];
         }];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];
@@ -362,7 +360,7 @@ QD_ManualCanceled = 4      //手工取消
         bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?amount=%@&&id=%@", QD_JSURL, JS_PAYACTION,balance, model.orderId];
         [self.navigationController pushViewController:bridgeVC animated:YES];
     }]];
-    [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
+    [alertView setButtonTitleColor:APP_BLACKCOLOR forActionStyle:TYAlertActionStyleCancel forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleBlod forState:UIControlStateNormal];
     [alertView setButtonTitleColor:APP_BLUECOLOR forActionStyle:TYAlertActionStyleDestructive forState:UIControlStateNormal];
     [alertView show];

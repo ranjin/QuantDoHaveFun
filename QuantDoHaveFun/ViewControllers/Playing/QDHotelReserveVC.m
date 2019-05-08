@@ -64,7 +64,6 @@
     _levelArr = [[NSMutableArray alloc] init];
 
     [self finAllMapDic];
-    [self initTableView];
     [self requestHotelData];
 }
 
@@ -100,6 +99,7 @@
                         [_hotelLevelArr insertObject:@"星级" atIndex:0];
                     }
                 }
+                [self initTableView];
                 [self setDropMenu];
             }
         }else{
@@ -385,12 +385,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (_hotelListInfoArr.count) {
         QDHotelListInfoModel *model = _hotelListInfoArr[indexPath.row];
-        //传递ID
         QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld&&startDate=%@&&endDate=%@", QD_JSURL, JS_HOTELDETAIL, (long)model.id, _dateInPassedVal, _dateOutPassedVal];
         bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld", QD_JSURL, JS_HOTELDETAIL, (long)model.id];
-
-        QDLog(@"urlStr = %@", bridgeVC.urlStr);
         bridgeVC.infoModel = model;
         self.tabBarController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:bridgeVC animated:YES];

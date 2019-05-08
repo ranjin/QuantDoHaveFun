@@ -81,22 +81,22 @@
         
         _info4Lab = [[UILabel alloc] init];
         _info4Lab.textColor = APP_BLUETEXTCOLOR;
-        _info4Lab.font = QDFont(16);
+        _info4Lab.font = QDFont(15);
         [_financialPic addSubview:_info4Lab];
         
         _info5Lab = [[UILabel alloc] init];
         _info5Lab.textColor = APP_BLUETEXTCOLOR;
-        _info5Lab.font = QDFont(12);
+        _info5Lab.font = QDFont(13);
         [_financialPic addSubview:_info5Lab];
         
         _info6Lab = [[UILabel alloc] init];
         _info6Lab.textColor = APP_BLUETEXTCOLOR;
-        _info6Lab.font = QDFont(16);
+        _info6Lab.font = QDFont(15);
         [_financialPic addSubview:_info6Lab];
         
         _info7Lab = [[UILabel alloc] init];
         _info7Lab.textColor = APP_BLUETEXTCOLOR;
-        _info7Lab.font = QDFont(12);
+        _info7Lab.font = QDFont(13);
         [_financialPic addSubview:_info7Lab];
         
         _info8Lab = [[UILabel alloc] init];
@@ -136,6 +136,14 @@
         [_balanceDetail setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
         _balanceDetail.titleLabel.font = QDFont(12);
         [self addSubview:_balanceDetail];
+        
+        _accountDesc = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
+        _accountDesc.imageTitleSpace = 8;
+        [_accountDesc setTitle:@"钱包账户说明" forState:UIControlStateNormal];
+        [_accountDesc setImage:[UIImage imageNamed:@"accountDesc"] forState:UIControlStateNormal];
+        [_accountDesc setTitleColor:APP_GRAYCOLOR forState:UIControlStateNormal];
+        _accountDesc.titleLabel.font = QDFont(12);
+        [self addSubview:_accountDesc];
         
         _rechargeBtn = [[UIButton alloc] init];
         _rechargeBtn.backgroundColor = APP_BLUECOLOR;
@@ -237,7 +245,7 @@
 
     [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info4Lab);
-        make.left.equalTo(self.mas_left).offset(306);
+        make.left.equalTo(self.mas_left).offset(300);
     }];
 
     [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -262,7 +270,7 @@
 
     [_balanceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(16);
-        make.top.equalTo(_info9Lab.mas_bottom).offset(42);
+        make.top.equalTo(_info9Lab.mas_bottom).offset(30);
     }];
 
     [_balance mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -274,6 +282,12 @@
         make.left.equalTo(_balanceLab);
         make.top.equalTo(_balance.mas_bottom).offset(12);
     }];
+    
+    [_accountDesc mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_balanceDetail);
+        make.top.equalTo(_balanceDetail.mas_bottom).offset(12);
+    }];
+    
     [_rechargeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_info8Lab.mas_bottom).offset(84);
         make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.54);
