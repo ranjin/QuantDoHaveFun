@@ -16,10 +16,10 @@
         [_settingBtn setImage:[UIImage imageNamed:@"icon_setting"] forState:UIControlStateNormal];
         [self addSubview:_settingBtn];
         
-        _voiceBtn = [[UIButton alloc] init];
-        [_voiceBtn setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
-        [self addSubview:_voiceBtn];
-        
+//        _voiceBtn = [[UIButton alloc] init];
+//        [_voiceBtn setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
+//        [self addSubview:_voiceBtn];
+//
         _picView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 39, 39)];
         _picView.layer.cornerRadius = 19.5;
         _picView.layer.masksToBounds = YES;
@@ -161,10 +161,10 @@
         make.right.equalTo(self.mas_right).offset(-49);
     }];
     
-    [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_settingBtn);
-        make.right.equalTo(self.mas_right).offset(-12);
-    }];
+//    [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_settingBtn);
+//        make.right.equalTo(self.mas_right).offset(-12);
+//    }];
     
     [_userNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_picView);

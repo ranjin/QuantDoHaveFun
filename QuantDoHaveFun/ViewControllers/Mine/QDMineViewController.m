@@ -578,7 +578,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
             if ([str isEqualToString:@"1"]) {
                 [_noFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:imgUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
             }else{
-                [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:_currentQDMemberTDO.iconUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
+                [_haveFinancialView.picView sd_setImageWithURL:[NSURL URLWithString:imgUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_headerPic"]];
             }
             [self changeIcon:imgUrl];
         }
