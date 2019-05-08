@@ -156,7 +156,8 @@ static NSString * const api_getVideoList = @"/lyjfapp/api/v1/video/homeImage/lis
 
 static NSString * const api_findAllDestinationList = @"/lyjfapp/api/v1/ranklist/findAllDestinationList";            //榜单目的地列表
 
-static NSString *const api_getCreditOrderList = @"/lyjfapp/api/v1/userorder/mycreditorder";   // 玩贝明细订单
+static NSString *const api_getCreditOrderList = @"/lyjfapp/api/v1/ctrade/findCreditFlowListByUser";   // 玩贝明细订单
+static NSString *const api_findTradingFlowList = @"/lyjfapp/api/v1/ctrade/findTradingFlowListByUser";  // 资金明细
 
 /**
  JAVAScriptBridgeWebView

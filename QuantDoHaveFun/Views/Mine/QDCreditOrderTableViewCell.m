@@ -7,6 +7,7 @@
 //
 
 #import "QDCreditOrderTableViewCell.h"
+#import "QDDateUtils.h"
 
 @interface QDCreditOrderTableViewCell ()
 @property(nonatomic,strong)UIImageView *orderIcon;
@@ -33,7 +34,7 @@
         [self.contentView addSubview:self.orderTypeLabel];
         [self.orderTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.orderIcon.mas_right).offset(18);
-            make.top.equalTo(self.contentView.mas_top).offset(20);
+            make.top.equalTo(self.contentView.mas_top).offset(18);
             make.width.mas_equalTo(150);
             make.height.mas_equalTo(20);
         }];
@@ -92,8 +93,34 @@
     return self;
 }
 
-
-
+- (void)setCreditOrder:(QDCreditOrder *)creditOrder {
+    _creditOrder = creditOrder;
+    NSString *amountString;
+    if (_creditOrder.tradingDirection == 0) {
+        amountString = [NSString stringWithFormat:@"+%ld",(long)_creditOrder.tradingCount];
+    } else {
+        amountString = [NSString stringWithFormat:@"-%ld",(long)_creditOrder.tradingCount];
+    }
+    self.amountLabel.text = amountString;
+    
+    self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
+    NSInteger index = (_creditOrder.tradingtype+1)>=CreditOrderTypeNames.count?0:_creditOrder.tradingtype+1;
+    self.orderTypeLabel.text = CreditOrderTypeNames[index];
+}
+- (void)setTradingOrder:(QDTradingOrder *)tradingOrder {
+    _tradingOrder = tradingOrder;
+    NSString *amountString;
+    if (_creditOrder.tradingDirection == 0) {
+        amountString = [NSString stringWithFormat:@"+%ld",(long)_creditOrder.tradingCount];
+    } else {
+        amountString = [NSString stringWithFormat:@"-%ld",(long)_creditOrder.tradingCount];
+    }
+    self.amountLabel.text = amountString;
+    
+    self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
+    NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_creditOrder.tradingtype+1;
+    self.orderTypeLabel.text = TradingOrderTypeNames[index];
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

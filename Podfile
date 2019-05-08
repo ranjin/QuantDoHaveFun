@@ -24,5 +24,7 @@ target 'QuantDoHaveFun' do
   pod 'AMapLocation'
   pod 'Pgyer'
   pod 'PgyUpdate'
+  pod 'UICollectionViewLeftAlignedLayout'
+
 end
 

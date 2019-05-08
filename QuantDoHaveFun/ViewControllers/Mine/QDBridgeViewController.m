@@ -27,6 +27,7 @@
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
 #define FT_WEIBO_CALLBACK_URL   @"http://sns.whalecloud.com/sina2/callback"
+#import "QDCreditOrderHistoryVC.h"
 
 @interface QDBridgeViewController ()<WKNavigationDelegate, SnailQuickMaskPopupsDelegate>{
     WebViewJavascriptBridge *_bridge;
@@ -102,7 +103,7 @@
     config.allowsInlineMediaPlayback = YES;
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     if (IS_NotchScreen) {
-            webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
+            webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     }
     _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.backgroundColor = APP_WHITECOLOR;
@@ -371,6 +372,8 @@
 //            [tabVC setSelectedIndex:0];
 //            [_webView removeFromSuperview];
             [self.navigationController popToRootViewControllerAnimated:YES];
+        }else if ([URL.path isEqualToString:@"/creditOrder"]){
+            [self.navigationController pushViewController:[[QDCreditOrderHistoryVC alloc]init] animated:YES];
         }
         else{
             QDBridgeTViewController *bridgeVC = [[QDBridgeTViewController alloc] init];

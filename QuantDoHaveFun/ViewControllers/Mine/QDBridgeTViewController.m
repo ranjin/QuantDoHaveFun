@@ -18,6 +18,7 @@
 #import "QDCalendarCustomerTourVC.h"
 #import "QYBaseView.h"
 #import "QDCalendarViewController.h"
+#import "QDCreditOrderHistoryVC.h"
 @interface QDBridgeTViewController ()<WKNavigationDelegate>{
     WebViewJavascriptBridge *_bridge;
     CAReplicatorLayer *_containerLayer;
@@ -264,6 +265,8 @@
             [self presentViewController:loginVC animated:YES completion:nil];
         }else if ([URL.path isEqualToString:@"/Main"]){
             [self.navigationController popToRootViewControllerAnimated:YES];
+        }else if ([URL.path isEqualToString:@"/creditOrder"]){
+            [self.navigationController pushViewController:[[QDCreditOrderHistoryVC alloc]init] animated:YES];
         }
         else{
             QDBridgeTViewController *bridgeVC = [[QDBridgeTViewController alloc] init];

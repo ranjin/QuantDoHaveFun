@@ -32,6 +32,7 @@ PODS:
   - PgyUpdate (1.6)
   - Toast (4.0.0)
   - TYAlertView (0.1.1)
+  - UICollectionViewLeftAlignedLayout (1.0.2)
   - WMPageController (2.5.2)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - PgyUpdate
   - Toast
   - TYAlertView
+  - UICollectionViewLeftAlignedLayout
   - WMPageController
   - YYCache
   - YYModel
@@ -76,6 +78,7 @@ SPEC REPOS:
     - PgyUpdate
     - Toast
     - TYAlertView
+    - UICollectionViewLeftAlignedLayout
     - WMPageController
     - YYCache
     - YYModel
@@ -98,11 +101,12 @@ SPEC CHECKSUMS:
   PgyUpdate: cd6c2ada5928f36a9f904d8f96a9b3b53e190755
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TYAlertView: 5dd26bb314f65b87fe15ab2d9b06276d42587fd7
+  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   zhPopupController: 4e6bd734062cb9c7ebe8113568550bade168bed7
 
-PODFILE CHECKSUM: 3cc279428998e341de70f9ed29903af51f828e4a
+PODFILE CHECKSUM: bbe367d22b8e1c1de55e2703fa0cbb10cbbca521
 
 COCOAPODS: 1.6.1

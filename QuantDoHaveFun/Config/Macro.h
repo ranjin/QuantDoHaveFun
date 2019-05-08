@@ -148,4 +148,10 @@ extern NSString *const OnLogoutNotification;
 #define UIColorFromRGBA(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 
+//#define CreditOrderTypeNames @[@"全部",@"认购",@"申购",@"交易",@"消费",@"注册送分",@"奖励积分",@"返佣积分"]
+
+#define CreditOrderTypeNames @[@"全部",@"发行",@"交易",@"兑换",@"奖励",@"返佣",@"卖场",@"消费",@"手续费",@"充值",@"提现",@"调账",@"虚拟充值",@"商戶兑换",@"退款"]
+
+#define TradingOrderTypeNames @[@"全部",@"发行",@"交易",@"兑换",@"奖励",@"返佣",@"卖场",@"消费",@"手续费",@"充值",@"提现",@"调账",@"虚拟充值",@"商戶兑换",@"退款"]
+
 #endif /* Macro_h */

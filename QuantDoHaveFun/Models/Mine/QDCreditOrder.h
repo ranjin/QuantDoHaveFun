@@ -11,8 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QDCreditOrder : NSObject
-@property(nonatomic,assign)NSInteger ID;      // 唯一ID
-@property(nonatomic,assign)NSInteger orderType;     // 订单类型
+@property(nonatomic,assign)NSInteger ID;
+@property(nonatomic,assign)NSInteger orderType;
+@property(nonatomic,copy)NSString *userType;
+@property(nonatomic,copy)NSString *creditCode;
+@property(nonatomic,copy)NSString *tradingDate;  // 订单日期
+@property(nonatomic,assign)NSInteger tradingDirection;
+@property(nonatomic,assign)NSInteger tradingtype;   // 订单类型
+@property(nonatomic,assign)NSInteger tradingCount;  // 交易数量
+@property(nonatomic,assign)NSInteger tradingAmount;
+@property(nonatomic,copy)NSString *orderId;
+@property(nonatomic,copy)NSString *total;
+@property(nonatomic,copy)NSString *pageNum;
+@property(nonatomic,copy)NSString *pageSize;
+/*
 @property(nonatomic,copy)NSString *orderNumber;     // 订单号
 @property(nonatomic,copy)NSString *userId;      // 用户代码
 @property(nonatomic,copy)NSString *orderDate;  // 订单日期
@@ -31,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *refundDatetime;  // 退款时间
 @property(nonatomic,copy)NSString *imgUrl;  //订单图片url
 @property(nonatomic,copy)NSString *productDesc;  //订单描述
-@property(nonatomic,copy)NSString *creditCode; // 积分代码
+ */
 @end
 
 NS_ASSUME_NONNULL_END
