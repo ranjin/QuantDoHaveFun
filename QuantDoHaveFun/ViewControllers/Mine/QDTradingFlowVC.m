@@ -110,7 +110,7 @@
         self.orderArray = [NSMutableArray arrayWithCapacity:10];
         NSArray *array = [responseObject.result valueForKey:@"result"];
         for (NSDictionary *dic in array) {
-            QDCreditOrder *order = [[QDCreditOrder alloc]init];
+            QDTradingOrder *order = [[QDTradingOrder alloc]init];
             [order setValuesForKeysWithDictionary:dic];
             [self.orderArray insertObject:order atIndex:0];
         }
@@ -140,7 +140,7 @@
         self.orderArray = [NSMutableArray arrayWithCapacity:10];
         NSArray *array = [responseObject.result valueForKey:@"result"];
         for (NSDictionary *dic in array) {
-            QDCreditOrder *order = [[QDCreditOrder alloc]init];
+            QDTradingOrder *order = [[QDTradingOrder alloc]init];
             [order setValuesForKeysWithDictionary:dic];
             [self.orderArray insertObject:order atIndex:0];
         }
@@ -153,7 +153,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QDCreditOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QDCreditOrderTableViewCell" forIndexPath:indexPath];
-    cell.creditOrder = self.orderArray[indexPath.row];
+    cell.tradingOrder = self.orderArray[indexPath.row];
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

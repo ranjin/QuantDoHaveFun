@@ -14,6 +14,7 @@
 @property(nonatomic,strong)UILabel *orderTypeLabel;
 @property(nonatomic,strong)UILabel *timeLabel;
 @property(nonatomic,strong)UILabel *amountLabel;
+@property(nonatomic,strong)UILabel *currencyNameLabel;
 @end
 
 @implementation QDCreditOrderTableViewCell
@@ -52,22 +53,22 @@
         self.timeLabel.font = [UIFont systemFontOfSize:12];
         self.timeLabel.textColor = LD_colorRGBValue(0x999999);
         
-        UILabel *currencyNameLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:currencyNameLabel];
-        [currencyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.currencyNameLabel = [[UILabel alloc]init];
+        [self.contentView addSubview:_currencyNameLabel];
+        [_currencyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.mas_right).offset(-12);
             make.top.equalTo(self.contentView.mas_top).offset(24);
             make.width.mas_equalTo(26);
             make.height.mas_equalTo(15);
         }];
-        currencyNameLabel.font = QDFont(12);
-        currencyNameLabel.textColor = LD_colorRGBValue(0x999999);
+        _currencyNameLabel.font = QDFont(12);
+        _currencyNameLabel.textColor = LD_colorRGBValue(0x999999);
         
         self.amountLabel = [[UILabel alloc]init];
         [self.contentView addSubview:self.amountLabel];
         [self.amountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(currencyNameLabel.mas_left).offset(-6);
-            make.centerY.mas_equalTo(currencyNameLabel.mas_centerY);
+            make.right.equalTo(_currencyNameLabel.mas_left).offset(-6);
+            make.centerY.mas_equalTo(_currencyNameLabel.mas_centerY);
             make.width.mas_equalTo(130);
             make.height.mas_equalTo(18);
         }];
@@ -86,7 +87,7 @@
         line.backgroundColor = LD_colorRGBValue(0xF3F7F9);
         
         self.amountLabel.text = @"+5000";
-        currencyNameLabel.text = @"玩贝";
+        _currencyNameLabel.text = @"玩贝";
         self.orderTypeLabel.text = @"积分兑换";
         self.timeLabel.text = @"2018.12.08 12:09:38";
     }
@@ -106,22 +107,24 @@
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
     NSInteger index = (_creditOrder.tradingtype+1)>=CreditOrderTypeNames.count?0:_creditOrder.tradingtype+1;
     self.orderTypeLabel.text = CreditOrderTypeNames[index];
+    self.currencyNameLabel.text = @"玩贝";
 //    self.orderTypeLabel.text = _creditOrder.tradingTypeDesc;
 }
 - (void)setTradingOrder:(QDTradingOrder *)tradingOrder {
     _tradingOrder = tradingOrder;
     NSString *amountString;
     if (_creditOrder.tradingDirection == 0) {
-        amountString = [NSString stringWithFormat:@"+%ld",(long)_creditOrder.tradingCount];
+        amountString = [NSString stringWithFormat:@"+%ld",(long)_tradingOrder.tradingCount];
     } else {
-        amountString = [NSString stringWithFormat:@"-%ld",(long)_creditOrder.tradingCount];
+        amountString = [NSString stringWithFormat:@"-%ld",(long)_tradingOrder.tradingCount];
     }
     self.amountLabel.text = amountString;
     
-    self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
+    self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_tradingOrder.tradingDate];
     NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_creditOrder.tradingtype+1;
     self.orderTypeLabel.text = TradingOrderTypeNames[index];
 //    self.orderTypeLabel.text = _tradingOrder.tradingTypeDesc;
+    self.currencyNameLabel.text = @"元";
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
