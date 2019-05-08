@@ -14,9 +14,16 @@
     if ([super initWithFrame:frame]) {
         _topView = [[UIView alloc] init];
         _topView.backgroundColor = APP_WHITECOLOR;
-        _topView.layer.cornerRadius = 5;
+        _topView.layer.cornerRadius = 7.5;
         _topView.layer.masksToBounds = YES;
         [self addSubview:_topView];
+        
+        _locationTF = [[UITextField alloc] init];
+        _locationTF.placeholder = @"输入关键词/酒店名";
+        [_locationTF setValue:APP_GRAYCOLOR forKeyPath:@"_placeholderLabel.textColor"];
+        _locationTF.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [_locationTF setValue:QDFont(14) forKeyPath:@"_placeholderLabel.font"];
+        [_topView addSubview:_locationTF];
         
         _locateBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionLeft];
         [_locateBtn setImage:[UIImage imageNamed:@"icon_location"] forState:UIControlStateNormal];
@@ -26,11 +33,6 @@
         _locateBtn.imageTitleSpace = SCREEN_WIDTH*0.012;
         [_topView addSubview:_locateBtn];
         
-        _locationLab = [[UILabel alloc] init];
-        _locationLab.text = @"定位中..";
-        _locationLab.font = QDFont(15);
-        [self addSubview:_locationLab];
-                
         _centerView = [[UIView alloc] init];
         _centerView.backgroundColor = APP_WHITECOLOR;
         _centerView.layer.cornerRadius = 5;
@@ -90,29 +92,6 @@
         _bottomLine.backgroundColor = APP_BLUECOLOR;
         [_centerView addSubview:_bottomLine];
         
-        _bottomView = [[UIView alloc] init];
-        _bottomView.backgroundColor = APP_WHITECOLOR;
-        _bottomView.layer.cornerRadius = 8;
-        _bottomView.layer.masksToBounds = YES;
-        [self addSubview:_bottomView];
-        
-        _locationTF = [[UITextField alloc] init];
-        _locationTF.placeholder = @"输入关键词/酒店名";
-        [_locationTF setValue:APP_LIGHTGRAYCOLOR forKeyPath:@"_placeholderLabel.textColor"];
-        _locationTF.clearButtonMode = UITextFieldViewModeWhileEditing;
-        [_locationTF setValue:QDFont(15) forKeyPath:@"_placeholderLabel.font"];
-        [_bottomView addSubview:_locationTF];
-        
-//        _keyWordsBtn = [[UIButton alloc] init];
-//        _keyWordsBtn.backgroundColor = APP_WHITECOLOR;
-//        [_keyWordsBtn setTitle:@"搜索 关键词／酒店名／地标" forState:UIControlStateNormal];
-//        [_keyWordsBtn setTitleColor:APP_GRAYLINECOLOR forState:UIControlStateNormal];
-//        _keyWordsBtn.layer.cornerRadius = 5;
-//        _keyWordsBtn.layer.masksToBounds = YES;
-//        _keyWordsBtn.titleLabel.font = QDFont(16);
-//        _keyWordsBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
-//        [self addSubview:_keyWordsBtn];
-        
         _searchBtn = [[UIButton alloc] init];
         _searchBtn.backgroundColor = [UIColor whiteColor];
         [_searchBtn setTitle:@"开始搜索" forState:UIControlStateNormal];
@@ -120,18 +99,16 @@
         _searchBtn.layer.cornerRadius = 5;
         _searchBtn.layer.masksToBounds = YES;
         CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH*0.89, SCREEN_HEIGHT*0.07);
+        gradientLayer.frame = CGRectMake(0, 0, 296, 43);
         gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0),@(1.0)];//渐变点
+        gradientLayer.endPoint = CGPointMake(1, 1);
+        gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
         gradientLayer.masksToBounds = YES;
-        gradientLayer.cornerRadius = 4;
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+        gradientLayer.cornerRadius = 21.5;
+        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
         [_searchBtn.layer addSublayer:gradientLayer];
-        [_searchBtn setTitle:@"开始搜索" forState:UIControlStateNormal];
         _searchBtn.layer.masksToBounds = YES;
-        
-        _searchBtn.titleLabel.font = QDFont(17);
+        _searchBtn.titleLabel.font = QDFont(16);
         [self addSubview:_searchBtn];
     }
     return self;
@@ -146,9 +123,10 @@
         make.height.mas_equalTo(SCREEN_HEIGHT*0.075);
     }];
     
-    [_locationLab mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_locationTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_topView);
-        make.left.equalTo(_topView.mas_left).offset(SCREEN_WIDTH*0.05);
+        make.left.equalTo(_topView.mas_left).offset(20);
+        make.right.equalTo(_topView.mas_left).offset(245);
     }];
     
     [_locateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -160,28 +138,28 @@
         make.centerX.width.and.height.equalTo(_topView);
         make.top.equalTo(_topView.mas_bottom).offset(SCREEN_HEIGHT*0.02);
     }];
-
+    
     [_inLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_locationLab.mas_left).offset(SCREEN_WIDTH*0.05);
-        make.top.equalTo(_centerView.mas_top).offset(SCREEN_HEIGHT*0.01);
+        make.left.equalTo(_centerView.mas_left).offset(40);
+        make.top.equalTo(_centerView.mas_top).offset(10);
     }];
-
+    
     [_outLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.inLab);
         make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.2));
     }];
-
+    
     [_dateIn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_inLab);
         make.bottom.equalTo(self.centerView.mas_bottom).offset(-(SCREEN_HEIGHT*0.004));
     }];
-
+    
     [_dateOut mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.width.height.equalTo(self.dateIn);
         make.centerX.equalTo(_outLab);
         make.right.equalTo(self.centerView.mas_right).offset(-(SCREEN_WIDTH*0.05));
     }];
-
+    
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_centerView);
         make.top.equalTo(_centerView.mas_top).offset(SCREEN_HEIGHT*0.01);
@@ -199,22 +177,12 @@
         make.centerX.width.and.height.equalTo(_topLine);
         make.top.equalTo(_totalDayLab.mas_bottom);
     }];
-    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.width.and.height.equalTo(_centerView);
-        make.top.equalTo(_centerView.mas_bottom).offset(SCREEN_HEIGHT*0.02);
-    }];
-
-    [_locationTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomView);
-        make.left.equalTo(_bottomView.mas_left).offset(20);
-        make.right.equalTo(_bottomView.mas_right).offset(-25);
-    }];
-
+    
     [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.07);
-        make.centerX.equalTo(_bottomView);
-        make.top.equalTo(_bottomView.mas_bottom).offset(SCREEN_WIDTH*0.05);
+        make.centerX.equalTo(_topView);
+        make.top.equalTo(_centerView.mas_bottom).offset(20);
+        make.width.mas_equalTo(296);
+        make.height.mas_equalTo(43);
     }];
 }
 

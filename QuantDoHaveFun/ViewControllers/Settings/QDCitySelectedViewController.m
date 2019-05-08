@@ -491,7 +491,7 @@
 
 - (NSArray *)hotCitys {
     if (!_hotCitys) {
-        _hotCitys = @[@"北京",@"三亚",@"上海",@"广州",@"成都",@"青岛",@"南京",@"杭州",@"厦门",@"深圳",@"重庆",@"大连",@"香港",@"台北"];
+        _hotCitys = @[@"腾冲",@"西双版纳",@"昆明",@"大理",@"丽江",@"三亚"];
     }
     return _hotCitys;
 }
@@ -556,7 +556,7 @@
 #pragma mark - DZNEmtpyDataSet Delegate
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    return [UIImage imageNamed:@"emptySource"];
+    return [UIImage imageNamed:@"icon_nodata"];
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{

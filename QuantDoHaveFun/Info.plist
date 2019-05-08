@@ -39,7 +39,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>baidumap</string>
-		<string>isoamap</string>
+		<string>iosamap</string>
 		<string>comgooglemaps</string>
 		<string>qqmap</string>
 	</array>

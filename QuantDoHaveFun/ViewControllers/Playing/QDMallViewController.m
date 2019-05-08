@@ -303,7 +303,6 @@
     [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         //重置所有选项
-        _catId = @"";
         _sortColumn = @"";
         _sortType = @"";
         [_sectionHeaderView.allBtn setTitle:_categoryArr[0] forState:UIControlStateNormal];
@@ -473,12 +472,12 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
@@ -500,6 +499,10 @@
 
 - (void)dismissPopMenu:(QDPopMenu *)popMenu{
     QDLog(@"dismissPopMenu");
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return -100;
 }
 
 @end
