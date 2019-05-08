@@ -10,6 +10,23 @@
 		025FEDC9228059EE00CDAFC3 /* QDCreditOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */; };
 		025FEDCC22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */; };
 		025FEDD02281295200CDAFC3 /* QDCreditOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */; };
+		025FEDD62281832A00CDAFC3 /* QDFiltrateDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDD52281832A00CDAFC3 /* QDFiltrateDropdownMenu.m */; };
+		025FEDD92282685200CDAFC3 /* QDDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDD82282685100CDAFC3 /* QDDropDownItem.m */; };
+		025FEDDC228268B600CDAFC3 /* QDDropDownItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDDB228268B600CDAFC3 /* QDDropDownItemCell.m */; };
+		025FEDF92282881200CDAFC3 /* UIView+LDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDDF2282881200CDAFC3 /* UIView+LDCategory.m */; };
+		025FEDFA2282881200CDAFC3 /* NSObject+LDCopying.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDE32282881200CDAFC3 /* NSObject+LDCopying.m */; };
+		025FEDFB2282881200CDAFC3 /* LD_NSStringEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDE72282881200CDAFC3 /* LD_NSStringEditor.m */; };
+		025FEDFC2282881200CDAFC3 /* NSObject+LDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDED2282881200CDAFC3 /* NSObject+LDCategory.m */; };
+		025FEDFD2282881200CDAFC3 /* NSObject+coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF02282881200CDAFC3 /* NSObject+coding.m */; };
+		025FEDFE2282881200CDAFC3 /* UIView+frameAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF12282881200CDAFC3 /* UIView+frameAddition.m */; };
+		025FEDFF2282881200CDAFC3 /* UIImage+LDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF32282881200CDAFC3 /* UIImage+LDCategory.m */; };
+		025FEE002282881200CDAFC3 /* GotoSystemSettingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */; };
+		025FEE012282881200CDAFC3 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */; };
+		025FEE022282881200CDAFC3 /* LDVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF62282881200CDAFC3 /* LDVPNManager.m */; };
+		025FEE032282881200CDAFC3 /* LD_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF72282881200CDAFC3 /* LD_Extension.m */; };
+		025FEE042282881200CDAFC3 /* LDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF82282881200CDAFC3 /* LDLocationManager.m */; };
+		025FEE072282CE4900CDAFC3 /* QDTradingOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEE062282CE4800CDAFC3 /* QDTradingOrder.m */; };
+		025FEE0A2282CF0600CDAFC3 /* QDTradingFlowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEE092282CF0600CDAFC3 /* QDTradingFlowVC.m */; };
 		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
 		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
 		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
@@ -352,9 +369,43 @@
 		025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrder.m; sourceTree = "<group>"; };
 		025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QDCreditOrderHistoryVC.h; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.h; sourceTree = SOURCE_ROOT; };
 		025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QDCreditOrderHistoryVC.m; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.m; sourceTree = SOURCE_ROOT; };
-		025FEDCD2281284700CDAFC3 /* LD_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Macros.h; sourceTree = "<group>"; };
 		025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrderTableViewCell.h; sourceTree = "<group>"; };
 		025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrderTableViewCell.m; sourceTree = "<group>"; };
+		025FEDD42281832900CDAFC3 /* QDFiltrateDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFiltrateDropdownMenu.h; sourceTree = "<group>"; };
+		025FEDD52281832A00CDAFC3 /* QDFiltrateDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFiltrateDropdownMenu.m; sourceTree = "<group>"; };
+		025FEDD72282685100CDAFC3 /* QDDropDownItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDDropDownItem.h; sourceTree = "<group>"; };
+		025FEDD82282685100CDAFC3 /* QDDropDownItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDDropDownItem.m; sourceTree = "<group>"; };
+		025FEDDA228268B600CDAFC3 /* QDDropDownItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDDropDownItemCell.h; sourceTree = "<group>"; };
+		025FEDDB228268B600CDAFC3 /* QDDropDownItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDDropDownItemCell.m; sourceTree = "<group>"; };
+		025FEDDE2282881200CDAFC3 /* NSObject+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LDCategory.h"; sourceTree = "<group>"; };
+		025FEDDF2282881200CDAFC3 /* UIView+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LDCategory.m"; sourceTree = "<group>"; };
+		025FEDE02282881200CDAFC3 /* UIView+frameAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAddition.h"; sourceTree = "<group>"; };
+		025FEDE22282881200CDAFC3 /* NSObject+LDCopying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LDCopying.h"; sourceTree = "<group>"; };
+		025FEDE32282881200CDAFC3 /* NSObject+LDCopying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LDCopying.m"; sourceTree = "<group>"; };
+		025FEDE42282881200CDAFC3 /* LDVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDVPNManager.h; sourceTree = "<group>"; };
+		025FEDE52282881200CDAFC3 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		025FEDE62282881200CDAFC3 /* GotoSystemSettingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GotoSystemSettingHelper.h; sourceTree = "<group>"; };
+		025FEDE72282881200CDAFC3 /* LD_NSStringEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_NSStringEditor.m; sourceTree = "<group>"; };
+		025FEDE82282881200CDAFC3 /* UIImage+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LDCategory.h"; sourceTree = "<group>"; };
+		025FEDE92282881200CDAFC3 /* LDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLocationManager.h; sourceTree = "<group>"; };
+		025FEDEA2282881200CDAFC3 /* LD_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Extension.h; sourceTree = "<group>"; };
+		025FEDEB2282881200CDAFC3 /* LD_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Macros.h; sourceTree = "<group>"; };
+		025FEDEC2282881200CDAFC3 /* UIView+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LDCategory.h"; sourceTree = "<group>"; };
+		025FEDED2282881200CDAFC3 /* NSObject+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LDCategory.m"; sourceTree = "<group>"; };
+		025FEDEF2282881200CDAFC3 /* NSObject+coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+coding.h"; sourceTree = "<group>"; };
+		025FEDF02282881200CDAFC3 /* NSObject+coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+coding.m"; sourceTree = "<group>"; };
+		025FEDF12282881200CDAFC3 /* UIView+frameAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAddition.m"; sourceTree = "<group>"; };
+		025FEDF22282881200CDAFC3 /* LD_NSStringEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_NSStringEditor.h; sourceTree = "<group>"; };
+		025FEDF32282881200CDAFC3 /* UIImage+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LDCategory.m"; sourceTree = "<group>"; };
+		025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GotoSystemSettingHelper.m; sourceTree = "<group>"; };
+		025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		025FEDF62282881200CDAFC3 /* LDVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDVPNManager.m; sourceTree = "<group>"; };
+		025FEDF72282881200CDAFC3 /* LD_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_Extension.m; sourceTree = "<group>"; };
+		025FEDF82282881200CDAFC3 /* LDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLocationManager.m; sourceTree = "<group>"; };
+		025FEE052282CE4800CDAFC3 /* QDTradingOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTradingOrder.h; sourceTree = "<group>"; };
+		025FEE062282CE4800CDAFC3 /* QDTradingOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTradingOrder.m; sourceTree = "<group>"; };
+		025FEE082282CF0600CDAFC3 /* QDTradingFlowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDTradingFlowVC.h; sourceTree = "<group>"; };
+		025FEE092282CF0600CDAFC3 /* QDTradingFlowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDTradingFlowVC.m; sourceTree = "<group>"; };
 		07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.debug.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.debug.xcconfig"; sourceTree = "<group>"; };
 		874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuantDoHaveFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1039,6 +1090,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025FEDDD2282881200CDAFC3 /* LDExtension */ = {
+			isa = PBXGroup;
+			children = (
+				025FEDDE2282881200CDAFC3 /* NSObject+LDCategory.h */,
+				025FEDDF2282881200CDAFC3 /* UIView+LDCategory.m */,
+				025FEDE02282881200CDAFC3 /* UIView+frameAddition.h */,
+				025FEDE12282881200CDAFC3 /* NSObject+LDCopying */,
+				025FEDE42282881200CDAFC3 /* LDVPNManager.h */,
+				025FEDE52282881200CDAFC3 /* UIButton+EnlargeTouchArea.h */,
+				025FEDE62282881200CDAFC3 /* GotoSystemSettingHelper.h */,
+				025FEDE72282881200CDAFC3 /* LD_NSStringEditor.m */,
+				025FEDE82282881200CDAFC3 /* UIImage+LDCategory.h */,
+				025FEDE92282881200CDAFC3 /* LDLocationManager.h */,
+				025FEDEA2282881200CDAFC3 /* LD_Extension.h */,
+				025FEDEB2282881200CDAFC3 /* LD_Macros.h */,
+				025FEDEC2282881200CDAFC3 /* UIView+LDCategory.h */,
+				025FEDED2282881200CDAFC3 /* NSObject+LDCategory.m */,
+				025FEDEE2282881200CDAFC3 /* NSObject+coding */,
+				025FEDF12282881200CDAFC3 /* UIView+frameAddition.m */,
+				025FEDF22282881200CDAFC3 /* LD_NSStringEditor.h */,
+				025FEDF32282881200CDAFC3 /* UIImage+LDCategory.m */,
+				025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */,
+				025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */,
+				025FEDF62282881200CDAFC3 /* LDVPNManager.m */,
+				025FEDF72282881200CDAFC3 /* LD_Extension.m */,
+				025FEDF82282881200CDAFC3 /* LDLocationManager.m */,
+			);
+			path = LDExtension;
+			sourceTree = "<group>";
+		};
+		025FEDE12282881200CDAFC3 /* NSObject+LDCopying */ = {
+			isa = PBXGroup;
+			children = (
+				025FEDE22282881200CDAFC3 /* NSObject+LDCopying.h */,
+				025FEDE32282881200CDAFC3 /* NSObject+LDCopying.m */,
+			);
+			path = "NSObject+LDCopying";
+			sourceTree = "<group>";
+		};
+		025FEDEE2282881200CDAFC3 /* NSObject+coding */ = {
+			isa = PBXGroup;
+			children = (
+				025FEDEF2282881200CDAFC3 /* NSObject+coding.h */,
+				025FEDF02282881200CDAFC3 /* NSObject+coding.m */,
+			);
+			path = "NSObject+coding";
+			sourceTree = "<group>";
+		};
 		3B9FDF497B23D21D81678EBF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1229,6 +1328,12 @@
 				93399D3D2268191C00FB9F0E /* QDMineView.m */,
 				025FEDCE2281295200CDAFC3 /* QDCreditOrderTableViewCell.h */,
 				025FEDCF2281295200CDAFC3 /* QDCreditOrderTableViewCell.m */,
+				025FEDD42281832900CDAFC3 /* QDFiltrateDropdownMenu.h */,
+				025FEDD52281832A00CDAFC3 /* QDFiltrateDropdownMenu.m */,
+				025FEDD72282685100CDAFC3 /* QDDropDownItem.h */,
+				025FEDD82282685100CDAFC3 /* QDDropDownItem.m */,
+				025FEDDA228268B600CDAFC3 /* QDDropDownItemCell.h */,
+				025FEDDB228268B600CDAFC3 /* QDDropDownItemCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1345,6 +1450,8 @@
 				93399DA62268228900FB9F0E /* QDSettingViewController.m */,
 				025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */,
 				025FEDCB22811AC900CDAFC3 /* QDCreditOrderHistoryVC.m */,
+				025FEE082282CF0600CDAFC3 /* QDTradingFlowVC.h */,
+				025FEE092282CF0600CDAFC3 /* QDTradingFlowVC.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1430,6 +1537,8 @@
 				93399D5E226819C800FB9F0E /* UserMoneyDTO.m */,
 				025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */,
 				025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */,
+				025FEE052282CE4800CDAFC3 /* QDTradingOrder.h */,
+				025FEE062282CE4800CDAFC3 /* QDTradingOrder.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1474,7 +1583,6 @@
 				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93399D36226815A300FB9F0E /* Macro.h */,
 				93399D38226815A300FB9F0E /* Macro.m */,
-				025FEDCD2281284700CDAFC3 /* LD_Macros.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1482,8 +1590,12 @@
 		93399D562268195700FB9F0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				025FEDDD2282881200CDAFC3 /* LDExtension */,
+=======
 				936DE1C52282B1650010B350 /* CCAppManager */,
 				936DE1BE2282B1250010B350 /* HcdGuideView */,
+>>>>>>> 34b05b63a44d8f537a74c8e3aece8adb2739a856
 				93E9827B227198BA00DDEB80 /* AxcAE_TabBar */,
 				93E982712271560B00DDEB80 /* PPNumberButton */,
 				93E98269227155C100DDEB80 /* QDGCDTimer */,
@@ -2618,6 +2730,7 @@
 				93E980DA22714DC500DDEB80 /* UIButton+ImageTitleStyle.m in Sources */,
 				93E9822E227154B000DDEB80 /* QDMyPurchaseCell.m in Sources */,
 				93399DE3226823AF00FB9F0E /* UIImageView+HighlightedWebCache.m in Sources */,
+				025FEDD62281832A00CDAFC3 /* QDFiltrateDropdownMenu.m in Sources */,
 				93E980D422714DC500DDEB80 /* NSDictionary+Helper.m in Sources */,
 				93399E102268487300FB9F0E /* UIView+TABControlAnimation.m in Sources */,
 				93399DE8226823AF00FB9F0E /* SDWebImagePrefetcher.m in Sources */,
@@ -2648,6 +2761,7 @@
 				93E9800D2271446B00DDEB80 /* NSParagraphStyle+YYText.m in Sources */,
 				93E9822D227154B000DDEB80 /* QDFilterTypeTwoView.m in Sources */,
 				93E981622271500700DDEB80 /* QDSearchResultViewController.m in Sources */,
+				025FEE042282881200CDAFC3 /* LDLocationManager.m in Sources */,
 				93E98262227155A100DDEB80 /* QDSecondViewController.m in Sources */,
 				93E980D622714DC500DDEB80 /* UIControl+Blocks.m in Sources */,
 				93399DEE226823AF00FB9F0E /* SDImageCacheConfig.m in Sources */,
@@ -2687,6 +2801,7 @@
 				93E981DF227153B800DDEB80 /* QDHotelReserveVC.m in Sources */,
 				93E9819D2271524B00DDEB80 /* QDHomeTopView.m in Sources */,
 				93399D2D226814EA00FB9F0E /* RankFirstViewController.m in Sources */,
+				025FEE032282881200CDAFC3 /* LD_Extension.m in Sources */,
 				93E980652271472F00DDEB80 /* QDRoomTypeDTO.m in Sources */,
 				93E981B2227152BD00DDEB80 /* QDVipPurchaseFlowLayout.m in Sources */,
 				93E9812A22714F4900DDEB80 /* LineDashPolyline.m in Sources */,
@@ -2746,7 +2861,9 @@
 				93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */,
 				93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */,
 				93E980082271446B00DDEB80 /* YYTextParser.m in Sources */,
+				025FEE002282881200CDAFC3 /* GotoSystemSettingHelper.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
+				025FEDFC2282881200CDAFC3 /* NSObject+LDCategory.m in Sources */,
 				93E980AC22714D1A00DDEB80 /* SYCollectionCell.m in Sources */,
 				93E9813F22714F7D00DDEB80 /* RanklistDTO.m in Sources */,
 				93E9804D2271467F00DDEB80 /* VertificationCodeInputView.m in Sources */,
@@ -2756,17 +2873,21 @@
 				93399D5D2268196300FB9F0E /* STPhotoKitController.m in Sources */,
 				93E9814622714F8700DDEB80 /* ResturantModel.m in Sources */,
 				93E980D922714DC500DDEB80 /* UIView+ML_Extension.m in Sources */,
+				025FEE012282881200CDAFC3 /* UIButton+EnlargeTouchArea.m in Sources */,
 				93399DE4226823AF00FB9F0E /* SDWebImageDownloader.m in Sources */,
 				93E9811922714EFE00DDEB80 /* SFDualWaySlider.m in Sources */,
 				93E980122271446B00DDEB80 /* YYTextAsyncLayer.m in Sources */,
+				025FEE072282CE4900CDAFC3 /* QDTradingOrder.m in Sources */,
 				93E98226227154B000DDEB80 /* QDMySaleOrderCell.m in Sources */,
 				93E9803B2271452E00DDEB80 /* QDButton.m in Sources */,
+				025FEDFF2282881200CDAFC3 /* UIImage+LDCategory.m in Sources */,
 				93E981802271504700DDEB80 /* QDHotelSearchView.m in Sources */,
 				93E9819C2271524B00DDEB80 /* QDShowMenuView.m in Sources */,
 				93E980F222714E6700DDEB80 /* OpenShare+Weibo.m in Sources */,
 				93E980D822714DC500DDEB80 /* UIColor+QDColor.m in Sources */,
 				93E9812F22714F4900DDEB80 /* VipCardDTO.m in Sources */,
 				93E9826C227155C100DDEB80 /* YUTimer.m in Sources */,
+				025FEDFE2282881200CDAFC3 /* UIView+frameAddition.m in Sources */,
 				93E98222227154B000DDEB80 /* QDTradeShellsSectionHeaderView.m in Sources */,
 				93E980F622714E6700DDEB80 /* OpenShare+Weixin.m in Sources */,
 				93399CC12267124000FB9F0E /* ViewController.m in Sources */,
@@ -2788,16 +2909,19 @@
 				93E9817D2271504700DDEB80 /* QDHotelTableViewCell.m in Sources */,
 				93E980F422714E6700DDEB80 /* OpenShare+QQ.m in Sources */,
 				93E98228227154B000DDEB80 /* MyTableCell.m in Sources */,
+				025FEDD92282685200CDAFC3 /* QDDropDownItem.m in Sources */,
 				93399DA72268228900FB9F0E /* QDSettingViewController.m in Sources */,
 				93E98027227144B100DDEB80 /* QDSetLoginPwdView.m in Sources */,
 				93E9825F227155A100DDEB80 /* QDFourViewController.m in Sources */,
 				936DE1CC2282B1650010B350 /* CCGotoUpDateViewController.m in Sources */,
 				93E98051227146AF00DDEB80 /* QDProtocolVC.m in Sources */,
+				025FEDFB2282881200CDAFC3 /* LD_NSStringEditor.m in Sources */,
 				93E9813A22714F7000DDEB80 /* SYChineseToPinyin.m in Sources */,
 				93E9814A22714F9700DDEB80 /* HotelCouponDetailDTO.m in Sources */,
 				93E98223227154B000DDEB80 /* QDFilterTypeOneView.m in Sources */,
 				93E98057227146BC00DDEB80 /* QDBridgeViewController.m in Sources */,
 				93E981A02271524B00DDEB80 /* QDHomePageViewCell.m in Sources */,
+				025FEDF92282881200CDAFC3 /* UIView+LDCategory.m in Sources */,
 				93E980B522714D7500DDEB80 /* QDDateUtils.m in Sources */,
 				93E980A922714D1A00DDEB80 /* QDCalendarTopView.m in Sources */,
 				93E981CD2271535100DDEB80 /* CWActionSheetTableViewCell.m in Sources */,
@@ -2805,6 +2929,7 @@
 				93E980022271446B00DDEB80 /* YYTextLine.m in Sources */,
 				93E981612271500700DDEB80 /* QDHomeSearchVC.m in Sources */,
 				93E982742271560B00DDEB80 /* PPNumberButton.m in Sources */,
+				025FEE0A2282CF0600CDAFC3 /* QDTradingFlowVC.m in Sources */,
 				93399D502268191E00FB9F0E /* QDBackgroundView.m in Sources */,
 				93399E132268487300FB9F0E /* UICollectionViewCell+TABLayoutSubviews.m in Sources */,
 				93399D7822681A0900FB9F0E /* QDServiceClient.m in Sources */,
@@ -2828,12 +2953,14 @@
 				93E981DE227153B800DDEB80 /* QDKeyWordsSearchVC.m in Sources */,
 				93E9822C227154B000DDEB80 /* QDMallTableSectionHeaderView.m in Sources */,
 				93E9819E2271524B00DDEB80 /* QDHomePageTopView.m in Sources */,
+				025FEDFD2282881200CDAFC3 /* NSObject+coding.m in Sources */,
 				93399D542268191E00FB9F0E /* QDLogonWithNoFinancialAccountView.m in Sources */,
 				93399DE6226823AF00FB9F0E /* UIImage+MultiFormat.m in Sources */,
 				93399E332268546F00FB9F0E /* UIColor+HQColor.m in Sources */,
 				93399DE5226823AF00FB9F0E /* UIImage+GIF.m in Sources */,
 				93399D7722681A0900FB9F0E /* QDNetworkCache.m in Sources */,
 				93E9817F2271504700DDEB80 /* QDHotelTypeView.m in Sources */,
+				025FEDDC228268B600CDAFC3 /* QDDropDownItemCell.m in Sources */,
 				93E980672271472F00DDEB80 /* QDBankaccountDTO.m in Sources */,
 				93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */,
 				93399D64226819C800FB9F0E /* UserMoneyDTO.m in Sources */,
@@ -2845,6 +2972,7 @@
 				938C3C472272F96C0087724E /* TheCityModel.m in Sources */,
 				93E9810D22714E9300DDEB80 /* QDHotelReserveTableHeaderView.m in Sources */,
 				93399CCC2267124500FB9F0E /* main.m in Sources */,
+				025FEDFA2282881200CDAFC3 /* NSObject+LDCopying.m in Sources */,
 				93399D65226819C800FB9F0E /* QDMemberDTO.m in Sources */,
 				93399D9E2268222500FB9F0E /* STUI.m in Sources */,
 				93E980F522714E6700DDEB80 /* OpenShare+Alipay.m in Sources */,
@@ -2867,6 +2995,7 @@
 				93E9808C227147C700DDEB80 /* QDCalendarCustomerTourVC.m in Sources */,
 				936DE1CB2282B1650010B350 /* CCAppManager.m in Sources */,
 				93399DEF226823AF00FB9F0E /* UIView+WebCacheOperation.m in Sources */,
+				025FEE022282881200CDAFC3 /* LDVPNManager.m in Sources */,
 				93399E122268487300FB9F0E /* UITableView+Animated.m in Sources */,
 				93E981642271500700DDEB80 /* QDHomeMallListVC.m in Sources */,
 				93E980372271450000DDEB80 /* UIColor+CustomFunctions.m in Sources */,

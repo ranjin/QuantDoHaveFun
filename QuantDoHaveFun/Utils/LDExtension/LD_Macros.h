@@ -20,7 +20,7 @@
 //判断iPhoneX或Xs（分辨率尺寸完全相同）
 #define IS_IPHONE_X_OR_Xs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
 //判断iPHoneXr
-#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(750, 1624), [[UIScreen mainScreen] currentMode].size)) && !isPad : NO)
 //判断iPhoneXs Max
 #define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
 
@@ -32,7 +32,7 @@
 // 当StatusBar隐藏时，返回0
 #define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 
-//#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
+#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
 
 
 #define LD_LOCK_semaphore(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);

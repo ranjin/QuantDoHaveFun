@@ -31,7 +31,6 @@
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "QDTestWebViewVC.h"
-#import "QDCreditOrderHistoryVC.h"
 #import "VIPRightsViewController.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
@@ -397,10 +396,6 @@ typedef NS_ENUM(NSInteger, PhotoType)
             break;
         case 5: //安全中心
             [self gotoLoginWithAction:JS_SECURITYCENTER];
-//        {
-//            QDCreditOrderHistoryVC *creditHistoryVC = [[QDCreditOrderHistoryVC alloc]init];
-//            [self.navigationController pushViewController:creditHistoryVC animated:YES];
-//        }
             break;
         default:
             break;

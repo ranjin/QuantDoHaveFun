@@ -1,15 +1,14 @@
 //
-//  QDCreditOrder.m
+//  QDTradingOrder.m
 //  QuantDoHaveFun
 //
-//  Created by lidi on 2019/5/6.
+//  Created by lidi on 2019/5/8.
 //  Copyright © 2019 Chalres Ran. All rights reserved.
 //
 
-#import "QDCreditOrder.h"
+#import "QDTradingOrder.h"
 
-@implementation QDCreditOrder
-
+@implementation QDTradingOrder
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     if ([key isEqualToString:@"id"]) {
         self.ID = [value integerValue];

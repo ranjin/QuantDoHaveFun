@@ -22,7 +22,9 @@ target 'QuantDoHaveFun' do
   pod 'AMap2DMap'
   pod 'AMapSearch'
   pod 'AMapLocation'
+  pod 'UICollectionViewLeftAlignedLayout'
   pod 'Pgyer'
   pod 'PgyUpdate'
+
 end
 
