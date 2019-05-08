@@ -68,9 +68,9 @@
     
     UILabel *titleLab = [[UILabel alloc] init];
     if ([_postersType isEqualToString:@"0"]) {
-        titleLab.text = @"买买";
+        titleLab.text = @"卖卖";
     }else{
-        titleLab.text = @"卖掉";
+        titleLab.text = @"买买";
     }
     titleLab.textColor = APP_BLACKCOLOR;
     titleLab.font = QDFont(17);
@@ -201,7 +201,7 @@
             NSDictionary *dic = responseObject.result;
             NSArray *arr = [dic objectForKey:@"commentList"];
             if (!arr.count) {
-                [WXProgressHUD showErrorWithTittle:@"无满足条件的挂单数据"];
+                [WXProgressHUD showInfoWithTittle:@"无满足条件的挂单数据"];
                 [_collectionView reloadData];
                 [_collectionView reloadEmptyDataSet];
             }else{

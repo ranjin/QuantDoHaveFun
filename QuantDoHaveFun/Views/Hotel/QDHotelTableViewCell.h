@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *hotelImg;
 @property (nonatomic, strong) UILabel *hotelName;
 @property (nonatomic, strong) UILabel *wanbeiLab;
+@property (nonatomic, strong) UILabel *qiLab;
 @property (nonatomic, strong) UILabel *wanbei;
 @property (nonatomic, strong) UILabel *yueLab;
 @property (nonatomic, strong) UILabel *priceLab;

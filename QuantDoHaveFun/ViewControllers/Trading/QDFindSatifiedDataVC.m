@@ -323,7 +323,7 @@
         [_priceTF addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         _priceTF.textColor = APP_BLACKCOLOR;
         _priceTF.font = QDFont(16);
-        _priceTF.text = @"0.01";
+        _priceTF.text = @"0";
     }
     return _priceTF;
 }

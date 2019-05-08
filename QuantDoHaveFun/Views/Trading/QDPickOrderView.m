@@ -257,7 +257,7 @@
     }];
 
     [_lab5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab4.mas_right);
+        make.left.equalTo(_lab4.mas_right).offset(6);
         make.centerY.equalTo(_lab4);
     }];
 
@@ -267,7 +267,7 @@
     }];
 
     [_lab7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab6.mas_right);
+        make.left.equalTo(_lab6.mas_right).offset(6);
         make.centerY.equalTo(_lab6);
     }];
     
@@ -277,7 +277,7 @@
     }];
     
     [_lab9 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_lab8.mas_right);
+        make.left.equalTo(_lab8.mas_right).offset(6);
         make.centerY.equalTo(_lab8);
     }];
     
@@ -353,7 +353,7 @@
         _remain.hidden = YES;
         switch ([model.state integerValue]) {
             case QD_HavePurchased:
-                self.statusLab.text = @"已付款";
+                self.statusLab.text = @"已成交";
                 break;
             case QD_HaveFinished:
                 self.statusLab.text = @"已完成";

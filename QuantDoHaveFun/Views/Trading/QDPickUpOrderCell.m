@@ -238,7 +238,7 @@
     }else{
         self.amount.text= [NSString stringWithFormat:@"%@个",model.number];
     }
-    self.balance.text= [NSString stringWithFormat:@"%.2lf", [model.amount doubleValue]];
+    self.balance.text= [NSString stringWithFormat:@"¥%.2lf", [model.amount doubleValue]];
     //手续费
     self.transfer.text = [NSString stringWithFormat:@"¥%@", model.poundage];
     if ([model.state isEqualToString:@"0"]) {
@@ -250,7 +250,7 @@
         _payBtn.hidden = YES;
         switch ([model.state integerValue]) {
             case QD_HavePurchased:
-                self.statusLab.text = @"已付款";
+                self.statusLab.text = @"已成交";
                 break;
             case QD_HaveFinished:
                 self.statusLab.text = @"已完成";

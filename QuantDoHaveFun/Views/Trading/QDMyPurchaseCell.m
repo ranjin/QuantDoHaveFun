@@ -368,7 +368,7 @@
             self.withdrawBtn.hidden = NO;
             break;
         case QD_HavePurchased:
-            self.orderStatusLab.text = @"已付款";
+            self.orderStatusLab.text = @"已成交";
             self.withdrawBtn.hidden = YES;
             break;
         case QD_HaveFinished:

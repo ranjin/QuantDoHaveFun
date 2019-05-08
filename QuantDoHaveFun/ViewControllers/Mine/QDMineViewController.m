@@ -211,13 +211,13 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 -(void)customSeparateLineToCell:(UITableViewCell *)cell{
     UIView *separateLineBottom = [[UIView alloc] init];
-    [separateLineBottom setBackgroundColor:[UIColor colorWithHexString:@"#DDDDDD"]];
+    [separateLineBottom setBackgroundColor:APP_LIGTHGRAYLINECOLOR];
     [cell.contentView addSubview:separateLineBottom];
     [separateLineBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(cell.contentView);
         make.centerX.equalTo(cell.contentView);
-        make.width.mas_equalTo(335);
-        make.height.mas_equalTo(0.5);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.mas_equalTo(1);
     }];
     
 }
@@ -396,11 +396,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
             [self gotoLoginWithAction:JS_ADDRESS];
             break;
         case 5: //安全中心
-//            [self gotoLoginWithAction:JS_SECURITYCENTER];
-        {
-            QDCreditOrderHistoryVC *creditHistoryVC = [[QDCreditOrderHistoryVC alloc]init];
-            [self.navigationController pushViewController:creditHistoryVC animated:YES];
-        }
+            [self gotoLoginWithAction:JS_SECURITYCENTER];
+//        {
+//            QDCreditOrderHistoryVC *creditHistoryVC = [[QDCreditOrderHistoryVC alloc]init];
+//            [self.navigationController pushViewController:creditHistoryVC animated:YES];
+//        }
             break;
         default:
             break;
