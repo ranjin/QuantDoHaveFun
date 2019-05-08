@@ -15,6 +15,7 @@
 #import "UIView+TABControlAnimation.h"
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
+#import "QDBridgeViewController.h"
 static float kLeftTableViewWidth = 92.f;
 
 @interface RankSecondViewController () <UITableViewDelegate, UITableViewDataSource>{
@@ -259,6 +260,8 @@ static float kLeftTableViewWidth = 92.f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     if (_leftTableView == tableView)
     {
         _selectIndex = indexPath.row;
@@ -266,6 +269,13 @@ static float kLeftTableViewWidth = 92.f;
                               atScrollPosition:UITableViewScrollPositionTop
                                       animated:YES];
         [self findFirstDetailList:_destinationArr[_selectIndex]];
+    }
+    if (_rightTableView == tableView) {
+        //榜单详情页
+        RanklistDTO *dto = _rankDTOList[indexPath.row];
+        QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?ranklistId=%ld", QD_TESTJSURL, JS_RANKLIST, (long)dto.id];
+        [self.navigationController pushViewController:bridgeVC animated:YES];
     }
 }
 

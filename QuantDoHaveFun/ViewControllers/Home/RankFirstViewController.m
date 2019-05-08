@@ -18,6 +18,7 @@
 #import "RankFirstViewCell.h"
 #import "RankFirstHeadView.h"
 #import "RankFirstVideoModel.h"
+#import "QDBridgeViewController.h"
 
 @interface RankFirstViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, UITextFieldDelegate>{
     UITableView *_tableView;
@@ -94,7 +95,7 @@
             _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (videoArr.count) {
                 NSMutableArray *arr = [[NSMutableArray alloc] init];
-                for (NSDictionary *dic in arr) {
+                for (NSDictionary *dic in videoArr) {
                     RankFirstVideoModel *model = [RankFirstVideoModel yy_modelWithDictionary:dic];
                     [arr addObject:model];
                 }
@@ -150,7 +151,7 @@
             _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (videoArr.count) {
                 NSMutableArray *arr = [[NSMutableArray alloc] init];
-                for (NSDictionary *dic in arr) {
+                for (NSDictionary *dic in videoArr) {
                     RankFirstVideoModel *model = [RankFirstVideoModel yy_modelWithDictionary:dic];
                     [arr addObject:model];
                 }
@@ -257,8 +258,55 @@
     cell.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     return cell;
 }
-
+/*
+ XCHANGE(0,"备兑商"),
+ CONTRACT(1,"包销商"), // 包销商
+ AGENT(2,"代销商"),  // 代销商
+ CONVERT(3,"兑换商"),  // 兑换商
+ MAKE(4,"做市商"),  // 做市商
+ HOTEL(5,"酒店"),  // 酒店
+ SCENIC(6,"景区"),  // 景区
+ CATERING(7,"餐饮"),
+ TRAVEL(8,"定制游"), // 定制游
+ USER(9,"APP用户"),
+ SALE_LOAN(10,"卖场"), // 卖场
+ TRAVEL_AGENCY(11,"旅行社"), // 旅行社
+ GOODS(12,"电商"), // 电商
+ PLATFORM(99,"平台");
+ */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RankFirstVideoModel *model = _videoList[indexPath.row];
+    switch ([model.sourceType integerValue]) {
+        case 5://酒店
+        {
+            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_HOTELDETAIL, model.sourceId];
+//            bridgeVC.infoModel = model;
+            self.tabBarController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:bridgeVC animated:YES];
+        }
+            break;
+        case 7://餐厅
+        {
+            //传递ID
+            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_RESTAURANTDETAIL, model.sourceId];
+            QDLog(@"urlStr = %@", bridgeVC.urlStr);
+            [self.navigationController pushViewController:bridgeVC animated:YES];
+        }
+            break;
+        case 8://定制游
+        {
+            QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+            bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%@", QD_JSURL, JS_CUSTOMERTRAVEL, model.sourceId];
+            QDLog(@"urlStr = %@", bridgeVC.urlStr);
+//            bridgeVC.customTravelModel = model;
+            [self.navigationController pushViewController:bridgeVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - DZNEmtpyDataSet Delegate

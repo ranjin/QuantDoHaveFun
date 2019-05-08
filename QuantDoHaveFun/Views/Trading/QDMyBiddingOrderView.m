@@ -173,7 +173,7 @@
         [_withdrawBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
         _withdrawBtn.backgroundColor = APP_WHITECOLOR;
         _withdrawBtn.titleLabel.font = QDFont(16);
-        _withdrawBtn.layer.cornerRadius = 12;
+        _withdrawBtn.layer.cornerRadius = 25;
         _withdrawBtn.layer.masksToBounds = YES;
         [self addSubview:_withdrawBtn];
     }
@@ -347,12 +347,20 @@
                 case QD_ORDERSTATUS_NOTTRADED:
                     self.statusLab.text = @"未成交";
                     self.statusImg.image = [UIImage imageNamed:@"trade_dealed"];
-                    self.withdrawBtn.hidden = NO;
+                    if ([model.frozenVolume intValue] == 0) {
+                        self.withdrawBtn.hidden = NO;
+                    }else{
+                        self.withdrawBtn.hidden = YES;
+                    }
                     break;
                 case QD_ORDERSTATUS_PARTTRADED:
                     self.statusLab.text = @"部分成交";
                     self.statusImg.image = [UIImage imageNamed:@"trade_dealed"];
-                    self.withdrawBtn.hidden = NO;
+                    if ([model.frozenVolume intValue] == 0) {
+                        self.withdrawBtn.hidden = NO;
+                    }else{
+                        self.withdrawBtn.hidden = YES;
+                    }
                     break;
                 case QD_ORDERSTATUS_ALLTRADED:
                     self.statusLab.text = @"全部成交";

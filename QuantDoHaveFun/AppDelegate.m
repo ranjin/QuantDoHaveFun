@@ -13,6 +13,8 @@
 #import "QDMineViewController.h"
 #import "BulgeCircularTabBarVC.h"
 #import "TABAnimated.h"
+#import <PgySDK/PgyManager.h>
+#import <PgyUpdate/PgyUpdateManager.h>
 
 @interface AppDelegate ()
 @end
@@ -28,6 +30,12 @@
 
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[BulgeCircularTabBarVC new]];
     [self.window makeKeyAndVisible];
+    
+    //启动基本SDK
+    [[PgyManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
+    //启动更新检查SDK
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
+
     return YES;
 }
 

@@ -17,7 +17,7 @@
 #import "TABViewAnimated.h"
 #import "UITableView+Animated.h"
 #import "UIView+TABControlAnimation.h"
-
+#import "QDBridgeViewController.h"
 //预定酒店 定制游 商城
 @interface RankThirdViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>{
     UITableView *_tableView;
@@ -241,7 +241,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 310;
+    return 380;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -272,6 +272,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (_dzyListInfoArr.count) {
+        CustomTravelDTO *model = _dzyListInfoArr[indexPath.row];
+        //传递ID
+        QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+        bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?id=%ld", QD_JSURL, JS_CUSTOMERTRAVEL, (long)model.id];
+        QDLog(@"urlStr = %@", bridgeVC.urlStr);
+        bridgeVC.customTravelModel = model;
+        [self.navigationController pushViewController:bridgeVC animated:YES];
+    }
 }
 
 #pragma mark - DZNEmtpyDataSet Delegate

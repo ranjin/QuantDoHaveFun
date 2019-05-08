@@ -33,7 +33,6 @@
         [self.contentView addSubview:_hotelImg];
         
         _hotelName = [[UILabel alloc] init];
-        _hotelName.numberOfLines = 0;
         _hotelName.font = QDBoldFont(15);
         _hotelName.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
         [self.contentView addSubview:_hotelName];
@@ -70,16 +69,15 @@
         _totalSales.textColor = APP_BLUECOLOR;
         [self.contentView addSubview:_totalSales];
         
-        _isShipping = [[UILabel alloc] init];
-//        _isShipping.backgroundColor = [UIColor colorWithHexString:@"#D8EFF2"];
-        _isShipping.textColor = APP_BLUECOLOR;
-        _isShipping.textAlignment = NSTextAlignmentCenter;
-        _isShipping.font = QDFont(11);
-        
-        _isShipping.layer.backgroundColor = [UIColor colorWithRed:2/255.0 green:170/255.0 blue:176/255.0 alpha:0.09].CGColor;
-        _isShipping.layer.cornerRadius = 2;
-        _isShipping.layer.masksToBounds = YES;
-        [self.contentView addSubview:_isShipping];
+//        _isShipping = [[UILabel alloc] init];
+//        _isShipping.textColor = APP_BLUECOLOR;
+//        _isShipping.textAlignment = NSTextAlignmentCenter;
+//        _isShipping.font = QDFont(11);
+//
+//        _isShipping.layer.backgroundColor = [UIColor colorWithRed:2/255.0 green:170/255.0 blue:176/255.0 alpha:0.09].CGColor;
+//        _isShipping.layer.cornerRadius = 2;
+//        _isShipping.layer.masksToBounds = YES;
+//        [self.contentView addSubview:_isShipping];
     }
     return self;
 }
@@ -89,28 +87,17 @@
     [_hotelImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView.mas_left).offset(SCREEN_WIDTH*0.054);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.35);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.165);
+        make.width.and.height.mas_equalTo(74);
     }];
     
     [_hotelName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_hotelImg);
-        make.left.equalTo(self.hotelImg.mas_right).offset(SCREEN_WIDTH*0.037);
-        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.05));
-    }];
-    
-    [_wanbei mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_hotelName.mas_bottom).offset(SCREEN_HEIGHT*0.012);
-        make.left.equalTo(self.contentView.mas_left).offset(SCREEN_WIDTH*0.44);
-    }];
-    
-    [_wanbeiLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_wanbei);
-        make.left.equalTo(_wanbei.mas_right).offset(SCREEN_WIDTH*0.006);
+        make.left.equalTo(self.hotelImg.mas_right).offset(19);
+        make.right.equalTo(self.mas_right).offset(-(3));
     }];
     
     [_yueLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_wanbei.mas_bottom).offset(SCREEN_HEIGHT*0.003);
+        make.bottom.equalTo(_hotelImg);
         make.left.equalTo(_wanbei);
     }];
     
@@ -119,22 +106,32 @@
         make.left.equalTo(_yueLab.mas_right).offset(SCREEN_WIDTH*0.006);
     }];
     
+    [_wanbei mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_yueLab.mas_top).offset(-8);
+        make.left.equalTo(_hotelName);
+    }];
+    
+    [_wanbeiLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_wanbei);
+        make.left.equalTo(_wanbei.mas_right);
+    }];
+    
     [_salesLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_yueLab);
-        make.right.equalTo(self.mas_right).offset(-(SCREEN_WIDTH*0.05));
+        make.right.equalTo(self.mas_left).offset(326);
     }];
     
     [_totalSales mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_yueLab);
         make.right.equalTo(_salesLab.mas_left).offset(-(SCREEN_WIDTH*0.003));
     }];
-    
-    [_isShipping mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_yueLab);
-        make.left.equalTo(_priceLab.mas_right).offset(SCREEN_WIDTH*0.03);
-        make.width.mas_equalTo(34);
-        make.height.mas_equalTo(18);
-    }];
+//
+//    [_isShipping mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_yueLab);
+//        make.left.equalTo(_priceLab.mas_right).offset(SCREEN_WIDTH*0.03);
+//        make.width.mas_equalTo(34);
+//        make.height.mas_equalTo(18);
+//    }];
 }
 
 - (void)fillContentWithModel:(QDMallModel *)mallModel{

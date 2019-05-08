@@ -156,7 +156,7 @@ typedef enum : NSUInteger {
     [self.view addSubview:_optionBtn];
     [_optionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight+500);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-(81+(SafeAreaTopHeight-64)));
         make.width.mas_equalTo(104);
         make.height.mas_equalTo(34);
     }];

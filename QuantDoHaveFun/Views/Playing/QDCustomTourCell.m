@@ -92,8 +92,8 @@
     [_thePic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
         make.top.equalTo(self.contentView.mas_top).offset(SCREEN_HEIGHT*0.03);
-        make.width.mas_equalTo(361);
-        make.height.mas_equalTo(203);
+        make.width.mas_equalTo(360);
+        make.height.mas_equalTo(270);
     }];
     
     [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
