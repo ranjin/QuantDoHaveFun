@@ -23,7 +23,7 @@
 #import "OpenShare+Weibo.h"
 #import "OpenShare+Weixin.h"
 #import "QYBaseView.h"
-
+#import "QDTestWebViewVC.h"
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
 #define FT_WEIBO_CALLBACK_URL   @"http://sns.whalecloud.com/sina2/callback"
@@ -170,46 +170,49 @@
         }
     }];
     
-//    [_bridge registerHandler:@"POSTFormData" handler:^(id data, WVJBResponseCallback responseCallback) {
-//        QDLog(@"POSTFormData");   //返回按钮的点击事件里面的代码
-//        QDLog(@"JS调用OC,并传值过来");
-//        NSDictionary *dataDic = [data objectForKey:@"param"];
-//        NSString *urlStr = [data objectForKey:@"url"];
-//        NSString *POST_BOUNDS = @"test";
-//        NSURL *url = [NSURL URLWithString:urlStr];
-//        NSMutableString *bodyContent = [NSMutableString string];
-//        for(NSString *key in dataDic.allKeys){
-//            id value = [dataDic objectForKey:key];
-//            [bodyContent appendFormat:@"--%@\r\n",POST_BOUNDS];
-//            [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key];
-//            [bodyContent appendFormat:@"%@\r\n",value];
-//        }
-//        [bodyContent appendFormat:@"--%@--\r\n",POST_BOUNDS];
-//        NSData *bodyData=[bodyContent dataUsingEncoding:NSUTF8StringEncoding];
-//        NSMutableURLRequest *request  = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-//        [request addValue:[NSString stringWithFormat:@"multipart/form-data;boundary=%@",POST_BOUNDS] forHTTPHeaderField:@"Content-Type"];
-//        [request addValue: [NSString stringWithFormat:@"%zd",bodyData.length] forHTTPHeaderField:@"Content-Length"];
-//        [request setHTTPMethod:@"POST"];
-//        [request setHTTPBody:bodyData];
-//        NSLog(@"请求的长度%@",[NSString stringWithFormat:@"%zd",bodyData.length]);
-//        __autoreleasing NSError *error=nil;
-//        __autoreleasing NSURLResponse *response=nil;
-//        NSLog(@"输出Bdoy中的内容>>\n%@",[[NSString alloc]initWithData:bodyData encoding:NSUTF8StringEncoding]);
-//        NSData *reciveData= [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//        if(error){
-//            NSLog(@"出现异常%@",error);
-//        }else{
-//            NSHTTPURLResponse *httpResponse=(NSHTTPURLResponse *)response;
-//            NSString *str = [[NSString alloc] initWithData:reciveData encoding:NSUTF8StringEncoding];
-//            if(httpResponse.statusCode==200){
-//                QDLog(@"str");
-//                NSLog(@"服务器成功响应!>>%@",str);
-//                responseCallback(str);
-//            }else{
-//                NSLog(@"服务器返回失败>>%@",str);
-//            }
-//        }
-//    }];
+    [_bridge registerHandler:@"POSTFormData" handler:^(id data, WVJBResponseCallback responseCallback) {
+        QDLog(@"POSTFormData");   //返回按钮的点击事件里面的代码
+        QDLog(@"JS调用OC,并传值过来");
+        NSDictionary *dataDic = [data objectForKey:@"param"];
+        NSString *urlStr = [data objectForKey:@"url"];
+        NSString *POST_BOUNDS = @"test";
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSMutableString *bodyContent = [NSMutableString string];
+        for(NSString *key in dataDic.allKeys){
+            id value = [dataDic objectForKey:key];
+            [bodyContent appendFormat:@"--%@\r\n",POST_BOUNDS];
+            [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key];
+            [bodyContent appendFormat:@"%@\r\n",value];
+        }
+        [bodyContent appendFormat:@"--%@--\r\n",POST_BOUNDS];
+        NSData *bodyData=[bodyContent dataUsingEncoding:NSUTF8StringEncoding];
+        NSMutableURLRequest *request  = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+        [request addValue:[NSString stringWithFormat:@"multipart/form-data;boundary=%@",POST_BOUNDS] forHTTPHeaderField:@"Content-Type"];
+        [request addValue: [NSString stringWithFormat:@"%zd",bodyData.length] forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:bodyData];
+        NSLog(@"请求的长度%@",[NSString stringWithFormat:@"%zd",bodyData.length]);
+        __autoreleasing NSError *error=nil;
+        __autoreleasing NSURLResponse *response=nil;
+        NSLog(@"输出Bdoy中的内容>>\n%@",[[NSString alloc]initWithData:bodyData encoding:NSUTF8StringEncoding]);
+        NSData *reciveData= [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if(error){
+            NSLog(@"出现异常%@",error);
+        }else{
+            NSHTTPURLResponse *httpResponse=(NSHTTPURLResponse *)response;
+            NSString *str = [[NSString alloc] initWithData:reciveData encoding:NSUTF8StringEncoding];
+            if(httpResponse.statusCode==200){
+                QDLog(@"str");
+                NSLog(@"服务器成功响应!>>%@",str);
+                //                responseCallback(str);
+                QDTestWebViewVC *testVC = [[QDTestWebViewVC alloc] init];
+                testVC.htmlStr = str;
+                [self.navigationController pushViewController:testVC animated:YES];
+            }else{
+                NSLog(@"服务器返回失败>>%@",str);
+            }
+        }
+    }];
     
     [_bridge registerHandler:@"getShare" handler:^(id data, WVJBResponseCallback responseCallback) {
         QDLog(@"getShare");

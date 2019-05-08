@@ -92,8 +92,7 @@
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
 //    _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"goMain.html" ofType:nil];
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
+    [_webView loadHTMLString:_htmlStr baseURL:nil];
     _webView.navigationDelegate = self;
     _webView.backgroundColor = APP_WHITECOLOR;
     if (@available(iOS 11.0, *)) {

@@ -260,7 +260,7 @@ static float kLeftTableViewWidth = 92.f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     if (_leftTableView == tableView)
     {
@@ -272,6 +272,7 @@ static float kLeftTableViewWidth = 92.f;
     }
     if (_rightTableView == tableView) {
         //榜单详情页
+        [_rightTableView deselectRowAtIndexPath:indexPath animated:NO];
         RanklistDTO *dto = _rankDTOList[indexPath.row];
         QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
         bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?ranklistId=%ld", QD_TESTJSURL, JS_RANKLIST, (long)dto.id];
