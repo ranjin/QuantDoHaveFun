@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *total;
 @property(nonatomic,copy)NSString *pageNum;
 @property(nonatomic,copy)NSString *pageSize;
+@property(nonatomic,copy)NSString *tradingTypeDesc;
 @end
 
 NS_ASSUME_NONNULL_END

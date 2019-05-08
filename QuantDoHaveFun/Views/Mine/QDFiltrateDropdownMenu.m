@@ -129,6 +129,13 @@
     if (!_calendar) {
         _calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, -300, LD_SCREENWIDTH, 300)];
         _calendar.backgroundColor = [UIColor whiteColor];
+        _calendar.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        _calendar.appearance.headerDateFormat = @"yyyy年MM月";
+        _calendar.appearance.headerTitleColor = LD_colorRGBValue(0x333333);
+        _calendar.appearance.selectionColor = LD_colorRGBValue(0x00C1B1);
+        _calendar.appearance.todayColor = LD_colorRGBValue(0x5B9DD6);
+        _calendar.weekdayHeight = 0;
+
         _calendar.dataSource = self;
         _calendar.delegate = self;
     }
@@ -152,6 +159,7 @@
                 if ([view isKindOfClass:[QDDropDownItem class]]) {
                     if([(QDDropDownItem*)view itemIndex] == self.selectedTiTleIndex){
                         CGFloat lastItemHeight = [QDDropDownItem dropDownViewHeightWithItemCount:[self.seedTitleArray[self.selectedTiTleIndex] count]];
+                        [self dropDownArrowAnimation:self.selectedTiTleIndex isShow:NO];
                         [UIView animateWithDuration:0.2 animations:^{
                             view.frame = CGRectMake(0, -lastItemHeight, LD_SCREENWIDTH, lastItemHeight);
                         } completion:^(BOOL finished) {
@@ -229,11 +237,13 @@
                     if([(QDDropDownItem*)view itemIndex] == self.selectedTiTleIndex){
                         selectedItem = view;
                         CGFloat lastItemHeight = [QDDropDownItem dropDownViewHeightWithItemCount:[self.seedTitleArray[self.selectedTiTleIndex] count]];
+                        [self dropDownArrowAnimation:self.selectedTiTleIndex isShow:NO];
                         [UIView animateWithDuration:0.2 animations:^{
                             selectedItem.frame = CGRectMake(0, -lastItemHeight, LD_SCREENWIDTH, lastItemHeight);
                         } completion:^(BOOL finished) {
                             self.dropDownView.hidden = YES;
                             self.showedDropDownView = NO;
+                            [self dropDownArrowAnimation:index isShow:YES];
                             [self showOrHideDropDownItem:index]; // 收回后弹出菜单
                         }];
                         break;
@@ -241,6 +251,7 @@
                 }
             }
         }else {
+            [self dropDownArrowAnimation:index isShow:NO];
             [UIView animateWithDuration:0.2 animations:^{
                 selectedItem.frame = CGRectMake(0, -itemHeight, LD_SCREENWIDTH, itemHeight);
             } completion:^(BOOL finished) {
@@ -250,11 +261,34 @@
         }
     } else { // 弹出菜单
         self.dropDownView.hidden = NO;
+        [self dropDownArrowAnimation:index isShow:YES];
         [UIView animateWithDuration:0.2 animations:^{
             selectedItem.frame = CGRectMake(0, 0, LD_SCREENWIDTH, itemHeight);
         } completion:^(BOOL finished) {
             self.showedDropDownView = YES;
             self.selectedTiTleIndex = index;
+        }];
+    }
+}
+
+- (void)dropDownArrowAnimation:(NSInteger)itemIndex isShow:(BOOL)show {
+    UIButton *button = [self viewWithTag:1000+itemIndex];
+    UIView *arrow;
+    for (UIView *view in button.subviews) {
+        if ([view isKindOfClass:[UIImageView class]]) {
+            arrow = view;
+        }
+    }
+    if (!arrow) {
+        return;
+    }
+    if (show) {
+        [UIView animateWithDuration:0.2 animations:^{
+            arrow.transform = CGAffineTransformMakeRotation(M_PI);
+        }];
+    } else {
+        [UIView animateWithDuration:0.2 animations:^{
+            arrow.transform = CGAffineTransformMakeRotation(0.01);
         }];
     }
 }

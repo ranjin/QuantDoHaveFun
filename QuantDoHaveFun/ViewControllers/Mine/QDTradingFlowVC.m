@@ -14,8 +14,9 @@
 #import "QDDateUtils.h"
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface QDTradingFlowVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate>
+@interface QDTradingFlowVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *orderArray;
 @property(nonatomic,assign)NSInteger pageNum;
@@ -79,6 +80,8 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
     
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -186,6 +189,27 @@
     }
     [self getCreditOrderListWithTradingDirection:tradingDirection tradingtype:tradingType tradingDate:nil];
 }
+
+
+#pragma mark - DZNEmtpyDataSet Delegate
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"icon_nodata"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
+    NSString *text = @"暂无数据";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:16.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
 //- (void)didSelectedCalendarDate:(NSDate *)date {
 //    [self getCreditOrderListWithTradingDirection:-1 tradingtype:-1 tradingDate:[QDDateUtils dateFormate:@"yyyy-MM-dd" WithDate:date]];
 //}

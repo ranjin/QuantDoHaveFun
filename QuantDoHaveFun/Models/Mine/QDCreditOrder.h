@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *total;
 @property(nonatomic,copy)NSString *pageNum;
 @property(nonatomic,copy)NSString *pageSize;
+@property(nonatomic,copy)NSString *tradingTypeDesc;
+
 /*
 @property(nonatomic,copy)NSString *orderNumber;     // 订单号
 @property(nonatomic,copy)NSString *userId;      // 用户代码

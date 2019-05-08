@@ -67,10 +67,12 @@
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    if (IS_NotchScreen) {
-        webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
-    }
-    _webView = [[WKWebView alloc] initWithFrame:webViewFrame];
+//    if (IS_NotchScreen) {
+//        webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
+//    }
+    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+    config.allowsInlineMediaPlayback = YES;
+    _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.navigationDelegate = self;
     [_baseView addSubview:_webView];
     if (@available(iOS 11.0, *)) {

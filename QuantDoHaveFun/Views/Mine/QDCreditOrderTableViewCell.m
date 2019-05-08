@@ -106,6 +106,7 @@
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
     NSInteger index = (_creditOrder.tradingtype+1)>=CreditOrderTypeNames.count?0:_creditOrder.tradingtype+1;
     self.orderTypeLabel.text = CreditOrderTypeNames[index];
+//    self.orderTypeLabel.text = _creditOrder.tradingTypeDesc;
 }
 - (void)setTradingOrder:(QDTradingOrder *)tradingOrder {
     _tradingOrder = tradingOrder;
@@ -120,6 +121,7 @@
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
     NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_creditOrder.tradingtype+1;
     self.orderTypeLabel.text = TradingOrderTypeNames[index];
+//    self.orderTypeLabel.text = _tradingOrder.tradingTypeDesc;
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
