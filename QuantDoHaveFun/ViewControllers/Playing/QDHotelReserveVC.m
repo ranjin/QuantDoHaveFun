@@ -105,7 +105,7 @@
                     }
                 }
                 [self setDropMenu];
-                [self setCenterView];
+//                [self setCenterView];
                 [self initTableView];
             }
         }else{
@@ -372,7 +372,7 @@
     [self.view addSubview:_menu];
 }
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight-64+260, SCREEN_WIDTH, SCREEN_HEIGHT-250) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 57, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -384,7 +384,18 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, SCREEN_HEIGHT*0.2, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
+    _headerView = [[QDHotelReserveTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 235)];
+    _headerView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+//    _headerView.backgroundColor = APP_BLUECOLOR;
+    [_headerView.dateIn addTarget:self action:@selector(chooseRoomInOrOut:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.dateOut addTarget:self action:@selector(chooseRoomInOrOut:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.locateBtn addTarget:self action:@selector(myLocation:) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.searchBtn addTarget:self action:@selector(startSearch:) forControlEvents:UIControlEventTouchUpInside];
+    _dateInPassedVal = _headerView.dateInPassVal;
+    _dateOutPassedVal = _headerView.dateOutPassVal;
+    _tableView.tableHeaderView = _headerView;
     [self.view addSubview:_tableView];
+    
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         [self requestHotelHeaderData];
     }];
