@@ -129,7 +129,7 @@
     [btn addTarget:self action:@selector(shopCarAction:) forControlEvents:UIControlEventTouchUpInside];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(309);
-        make.top.equalTo(self.view.mas_top).offset(549);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-(120+SafeAreaTopHeight-64));
     }];
     [self requestMallList];
     //请求商品列表

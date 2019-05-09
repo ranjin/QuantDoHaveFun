@@ -181,8 +181,12 @@
         [_hotelListInfoArr removeAllObjects];
         [_hotelImgArr removeAllObjects];
     }
-    NSDictionary *dic1 = @{
-                           @"hotelName":_cityName,          //城市名称
+    NSDictionary * dic1 = @{
+                            @"hotelName":_cityName,          //城市名称
+                            @"hotelTypeId":_hotelTypeId,    //酒店类型
+                            @"hotelLevel":_hotelLevel,      //星级
+                            @"minPrice":_minPrice,
+                            @"maxPrice":_maxPrice,
                             @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
@@ -503,12 +507,12 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
