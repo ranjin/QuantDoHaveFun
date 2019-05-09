@@ -73,7 +73,7 @@
 - (void)setupViews {
     
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 45, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-55) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 45, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-45) style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[QDCreditOrderTableViewCell class] forCellReuseIdentifier:@"QDCreditOrderTableViewCell"];
     self.tableView.delegate = self;
