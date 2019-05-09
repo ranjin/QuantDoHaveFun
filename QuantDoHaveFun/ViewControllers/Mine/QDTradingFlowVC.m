@@ -36,12 +36,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     self.navigationController.navigationBar.translucent = NO;
-
+    self.rt_disableInteractivePop = YES;
     self.title = @"资金明细";
-//    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-//    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackAction)];
-//    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
+    
+    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
+    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackAction)];
+    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
     
     [self setupViews];
     [self getCreditOrderList:1];

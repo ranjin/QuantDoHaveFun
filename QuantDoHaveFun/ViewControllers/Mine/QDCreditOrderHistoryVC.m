@@ -38,6 +38,7 @@
     self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     self.title = @"玩贝踪影";
     self.navigationController.navigationBar.translucent = NO;
+    self.rt_disableInteractivePop = YES;
 
     UIImage *backImage = [UIImage imageNamed:@"icon_return"];
     UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

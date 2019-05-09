@@ -79,23 +79,11 @@
     [self.tabBarController.tabBar setHidden:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     QDLog(@"viewDidLoad");
+    self.rt_disableInteractivePop = YES;
     //初始化UIWebView,设置webView代理
 //    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
