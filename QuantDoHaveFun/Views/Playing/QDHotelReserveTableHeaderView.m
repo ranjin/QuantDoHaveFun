@@ -104,9 +104,9 @@
         gradientLayer.endPoint = CGPointMake(1, 1);
         gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
         gradientLayer.masksToBounds = YES;
-        gradientLayer.cornerRadius = 21.5;
         [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
         [_searchBtn.layer addSublayer:gradientLayer];
+        _searchBtn.layer.cornerRadius = 21.5;
         _searchBtn.layer.masksToBounds = YES;
         _searchBtn.titleLabel.font = QDFont(16);
         [self addSubview:_searchBtn];

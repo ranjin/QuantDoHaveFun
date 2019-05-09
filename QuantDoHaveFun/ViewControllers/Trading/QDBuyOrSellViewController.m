@@ -277,12 +277,14 @@
     }]];
     [alertView addAction:[TYAlertAction actionWithTitle:@"真的" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         [WXProgressHUD showHUD];
+        NSString *balance = self.balanceLab.text;
+        NSString *balanceStr = [balance substringToIndex:[balance length] - 1];
         NSDictionary *paramsDic = @{
                                     @"userId":_operateModel.userId,
                                     @"creditCode":_operateModel.creditCode,
                                     @"price":[NSNumber numberWithDouble:[_operateModel.price doubleValue]],
                                     @"buyVolume":[NSNumber numberWithFloat:_numberButton.currentNumber],
-                                    @"balance":self.balanceLab.text,
+                                    @"balance":balanceStr,
                                     @"postersId":_operateModel.postersId,
                                     @"postersType":_operateModel.postersType,
                                     @"isPartialDeal":_operateModel.isPartialDeal    //是否允许部分成交

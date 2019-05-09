@@ -158,6 +158,7 @@ static NSString * const api_findAllDestinationList = @"/lyjfapp/api/v1/ranklist/
 
 static NSString *const api_getCreditOrderList = @"/lyjfapp/api/v1/ctrade/findCreditFlowListByUser";   // 玩贝明细订单
 static NSString *const api_findTradingFlowList = @"/lyjfapp/api/v1/ctrade/findTradingFlowListByUser";  // 资金明细
+static NSString *const api_getPostersFee = @"/lyjfapp/api/v1/ctrade/getPostersFee";  //获得挂单手续费
 
 
 /**

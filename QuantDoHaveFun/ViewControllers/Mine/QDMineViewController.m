@@ -246,12 +246,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_notLoginHeaderView.loginBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //未开通资金帐户
     _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc]
-                        initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 340+SafeAreaTopHeight)];
+                        initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 320+SafeAreaTopHeight)];
     _noFinancialView.backgroundColor = APP_WHITECOLOR;
     [_noFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];
-//    [_noFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
-    _noFinancialView.superview.userInteractionEnabled = YES;
+    [_noFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.openFinancialBtn addTarget:self action:@selector(openFinancialAction:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
@@ -609,12 +608,12 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark - 会员权益
 - (void)vipRights:(UIButton *)sender{
-    VIPRightsViewController *rightVC = [[VIPRightsViewController alloc] init];
-    rightVC.isPush = YES;
-    [self.navigationController pushViewController:rightVC animated:YES];
-//    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-//    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
-//    QDLog(@"urlStr = %@", bridgeVC.urlStr);
-//    [self.navigationController pushViewController:bridgeVC animated:YES];
+//    VIPRightsViewController *rightVC = [[VIPRightsViewController alloc] init];
+//    rightVC.isPush = YES;
+//    [self.navigationController pushViewController:rightVC animated:YES];
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=12", QD_TESTJSURL, JS_WBSC];
+    QDLog(@"urlStr = %@", bridgeVC.urlStr);
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 @end

@@ -155,6 +155,13 @@
             responseCallback(dic);
         };
     }];
+    //当前网络环境
+    [_bridge registerHandler:@"wifiScanner" handler:^(id data, WVJBResponseCallback responseCallback) {
+        QDLog(@"wifiScanner");
+        NSString *ss = [QDUserDefaults getObjectForKey:@"networkStatus"];
+        QDLog(@"ss = %@", ss);
+        responseCallback(ss);
+    }];
     
     //调用日历 单选
     [_bridge registerHandler:@"getSingleDate" handler:^(id data, WVJBResponseCallback responseCallback) {

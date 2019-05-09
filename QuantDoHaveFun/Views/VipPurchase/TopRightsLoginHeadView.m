@@ -48,7 +48,7 @@
         [_topBlueView addSubview:_nameLab];
         
         _vipTypeLab = [[UILabel alloc] init];
-        _vipTypeLab.text = @"铂金会员";
+        _vipTypeLab.text = @"Lv";
         _vipTypeLab.textColor = APP_BLUETEXTCOLOR;
         _vipTypeLab.font = QDFont(16);
         [_topBlueView addSubview:_vipTypeLab];
@@ -158,14 +158,14 @@
         make.left.equalTo(_leftLevelLab.mas_right);
     }];
     
-    [_rightLevelLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_leftLevelLab);
-        make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.79);
+    [_rightLevel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_leftLevel);
+        make.right.equalTo(_topBlueView.mas_right).offset(-12);
     }];
     
-    [_rightLevel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_rightLevelLab);
-        make.left.equalTo(_rightLevelLab.mas_right);
+    [_rightLevelLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_rightLevel);
+        make.right.equalTo(_rightLevel.mas_left);
     }];
 }
 
@@ -179,6 +179,7 @@
     self.nameLab.text = member.userName;
     self.vipProgressLab.text = [NSString stringWithFormat:@"升级还需%d成长值", [member.maxLevelValue intValue] - [member.userLevelValue intValue]];
     NSString *currentLevel = [NSString stringWithFormat:@"Lv%@", member.userLevel];
+    self.vipTypeLab.text = currentLevel;
     NSString *nextLevel = [NSString stringWithFormat:@"Lv%d", [member.userLevel intValue] + 1];
     NSString *minLevelValue = [NSString stringWithFormat:@"(%@)",  member.minLevelValue];
     NSString *maxLevelValue = [NSString stringWithFormat:@"(%@)", member.maxLevelValue];

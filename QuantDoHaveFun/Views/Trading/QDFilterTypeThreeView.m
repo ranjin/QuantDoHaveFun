@@ -104,10 +104,15 @@
 - (void)resetAction:(UIButton *)sender{
     for (int i = 201; i <= 205; i++) {
         UIButton *btn = [self viewWithTag:i];
-        btn.layer.borderWidth = 1;
-        btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        btn.selected = NO;
+        if (i == 204 || i == 205) {
+            btn.selected = NO;
+        }else{
+            btn.layer.borderWidth = 1;
+            btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
+            btn.backgroundColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
+            btn.selected = NO;
+        }
     }
 }
 
@@ -138,7 +143,8 @@
         }else if ([sender.titleLabel.text isEqualToString:@"已成交"]){
             statusStr = @"1";
         }else if ([sender.titleLabel.text isEqualToString:@"已取消"]){
-            statusStr = @"2";
+            //已取消改为4
+            statusStr = @"4";
         }
         self.sdStatusStatusBlock(statusStr);
     }

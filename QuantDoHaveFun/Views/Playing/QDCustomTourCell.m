@@ -146,7 +146,6 @@
     self.wanbei.text = [NSString stringWithFormat:@"%@", infoModel.creditPirce];
     self.rmbLab.text = [NSString stringWithFormat:@"¥%@",infoModel.singleCost];
     self.info2Lab.text = [NSString stringWithFormat:@"%ld", (long)infoModel.preBuyDays];
-    [self.thePic sd_setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:[UIImage imageNamed:@"placeHolder"] options:SDWebImageLowPriority];
+    [self.thePic sd_setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:[UIImage imageNamed:@"layer"] options:SDWebImageLowPriority];
 }
-
 @end
