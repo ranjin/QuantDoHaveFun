@@ -228,10 +228,10 @@
         make.top.equalTo(_financialPic.mas_top).offset(24);
     }];
 
-    [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_infoLab);
-        make.right.equalTo(_financialPic.mas_right).offset(-24);
-    }];
+//    [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_infoLab);
+//        make.right.equalTo(_financialPic.mas_right).offset(-24);
+//    }];
 
     [_info4Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_financialPic.mas_top).offset(65);
@@ -243,15 +243,26 @@
         make.left.equalTo(_info4Lab.mas_right);
     }];
 
-    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_info4Lab);
-        make.left.equalTo(self.mas_left).offset(300);
-    }];
-
+    
     [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_info6Lab);
-        make.left.equalTo(_info6Lab.mas_right);
+        make.centerY.equalTo(_info5Lab);
+        make.right.equalTo(self.mas_right).offset(-17);
     }];
+    
+    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_info7Lab);
+        make.right.equalTo(_info7Lab.mas_left);
+    }];
+    
+//    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_info4Lab);
+//        make.left.equalTo(self.mas_left).offset(300);
+//    }];
+//
+//    [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_info6Lab);
+//        make.left.equalTo(_info6Lab.mas_right);
+//    }];
 
     [_info8Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_infoLab);

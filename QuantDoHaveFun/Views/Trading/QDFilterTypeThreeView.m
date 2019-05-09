@@ -104,10 +104,15 @@
 - (void)resetAction:(UIButton *)sender{
     for (int i = 201; i <= 205; i++) {
         UIButton *btn = [self viewWithTag:i];
-        btn.layer.borderWidth = 1;
-        btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
-        [btn setTitleColor:APP_GRAYBUTTONTEXTCOLOR forState:UIControlStateNormal];
-        btn.selected = NO;
+        if (i == 204 || i == 205) {
+            btn.selected = NO;
+        }else{
+            btn.layer.borderWidth = 1;
+            btn.layer.borderColor = APP_GRAYLAYERCOLOR.CGColor;
+            btn.backgroundColor = APP_WHITECOLOR;
+            [btn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
+            btn.selected = NO;
+        }
     }
 }
 

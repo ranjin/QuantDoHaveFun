@@ -86,7 +86,7 @@
         _bottomLab2 = [[UILabel alloc] init];
         _bottomLab2.text = @"";
         _bottomLab2.font = QDFont(14);
-        _bottomLab2.textColor = APP_GRAYTEXTCOLOR;
+        _bottomLab2.textColor = APP_BLACKCOLOR;
         [_bottomWhiteView addSubview:_bottomLab2];
         
         _payButton = [[UIButton alloc] init];
@@ -175,14 +175,14 @@
         make.right.equalTo(_lineView);
     }];
 
-    [_bottomLab1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_priceTextLab);
-        make.left.equalTo(_bottomWhiteView.mas_left).offset(253);
-    }];
-
     [_bottomLab2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomLab1);
-        make.left.equalTo(_bottomLab1.mas_right).offset(5);
+        make.centerY.equalTo(_priceTextLab);
+        make.right.equalTo(_bottomWhiteView.mas_right).offset(-19);
+    }];
+    
+    [_bottomLab1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_bottomLab2);
+        make.right.equalTo(_bottomLab2.mas_left);
     }];
 
     [_payButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -223,7 +223,7 @@
         textField.text = [textField.text substringToIndex:textField.text.length-1];
     }
     double ss = floor([_priceTF.text doubleValue] / _basePrice);
-    _bottomLab2.text = [NSString stringWithFormat:@"%.lf", ss];
+    _bottomLab2.text = [NSString stringWithFormat:@"%.lf个", ss];
 }
 
 @end

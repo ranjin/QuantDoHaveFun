@@ -406,7 +406,11 @@
     cell.userInteractionEnabled = YES;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     CGFloat y = 0;
-    y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+    if (_ordersArr.count % 2 == 0) {
+        y = _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+    }else{
+        y = (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
+    }
     self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, y);
     if (_ordersArr.count) {
         [self.collectionView reloadData];

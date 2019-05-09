@@ -210,10 +210,10 @@
         make.top.equalTo(_financialPic.mas_top).offset(24);
     }];
     
-    [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_infoLab);
-        make.right.equalTo(_financialPic.mas_right).offset(-24);
-    }];
+//    [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_infoLab);
+//        make.right.equalTo(_financialPic.mas_right).offset(-24);
+//    }];
     
     [_info4Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_financialPic.mas_top).offset(65);

@@ -136,7 +136,7 @@
                     VipCardDTO *model = _cardArr.firstObject;
                     //折合玩贝
                     double ss = floor([[model.vipMoney stringByDividingBy:model.basePrice] doubleValue]);
-                    NSString *sss = [NSString stringWithFormat:@"%.lf", ss];
+                    NSString *sss = [NSString stringWithFormat:@"%.lf个", ss];
                     _rightsView.bottomLab2.text = sss;
                     _rightsView.price.text = model.vipMoney;
                     _rightsView.priceTF.hidden = YES;
@@ -257,6 +257,7 @@
 }
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(NewPagedFlowView *)flowView {
+    [_rightsView.priceTF resignFirstResponder];
     if (_cardArr.count) {
         _currentModel = _cardArr[pageNumber];
         if ([_currentModel.vipMoney doubleValue] == 0) {
@@ -269,7 +270,7 @@
             _rightsView.price.text = _currentModel.vipMoney;
             //折合玩贝
             double ss = floor([[_currentModel.vipMoney stringByDividingBy:_currentModel.basePrice] doubleValue]);
-            NSString *sss = [NSString stringWithFormat:@"%.lf", ss];
+            NSString *sss = [NSString stringWithFormat:@"%.lf个", ss];
             _rightsView.bottomLab2.text = sss;
             _rightsView.priceTF.hidden = YES;
         }
