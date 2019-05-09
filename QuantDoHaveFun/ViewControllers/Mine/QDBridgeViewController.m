@@ -104,9 +104,9 @@
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    if (IS_NotchScreen) {
-            webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    }
+//    if (IS_NotchScreen) {
+//            webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//    }
     _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.backgroundColor = APP_WHITECOLOR;
     _webView.navigationDelegate = self;

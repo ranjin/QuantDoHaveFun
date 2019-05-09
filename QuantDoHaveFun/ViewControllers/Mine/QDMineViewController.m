@@ -32,6 +32,7 @@
 #import "UIButton+WebCache.h"
 #import "QDTestWebViewVC.h"
 #import "VIPRightsViewController.h"
+#import "QDTradingFlowVC.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -265,6 +266,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_haveFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.rechargeBtn addTarget:self action:@selector(rechargeAction:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_haveFinancialView.balanceDetail addTarget:self action:@selector(balanceDetailAction) forControlEvents:UIControlEventTouchUpInside];
     NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
     if ([str isEqualToString:@"0"] || str == nil) {
         _tableView.tableHeaderView = _notLoginHeaderView;
@@ -275,7 +277,9 @@ typedef NS_ENUM(NSInteger, PhotoType)
     }
     [_tableView reloadData];
 }
-
+- (void)balanceDetailAction {
+    [self.navigationController pushViewController:[[QDTradingFlowVC alloc]init] animated:YES];
+}
 - (void)lookAccountInfo:(UIButton *)sender{
     QDLog(@"lookAccountInfo");
     

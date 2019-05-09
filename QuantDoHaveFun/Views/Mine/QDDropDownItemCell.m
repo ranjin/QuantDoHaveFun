@@ -46,7 +46,6 @@
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self.contentView LD_addBorderWithBorderColor:LD_colorRGBValue(0xeeeeee) borderWidth:1];
     }
-    NSLog(@"----selected:  %d",selected);
 }
 - (void)setTitle:(NSString *)title {
     _title = title;

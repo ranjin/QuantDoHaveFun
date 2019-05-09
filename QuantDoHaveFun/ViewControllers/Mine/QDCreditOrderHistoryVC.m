@@ -14,8 +14,9 @@
 #import "QDDateUtils.h"
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface QDCreditOrderHistoryVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate>
+@interface QDCreditOrderHistoryVC ()<UITableViewDelegate,UITableViewDataSource,QDFiltrateDropdownMenuDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *orderArray;
 @property(nonatomic,assign)NSInteger pageNum;
@@ -83,6 +84,8 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
     
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -126,13 +129,7 @@
 - (void)getMoreCreditOrderList {
     [self getCreditOrderList:self.pageNum+1];
 }
-//- (void)endRefreshing
-//{
-//    if (_tableView) {
-//        [_tableView.mj_header endRefreshing];
-//        [_tableView.mj_footer endRefreshing];
-//    }
-//}
+
 - (void)getCreditOrderListWithTradingDirection:(NSInteger)tradingDirection tradingtype:(NSInteger)tradingtype tradingDate:(NSString *)tradingDate {
     // 参数null表示 全部
     NSDictionary *dic = @{@"tradingDirection":tradingDirection<0?[NSNull null]:[NSNumber numberWithInteger:tradingDirection],@"tradingtype":tradingtype<0?[NSNull null]:[NSNumber numberWithInteger:tradingtype],@"tradingDate":tradingDate?tradingDate:[NSNull null],@"pageNum":[NSNumber numberWithInteger:1],@"pageSize":@500};
@@ -193,6 +190,26 @@
 - (void)didSelectedCalendarDate:(NSDate *)date {
     [self getCreditOrderListWithTradingDirection:-1 tradingtype:-1 tradingDate:[QDDateUtils dateFormate:@"yyyy-MM-dd" WithDate:date]];
 }
+
+#pragma mark - DZNEmtpyDataSet Delegate
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"icon_nodata"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
+    NSString *text = @"暂无数据";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:16.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
