@@ -250,8 +250,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     _noFinancialView.backgroundColor = APP_WHITECOLOR;
     [_noFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];
-//    [_noFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
-    _noFinancialView.superview.userInteractionEnabled = YES;
+    [_noFinancialView.picView addTarget:self action:@selector(changePic) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.vipRightsBtn addTarget:self action:@selector(vipRights:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.openFinancialBtn addTarget:self action:@selector(openFinancialAction:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.accountInfo addTarget:self action:@selector(lookAccountInfo:) forControlEvents:UIControlEventTouchUpInside];
