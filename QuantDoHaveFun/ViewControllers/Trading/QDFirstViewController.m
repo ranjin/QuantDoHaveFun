@@ -308,7 +308,7 @@ typedef enum : NSUInteger {
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-//    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 120+SafeAreaTopHeight-64, 0);
 //    self.view = _tableView;
     [self.view addSubview:_tableView];
     

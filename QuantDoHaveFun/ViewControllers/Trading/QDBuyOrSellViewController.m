@@ -147,11 +147,10 @@
         if ([_operateModel.isPartialDeal isEqualToString:@"0"]) {
             //不可部分成交
             self.amountLab.text = _operateModel.surplusVolume;
-            self.amountLab.backgroundColor = APP_BLUECOLOR;
             [cell.contentView addSubview:self.amountLab];
             [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(cell.contentView);
-                make.right.equalTo(cell.contentView.mas_right).offset(-28);
+                make.right.equalTo(cell.contentView.mas_right).offset(-35);
             }];
             UILabel *lab = [[UILabel alloc] init];
             lab.text = @"个";
@@ -160,7 +159,7 @@
             [cell.contentView addSubview:lab];
             [lab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(cell.contentView);
-                make.right.equalTo(cell.contentView.mas_right).offset(-20);
+                make.right.equalTo(cell.contentView.mas_right).offset(-17);
             }];
         }else{
             [cell.contentView addSubview:self.numberButton];
@@ -399,7 +398,6 @@
     if (!_amountLab) {
         _amountLab = [[UILabel alloc] init];
         _amountLab.textColor = APP_BLACKCOLOR;
-        _amountLab.backgroundColor = APP_BLUECOLOR;
         _amountLab.font = QDFont(16);
     }
     return _amountLab;

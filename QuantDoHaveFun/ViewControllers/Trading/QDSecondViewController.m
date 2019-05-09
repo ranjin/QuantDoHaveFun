@@ -369,7 +369,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+    if (_ordersArr.count % 2 == 0) {
+        return _ordersArr.count /2  * 185 + _ordersArr.count/2 * 10 + 10;
+    }else{
+        return (_ordersArr.count /2 + 1) * 185 + (_ordersArr.count/2 + 1) * 10 + 10;
+    }
 }
 
 - (UICollectionView *)collectionView{
