@@ -113,7 +113,7 @@
 - (void)setTradingOrder:(QDTradingOrder *)tradingOrder {
     _tradingOrder = tradingOrder;
     NSString *amountString;
-    if (_creditOrder.tradingDirection == 0) {
+    if (_tradingOrder.tradingDirection == 0) {
         amountString = [NSString stringWithFormat:@"+%ld",(long)_tradingOrder.tradingCount];
     } else {
         amountString = [NSString stringWithFormat:@"-%ld",(long)_tradingOrder.tradingCount];
@@ -121,7 +121,7 @@
     self.amountLabel.text = amountString;
     
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_tradingOrder.tradingDate];
-    NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_creditOrder.tradingtype+1;
+    NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_tradingOrder.tradingtype+1;
     self.orderTypeLabel.text = TradingOrderTypeNames[index];
 //    self.orderTypeLabel.text = _tradingOrder.tradingTypeDesc;
     self.currencyNameLabel.text = @"元";

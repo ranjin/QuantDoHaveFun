@@ -9,7 +9,7 @@
 #import "QDFiltrateDropdownMenu.h"
 #import "FSCalendar.h"
 #import "QDDropDownItem.h"
-@interface QDFiltrateDropdownMenu ()<FSCalendarDelegate,FSCalendarDataSource,QDDropDownItemDelegate>
+@interface QDFiltrateDropdownMenu ()<FSCalendarDelegate,FSCalendarDataSource,QDDropDownItemDelegate,UIGestureRecognizerDelegate>
 
 @property (strong , nonatomic) FSCalendar *calendar;
 @property(nonatomic,assign)BOOL showedCalendar;
@@ -112,6 +112,11 @@
         }
         _dropDownView.clipsToBounds = YES;
 
+        // 点击h黑色背景收回当前弹出的菜单
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapDropDownView)];
+        [_dropDownView addGestureRecognizer:tap];
+        tap.delegate = self;
+        
         for (int i = 0; i<self.seedTitleArray.count ; i++) {
             NSArray *titles = self.seedTitleArray[i];
             CGFloat dropDownitemHeight = [QDDropDownItem dropDownViewHeightWithItemCount:titles.count];
@@ -123,6 +128,18 @@
         }
         
     }
+}
+// 收回当前弹出的菜单
+- (void)tapDropDownView {
+    NSLog(@"tapDropDownView");
+    [self showOrHideDropDownItem:self.selectedTiTleIndex];
+}
+// 子视图不响应父视图的tap手势事件
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch{
+    if (touch.view == self.dropDownView) {
+        return YES;
+    }
+    return NO;
 }
 
 - (FSCalendar *)calendar {

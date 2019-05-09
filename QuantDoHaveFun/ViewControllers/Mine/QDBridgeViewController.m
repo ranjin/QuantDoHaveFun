@@ -136,7 +136,7 @@
     
     // 添加属性监听
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-    WS(weakSelf)
+
     [_bridge registerHandler:@"POST" handler:^(id data, WVJBResponseCallback responseCallback) {
         //data: js页面传过来的参数
         //准备post请求
