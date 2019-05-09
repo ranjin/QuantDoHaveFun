@@ -85,7 +85,11 @@
                     CustomTravelDTO *infoModel = [CustomTravelDTO yy_modelWithDictionary:dic];
                     [arr addObject:infoModel];
                     NSDictionary *dic = [infoModel.imageList firstObject];
-                    [imgarr addObject:[dic objectForKey:@"url"]];
+                    if (dic) {
+                        [imgarr addObject:[dic objectForKey:@"url"]];
+                    }else{
+                        [imgarr addObject:@""];
+                    }
                 }
                 if (arr.count) {
                     if (arr.count < _pageSize) {   //不满10个

@@ -267,23 +267,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 3) {
-        NSArray *titleArr = [[NSArray alloc] initWithObjects:@"是", @"否", nil];
-        CWActionSheet *sheet = [[CWActionSheet alloc] initWithTitles:@[@"是", @"否"] clickAction:^(CWActionSheet *sheet, NSIndexPath *indexPath) {
-//            _situationLab.text = titleArr[indexPath];
-            _situationLab.text = titleArr[indexPath.row];
-            QDLog(@"123");
-            //该笔挂单是否部分成交0-不允许 1-允许
-            if (indexPath.row == 0) {
-                _isPartialDeal = @"1";
-            }else{
-                _isPartialDeal = @"0";
-            }
-        }];
-        [sheet show];
+    if ([_typeStr isEqualToString:@"1"]) {
+        if (indexPath.row == 3) {
+            [self showAlert];
+        }
+    }else{
+        if (indexPath.row == 4) {
+            [self showAlert];
+        }
     }
 }
 
+- (void)showAlert{
+    NSArray *titleArr = [[NSArray alloc] initWithObjects:@"是", @"否", nil];
+    CWActionSheet *sheet = [[CWActionSheet alloc] initWithTitles:@[@"是", @"否"] clickAction:^(CWActionSheet *sheet, NSIndexPath *indexPath) {
+        _situationLab.text = titleArr[indexPath.row];
+        QDLog(@"123");
+        //该笔挂单是否部分成交0-不允许 1-允许
+        if (indexPath.row == 0) {
+            _isPartialDeal = @"1";
+        }else{
+            _isPartialDeal = @"0";
+        }
+    }];
+    [sheet show];
+}
 #pragma mark - 价格加
 - (void)addAction:(id)sender{
     NSDecimalNumber *existNum;
