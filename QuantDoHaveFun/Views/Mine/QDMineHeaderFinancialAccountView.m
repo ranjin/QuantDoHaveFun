@@ -253,16 +253,6 @@
         make.centerY.equalTo(_info7Lab);
         make.right.equalTo(_info7Lab.mas_left);
     }];
-    
-//    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(_info4Lab);
-//        make.left.equalTo(self.mas_left).offset(300);
-//    }];
-//
-//    [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(_info6Lab);
-//        make.left.equalTo(_info6Lab.mas_right);
-//    }];
 
     [_info8Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_infoLab);

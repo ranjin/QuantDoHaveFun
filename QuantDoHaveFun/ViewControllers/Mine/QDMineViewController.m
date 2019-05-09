@@ -246,7 +246,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_notLoginHeaderView.loginBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
     //未开通资金帐户
     _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc]
-                        initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 340+SafeAreaTopHeight)];
+                        initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 320+SafeAreaTopHeight)];
     _noFinancialView.backgroundColor = APP_WHITECOLOR;
     [_noFinancialView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_noFinancialView.voiceBtn addTarget:self action:@selector(notices:) forControlEvents:UIControlEventTouchUpInside];

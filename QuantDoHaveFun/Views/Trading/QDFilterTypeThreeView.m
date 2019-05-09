@@ -143,7 +143,8 @@
         }else if ([sender.titleLabel.text isEqualToString:@"已成交"]){
             statusStr = @"1";
         }else if ([sender.titleLabel.text isEqualToString:@"已取消"]){
-            statusStr = @"2";
+            //已取消改为4
+            statusStr = @"4";
         }
         self.sdStatusStatusBlock(statusStr);
     }

@@ -134,15 +134,15 @@
         [_openFinancialBtn setTitle:@"开通资金账户" forState:UIControlStateNormal];
         [_openFinancialBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
         CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
-        gradientLayer.frame = CGRectMake(0, 0, 140, 36);
+        gradientLayer.frame = CGRectMake(0, 0, 115, 28);
         gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1, 0);
-        gradientLayer.locations = @[@(0.5),@(1.0)];//渐变点
-        gradientLayer.cornerRadius = 5;
+        gradientLayer.endPoint = CGPointMake(1, 1);
+        gradientLayer.locations = @[@(0.0),@(1.0)];//渐变点
+        gradientLayer.cornerRadius = 14;
         gradientLayer.masksToBounds = YES;
-        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#159095"] CGColor],(id)[[UIColor colorWithHexString:@"#3CC8B1"] CGColor]]];//渐变数组
+        [gradientLayer setColors:@[(id)[[UIColor colorWithHexString:@"#21C6A5"] CGColor],(id)[[UIColor colorWithHexString:@"#00AFAD"] CGColor]]];//渐变数组
         [_openFinancialBtn.layer addSublayer:gradientLayer];
-        _openFinancialBtn.titleLabel.font = QDFont(15);
+        _openFinancialBtn.titleLabel.font = QDFont(14);
         [self addSubview:_openFinancialBtn];
     }
     return self;
@@ -210,41 +210,36 @@
         make.top.equalTo(_financialPic.mas_top).offset(24);
     }];
     
-//    [_groupUPDesc mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(_infoLab);
-//        make.right.equalTo(_financialPic.mas_right).offset(-24);
-//    }];
-    
     [_info4Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_financialPic.mas_top).offset(65);
         make.left.equalTo(_infoLab);
     }];
-    
+
     [_info5Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info4Lab);
         make.left.equalTo(_info4Lab.mas_right);
     }];
-    
-    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_info4Lab);
-        make.left.equalTo(self.mas_left).offset(306);
-    }];
-    
+
     [_info7Lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_info6Lab);
-        make.left.equalTo(_info6Lab.mas_right);
+        make.centerY.equalTo(_info5Lab);
+        make.right.equalTo(self.mas_right).offset(-17);
     }];
-    
+
+    [_info6Lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_info7Lab);
+        make.right.equalTo(_info7Lab.mas_left);
+    }];
+
     [_info8Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_infoLab);
         make.top.equalTo(self.info4Lab.mas_bottom).offset(21);
     }];
-    
+
     [_info9Lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_info8Lab);
         make.top.equalTo(_info8Lab.mas_bottom).offset(8);
     }];
-    
+
     [_accountInfo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_info9Lab);
         make.left.equalTo(self.mas_left).offset(SCREEN_WIDTH*0.34);
@@ -254,7 +249,7 @@
         make.left.equalTo(self.mas_left).offset(16);
         make.top.equalTo(_info9Lab.mas_bottom).offset(42);
     }];
-    
+
     [_balance mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_balanceLab);
         make.top.equalTo(_balanceLab.mas_bottom).offset(SCREEN_HEIGHT*0.007);
@@ -263,8 +258,8 @@
     [_openFinancialBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.balanceLab.mas_top).offset(8);
         make.right.equalTo(self.mas_right).offset(-20);
-        make.height.mas_equalTo(36);
-        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(28);
+        make.width.mas_equalTo(115);
     }];
 }
 
@@ -280,7 +275,7 @@
     NSString *maxLevelValue = [NSString stringWithFormat:@"(%@)", member.maxLevelValue];
     self.info9Lab.text = [creditDTO.available stringValue];
     self.balance.text = [NSString stringWithFormat:@"%.2f", [moneyDTO.available doubleValue]];
-    self.infoLab.text = [NSString stringWithFormat:@"%d", [member.maxLevelValue intValue] - [member.userLevelValue intValue]];
+    self.infoLab.text = [NSString stringWithFormat:@"升级还需%d成长值", [member.maxLevelValue intValue] - [member.userLevelValue intValue]];
     self.levelLab.text = userLevel;
     self.info4Lab.text = currentLevel;
     self.info5Lab.text = minLevelValue;
