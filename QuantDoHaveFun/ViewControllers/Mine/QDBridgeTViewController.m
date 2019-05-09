@@ -56,12 +56,7 @@
     [self.tabBarController.tabBar setHidden:YES];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
-    [_bridge setWebViewDelegate:nil];
-    _bridge = nil;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //初始化UIWebView,设置webView代理
@@ -72,9 +67,9 @@
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-//    if (IS_NotchScreen) {
-//        webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
-//    }
+    if (IS_NotchScreen) {
+        webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
+    }
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
     _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
@@ -141,6 +136,9 @@
     [_bridge registerHandler:@"goBack" handler:^(id data, WVJBResponseCallback responseCallback) {
         QDLog(@"goBack");
         [self.navigationController popViewControllerAnimated:YES];
+        [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
+        [_bridge setWebViewDelegate:nil];
+        _bridge = nil;
     }];
     
     //调用日历 多选
@@ -155,12 +153,20 @@
             responseCallback(dic);
         };
     }];
+    WS(weakSelf)
     //当前网络环境
+    // 在每次视频播放暂停时，调整webview的frame
+    // 由于每次播放视频时调用wifiScanner方法，且没有其他地方调用到该方法，在此处认定视频开始播放
     [_bridge registerHandler:@"wifiScanner" handler:^(id data, WVJBResponseCallback responseCallback) {
         QDLog(@"wifiScanner");
         NSString *ss = [QDUserDefaults getObjectForKey:@"networkStatus"];
         QDLog(@"ss = %@", ss);
         responseCallback(ss);
+        [weakSelf beginPlayVideo];
+    }];
+    // 视频停止播放调用的方法
+    [_bridge registerHandler:@"goBackHeight" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [weakSelf endPlayVideo];
     }];
     
     //调用日历 单选
@@ -206,8 +212,9 @@
     }
 }
 
-- (void)dealloc {
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+- (void)dealloc
+{
+    NSLog(@"webviewT dealloc");
 }
 
 #pragma mark - WKWebView Delegate
@@ -317,5 +324,19 @@
     NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
     NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
     return [decNumber stringValue];
+}
+-(void)beginPlayVideo{
+    NSLog(@"开始");
+    [UIView animateWithDuration:0.2 animations:^{
+        self.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    }];
+}
+
+
+-(void)endPlayVideo{
+    NSLog(@"结束");
+    [UIView animateWithDuration:0.2 animations:^{
+        self.webView.frame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
+    }];
 }
 @end
