@@ -26,19 +26,7 @@
 @end
 
 @implementation QDCreditOrderHistoryVC
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.tabBarController.tabBar setHidden:YES];
-    self.navigationController.navigationBar.translucent = NO;
-}
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-    [self.navigationController.tabBarController.tabBar setHidden:NO];
-    self.navigationController.navigationBar.translucent = YES;
-}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"kNotificationDropDownMenuDidLoaded" object:nil];
@@ -49,6 +37,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     self.title = @"玩贝踪影";
+    self.navigationController.navigationBar.translucent = NO;
 
     UIImage *backImage = [UIImage imageNamed:@"icon_return"];
     UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

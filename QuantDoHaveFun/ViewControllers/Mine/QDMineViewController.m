@@ -59,8 +59,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-    [self.navigationController.tabBarController.tabBar setHidden:NO];
+//    [self.navigationController.tabBarController.tabBar setHidden:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLoginView) name:@"reloadLoginView" object:nil];
     [self isLogin];
 }
@@ -93,6 +92,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setHidden:YES];
+
     _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址", @"安全中心", nil];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
