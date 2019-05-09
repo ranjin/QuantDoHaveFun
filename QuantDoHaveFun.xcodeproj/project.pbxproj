@@ -3216,17 +3216,17 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LHX5GA8RPT;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
+				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quantdo.uichangel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.uichange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3243,17 +3243,17 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LHX5GA8RPT;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
+				GCC_PREFIX_HEADER = "/Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/QDHaveFun.pch";
 				INFOPLIST_FILE = QuantDoHaveFun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quantdo.uichangel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.uichange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
