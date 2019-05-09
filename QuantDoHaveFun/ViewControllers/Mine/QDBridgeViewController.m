@@ -25,11 +25,13 @@
 #import "QYBaseView.h"
 #import "QDCreditOrderHistoryVC.h"
 #import "QDTestWebViewVC.h"
+#import "QDCreditOrderHistoryVC.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
 #define FT_WEIBO_CALLBACK_URL   @"http://sns.whalecloud.com/sina2/callback"
-#import "QDCreditOrderHistoryVC.h"
+
 
 @interface QDBridgeViewController ()<WKNavigationDelegate, SnailQuickMaskPopupsDelegate>{
     WebViewJavascriptBridge *_bridge;
@@ -89,6 +91,9 @@
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
+    [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [_bridge setWebViewDelegate:nil];
+    _bridge = nil;
 }
 
 - (void)viewDidLoad {
@@ -98,6 +103,7 @@
 //    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
 //    }
+//    [self addNotification];
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     
@@ -105,7 +111,7 @@
     config.allowsInlineMediaPlayback = YES;
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 //    if (IS_NotchScreen) {
-//            webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//            webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
 //    }
     _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.backgroundColor = APP_WHITECOLOR;
@@ -130,7 +136,7 @@
     
     // 添加属性监听
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-    
+    WS(weakSelf)
     [_bridge registerHandler:@"POST" handler:^(id data, WVJBResponseCallback responseCallback) {
         //data: js页面传过来的参数
         //准备post请求
@@ -249,11 +255,14 @@
         NSString *ss = [QDUserDefaults getObjectForKey:@"networkStatus"];
         QDLog(@"ss = %@", ss);
         responseCallback(ss);
+//        [weakSelf beginPlayVideo];
     }];
     
     [_baseView addSubview:self.progressView];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _baseView.backgroundColor = [UIColor whiteColor];
+    
+
 }
 
 - (void)loadWebViewWithURL{
@@ -288,7 +297,7 @@
 }
 
 - (void)dealloc {
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    QDLog(@"webview dealloc");
 }
 
 #pragma mark - WKWebView Delegate
@@ -508,6 +517,19 @@
     } else {
         completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
     }
+}
+
+-(void)beginPlayVideo{
+        NSLog(@"开始");
+    [UIView animateWithDuration:0.2 animations:^{
+        self.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    }];
+}
+
+
+-(void)endPlayVideo{
+    NSLog(@"结束");
+    self.webView.frame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);
 }
 
 - (void)dismissShareView:(UIButton *)sender{

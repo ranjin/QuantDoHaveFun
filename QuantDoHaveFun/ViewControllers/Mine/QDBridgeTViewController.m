@@ -56,7 +56,12 @@
     [self.tabBarController.tabBar setHidden:YES];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
-
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [_bridge setWebViewDelegate:nil];
+    _bridge = nil;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //初始化UIWebView,设置webView代理
