@@ -24,6 +24,7 @@
 @property (nonatomic, strong) PPNumberButton *amountNumBtn;
 @property (nonatomic, strong) PPNumberButton *priceNumBtn;
 
+@property (nonatomic, strong) UILabel *transferLab;
 @property (nonatomic, strong) UILabel *priceLab;
 @property (nonatomic, strong) UILabel *situationLab;
 @property (nonatomic, strong) NSString *isPartialDeal;
@@ -127,12 +128,21 @@
     [_operateBtn.layer addSublayer:gradientLayer];
     _operateBtn.titleLabel.font = QDFont(16);
     [_tableView addSubview:_operateBtn];
-    [_operateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(299+SafeAreaTopHeight-64);
-        make.width.mas_equalTo(316);
-        make.height.mas_equalTo(50);
-    }];
+    if ([_typeStr isEqualToString:@"0"]) {
+        [_operateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view.mas_top).offset(299+SafeAreaTopHeight-64+52);
+            make.width.mas_equalTo(316);
+            make.height.mas_equalTo(50);
+        }];
+    }else{
+        [_operateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view.mas_top).offset(299+SafeAreaTopHeight-64);
+            make.width.mas_equalTo(316);
+            make.height.mas_equalTo(50);
+        }];
+    }
 }
 
 - (void)popAction:(UIButton *)sender{
@@ -146,6 +156,11 @@
 #pragma mark -- tableView delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if ([_typeStr isEqualToString:@"1"]) {
+        return 4;
+    }else{
+        return 5;
+    }
     return 4;
 }
 
@@ -164,7 +179,6 @@
     if (indexPath.row == 0) {
         cell.textLabel.text = @"数量";
         cell.textLabel.font = QDFont(16);
-//        [cell.contentView addSubview:self.amountNumBtn];
         [self setupTextField:self.amountTF];
         [cell.contentView addSubview:self.amountTF];
         [_amountTF mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -214,14 +228,38 @@
             make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
         }];
     }else{
-        cell.textLabel.text = @"是否可零售";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = QDFont(16);
-        [cell.contentView addSubview:self.situationLab];
-        [_situationLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(cell.contentView);
-            make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
-        }];
+        if ([_typeStr isEqualToString:@"1"]) {
+            cell.textLabel.text = @"是否可零售";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.font = QDFont(16);
+            [cell.contentView addSubview:self.situationLab];
+            [_situationLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(cell.contentView);
+                make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
+            }];
+        }else{
+            if (indexPath.row == 3) {
+                cell.textLabel.text = @"手续费";
+                cell.textLabel.font = QDFont(16);
+                [cell.contentView addSubview:self.transferLab];
+                //手续费
+                self.transferLab.text = [NSString stringWithFormat:@"%.2lf元", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+//                NSString *ss = _
+                [_transferLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.centerY.equalTo(cell.contentView);
+                    make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
+                }];
+            }else{
+                cell.textLabel.text = @"是否可零售";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.textLabel.font = QDFont(16);
+                [cell.contentView addSubview:self.situationLab];
+                [_situationLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.centerY.equalTo(cell.contentView);
+                    make.right.equalTo(cell.contentView.mas_right).offset(-(SCREEN_WIDTH*0.05));
+                }];
+            }
+        }
     }
     return cell;
 }
@@ -266,7 +304,8 @@
         }
         textField.text = [[existNum decimalNumberByAdding:_amountTick] stringValue];
     }
-    self.priceLab.text = [NSString stringWithFormat:@"%.2lf", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+    self.priceLab.text = [NSString stringWithFormat:@"%.2lf元", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+    [self getFee];
 }
 
 #pragma mark - 价格减
@@ -289,7 +328,8 @@
             [WXProgressHUD showInfoWithTittle:@"数量不能为0"];
         }
     }
-    self.priceLab.text = [NSString stringWithFormat:@"%.2lf", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+    self.priceLab.text = [NSString stringWithFormat:@"%.2lf元", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+    [self getFee];
 }
 
 - (void)payAction:(UIButton *)sender{
@@ -307,6 +347,7 @@
         return;
     }
     QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];
+    QDLog(@"self.priceTF.text = %@", self.priceTF.text);
     recommendVC.price = self.priceTF.text;
     recommendVC.volume = self.amountTF.text;
     recommendVC.isPartialDeal = _isPartialDeal;
@@ -404,6 +445,15 @@
     return _priceLab;
 }
 
+- (UILabel *)transferLab{
+    if(!_transferLab){
+        _transferLab = [[UILabel alloc] init];
+        _transferLab.font = QDFont(16);
+        _transferLab.textColor = APP_BLACKCOLOR;
+    }
+    return _transferLab;
+}
+
 - (UILabel *)situationLab{
     if(!_situationLab){
         _situationLab = [[UILabel alloc] init];
@@ -494,8 +544,27 @@
 
 - (void)textfieldDidChange:(UITextField *)textField{
     self.priceLab.text = [NSString stringWithFormat:@"%.2lf", [_priceTF.text doubleValue] * [_amountTF.text doubleValue]];
+    [self getFee];
 }
 
+#pragma mark - 挂单手续费
+- (void)getFee{
+    double ss = [_amountTF.text doubleValue];
+    double sss = [_priceTF.text doubleValue];
+
+    NSDictionary *dic = @{
+                          @"creditCode":@"10001",
+                          @"volume":[NSNumber numberWithDouble:ss],
+                          @"price":[NSNumber numberWithDouble:sss]
+                          };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getPostersFee params:dic successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            _transferLab.text = [NSString stringWithFormat:@"%@元", responseObject.result];
+        }
+    } failureBlock:^(NSError *error) {
+        [WXProgressHUD showErrorWithTittle:@"挂单手续费请求失败"];
+    }];
+}
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (textField == _priceTF) {
         /*

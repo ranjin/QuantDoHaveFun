@@ -121,10 +121,25 @@
     _categoryIDArr = [[NSMutableArray alloc] init];
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _mallInfoArr = [[NSMutableArray alloc] init];
+    
     [self initTableView];
+    UIButton *btn = [[UIButton alloc] init];
+    [btn setImage:[UIImage imageNamed:@"icon_shopCar"] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(shopCarAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(309);
+        make.top.equalTo(self.view.mas_top).offset(549);
+    }];
     [self requestMallList];
     //请求商品列表
     [self finGoodsCategory];
+}
+
+- (void)shopCarAction:(UIButton *)sender{
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@", QD_JSURL, JS_SHOPCART];
+    [self.navigationController pushViewController:bridgeVC animated:YES];
 }
 
 #pragma mark - 查询商品分类

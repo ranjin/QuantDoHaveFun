@@ -191,8 +191,8 @@
         }
     }else{
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
-        cell.font = QDFont(16);
-        cell.textColor = APP_GRAYLINECOLOR;
+        cell.textLabel.font = QDFont(16);
+        cell.textLabel.textColor = APP_GRAYLINECOLOR;
         cell.textLabel.text = @"帮助中心";
     }
     return cell;
