@@ -267,6 +267,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [_haveFinancialView.rechargeBtn addTarget:self action:@selector(rechargeAction:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.withdrawBtn addTarget:self action:@selector(withdrawAction:) forControlEvents:UIControlEventTouchUpInside];
     [_haveFinancialView.balanceDetail addTarget:self action:@selector(balanceDetailAction) forControlEvents:UIControlEventTouchUpInside];
+    [_haveFinancialView.accountDesc addTarget:self action:@selector(accountDesc) forControlEvents:UIControlEventTouchUpInside];
+
     NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
     if ([str isEqualToString:@"0"] || str == nil) {
         _tableView.tableHeaderView = _notLoginHeaderView;
@@ -280,6 +282,14 @@ typedef NS_ENUM(NSInteger, PhotoType)
 - (void)balanceDetailAction {
     [self.navigationController pushViewController:[[QDTradingFlowVC alloc]init] animated:YES];
 }
+
+//钱包账户说明 type:15
+- (void)accountDesc{
+    QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=15", QD_TESTJSURL, JS_NOTICETYPE];
+    [self presentViewController:bridgeVC animated:YES completion:nil];
+}
+
 - (void)lookAccountInfo:(UIButton *)sender{
     QDLog(@"lookAccountInfo");
     
@@ -385,8 +395,15 @@ typedef NS_ENUM(NSInteger, PhotoType)
             break;
         case 3: //房券
                 {
-                    QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
-                    [self.navigationController pushViewController:houseVC animated:YES];
+                    NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
+                    if ([str isEqualToString:@"0"] || str == nil) { //未登录
+                        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+                        loginVC.pushVCTag = @"0";
+                        [self presentViewController:loginVC animated:YES completion:nil];
+                    }else{
+                        QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
+                        [self.navigationController pushViewController:houseVC animated:YES];
+                    }
                 }
 //            [self gotoLoginWithAction:JS_MYHOURSE];
             break;

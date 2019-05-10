@@ -327,6 +327,10 @@
             textField.text = [_priceTick stringValue];
             [WXProgressHUD showInfoWithTittle:@"价格不能为0"];
         }
+        if ([textField.text isEqualToString:@"-0.01"]) {
+            textField.text = @"0.00";
+            [WXProgressHUD showInfoWithTittle:@"价格不能为0"];
+        }
     }
     if (textField == _amountTF) {
         existNum = [NSDecimalNumber decimalNumberWithString:_amountTF.text];
