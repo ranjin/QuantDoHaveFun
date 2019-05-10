@@ -43,6 +43,38 @@
             endingLineNumber = "373"
             landmarkName = "-webView:decidePolicyForNavigationAction:decisionHandler:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[QDBridgeViewController webView:decidePolicyForNavigationAction:decisionHandler:]"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDBridgeViewController.m"
+                  timestampString = "579143070.965876"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
+                  offsetFromSymbolStart = "1719">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[QDBridgeViewController webView:decidePolicyForNavigationAction:decisionHandler:]"
+                  moduleName = "QuantDoHaveFun"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Mine/QDBridgeViewController.m"
+                  timestampString = "579143070.967847"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
+                  offsetFromSymbolStart = "1734">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

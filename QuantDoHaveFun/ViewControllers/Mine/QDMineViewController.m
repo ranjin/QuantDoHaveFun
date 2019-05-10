@@ -92,13 +92,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡", @"地址", @"安全中心", nil];
-=======
     [self.navigationController.navigationBar setHidden:YES];
-
-    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡",@"房券", @"地址", @"安全中心", nil];
->>>>>>> 7275467298ab518d6d0deb4690b648ecb3f31937
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
@@ -379,11 +374,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch (indexPath.row) {
         case 0: //邀请好友
-            [self inviteFriends];
-//        {
-//            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
+//            [self inviteFriends];
+        {
+            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 1: //收藏
             [self gotoLoginWithAction:JS_COLLECTION];

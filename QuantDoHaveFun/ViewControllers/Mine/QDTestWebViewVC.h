@@ -6,11 +6,11 @@
 //  Copyright © 2019 Charles Ran. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "QDBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QDTestWebViewVC : UIViewController
+@interface QDTestWebViewVC : QDBaseViewController
 
 @property (nonatomic, strong) NSString *htmlStr;
 @end
