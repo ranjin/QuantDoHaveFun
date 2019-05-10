@@ -132,7 +132,7 @@
             QDLog(@"11");
         }];
     }];
-    
+    // 在goback里进行资源的释放
     [_bridge registerHandler:@"goBack" handler:^(id data, WVJBResponseCallback responseCallback) {
         QDLog(@"goBack");
         [self.navigationController popViewControllerAnimated:YES];

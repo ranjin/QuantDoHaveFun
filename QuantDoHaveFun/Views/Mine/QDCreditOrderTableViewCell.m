@@ -105,25 +105,25 @@
     self.amountLabel.text = amountString;
     
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_creditOrder.tradingDate];
-    NSInteger index = (_creditOrder.tradingtype+1)>=CreditOrderTypeNames.count?0:_creditOrder.tradingtype+1;
-    self.orderTypeLabel.text = CreditOrderTypeNames[index];
+//    NSInteger index = (_creditOrder.tradingtype+1)>=CreditOrderTypeNames.count?0:_creditOrder.tradingtype+1;
+//    self.orderTypeLabel.text = CreditOrderTypeNames[index];
     self.currencyNameLabel.text = @"玩贝";
-//    self.orderTypeLabel.text = _creditOrder.tradingTypeDesc;
+    self.orderTypeLabel.text = _creditOrder.tradingTypeDesc;
 }
 - (void)setTradingOrder:(QDTradingOrder *)tradingOrder {
     _tradingOrder = tradingOrder;
     NSString *amountString;
     if (_tradingOrder.tradingDirection == 0) {
-        amountString = [NSString stringWithFormat:@"+%ld",(long)_tradingOrder.tradingCount];
+        amountString = [NSString stringWithFormat:@"+%.1f",_tradingOrder.tradingAmount];
     } else {
-        amountString = [NSString stringWithFormat:@"-%ld",(long)_tradingOrder.tradingCount];
+        amountString = [NSString stringWithFormat:@"-%.1f",_tradingOrder.tradingAmount];
     }
     self.amountLabel.text = amountString;
     
     self.timeLabel.text = [QDDateUtils timeStampConversionNSString:_tradingOrder.tradingDate];
-    NSInteger index = (_creditOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_tradingOrder.tradingtype+1;
-    self.orderTypeLabel.text = TradingOrderTypeNames[index];
-//    self.orderTypeLabel.text = _tradingOrder.tradingTypeDesc;
+//    NSInteger index = (_tradingOrder.tradingtype+1)>=TradingOrderTypeNames.count?0:_tradingOrder.tradingtype+1;
+//    self.orderTypeLabel.text = TradingOrderTypeNames[index];
+    self.orderTypeLabel.text = _tradingOrder.tradingTypeDesc;
     self.currencyNameLabel.text = @"元";
 }
 - (void)awakeFromNib {

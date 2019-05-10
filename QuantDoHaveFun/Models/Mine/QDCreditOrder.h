@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *tradingDate;  // 订单日期
 @property(nonatomic,assign)NSInteger tradingDirection;
 @property(nonatomic,assign)NSInteger tradingtype;   // 订单类型
-@property(nonatomic,assign)NSInteger tradingCount;  // 交易数量
-@property(nonatomic,assign)NSInteger tradingAmount;
+@property(nonatomic,assign)NSInteger tradingCount;  // 积分
+@property(nonatomic,assign)CGFloat tradingAmount; // 金额
 @property(nonatomic,copy)NSString *orderId;
 @property(nonatomic,copy)NSString *total;
 @property(nonatomic,copy)NSString *pageNum;

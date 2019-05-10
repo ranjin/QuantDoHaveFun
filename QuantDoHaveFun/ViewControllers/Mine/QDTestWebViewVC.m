@@ -65,19 +65,7 @@
     [self.tabBarController.tabBar setHidden:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
-}
 
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,6 +74,7 @@
     //    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
     //        self.edgesForExtendedLayout = UIRectEdgeNone;
     //    }
+    self.rt_disableInteractivePop = YES;
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     

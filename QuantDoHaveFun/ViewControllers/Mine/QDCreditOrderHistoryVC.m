@@ -26,19 +26,7 @@
 @end
 
 @implementation QDCreditOrderHistoryVC
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.tabBarController.tabBar setHidden:YES];
-    self.navigationController.navigationBar.translucent = NO;
-}
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-    [self.navigationController.tabBarController.tabBar setHidden:NO];
-    self.navigationController.navigationBar.translucent = YES;
-}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"kNotificationDropDownMenuDidLoaded" object:nil];
@@ -49,6 +37,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     self.title = @"玩贝踪影";
+    self.navigationController.navigationBar.translucent = NO;
+    self.rt_disableInteractivePop = YES;
 
     UIImage *backImage = [UIImage imageNamed:@"icon_return"];
     UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -77,7 +67,7 @@
 - (void)setupViews {
  
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 45, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-55) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 45, LD_SCREENWIDTH,LD_SCREENHEIGHT-Height_NavAndStatusBar-45) style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[QDCreditOrderTableViewCell class] forCellReuseIdentifier:@"QDCreditOrderTableViewCell"];
     self.tableView.delegate = self;

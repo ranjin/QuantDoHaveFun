@@ -30,6 +30,9 @@ PODS:
   - MJRefresh (3.1.15.7)
   - Pgyer (2.8.9)
   - PgyUpdate (1.6)
+  - RTRootNavigationController (0.7.1):
+    - RTRootNavigationController/Core (= 0.7.1)
+  - RTRootNavigationController/Core (0.7.1)
   - Toast (4.0.0)
   - TYAlertView (0.1.1)
   - UICollectionViewLeftAlignedLayout (1.0.2)
@@ -52,6 +55,7 @@ DEPENDENCIES:
   - MJRefresh
   - Pgyer
   - PgyUpdate
+  - RTRootNavigationController
   - Toast
   - TYAlertView
   - UICollectionViewLeftAlignedLayout
@@ -76,6 +80,7 @@ SPEC REPOS:
     - MJRefresh
     - Pgyer
     - PgyUpdate
+    - RTRootNavigationController
     - Toast
     - TYAlertView
     - UICollectionViewLeftAlignedLayout
@@ -99,6 +104,7 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Pgyer: 830654e51e23f754cce5d8b3ea9ba72be68452eb
   PgyUpdate: cd6c2ada5928f36a9f904d8f96a9b3b53e190755
+  RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TYAlertView: 5dd26bb314f65b87fe15ab2d9b06276d42587fd7
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
@@ -107,6 +113,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   zhPopupController: 4e6bd734062cb9c7ebe8113568550bade168bed7
 
-PODFILE CHECKSUM: bbe367d22b8e1c1de55e2703fa0cbb10cbbca521
+PODFILE CHECKSUM: 35062213ff7677fcb199284a79ec1314fd4eb72b
 
 COCOAPODS: 1.6.1

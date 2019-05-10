@@ -14,47 +14,36 @@
 
 @implementation QDBaseViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-    [self.navigationController.tabBarController.tabBar setHidden:NO];
+
+-(instancetype)init{
+    if (self = [super init]) {
+        self.hidesBottomBarWhenPushed = YES;
+        self.navigationController.navigationBar.tintColor = LD_colorRGBValue(0xa0a0a0);
+    }
+    return self;
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    NSLog(@"123");
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)showBack:(BOOL)show
+- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target
+                                          action:(SEL)action
 {
-    if (show) {
-        UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-        UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navBack:)];
-        [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-    }
+    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
+    return [[UIBarButtonItem alloc] initWithImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
 }
+//- (void)showBack:(BOOL)show
+//{
+//    if (show) {
+//        UIImage *backImage = [UIImage imageNamed:@"icon_return"];
+//        UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navBack:)];
+//        [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
+//    }
+//}
 
-- (void)showBackWithMark{
-    
-}
-
-- (void)popToLast{
-    UIImage *backImage = [UIImage imageNamed:@"back"];
-    UIImage *selectedImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(popTheLast:)];
-    [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-}
 
 - (void)navBack:(UIBarButtonItem *)sender
 {

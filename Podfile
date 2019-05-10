@@ -25,6 +25,7 @@ target 'QuantDoHaveFun' do
   pod 'Pgyer'
   pod 'PgyUpdate'
   pod 'UICollectionViewLeftAlignedLayout'
+  pod 'RTRootNavigationController'
 
 end
 

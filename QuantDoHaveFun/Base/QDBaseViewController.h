@@ -10,9 +10,7 @@
 
 @interface QDBaseViewController : UIViewController
 
-- (void)showBack:(BOOL)show;
+//- (void)showBack:(BOOL)show;
 
-- (void)showBackWithMark;
-- (void)popToLast;
 
 @end

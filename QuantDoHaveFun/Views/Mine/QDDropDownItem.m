@@ -82,6 +82,7 @@
 }
 
 + (CGFloat)dropDownViewHeightWithItemCount:(NSInteger)count {
-    return count>4?230:70;
+    return (ceil(count/4.0f)-1)*55+70;
+//    return count>4?230:70;
 }
 @end
