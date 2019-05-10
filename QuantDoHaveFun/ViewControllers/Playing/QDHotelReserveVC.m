@@ -635,7 +635,7 @@
         QDLog(@"kCLErrorLocationUnknown");
     }
 }
-- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
-    return -100;
-}
+//- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+//    return -70;
+//}
 @end

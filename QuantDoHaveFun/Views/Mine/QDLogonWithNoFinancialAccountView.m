@@ -177,7 +177,9 @@
     }];
     
     [_levelLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_levelPic);
+//        make.center.equalTo(_levelPic);
+        make.centerY.equalTo(_levelPic);
+        make.right.equalTo(_levelPic.mas_right).offset(-10);
     }];
     
     [_userIdLab mas_makeConstraints:^(MASConstraintMaker *make) {
