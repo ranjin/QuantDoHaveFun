@@ -18,22 +18,29 @@
 -(instancetype)init{
     if (self = [super init]) {
         self.hidesBottomBarWhenPushed = YES;
-        self.navigationController.navigationBar.tintColor = LD_colorRGBValue(0xa0a0a0);
+        UIImage *backImage = [UIImage imageNamed:@"icon_return"];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(QDLeftBarButtonItemAction)];
     }
     return self;
 }
-
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.navigationController.navigationBar setTintColor: LD_colorRGBValue(0x333333)];
+}
+- (void)QDLeftBarButtonItemAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target
-                                          action:(SEL)action
-{
-    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
-    return [[UIBarButtonItem alloc] initWithImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
-}
+//- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target
+//                                          action:(SEL)action
+//{
+//    UIImage *backImage = [UIImage imageNamed:@"icon_return"];
+//    return [[UIBarButtonItem alloc] initWithImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
+//}
 //- (void)showBack:(BOOL)show
 //{
 //    if (show) {

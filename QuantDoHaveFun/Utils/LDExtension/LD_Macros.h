@@ -1,8 +1,21 @@
 
+/**
+颜色
+ */
 #define LD_colorRGBValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000)>>16))/255.0 green:((float)((rgbValue & 0xFF00)>>8))/255.0  blue:((float)((rgbValue & 0xFF)))/255.0  alpha:1.0]
 #define LD_colorRGBValueAlpha(rgbValue,alp) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000)>>16))/255.0 green:((float)((rgbValue & 0xFF00)>>8))/255.0  blue:((float)((rgbValue & 0xFF)))/255.0  alpha:alp]
+#define LD_colorRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define LD_RanDomColor [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1.0f]
 
+
+/**
+ 系统对象
+ */
+#define LD_Application [UIApplication sharedApplication]
+#define LD_KeyWindow [UIApplication sharedApplication].keyWindow
+#define LD_UserDefaults [NSUserDefaults standardUserDefaults]
+#define LD_NotificationCenter [NSNotificationCenter defaultCenter]
+#define LD_appVersion [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
 //  各类常用尺寸
@@ -38,3 +51,23 @@
 #define LD_LOCK_semaphore(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 #define LD_UNLOCK_semaphore(lock) dispatch_semaphore_signal(lock);
 
+
+/**
+ 字体
+ */
+#define LDFont(x) [UIFont systemFontOfSize:x]
+#define LDBoldFont(x) [UIFont boldSystemFontOfSize:x]
+#define LDNameFont(name,size) [UIFont fontWithName:name size:size]
+
+
+/**
+ 判断空值
+ */
+#define LD_iSNullString(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO )
+#define LD_iSNullArray(array) (array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0 ||[array isEqual:[NSNull null]])
+#define LD_iSNullDict(dic) (dic == nil || [dic isKindOfClass:[NSNull class]] || dic.allKeys == 0 || [dic isEqual:[NSNull null]])
+#define LD_iSNullObject(_object) (_object == nil \
+|| [_object isKindOfClass:[NSNull class]] \
+|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
+|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+#define LD_GetNullDefaultObj(_value,_default) ([_value isKindOfClass:[NSNull class]] || !_value || _value == nil || [_value isEqualToString:@"(null)"] || [_value isEqualToString:@"<null>"] || [_value isEqualToString:@""] || [_value length] == 0)?_default:_value

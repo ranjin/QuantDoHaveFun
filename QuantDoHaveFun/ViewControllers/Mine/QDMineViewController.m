@@ -32,6 +32,7 @@
 #import "QDTestWebViewVC.h"
 #import "VIPRightsViewController.h"
 #import "QDTradingFlowVC.h"
+#import "QDLoginViewController.h"
 #import "QDHouseCouponVC.h"
 #import "AllHouseCouponVC.h"
 
@@ -320,6 +321,8 @@ typedef NS_ENUM(NSInteger, PhotoType)
     QDLog(@"userLogin");
     QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
+//    QDLoginViewController *loginVC = [[QDLoginViewController alloc] init];
+//    [self presentViewController:[[RTRootNavigationController alloc]initWithRootViewController:loginVC] animated:YES completion:nil];
 }
 
 #pragma mark - 设置页面

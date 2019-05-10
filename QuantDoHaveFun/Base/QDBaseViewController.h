@@ -12,5 +12,5 @@
 
 //- (void)showBack:(BOOL)show;
 
-
+- (void)QDLeftBarButtonItemAction;
 @end
