@@ -55,7 +55,6 @@
                           };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_getIsUpdate params:dic successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
-            QDLog(@"123");
             NSString *result = responseObject.result;
             if ([result isEqualToString:@"0"]) {  //不需要强制更新
                 //测试需要强制更新
