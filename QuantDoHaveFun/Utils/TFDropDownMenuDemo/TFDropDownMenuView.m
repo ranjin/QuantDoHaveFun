@@ -247,7 +247,7 @@
     textLayer.alignmentMode = kCAAlignmentCenter;
     textLayer.truncationMode = kCATruncationEnd;
     textLayer.foregroundColor = [textColor CGColor];
-    textLayer.contentsScale = SCREEN_SCALE;
+    textLayer.contentsScale = [UIScreen mainScreen].scale; //  contentsScale太小会导致模糊
     textLayer.position = position;
     return textLayer;
 }
