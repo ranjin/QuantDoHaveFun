@@ -309,9 +309,10 @@ typedef NS_ENUM(NSInteger, PhotoType)
 #pragma mark - 用户登录注册
 - (void)userLogin:(UIButton *)sender{
     QDLog(@"userLogin");
-//    QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-    QDLoginViewController *loginVC = [[QDLoginViewController alloc] init];
-    [self presentViewController:[[RTRootNavigationController alloc]initWithRootViewController:loginVC] animated:YES completion:nil];
+    QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+    [self presentViewController:loginVC animated:YES completion:nil];
+//    QDLoginViewController *loginVC = [[QDLoginViewController alloc] init];
+//    [self presentViewController:[[RTRootNavigationController alloc]initWithRootViewController:loginVC] animated:YES completion:nil];
 }
 
 #pragma mark - 设置页面
