@@ -1411,6 +1411,8 @@
 		93399CFE22671FA100FB9F0E /* Trading */ = {
 			isa = PBXGroup;
 			children = (
+				93E9826E227155EE00DDEB80 /* WaterLayou.h */,
+				93E9826F227155EE00DDEB80 /* WaterLayou.m */,
 				93E9821F227154B000DDEB80 /* MyTableCell.h */,
 				93E98216227154AE00DDEB80 /* MyTableCell.m */,
 				93E9820C227154AC00DDEB80 /* QDFilterTypeOneView.h */,
@@ -1650,8 +1652,6 @@
 		93399D34226815A300FB9F0E /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				93399D35226815A300FB9F0E /* UIColor+Extention.h */,
-				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93399D36226815A300FB9F0E /* Macro.h */,
 				93399D38226815A300FB9F0E /* Macro.m */,
 			);
@@ -1711,8 +1711,6 @@
 		93399D6822681A0900FB9F0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				93E9826E227155EE00DDEB80 /* WaterLayou.h */,
-				93E9826F227155EE00DDEB80 /* WaterLayou.m */,
 				93E9826D227155ED00DDEB80 /* WXApi.h */,
 				93399D6922681A0900FB9F0E /* QDServiceClient.h */,
 				93399D6E22681A0900FB9F0E /* QDServiceClient.m */,
@@ -1889,8 +1887,8 @@
 		93399E2B2268546200FB9F0E /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				93E980D022714DC400DDEB80 /* DIYCalendarCell.h */,
-				93E980C822714DC300DDEB80 /* DIYCalendarCell.m */,
+				93399D35226815A300FB9F0E /* UIColor+Extention.h */,
+				93399D37226815A300FB9F0E /* UIColor+Extention.m */,
 				93E980CD22714DC300DDEB80 /* NSDictionary+Helper.h */,
 				93E980B622714DC200DDEB80 /* NSDictionary+Helper.m */,
 				93E980D122714DC500DDEB80 /* NSString+QDDecimalNumberHandler.h */,
@@ -2237,6 +2235,8 @@
 				93E9809622714D1900DDEB80 /* QDCalendarTopView.m */,
 				93E9809722714D1900DDEB80 /* RangePickerCell.h */,
 				93E9809422714D1900DDEB80 /* RangePickerCell.m */,
+				93E980D022714DC400DDEB80 /* DIYCalendarCell.h */,
+				93E980C822714DC300DDEB80 /* DIYCalendarCell.m */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
