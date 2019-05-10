@@ -287,7 +287,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 //钱包账户说明 type:15
 - (void)accountDesc{
     QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
-    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=15", QD_TESTJSURL, JS_NOTICETYPE];
+    bridgeVC.urlStr = [NSString stringWithFormat:@"%@%@?noticeType=13", QD_TESTJSURL, JS_NOTICETYPE];
     [self presentViewController:bridgeVC animated:YES completion:nil];
 }
 
