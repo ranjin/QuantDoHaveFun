@@ -44,10 +44,8 @@
     self.window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewController:[BulgeCircularTabBarVC new]];
     [self.window makeKeyAndVisible];
     
-    //启动基本SDK
-    [[PgyManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
-    //启动更新检查SDK
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
+//    [[PgyManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
+//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
 //    [[PgyUpdateManager sharedPgyManager] checkUpdate];
     
     //引导页

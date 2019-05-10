@@ -19,8 +19,7 @@
 #import "QDMineSectionHeaderView.h"
 #import "QDBuyOrSellViewController.h"
 #import "QDBridgeViewController.h"
-//#import "QDHouseCouponVC.h"
-//#import "AllHouseCouponVC.h"
+
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "STPhotoKitController.h"
 #import "UIImagePickerController+ST.h"
@@ -33,6 +32,8 @@
 #import "QDTestWebViewVC.h"
 #import "VIPRightsViewController.h"
 #import "QDTradingFlowVC.h"
+#import "QDHouseCouponVC.h"
+#import "AllHouseCouponVC.h"
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -92,7 +93,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡", @"地址", @"安全中心", nil];
+    _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡", @"房券", @"地址", @"安全中心", nil];
     [self.navigationController.navigationBar setHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
@@ -374,11 +375,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch (indexPath.row) {
         case 0: //邀请好友
-//            [self inviteFriends];
-        {
-            QDTestWebViewVC *vc = [[QDTestWebViewVC alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+            [self inviteFriends];
             break;
         case 1: //收藏
             [self gotoLoginWithAction:JS_COLLECTION];
@@ -386,18 +383,17 @@ typedef NS_ENUM(NSInteger, PhotoType)
         case 2: //我的银行卡
             [self gotoLoginWithAction:JS_BANKCARD];
             break;
-//        case 3: //房券
-//                    {
-//                        QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
-//                        self.hidesBottomBarWhenPushed = YES;
-//                        [self.navigationController pushViewController:houseVC animated:YES];
-//                    }
+        case 3: //房券
+                {
+                    QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
+                    [self.navigationController pushViewController:houseVC animated:YES];
+                }
 //            [self gotoLoginWithAction:JS_MYHOURSE];
-//            break;
-        case 3: //地址
+            break;
+        case 4: //地址
             [self gotoLoginWithAction:JS_ADDRESS];
             break;
-        case 4: //安全中心
+        case 5: //安全中心
             [self gotoLoginWithAction:JS_SECURITYCENTER];
             break;
         default:
