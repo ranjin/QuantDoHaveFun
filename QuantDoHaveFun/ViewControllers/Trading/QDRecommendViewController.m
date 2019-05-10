@@ -129,7 +129,7 @@
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_saveBiddingPosters params:paramsDic successBlock:^(QDResponseObject *responseObject) {
             if (responseObject.code == 0) {
                 [WXProgressHUD hideHUD];
-                [WXProgressHUD showSuccessWithTittle:@"挂单生成成功"];
+                [WXProgressHUD showSuccessWithTittle:@"发布成功"];
                 NSString *str = responseObject.result;
                 QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
                 NSString *balance = [NSString stringWithFormat:@"%.2f", [_volume doubleValue] * [_price doubleValue]];
@@ -153,7 +153,7 @@
     NSDictionary *paramsDic = @{@"postersId":_postersId};
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_saveBiddingPosters params:paramsDic successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
-            [WXProgressHUD showSuccessWithTittle:@"挂单生成成功"];
+            [WXProgressHUD showSuccessWithTittle:@"发布成功"];
             [self.navigationController popToRootViewControllerAnimated:YES];
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];

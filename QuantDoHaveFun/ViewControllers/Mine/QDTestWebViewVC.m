@@ -53,19 +53,21 @@
 
 @implementation QDTestWebViewVC
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    [self.tabBarController.tabBar setHidden:NO];
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//}
+//
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self.navigationController.navigationBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
+//}
+
+- (void)test{
+    QDLog(@"123123");
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-    [self.tabBarController.tabBar setHidden:YES];
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,20 +76,23 @@
     //    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
     //        self.edgesForExtendedLayout = UIRectEdgeNone;
     //    }
+    self.title = @"银行卡";
     self.rt_disableInteractivePop = YES;
+    self.navigationController.navigationBar.translucent = YES;
+    [self rt_customBackItemWithTarget:self action:@selector(test)];
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
 //    _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
-//    [_webView loadHTMLString:_htmlStr baseURL:nil];
+    [_webView loadHTMLString:_htmlStr baseURL:nil];
     
-    NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@"goMain" ofType:@"html"];
-    
-    NSURL *feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-    [_webView loadRequest:[NSURLRequest requestWithURL:feedbackUrl]];
+//    NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@"goMain" ofType:@"html"];
+//
+//    NSURL *feedbackUrl = [NSURL fileURLWithPath:bundleStr];
+//
+//    [_webView loadRequest:[NSURLRequest requestWithURL:feedbackUrl]];
     
     _webView.navigationDelegate = self;
     _webView.backgroundColor = APP_WHITECOLOR;

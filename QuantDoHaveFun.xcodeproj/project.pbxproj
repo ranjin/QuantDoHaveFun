@@ -411,6 +411,28 @@
 		02A852F022853C8F00B5D810 /* QDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginViewController.m; sourceTree = "<group>"; };
 		07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantDoHaveFun.debug.xcconfig"; path = "Target Support Files/Pods-QuantDoHaveFun/Pods-QuantDoHaveFun.debug.xcconfig"; sourceTree = "<group>"; };
 		874BBCA28A6951604739F3C1 /* libPods-QuantDoHaveFun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuantDoHaveFun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9325FADF22850967009390AC /* UserdHouseCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserdHouseCouponVC.m; sourceTree = "<group>"; };
+		9325FAE022850967009390AC /* UnusedHouseCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedHouseCouponVC.m; sourceTree = "<group>"; };
+		9325FAE122850967009390AC /* AllHouseCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllHouseCouponCell.m; sourceTree = "<group>"; };
+		9325FAE222850967009390AC /* ExpiredHouseCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiredHouseCouponVC.h; sourceTree = "<group>"; };
+		9325FAE322850967009390AC /* HouseCouponModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseCouponModel.m; sourceTree = "<group>"; };
+		9325FAE422850967009390AC /* QDHouseCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHouseCouponVC.m; sourceTree = "<group>"; };
+		9325FAE522850967009390AC /* AllHouseCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllHouseCouponVC.h; sourceTree = "<group>"; };
+		9325FAE622850967009390AC /* UnusedHouseCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedHouseCouponVC.h; sourceTree = "<group>"; };
+		9325FAE722850967009390AC /* UserdHouseCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserdHouseCouponVC.h; sourceTree = "<group>"; };
+		9325FAE922850967009390AC /* ExpiredHouseCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiredHouseCouponVC.m; sourceTree = "<group>"; };
+		9325FAEA22850967009390AC /* AllHouseCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllHouseCouponCell.h; sourceTree = "<group>"; };
+		9325FAEB22850967009390AC /* HouseCouponModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseCouponModel.h; sourceTree = "<group>"; };
+		9325FAEC22850967009390AC /* AllHouseCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllHouseCouponVC.m; sourceTree = "<group>"; };
+		9325FAED22850967009390AC /* QDHouseCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHouseCouponVC.h; sourceTree = "<group>"; };
+		9325FAF7228509BD009390AC /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
+		9325FAF8228509BD009390AC /* openCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openCell.m; sourceTree = "<group>"; };
+		9325FAF9228509BD009390AC /* closeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = closeCell.m; sourceTree = "<group>"; };
+		9325FAFA228509BD009390AC /* openOrCloseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openOrCloseModel.h; sourceTree = "<group>"; };
+		9325FAFB228509BD009390AC /* openCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openCell.h; sourceTree = "<group>"; };
+		9325FAFC228509BD009390AC /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
+		9325FAFD228509BD009390AC /* closeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = closeCell.h; sourceTree = "<group>"; };
+		9325FAFE228509BD009390AC /* openOrCloseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openOrCloseModel.m; sourceTree = "<group>"; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CBC2267124000FB9F0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93399CBD2267124000FB9F0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1148,6 +1170,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9325FADD22850967009390AC /* QDHouseCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				9325FAED22850967009390AC /* QDHouseCouponVC.h */,
+				9325FAE422850967009390AC /* QDHouseCouponVC.m */,
+				9325FAE622850967009390AC /* UnusedHouseCouponVC.h */,
+				9325FAE022850967009390AC /* UnusedHouseCouponVC.m */,
+				9325FAE722850967009390AC /* UserdHouseCouponVC.h */,
+				9325FADF22850967009390AC /* UserdHouseCouponVC.m */,
+				9325FAE522850967009390AC /* AllHouseCouponVC.h */,
+				9325FAEC22850967009390AC /* AllHouseCouponVC.m */,
+				9325FAEA22850967009390AC /* AllHouseCouponCell.h */,
+				9325FAE122850967009390AC /* AllHouseCouponCell.m */,
+				9325FAE222850967009390AC /* ExpiredHouseCouponVC.h */,
+				9325FAE922850967009390AC /* ExpiredHouseCouponVC.m */,
+				9325FAEB22850967009390AC /* HouseCouponModel.h */,
+				9325FAE322850967009390AC /* HouseCouponModel.m */,
+			);
+			path = QDHouseCoupon;
+			sourceTree = "<group>";
+		};
+		9325FAF6228509BD009390AC /* OpenOrCloseCard */ = {
+			isa = PBXGroup;
+			children = (
+				9325FAFC228509BD009390AC /* BaseCell.h */,
+				9325FAF7228509BD009390AC /* BaseCell.m */,
+				9325FAFB228509BD009390AC /* openCell.h */,
+				9325FAF8228509BD009390AC /* openCell.m */,
+				9325FAFD228509BD009390AC /* closeCell.h */,
+				9325FAF9228509BD009390AC /* closeCell.m */,
+				9325FAFA228509BD009390AC /* openOrCloseModel.h */,
+				9325FAFE228509BD009390AC /* openOrCloseModel.m */,
+			);
+			path = OpenOrCloseCard;
+			sourceTree = "<group>";
+		};
 		93399CB02267124000FB9F0E = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1291,7 @@
 		93399CFA22671FA100FB9F0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9325FAF6228509BD009390AC /* OpenOrCloseCard */,
 				93E9823A2271554900DDEB80 /* RotePlanHeaderView */,
 				93E982362271551100DDEB80 /* CustomMapView */,
 				93E981BD2271534000DDEB80 /* VipPurchase */,
@@ -1437,6 +1496,7 @@
 		93399D0222671FA100FB9F0E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				9325FADD22850967009390AC /* QDHouseCoupon */,
 				938C3C532280346F0087724E /* QDTestWebViewVC.h */,
 				938C3C542280346F0087724E /* QDTestWebViewVC.m */,
 				93E98054227146BC00DDEB80 /* QDBridgeViewController.h */,
@@ -2785,6 +2845,7 @@
 				93E98220227154B000DDEB80 /* QDPickOrderView.m in Sources */,
 				93E9807C2271479300DDEB80 /* WebViewJavascriptBridgeBase.m in Sources */,
 				93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */,
+				9325FAF322850967009390AC /* QDHouseCouponVC.m in Sources */,
 				93E981672271500F00DDEB80 /* QDHotelsInAreaViewController.m in Sources */,
 				93E9812B22714F4900DDEB80 /* MANaviRoute.m in Sources */,
 				93399E182268487300FB9F0E /* UIView+Animated.m in Sources */,
@@ -2797,12 +2858,14 @@
 				93E9800F2271446B00DDEB80 /* UIPasteboard+YYText.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
+				9325FB02228509BD009390AC /* openOrCloseModel.m in Sources */,
 				93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */,
 				93E9825E227155A100DDEB80 /* QDOrderDetailVC.m in Sources */,
 				93399D3A226815A300FB9F0E /* Macro.m in Sources */,
 				93E9806D2271475C00DDEB80 /* CustomTravelDTO.m in Sources */,
 				93E980032271446B00DDEB80 /* YYTextSelectionView.m in Sources */,
 				93E981DF227153B800DDEB80 /* QDHotelReserveVC.m in Sources */,
+				9325FAEF22850967009390AC /* UserdHouseCouponVC.m in Sources */,
 				93E9819D2271524B00DDEB80 /* QDHomeTopView.m in Sources */,
 				93399D2D226814EA00FB9F0E /* RankFirstViewController.m in Sources */,
 				025FEE032282881200CDAFC3 /* LD_Extension.m in Sources */,
@@ -2811,6 +2874,7 @@
 				93E9812A22714F4900DDEB80 /* LineDashPolyline.m in Sources */,
 				93399D512268191E00FB9F0E /* QDMineInfoTableViewCell.m in Sources */,
 				93399DEB226823AF00FB9F0E /* NSData+ImageContentType.m in Sources */,
+				9325FAF422850967009390AC /* ExpiredHouseCouponVC.m in Sources */,
 				93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */,
 				93E9812D22714F4900DDEB80 /* MANaviPolyline.m in Sources */,
 				93E981BC2271532100DDEB80 /* QDReadyToCreateOrderVC.m in Sources */,
@@ -2829,6 +2893,7 @@
 				93E981A42271524B00DDEB80 /* QDHotelAndStrategyFilterView.m in Sources */,
 				93E9804E2271467F00DDEB80 /* VertificationCodeInputLabel.m in Sources */,
 				93E9813522714F5300DDEB80 /* QDMyPickOrderModel.m in Sources */,
+				9325FAF522850967009390AC /* AllHouseCouponVC.m in Sources */,
 				93399DE2226823AF00FB9F0E /* SDWebImageDecoder.m in Sources */,
 				93399E342268546F00FB9F0E /* UIImage+HQImage.m in Sources */,
 				93399E1B2268487300FB9F0E /* TABBaseCollectionViewCell.m in Sources */,
@@ -2857,6 +2922,7 @@
 				93E98267227155A100DDEB80 /* QDMyBiddingOrderDetailVC.m in Sources */,
 				93E9817C2271504700DDEB80 /* QDHotelHeaderView.m in Sources */,
 				93E98026227144B100DDEB80 /* QDRegisterView.m in Sources */,
+				9325FAF122850967009390AC /* AllHouseCouponCell.m in Sources */,
 				93399E1A2268487300FB9F0E /* TABManagerMethod.m in Sources */,
 				93E98265227155A100DDEB80 /* QDRecommendViewController.m in Sources */,
 				93E9817E2271504700DDEB80 /* QDHotelTypeCell.m in Sources */,
@@ -2910,6 +2976,7 @@
 				93E98235227154E100DDEB80 /* QDPopMenu.m in Sources */,
 				93399D39226815A300FB9F0E /* UIColor+Extention.m in Sources */,
 				93E9817D2271504700DDEB80 /* QDHotelTableViewCell.m in Sources */,
+				9325FAF022850967009390AC /* UnusedHouseCouponVC.m in Sources */,
 				93E980F422714E6700DDEB80 /* OpenShare+QQ.m in Sources */,
 				93E98228227154B000DDEB80 /* MyTableCell.m in Sources */,
 				025FEDD92282685200CDAFC3 /* QDDropDownItem.m in Sources */,
@@ -2952,6 +3019,7 @@
 				93E980D522714DC500DDEB80 /* NSString+QDDecimalNumberHandler.m in Sources */,
 				93E980072271446B00DDEB80 /* YYTextRunDelegate.m in Sources */,
 				93E9808D227147C700DDEB80 /* QDCitySelectedViewController.m in Sources */,
+				9325FAFF228509BD009390AC /* BaseCell.m in Sources */,
 				93399DE1226823AF00FB9F0E /* SDWebImageManager.m in Sources */,
 				93E981DE227153B800DDEB80 /* QDKeyWordsSearchVC.m in Sources */,
 				93E9822C227154B000DDEB80 /* QDMallTableSectionHeaderView.m in Sources */,
@@ -2965,6 +3033,7 @@
 				93E9817F2271504700DDEB80 /* QDHotelTypeView.m in Sources */,
 				025FEDDC228268B600CDAFC3 /* QDDropDownItemCell.m in Sources */,
 				93E980672271472F00DDEB80 /* QDBankaccountDTO.m in Sources */,
+				9325FAF222850967009390AC /* HouseCouponModel.m in Sources */,
 				93E97FFD2271446B00DDEB80 /* YYTextMagnifier.m in Sources */,
 				93399D64226819C800FB9F0E /* UserMoneyDTO.m in Sources */,
 				93E98268227155A100DDEB80 /* QDFirstViewController.m in Sources */,
@@ -3026,10 +3095,12 @@
 				93E97FFE2271446B00DDEB80 /* YYTextContainerView.m in Sources */,
 				93E982912271B11800DDEB80 /* VIPRightsViewController.m in Sources */,
 				93E97FFF2271446B00DDEB80 /* YYTextEffectWindow.m in Sources */,
+				9325FB01228509BD009390AC /* closeCell.m in Sources */,
 				93E9800B2271446B00DDEB80 /* YYTextRubyAnnotation.m in Sources */,
 				93399E3D22685CD100FB9F0E /* RankFirstHeadView.m in Sources */,
 				93399D4F2268191E00FB9F0E /* QDMineSectionHeaderView.m in Sources */,
 				93E981822271504700DDEB80 /* NavigationView.m in Sources */,
+				9325FB00228509BD009390AC /* openCell.m in Sources */,
 				93E9811222714E9300DDEB80 /* QDKeyWordsSearchHeaderView.m in Sources */,
 				93399DB82268231200FB9F0E /* QDGifRefreshHeader.m in Sources */,
 				93E981E0227153B800DDEB80 /* QDKeyWordsHomePageVC.m in Sources */,
