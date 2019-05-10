@@ -9,9 +9,9 @@
 #ifndef WXApi_h
 #define WXApi_h
 // 高德地图
-//const static NSString *APIKey = @"4d9a3eeccc55429b57663893c21a7813";    //生产环境
+const static NSString *APIKey = @"4d9a3eeccc55429b57663893c21a7813";    //生产环境
 //const static NSString *APIKey = @"1572e2947f38693cadbb912c8afc5891";    //UAT环境
-const static NSString *APIKey = @"403cc9f385a5fa52382a5772a2249d6f";      //UI改版
+//const static NSString *APIKey = @"403cc9f385a5fa52382a5772a2249d6f";      //UI改版
 
 
 

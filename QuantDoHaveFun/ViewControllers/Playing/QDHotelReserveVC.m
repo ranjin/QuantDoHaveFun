@@ -264,7 +264,7 @@
                             @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetHotelCondition params:dic1 successBlock:^(QDResponseObject *responseObject) {
-        [_tableView tab_endAnimation];
+//        [_tableView tab_endAnimation];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *hotelArr = [dic objectForKey:@"result"];
@@ -309,7 +309,7 @@
             [_tableView reloadData];
             [_tableView reloadEmptyDataSet];
         }
-        [_tableView tab_endAnimation];
+//        [_tableView tab_endAnimation];
         [self endRefreshing];
     } failureBlock:^(NSError *error) {
         _emptyType = QDNetworkError;
@@ -317,7 +317,7 @@
         [_tableView reloadData];
         [_tableView reloadEmptyDataSet];
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
-        [_tableView tab_endAnimation];
+//        [_tableView tab_endAnimation];
     }];
 }
 
@@ -379,7 +379,7 @@
 //    _tableView.contentInset = UIEdgeInsetsMake(0, 0, -200, 0);
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView tab_startAnimation];
+//    [_tableView tab_startAnimation];
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, SCREEN_HEIGHT*0.2, 0);
     _tableView.emptyDataSetDelegate = self;

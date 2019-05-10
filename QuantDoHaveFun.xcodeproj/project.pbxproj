@@ -2122,8 +2122,8 @@
 			isa = PBXGroup;
 			children = (
 				93E98083227147C700DDEB80 /* QDCalendarViewController.h */,
-				93E98084227147C700DDEB80 /* QDCalendarCustomerTourVC.h */,
 				93E98085227147C700DDEB80 /* QDCalendarViewController.m */,
+				93E98084227147C700DDEB80 /* QDCalendarCustomerTourVC.h */,
 				93E98086227147C700DDEB80 /* QDCalendarCustomerTourVC.m */,
 			);
 			path = Calendar;
@@ -2133,22 +2133,22 @@
 			isa = PBXGroup;
 			children = (
 				93E9809022714D1900DDEB80 /* SYSearchController.h */,
+				93E980A222714D1900DDEB80 /* SYSearchController.m */,
 				93E9809122714D1900DDEB80 /* Calendar */,
+				93E980A122714D1900DDEB80 /* QDLocationTopSelectView.h */,
 				93E9809822714D1900DDEB80 /* QDLocationTopSelectView.m */,
 				93E9809922714D1900DDEB80 /* QDCurrentLocationView.h */,
+				93E980A022714D1900DDEB80 /* QDCurrentLocationView.m */,
+				93E9809F22714D1900DDEB80 /* SYHeaderView.h */,
 				93E9809A22714D1900DDEB80 /* SYHeaderView.m */,
 				93E9809B22714D1900DDEB80 /* SYTableViewCell.h */,
+				93E980A422714D1A00DDEB80 /* SYTableViewCell.m */,
+				93E980A322714D1A00DDEB80 /* SYCollectionCell.h */,
 				93E9809C22714D1900DDEB80 /* SYCollectionCell.m */,
+				93E980A622714D1A00DDEB80 /* SYHotCityHeaderView.h */,
 				93E9809D22714D1900DDEB80 /* SYHotCityHeaderView.m */,
 				93E9809E22714D1900DDEB80 /* SYCitysCell.h */,
-				93E9809F22714D1900DDEB80 /* SYHeaderView.h */,
-				93E980A022714D1900DDEB80 /* QDCurrentLocationView.m */,
-				93E980A122714D1900DDEB80 /* QDLocationTopSelectView.h */,
-				93E980A222714D1900DDEB80 /* SYSearchController.m */,
-				93E980A322714D1A00DDEB80 /* SYCollectionCell.h */,
-				93E980A422714D1A00DDEB80 /* SYTableViewCell.m */,
 				93E980A522714D1A00DDEB80 /* SYCitysCell.m */,
-				93E980A622714D1A00DDEB80 /* SYHotCityHeaderView.h */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2157,11 +2157,11 @@
 			isa = PBXGroup;
 			children = (
 				93E9809222714D1900DDEB80 /* QDCalendarCustomerTourTopView.h */,
-				93E9809322714D1900DDEB80 /* QDCalendarTopView.h */,
-				93E9809422714D1900DDEB80 /* RangePickerCell.m */,
 				93E9809522714D1900DDEB80 /* QDCalendarCustomerTourTopView.m */,
+				93E9809322714D1900DDEB80 /* QDCalendarTopView.h */,
 				93E9809622714D1900DDEB80 /* QDCalendarTopView.m */,
 				93E9809722714D1900DDEB80 /* RangePickerCell.h */,
+				93E9809422714D1900DDEB80 /* RangePickerCell.m */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
