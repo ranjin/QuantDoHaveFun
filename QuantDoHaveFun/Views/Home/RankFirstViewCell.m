@@ -64,6 +64,7 @@
     
     [_thePic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.width.equalTo(_backView);
+        make.centerX.equalTo(_backView);
         make.height.mas_equalTo(203);
     }];
 

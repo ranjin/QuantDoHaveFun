@@ -13,8 +13,6 @@
 #import "QDMineViewController.h"
 #import "BulgeCircularTabBarVC.h"
 #import "TABAnimated.h"
-#import <PgySDK/PgyManager.h>
-#import <PgyUpdate/PgyUpdateManager.h>
 #import "HcdGuideView.h"
 #import "CCAppManager.h"
 #import "CCGotoUpDateViewController.h"
@@ -46,10 +44,6 @@
 
     self.window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewController:[BulgeCircularTabBarVC new]];
     [self.window makeKeyAndVisible];
-    
-//    [[PgyManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
-//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"320be9855052141fc3935e8c2213c49e"];
-//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
     
     //引导页
     NSMutableArray *images = [NSMutableArray new];
