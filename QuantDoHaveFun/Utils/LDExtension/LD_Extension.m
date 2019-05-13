@@ -608,18 +608,7 @@
 //    [alert show];
 //}
 
-+(void)gotoWiFiList{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSString * urlString = @"App-Prefs:root=WIFI";
-        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:urlString]]) {
-            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
-            } else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
-            }
-        }
-    });
-}
+
 +(void)archiveObject:(id)object withFileName:(NSString *)fileName{
     NSString *filePath = [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@"/Documents/%@",fileName]];
     BOOL sucess = [NSKeyedArchiver archiveRootObject:object toFile:filePath];

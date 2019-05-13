@@ -17,7 +17,6 @@
 		025FEDFD2282881200CDAFC3 /* NSObject+coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF02282881200CDAFC3 /* NSObject+coding.m */; };
 		025FEDFE2282881200CDAFC3 /* UIView+frameAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF12282881200CDAFC3 /* UIView+frameAddition.m */; };
 		025FEDFF2282881200CDAFC3 /* UIImage+LDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF32282881200CDAFC3 /* UIImage+LDCategory.m */; };
-		025FEE002282881200CDAFC3 /* GotoSystemSettingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */; };
 		025FEE012282881200CDAFC3 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */; };
 		025FEE032282881200CDAFC3 /* LD_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF72282881200CDAFC3 /* LD_Extension.m */; };
 		025FEE042282881200CDAFC3 /* LDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDF82282881200CDAFC3 /* LDLocationManager.m */; };
@@ -393,7 +392,6 @@
 		025FEDE22282881200CDAFC3 /* NSObject+LDCopying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LDCopying.h"; sourceTree = "<group>"; };
 		025FEDE32282881200CDAFC3 /* NSObject+LDCopying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LDCopying.m"; sourceTree = "<group>"; };
 		025FEDE52282881200CDAFC3 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
-		025FEDE62282881200CDAFC3 /* GotoSystemSettingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GotoSystemSettingHelper.h; sourceTree = "<group>"; };
 		025FEDE72282881200CDAFC3 /* LD_NSStringEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_NSStringEditor.m; sourceTree = "<group>"; };
 		025FEDE82282881200CDAFC3 /* UIImage+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LDCategory.h"; sourceTree = "<group>"; };
 		025FEDE92282881200CDAFC3 /* LDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLocationManager.h; sourceTree = "<group>"; };
@@ -406,7 +404,6 @@
 		025FEDF12282881200CDAFC3 /* UIView+frameAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAddition.m"; sourceTree = "<group>"; };
 		025FEDF22282881200CDAFC3 /* LD_NSStringEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_NSStringEditor.h; sourceTree = "<group>"; };
 		025FEDF32282881200CDAFC3 /* UIImage+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LDCategory.m"; sourceTree = "<group>"; };
-		025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GotoSystemSettingHelper.m; sourceTree = "<group>"; };
 		025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		025FEDF72282881200CDAFC3 /* LD_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_Extension.m; sourceTree = "<group>"; };
 		025FEDF82282881200CDAFC3 /* LDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLocationManager.m; sourceTree = "<group>"; };
@@ -1139,8 +1136,6 @@
 				025FEDE12282881200CDAFC3 /* NSObject+LDCopying */,
 				025FEDE52282881200CDAFC3 /* UIButton+EnlargeTouchArea.h */,
 				025FEDF52282881200CDAFC3 /* UIButton+EnlargeTouchArea.m */,
-				025FEDE62282881200CDAFC3 /* GotoSystemSettingHelper.h */,
-				025FEDF42282881200CDAFC3 /* GotoSystemSettingHelper.m */,
 				025FEDE72282881200CDAFC3 /* LD_NSStringEditor.m */,
 				025FEDF22282881200CDAFC3 /* LD_NSStringEditor.h */,
 				025FEDE82282881200CDAFC3 /* UIImage+LDCategory.h */,
@@ -1708,14 +1703,14 @@
 		93399D6822681A0900FB9F0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				93E9826D227155ED00DDEB80 /* WXApi.h */,
+				93399D6F22681A0900FB9F0E /* QDNetworkCache.h */,
+				93399D6A22681A0900FB9F0E /* QDNetworkCache.m */,
 				93399D6922681A0900FB9F0E /* QDServiceClient.h */,
 				93399D6E22681A0900FB9F0E /* QDServiceClient.m */,
-				93399D6A22681A0900FB9F0E /* QDNetworkCache.m */,
-				93399D6F22681A0900FB9F0E /* QDNetworkCache.h */,
 				93399D6B22681A0900FB9F0E /* QDServiceErrorHandler.h */,
 				93399D7022681A0900FB9F0E /* QDServiceErrorHandler.m */,
 				93399D7222681A0900FB9F0E /* upload */,
+				93E9826D227155ED00DDEB80 /* WXApi.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2940,7 +2935,6 @@
 				93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */,
 				93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */,
 				93E980082271446B00DDEB80 /* YYTextParser.m in Sources */,
-				025FEE002282881200CDAFC3 /* GotoSystemSettingHelper.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
 				025FEDFC2282881200CDAFC3 /* NSObject+LDCategory.m in Sources */,
 				93E980AC22714D1A00DDEB80 /* SYCollectionCell.m in Sources */,

@@ -31,7 +31,6 @@
 + (NSString*)JsonToString:(id)json; // json转字符串
 +(void)callServicePhone:(UIViewController *)showedVC phoneNum:(NSString *)phoneNum; // 调起电话，拨打客服电话
 +(void)showMMAlertWithTitle:(NSString *)title message:(NSString *)message;  // 单选项的提示框
-+(void)gotoWiFiList;  // 跳转到系统WiFi设置
 
 /**
 归档对象，记得引入NSObject+coding类目，可以归档自定义类型数据。保存到Document目录
