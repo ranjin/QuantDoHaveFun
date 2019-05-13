@@ -256,6 +256,7 @@
         }
     }
     NSDictionary * dic1 = @{
+                            @"hotelName":_cityName,          //城市名称
                             @"hotelTypeId":_hotelTypeId,    //酒店类型
                             @"hotelLevel":_hotelLevel,      //星级
                             @"minPrice":_minPrice,
