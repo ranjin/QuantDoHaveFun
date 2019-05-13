@@ -19,46 +19,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/Utils/CCAppManager/CCAppManager.m"
-            timestampString = "579234886.918537"
+            filePath = "QuantDoHaveFun/ViewControllers/Mine/QDMineViewController.m"
+            timestampString = "579411338.980323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-getWhiteVerdionList"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-queryUserStatus:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CCAppManager getWhiteVerdionList]"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/Utils/CCAppManager/CCAppManager.m"
-                  timestampString = "579184169.0784121"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__35-[CCAppManager getWhiteVerdionList]_block_invoke"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/Utils/CCAppManager/CCAppManager.m"
-                  timestampString = "579184169.0805399"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -67,13 +35,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/Utils/CCAppManager/CCAppManager.m"
-            timestampString = "579234886.91881"
+            filePath = "QuantDoHaveFun/ViewControllers/Mine/QDMineViewController.m"
+            timestampString = "579411338.9809279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-getWhiteVerdionList"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-queryUserStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuantDoHaveFun/ViewControllers/Mine/QDMineViewController.m"
+            timestampString = "579411338.981156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "426"
+            endingLineNumber = "426"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
