@@ -14,6 +14,7 @@
 #import "QDMemberDTO.h"
 #import "AppDelegate.h"
 #import "QDReadyToCreateOrderVC.h"
+#import "QDProtocolVC.h"
 @interface VIPRightsViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>{
     VIPRightsView *_rightsView;
     BOOL _selected;
@@ -93,12 +94,32 @@
     _cardArr = [[NSMutableArray alloc] init];
     _rightsView = [[VIPRightsView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _rightsView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelClick)];
+    
+    [_rightsView.loginHeadView.protocolLab addGestureRecognizer:gestureRecognizer];
+    _rightsView.loginHeadView.protocolLab.userInteractionEnabled = YES;
     [_rightsView.noLoginHeadView.loginBtn addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
     [_rightsView.payButton addTarget:self action:@selector(confirmToBuy:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightsView];
     [self queryOrderPay];
     [self getBasicPrice];
     [self setupCardUI];
+}
+
+- (void)labelClick{
+    NSDictionary *dic = @{@"noticeType":@"4"};
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_findNoticeByTypeId params:dic successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            NSString *contentStr = [dic objectForKey:@"content"];
+            QDProtocolVC *protocolVC = [[QDProtocolVC alloc] init];
+            protocolVC.contentStr = contentStr;
+            [self presentViewController:protocolVC animated:YES completion:nil];
+        }
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - 查询基准价信息
