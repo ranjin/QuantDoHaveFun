@@ -38,6 +38,8 @@
 		02A85309228554E200B5D810 /* openCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FAF8228509BD009390AC /* openCell.m */; };
 		02A8530A228554EF00B5D810 /* closeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FAF9228509BD009390AC /* closeCell.m */; };
 		02A8530B2285550600B5D810 /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FAF7228509BD009390AC /* BaseCell.m */; };
+		9325FB082289396E009390AC /* QDVipPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FB062289396E009390AC /* QDVipPurchaseVC.m */; };
+		9325FB092289396E009390AC /* QDReadyToCreateOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FB072289396E009390AC /* QDReadyToCreateOrderVC.m */; };
 		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
 		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
 		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
@@ -292,8 +294,6 @@
 		93E981B3227152BD00DDEB80 /* ZLFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981AF227152BD00DDEB80 /* ZLFlowLayout.m */; };
 		93E981B4227152BD00DDEB80 /* ZLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B0227152BD00DDEB80 /* ZLCollectionView.m */; };
 		93E981B5227152BD00DDEB80 /* HYBCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B1227152BD00DDEB80 /* HYBCardCollectionViewCell.m */; };
-		93E981BB2271532100DDEB80 /* QDVipPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */; };
-		93E981BC2271532100DDEB80 /* QDReadyToCreateOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */; };
 		93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */; };
 		93E981C52271534100DDEB80 /* QDVipPurchaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981C22271534000DDEB80 /* QDVipPurchaseView.m */; };
 		93E981C62271534100DDEB80 /* QDReadyToPayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E981C32271534000DDEB80 /* QDReadyToPayViewCell.m */; };
@@ -443,6 +443,10 @@
 		9325FAFC228509BD009390AC /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
 		9325FAFD228509BD009390AC /* closeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = closeCell.h; sourceTree = "<group>"; };
 		9325FAFE228509BD009390AC /* openOrCloseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openOrCloseModel.m; sourceTree = "<group>"; };
+		9325FB042289396E009390AC /* QDReadyToCreateOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDReadyToCreateOrderVC.h; sourceTree = "<group>"; };
+		9325FB052289396E009390AC /* QDVipPurchaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseVC.h; sourceTree = "<group>"; };
+		9325FB062289396E009390AC /* QDVipPurchaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseVC.m; sourceTree = "<group>"; };
+		9325FB072289396E009390AC /* QDReadyToCreateOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDReadyToCreateOrderVC.m; sourceTree = "<group>"; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CBC2267124000FB9F0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93399CBD2267124000FB9F0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -960,10 +964,6 @@
 		93E981AF227152BD00DDEB80 /* ZLFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFlowLayout.m; sourceTree = "<group>"; };
 		93E981B0227152BD00DDEB80 /* ZLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionView.m; sourceTree = "<group>"; };
 		93E981B1227152BD00DDEB80 /* HYBCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBCardCollectionViewCell.m; sourceTree = "<group>"; };
-		93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDReadyToCreateOrderVC.h; sourceTree = "<group>"; };
-		93E981B82271532100DDEB80 /* QDVipPurchaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseVC.h; sourceTree = "<group>"; };
-		93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseVC.m; sourceTree = "<group>"; };
-		93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDReadyToCreateOrderVC.m; sourceTree = "<group>"; };
 		93E981BE2271534000DDEB80 /* QDVipPurchaseTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDVipPurchaseTableHeader.m; sourceTree = "<group>"; };
 		93E981BF2271534000DDEB80 /* QDReadyToPayViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDReadyToPayViewCell.h; sourceTree = "<group>"; };
 		93E981C02271534000DDEB80 /* QDVipPurchaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDVipPurchaseView.h; sourceTree = "<group>"; };
@@ -1215,6 +1215,17 @@
 			path = OpenOrCloseCard;
 			sourceTree = "<group>";
 		};
+		9325FB032289396E009390AC /* VipPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				9325FB042289396E009390AC /* QDReadyToCreateOrderVC.h */,
+				9325FB052289396E009390AC /* QDVipPurchaseVC.h */,
+				9325FB062289396E009390AC /* QDVipPurchaseVC.m */,
+				9325FB072289396E009390AC /* QDReadyToCreateOrderVC.m */,
+			);
+			path = VipPurchase;
+			sourceTree = "<group>";
+		};
 		93399CB02267124000FB9F0E = {
 			isa = PBXGroup;
 			children = (
@@ -1448,7 +1459,7 @@
 		93399CFF22671FA100FB9F0E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				93E981B62271532100DDEB80 /* VipPurchase */,
+				9325FB032289396E009390AC /* VipPurchase */,
 				93E98081227147C700DDEB80 /* Settings */,
 				93E97FC32271442600DDEB80 /* LoginAndRegister */,
 				93399DA8226822B100FB9F0E /* QDBridgeVC */,
@@ -2443,18 +2454,6 @@
 			path = ../../../TravelPoints/TravelPoints/Utils/ZLCollectionView;
 			sourceTree = "<group>";
 		};
-		93E981B62271532100DDEB80 /* VipPurchase */ = {
-			isa = PBXGroup;
-			children = (
-				93E981B82271532100DDEB80 /* QDVipPurchaseVC.h */,
-				93E981B92271532100DDEB80 /* QDVipPurchaseVC.m */,
-				93E981B72271532100DDEB80 /* QDReadyToCreateOrderVC.h */,
-				93E981BA2271532100DDEB80 /* QDReadyToCreateOrderVC.m */,
-			);
-			name = VipPurchase;
-			path = ../../../TravelPoints/TravelPoints/ViewControllers/VipPurchase;
-			sourceTree = "<group>";
-		};
 		93E981BD2271534000DDEB80 /* VipPurchase */ = {
 			isa = PBXGroup;
 			children = (
@@ -2893,7 +2892,6 @@
 				93399DEB226823AF00FB9F0E /* NSData+ImageContentType.m in Sources */,
 				93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */,
 				93E9812D22714F4900DDEB80 /* MANaviPolyline.m in Sources */,
-				93E981BC2271532100DDEB80 /* QDReadyToCreateOrderVC.m in Sources */,
 				93E980642271472F00DDEB80 /* QDHotelFacilityDTO.m in Sources */,
 				02174A9F22890396002BB679 /* UIView+LDCategory.m in Sources */,
 				93E981EE2271542F00DDEB80 /* TFDropDownMenuView.m in Sources */,
@@ -3079,6 +3077,7 @@
 				93E980372271450000DDEB80 /* UIColor+CustomFunctions.m in Sources */,
 				93399E1C2268487300FB9F0E /* UIView+TABLayoutSubviews.m in Sources */,
 				93E98025227144B100DDEB80 /* QDResetLoginPwdView.m in Sources */,
+				9325FB082289396E009390AC /* QDVipPurchaseVC.m in Sources */,
 				93399D1422671FEA00FB9F0E /* QDMineViewController.m in Sources */,
 				93E981A22271524B00DDEB80 /* QDHomeTopCancelView.m in Sources */,
 				93399D8422681AE700FB9F0E /* SPButton.m in Sources */,
@@ -3114,7 +3113,6 @@
 				93E9810E22714E9300DDEB80 /* QYBaseView.m in Sources */,
 				93E980452271458300DDEB80 /* QDGlobalFunc.m in Sources */,
 				93E98225227154B000DDEB80 /* RootCollectionCell.m in Sources */,
-				93E981BB2271532100DDEB80 /* QDVipPurchaseVC.m in Sources */,
 				93399D532268191E00FB9F0E /* QDMineHeaderWithdrawView.m in Sources */,
 				93E980DB22714DC500DDEB80 /* UIImage+Image.m in Sources */,
 				93E981E3227153B800DDEB80 /* QDDZYViewController.m in Sources */,
@@ -3125,6 +3123,7 @@
 				93E981812271504700DDEB80 /* QDHotelTableFooterView.m in Sources */,
 				93E9811822714EFE00DDEB80 /* SFDualWayIndicateView.m in Sources */,
 				02A852F122853C8F00B5D810 /* QDLoginViewController.m in Sources */,
+				9325FB092289396E009390AC /* QDReadyToCreateOrderVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3338,7 +3337,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quantdo.uichange;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
