@@ -282,7 +282,7 @@
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_videoList.count) {
-        RankFirstVideoModel *model = _videoList[indexPath.row];
+        RankFirstVideoModel *model = _videoList[indexPath.section];
         switch ([model.sourceType integerValue]) {
             case 5://酒店
             {

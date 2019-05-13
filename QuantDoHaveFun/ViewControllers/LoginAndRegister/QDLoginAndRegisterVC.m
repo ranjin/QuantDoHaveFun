@@ -281,11 +281,11 @@
                 [self findMyUserCreditWithUrlStr:api_GetUserDetail];
             }
         }else{
-            self.loginBtn.enabled = YES;
+            _loginView.gotologinBtn.enabled = YES;
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
-        self.loginBtn.enabled = YES;
+        _loginView.gotologinBtn.enabled = YES;
         [WXProgressHUD hideHUD];
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
@@ -328,7 +328,7 @@
 - (void)findMyUserCreditWithUrlStr:(NSString *)urlStr{
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:urlStr params:nil successBlock:^(QDResponseObject *responseObject) {
         QDLog(@"responseObject = %@", responseObject);
-        self.loginBtn.enabled = YES;
+        _loginView.gotologinBtn.enabled = YES;
         if (responseObject.code == 0) {
             if (responseObject.result != nil) {
                 [WXProgressHUD hideHUD];
@@ -348,7 +348,7 @@
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
-        self.loginBtn.enabled = YES;
+        _loginView.gotologinBtn.enabled = YES;
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }
