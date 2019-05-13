@@ -76,6 +76,7 @@
 }
 
 - (void)loadVideoDataWithArr:(RankFirstVideoModel *)model{
+    QDLog(@"model.videoTitle = %@", model.videoTitle);
     self.titleLab.text = model.videoTitle;
     [self.thePic sd_setImageWithURL:[NSURL URLWithString:model.homeImageUrl] placeholderImage:[UIImage imageNamed:@"home_placeHolder"] options:SDWebImageLowPriority];
 }
