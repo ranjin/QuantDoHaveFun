@@ -58,6 +58,7 @@ static NSString * const QD_UserDefaults_ColorTheme = @"QD_UserDefaults_ColorThem
 {
     if (key) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
