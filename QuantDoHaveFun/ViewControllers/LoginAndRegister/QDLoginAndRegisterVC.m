@@ -266,6 +266,7 @@
 
 - (void)login{
     [WXProgressHUD showHUD];
+    QDLog(@"开始登录 cookie = %@",[QDUserDefaults getCookies]);
     [[QDServiceClient shareClient] loginWithUserName:_loginView.phoneTF.text password:_loginView.userNameTF.text userType:@"member" successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
             [WXProgressHUD hideHUD];
@@ -280,9 +281,11 @@
                 [self findMyUserCreditWithUrlStr:api_GetUserDetail];
             }
         }else{
+            self.loginBtn.enabled = YES;
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
+        self.loginBtn.enabled = YES;
         [WXProgressHUD hideHUD];
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
@@ -290,6 +293,7 @@
 
 #pragma mark - 用户登录
 - (void)userLogin:(UIButton *)sender{
+    sender.enabled = NO;
     //先验证手机是否注册
     NSDictionary * dic = @{@"legalPhone":_loginView.phoneTF.text};
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_VerificationIsRegister params:dic successBlock:^(QDResponseObject *responseObject) {
@@ -297,9 +301,11 @@
 //            [self checkLoginNumWithPhone:_loginView.phoneTF.text];
             [self login];
         }else{
+            sender.enabled = YES;
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
+        sender.enabled = YES;
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }
@@ -322,6 +328,7 @@
 - (void)findMyUserCreditWithUrlStr:(NSString *)urlStr{
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:urlStr params:nil successBlock:^(QDResponseObject *responseObject) {
         QDLog(@"responseObject = %@", responseObject);
+        self.loginBtn.enabled = YES;
         if (responseObject.code == 0) {
             if (responseObject.result != nil) {
                 [WXProgressHUD hideHUD];
@@ -341,6 +348,7 @@
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
+        self.loginBtn.enabled = YES;
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
 }

@@ -140,6 +140,7 @@ typedef void(^PrivateRequestFailure)(NSURLSessionDataTask *task, NSError *error)
         }else{
             NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
             NSString *cookie = response.allHeaderFields[@"Set-Cookie"];
+            QDLog(@"登录返回结果Cookie = %@",cookie);
             if (cookie) {
                 [QDUserDefaults setCookies:cookie];
             }
