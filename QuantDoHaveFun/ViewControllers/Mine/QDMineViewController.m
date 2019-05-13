@@ -49,9 +49,12 @@ typedef NS_ENUM(NSInteger, PhotoType)
     QDLogonWithNoFinancialAccountView *_noFinancialView;
     QDMineHeaderFinancialAccountView *_haveFinancialView;
     NSArray *_cellTitleArr;
+    NSArray *_cellTitleNoFinancialArr;
+    
     QDMineSectionHeaderView *_sectionHeaderView;
     UIView *_cellSeparateLineView;
     QDMemberDTO *_currentQDMemberTDO;
+    NSString *_isYePay; //是否开通资金账户
 }
 @property (nonatomic, assign) PhotoType type;
 
@@ -95,6 +98,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
 - (void)viewDidLoad {
     [super viewDidLoad];
     _cellTitleArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏",@"我的银行卡", @"房券", @"地址", @"安全中心", nil];
+    _cellTitleNoFinancialArr = [[NSArray alloc] initWithObjects:@"邀请好友",@"收藏", @"房券", @"地址", @"安全中心", nil];
     [self.navigationController.navigationBar setHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initTableView];
@@ -360,8 +364,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
 
 #pragma mark -- tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return _cellTitleArr.count;
+    if (_currentQDMemberTDO.isYepay == nil) {
+        return _cellTitleNoFinancialArr.count;
+    }else{
+        return _cellTitleArr.count;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -378,7 +385,11 @@ typedef NS_ENUM(NSInteger, PhotoType)
         cell = [[QDMineInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [self customSeparateLineToCell:cell];
-    cell.textLabel.text = _cellTitleArr[indexPath.row];
+    if (_currentQDMemberTDO.isYepay == nil) {
+        cell.textLabel.text = _cellTitleNoFinancialArr[indexPath.row];
+    }else{
+        cell.textLabel.text = _cellTitleArr[indexPath.row];
+    }
     cell.textLabel.textColor = APP_BLACKCOLOR;
     cell.textLabel.font = QDFont(16);
     return cell;
@@ -393,28 +404,51 @@ typedef NS_ENUM(NSInteger, PhotoType)
         case 1: //收藏
             [self gotoLoginWithAction:JS_COLLECTION];
             break;
-        case 2: //我的银行卡
-            [self gotoLoginWithAction:JS_BANKCARD];
+        case 2: //我的银行卡/房券
+        {
+            if (_currentQDMemberTDO.isYepay != nil) {
+                [self gotoLoginWithAction:JS_BANKCARD];
+            }else{
+                NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
+                if ([str isEqualToString:@"0"] || str == nil) { //未登录
+                    QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+                    loginVC.pushVCTag = @"0";
+                    [self presentViewController:loginVC animated:YES completion:nil];
+                }else{
+                    QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
+                    [self.navigationController pushViewController:houseVC animated:YES];
+                }
+            }
+        }
             break;
-        case 3: //房券
+        case 3: //房券/地址
                 {
-                    NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
-                    if ([str isEqualToString:@"0"] || str == nil) { //未登录
-                        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-                        loginVC.pushVCTag = @"0";
-                        [self presentViewController:loginVC animated:YES completion:nil];
+                    if (_currentQDMemberTDO.isYepay != nil) {
+                        NSString *str = [QDUserDefaults getObjectForKey:@"loginType"];
+                        if ([str isEqualToString:@"0"] || str == nil) { //未登录
+                            QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+                            loginVC.pushVCTag = @"0";
+                            [self presentViewController:loginVC animated:YES completion:nil];
+                        }else{
+                            QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
+                            [self.navigationController pushViewController:houseVC animated:YES];
+                        }
                     }else{
-                        QDHouseCouponVC *houseVC = [[QDHouseCouponVC alloc] init];
-                        [self.navigationController pushViewController:houseVC animated:YES];
+                        [self gotoLoginWithAction:JS_ADDRESS];
                     }
                 }
-//            [self gotoLoginWithAction:JS_MYHOURSE];
             break;
-        case 4: //地址
-            [self gotoLoginWithAction:JS_ADDRESS];
+        case 4: //地址/安全中心
+            if (_currentQDMemberTDO.isYepay != nil) {
+                [self gotoLoginWithAction:JS_ADDRESS];
+            }else{
+                [self gotoLoginWithAction:JS_SECURITYCENTER];
+            }
             break;
-        case 5: //安全中心
-            [self gotoLoginWithAction:JS_SECURITYCENTER];
+        case 5: //安全中心/无
+            if (_currentQDMemberTDO.isYepay != nil) {
+                [self gotoLoginWithAction:JS_SECURITYCENTER];
+            }
             break;
         default:
             break;
