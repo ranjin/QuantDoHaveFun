@@ -608,7 +608,6 @@
 //    [alert show];
 //}
 
-
 +(void)archiveObject:(id)object withFileName:(NSString *)fileName{
     NSString *filePath = [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@"/Documents/%@",fileName]];
     BOOL sucess = [NSKeyedArchiver archiveRootObject:object toFile:filePath];
