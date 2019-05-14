@@ -201,12 +201,18 @@
         QDLog(@"getShare");
         [_baseView addSubview:self.shareView];
         _weiboTitle = [data objectForKey:@"title"];
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"imgeUrl"]]];
-        _weiboImg = [UIImage imageWithData:imgData];
+        NSString *urlStr = [data objectForKey:@"imgeUrl"];
+        QDLog(@"urlStr = %@", urlStr);
+        if(LD_iSNullString(urlStr)){
+            _weiboImg = [UIImage imageNamed:@"logo120"];
+        }else{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+            _weiboImg = [UIImage imageWithData:imgData];
+        }
         _weiboDownUrl = [data objectForKey:@"url"];
         _popups = [SnailQuickMaskPopups popupsWithMaskStyle:MaskStyleBlackTranslucent aView:_shareView];
         _popups.presentationStyle = PresentationStyleBottom;
-        _popups.delegate = self;
+//        _popups.delegate = self;
         [_popups presentInView:nil animated:YES completion:NULL];
     }];
     
