@@ -106,7 +106,7 @@
         for (NSDictionary *dic in array) {
             QDCreditOrder *order = [[QDCreditOrder alloc]init];
             [order setValuesForKeysWithDictionary:dic];
-            [self.orderArray insertObject:order atIndex:0];
+            [self.orderArray addObject:order];
         }
         self.pageNum = pageNum;
         [self.tableView reloadData];
@@ -130,7 +130,7 @@
         for (NSDictionary *dic in array) {
             QDCreditOrder *order = [[QDCreditOrder alloc]init];
             [order setValuesForKeysWithDictionary:dic];
-            [self.orderArray insertObject:order atIndex:0];
+            [self.orderArray addObject:order];
         }
 //        self.pageNum = pageNum;
         [self.tableView reloadData];

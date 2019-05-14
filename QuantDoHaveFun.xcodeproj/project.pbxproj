@@ -1229,15 +1229,15 @@
 		9325FB60228A51D4009390AC /* ZLCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				9325FB61228A51D4009390AC /* QDVipPurchaseFlowLayout.m */,
 				9325FB62228A51D4009390AC /* HYBCardCollectionViewCell.h */,
-				9325FB63228A51D4009390AC /* ZLCollectionView.h */,
-				9325FB64228A51D4009390AC /* ZLFlowLayout.h */,
-				9325FB65228A51D4009390AC /* QDVipPurchaseFlowLayout.h */,
-				9325FB66228A51D4009390AC /* ZLFlowLayoutConstants.h */,
-				9325FB67228A51D4009390AC /* ZLFlowLayout.m */,
-				9325FB68228A51D4009390AC /* ZLCollectionView.m */,
 				9325FB69228A51D4009390AC /* HYBCardCollectionViewCell.m */,
+				9325FB65228A51D4009390AC /* QDVipPurchaseFlowLayout.h */,
+				9325FB61228A51D4009390AC /* QDVipPurchaseFlowLayout.m */,
+				9325FB63228A51D4009390AC /* ZLCollectionView.h */,
+				9325FB68228A51D4009390AC /* ZLCollectionView.m */,
+				9325FB64228A51D4009390AC /* ZLFlowLayout.h */,
+				9325FB67228A51D4009390AC /* ZLFlowLayout.m */,
+				9325FB66228A51D4009390AC /* ZLFlowLayoutConstants.h */,
 			);
 			path = ZLCollectionView;
 			sourceTree = "<group>";

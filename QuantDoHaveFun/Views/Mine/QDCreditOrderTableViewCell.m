@@ -114,9 +114,9 @@
     _tradingOrder = tradingOrder;
     NSString *amountString;
     if (_tradingOrder.tradingDirection == 0) {
-        amountString = [NSString stringWithFormat:@"+%.1f",_tradingOrder.tradingAmount];
+        amountString = [NSString stringWithFormat:@"+%.2f",_tradingOrder.tradingAmount];
     } else {
-        amountString = [NSString stringWithFormat:@"-%.1f",_tradingOrder.tradingAmount];
+        amountString = [NSString stringWithFormat:@"-%.2f",_tradingOrder.tradingAmount];
     }
     self.amountLabel.text = amountString;
     
