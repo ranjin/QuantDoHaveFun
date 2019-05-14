@@ -15,8 +15,6 @@
 		02174AA422890396002BB679 /* UIView+frameAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9822890396002BB679 /* UIView+frameAddition.m */; };
 		02174AA522890396002BB679 /* UIImage+LDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9A22890396002BB679 /* UIImage+LDCategory.m */; };
 		02174AA622890396002BB679 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9B22890396002BB679 /* UIButton+EnlargeTouchArea.m */; };
-		02174AA722890396002BB679 /* LDVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9C22890396002BB679 /* LDVPNManager.m */; };
-		02174AA822890396002BB679 /* LD_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9D22890396002BB679 /* LD_Extension.m */; };
 		02174AA922890396002BB679 /* LDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9E22890396002BB679 /* LDLocationManager.m */; };
 		02174AEA228A54AA002BB679 /* QDRoutePlanHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174AE9228A54A9002BB679 /* QDRoutePlanHeaderView.m */; };
 		025FEDD62281832A00CDAFC3 /* QDFiltrateDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDD52281832A00CDAFC3 /* QDFiltrateDropdownMenu.m */; };
@@ -381,12 +379,10 @@
 		02174A8822890396002BB679 /* UIView+frameAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAddition.h"; sourceTree = "<group>"; };
 		02174A8A22890396002BB679 /* NSObject+LDCopying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LDCopying.h"; sourceTree = "<group>"; };
 		02174A8B22890396002BB679 /* NSObject+LDCopying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LDCopying.m"; sourceTree = "<group>"; };
-		02174A8C22890396002BB679 /* LDVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDVPNManager.h; sourceTree = "<group>"; };
 		02174A8D22890396002BB679 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		02174A8E22890396002BB679 /* LD_NSStringEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_NSStringEditor.m; sourceTree = "<group>"; };
 		02174A8F22890396002BB679 /* UIImage+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LDCategory.h"; sourceTree = "<group>"; };
 		02174A9022890396002BB679 /* LDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLocationManager.h; sourceTree = "<group>"; };
-		02174A9122890396002BB679 /* LD_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Extension.h; sourceTree = "<group>"; };
 		02174A9222890396002BB679 /* LD_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_Macros.h; sourceTree = "<group>"; };
 		02174A9322890396002BB679 /* UIView+LDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LDCategory.h"; sourceTree = "<group>"; };
 		02174A9422890396002BB679 /* NSObject+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LDCategory.m"; sourceTree = "<group>"; };
@@ -396,8 +392,6 @@
 		02174A9922890396002BB679 /* LD_NSStringEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LD_NSStringEditor.h; sourceTree = "<group>"; };
 		02174A9A22890396002BB679 /* UIImage+LDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LDCategory.m"; sourceTree = "<group>"; };
 		02174A9B22890396002BB679 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
-		02174A9C22890396002BB679 /* LDVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDVPNManager.m; sourceTree = "<group>"; };
-		02174A9D22890396002BB679 /* LD_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_Extension.m; sourceTree = "<group>"; };
 		02174A9E22890396002BB679 /* LDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLocationManager.m; sourceTree = "<group>"; };
 		02174AE8228A54A9002BB679 /* QDRoutePlanHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRoutePlanHeaderView.h; sourceTree = "<group>"; };
 		02174AE9228A54A9002BB679 /* QDRoutePlanHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRoutePlanHeaderView.m; sourceTree = "<group>"; };
@@ -1127,15 +1121,11 @@
 		02174A8522890396002BB679 /* LDExtension */ = {
 			isa = PBXGroup;
 			children = (
-				02174A9122890396002BB679 /* LD_Extension.h */,
-				02174A9D22890396002BB679 /* LD_Extension.m */,
 				02174A9222890396002BB679 /* LD_Macros.h */,
 				02174A9922890396002BB679 /* LD_NSStringEditor.h */,
 				02174A8E22890396002BB679 /* LD_NSStringEditor.m */,
 				02174A9022890396002BB679 /* LDLocationManager.h */,
 				02174A9E22890396002BB679 /* LDLocationManager.m */,
-				02174A8C22890396002BB679 /* LDVPNManager.h */,
-				02174A9C22890396002BB679 /* LDVPNManager.m */,
 				02174A9522890396002BB679 /* NSObject+coding */,
 				02174A8622890396002BB679 /* NSObject+LDCategory.h */,
 				02174A9422890396002BB679 /* NSObject+LDCategory.m */,
@@ -2808,7 +2798,6 @@
 				93399E102268487300FB9F0E /* UIView+TABControlAnimation.m in Sources */,
 				93399DE8226823AF00FB9F0E /* SDWebImagePrefetcher.m in Sources */,
 				93E982472271557B00DDEB80 /* PGCustomBannerView.m in Sources */,
-				02174AA722890396002BB679 /* LDVPNManager.m in Sources */,
 				93E981F02271542F00DDEB80 /* TFDropDownMenuCollectionViewCell.m in Sources */,
 				93E980E322714E3700DDEB80 /* SnailQuickMaskPopups.m in Sources */,
 				93399DF0226823AF00FB9F0E /* UIView+WebCache.m in Sources */,
@@ -3001,7 +2990,6 @@
 				93399DA42268224400FB9F0E /* MQGradientProgressView.m in Sources */,
 				9325FB6B228A51D4009390AC /* ZLFlowLayout.m in Sources */,
 				93399DED226823AF00FB9F0E /* NSImage+WebCache.m in Sources */,
-				02174AA822890396002BB679 /* LD_Extension.m in Sources */,
 				93399E152268487300FB9F0E /* TABViewAnimated.m in Sources */,
 				93E9812E22714F4900DDEB80 /* MANaviAnnotation.m in Sources */,
 				93E9802D227144D900DDEB80 /* PooCodeView.m in Sources */,
