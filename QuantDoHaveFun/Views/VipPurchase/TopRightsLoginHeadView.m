@@ -59,13 +59,13 @@
         //赋值
         _protocolLab.attributedText = attribtStr;
         _protocolLab.textColor = APP_LIGHTBLUETEXTCOLOR;
-        _protocolLab.font = QDFont(12);
+        _protocolLab.font = QDFont(13);
         [_topBlueView addSubview:_protocolLab];
         
         _vipProgressLab = [[UILabel alloc] init];
         _vipProgressLab.text = @"升级还需75成长值";
         _vipProgressLab.textColor = APP_LIGHTBLUETEXTCOLOR;
-        _vipProgressLab.font = QDFont(12);
+        _vipProgressLab.font = QDFont(13);
         [_topBlueView addSubview:_vipProgressLab];
         
         _leftCircleImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_circleImg"]];
