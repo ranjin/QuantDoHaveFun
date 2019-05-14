@@ -18,6 +18,7 @@
 		02174AA722890396002BB679 /* LDVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9C22890396002BB679 /* LDVPNManager.m */; };
 		02174AA822890396002BB679 /* LD_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9D22890396002BB679 /* LD_Extension.m */; };
 		02174AA922890396002BB679 /* LDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174A9E22890396002BB679 /* LDLocationManager.m */; };
+		02174AEA228A54AA002BB679 /* QDRoutePlanHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02174AE9228A54A9002BB679 /* QDRoutePlanHeaderView.m */; };
 		025FEDD62281832A00CDAFC3 /* QDFiltrateDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDD52281832A00CDAFC3 /* QDFiltrateDropdownMenu.m */; };
 		025FEDD92282685200CDAFC3 /* QDDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDD82282685100CDAFC3 /* QDDropDownItem.m */; };
 		025FEDDC228268B600CDAFC3 /* QDDropDownItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025FEDDB228268B600CDAFC3 /* QDDropDownItemCell.m */; };
@@ -329,7 +330,6 @@
 		93E98234227154E100DDEB80 /* QDPopMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98232227154E000DDEB80 /* QDPopMenuCell.m */; };
 		93E98235227154E100DDEB80 /* QDPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E98233227154E000DDEB80 /* QDPopMenu.m */; };
 		93E982392271551200DDEB80 /* RadialCircleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982382271551100DDEB80 /* RadialCircleAnnotationView.m */; };
-		93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */; };
 		93E982452271557B00DDEB80 /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */; };
 		93E982462271557B00DDEB80 /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982402271557B00DDEB80 /* NewPagedFlowView.m */; };
 		93E982472271557B00DDEB80 /* PGCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E982412271557B00DDEB80 /* PGCustomBannerView.m */; };
@@ -399,6 +399,8 @@
 		02174A9C22890396002BB679 /* LDVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDVPNManager.m; sourceTree = "<group>"; };
 		02174A9D22890396002BB679 /* LD_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LD_Extension.m; sourceTree = "<group>"; };
 		02174A9E22890396002BB679 /* LDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLocationManager.m; sourceTree = "<group>"; };
+		02174AE8228A54A9002BB679 /* QDRoutePlanHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRoutePlanHeaderView.h; sourceTree = "<group>"; };
+		02174AE9228A54A9002BB679 /* QDRoutePlanHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRoutePlanHeaderView.m; sourceTree = "<group>"; };
 		025FEDC7228059EE00CDAFC3 /* QDCreditOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCreditOrder.h; sourceTree = "<group>"; };
 		025FEDC8228059EE00CDAFC3 /* QDCreditOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCreditOrder.m; sourceTree = "<group>"; };
 		025FEDCA22811AC900CDAFC3 /* QDCreditOrderHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QDCreditOrderHistoryVC.h; path = QuantDoHaveFun/ViewControllers/Mine/QDCreditOrderHistoryVC.h; sourceTree = SOURCE_ROOT; };
@@ -1036,8 +1038,6 @@
 		93E98233227154E000DDEB80 /* QDPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPopMenu.m; sourceTree = "<group>"; };
 		93E982372271551100DDEB80 /* RadialCircleAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialCircleAnnotationView.h; sourceTree = "<group>"; };
 		93E982382271551100DDEB80 /* RadialCircleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialCircleAnnotationView.m; sourceTree = "<group>"; };
-		93E9823B2271554900DDEB80 /* QDRoutePlanHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRoutePlanHeaderView.h; sourceTree = "<group>"; };
-		93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRoutePlanHeaderView.m; sourceTree = "<group>"; };
 		93E9823F2271557B00DDEB80 /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
 		93E982402271557B00DDEB80 /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
 		93E982412271557B00DDEB80 /* PGCustomBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGCustomBannerView.m; sourceTree = "<group>"; };
@@ -1168,6 +1168,15 @@
 				02174A9722890396002BB679 /* NSObject+coding.m */,
 			);
 			path = "NSObject+coding";
+			sourceTree = "<group>";
+		};
+		02174AE7228A54A9002BB679 /* RoutePlanHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				02174AE8228A54A9002BB679 /* QDRoutePlanHeaderView.h */,
+				02174AE9228A54A9002BB679 /* QDRoutePlanHeaderView.m */,
+			);
+			path = RoutePlanHeaderView;
 			sourceTree = "<group>";
 		};
 		3B9FDF497B23D21D81678EBF /* Pods */ = {
@@ -1326,8 +1335,8 @@
 		93399CFA22671FA100FB9F0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02174AE7228A54A9002BB679 /* RoutePlanHeaderView */,
 				9325FAF6228509BD009390AC /* OpenOrCloseCard */,
-				93E9823A2271554900DDEB80 /* RotePlanHeaderView */,
 				93E982362271551100DDEB80 /* CustomMapView */,
 				93E981BD2271534000DDEB80 /* VipPurchase */,
 				93E9816D2271504700DDEB80 /* Hotel */,
@@ -1478,7 +1487,6 @@
 				9325FB032289396E009390AC /* VipPurchase */,
 				93E98081227147C700DDEB80 /* Settings */,
 				93E97FC32271442600DDEB80 /* LoginAndRegister */,
-				93399DA8226822B100FB9F0E /* QDBridgeVC */,
 				93399D0022671FA100FB9F0E /* Home */,
 				93399D0122671FA100FB9F0E /* Playing */,
 				93399D0222671FA100FB9F0E /* Mine */,
@@ -1801,13 +1809,6 @@
 				93399DA32268224400FB9F0E /* MQGradientProgressView.h */,
 			);
 			path = GradientProgress;
-			sourceTree = "<group>";
-		};
-		93399DA8226822B100FB9F0E /* QDBridgeVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = QDBridgeVC;
 			sourceTree = "<group>";
 		};
 		93399DAF2268231200FB9F0E /* QDRefreshView */ = {
@@ -2546,16 +2547,6 @@
 			path = CustomMapView;
 			sourceTree = "<group>";
 		};
-		93E9823A2271554900DDEB80 /* RotePlanHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				93E9823B2271554900DDEB80 /* QDRoutePlanHeaderView.h */,
-				93E9823C2271554900DDEB80 /* QDRoutePlanHeaderView.m */,
-			);
-			name = RotePlanHeaderView;
-			path = ../../../TravelPoints/TravelPoints/Views/RotePlanHeaderView;
-			sourceTree = "<group>";
-		};
 		93E9823E2271557B00DDEB80 /* NewPagedFlowView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2884,6 +2875,7 @@
 				93E980652271472F00DDEB80 /* QDRoomTypeDTO.m in Sources */,
 				93E9812A22714F4900DDEB80 /* LineDashPolyline.m in Sources */,
 				93399D512268191E00FB9F0E /* QDMineInfoTableViewCell.m in Sources */,
+				02174AEA228A54AA002BB679 /* QDRoutePlanHeaderView.m in Sources */,
 				93399DEB226823AF00FB9F0E /* NSData+ImageContentType.m in Sources */,
 				93E981C42271534100DDEB80 /* QDVipPurchaseTableHeader.m in Sources */,
 				93E9812D22714F4900DDEB80 /* MANaviPolyline.m in Sources */,
@@ -3052,7 +3044,6 @@
 				93399D9E2268222500FB9F0E /* STUI.m in Sources */,
 				93E980F522714E6700DDEB80 /* OpenShare+Alipay.m in Sources */,
 				93E982012271546C00DDEB80 /* QDMallTableCell.m in Sources */,
-				93E9823D2271554900DDEB80 /* QDRoutePlanHeaderView.m in Sources */,
 				93E9812C22714F4900DDEB80 /* QDNavigationService.m in Sources */,
 				93E9827A227195DE00DDEB80 /* BulgeCircularTabBarVC.m in Sources */,
 				93E980012271446B00DDEB80 /* YYTextLayout.m in Sources */,
