@@ -220,7 +220,7 @@
                 [_vipPurchaseView layoutSubviews];
             }else{
                 [self showPurchaseViewWithBool:YES];
-                [WXProgressHUD showErrorWithTittle:@"暂无VIP售卡信息"];
+                [WXProgressHUD showInfoWithTittle:@"暂无VIP售卡信息"];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
@@ -282,11 +282,11 @@
             _currentModel = _cardArr[0];
         }
         if (![_vipPurchaseView.priceTF isHidden] && (_vipPurchaseView.priceTF.text == nil || [_vipPurchaseView.priceTF.text isEqualToString:@""])) {
-            [WXProgressHUD showErrorWithTittle:@"请输入充值金额"];
+            [WXProgressHUD showInfoWithTittle:@"请输入充值金额"];
             return;
         }
         if (_cardArr.count == 0) {
-            [WXProgressHUD showErrorWithTittle:@"充值卡信息获取失败"];
+            [WXProgressHUD showInfoWithTittle:@"充值卡信息获取失败"];
             return;
         }
         //针对输入金额

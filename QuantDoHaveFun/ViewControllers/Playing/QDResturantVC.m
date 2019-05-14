@@ -15,8 +15,6 @@
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
 #import "QDBridgeViewController.h"
-#import "QDKeyWordsSearchVC.h"
-#import "QDSearchViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "QDOrderField.h"
 #import "TABAnimated.h"

@@ -75,7 +75,7 @@ static const NSInteger RoutePlanningPaddingEdge                    = 20;
 
 - (void)makeCall:(UIButton *)sender{
     if (_infoModel.telphone == nil || [_infoModel.telphone isEqualToString:@""]) {
-        [WXProgressHUD showErrorWithTittle:@"未找到酒店电话"];
+        [WXProgressHUD showInfoWithTittle:@"未找到酒店电话"];
     }else{
         NSString * telStr = [NSString stringWithFormat:@"tel:%@",@"18140547641"];
         UIWebView * webV = [[UIWebView alloc]init];

@@ -13,8 +13,6 @@
 #import "QDRefreshFooter.h"
 #import "QDMallModel.h"
 #import "QDBridgeViewController.h"
-#import "QDKeyWordsSearchVC.h"
-#import "QDSearchViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "QDMallTableSectionHeaderView.h"
 #import "QDPopMenu.h"

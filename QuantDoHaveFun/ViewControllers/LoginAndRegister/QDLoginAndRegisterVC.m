@@ -378,27 +378,11 @@
         return;
     }
     if (!self.isSelect) {
-        [WXProgressHUD showErrorWithTittle:@"请先阅读完注册协议并勾选"];
+        [WXProgressHUD showInfoWithTittle:@"请先阅读完注册协议并勾选"];
         return;
     }
     //先验证是否注册
     [self checkIsRegister];
-//    if ([_registerView.nextBtn isEnabled]) {
-//        _userPhoneNum = _registerView.phoneTF.text;
-//        _userName = _registerView.userNameTF.text;
-//        _isResetPwdNextStep = NO;
-//        QDLog(@"%@", self.presentedViewController.view.class);
-//        [_identifyView setHidden:NO];
-//        [_loginView setHidden:YES];
-//        [_registerView setHidden:YES];
-//        [_yyLabel setHidden:YES];
-//        //当前为验证身份inputView
-//        _currentInputView = _identifyInputView;
-//        [_identifyInputView becomeFirstResponder];
-//        [_identifyInputView setHidden:NO];
-//    }else{
-//        [WXProgressHUD showErrorWithTittle:@"请先阅读完注册协议并勾选"];
-//    }
 }
 
 /**
@@ -425,7 +409,7 @@
                 [_identifyInputView becomeFirstResponder];
                 [_identifyInputView setHidden:NO];
             }else{
-                [WXProgressHUD showErrorWithTittle:@"请先阅读完注册协议并勾选"];
+                [WXProgressHUD showInfoWithTittle:@"请先阅读完注册协议并勾选"];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];

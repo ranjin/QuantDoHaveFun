@@ -15,8 +15,6 @@
 #import "QDRefreshHeader.h"
 #import "QDRefreshFooter.h"
 #import "QDBridgeViewController.h"
-#import "QDKeyWordsSearchVC.h"
-#import "QDSearchViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "QDOrderField.h"
 #import "TABAnimated.h"
@@ -210,7 +208,6 @@
     _tableView.emptyDataSetSource = self;
 //    [self.view addSubview:_tableView];
     _customTourHeaderView = [[QDCustomTourSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH*0.12)];
-//    [_customTourHeaderView.searchBtn addTarget:self action:@selector(customerTourSearchAction:) forControlEvents:UIControlEventTouchUpInside];
     _customTourHeaderView.inputTF.returnKeyType = UIReturnKeySearch;    //变为搜索按钮
     _customTourHeaderView.inputTF.delegate = self;
     _customTourHeaderView.backgroundColor = APP_WHITECOLOR;
@@ -404,11 +401,5 @@
     self.loading = YES;
     [self requestDZYList];
 
-}
-
-- (void)customerTourSearchAction:(UIButton *)sender{
-    QDSearchViewController *searchVC = [[QDSearchViewController alloc] init];
-    searchVC.playShellType = QDCustomTour;
-    [self.navigationController pushViewController:searchVC animated:YES];
 }
 @end
