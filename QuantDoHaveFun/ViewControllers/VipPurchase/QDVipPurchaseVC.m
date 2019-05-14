@@ -141,9 +141,9 @@
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
-        
     }];
 }
+
 #pragma mark - 请求用户信息
 - (void)requestUserStatus{
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_GetUserDetail params:nil successBlock:^(QDResponseObject *responseObject) {

@@ -67,10 +67,13 @@
 
 #pragma mark - 请求餐厅列表信息
 - (void)requestResturantList{
-    if (_restaurantList.count) {
-        [_restaurantList removeAllObjects];
-        [_restaurantImgArr removeAllObjects];
+    if (_totalPage != 0) {
+        if (_pageNum > _totalPage) {
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
     }
+    
     NSDictionary * dic1 = @{@"province":@"",
                             @"district":@"",
                             @"restaurantName":_travelName,
@@ -78,17 +81,39 @@
                             @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_resturant params:dic1 successBlock:^(QDResponseObject *responseObject) {
+        [self endRefreshing];
         if (responseObject.code == 0) {
             NSDictionary *dic = responseObject.result;
             NSArray *dzyArr = [dic objectForKey:@"result"];
+            _totalPage = [[dic objectForKey:@"totalPage"] intValue];
             if (dzyArr.count) {
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                NSMutableArray *imgarr = [[NSMutableArray alloc] init];
+                
                 for (NSDictionary *dic in dzyArr) {
                     ResturantModel *infoModel = [ResturantModel yy_modelWithDictionary:dic];
-                    [_restaurantList addObject:infoModel];
+                    [arr addObject:infoModel];
                     NSDictionary *dic = [infoModel.restaurantImageList firstObject];
-                    [_restaurantImgArr addObject:[dic objectForKey:@"imageFullUrl"]];
+                    NSString *urlStr = [dic objectForKey:@"imageFullUrl"];
+                    QDLog(@"urlStr = %@", urlStr);
+                    [imgarr addObject:urlStr];
                 }
-                [_tableView reloadData];
+                if (arr.count) {
+                    if (arr.count < _pageSize) {   //不满10个
+                        [_restaurantList addObjectsFromArray:arr];
+                        [_restaurantImgArr addObjectsFromArray:imgarr];
+                        [_tableView reloadData];
+                        if ([_tableView.mj_footer isRefreshing]) {
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        }
+                    }else{
+                        [_restaurantList addObjectsFromArray:arr];
+                        [_restaurantImgArr addObjectsFromArray:imgarr];
+                        _tableView.mj_footer.state = MJRefreshStateIdle;
+                        [_tableView reloadData];
+                    }
+                }
             }else{
                 _emptyType = QDNODataError;
                 [_tableView reloadData];
@@ -192,12 +217,12 @@
     _tableView.emptyDataSetSource = self;
     [self.view addSubview: _tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        [self requestResturantList];
+        [self requestResturantHeadData];
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        [self endRefreshing];
-        [_tableView.mj_footer endRefreshingWithNoMoreData];
+        _pageNum++;
+        [self requestResturantList];
     }];
 }
 

@@ -1213,9 +1213,9 @@
 			isa = PBXGroup;
 			children = (
 				9325FB042289396E009390AC /* QDReadyToCreateOrderVC.h */,
+				9325FB072289396E009390AC /* QDReadyToCreateOrderVC.m */,
 				9325FB052289396E009390AC /* QDVipPurchaseVC.h */,
 				9325FB062289396E009390AC /* QDVipPurchaseVC.m */,
-				9325FB072289396E009390AC /* QDReadyToCreateOrderVC.m */,
 			);
 			path = VipPurchase;
 			sourceTree = "<group>";

@@ -214,8 +214,8 @@
     }];
     
     _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
-        [self endRefreshing];
-        [_tableView.mj_footer endRefreshingWithNoMoreData];
+        _pageNum++;
+        [self requestDZYList];
     }];
 }
 
