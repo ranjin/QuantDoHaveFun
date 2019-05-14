@@ -10,7 +10,7 @@
 #define WXApi_h
 // 高德地图
 const static NSString *APIKey = @"4d9a3eeccc55429b57663893c21a7813";    //生产环境
-//const static NSString *APIKey = @"1572e2947f38693cadbb912c8afc5891";    //UAT环境
+//const static NSString *APIKey = @"c80bb24d7dd06a8aff37e645f07c0ac8";    //UAT环境
 //const static NSString *APIKey = @"403cc9f385a5fa52382a5772a2249d6f";      //UI改版
 
 
@@ -20,9 +20,9 @@ const static NSString *APP_ID = @"1456067852";
 
 //const static NSString *APIKey = @"0b39f0a341315a7f3574e309d8d24082";
 
-//static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
+static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
 
-static NSString * const QD_Domain = @"https://app.wedotting.com";
+//static NSString * const QD_Domain = @"https://app.wedotting.com";
 
 //测试环境
 //static NSString * const QD_Domain = @"http://203.110.179.27:60409";
@@ -167,11 +167,11 @@ static NSString *const api_saveHotelCouponDetail = @"/lyjfapp/api/v1/hotelCoupon
  JAVAScriptBridgeWebView
  */
 
-//static NSString * const QD_JSURL                = @"https://appuat.wedotting.com/app";    //前端地址
-//static NSString * const QD_TESTJSURL            = @"https://appuat.wedotting.com/app/#";    //前端地址
+static NSString * const QD_JSURL                = @"https://appuat.wedotting.com/app";    //前端地址
+static NSString * const QD_TESTJSURL            = @"https://appuat.wedotting.com/app/#";    //前端地址
 ////
-static NSString * const QD_JSURL                = @"https://app.wedotting.com/app";    //前端地址
-static NSString * const QD_TESTJSURL            = @"https://app.wedotting.com/app/#";    //前端地址//static NSString * const QD_TESTJSURL            = @"https://192.168.40.10:3000/app/#";    //前端地址
+//static NSString * const QD_JSURL                = @"https://app.wedotting.com/app";    //前端地址
+//static NSString * const QD_TESTJSURL            = @"https://app.wedotting.com/app/#";    //前端地址//static NSString * const QD_TESTJSURL            = @"https://192.168.40.10:3000/app/#";    //前端地址
 
 //static NSString * const QD_JSURL                = @"http://203.110.179.27:60409/app";    //前端地址
 //static NSString * const QD_TESTJSURL            = @"http://203.110.179.27:60409/app/#";    //前端地址
