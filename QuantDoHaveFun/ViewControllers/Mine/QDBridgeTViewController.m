@@ -157,6 +157,18 @@
         _bridge = nil;
     }];
     
+    [_bridge registerHandler:@"getTel" handler:^(id data, WVJBResponseCallback responseCallback) {
+        QDLog(@"getTel");   //拨打电话
+        if (data == nil || [data isEqualToString:@""]) {
+            [WXProgressHUD showErrorWithTittle:@"未找到酒店电话"];
+        }else{
+            NSString * telStr = [NSString stringWithFormat:@"tel:%@",data];
+            UIWebView * webV = [[UIWebView alloc]init];
+            [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:telStr]]];
+            [_baseView addSubview:webV];
+        }
+    }];
+    
     //调用日历 多选
     [_bridge registerHandler:@"getRangeDate" handler:^(id data, WVJBResponseCallback responseCallback) {
         QDLog(@"getRangeDate");

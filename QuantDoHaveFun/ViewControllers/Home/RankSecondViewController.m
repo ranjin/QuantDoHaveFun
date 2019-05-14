@@ -98,6 +98,7 @@ static float kLeftTableViewWidth = 92.f;
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_RankedSorting params:dic successBlock:^(QDResponseObject *responseObject) {
         [_rightTableView tab_endAnimation];
         if (responseObject.code == 0) {
+            [self endRefreshing];
             NSArray *arr = [responseObject.result objectForKey:@"result"];
             if (arr.count) {
                 for (NSDictionary *dic in arr) {
@@ -108,6 +109,7 @@ static float kLeftTableViewWidth = 92.f;
             }
         }
     } failureBlock:^(NSError *error) {
+        [self endRefreshing];
         [_rightTableView tab_endAnimation];
     }];
 }
@@ -163,7 +165,7 @@ static float kLeftTableViewWidth = 92.f;
         [_rightTableView tab_startAnimation];
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-            [self endRefreshing];
+            [self findFirstDetailList:_destinationArr[_selectIndex]];
         }];
         
         _rightTableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
