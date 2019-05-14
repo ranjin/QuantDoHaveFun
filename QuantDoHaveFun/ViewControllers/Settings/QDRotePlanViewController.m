@@ -109,7 +109,7 @@ static const NSInteger RoutePlanningPaddingEdge                    = 20;
 
 - (void)loadBottomInfoWithModel:(QDHotelListInfoModel *)infoModel{
     _headerView.titleLab.text = infoModel.hotelName;
-    _headerView.info4.text = [NSString stringWithFormat:@"¥%@", infoModel.rmbprice];
+    _headerView.info4.text = [NSString stringWithFormat:@"¥%.2lf", [infoModel.rmbprice doubleValue]];
     _headerView.info1.text = [NSString stringWithFormat:@"%@", infoModel.price];
     _headerView.addressStr.text = infoModel.address;
 }

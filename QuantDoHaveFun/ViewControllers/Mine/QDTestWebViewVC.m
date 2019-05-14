@@ -226,14 +226,12 @@
 //页面开始加载时调用
 - (void) webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     QDLog(@"webViewDidStartLoad");
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [_progressView setProgress:0.2 animated:YES];
 }
 
 //页面加载完成时调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     QDLog(@"webViewDidFinishLoad");
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [_progressView setProgress:1.0 animated:YES];
     [_progressView setHidden:YES];
     //    _webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
