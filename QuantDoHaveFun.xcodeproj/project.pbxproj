@@ -347,125 +347,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9325FB89228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 33ECB210DD06B38B4501BEFF49568032;
-			remoteInfo = AFNetworking;
-		};
-		9325FB8B228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B7EB9D29A57034B51545DFFDAD704F4D;
-			remoteInfo = DZNEmptyDataSet;
-		};
-		9325FB8D228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD2A21B39C1D98083FE1C665320E3A1;
-			remoteInfo = FSCalendar;
-		};
-		9325FB8F228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B31CBAF8043860F3B6B2E56669C59C3C;
-			remoteInfo = HMSegmentedControl;
-		};
-		9325FB91228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 98491A942E0405EC30A5CDE47250370F;
-			remoteInfo = IQKeyboardManager;
-		};
-		9325FB93228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6860B7A86640281AF13322E782547BE6;
-			remoteInfo = Masonry;
-		};
-		9325FB95228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D44908DD12719596E82BD63101D544AC;
-			remoteInfo = MBProgressHUD;
-		};
-		9325FB97228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AA68C942D7829A95E3AD04CC600AC1C1;
-			remoteInfo = MJRefresh;
-		};
-		9325FB99228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1FC35999FF93EB9D6BAA148CCC4D18C3;
-			remoteInfo = "Pods-QuantDoHaveFun";
-		};
-		9325FB9B228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 90E6FFCA9CB255B6437ABD605B9C2F98;
-			remoteInfo = RTRootNavigationController;
-		};
-		9325FB9D228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5F299E00977CEEAF73237677A5785E76;
-			remoteInfo = Toast;
-		};
-		9325FB9F228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D6979948262CDA9FC8CEC9B2AA8005B4;
-			remoteInfo = TYAlertView;
-		};
-		9325FBA1228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F332F9FAF3F6DC2F139E25538DAF0C6;
-			remoteInfo = UICollectionViewLeftAlignedLayout;
-		};
-		9325FBA3228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E707CC928EFBEF77173435C8FE8AA843;
-			remoteInfo = WMPageController;
-		};
-		9325FBA5228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C30C2F525920C39C5F59258556F02D97;
-			remoteInfo = YYCache;
-		};
-		9325FBA7228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 07D18D796573D339EC54D93DC499EA68;
-			remoteInfo = YYModel;
-		};
-		9325FBA9228BE036009390AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DD11BFB74C4F62E6A90AC7C7A322A817;
-			remoteInfo = zhPopupController;
-		};
 		93399CD22267124500FB9F0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93399CB12267124000FB9F0E /* Project object */;
@@ -562,7 +443,7 @@
 		9325FB69228A51D4009390AC /* HYBCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBCardCollectionViewCell.m; sourceTree = "<group>"; };
 		9325FB6E228A5329009390AC /* QDHotelsInAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelsInAreaView.m; sourceTree = "<group>"; };
 		9325FB6F228A532A009390AC /* QDHotelsInAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelsInAreaView.h; sourceTree = "<group>"; };
-		9325FB71228BE036009390AC /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		9325FB71228BE036009390AC /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CBC2267124000FB9F0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93399CBD2267124000FB9F0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1332,30 +1213,6 @@
 			path = ZLCollectionView;
 			sourceTree = "<group>";
 		};
-		9325FB72228BE036009390AC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9325FB8A228BE036009390AC /* libAFNetworking.a */,
-				9325FB8C228BE036009390AC /* libDZNEmptyDataSet.a */,
-				9325FB8E228BE036009390AC /* libFSCalendar.a */,
-				9325FB90228BE036009390AC /* libHMSegmentedControl.a */,
-				9325FB92228BE036009390AC /* libIQKeyboardManager.a */,
-				9325FB94228BE036009390AC /* libMasonry.a */,
-				9325FB96228BE036009390AC /* libMBProgressHUD.a */,
-				9325FB98228BE036009390AC /* libMJRefresh.a */,
-				9325FB9A228BE036009390AC /* libPods-QuantDoHaveFun.a */,
-				9325FB9C228BE036009390AC /* libRTRootNavigationController.a */,
-				9325FB9E228BE036009390AC /* libToast.a */,
-				9325FBA0228BE036009390AC /* libTYAlertView.a */,
-				9325FBA2228BE036009390AC /* libUICollectionViewLeftAlignedLayout.a */,
-				9325FBA4228BE036009390AC /* libWMPageController.a */,
-				9325FBA6228BE036009390AC /* libYYCache.a */,
-				9325FBA8228BE036009390AC /* libYYModel.a */,
-				9325FBAA228BE036009390AC /* libzhPopupController.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		93399CB02267124000FB9F0E = {
 			isa = PBXGroup;
 			children = (
@@ -1368,6 +1225,7 @@
 				93399CBA2267124000FB9F0E /* Products */,
 				93399D252267319D00FB9F0E /* Frameworks */,
 				3B9FDF497B23D21D81678EBF /* Pods */,
+				9325FB71228BE036009390AC /* Pods.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1848,7 +1706,6 @@
 				93399D7022681A0900FB9F0E /* QDServiceErrorHandler.m */,
 				93399D7222681A0900FB9F0E /* upload */,
 				93E9826D227155ED00DDEB80 /* WXApi.h */,
-				9325FB71228BE036009390AC /* Pods.xcodeproj */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2777,12 +2634,6 @@
 			mainGroup = 93399CB02267124000FB9F0E;
 			productRefGroup = 93399CBA2267124000FB9F0E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9325FB72228BE036009390AC /* Products */;
-					ProjectRef = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				93399CB82267124000FB9F0E /* QuantDoHaveFun */,
@@ -2791,128 +2642,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9325FB8A228BE036009390AC /* libAFNetworking.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAFNetworking.a;
-			remoteRef = 9325FB89228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB8C228BE036009390AC /* libDZNEmptyDataSet.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDZNEmptyDataSet.a;
-			remoteRef = 9325FB8B228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB8E228BE036009390AC /* libFSCalendar.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFSCalendar.a;
-			remoteRef = 9325FB8D228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB90228BE036009390AC /* libHMSegmentedControl.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libHMSegmentedControl.a;
-			remoteRef = 9325FB8F228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB92228BE036009390AC /* libIQKeyboardManager.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libIQKeyboardManager.a;
-			remoteRef = 9325FB91228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB94228BE036009390AC /* libMasonry.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMasonry.a;
-			remoteRef = 9325FB93228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB96228BE036009390AC /* libMBProgressHUD.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMBProgressHUD.a;
-			remoteRef = 9325FB95228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB98228BE036009390AC /* libMJRefresh.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMJRefresh.a;
-			remoteRef = 9325FB97228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB9A228BE036009390AC /* libPods-QuantDoHaveFun.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libPods-QuantDoHaveFun.a";
-			remoteRef = 9325FB99228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB9C228BE036009390AC /* libRTRootNavigationController.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRTRootNavigationController.a;
-			remoteRef = 9325FB9B228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FB9E228BE036009390AC /* libToast.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libToast.a;
-			remoteRef = 9325FB9D228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBA0228BE036009390AC /* libTYAlertView.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTYAlertView.a;
-			remoteRef = 9325FB9F228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBA2228BE036009390AC /* libUICollectionViewLeftAlignedLayout.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libUICollectionViewLeftAlignedLayout.a;
-			remoteRef = 9325FBA1228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBA4228BE036009390AC /* libWMPageController.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libWMPageController.a;
-			remoteRef = 9325FBA3228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBA6228BE036009390AC /* libYYCache.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libYYCache.a;
-			remoteRef = 9325FBA5228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBA8228BE036009390AC /* libYYModel.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libYYModel.a;
-			remoteRef = 9325FBA7228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9325FBAA228BE036009390AC /* libzhPopupController.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libzhPopupController.a;
-			remoteRef = 9325FBA9228BE036009390AC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		93399CB72267124000FB9F0E /* Resources */ = {
