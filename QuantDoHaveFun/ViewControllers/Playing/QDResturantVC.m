@@ -22,17 +22,22 @@
 #import "UITableView+Animated.h"
 #import "UIView+TABControlAnimation.h"
 #import "ResturantModel.h"
+#import "TFDropDownMenu.h"
 
 //预定酒店 定制游 商城
-@interface QDResturantVC ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, UITextFieldDelegate>{
+@interface QDResturantVC ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, UITextFieldDelegate,TFDropDownMenuViewDelegate>{
     UITableView *_tableView;
     NSMutableArray *_restaurantList;
     NSMutableArray *_restaurantImgArr;
+    NSMutableArray *_cuisineTypeArray;
+    NSMutableArray *_cuisineTypeIDArray;
     QDEmptyType _emptyType;
     NSString *_travelName;
     int _totalPage;
     int _pageNum;
     int _pageSize;
+    TFDropDownMenuView *_menu;
+    NSInteger _cuisineTypeID;
 }
 
 @end
@@ -58,11 +63,68 @@
     _pageNum = 1;
     _pageSize = 10;
     _totalPage = 0; //总页数默认
+    _cuisineTypeID = -1;
     //分段选择按钮
-    [self initTableView];
+//    [self initTableView];
+    [self finAllMapDic];
     [self requestResturantList];
 }
 
+
+- (void)finAllMapDic{
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindAllMapDict params:nil successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            if ([[dic allKeys] containsObject:@"cuisine"]) {
+                NSArray *aaa = [dic objectForKey:@"cuisine"];
+                NSLog(@"%@",dic);
+                _cuisineTypeArray = [NSMutableArray arrayWithCapacity:10];
+                _cuisineTypeIDArray = [NSMutableArray arrayWithCapacity:10];
+                for (NSDictionary *dd in aaa) {
+                    [_cuisineTypeArray addObject:[dd objectForKey:@"dictName"]];
+                    [_cuisineTypeIDArray addObject:[dd objectForKey:@"dictValue"]];
+                }
+                [_cuisineTypeArray insertObject:@"全部" atIndex:0];
+                [_cuisineTypeIDArray insertObject:@-1 atIndex:0];
+                [self setDropMenu];
+                //                [self setCenterView];
+                [self initTableView];
+            }
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+        }
+    } failureBlock:^(NSError *error) {
+        [WXProgressHUD hideHUD];
+    }];
+}
+- (void)setDropMenu{
+    NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_cuisineTypeArray, nil];
+    NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], nil];
+    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 40) firstArray:data1 secondArray:data2];
+    _menu.bottomLineView.backgroundColor = APP_WHITECOLOR;
+    _menu.backgroundColor = APP_WHITECOLOR;
+    _menu.delegate = self;
+    _menu.ratioLeftToScreen = 0.35;
+    
+    /*风格*/
+    _menu.menuStyleArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:TFDropDownMenuStyleTableView], [NSNumber numberWithInteger:TFDropDownMenuStyleCustom], [NSNumber numberWithInteger:TFDropDownMenuStyleTableView], nil];
+    [self.view addSubview:_menu];
+}
+#pragma mark - TFDropDownMenuView Delegate
+- (void)menuView:(TFDropDownMenuView *)menu selectIndex:(TFIndexPatch *)index{
+    QDLog(@"第%ld列 第%ld个", (long)index.column, (long)index.section);
+    _pageNum = 1;
+    _cuisineTypeID = [_cuisineTypeIDArray[index.section] integerValue];
+    [_restaurantList removeAllObjects];
+    [_restaurantImgArr removeAllObjects];
+    [self requestResturantList];
+}
+// 点击了菜单
+- (void)menuView:(TFDropDownMenuView *)menu tfColumn:(NSInteger)column{
+    QDLog(@"column:%ld", (long)column);
+    //让tableView滚动到顶部位置
+    [_tableView setContentOffset:CGPointZero animated:YES];
+}
 #pragma mark - 请求餐厅列表信息
 - (void)requestResturantList{
     if (_totalPage != 0) {
@@ -71,10 +133,16 @@
             return;
         }
     }
-    
+    id cuisineId;
+    if (_cuisineTypeID == -1) {
+        cuisineId = [NSNull null];
+    }else {
+        cuisineId = [NSNumber numberWithInteger:_cuisineTypeID];
+    }
     NSDictionary * dic1 = @{@"province":@"",
                             @"district":@"",
                             @"restaurantName":_travelName,
+                            @"cuisineId":cuisineId,
                             @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize]
                             };
@@ -202,7 +270,7 @@
 
 
 - (void)initTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 47, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
