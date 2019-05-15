@@ -142,7 +142,6 @@ static float kLeftTableViewWidth = 92.f;
         _leftTableView.dataSource = self;
         _leftTableView.rowHeight = 44;
 //        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-        _leftTableView.contentInset = UIEdgeInsetsMake(0, 0, 130, 0);
         _leftTableView.tableFooterView = [UIView new];
         _leftTableView.showsVerticalScrollIndicator = NO;
         [_leftTableView tab_startAnimation];
