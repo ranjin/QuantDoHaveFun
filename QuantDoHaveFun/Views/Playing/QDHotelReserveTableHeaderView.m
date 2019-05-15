@@ -19,7 +19,7 @@
         [self addSubview:_topView];
         
         _locationTF = [[UITextField alloc] init];
-        _locationTF.placeholder = @"输入关键词/酒店名";
+        _locationTF.placeholder = @"输入城市/酒店名";
         [_locationTF setValue:APP_GRAYCOLOR forKeyPath:@"_placeholderLabel.textColor"];
         _locationTF.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_locationTF setValue:QDFont(14) forKeyPath:@"_placeholderLabel.font"];

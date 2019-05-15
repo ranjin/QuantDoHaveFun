@@ -201,7 +201,6 @@
             NSDictionary *dic = responseObject.result;
             NSArray *arr = [dic objectForKey:@"commentList"];
             if (!arr.count) {
-                [WXProgressHUD showInfoWithTittle:@"无满足条件的挂单数据"];
                 [_collectionView reloadData];
                 [_collectionView reloadEmptyDataSet];
             }else{
