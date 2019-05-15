@@ -310,6 +310,7 @@
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.estimatedRowHeight = 110;
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
     [_tableView tab_startAnimation];

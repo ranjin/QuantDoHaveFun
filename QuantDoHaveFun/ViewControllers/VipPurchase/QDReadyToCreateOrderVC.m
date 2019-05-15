@@ -162,6 +162,7 @@
     _tableView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.estimatedRowHeight = SCREEN_HEIGHT*0.075;
     [self.view addSubview:_tableView];
 }
 

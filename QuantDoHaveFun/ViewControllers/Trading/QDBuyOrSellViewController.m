@@ -85,6 +85,7 @@
     _tableView.scrollEnabled = NO;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _tableView.estimatedRowHeight = 50;
     [self.view addSubview:_tableView];
     
     _operateBtn = [[UIButton alloc] init];

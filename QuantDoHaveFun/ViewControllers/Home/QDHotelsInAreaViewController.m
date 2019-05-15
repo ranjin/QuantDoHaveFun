@@ -132,6 +132,7 @@ typedef enum : NSUInteger {
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.estimatedRowHeight = SCREEN_HEIGHT*0.255;
     [self.view addSubview:_tableView];
 }
 

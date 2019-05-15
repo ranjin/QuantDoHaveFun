@@ -207,6 +207,7 @@
     //    _tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaTopHeight, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
+    _tableView.estimatedRowHeight = 380;
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
         //重新刷新 查询全部
