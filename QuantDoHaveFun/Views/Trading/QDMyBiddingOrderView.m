@@ -373,7 +373,7 @@
                     self.withdrawBtn.hidden = YES;
                     break;
                 case QD_ORDERSTATUS_PARTCANCELED:
-                    self.operationImg.image = [UIImage imageNamed:@"orderStatus_withdraw"];
+                    self.statusImg.image = [UIImage imageNamed:@"orderStatus_withdraw"];
                     self.statusLab.text = @"部分成交部分撤单";
                     self.withdrawBtn.hidden = YES;
                     break;
