@@ -95,7 +95,7 @@
 }
 - (void)addLogoutBtn{
     UIButton *recommendBtn = [[UIButton alloc] init];
-    [recommendBtn setTitle:@"退出当前帐号" forState:UIControlStateNormal];
+    [recommendBtn setTitle:@"退出当前账号" forState:UIControlStateNormal];
     [recommendBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
     [recommendBtn setTitleColor:APP_WHITECOLOR forState:UIControlStateNormal];
     CAGradientLayer *gradientLayer =  [CAGradientLayer layer];
