@@ -383,6 +383,7 @@
 //    [_tableView tab_startAnimation];
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, SCREEN_HEIGHT*0.2, 0);
+    _tableView.estimatedRowHeight = 140;
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
     _headerView = [[QDHotelReserveTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 235)];

@@ -297,7 +297,7 @@ typedef enum : NSUInteger {
     _tableView.dataSource = self;
     _tableView.emptyDataSetSource = self;
     _tableView.emptyDataSetDelegate = self;
-    _tableView.estimatedRowHeight = 0;
+    _tableView.estimatedRowHeight = 210;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 130+SafeAreaTopHeight-64, 0);

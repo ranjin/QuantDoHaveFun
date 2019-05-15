@@ -213,6 +213,7 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 130, 0);
     _tableView.emptyDataSetDelegate = self;
     _tableView.emptyDataSetSource = self;
+    _tableView.estimatedRowHeight = SCREEN_HEIGHT*0.225;
     [_tableView tab_startAnimation];
     self.view = _tableView;
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{

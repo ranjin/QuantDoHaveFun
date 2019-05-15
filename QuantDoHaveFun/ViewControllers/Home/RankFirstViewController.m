@@ -204,6 +204,7 @@
     _tableView.emptyDataSetSource = self;
     _headView = [[RankFirstHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
     _tableView.tableHeaderView = _headView;
+    _tableView.estimatedRowHeight = 266;
     [_tableView tab_startAnimation];
 //    self.view = _tableView;
     [self.view addSubview:_tableView];

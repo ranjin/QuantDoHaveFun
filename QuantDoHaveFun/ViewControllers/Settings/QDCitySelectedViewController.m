@@ -81,6 +81,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.separatorColor = [UIColor colorWithHexString:@"#F4F4F4"];
     _tableView.sectionIndexColor = [UIColor grayColor]; //设置默认时索引值颜色
+    _tableView.estimatedRowHeight = SCREEN_HEIGHT*0.08;
 }
 
 - (void)currentLocation:(UIGestureRecognizer *)ges{
