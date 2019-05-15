@@ -334,10 +334,10 @@
                 [WXProgressHUD hideHUD];
                 self.qdMemberTDO = [QDMemberDTO yy_modelWithDictionary:responseObject.result];
                 if ([self.qdMemberTDO.isYepay isEqualToString:@"0"] || self.qdMemberTDO.isYepay == nil) {
-                    //未开通资金帐户
+                    //未开通资金账户
                     [QDUserDefaults setObject:@"1" forKey:@"loginType"];
                 }else{
-                    //已开通资金帐户
+                    //已开通资金账户
                     [QDUserDefaults setObject:@"2" forKey:@"loginType"];
                 }
                 [self dismissViewControllerAnimated:YES completion:^{

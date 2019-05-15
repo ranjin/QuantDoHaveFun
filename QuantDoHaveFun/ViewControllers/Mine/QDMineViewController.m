@@ -176,7 +176,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
                     UserMoneyDTO *moneyDTO = _currentQDMemberTDO.userMoneyDTO;
                     UserCreditDTO *creditDTO = _currentQDMemberTDO.userCreditDTO;
                     if ([_currentQDMemberTDO.isYepay isEqualToString:@"0"] || _currentQDMemberTDO.isYepay == nil) {
-                        //未开通资金帐户
+                        //未开通资金账户
                         [QDUserDefaults setObject:@"1" forKey:@"loginType"];
                         _noFinancialView.info9Lab.text = [creditDTO.available stringValue];
                         _noFinancialView.balance.text = [NSString stringWithFormat:@"%.2f", [moneyDTO.available doubleValue]];
@@ -250,7 +250,7 @@ typedef NS_ENUM(NSInteger, PhotoType)
     _notLoginHeaderView.backgroundColor = APP_WHITECOLOR;
 //    [_notLoginHeaderView.settingBtn addTarget:self action:@selector(userSettings:) forControlEvents:UIControlEventTouchUpInside];
     [_notLoginHeaderView.loginBtn addTarget:self action:@selector(userLogin:) forControlEvents:UIControlEventTouchUpInside];
-    //未开通资金帐户
+    //未开通资金账户
     _noFinancialView = [[QDLogonWithNoFinancialAccountView alloc]
                         initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 320+SafeAreaTopHeight)];
     _noFinancialView.backgroundColor = APP_WHITECOLOR;
