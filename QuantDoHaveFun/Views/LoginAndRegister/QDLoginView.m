@@ -92,7 +92,7 @@
         make.centerX.equalTo(self);
         make.top.equalTo(_infoLab.mas_bottom).offset(63);
         make.height.equalTo(@1);
-        make.width.mas_equalTo(339);
+        make.width.mas_equalTo(SCREEN_WIDTH-36);
     }];
     
     [_areaBtn mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -54,7 +54,7 @@
     }];
     
     [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.height.equalTo(_backView);
+        make.left.centerY.and.height.equalTo(_backView);
         make.width.mas_equalTo(100);
     }];
 

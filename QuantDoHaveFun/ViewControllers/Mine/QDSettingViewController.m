@@ -70,6 +70,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)requestVersion{
+    [WXProgressHUD showHUD];
     NSString *URLString = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@", APP_ID];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:URLString]];
@@ -83,6 +84,7 @@
         if (recervedData && recervedData.length > 0) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:recervedData options:NSJSONReadingMutableLeaves error:&error];
             NSArray *infoArray = [dict objectForKey:@"results"];
+            [WXProgressHUD hideHUD];
             if (infoArray && infoArray.count > 0) {
                 _version = [infoArray.firstObject objectForKey:@"version"];
                 [self initTableView];

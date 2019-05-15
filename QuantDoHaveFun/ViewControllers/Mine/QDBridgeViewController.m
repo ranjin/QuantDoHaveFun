@@ -64,11 +64,19 @@
     }
     return _urlArray;
 }
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     QDLog(@"viewWillAppear");
     [self.tabBarController.tabBar setHidden:NO];
-//    [_webView removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_LoginSucceeded object:nil];
+}
+
+#pragma mark - 登录成功
+- (void)refreshVipInfo:(NSNotification *)noti{
+    QDLog(@"refreshVipInfo=============");
+    //加载网页URL
+    [self loadWebViewWithURL];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -76,6 +84,7 @@
     QDLog(@"viewWillAppear");
     [self.navigationController.navigationBar setHidden:YES];
     [self.tabBarController.tabBar setHidden:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshVipInfo:) name:Notification_LoginSucceeded object:nil];
 }
 
 

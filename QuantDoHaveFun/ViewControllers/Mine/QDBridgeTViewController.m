@@ -64,6 +64,14 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.tabBarController.tabBar setHidden:NO];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_LoginSucceeded object:nil];
+}
+
+#pragma mark - 登录成功
+- (void)refreshVipInfo:(NSNotification *)noti{
+    QDLog(@"refreshVipInfo=============");
+    //加载网页URL
+    [self loadWebViewWithURL];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -71,6 +79,7 @@
     [self.navigationController.navigationBar setHidden:YES];
     [self.tabBarController.tabBar setHidden:YES];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshVipInfo:) name:Notification_LoginSucceeded object:nil];
 }
 
 - (void)viewDidLoad {

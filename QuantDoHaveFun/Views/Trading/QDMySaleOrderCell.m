@@ -258,7 +258,7 @@
         make.centerY.equalTo(_balanceLab);
         make.left.equalTo(_amount);
     }];
-
+    
     [_transferLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_balanceLab.mas_bottom).offset(14);
         make.left.equalTo(_balanceLab);
@@ -267,6 +267,16 @@
     [_transfer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_transferLab);
         make.left.equalTo(_transferLab.mas_right).offset(4);
+    }];
+    
+    [_statusImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_backView.mas_left).offset(18);
+        make.top.equalTo(_priceLab.mas_bottom).offset(15);
+    }];
+    
+    [_status mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_statusImg);
+        make.left.equalTo(_statusImg.mas_right).offset(4);
     }];
 
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -300,6 +310,7 @@
     }else{
         self.amount.text= model.number;
     }
+    
     self.balance.text = model.price;
     
     switch ([model.state integerValue]) {
@@ -349,9 +360,11 @@
     }
     self.transfer.text = [NSString stringWithFormat:@"¥%.2lf", [DTO.askFee doubleValue]];
     if ([DTO.isPartialDeal isEqualToString:@"0"]) {
-        self.status.text = @"不可零售";
-        self.status.textColor = APP_GRAYLINECOLOR;
+        self.statusImg.hidden = YES;
+        self.status.hidden = YES;
     }else{
+        self.statusImg.hidden = NO;
+        self.status.hidden = NO;
         self.status.text = @"可零售";
         self.status.textColor = APP_BLUECOLOR;
     }
