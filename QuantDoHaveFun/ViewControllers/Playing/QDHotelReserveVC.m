@@ -364,7 +364,6 @@
     _menu.backgroundColor = APP_WHITECOLOR;
     _menu.delegate = self;
     _menu.ratioLeftToScreen = 0.35;
-    [self.view addSubview:_menu];
     
     /*风格*/
     _menu.menuStyleArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:TFDropDownMenuStyleTableView], [NSNumber numberWithInteger:TFDropDownMenuStyleCustom], [NSNumber numberWithInteger:TFDropDownMenuStyleTableView], nil];

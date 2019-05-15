@@ -98,7 +98,9 @@
 
 - (void)addAllSubView {
     CGFloat backgroundLayerWidth = self.frame.size.width / _numberOfColumn;
-    
+    if (_numberOfColumn == 1) {
+        backgroundLayerWidth = 375/4;
+    }
     [self.currentBgLayers removeAllObjects];
     [self.currentTitleLayers removeAllObjects];
     [self.currentSeparatorLayers removeAllObjects];
