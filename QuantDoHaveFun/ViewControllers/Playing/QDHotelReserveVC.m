@@ -28,7 +28,7 @@
 #import "QDCalendarViewController.h"
 
 //预定酒店 定制游 商城
-@interface QDHotelReserveVC ()<UITableViewDelegate, UITableViewDataSource, TFDropDownMenuViewDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, CLLocationManagerDelegate, SendDateStrDelegate, UITextFieldDelegate, getChoosedAreaDelegate>{
+@interface QDHotelReserveVC ()<UITableViewDelegate, UITableViewDataSource, TFDropDownMenuViewDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, CLLocationManagerDelegate, UITextFieldDelegate, getChoosedAreaDelegate>{
     UITableView *_tableView;
     TFDropDownMenuView *_menu;
     QDHotelReserveTableHeaderView *_headerView;    
@@ -50,6 +50,22 @@
 
 @implementation QDHotelReserveVC
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstLaunch:) name:@"FirstLaunch" object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FirstLaunch" object:nil];
+}
+
+- (void)firstLaunch:(NSNotification *)noti{
+    if (_hotelLevelArr.count == 0 || _hotelListInfoArr.count == 0) {
+        [self finAllMapDic];
+        [self requestHotelData];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = APP_LIGTHGRAYLINECOLOR;
