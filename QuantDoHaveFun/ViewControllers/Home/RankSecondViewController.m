@@ -137,7 +137,7 @@ static float kLeftTableViewWidth = 92.f;
 {
     if (!_leftTableView)
     {
-        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftTableViewWidth, SCREEN_HEIGHT)];
+        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftTableViewWidth, SCREEN_HEIGHT-Height_NavAndStatusBar-Height_TabBar)];
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
         _leftTableView.rowHeight = 44;
