@@ -18,11 +18,6 @@
         _titleLab.textColor = APP_BLACKCOLOR;
         [self addSubview:_titleLab];
         
-        _distanceLab = [[UILabel alloc] init];
-        _distanceLab.text = @"距离1.6km";
-        _distanceLab.font = QDFont(13);
-        _distanceLab.textColor = APP_GRAYCOLOR;
-        [self addSubview:_distanceLab];
         
         _info1 = [[UILabel alloc] init];
         _info1.text = @"320";

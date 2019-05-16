@@ -27,6 +27,7 @@
 #import "QDTestWebViewVC.h"
 #import "QDCreditOrderHistoryVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import "QDMapPilotVC.h"
 
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
@@ -376,7 +377,8 @@
         QDLog(@"arr = %@", arr);
         QDLog(@"ss = %@, dd = %@, ee = %@, oo = %@, pp = %@", ss, dd, ee, oo, pp);
         if ([URL.path isEqualToString:@"/Map"]) {
-            QDRotePlanViewController *roteVC = [[QDRotePlanViewController alloc] init];
+//            QDRotePlanViewController *roteVC = [[QDRotePlanViewController alloc] init];
+            QDMapPilotVC *roteVC = [[QDMapPilotVC alloc]init];
             roteVC.cityStr = [dic objectForKey:@"city"];
             roteVC.addressStr = [dic objectForKey:@"address"];
             if (_infoModel) {
