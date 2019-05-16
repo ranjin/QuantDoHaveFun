@@ -139,9 +139,10 @@ QD_ManualCanceled = 4      //手工取消
         if (_myPickOrdersArr.count) {
             [_myPickOrdersArr removeAllObjects];
         }
+        _pageNum = 1;
         NSDictionary * paramsDic = @{@"state":_state,       //订单状态
                                      @"businessType":_businessType,  //订单类型
-                                     @"pageNum":@1,
+                                     @"pageNum":[NSNumber numberWithInt:_pageNum],
                                      @"pageSize":[NSNumber numberWithInt:_pageSize]
                                      };
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindMyOrder params:paramsDic successBlock:^(QDResponseObject *responseObject) {

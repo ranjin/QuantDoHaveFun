@@ -340,6 +340,11 @@
  QD_ManualCanceled = 4      //手工取消
  */
 - (void)loadViewWithModel:(BiddingPostersDTO *)model{
+    if ([model.postersType isEqualToString:@"0"]) {
+        [_withdrawBtn setTitle:@"我不买了" forState:UIControlStateNormal];
+    }else{
+        [_withdrawBtn setTitle:@"我不卖了" forState:UIControlStateNormal];
+    }
     if ([model.postersStatus intValue] == 7) {  //待付款情况
         }else{
             //未成交与部分成交的时候 并且

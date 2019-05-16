@@ -193,34 +193,34 @@
         make.left.equalTo(_operationImg.mas_right).offset(8);
     }];
     
+    [_frozenTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationTypeLab);
+        make.left.equalTo(_backView.mas_right).offset(-20);
+    }];
+    
+    [_frozen mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationTypeLab);
+        make.right.equalTo(_frozenTextLab.mas_left).offset(-1);
+    }];
+    
+    [_frozenLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationTypeLab);
+        make.right.equalTo(_frozen.mas_left).offset(-1);
+    }];
+    
+    [_dealTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationTypeLab);
+        make.right.equalTo(_frozenLab.mas_left).offset(-5);
+    }];
+    
+    [_deal mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_operationTypeLab);
+        make.right.equalTo(_dealTextLab.mas_left).offset(-1);
+    }];
+    
     [_dealLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_operationTypeLab);
-        make.left.equalTo(_backView.mas_left).offset(159);
-    }];
-
-    [_deal mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_operationImg);
-        make.left.equalTo(_dealLab.mas_right).offset(4);
-    }];
-
-    [_dealTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_deal);
-        make.left.equalTo(_deal.mas_right).offset(6);
-    }];
-
-    [_frozenLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_operationImg);
-        make.left.equalTo(_dealTextLab.mas_right).offset(10);
-    }];
-
-    [_frozen mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_dealTextLab);
-        make.left.equalTo(_frozenLab.mas_right).offset(4);
-    }];
-
-    [_frozenTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_frozenLab);
-        make.left.equalTo(_frozen.mas_right).offset(6);
+        make.right.equalTo(_deal.mas_left).offset(-1);
     }];
 
     [_priceTextLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -241,7 +241,7 @@
 
     [_amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceTextLab);
-        make.left.equalTo(_backView.mas_left).offset(SCREEN_WIDTH*0.53);
+        make.left.equalTo(_backView.mas_left).offset(SCREEN_WIDTH*0.5);
     }];
 
     [_amount mas_makeConstraints:^(MASConstraintMaker *make) {

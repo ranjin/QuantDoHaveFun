@@ -168,14 +168,9 @@
             return;
         }
     }
-//    NSDictionary * dic1 = @{@"postersStatus":@"",   //挂单状态  默认全部
-//                            @"postersType":@"0",    //挂单类型，0买入挂单，1-卖出挂单
-//                            @"pageNum":[NSNumber numberWithInt:_pageNum],
-//                            @"pageSize":[NSNumber numberWithInt:_pageSize],
-//                            };
     NSDictionary * dic1 = @{@"postersStatus":@"",
                             @"postersType":_postersType,
-                            @"pageNum":@1,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"minVolume":_minVolume,
                             @"maxVolume":_maxVolume,
@@ -264,7 +259,7 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 110, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 130+SafeAreaTopHeight-64, 0);
     [self.view addSubview:_tableView];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 120)];
@@ -310,13 +305,14 @@
 
 #pragma mark - 下拉刷新数据  只请求第一页的数据
 - (void)requestZWBHeaderTopData{
+    _pageNum = 1;
     if (_ordersArr.count) {
         [_ordersArr removeAllObjects];
     }
     
     NSDictionary * dic1 = @{@"postersStatus":@"",
                             @"postersType":_postersType,
-                            @"pageNum":@1,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"minVolume":_minVolume,
                             @"maxVolume":_maxVolume,

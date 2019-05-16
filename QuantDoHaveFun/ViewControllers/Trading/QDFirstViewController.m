@@ -182,7 +182,7 @@ typedef enum : NSUInteger {
     }
     NSDictionary * dic1 = @{@"postersStatus":@"",
                             @"postersType":_postersType,
-                            @"pageNum":@1,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"minVolume":_minVolume,
                             @"maxVolume":_maxVolume,
@@ -236,12 +236,13 @@ typedef enum : NSUInteger {
 
 #pragma mark - 下拉刷新数据  只请求第一页的数据
 - (void)requestYWBHeaderTopData{
+    _pageNum = 1;
     if (_ordersArr.count) {
         [_ordersArr removeAllObjects];
     }
     NSDictionary * dic1 = @{@"postersStatus":@"",
                             @"postersType":_postersType,
-                            @"pageNum":@1,
+                            @"pageNum":[NSNumber numberWithInt:_pageNum],
                             @"pageSize":[NSNumber numberWithInt:_pageSize],
                             @"minVolume":_minVolume,
                             @"maxVolume":_maxVolume,
@@ -308,7 +309,7 @@ typedef enum : NSUInteger {
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 120+SafeAreaTopHeight-64, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 130+SafeAreaTopHeight-64, 0);
 //    self.view = _tableView;
     [self.view addSubview:_tableView];
     
