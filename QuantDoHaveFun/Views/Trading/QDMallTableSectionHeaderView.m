@@ -22,14 +22,6 @@ static char *const btnKey = "btnKey";
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
-        _allBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
-        [_allBtn setImage:[UIImage imageNamed:@"icon_arrowDown"] forState:UIControlStateNormal];
-        [_allBtn setTitle:@"全部" forState:UIControlStateNormal];
-        [_allBtn setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
-        _allBtn.titleLabel.font = QDFont(14);
-        _allBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
-        [self addSubview:_allBtn];
-        
         _amountBtn = [[SPButton alloc] initWithImagePosition:SPButtonImagePositionRight];
         [_amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
         [_amountBtn setTitle:@"销量" forState:UIControlStateNormal];
@@ -63,43 +55,16 @@ static char *const btnKey = "btnKey";
             QDLog(@"amountDown");
             str = @"amountDown";
             [[NSNotificationCenter defaultCenter] postNotificationName:Notification_AmountDown object:nil];
-            
         }
-    }else if (btn.tag == 102){
-        [_amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
-        NSString *flag = objc_getAssociatedObject(btn, btnKey);
-        if ([flag isEqualToString:@"1"]) {
-            [btn setImage:[UIImage imageNamed:@"icon_shellpositive"] forState:UIControlStateNormal];
-            objc_setAssociatedObject(btn, btnKey, @"2", OBJC_ASSOCIATION_ASSIGN);
-            type = MallBtnClickTypeUp;
-            QDLog(@"priceUp");
-            str = @"priceUp";
-            [[NSNotificationCenter defaultCenter] postNotificationName:Notification_PriceUp object:nil];
-        }else if ([flag isEqualToString:@"2"]){
-            [btn setImage:[UIImage imageNamed:@"icon_shellreverse"] forState:UIControlStateNormal];
-            objc_setAssociatedObject(btn, btnKey, @"1", OBJC_ASSOCIATION_ASSIGN);
-            type = MallBtnClickTypeDown;
-            QDLog(@"priceDown");
-            str = @"priceDown";
-            [[NSNotificationCenter defaultCenter] postNotificationName:Notification_PriceDown object:nil];
-        }
-    }else{
     }
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [_allBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(20);
+    [_amountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-10);
         make.centerY.equalTo(self);
         make.width.mas_equalTo(120);
-        make.height.mas_equalTo(40);
-    }];
-    
-    [_amountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.right.equalTo(self.mas_right).offset(-20);
-        make.width.and.height.equalTo(_allBtn);
     }];
 }
 

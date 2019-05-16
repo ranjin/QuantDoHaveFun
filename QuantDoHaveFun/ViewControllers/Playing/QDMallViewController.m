@@ -22,9 +22,10 @@
 #import "UIView+TABControlAnimation.h"
 #import "QDOrderField.h"
 #import "QDLoginAndRegisterVC.h"
+#import "TFDropDownMenu.h"
 
 //预定酒店 定制游 商城
-@interface QDMallViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, QDPopMenuDelegate, UITextFieldDelegate>{
+@interface QDMallViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, QDPopMenuDelegate, UITextFieldDelegate, TFDropDownMenuViewDelegate>{
     UITableView *_tableView;
     NSMutableArray *_mallInfoArr;
     QDMallTableSectionHeaderView *_sectionHeaderView;
@@ -32,6 +33,7 @@
     int _totalPage;
     int _pageNum;
     int _pageSize;
+    TFDropDownMenuView *_menu;
 }
 @property (nonatomic, strong) NSMutableArray *categoryArr;
 @property (nonatomic, strong) NSMutableArray *categoryIDArr;
@@ -156,11 +158,30 @@
             }
             [_categoryArr insertObject:@"全部" atIndex:0];
             [_categoryIDArr insertObject:@"0" atIndex:0];
-            [self setHeadView];
+            [self setDropMenu];
         }
     } failureBlock:^(NSError *error) {
         [WXProgressHUD showErrorWithTittle:@"网络异常"];
     }];
+}
+
+- (void)setDropMenu{
+    NSMutableArray *data1 = [NSMutableArray arrayWithObjects:_categoryArr, nil];
+    NSMutableArray *data2 = [NSMutableArray arrayWithObjects:@[], nil];
+    _menu = [[TFDropDownMenuView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 40) firstArray:data1 secondArray:data2];
+    _menu.bottomLineView.backgroundColor = APP_WHITECOLOR;
+    _menu.backgroundColor = APP_WHITECOLOR;
+    _menu.delegate = self;
+    _menu.ratioLeftToScreen = 0.35;
+    
+    /*风格*/
+    _menu.menuStyleArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:TFDropDownMenuStyleTableView], [NSNumber numberWithInteger:TFDropDownMenuStyleCustom], [NSNumber numberWithInteger:TFDropDownMenuStyleTableView], nil];
+    [self.view addSubview:_menu];
+    [self setHeadView];
+}
+
+- (void)test:(UIButton *)sender{
+    QDLog(@"123123");
 }
 
 - (void)addToCar:(UIButton *)sender{
@@ -319,8 +340,6 @@
         //重置所有选项
         _sortColumn = @"";
         _sortType = @"";
-        [_sectionHeaderView.allBtn setTitle:_categoryArr[0] forState:UIControlStateNormal];
-
         [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
         [self requestMallHeadData];
     }];
@@ -362,24 +381,13 @@
 }
 
 - (void)setHeadView{
-    _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] initWithFrame:CGRectMake(0, 7, SCREEN_WIDTH, 50)];
+    _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] init];
     _sectionHeaderView.backgroundColor = APP_WHITECOLOR;
-    [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_sectionHeaderView];
-}
-
-- (void)chooseCategory:(UIButton *)sender{
-    if (_categoryArr.count == 0 || _categoryArr == nil) {
-        [WXProgressHUD showErrorWithTittle:@"未获取到商品种类"];
-    }else{
-        QDPopMenu *menu = [[QDPopMenu alloc] init];
-        menu.delegate = self;
-        menu.defaultIndex = _menuSelectIndex;
-        menu.identityName = @"test";
-        menu.menuArray = _categoryArr;
-        menu.menuContentSize = CGSizeMake(SCREEN_WIDTH, _categoryArr.count * 38);
-        [menu showMenuFromSourceView:sender sourceReact:sender.bounds viewController:self animated:YES];
-    }
+    [_menu addSubview:_sectionHeaderView];
+    [_sectionHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.centerY.and.height.mas_equalTo(_menu);
+        make.width.mas_equalTo(100);
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -494,22 +502,20 @@
     return YES;
 }
 
-- (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
-    _pageNum = 1;
-    if (_mallInfoArr.count) {
-        [_mallInfoArr removeAllObjects];
-    }
-    QDLog(@"index = %ld", (long)index);
-    _menuSelectIndex = index;
-    if (index == 0) {
-        _catId = @"";
-        [self requestMallList];
-    }else{
-        _catId = _categoryIDArr[index];
-        [self requestMallList];
-    }
-    [_sectionHeaderView.allBtn setTitle:_categoryArr[index] forState:UIControlStateNormal];
-}
+//- (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
+//    _pageNum = 1;
+
+//    QDLog(@"index = %ld", (long)index);
+//    _menuSelectIndex = index;
+//    if (index == 0) {
+//        _catId = @"";
+//        [self requestMallList];
+//    }else{
+//        _catId = _categoryIDArr[index];
+//        [self requestMallList];
+//    }
+//    [_sectionHeaderView.allBtn setTitle:_categoryArr[index] forState:UIControlStateNormal];
+//}
 
 - (void)dismissPopMenu:(QDPopMenu *)popMenu{
     QDLog(@"dismissPopMenu");
@@ -517,6 +523,28 @@
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
     return -100;
+}
+
+#pragma mark - TFDropDownMenuView Delegate
+- (void)menuView:(TFDropDownMenuView *)menu selectIndex:(TFIndexPatch *)index{
+    QDLog(@"第%ld列 第%ld个", (long)index.column, (long)index.section);
+    if (_mallInfoArr.count) {
+        [_mallInfoArr removeAllObjects];
+    }
+    _pageNum = 1;
+    if (index == 0) {
+        _catId = @"";
+    }else{
+        _catId = _categoryIDArr[index.section];
+    }
+    [self requestMallList];
+}
+
+// 点击了菜单
+- (void)menuView:(TFDropDownMenuView *)menu tfColumn:(NSInteger)column{
+    QDLog(@"column:%ld", (long)column);
+    //让tableView滚动到顶部位置
+    [_tableView setContentOffset:CGPointZero animated:YES];
 }
 
 @end

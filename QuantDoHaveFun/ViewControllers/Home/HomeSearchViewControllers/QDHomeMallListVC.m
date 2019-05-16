@@ -15,7 +15,6 @@
 #import "QDBridgeViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "QDMallTableSectionHeaderView.h"
-#import "QDPopMenu.h"
 #import "TABAnimated.h"
 #import "TABViewAnimated.h"
 #import "UITableView+Animated.h"
@@ -23,7 +22,7 @@
 #import "QDOrderField.h"
 
 //预定酒店 定制游 商城
-@interface QDHomeMallListVC ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, QDPopMenuDelegate>{
+@interface QDHomeMallListVC ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>{
     QDPlayShellType _playShellType;
     UITableView *_tableView;
     NSMutableArray *_mallInfoArr;
@@ -274,24 +273,8 @@
     if (!_sectionHeaderView) {
         _sectionHeaderView = [[QDMallTableSectionHeaderView alloc] init];
         _sectionHeaderView.backgroundColor = APP_GRAYBACKGROUNDCOLOR;
-        [_sectionHeaderView.allBtn addTarget:self action:@selector(allAction:) forControlEvents:UIControlEventTouchUpInside];
-//        [_sectionHeaderView.allBtn addTarget:self action:@selector(chooseCategory:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sectionHeaderView;
-}
-
-- (void)chooseCategory:(UIButton *)sender{
-    if (_categoryArr.count == 0 || _categoryArr == nil) {
-        [WXProgressHUD showErrorWithTittle:@"未获取到商品种类"];
-    }else{
-        QDPopMenu *menu = [[QDPopMenu alloc] init];
-        menu.delegate = self;
-        menu.defaultIndex = _menuSelectIndex;
-        menu.identityName = @"test";
-        menu.menuArray = _categoryArr;
-        menu.menuContentSize = CGSizeMake(SCREEN_WIDTH, _categoryArr.count * 38);
-        [menu showMenuFromSourceView:sender sourceReact:sender.bounds viewController:self animated:YES];
-    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -451,21 +434,20 @@
     self.loading = YES;
     [self requestMallList];
 }
-
-- (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
-    QDLog(@"index = %ld", (long)index);
-    _menuSelectIndex = index;
-    if (index == 0) {
-        _catId = @"";
-        [self requestMallList];
-    }else{
-        _catId = _categoryIDArr[index];
-        [self requestMallList];
-    }
-    [_sectionHeaderView.allBtn setTitle:_categoryArr[index] forState:UIControlStateNormal];
-}
-
-- (void)dismissPopMenu:(QDPopMenu *)popMenu{
-    QDLog(@"dismissPopMenu");
-}
+//
+//- (void)popMenu:(QDPopMenu *)popMenu didSelectedMenu:(id)menu atIndex:(NSInteger)index{
+//    QDLog(@"index = %ld", (long)index);
+//    _menuSelectIndex = index;
+//    if (index == 0) {
+//        _catId = @"";
+//        [self requestMallList];
+//    }else{
+//        _catId = _categoryIDArr[index];
+//        [self requestMallList];
+//    }
+//}
+//
+//- (void)dismissPopMenu:(QDPopMenu *)popMenu{
+//    QDLog(@"dismissPopMenu");
+//}
 @end
