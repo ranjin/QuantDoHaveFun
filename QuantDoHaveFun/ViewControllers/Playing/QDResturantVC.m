@@ -48,10 +48,19 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:YES];
     [self.navigationController.tabBarController.tabBar setHidden:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstLaunch:) name:@"FirstLaunch" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FirstLaunch" object:nil];
+}
+
+- (void)firstLaunch:(NSNotification *)noti{
+    if (_cuisineTypeArray.count == 0) {
+        [self finAllMapDic];
+    }
+    [self requestResturantHeadData];
 }
 
 - (void)viewDidLoad {

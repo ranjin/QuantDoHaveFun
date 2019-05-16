@@ -56,6 +56,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(priceDown) name:Notification_PriceDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(amuntUp) name:Notification_AmountUp object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(amountDown) name:Notification_AmountDown object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstLaunch:) name:@"FirstLaunch" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -64,6 +65,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_PriceDown object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_AmountUp object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:Notification_AmountDown object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FirstLaunch" object:nil];
 }
 
 - (void)priceUp{
@@ -134,6 +136,17 @@
     [self requestMallList];
     //请求商品列表
     [self finGoodsCategory];
+}
+
+- (void)firstLaunch:(NSNotification *)noti{
+    if (_categoryArr.count == 0) {
+        [self finGoodsCategory];
+    }
+    //重置所有选项
+    _sortColumn = @"";
+    _sortType = @"";
+    [_sectionHeaderView.amountBtn setImage:[UIImage imageNamed:@"icon_shellDefault"] forState:UIControlStateNormal];
+    [self requestMallHeadData];
 }
 
 - (void)shopCarAction:(UIButton *)sender{

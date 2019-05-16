@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Mine/QDBridgeViewController.m"
-            timestampString = "579678319.339855"
+            timestampString = "579692379.722023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.645352"
+            timestampString = "579692379.72208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -68,12 +68,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-                  timestampString = "579691563.917021"
+                  timestampString = "579692380.2498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "695">
+                  offsetFromSymbolStart = "852">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,12 +83,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-                  timestampString = "579691563.919322"
+                  timestampString = "579692380.251523"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.645991"
+            timestampString = "579692379.722753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -139,38 +139,6 @@
             endingLineNumber = "272"
             landmarkName = "-getCurrentLocation"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[QDHomeVC getCurrentLocation]"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Settings/QDHomeVC.m"
-                  timestampString = "579691563.943083"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272"
-                  offsetFromSymbolStart = "160">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__30-[QDHomeVC getCurrentLocation]_block_invoke"
-                  moduleName = "QuantDoHaveFun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Settings/QDHomeVC.m"
-                  timestampString = "579691563.946103"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "273"
-                  endingLineNumber = "273"
-                  offsetFromSymbolStart = "90">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -196,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.646524"
+            timestampString = "579692379.723273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
@@ -212,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.646576"
+            timestampString = "579692379.723321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
@@ -228,12 +196,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-                  timestampString = "579691563.96653"
+                  timestampString = "579692380.26982"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "210"
                   endingLineNumber = "210"
-                  offsetFromSymbolStart = "769">
+                  offsetFromSymbolStart = "880">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -243,12 +211,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-                  timestampString = "579691563.971857"
+                  timestampString = "579692380.271827"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "211"
                   endingLineNumber = "211"
-                  offsetFromSymbolStart = "79">
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -260,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.646619"
+            timestampString = "579692379.723362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -276,7 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.646661"
+            timestampString = "579692379.723401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
@@ -292,7 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.646701"
+            timestampString = "579692379.723439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
@@ -308,7 +276,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.646742"
+            timestampString = "579692379.723478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "358"
@@ -324,12 +292,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-                  timestampString = "579691563.993962"
+                  timestampString = "579692380.289983"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "358"
                   endingLineNumber = "358"
-                  offsetFromSymbolStart = "284">
+                  offsetFromSymbolStart = "336">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -339,12 +307,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-                  timestampString = "579691563.996807"
+                  timestampString = "579692380.292105"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "359"
                   endingLineNumber = "359"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -356,7 +324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.647216"
+            timestampString = "579692379.723953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "359"
@@ -404,12 +372,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDRecommendViewController.m"
-                  timestampString = "579691564.0236731"
+                  timestampString = "579692380.306036"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "287">
+                  offsetFromSymbolStart = "372">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -419,12 +387,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDRecommendViewController.m"
-                  timestampString = "579691564.0273761"
+                  timestampString = "579692380.308001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -468,12 +436,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDRecommendViewController.m"
-                  timestampString = "579691564.037552"
+                  timestampString = "579692380.317578"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "223">
+                  offsetFromSymbolStart = "288">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -483,12 +451,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDRecommendViewController.m"
-                  timestampString = "579691564.0394861"
+                  timestampString = "579692380.3192329"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "200"
                   endingLineNumber = "200"
-                  offsetFromSymbolStart = "79">
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -532,7 +500,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Home/RankFirstViewController.m"
-            timestampString = "579691563.6479599"
+            timestampString = "579692379.724508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
@@ -548,7 +516,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.64821"
+            timestampString = "579692379.724771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "458"
@@ -564,7 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.6487"
+            timestampString = "579692379.725266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "327"
@@ -580,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDThirdViewController.m"
-            timestampString = "579691563.649152"
+            timestampString = "579692379.725731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
@@ -596,7 +564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.649604"
+            timestampString = "579692379.726199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -612,12 +580,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-                  timestampString = "579691564.097458"
+                  timestampString = "579692380.349033"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "145"
                   endingLineNumber = "145"
-                  offsetFromSymbolStart = "715">
+                  offsetFromSymbolStart = "876">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -627,12 +595,12 @@
                   moduleName = "QuantDoHaveFun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yl-yin/QuantDoHaveFun/QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-                  timestampString = "579691564.102302"
+                  timestampString = "579692380.350901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "145"
                   endingLineNumber = "145"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -644,7 +612,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.64965"
+            timestampString = "579692379.726244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -660,7 +628,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.6496921"
+            timestampString = "579692379.726284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "457"
@@ -676,7 +644,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.649732"
+            timestampString = "579692379.726325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "461"
@@ -692,7 +660,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.649771"
+            timestampString = "579692379.7263629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
@@ -708,7 +676,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Trading/QDFourViewController.m"
-            timestampString = "579691563.64981"
+            timestampString = "579692379.726402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -724,7 +692,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuantDoHaveFun/ViewControllers/Playing/QDHotelReserveVC.m"
-            timestampString = "579691563.649851"
+            timestampString = "579692379.726442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -763,22 +731,6 @@
                   offsetFromSymbolStart = "92">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuantDoHaveFun/ViewControllers/Home/RankFirstViewController.m"
-            timestampString = "579691563.6498899"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-firstLaunch:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

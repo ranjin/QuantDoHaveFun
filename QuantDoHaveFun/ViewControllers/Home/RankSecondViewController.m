@@ -36,6 +36,22 @@ static float kLeftTableViewWidth = 92.f;
     BOOL _isScrollDown;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstLaunch:) name:@"FirstLaunch" object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FirstLaunch" object:nil];
+}
+
+- (void)firstLaunch:(NSNotification *)noti{
+    if (_destinationArr.count == 0) {
+        [self findAllDestinationList];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -169,7 +185,6 @@ static float kLeftTableViewWidth = 92.f;
         _rightTableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
             if (_destinationArr.count == 0) {
                 [self findAllDestinationList];
-//                [self findFirstDetailList:_destinationArr[_selectIndex]];
             }
         }];
         
