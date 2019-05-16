@@ -19,7 +19,6 @@ typedef NS_ENUM(NSInteger,MallBtnClickType){
 
 @interface QDMallTableSectionHeaderView : UIView
 
-@property (nonatomic, strong) SPButton *allBtn;
 @property (nonatomic, strong) SPButton *amountBtn;
 //默认选中，默认是第一个
 @property (nonatomic, assign) int defaultSelectIndex;

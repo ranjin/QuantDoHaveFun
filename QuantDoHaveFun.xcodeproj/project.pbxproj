@@ -347,6 +347,125 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9325FBC3228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33ECB210DD06B38B4501BEFF49568032;
+			remoteInfo = AFNetworking;
+		};
+		9325FBC5228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B7EB9D29A57034B51545DFFDAD704F4D;
+			remoteInfo = DZNEmptyDataSet;
+		};
+		9325FBC7228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD2A21B39C1D98083FE1C665320E3A1;
+			remoteInfo = FSCalendar;
+		};
+		9325FBC9228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B31CBAF8043860F3B6B2E56669C59C3C;
+			remoteInfo = HMSegmentedControl;
+		};
+		9325FBCB228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 98491A942E0405EC30A5CDE47250370F;
+			remoteInfo = IQKeyboardManager;
+		};
+		9325FBCD228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6860B7A86640281AF13322E782547BE6;
+			remoteInfo = Masonry;
+		};
+		9325FBCF228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D44908DD12719596E82BD63101D544AC;
+			remoteInfo = MBProgressHUD;
+		};
+		9325FBD1228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA68C942D7829A95E3AD04CC600AC1C1;
+			remoteInfo = MJRefresh;
+		};
+		9325FBD3228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FC35999FF93EB9D6BAA148CCC4D18C3;
+			remoteInfo = "Pods-QuantDoHaveFun";
+		};
+		9325FBD5228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 90E6FFCA9CB255B6437ABD605B9C2F98;
+			remoteInfo = RTRootNavigationController;
+		};
+		9325FBD7228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F299E00977CEEAF73237677A5785E76;
+			remoteInfo = Toast;
+		};
+		9325FBD9228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6979948262CDA9FC8CEC9B2AA8005B4;
+			remoteInfo = TYAlertView;
+		};
+		9325FBDB228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F332F9FAF3F6DC2F139E25538DAF0C6;
+			remoteInfo = UICollectionViewLeftAlignedLayout;
+		};
+		9325FBDD228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E707CC928EFBEF77173435C8FE8AA843;
+			remoteInfo = WMPageController;
+		};
+		9325FBDF228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C30C2F525920C39C5F59258556F02D97;
+			remoteInfo = YYCache;
+		};
+		9325FBE1228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07D18D796573D339EC54D93DC499EA68;
+			remoteInfo = YYModel;
+		};
+		9325FBE3228CE9B8009390AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD11BFB74C4F62E6A90AC7C7A322A817;
+			remoteInfo = zhPopupController;
+		};
 		93399CD22267124500FB9F0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93399CB12267124000FB9F0E /* Project object */;
@@ -1211,6 +1330,30 @@
 				9325FB66228A51D4009390AC /* ZLFlowLayoutConstants.h */,
 			);
 			path = ZLCollectionView;
+			sourceTree = "<group>";
+		};
+		9325FBAC228CE9B8009390AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9325FBC4228CE9B8009390AC /* libAFNetworking.a */,
+				9325FBC6228CE9B8009390AC /* libDZNEmptyDataSet.a */,
+				9325FBC8228CE9B8009390AC /* libFSCalendar.a */,
+				9325FBCA228CE9B8009390AC /* libHMSegmentedControl.a */,
+				9325FBCC228CE9B8009390AC /* libIQKeyboardManager.a */,
+				9325FBCE228CE9B8009390AC /* libMasonry.a */,
+				9325FBD0228CE9B8009390AC /* libMBProgressHUD.a */,
+				9325FBD2228CE9B8009390AC /* libMJRefresh.a */,
+				9325FBD4228CE9B8009390AC /* libPods-QuantDoHaveFun.a */,
+				9325FBD6228CE9B8009390AC /* libRTRootNavigationController.a */,
+				9325FBD8228CE9B8009390AC /* libToast.a */,
+				9325FBDA228CE9B8009390AC /* libTYAlertView.a */,
+				9325FBDC228CE9B8009390AC /* libUICollectionViewLeftAlignedLayout.a */,
+				9325FBDE228CE9B8009390AC /* libWMPageController.a */,
+				9325FBE0228CE9B8009390AC /* libYYCache.a */,
+				9325FBE2228CE9B8009390AC /* libYYModel.a */,
+				9325FBE4228CE9B8009390AC /* libzhPopupController.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		93399CB02267124000FB9F0E = {
@@ -2634,6 +2777,12 @@
 			mainGroup = 93399CB02267124000FB9F0E;
 			productRefGroup = 93399CBA2267124000FB9F0E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9325FBAC228CE9B8009390AC /* Products */;
+					ProjectRef = 9325FB71228BE036009390AC /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				93399CB82267124000FB9F0E /* QuantDoHaveFun */,
@@ -2642,6 +2791,128 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9325FBC4228CE9B8009390AC /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 9325FBC3228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBC6228CE9B8009390AC /* libDZNEmptyDataSet.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDZNEmptyDataSet.a;
+			remoteRef = 9325FBC5228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBC8228CE9B8009390AC /* libFSCalendar.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFSCalendar.a;
+			remoteRef = 9325FBC7228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBCA228CE9B8009390AC /* libHMSegmentedControl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libHMSegmentedControl.a;
+			remoteRef = 9325FBC9228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBCC228CE9B8009390AC /* libIQKeyboardManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIQKeyboardManager.a;
+			remoteRef = 9325FBCB228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBCE228CE9B8009390AC /* libMasonry.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMasonry.a;
+			remoteRef = 9325FBCD228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBD0228CE9B8009390AC /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 9325FBCF228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBD2228CE9B8009390AC /* libMJRefresh.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMJRefresh.a;
+			remoteRef = 9325FBD1228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBD4228CE9B8009390AC /* libPods-QuantDoHaveFun.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-QuantDoHaveFun.a";
+			remoteRef = 9325FBD3228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBD6228CE9B8009390AC /* libRTRootNavigationController.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRTRootNavigationController.a;
+			remoteRef = 9325FBD5228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBD8228CE9B8009390AC /* libToast.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libToast.a;
+			remoteRef = 9325FBD7228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBDA228CE9B8009390AC /* libTYAlertView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTYAlertView.a;
+			remoteRef = 9325FBD9228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBDC228CE9B8009390AC /* libUICollectionViewLeftAlignedLayout.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libUICollectionViewLeftAlignedLayout.a;
+			remoteRef = 9325FBDB228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBDE228CE9B8009390AC /* libWMPageController.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWMPageController.a;
+			remoteRef = 9325FBDD228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBE0228CE9B8009390AC /* libYYCache.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYYCache.a;
+			remoteRef = 9325FBDF228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBE2228CE9B8009390AC /* libYYModel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYYModel.a;
+			remoteRef = 9325FBE1228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9325FBE4228CE9B8009390AC /* libzhPopupController.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libzhPopupController.a;
+			remoteRef = 9325FBE3228CE9B8009390AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		93399CB72267124000FB9F0E /* Resources */ = {
@@ -3220,7 +3491,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 07EF5E23FF1A268611ECDE51 /* Pods-QuantDoHaveFun.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconUAT;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3247,7 +3518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F17B2E652B7F8F9CB7CED82F /* Pods-QuantDoHaveFun.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconUAT;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
