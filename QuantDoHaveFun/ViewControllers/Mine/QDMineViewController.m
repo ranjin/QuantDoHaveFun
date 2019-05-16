@@ -35,6 +35,7 @@
 #import "QDLoginViewController.h"
 #import "QDHouseCouponVC.h"
 #import "AllHouseCouponVC.h"
+#import <TYAlertView.h>
 
 typedef NS_ENUM(NSInteger, PhotoType)
 {
@@ -540,19 +541,31 @@ typedef NS_ENUM(NSInteger, PhotoType)
     
     UIAlertAction *action0 = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImagePickerController *controller = [UIImagePickerController imagePickerControllerWithSourceType:UIImagePickerControllerSourceTypeCamera];
+        QDLog(@"isAvailableCamera:%d --- isSupportTakingPhotos:%d---isSupportPickPhotosFromPhotoLibrary:%d",[controller isAvailableCamera],[controller isSupportTakingPhotos],[controller isSupportPickPhotosFromPhotoLibrary]);
         if ([controller isAvailableCamera] && [controller isSupportTakingPhotos]) {
             [controller setDelegate:self];
             [self presentViewController:controller animated:YES completion:nil];
         }else {
             NSLog(@"%s %@", __FUNCTION__, @"相机权限受限");
+            TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"未打开相机权限" message:@"请在 设置->隐私->相机 中打开相机权限"];
+            [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
+                
+            }]];
+            [alertView show];
         }
     }];
     
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"从相册获取" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImagePickerController *controller = [UIImagePickerController imagePickerControllerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [controller setDelegate:self];
-        if ([controller isAvailablePhotoLibrary]) {
+        if ([controller isAvailablePhotoLibrary] && [controller isSupportPickPhotosFromPhotoLibrary]) {
             [self presentViewController:controller animated:YES completion:nil];
+        }else {
+            TYAlertView *alertView = [[TYAlertView alloc] initWithTitle:@"未打开相册权限" message:@"请在 设置->隐私->照片 中打开相册权限"];
+            [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
+                
+            }]];
+            [alertView show];
         }
     }];
     
