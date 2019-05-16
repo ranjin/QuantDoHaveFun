@@ -87,13 +87,14 @@
                 [_cuisineTypeArray insertObject:@"全部" atIndex:0];
                 [_cuisineTypeIDArray insertObject:@-1 atIndex:0];
                 [self setDropMenu];
-                //                [self setCenterView];
                 [self initTableView];
             }
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }
     } failureBlock:^(NSError *error) {
+        [self setDropMenu];
+        [self initTableView];
         [WXProgressHUD hideHUD];
     }];
 }
@@ -284,6 +285,9 @@
     _tableView.emptyDataSetSource = self;
     [self.view addSubview: _tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+        if (_cuisineTypeArray.count == 0) {
+            [self finAllMapDic];
+        }
         [self requestResturantHeadData];
     }];
     
@@ -422,12 +426,12 @@
 
 - (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
 {
-    return NO;
+    return YES;
 }
 
 @end

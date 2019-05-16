@@ -158,10 +158,8 @@ QD_ManualCanceled = 4      //手工取消
                         if (arr.count < _pageSize) {   //不满10个
                             [_myPickOrdersArr addObjectsFromArray:arr];
                             [_tableView reloadData];
-                            if ([_tableView.mj_footer isRefreshing]) {
-                                [self endRefreshing];
-                                _tableView.mj_footer.state = MJRefreshStateNoMoreData;
-                            }
+                            [self endRefreshing];
+                            _tableView.mj_footer.state = MJRefreshStateNoMoreData;
                         }else{
                             [self endRefreshing];
                             [_myPickOrdersArr addObjectsFromArray:arr];
@@ -204,8 +202,8 @@ QD_ManualCanceled = 4      //手工取消
                 return;
             }
         }
-        NSDictionary * paramsDic = @{@"postersStatus":_state,
-                                     @"postersType":_businessType,
+        NSDictionary * paramsDic = @{@"state":_state,
+                                     @"businessType":_businessType,
                                      @"pageNum":[NSNumber numberWithInt:_pageNum],
                                      @"pageSize":[NSNumber numberWithInt:_pageSize]
                                      };

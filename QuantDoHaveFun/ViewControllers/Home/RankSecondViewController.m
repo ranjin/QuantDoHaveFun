@@ -63,7 +63,7 @@ static float kLeftTableViewWidth = 92.f;
 #pragma mark - 目的地列表查询
 - (void)findAllDestinationList{
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_findAllDestinationList params:nil successBlock:^(QDResponseObject *responseObject) {
-        [_leftTableView tab_endAnimation];
+//        [_leftTableView tab_endAnimation];
         if (responseObject.code == 0) {
             if (_destinationArr.count) {
                 [_destinationArr removeAllObjects];
@@ -82,7 +82,9 @@ static float kLeftTableViewWidth = 92.f;
             [_leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         }
     } failureBlock:^(NSError *error) {
-        [_leftTableView tab_endAnimation];
+        [self endRefreshing];
+        [_leftTableView reloadData];
+        [_leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     }];
 }
 
@@ -96,7 +98,7 @@ static float kLeftTableViewWidth = 92.f;
                           @"destinationId":cityModel.id
                           };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_RankedSorting params:dic successBlock:^(QDResponseObject *responseObject) {
-        [_rightTableView tab_endAnimation];
+//        [_rightTableView tab_endAnimation];
         if (responseObject.code == 0) {
             [self endRefreshing];
             NSArray *arr = [responseObject.result objectForKey:@"result"];
@@ -110,7 +112,7 @@ static float kLeftTableViewWidth = 92.f;
         }
     } failureBlock:^(NSError *error) {
         [self endRefreshing];
-        [_rightTableView tab_endAnimation];
+//        [_rightTableView tab_endAnimation];
     }];
 }
 #pragma mark - Getters
@@ -144,7 +146,7 @@ static float kLeftTableViewWidth = 92.f;
 //        _leftTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _leftTableView.tableFooterView = [UIView new];
         _leftTableView.showsVerticalScrollIndicator = NO;
-        [_leftTableView tab_startAnimation];
+//        [_leftTableView tab_startAnimation];
         _leftTableView.separatorColor = APP_LIGTHGRAYLINECOLOR;
         [_leftTableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:kCellIdentifier_Left];
     }
@@ -162,10 +164,13 @@ static float kLeftTableViewWidth = 92.f;
         _rightTableView.backgroundColor = APP_LIGTHGRAYLINECOLOR;
         _rightTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         _rightTableView.showsVerticalScrollIndicator = NO;
-        [_rightTableView tab_startAnimation];
+//        [_rightTableView tab_startAnimation];
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-            [self findFirstDetailList:_destinationArr[_selectIndex]];
+            if (_destinationArr.count == 0) {
+                [self findAllDestinationList];
+//                [self findFirstDetailList:_destinationArr[_selectIndex]];
+            }
         }];
         
         _rightTableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{

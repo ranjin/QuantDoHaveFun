@@ -7,6 +7,7 @@
 //
 
 #import "QDSettingViewController.h"
+#import "QDBridgeViewController.h"
 //#import "QDLoginAndRegisterVC.h"
 #import <TYAlertView.h>
 
@@ -245,10 +246,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            
-        }else{
+        if (indexPath.row == 1) {
+            //关于我们
         }
+    }else{
+//        QDBridgeViewController *bridgeVC = [[QDBridgeViewController alloc] init];
+//        bridgeVC.urlStr = [QD_JSURL stringByAppendingString:JS_PROTOCOLS];
+//        self.navigationController.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:bridgeVC animated:YES];
     }
 }
 

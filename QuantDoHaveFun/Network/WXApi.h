@@ -213,6 +213,7 @@ static NSString * const JS_INVITEFRIENDS        = @"/invitefriends";            
 static NSString * const JS_NOTICETYPE           = @"/common/notice";                  //协议
 static NSString * const JS_WBSC                 = @"/wanbei/img";                  //玩贝手册
 
+static NSString * const JS_PROTOCOLS            = @"/protocols/index";                  //帮助中心
 
 #endif /* WXApi_h */
 

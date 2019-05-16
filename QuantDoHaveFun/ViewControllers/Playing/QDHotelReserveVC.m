@@ -121,7 +121,6 @@
                     }
                 }
                 [self setDropMenu];
-//                [self setCenterView];
                 [self initTableView];
             }
         }else{
@@ -129,6 +128,8 @@
         }
     } failureBlock:^(NSError *error) {
         [WXProgressHUD hideHUD];
+        [self setDropMenu];
+        [self initTableView];
     }];
 }
 
@@ -414,6 +415,9 @@
     [self.view addSubview:_tableView];
     
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+        if (_hotelLevelArr.count == 0) {
+            [self finAllMapDic];
+        }
         [self requestHotelHeaderData];
     }];
     //手动刷新请求最新数据

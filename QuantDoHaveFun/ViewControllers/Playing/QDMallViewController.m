@@ -337,6 +337,9 @@
     [_tableView tab_startAnimation];
     [self.view addSubview:_tableView];
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
+        if (_categoryArr.count == 0) {
+            [self finGoodsCategory];
+        }
         //重置所有选项
         _sortColumn = @"";
         _sortType = @"";
