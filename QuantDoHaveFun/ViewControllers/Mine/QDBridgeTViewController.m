@@ -25,6 +25,7 @@
 #import "OpenShare+QQ.h"
 #import "OpenShare+Weibo.h"
 #import "OpenShare+Weixin.h"
+#import "QDMapPilotVC.h"
 
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
@@ -340,10 +341,13 @@
         QDLog(@"ss = %@, dd = %@, ee = %@, oo = %@, pp = %@", ss, dd, ee, oo, pp);
         QDLog(@"path = %@", URL.path);
         if ([URL.path isEqualToString:@"/Map"]) {
-            QDRotePlanViewController *roteVC = [[QDRotePlanViewController alloc] init];
+            //            QDRotePlanViewController *roteVC = [[QDRotePlanViewController alloc] init];
+            QDMapPilotVC *roteVC = [[QDMapPilotVC alloc]init];
             roteVC.cityStr = [dic objectForKey:@"city"];
             roteVC.addressStr = [dic objectForKey:@"address"];
-            roteVC.infoModel = _infoModel;
+            if (_infoModel) {
+                roteVC.infoModel = _infoModel;
+            }
             [self.navigationController pushViewController:roteVC animated:YES];
         }else if ([URL.path isEqualToString:@"/Login"]){
             [WXProgressHUD showErrorWithTittle:@"未登录"];

@@ -6,13 +6,18 @@
 //  Copyright © 2015年 AutoNavi. All rights reserved.
 //
 
-#import "QDHomeVC.h"
+#import "QDMapPilotVC.h"
 #import "QDHomeTopView.h"
 #import "RadialCircleAnnotationView.h"
-#import "QDCitySelectedViewController.h"
 #import "QDHotelsInAreaViewController.h"
-@interface QDHomeVC ()<MAMapViewDelegate, AMapLocationManagerDelegate, UISearchBarDelegate, getChoosedAreaDelegate>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import "QDNavigationService.h"
+#import "QDRoutePlanHeaderView.h"
 
+@interface QDMapPilotVC ()<MAMapViewDelegate, AMapLocationManagerDelegate, UISearchBarDelegate,AMapSearchDelegate>
+{
+    QDRoutePlanHeaderView *_headerView;
+}
 @property (nonatomic, strong) UISegmentedControl *showSegment;
 @property (nonatomic, strong) UISegmentedControl *headingSegment;
 @property (nonatomic, strong) MAPointAnnotation *annotation;
@@ -26,11 +31,13 @@
 @property (nonatomic, strong) UIButton *gpsButton;
 @property (nonatomic, strong) UIView *bottomView;
 
+@property (nonatomic) CLLocationCoordinate2D startCoordinate;
 @property (nonatomic) CLLocationCoordinate2D destinationCoordinate;
+@property(nonatomic,strong)AMapSearchAPI *search;
 
 @end
 
-@implementation QDHomeVC
+@implementation QDMapPilotVC
 
 #pragma mark - Action Handle
 
@@ -46,7 +53,6 @@
     [self.locationManager stopUpdatingHeading];
     [self.locationManager stopUpdatingLocation];
 }
-
 - (void)configLocationManager
 {
     _headingCalibration = NO;
@@ -56,14 +62,12 @@
     [self.locationManager setDelegate:self];
     
     //设置期望定位精度
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
     
     //设置不允许系统暂停定位
     [self.locationManager setPausesLocationUpdatesAutomatically:NO];
-    
     //设置允许在后台定位
     //    [self.locationManager setAllowsBackgroundLocationUpdates:YES];
-    
     //设置允许连续定位逆地理
     [self.locationManager setLocatingWithReGeocode:YES];
     
@@ -124,11 +128,28 @@
         [self.regions removeAllObjects];
     }
     
-    [self.mapView setCenterCoordinate:location.coordinate];
+//    [self.mapView setCenterCoordinate:location.coordinate];
+    self.startCoordinate = location.coordinate;
     [self.annotation setCoordinate:location.coordinate];
     [self.mapView setZoomLevel:15.1 animated:NO];
+    [self calculateDistance];
 }
 
+- (void)calculateDistance{
+    //计算距离
+    MAMapPoint point1 = MAMapPointForCoordinate(_startCoordinate);
+    MAMapPoint point2 = MAMapPointForCoordinate(_destinationCoordinate);
+    //2.计算距离
+    CLLocationDistance distance = MAMetersBetweenMapPoints(point1,point2);
+    if (distance>1000) {
+        QDLog(@"distance = %.2lf", distance);
+        _headerView.distanceLab.text = [NSString stringWithFormat:@"距离%.2lfkm", distance/1000];
+    } else {
+        QDLog(@"distance = %.2lf", distance);
+        _headerView.distanceLab.text = [NSString stringWithFormat:@"距离%.1fm", distance];
+    }
+
+}
 - (BOOL)amapLocationManagerShouldDisplayHeadingCalibration:(AMapLocationManager *)manager
 {
     return _headingCalibration;
@@ -161,63 +182,6 @@
     }
 }
 
-- (void)popReturn:(UIButton *)sender{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)initUI{
-    _homeTopView = [[QDHomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.3)];
-    _homeTopView.backgroundColor = APP_BLUECOLOR;
-    [_homeTopView.returnBtn addTarget:self action:@selector(popReturn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_homeTopView];
-    _homeTopView.searchBar.delegate = self;
-    
-    _bottomView = [[UIView alloc] init];
-    _bottomView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_bottomView];
-    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(SCREEN_HEIGHT*0.85);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.06);
-    }];
-    UILabel *lab = [[UILabel alloc] init];
-    lab.text = @"发行计划";
-    lab.font = QDFont(13);
-    [_bottomView addSubview:lab];
-    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomView);
-        make.left.equalTo(_bottomView.mas_left).offset(SCREEN_WIDTH*0.027);
-    }];
-    
-    UIView *lineView = [[UIView alloc] init];
-    lineView.backgroundColor = APP_GRAYCOLOR;
-    [_bottomView addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomView);
-        make.left.equalTo(_bottomView.mas_left).offset(SCREEN_WIDTH*0.2);
-        make.height.mas_equalTo(SCREEN_HEIGHT*0.02);
-        make.width.mas_equalTo(SCREEN_WIDTH*0.008);
-    }];
-    
-    UILabel *desc = [[UILabel alloc] init];
-    desc.text = @"发行计划说明文字";
-    desc.font = QDFont(11);
-    desc.textColor = APP_GRAYCOLOR;
-    [_bottomView addSubview:desc];
-    [desc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomView);
-        make.left.equalTo(_bottomView.mas_left).offset(SCREEN_WIDTH*0.23);
-    }];
-    
-    UIImageView *img = [[UIImageView alloc] init];
-    img.image = [UIImage imageNamed:@"home_dropDown"];
-    [_bottomView addSubview:img];
-    [img mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_bottomView);
-        make.right.equalTo(_bottomView.mas_right).offset(-(SCREEN_WIDTH*0.027));
-    }];
-}
 
 #pragma mark - Life Cycle
 
@@ -229,12 +193,33 @@
     self.regions = [[NSMutableArray alloc] init];
     
     [self initMapView];
-    [self initUI];
+    [self setTopView];
     
     [self configLocationManager];
     [self addOneAnnotation];
-    [self getCurrentLocation];
+//    [self getCurrentLocation];
+
+    QDLog(@"%@",self.addressStr);
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
+    AMapGeocodeSearchRequest *geo = [[AMapGeocodeSearchRequest alloc] init];
+    geo.address = self.addressStr;
+    [self.search AMapGeocodeSearch:geo];
     
+    if (_infoModel) {
+        [self setInfoView];
+        //        UIButton *phoneBtn = [[UIButton alloc] init];
+        //        [phoneBtn setImage:[UIImage imageNamed:@"icon_makeCall"] forState:UIControlStateNormal];
+        //        [self.view addSubview:phoneBtn];
+        //        [phoneBtn addTarget:self action:@selector(makeCall:) forControlEvents:UIControlEventTouchUpInside];
+        //        [phoneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.centerY.equalTo(_headerView.mas_top);
+        //            make.right.equalTo(self.view.mas_right).offset(-(SCREEN_WIDTH*0.06));
+        //            make.width.and.height.mas_equalTo(SCREEN_WIDTH*0.2);
+        //        }];
+        [self loadBottomInfoWithModel:_infoModel];
+    }
+
     //    UIView *zoomPannelView = [self makeZoomPannelView];
     //    zoomPannelView.center = CGPointMake(self.view.bounds.size.width -  CGRectGetMidX(zoomPannelView.bounds) - 10,
     //                                        self.view.bounds.size.height -  CGRectGetMidY(zoomPannelView.bounds) - 10);
@@ -251,20 +236,66 @@
     //    }];
 }
 
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+- (void)setTopView{
+    UIButton *returnBtn = [[UIButton alloc] init];
+    [returnBtn setImage:[UIImage imageNamed:@"icon_return"] forState:UIControlStateNormal];
+    [self.view addSubview:returnBtn];
+    [returnBtn addTarget:self action:@selector(returnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [returnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(SCREEN_WIDTH*0.05);
+        make.top.equalTo(self.view.mas_top).offset(SCREEN_HEIGHT*0.06);
+    }];
     
-    //    [self startHeadingLocation];
-    //
-    //    if ([AMapLocationManager headingAvailable] == NO)
-    //    {
-    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"该设备不支持方向功能" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-    //        [alertView show];
-    //    }
+    UILabel *titleLab = [[UILabel alloc] init];
+    titleLab.text = @"商户位置";
+    titleLab.font = QDFont(17);
+    titleLab.textColor = APP_BLACKCOLOR;
+    [self.view addSubview:titleLab];
+    
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(returnBtn);
+        make.centerX.equalTo(self.view);
+    }];
+    
+    
+    UIButton *routePlan = [[UIButton alloc] init];
+    [routePlan setTitle:@"开始导航" forState:UIControlStateNormal];
+    [routePlan addTarget:self action:@selector(startNavigation:) forControlEvents:UIControlEventTouchUpInside];
+    [routePlan setTitleColor:APP_BLACKCOLOR forState:UIControlStateNormal];
+    routePlan.titleLabel.font = QDFont(14);
+    [self.view addSubview:routePlan];
+    [routePlan mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(returnBtn);
+        make.right.equalTo(self.view.mas_right).offset(-(SCREEN_WIDTH*0.05));
+    }];
+}
+- (void)returnAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)startNavigation:(UIButton *)sender{
+    NSString *oreillyAddress = [NSString stringWithFormat:@"%@, %@", _cityStr, _addressStr];
+    [QDNavigationService navWithViewController:self WithEndLocation:_destinationCoordinate  andAddress:oreillyAddress];
+}
+- (void)setInfoView{
+    _headerView = [[QDRoutePlanHeaderView alloc] init];
+    _headerView.backgroundColor = APP_WHITECOLOR;
+    _headerView.layer.cornerRadius = 5;
+    _headerView.layer.masksToBounds = YES;
+    [self.view addSubview:_headerView];
+    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom).offset(-(SCREEN_HEIGHT*0.1));
+        make.centerX.equalTo(self.view);
+        make.width.mas_equalTo(SCREEN_WIDTH*0.89);
+        make.height.mas_equalTo(SCREEN_HEIGHT*0.25);
+    }];
 }
 
+- (void)loadBottomInfoWithModel:(QDHotelListInfoModel *)infoModel{
+    _headerView.titleLab.text = infoModel.hotelName;
+    _headerView.info4.text = [NSString stringWithFormat:@"¥%.2lf", [infoModel.rmbprice doubleValue]];
+    _headerView.info1.text = [NSString stringWithFormat:@"%@", infoModel.price];
+    _headerView.addressStr.text = infoModel.address;
+}
 - (void)getCurrentLocation{
     //终点地名
     NSString *oreillyAddress = [NSString stringWithFormat:@"%@, %@", _cityStr, _addressStr];
@@ -276,7 +307,7 @@
             
             NSLog(@"Longitude = %f", firstPlacemark.location.coordinate.longitude);
             NSLog(@"Latitude = %f", firstPlacemark.location.coordinate.latitude);
-            self.destinationCoordinate  = CLLocationCoordinate2DMake(firstPlacemark.location.coordinate.latitude, firstPlacemark.location.coordinate.longitude);
+//            self.destinationCoordinate  = CLLocationCoordinate2DMake(firstPlacemark.location.coordinate.latitude, firstPlacemark.location.coordinate.longitude);
         }
         else if ([placemarks count] == 0 && error == nil) {
             NSLog(@"Found no placemarks.");
@@ -325,7 +356,23 @@
     
     return nil;
 }
-
+#pragma mark - AMapSearchDelegate
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+    if (response.geocodes.count == 0)
+    {
+        return;
+    }
+    //解析response获取地理信息，具体解析见 Demo
+    AMapGeocode *geoCode = response.geocodes[0];
+    self.destinationCoordinate =CLLocationCoordinate2DMake(geoCode.location.latitude, geoCode.location.longitude);
+    [self.mapView setCenterCoordinate:self.destinationCoordinate];
+    MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
+    pointAnnotation.coordinate = self.destinationCoordinate;
+    pointAnnotation.title = self.addressStr;
+//    pointAnnotation.subtitle = @"阜通东大街6号";
+    [_mapView addAnnotation:pointAnnotation];
+}
 
 #pragma mark - MAMapViewDelegate
 //
@@ -407,39 +454,4 @@
     //    }
 }
 
-#pragma mark - 城市选择其
-- (void)getChoosedAreaName:(NSString *)areaStr{
-    QDLog(@"areaStr = %@", areaStr);
-    QDHotelsInAreaViewController *areaVC = [[QDHotelsInAreaViewController alloc] init];
-    [self.navigationController pushViewController:areaVC animated:YES];
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    QDLog(@"searchBarTextDidBeginEditing");
-    QDCitySelectedViewController *cityVC = [[QDCitySelectedViewController alloc] init];
-    cityVC.delegate = self;
-    cityVC.selectCity = ^(NSString * _Nonnull cityName) {
-        QDLog(@"%@", cityName);
-        QDHotelsInAreaViewController *areaVC = [[QDHotelsInAreaViewController alloc] init];
-        [self.navigationController pushViewController:areaVC animated:YES];
-    };
-    [self presentViewController:cityVC animated:YES completion:nil];
-}
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    [_homeTopView.searchBar resignFirstResponder];
-    
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    //    [_homeTopView.searchBar resignFirstResponder];
-}
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    if (searchBar.text.length == 0) {
-        [_homeTopView.searchBar resignFirstResponder];
-    }else{
-    }
-}
 @end
