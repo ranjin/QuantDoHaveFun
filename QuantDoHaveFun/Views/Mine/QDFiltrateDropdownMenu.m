@@ -29,9 +29,9 @@
     if (self = [super initWithFrame:CGRectMake(0, 0, LD_SCREENWIDTH, 35)]) {
         self.backgroundColor = [UIColor whiteColor];
         
-//        UIView *middelView = [[UIView alloc]initWithFrame:self.bounds];
-//        middelView.backgroundColor = [UIColor whiteColor];
-//        [self addSubview:middelView];
+        //        UIView *middelView = [[UIView alloc]initWithFrame:self.bounds];
+        //        middelView.backgroundColor = [UIColor whiteColor];
+        //        [self addSubview:middelView];
         
         for (int i = 0; i<leftTitles.count; i++) {
             UIView *item = [[UIView alloc]initWithFrame:CGRectMake(i*55, 0, 55, 35)];
@@ -104,14 +104,14 @@
 - (void)initDropDownView {
     if (!_dropDownView) {
         _dropDownView = [[UIView alloc]initWithFrame:CGRectMake(0, Height_NavAndStatusBar+45, LD_SCREENWIDTH, LD_SCREENHEIGHT)];
-        _dropDownView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+        _dropDownView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         _dropDownView.hidden = YES;
         [[UIApplication sharedApplication].keyWindow addSubview:_dropDownView];
         if (self.canSelectDate) {
             [_dropDownView addSubview:self.calendar];
         }
         _dropDownView.clipsToBounds = YES;
-
+        
         // 点击h黑色背景收回当前弹出的菜单
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapDropDownView)];
         [_dropDownView addGestureRecognizer:tap];
@@ -132,7 +132,11 @@
 // 收回当前弹出的菜单
 - (void)tapDropDownView {
     NSLog(@"tapDropDownView");
-    [self showOrHideDropDownItem:self.selectedTiTleIndex];
+    if (self.canSelectDate && self.showedCalendar) {
+        [self showOrHideCalendar:nil];
+    } else {
+        [self showOrHideDropDownItem:self.selectedTiTleIndex];
+    }
 }
 // 子视图不响应父视图的tap手势事件
 - (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch{
@@ -152,7 +156,7 @@
         _calendar.appearance.selectionColor = LD_colorRGBValue(0x00C1B1);
         _calendar.appearance.todayColor = LD_colorRGBValue(0x5B9DD6);
         _calendar.weekdayHeight = 0;
-
+        
         _calendar.dataSource = self;
         _calendar.delegate = self;
     }
@@ -162,6 +166,9 @@
     if (self.showedCalendar) { // 收回
         [UIView animateWithDuration:0.2 animations:^{
             self.calendar.frame = CGRectMake(0, -300, LD_SCREENWIDTH, 300);
+            if (!animationCompletion) {
+                self.dropDownView.alpha = 0;
+            }
         } completion:^(BOOL finished) {
             self.dropDownView.hidden =YES;
             self.showedCalendar = NO;
@@ -192,6 +199,7 @@
             self.dropDownView.hidden = NO;
             [UIView animateWithDuration:0.2 animations:^{
                 self.calendar.frame = CGRectMake(0, 0, LD_SCREENWIDTH, 300);
+                self.dropDownView.alpha = 1;
             } completion:^(BOOL finished) {
                 self.showedCalendar = YES;
                 if (animationCompletion) {
@@ -244,7 +252,7 @@
         }
     }
     CGFloat itemHeight = [QDDropDownItem dropDownViewHeightWithItemCount:[self.seedTitleArray[index] count]];
-
+    
     if (self.showedDropDownView) {// 收回菜单
         if (self.selectedTiTleIndex != index) {
             // 如果上一个菜单还没收回，就点击了另一个菜单弹出按钮。
@@ -270,6 +278,7 @@
         }else {
             [self dropDownArrowAnimation:index isShow:NO];
             [UIView animateWithDuration:0.2 animations:^{
+                self.dropDownView.alpha = 0;
                 selectedItem.frame = CGRectMake(0, -itemHeight, LD_SCREENWIDTH, itemHeight);
             } completion:^(BOOL finished) {
                 self.dropDownView.hidden = YES;
@@ -280,6 +289,7 @@
         self.dropDownView.hidden = NO;
         [self dropDownArrowAnimation:index isShow:YES];
         [UIView animateWithDuration:0.2 animations:^{
+            self.dropDownView.alpha = 1;
             selectedItem.frame = CGRectMake(0, 0, LD_SCREENWIDTH, itemHeight);
         } completion:^(BOOL finished) {
             self.showedDropDownView = YES;
