@@ -97,6 +97,11 @@
     }
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
+    if (@available(iOS 10.0, *)) {
+        config.mediaTypesRequiringUserActionForPlayback = NO;
+    } else if (@available(iOS 9.0, *)) {
+        config.requiresUserActionForMediaPlayback = NO;
+    }
     _webView = [[WKWebView alloc] initWithFrame:webViewFrame configuration:config];
     _webView.navigationDelegate = self;
     [_baseView addSubview:_webView];
