@@ -43,6 +43,7 @@
 		9325FB6C228A51D4009390AC /* ZLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FB68228A51D4009390AC /* ZLCollectionView.m */; };
 		9325FB6D228A51D4009390AC /* HYBCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FB69228A51D4009390AC /* HYBCardCollectionViewCell.m */; };
 		9325FB70228A532A009390AC /* QDHotelsInAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FB6E228A5329009390AC /* QDHotelsInAreaView.m */; };
+		9325FBEA228D0861009390AC /* QDHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9325FBE9228D0861009390AC /* QDHomeVC.m */; };
 		93399CBE2267124000FB9F0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CBD2267124000FB9F0E /* AppDelegate.m */; };
 		93399CC12267124000FB9F0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93399CC02267124000FB9F0E /* ViewController.m */; };
 		93399CC42267124000FB9F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93399CC22267124000FB9F0E /* Main.storyboard */; };
@@ -563,6 +564,8 @@
 		9325FB6E228A5329009390AC /* QDHotelsInAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHotelsInAreaView.m; sourceTree = "<group>"; };
 		9325FB6F228A532A009390AC /* QDHotelsInAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHotelsInAreaView.h; sourceTree = "<group>"; };
 		9325FB71228BE036009390AC /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		9325FBE8228D0861009390AC /* QDHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDHomeVC.h; sourceTree = "<group>"; };
+		9325FBE9228D0861009390AC /* QDHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDHomeVC.m; sourceTree = "<group>"; };
 		93399CB92267124000FB9F0E /* QuantDoHaveFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantDoHaveFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93399CBC2267124000FB9F0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93399CBD2267124000FB9F0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2310,6 +2313,8 @@
 				93E98087227147C700DDEB80 /* QDCitySelectedViewController.m */,
 				93E98088227147C700DDEB80 /* QDRotePlanViewController.h */,
 				93E9808A227147C700DDEB80 /* QDRotePlanViewController.m */,
+				9325FBE8228D0861009390AC /* QDHomeVC.h */,
+				9325FBE9228D0861009390AC /* QDHomeVC.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -3078,6 +3083,7 @@
 				93E980A722714D1A00DDEB80 /* RangePickerCell.m in Sources */,
 				93E980712271477400DDEB80 /* QDMallModel.m in Sources */,
 				93E9800F2271446B00DDEB80 /* UIPasteboard+YYText.m in Sources */,
+				9325FBEA228D0861009390AC /* QDHomeVC.m in Sources */,
 				93399D0E22671FD600FB9F0E /* QDPlayingViewController.m in Sources */,
 				93399E162268487300FB9F0E /* UITableViewCell+TABLayoutSubviews.m in Sources */,
 				93E980A822714D1A00DDEB80 /* QDCalendarCustomerTourTopView.m in Sources */,

@@ -169,6 +169,7 @@ typedef enum : NSUInteger {
         if (_myOrdersArr.count) {
             [_myOrdersArr removeAllObjects];
         }
+        _pageNum = 1;
         NSDictionary * paramsDic = @{@"postersStatus":_state,
                                      @"postersType":_businessType,
                                      @"pageNum":@1,
