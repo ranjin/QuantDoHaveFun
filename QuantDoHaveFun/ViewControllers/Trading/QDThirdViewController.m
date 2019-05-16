@@ -162,9 +162,6 @@ typedef enum : NSUInteger {
         [_tableView reloadData];
         [_tableView reloadEmptyDataSet];
         _emptyType = QDNODataError;
-//        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-//        loginVC.pushVCTag = @"0";
-//        [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         if (_myOrdersArr.count) {
             [_myOrdersArr removeAllObjects];
@@ -172,7 +169,7 @@ typedef enum : NSUInteger {
         _pageNum = 1;
         NSDictionary * paramsDic = @{@"postersStatus":_state,
                                      @"postersType":_businessType,
-                                     @"pageNum":@1,
+                                     @"pageNum":[NSNumber numberWithInt:_pageNum],
                                      @"pageSize":[NSNumber numberWithInt:_pageSize]
                                      };
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_FindMyBiddingPosterse params:paramsDic successBlock:^(QDResponseObject *responseObject) {
@@ -182,14 +179,26 @@ typedef enum : NSUInteger {
                 NSArray *hotelArr = [dic objectForKey:@"result"];
                 _totalPage = [[dic objectForKey:@"totalPage"] intValue];
                 if (hotelArr.count) {
+                    NSMutableArray *arr = [[NSMutableArray alloc] init];
                     for (NSDictionary *dic in hotelArr) {
                         BiddingPostersDTO *infoModel = [BiddingPostersDTO yy_modelWithDictionary:dic];
-                        [_myOrdersArr addObject:infoModel];
+                        [arr addObject:infoModel];
                     }
-                    if ([self.tableView.mj_header isRefreshing]) {
-                        [self.tableView.mj_header endRefreshing];
+                    if (arr.count) {
+                        if (arr.count < _pageSize) {   //不满10个
+                            [_myOrdersArr addObjectsFromArray:arr];
+                            [_tableView reloadData];
+                            if ([_tableView.mj_footer isRefreshing]) {
+                                [self endRefreshing];
+                                _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                            }
+                        }else{
+                            [self endRefreshing];
+                            [_myOrdersArr addObjectsFromArray:arr];
+                            _tableView.mj_footer.state = MJRefreshStateIdle;
+                            [_tableView reloadData];
+                        }
                     }
-                    [_tableView reloadData];
                 }else{
                     _emptyType = QDNODataError;
                     [_tableView reloadData];
@@ -222,7 +231,7 @@ typedef enum : NSUInteger {
         [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         if (_totalPage != 0) {
-        if (_pageNum >= _totalPage) {
+        if (_pageNum > _totalPage) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             return;
         }
@@ -350,8 +359,10 @@ typedef enum : NSUInteger {
             if (responseObject.code == 0) {
                 [WXProgressHUD hideHUD];
                 [WXProgressHUD showSuccessWithTittle:@"撤单成功"];
-                [_myOrdersArr removeObjectAtIndex:sender.tag];
-                [_tableView reloadData];
+                [_myOrdersArr removeObjectAtIndex:sender.tag];//
+                //重新请求数据 刷新
+                [self requestHeaderTopData];
+//                [_tableView reloadData];
             }else{
                 [WXProgressHUD showInfoWithTittle:responseObject.message];
             }

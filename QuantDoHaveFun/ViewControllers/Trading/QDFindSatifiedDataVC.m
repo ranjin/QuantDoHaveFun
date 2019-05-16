@@ -358,16 +358,36 @@
         [WXProgressHUD showInfoWithTittle:@"金额不能为0"];
         return;
     }
-    QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];
-    QDLog(@"self.priceTF.text = %@", self.priceTF.text);
-    recommendVC.price = self.priceTF.text;
-    recommendVC.volume = self.amountTF.text;
-    recommendVC.isPartialDeal = _isPartialDeal;
-    recommendVC.postersType = _typeStr;
-    QDLog(@"self.priceTF.text = %@, self.amountTF.text = %@", self.priceTF.text, self.amountTF.text);
-    [self.navigationController pushViewController:recommendVC animated:YES];
+    [self saveIntentionPosters];
 }
 
+
+#pragma mark - 请求挂单编号
+- (void)saveIntentionPosters{
+    NSDictionary * paramsDic = @{@"creditCode":@"10001",
+                                 @"price":self.priceTF.text,
+                                 @"postersType":_typeStr,
+                                 @"volume":self.amountTF.text,
+                                 @"isPartialDeal": _isPartialDeal
+                                 };
+    [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_SaveIntentionPosters params:paramsDic successBlock:^(QDResponseObject *responseObject) {
+        if (responseObject.code == 0) {
+            NSDictionary *dic = responseObject.result;
+            QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];
+            QDLog(@"self.priceTF.text = %@", self.priceTF.text);
+            recommendVC.price = self.priceTF.text;
+            recommendVC.volume = self.amountTF.text;
+            recommendVC.isPartialDeal = _isPartialDeal;
+            recommendVC.postersType = _typeStr;
+            QDLog(@"self.priceTF.text = %@, self.amountTF.text = %@", self.priceTF.text, self.amountTF.text);
+            [self.navigationController pushViewController:recommendVC animated:YES];
+        }else{
+            [WXProgressHUD showInfoWithTittle:responseObject.message];
+        }
+    } failureBlock:^(NSError *error) {
+        [WXProgressHUD showErrorWithTittle:@"网络异常"];
+    }];
+}
 #pragma mark - 价格输入框
 - (UITextField *)priceTF{
     if (!_priceTF) {

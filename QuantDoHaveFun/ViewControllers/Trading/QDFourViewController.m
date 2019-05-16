@@ -132,9 +132,6 @@ QD_ManualCanceled = 4      //手工取消
         [_tableView reloadData];
         [_tableView reloadEmptyDataSet];
         _emptyType = QDNODataError;
-//        QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
-//        loginVC.pushVCTag = @"0";
-//        [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         if (_myPickOrdersArr.count) {
             [_myPickOrdersArr removeAllObjects];
@@ -152,14 +149,26 @@ QD_ManualCanceled = 4      //手工取消
                 NSArray *hotelArr = [dic objectForKey:@"result"];
                 _totalPage = [[dic objectForKey:@"totalPage"] intValue];
                 if (hotelArr.count) {
+                    NSMutableArray *arr = [[NSMutableArray alloc] init];
                     for (NSDictionary *dic in hotelArr) {
                         QDMyPickOrderModel *infoModel = [QDMyPickOrderModel yy_modelWithDictionary:dic];
-                        [_myPickOrdersArr addObject:infoModel];
+                        [arr addObject:infoModel];
                     }
-                    if ([self.tableView.mj_header isRefreshing]) {
-                        [self.tableView.mj_header endRefreshing];
+                    if (arr.count) {
+                        if (arr.count < _pageSize) {   //不满10个
+                            [_myPickOrdersArr addObjectsFromArray:arr];
+                            [_tableView reloadData];
+                            if ([_tableView.mj_footer isRefreshing]) {
+                                [self endRefreshing];
+                                _tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                            }
+                        }else{
+                            [self endRefreshing];
+                            [_myPickOrdersArr addObjectsFromArray:arr];
+                            _tableView.mj_footer.state = MJRefreshStateIdle;
+                            [_tableView reloadData];
+                        }
                     }
-                    [_tableView reloadData];
                 }else{
                     _emptyType = QDNODataError;
                     [_tableView.mj_header endRefreshing];
@@ -190,7 +199,7 @@ QD_ManualCanceled = 4      //手工取消
         [self presentViewController:loginVC animated:YES completion:nil];
     }else{
         if (_totalPage != 0) {
-            if (_pageNum >= _totalPage) {
+            if (_pageNum > _totalPage) {
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
                 return;
             }
@@ -330,8 +339,8 @@ QD_ManualCanceled = 4      //手工取消
         [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_CancelOrderForm params:dic successBlock:^(QDResponseObject *responseObject) {
             if (responseObject.code == 0) {
                 [WXProgressHUD showSuccessWithTittle:@"撤单成功"];
-                [_myPickOrdersArr removeObjectAtIndex:sender.tag];
-                [_tableView reloadData];
+                //重新请求数据
+                [self requestHeaderTopData];
             }else{
                 [WXProgressHUD showInfoWithTittle:responseObject.message];
             }
