@@ -443,4 +443,7 @@
     return YES;
 }
 
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return -100;
+}
 @end

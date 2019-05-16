@@ -10,6 +10,7 @@
 #import "PPNumberButton.h"
 #import "QDRecommendViewController.h"
 #import "CWActionSheet.h"
+#import "QDLoginAndRegisterVC.h"
 #define AddBtnWidth SCREEN_WIDTH*0.075
 @interface QDFindSatifiedDataVC ()<UITableViewDelegate, UITableViewDataSource, PPNumberButtonDelegate, UITextFieldDelegate>{
     UITableView *_tableView;
@@ -372,15 +373,18 @@
                                  };
     [[QDServiceClient shareClient] requestWithType:kHTTPRequestTypePOST urlString:api_SaveIntentionPosters params:paramsDic successBlock:^(QDResponseObject *responseObject) {
         if (responseObject.code == 0) {
-            NSDictionary *dic = responseObject.result;
             QDRecommendViewController *recommendVC = [[QDRecommendViewController alloc] init];
-            QDLog(@"self.priceTF.text = %@", self.priceTF.text);
             recommendVC.price = self.priceTF.text;
             recommendVC.volume = self.amountTF.text;
             recommendVC.isPartialDeal = _isPartialDeal;
             recommendVC.postersType = _typeStr;
-            QDLog(@"self.priceTF.text = %@, self.amountTF.text = %@", self.priceTF.text, self.amountTF.text);
             [self.navigationController pushViewController:recommendVC animated:YES];
+        }else if (responseObject.code == 2){    //未登录情况
+            [QDUserDefaults setObject:@"0" forKey:@"loginType"];
+            QDLoginAndRegisterVC *loginVC = [[QDLoginAndRegisterVC alloc] init];
+            loginVC.pushVCTag = @"0";
+            [self presentViewController:loginVC animated:YES completion:nil];
+            [QDUserDefaults removeCookies]; //未登录的时候移除cookie
         }else{
             [WXProgressHUD showInfoWithTittle:responseObject.message];
         }

@@ -20,9 +20,9 @@ const static NSString *APP_ID = @"1456067852";
 
 //const static NSString *APIKey = @"0b39f0a341315a7f3574e309d8d24082";
 
-//static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
+static NSString * const QD_Domain = @"https://appuat.wedotting.com";    //UAT环境
 
-static NSString * const QD_Domain = @"https://app.wedotting.com";
+//static NSString * const QD_Domain = @"https://app.wedotting.com";
 
 //测试环境
 //static NSString * const QD_Domain = @"http://203.110.179.27:60409";
