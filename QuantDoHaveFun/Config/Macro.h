@@ -149,9 +149,12 @@ extern NSString *const OnLogoutNotification;
 
 
 #define CreditOrderTypeNames @[@"全部",@"VIP权益",@"交易",@"兑换",@"奖励",@"返佣",@"消费",@"调账",@"退款"]
+#define CreditOrderTypeIDs @[[NSNull null],@"0",@"1",@"2",@"3",@"4",@"6",@"10",@"13"]
+
 //发行 ---  VIP权益
 
-#define TradingOrderTypeNames @[@"全部",@"VIP权益",@"交易",@"兑换",@"奖励",@"消费",@"手续费",@"充值",@"提现",@"调账",@"退款"]
+#define TradingOrderTypeNames @[@"全部",@"VIP权益",@"交易",@"兑换",@"奖励",@"手续费",@"充值",@"提现",@"调账",@"退款"]
+#define TradingOrderTypeIDs @[[NSNull null],@"0",@"1",@"2",@"3",@"7",@"8",@"9",@"10",@"13"]
 //发行 ---  VIP权益
 
 #endif /* Macro_h */

@@ -102,6 +102,11 @@
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
+    if (@available(iOS 10.0, *)) {
+        config.mediaTypesRequiringUserActionForPlayback = NO;
+    } else if (@available(iOS 9.0, *)) {
+        config.requiresUserActionForMediaPlayback = NO;
+    }
     CGRect webViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     if (IS_NotchScreen) {
             webViewFrame = CGRectMake(0, 19, SCREEN_WIDTH, SCREEN_HEIGHT-19);

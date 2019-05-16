@@ -32,7 +32,6 @@
 
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) collectionViewLayout:layout];
         self.collectionView.showsVerticalScrollIndicator = NO;
-        self.collectionView.pagingEnabled = YES;
         self.collectionView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.collectionView];
         [self.collectionView registerClass:[QDDropDownItemCell class] forCellWithReuseIdentifier:@"QDDropDownItemCell"];

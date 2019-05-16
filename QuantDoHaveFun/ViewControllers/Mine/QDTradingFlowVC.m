@@ -22,7 +22,9 @@
 @property(nonatomic,assign)NSInteger pageNum;
 @property(nonatomic,strong)QDFiltrateDropdownMenu *filtrateMenuView;
 @property(nonatomic,strong)NSArray *seedTitleArray;
-
+@property(nonatomic,assign)NSInteger tradingDirectionIndex;
+@property(nonatomic,assign)NSInteger tradingTypeIndex;
+@property(nonatomic,strong)NSString *tradingDate;
 @end
 
 @implementation QDTradingFlowVC
@@ -44,6 +46,7 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:selectedImage style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackAction)];
     [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
     
+    self.tradingDirectionIndex = -1;
     [self setupViews];
     [self getCreditOrderList:1];
     
@@ -84,7 +87,7 @@
     
     
     _tableView.mj_header = [QDRefreshHeader headerWithRefreshingBlock:^{
-        [self getCreditOrderList:1];
+        [self getCreditOrderListWithTradingDirection:self.tradingDirectionIndex tradingtype:self.tradingTypeIndex tradingDate:self.tradingDate];
     }];
     //
     //    _tableView.mj_footer = [QDRefreshFooter footerWithRefreshingBlock:^{
@@ -124,8 +127,9 @@
 //    }
 //}
 - (void)getCreditOrderListWithTradingDirection:(NSInteger)tradingDirection tradingtype:(NSInteger)tradingtype tradingDate:(NSString *)tradingDate {
+    [self.tableView setContentOffset:CGPointZero animated:NO];
     // 参数null表示 全部
-    NSDictionary *dic = @{@"tradingDirection":tradingDirection<0?[NSNull null]:[NSNumber numberWithInteger:tradingDirection],@"tradingtype":tradingtype<0?[NSNull null]:[NSNumber numberWithInteger:tradingtype],@"tradingDate":tradingDate?tradingDate:[NSNull null],@"pageNum":[NSNumber numberWithInteger:1],@"pageSize":@500};
+    NSDictionary *dic = @{@"tradingDirection":tradingDirection<0?[NSNull null]:[NSNumber numberWithInteger:tradingDirection],@"tradingtype":TradingOrderTypeIDs[tradingtype],@"tradingDate":tradingDate?tradingDate:[NSNull null],@"pageNum":[NSNumber numberWithInteger:1],@"pageSize":@500};
     [[QDServiceClient shareClient]requestWithType:kHTTPRequestTypePOST urlString:api_findTradingFlowList params:dic successBlock:^(QDResponseObject *responseObject) {
         QDLog(@"%@",responseObject.result);
         self.orderArray = [NSMutableArray arrayWithCapacity:10];
@@ -166,19 +170,17 @@
 - (void)didSelectedItemIndex:(NSInteger)itemIndex menuIndex:(NSInteger)menuIndex {
     NSLog(@"didSelectedItem title: %@",self.seedTitleArray[itemIndex][menuIndex]);
     
-    NSInteger tradingDirection = -1;
-    NSInteger tradingType = -1;
     switch (itemIndex) {
         case 0:
-            tradingDirection = menuIndex -1;
+            self.tradingDirectionIndex = menuIndex - 1;
             break;
         case 1:
-            tradingType = menuIndex - 1;
+            self.tradingTypeIndex = menuIndex;
             break;
         default:
             break;
     }
-    [self getCreditOrderListWithTradingDirection:tradingDirection tradingtype:tradingType tradingDate:nil];
+    [self getCreditOrderListWithTradingDirection:self.tradingDirectionIndex tradingtype:self.tradingTypeIndex tradingDate:self.tradingDate];
 }
 
 
