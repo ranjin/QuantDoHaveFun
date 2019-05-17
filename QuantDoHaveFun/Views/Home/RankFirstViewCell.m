@@ -58,20 +58,20 @@
     [super layoutSubviews];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.width.mas_equalTo(361);
-        make.height.mas_equalTo(266);
+        make.width.mas_equalTo(SCREEN_WIDTH*0.96);
+        make.height.mas_equalTo(SCREEN_HEIGHT*0.32);
     }];
     
     [_thePic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.width.equalTo(_backView);
         make.centerX.equalTo(_backView);
-        make.height.mas_equalTo(203);
+        make.height.mas_equalTo(SCREEN_HEIGHT*0.244);
     }];
 
     [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_backView.mas_left).offset(15);
         make.top.equalTo(self.thePic.mas_bottom).offset(19);
-        make.width.mas_equalTo(238);
+        make.width.mas_equalTo(SCREEN_WIDTH*0.63);
     }];
 }
 

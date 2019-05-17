@@ -167,11 +167,11 @@ static NSString *const api_saveHotelCouponDetail = @"/lyjfapp/api/v1/hotelCoupon
  JAVAScriptBridgeWebView
  */
 
-//static NSString * const QD_JSURL                = @"https://appuat.wedotting.com/app";    //前端地址
-//static NSString * const QD_TESTJSURL            = @"https://appuat.wedotting.com/app/#";    //前端地址
+static NSString * const QD_JSURL                = @"https://appuat.wedotting.com/app";    //前端地址
+static NSString * const QD_TESTJSURL            = @"https://appuat.wedotting.com/app/#";    //前端地址
 ////
-static NSString * const QD_JSURL                = @"https://app.wedotting.com/app";    //前端地址
-static NSString * const QD_TESTJSURL            = @"https://app.wedotting.com/app/#";    //前端地址//static NSString * const QD_TESTJSURL            = @"https://192.168.40.10:3000/app/#";    //前端地址
+//static NSString * const QD_JSURL                = @"https://app.wedotting.com/app";    //前端地址
+//static NSString * const QD_TESTJSURL            = @"https://app.wedotting.com/app/#";    //前端地址//static NSString * const QD_TESTJSURL            = @"https://192.168.40.10:3000/app/#";    //前端地址
 
 //static NSString * const QD_JSURL                = @"http://203.110.179.27:60409/app";    //前端地址
 //static NSString * const QD_TESTJSURL            = @"http://203.110.179.27:60409/app/#";    //前端地址

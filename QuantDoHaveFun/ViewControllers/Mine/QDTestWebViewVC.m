@@ -79,7 +79,7 @@
     self.title = @"银行卡";
     self.rt_disableInteractivePop = YES;
     self.navigationController.navigationBar.translucent = YES;
-    [self rt_customBackItemWithTarget:self action:@selector(test)];
+//    [self rt_customBackItemWithTarget:self action:@selector(test)];
     _baseView = [[QYBaseView alloc] initWithFrame:self.view.frame];
     self.view = _baseView;
     

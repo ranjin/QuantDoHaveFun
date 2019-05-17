@@ -28,7 +28,7 @@
 #import "QDCreditOrderHistoryVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "QDMapPilotVC.h"
-
+#import "LD_NSStringEditor.h"
 #define FT_WEIBO_APPKEY         @"2645776991"
 #define FT_WEIBO_APPSECRET      @"785818577abc810dfac71fa7c59d1957"
 #define FT_WEIBO_CALLBACK_URL   @"http://sns.whalecloud.com/sina2/callback"
@@ -189,9 +189,11 @@
         NSString *urlStr = [data objectForKey:@"url"];
         NSString *POST_BOUNDS = @"test";
         NSURL *url = [NSURL URLWithString:urlStr];
+        NSString *jsonStr = [dataDic objectForKey:@"data"];
+        NSDictionary *dic = [[jsonStr removeUnescapedControlCharacter] parseJSONStringToNSDictionary];
         NSMutableString *bodyContent = [NSMutableString string];
-        for(NSString *key in dataDic.allKeys){
-            id value = [dataDic objectForKey:key];
+        for(NSString *key in dic.allKeys){
+            id value = [dic objectForKey:key];
             [bodyContent appendFormat:@"--%@\r\n",POST_BOUNDS];
             [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key];
             [bodyContent appendFormat:@"%@\r\n",value];
@@ -276,8 +278,6 @@
     [_baseView addSubview:self.progressView];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _baseView.backgroundColor = [UIColor whiteColor];
-    
-
 }
 
 - (void)loadWebViewWithURL{

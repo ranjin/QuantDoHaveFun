@@ -3120,7 +3120,6 @@
 				93E9817E2271504700DDEB80 /* QDHotelTypeCell.m in Sources */,
 				93E982882271991400DDEB80 /* BaseTabBar.m in Sources */,
 				0216BDCE228D5CF400C7D104 /* QDMapPilotVC.m in Sources */,
-				93E9815F2271500700DDEB80 /* QDHomeZDYListVC.m in Sources */,
 				93E980082271446B00DDEB80 /* YYTextParser.m in Sources */,
 				93399D4E2268191E00FB9F0E /* QDMineView.m in Sources */,
 				93E980AC22714D1A00DDEB80 /* SYCollectionCell.m in Sources */,
@@ -3471,7 +3470,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNMW98VLVV;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
@@ -3481,7 +3480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.uichange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.travelpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3498,7 +3497,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNMW98VLVV;
+				DEVELOPMENT_TEAM = 8LYJ6X6X94;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/QDHaveFun.pch";
@@ -3508,7 +3507,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.uichange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wedotting.travelpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

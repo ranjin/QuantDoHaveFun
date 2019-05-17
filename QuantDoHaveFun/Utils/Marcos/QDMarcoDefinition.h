@@ -5,6 +5,7 @@
 //  Created by 冉金 on 2019/1/14.
 //  Copyright © 2019年 Charles Ran. All rights reserved.
 //
+#import <UIKit/UIKit.h>
 
 #ifndef QDMarcoDefinition_h
 #define QDMarcoDefinition_h
@@ -202,9 +203,22 @@ item.alpha = 0.0; \
 
 
 //字体
-#define QDFont(size)                    [UIFont systemFontOfSize:size]
-#define QDBoldFont(size)                [UIFont boldSystemFontOfSize:size]
+//#define QDFont(size)                    [UIFont systemFontOfSize:size]
+//#define QDBoldFont(size)                [UIFont boldSystemFontOfSize:size]
 
+#define QDFont(size)                    [UIFont systemFontOfSize:FontSize(size)]
+#define QDBoldFont(size)                [UIFont boldSystemFontOfSize:FontSize(size)]
+
+
+static inline CGFloat FontSize(CGFloat fontSize){
+    if (SCREEN_WIDTH == 320) {
+        return fontSize-2;
+    }else if (SCREEN_WIDTH == 375){
+        return fontSize;
+    }else{
+        return fontSize+2;
+    }
+}
 /**
  *  字体适配 我在PCH文件定义了一个方法
  */
